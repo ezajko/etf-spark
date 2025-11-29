@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="bs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tipografija - Dizajn Sistem - ETF UNSA</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: IBM Plex Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+    <style>
+        /* Documentation specific styles */
+        .bd-sidebar {
+            position: sticky;
+            top: 4rem;
+            height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+
+        .bd-content {
+            padding-bottom: 3rem;
+        }
+
+        section {
+            padding-top: 4rem;
+            margin-top: -2rem;
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#sidebar-nav" tabindex="0">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">ETF UNSA <span class="fw-light">Dizajn Sistem</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Nazad na sajt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse bd-sidebar" id="sidebar-nav">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column nav-pills">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Pregled</a></li>
+                        <li class="nav-item"><a class="nav-link" href="hero.html">Hero</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="typography.html">Tipografija</a></li>
+                        <li class="nav-item"><a class="nav-link" href="colors.html">Boje</a></li>
+                        <li class="nav-item"><a class="nav-link" href="buttons.html">Dugmad</a></li>
+                        <li class="nav-item"><a class="nav-link" href="cards.html">Kartice</a></li>
+                        <li class="nav-item"><a class="nav-link" href="alerts.html">Upozorenja</a></li>
+                        <li class="nav-item"><a class="nav-link" href="accordion.html">Harmonika</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tabs.html">Tabovi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="carousel.html">Carousel</a></li>
+                        <li class="nav-item"><a class="nav-link" href="modals.html">Modali</a></li>
+                        <li class="nav-item"><a class="nav-link" href="lists.html">Liste</a></li>
+                        <li class="nav-item"><a class="nav-link" href="layouts.html">Layouts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="data.html">Podaci</a></li>
+                        <li class="nav-item"><a class="nav-link" href="forms.html">Forme</a></li>
+                        <li class="nav-item"><a class="nav-link" href="navigation.html">Navigacija</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bd-content">
+                <section id="typography">
+                    <h2 class="border-bottom pb-2 mb-4">Tipografija</h2>
+
+                    <div class="mb-5">
+                        <h3 class="mb-3">Naslovi</h3>
+                        <div class="p-4 border rounded bg-light">
+                            <h1>h1. ETF Sarajevo Heading</h1>
+                            <h2>h2. ETF Sarajevo Heading</h2>
+                            <h3>h3. ETF Sarajevo Heading</h3>
+                            <h4>h4. ETF Sarajevo Heading</h4>
+                            <h5>h5. ETF Sarajevo Heading</h5>
+                            <h6>h6. ETF Sarajevo Heading</h6>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <h3 class="mb-3">Display Naslovi</h3>
+                        <p>Koriste se za isticanje, obično na landing stranicama.</p>
+                        <div class="p-4 border rounded bg-light">
+                            <h1 class="display-1">Display 1</h1>
+                            <h1 class="display-2">Display 2</h1>
+                            <h1 class="display-3">Display 3</h1>
+                            <h1 class="display-4">Display 4</h1>
+                            <h1 class="display-5">Display 5</h1>
+                            <h1 class="display-6">Display 6</h1>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <h3 class="mb-3">Paragrafi i Tekst</h3>
+                        <div class="p-4 border rounded bg-light">
+                            <p class="lead">
+                                Ovo je vodeći paragraf (lead). Koristi se za uvodni tekst koji treba da se ističe.
+                            </p>
+                            <p>
+                                Ovo je standardni paragraf teksta. Lorem ipsum dolor sit amet, consectetur adipiscing
+                                elit.
+                                Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                            </p>
+                            <p class="small">
+                                Ovo je sitni tekst (small). Koristi se za manje važne informacije ili fusnote.
+                            </p>
+                            <p>Možete koristiti i <strong>boldirani tekst</strong>, <em>italic tekst</em>, ili
+                                <u>podvučeni tekst</u>.
+                            </p>
+                            <p>Za označavanje koda koristite <code>code</code> tag, a za prečice <kbd>ctrl + c</kbd>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <h3 class="mb-3">Citati</h3>
+                        <div class="p-4 border rounded bg-light">
+                            <figure>
+                                <blockquote class="blockquote">
+                                    <p>Obrazovanje je najmoćnije oružje koje možete upotrijebiti da promijenite svijet.
+                                    </p>
+                                </blockquote>
+                                <figcaption class="blockquote-footer">
+                                    Nelson Mandela <cite title="Source Title">Izvor</cite>
+                                </figcaption>
+                            </figure>
+                        </div>
+                    </div>
+
+                    <div class="mb-5">
+                        <h3 class="mb-3">Liste</h3>
+                        <div class="p-4 border rounded bg-light">
+                            <div class="mb-4">
+                                <h5 class="mb-3">Nuređena Lista</h5>
+                                <ul>
+                                    <li>Lorem ipsum dolor sit amet</li>
+                                    <li>Consectetur adipiscing elit</li>
+                                    <li>Integer molestie lorem at massa</li>
+                                    <li>Facilisis in pretium nisl aliquet</li>
+                                </ul>
+                            </div>
+
+                            <div class="mb-4">
+                                <h5 class="mb-3">Uređena Lista</h5>
+                                <ol>
+                                    <li>Lorem ipsum dolor sit amet</li>
+                                    <li>Consectetur adipiscing elit</li>
+                                    <li>Integer molestie lorem at massa</li>
+                                    <li>Facilisis in pretium nisl aliquet</li>
+                                </ol>
+                            </div>
+
+                            <div class="mb-4">
+                                <h5 class="mb-3">Lista bez stila</h5>
+                                <ul class="list-unstyled">
+                                    <li>Lorem ipsum dolor sit amet</li>
+                                    <li>Consectetur adipiscing elit</li>
+                                    <li>Integer molestie lorem at massa</li>
+                                </ul>
+                            </div>
+
+                            <div>
+                                <h5 class="mb-3">Inline Lista</h5>
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">Stavka 1</li>
+                                    <li class="list-inline-item">Stavka 2</li>
+                                    <li class="list-inline-item">Stavka 3</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mt-4">
+                        <div class="card-header">Upotreba</div>
+                        <div class="card-body">
+                            <pre><code>&lt;!-- Headings --&gt;
+&lt;h1&gt;Naslov 1&lt;/h1&gt;
+&lt;h2&gt;Naslov 2&lt;/h2&gt;
+&lt;h3&gt;Naslov 3&lt;/h3&gt;
+
+&lt;!-- Display Headings --&gt;
+&lt;h1 class="display-1"&gt;Display 1&lt;/h1&gt;
+
+&lt;!-- Paragraphs --&gt;
+&lt;p class="lead"&gt;Vodeći tekst (Lead)&lt;/p&gt;
+&lt;p&gt;Obični tekst paragrafa.&lt;/p&gt;
+&lt;p class="small"&gt;Sitni tekst (Small)&lt;/p&gt;
+
+&lt;!-- Blockquote --&gt;
+&lt;figure&gt;
+  &lt;blockquote class="blockquote"&gt;
+    &lt;p&gt;Citat...&lt;/p&gt;
+  &lt;/blockquote&gt;
+  &lt;figcaption class="blockquote-footer"&gt;
+    Autor &lt;cite title="Source Title"&gt;Izvor&lt;/cite&gt;
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;!-- Lists --&gt;
+&lt;ul&gt;
+  &lt;li&gt;Stavka liste&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Stavka uređene liste&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul class="list-unstyled"&gt;
+  &lt;li&gt;Lista bez stila&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ul class="list-inline"&gt;
+  &lt;li class="list-inline-item"&gt;Inline stavka&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

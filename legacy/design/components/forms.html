@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="bs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forme - Dizajn Sistem - ETF UNSA</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: IBM Plex Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+    <style>
+        /* Documentation specific styles */
+        .bd-sidebar {
+            position: sticky;
+            top: 4rem;
+            height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+
+        .bd-content {
+            padding-bottom: 3rem;
+        }
+
+        section {
+            padding-top: 4rem;
+            margin-top: -2rem;
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#sidebar-nav" tabindex="0">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">ETF UNSA <span class="fw-light">Dizajn Sistem</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Nazad na sajt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse bd-sidebar" id="sidebar-nav">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column nav-pills">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Pregled</a></li>
+                        <li class="nav-item"><a class="nav-link" href="hero.html">Hero</a></li>
+                        <li class="nav-item"><a class="nav-link" href="typography.html">Tipografija</a></li>
+                        <li class="nav-item"><a class="nav-link" href="colors.html">Boje</a></li>
+                        <li class="nav-item"><a class="nav-link" href="buttons.html">Dugmad</a></li>
+                        <li class="nav-item"><a class="nav-link" href="cards.html">Kartice</a></li>
+                        <li class="nav-item"><a class="nav-link" href="alerts.html">Upozorenja</a></li>
+                        <li class="nav-item"><a class="nav-link" href="accordion.html">Harmonika</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tabs.html">Tabovi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="carousel.html">Carousel</a></li>
+                        <li class="nav-item"><a class="nav-link" href="modals.html">Modali</a></li>
+                        <li class="nav-item"><a class="nav-link" href="lists.html">Liste</a></li>
+                        <li class="nav-item"><a class="nav-link" href="layouts.html">Layouts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="data.html">Podaci</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="forms.html">Forme</a></li>
+                        <li class="nav-item"><a class="nav-link" href="navigation.html">Navigacija</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bd-content">
+                <section id="forms">
+                    <h2 class="border-bottom pb-2 mb-4">Forme</h2>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email adresa</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1"
+                            placeholder="name@example.com">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Tekstualno polje</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label">Unos fajla</label>
+                        <input class="form-control" type="file" id="formFile">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleColorInput" class="form-label">Odabir boje</label>
+                        <input type="color" class="form-control form-control-color" id="exampleColorInput"
+                            value="#00629B" title="Choose your color">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleDataList" class="form-label">Datalist primjer</label>
+                        <input class="form-control" list="datalistOptions" id="exampleDataList"
+                            placeholder="Type to search...">
+                        <datalist id="datalistOptions">
+                            <option value="San Francisco">
+                            <option value="New York">
+                            <option value="Seattle">
+                            <option value="Los Angeles">
+                            <option value="Chicago">
+                        </datalist>
+                    </div>
+                    <div class="mb-3">
+                        <select class="form-select" aria-label="Default select example">
+                            <option selected>Otvori ovaj meni za odabir</option>
+                            <option value="1">Jedan</option>
+                            <option value="2">Dva</option>
+                            <option value="3">Tri</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                Default checkbox
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                            <label class="form-check-label" for="flexCheckChecked">
+                                Checked checkbox
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Default radio
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                                checked>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Default checked radio
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault">Default switch checkbox
+                                input</label>
+                        </div>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
+                            <label class="form-check-label" for="flexSwitchCheckChecked">Checked switch checkbox
+                                input</label>
+                        </div>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1">@</span>
+                        <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                            aria-describedby="basic-addon1">
+                    </div>
+
+                    <div class="card mt-4">
+                        <div class="card-header">Upotreba</div>
+                        <div class="card-body">
+                            <pre><code>&lt;!-- Input --&gt;
+&lt;div class="mb-3"&gt;
+  &lt;label for="exampleInput" class="form-label"&gt;Labela&lt;/label&gt;
+  &lt;input type="email" class="form-control" id="exampleInput" placeholder="..."&gt;
+&lt;/div&gt;
+
+&lt;!-- Textarea --&gt;
+&lt;div class="mb-3"&gt;
+  &lt;label for="exampleTextarea" class="form-label"&gt;Tekstualno polje&lt;/label&gt;
+  &lt;textarea class="form-control" id="exampleTextarea" rows="3"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+
+&lt;!-- Select --&gt;
+&lt;select class="form-select" aria-label="Default select example"&gt;
+  &lt;option selected&gt;Otvori ovaj meni za odabir&lt;/option&gt;
+  &lt;option value="1"&gt;Jedan&lt;/option&gt;
+  &lt;option value="2"&gt;Dva&lt;/option&gt;
+  &lt;option value="3"&gt;Tri&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;!-- Checkbox --&gt;
+&lt;div class="form-check"&gt;
+  &lt;input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"&gt;
+  &lt;label class="form-check-label" for="flexCheckDefault"&gt;
+    Default checkbox
+  &lt;/label&gt;
+&lt;/div&gt;
+
+&lt;!-- Radio --&gt;
+&lt;div class="form-check"&gt;
+  &lt;input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"&gt;
+  &lt;label class="form-check-label" for="flexRadioDefault1"&gt;
+    Default radio
+  &lt;/label&gt;
+&lt;/div&gt;
+
+&lt;!-- Switch --&gt;
+&lt;div class="form-check form-switch"&gt;
+  &lt;input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault"&gt;
+  &lt;label class="form-check-label" for="flexSwitchCheckDefault"&gt;Default switch checkbox input&lt;/label&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

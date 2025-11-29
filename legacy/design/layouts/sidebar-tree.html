@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="bs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar Tree Navigation - ETF UNSA</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: IBM Plex Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+    <style>
+        /* Custom styles for nested navigation */
+        .nav-tree .nav-link {
+            color: var(--text-color);
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-tree .nav-link:hover {
+            color: var(--primary-color);
+            background-color: rgba(var(--primary-color-rgb), 0.05);
+        }
+
+        .nav-tree .nav-link.active {
+            color: var(--primary-color);
+            font-weight: 600;
+            background-color: rgba(var(--primary-color-rgb), 0.1);
+        }
+
+        /* Indentation for nested levels */
+        .nav-tree .nav-item .nav {
+            padding-left: 1rem;
+            border-left: 1px solid #e9ecef;
+            margin-left: 0.5rem;
+        }
+
+        .nav-tree .nav-link[data-bs-toggle="collapse"] {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-tree .nav-link[data-bs-toggle="collapse"]::after {
+            content: "\F282";
+            /* bootstrap-icons chevron-right */
+            font-family: "bootstrap-icons";
+            font-size: 0.8em;
+            transition: transform 0.2s;
+        }
+
+        .nav-tree .nav-link[data-bs-toggle="collapse"][aria-expanded="true"]::after {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="bg-light border-bottom py-3 mb-4">
+        <div class="container text-center">Header Placeholder</div>
+    </header>
+
+    <main class="container">
+        <div class="row">
+            <!-- Sidebar with Tree Navigation -->
+            <aside class="col-lg-3 mb-4 mb-lg-0">
+                <div class="card border-0 bg-light">
+                    <div class="card-body p-2">
+                        <h5 class="card-title p-2 mb-0">Struktura Fakulteta</h5>
+                        <ul class="nav flex-column nav-tree">
+                            <!-- Level 1 -->
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Početna</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#level1-1" data-bs-toggle="collapse" aria-expanded="true">
+                                    Odsjeci
+                                </a>
+                                <div class="collapse show" id="level1-1">
+                                    <ul class="nav flex-column">
+                                        <!-- Level 2 -->
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#level2-1" data-bs-toggle="collapse">
+                                                Računarstvo i informatika
+                                            </a>
+                                            <div class="collapse" id="level2-1">
+                                                <ul class="nav flex-column">
+                                                    <!-- Level 3 -->
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#">Osoblje</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link" href="#level3-1" data-bs-toggle="collapse">
+                                                            Predmeti
+                                                        </a>
+                                                        <div class="collapse" id="level3-1">
+                                                            <ul class="nav flex-column">
+                                                                <!-- Level 4 -->
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link" href="#">Prva godina</a>
+                                                                </li>
+                                                                <li class="nav-item">
+                                                                    <a class="nav-link active" href="#level4-1"
+                                                                        data-bs-toggle="collapse" aria-expanded="true">
+                                                                        Druga godina
+                                                                    </a>
+                                                                    <div class="collapse show" id="level4-1">
+                                                                        <ul class="nav flex-column">
+                                                                            <!-- Level 5 -->
+                                                                            <li class="nav-item">
+                                                                                <a class="nav-link" href="#">Algoritmi i
+                                                                                    strukture podataka</a>
+                                                                            </li>
+                                                                            <li class="nav-item">
+                                                                                <a class="nav-link active"
+                                                                                    href="#">Razvoj softvera</a>
+                                                                            </li>
+                                                                            <li class="nav-item">
+                                                                                <a class="nav-link" href="#">Baze
+                                                                                    podataka</a>
+                                                                            </li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Automatika i elektronika</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Elektroenergetika</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" href="#">Telekomunikacije</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Kontakt</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="col-lg-9">
+                <h1>Sidebar Navigacija (5 Nivoa)</h1>
+                <p class="lead">Ovaj primjer demonstrira navigaciju u sidebaru koja podržava do 5 nivoa dubine.</p>
+                <p>Koristi Bootstrap Collapse komponentu za otvaranje i zatvaranje podmenija. Aktivna stavka je "Razvoj
+                    softvera" na 5. nivou.</p>
+
+                <div class="alert alert-info mt-4">
+                    <i class="bi bi-info-circle-fill me-2"></i>
+                    Navigacija je stilizovana tako da svaki nivo ima dodatni padding i lijevu ivicu za vizuelnu
+                    hijerarhiju.
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-light border-top py-3 mt-5">
+        <div class="container text-center">Footer Placeholder</div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="bs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elektrotehnički fakultet Univerziteta u Sarajevu</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: IBM Plex Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Skip to Main Content Link -->
+    <a href="#main-content" class="skip-link">Pređi na glavni sadržaj</a>
+
+    <!-- Top Bar -->
+    <div class="top-bar bg-dark text-white">
+        <div class="container">
+            <!-- Mobile Toggler -->
+            <div class="d-md-none d-flex justify-content-between align-items-center">
+                <img src="../images/unsa_logo.png" alt="UNSA" height="20">
+                <button class="btn btn-sm btn-link text-white text-decoration-none p-0" type="button"
+                    data-bs-toggle="collapse" data-bs-target="#topBarContent" aria-expanded="false"
+                    aria-controls="topBarContent" aria-label="Toggle Top Bar Menu">
+                    <span class="small">Univerzitet & Servisi <i class="bi bi-chevron-down"></i></span>
+                </button>
+            </div>
+
+            <!-- Collapsible Content -->
+            <div class="collapse d-md-block" id="topBarContent">
+                <div class="row align-items-center">
+                    <div class="col-md-4 d-none d-md-block">
+                        <img src="../images/unsa_logo.png" alt="UNSA" height="25" class="d-inline-block align-text-top">
+                    </div>
+                    <div class="col-12 col-md-8 text-end">
+                        <div class="d-flex justify-content-end align-items-center flex-wrap">
+                            <!-- Univerzitet Dropdown -->
+                            <div class="dropdown d-inline-block me-3">
+                                <a class="text-white text-decoration-none dropdown-toggle small" href="#" role="button"
+                                    id="dropdownUniverzitet" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Univerzitet
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end small shadow"
+                                    aria-labelledby="dropdownUniverzitet">
+                                    <li><a class="dropdown-item" href="#">UNSA</a></li>
+                                    <li><a class="dropdown-item" href="#">eUNSA</a></li>
+                                    <li><a class="dropdown-item" href="#">International</a></li>
+                                    <li><a class="dropdown-item" href="design/components/index.html">Dizajn Sistem</a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- Servisi Dropdown -->
+                            <div class="dropdown d-inline-block me-3">
+                                <a class="text-white text-decoration-none dropdown-toggle small" href="#" role="button"
+                                    id="dropdownServisi" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Servisi
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end small shadow"
+                                    aria-labelledby="dropdownServisi">
+                                    <li><a class="dropdown-item" href="#">Courseware (C2)</a></li>
+                                    <li><a class="dropdown-item" href="#">Courseware (C3)</a></li>
+                                    <li><a class="dropdown-item" href="#">Webmail</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Account</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Language -->
+                            <div class="d-inline-block me-3 small">
+                                <a href="#" class="text-white text-decoration-none fw-bold">BS</a>
+                                <span class="text-secondary mx-1">|</span>
+                                <a href="#" class="text-white-50 text-decoration-none">EN</a>
+                            </div>
+
+                            <!-- Search -->
+                            <div class="d-inline-block position-relative">
+                                <a href="#" class="text-white text-decoration-none" id="searchToggle"
+                                    aria-label="Toggle Search Box" aria-expanded="false" aria-controls="searchBox">
+                                    <i class="bi bi-search"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-search" viewBox="0 0 16 16" aria-hidden="true">
+                                        <path
+                                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                    </svg>
+                                </a>
+                                <div class="search-box bg-white p-2 shadow rounded position-absolute end-0 mt-2 d-none"
+                                    id="searchBox" style="width: 250px; z-index: 1000;">
+                                    <div class="input-group input-group-sm">
+                                        <input type="text" class="form-control" placeholder="Pretraga..."
+                                            aria-label="Search">
+                                        <button class="btn btn-primary" type="button">Traži</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header/Navigation -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="../images/logo.svg" alt="ETF Sarajevo" height="50">
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-none d-lg-block" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Level 0: Stranica (Direct Link) -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Level 0</a>
+                        </li>
+
+                        <!-- Level 1: Sekcija - Stranica (Split Dropdown) -->
+                        <li class="nav-item dropdown">
+                            <div class="d-flex align-items-center">
+                                <a class="nav-link pe-1" href="#">
+                                    Level 1
+                                </a>
+                                <a class="nav-link dropdown-toggle dropdown-toggle-split ps-1" href="#" role="button"
+                                    id="navbarDropdownLevel1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownLevel1">
+                                    <li><a class="dropdown-item" href="#">Stranica 1.1</a></li>
+                                    <li><a class="dropdown-item" href="#">Stranica 1.2</a></li>
+                                    <li><a class="dropdown-item" href="#">Stranica 1.3</a></li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <!-- Level 2: Sekcija - Grupa - Stranica (Mega Menu) -->
+                        <li class="nav-item dropdown position-static">
+                            <div class="d-flex align-items-center">
+                                <a class="nav-link pe-1" href="#">
+                                    Level 2
+                                </a>
+                                <a class="nav-link dropdown-toggle dropdown-toggle-split ps-1" href="#" role="button"
+                                    id="navbarDropdownLevel2" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdownLevel2">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <h6><a href="#" class="text-decoration-none text-primary">Grupa 1</a>
+                                                </h6>
+                                                <a href="#">Stranica 1.1</a>
+                                                <a href="#">Stranica 1.2</a>
+                                                <a href="#">Stranica 1.3</a>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h6><a href="#" class="text-decoration-none text-primary">Grupa 2</a>
+                                                </h6>
+                                                <a href="#">Stranica 2.1</a>
+                                                <a href="#">Stranica 2.2</a>
+                                                <a href="#">Stranica 2.3</a>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h6><a href="#" class="text-decoration-none text-primary">Grupa 3</a>
+                                                </h6>
+                                                <a href="#">Stranica 3.1</a>
+                                                <a href="#">Stranica 3.2</a>
+                                                <a href="#">Stranica 3.3</a>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <h6><a href="#" class="text-decoration-none text-primary">Grupa 4</a>
+                                                </h6>
+                                                <a href="#">Stranica 4.1</a>
+                                                <a href="#">Stranica 4.2</a>
+                                                <a href="#">Stranica 4.3</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+
+                        <!-- Level 3: Sekcija - Kategorija - Grupa - Stranica (Tabbed Mega Menu) -->
+                        <li class="nav-item dropdown position-static">
+                            <div class="d-flex align-items-center">
+                                <a class="nav-link pe-1" href="#">
+                                    Level 3
+                                </a>
+                                <a class="nav-link dropdown-toggle dropdown-toggle-split ps-1" href="#" role="button"
+                                    id="navbarDropdownLevel3" data-bs-toggle="dropdown" aria-expanded="false"
+                                    data-bs-auto-close="outside">
+                                    <span class="visually-hidden">Toggle Dropdown</span>
+                                </a>
+                                <div class="dropdown-menu w-100 shadow-lg border-0 mt-0"
+                                    aria-labelledby="navbarDropdownLevel3">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-md-3 border-end p-0">
+                                                <div class="nav flex-column nav-pills me-3" id="v-pills-tab-level3"
+                                                    role="tablist" aria-orientation="vertical">
+
+                                                    <!-- Category 1 -->
+                                                    <div class="nav-item">
+                                                        <div class="split-tab-container">
+                                                            <a href="#" class="split-tab-link">Kategorija 1</a>
+                                                            <button class="split-tab-toggle" id="v-pills-cat1-tab"
+                                                                data-bs-toggle="pill" data-bs-target="#v-pills-cat1"
+                                                                type="button" role="tab" aria-controls="v-pills-cat1"
+                                                                aria-selected="true">
+                                                                <i class="bi bi-chevron-right">></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Category 2 -->
+                                                    <div class="nav-item">
+                                                        <div class="split-tab-container">
+                                                            <a href="#" class="split-tab-link">Kategorija 2</a>
+                                                            <button class="split-tab-toggle" id="v-pills-cat2-tab"
+                                                                data-bs-toggle="pill" data-bs-target="#v-pills-cat2"
+                                                                type="button" role="tab" aria-controls="v-pills-cat2"
+                                                                aria-selected="false">
+                                                                <i class="bi bi-chevron-right">></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Category 3 -->
+                                                    <div class="nav-item">
+                                                        <div class="split-tab-container">
+                                                            <a href="#" class="split-tab-link">Kategorija 3</a>
+                                                            <button class="split-tab-toggle" id="v-pills-cat3-tab"
+                                                                data-bs-toggle="pill" data-bs-target="#v-pills-cat3"
+                                                                type="button" role="tab" aria-controls="v-pills-cat3"
+                                                                aria-selected="false">
+                                                                <i class="bi bi-chevron-right">></i>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-md-9">
+                                                <div class="tab-content" id="v-pills-tabContent-level3">
+                                                    <!-- Tab 1 Content -->
+                                                    <div class="tab-pane fade show active" id="v-pills-cat1"
+                                                        role="tabpanel" aria-labelledby="v-pills-cat1-tab">
+                                                        <div class="row">
+                                                            <div class="col-md-4">
+                                                                <h6 class="text-uppercase fw-bold mb-3"><a href="#"
+                                                                        class="text-primary text-decoration-none">Grupa
+                                                                        A</a></h6>
+                                                                <ul class="list-unstyled">
+                                                                    <li><a href="#"
+                                                                            class="text-decoration-none text-dark mb-2 d-block">Link
+                                                                            A.1</a></li>
+                                                                    <li><a href="#"
+                                                                            class="text-decoration-none text-dark mb-2 d-block">Link
+                                                                            A.2</a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <h6 class="text-uppercase fw-bold mb-3"><a href="#"
+                                                                        class="text-primary text-decoration-none">Grupa
+                                                                        B</a></h6>
+                                                                <ul class="list-unstyled">
+                                                                    <li><a href="#"
+                                                                            class="text-decoration-none text-dark mb-2 d-block">Link
+                                                                            B.1</a></li>
+                                                                    <li><a href="#"
+                                                                            class="text-decoration-none text-dark mb-2 d-block">Link
+                                                                            B.2</a></li>
+                                                                </ul>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <h6 class="text-uppercase fw-bold mb-3"><a href="#"
+                                                                        class="text-primary text-decoration-none">Grupa
+                                                                        C</a></h6>
+                                                                <ul class="list-unstyled">
+                                                                    <li><a href="#"
+                                                                            class="text-decoration-none text-dark mb-2 d-block">Link
+                                                                            C.1</a></li>
+                                                                    <li><a href="#"
+                                                                            class="text-decoration-none text-dark mb-2 d-block">Link
+                                                                            C.2</a></li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Tab 2 Content -->
+                                                    <div class="tab-pane fade" id="v-pills-cat2" role="tabpanel"
+                                                        aria-labelledby="v-pills-cat2-tab">
+                                                        <h6 class="text-uppercase text-primary fw-bold mb-3">Sadržaj
+                                                            Kategorije 2</h6>
+                                                        <p>Ovdje ide sadržaj za drugu kategoriju.</p>
+                                                    </div>
+                                                    <!-- Tab 3 Content -->
+                                                    <div class="tab-pane fade" id="v-pills-cat3" role="tabpanel"
+                                                        aria-labelledby="v-pills-cat3-tab">
+                                                        <h6 class="text-uppercase text-primary fw-bold mb-3">Sadržaj
+                                                            Kategorije 3</h6>
+                                                        <p>Ovdje ide sadržaj za treću kategoriju.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Mobile Menu Container -->
+                <div id="mobile-menu-overlay" class="mobile-menu-overlay d-lg-none" role="dialog" aria-modal="true"
+                    aria-label="Mobile Menu">
+                    <div class="mobile-menu-container">
+                        <div class="mobile-menu-header">
+                            <h5 class="m-0 text-white">Izbornik</h5>
+                            <button id="mobile-menu-close" class="btn-close btn-close-white"
+                                aria-label="Close Menu"></button>
+                        </div>
+                        <div class="mobile-menu-viewport">
+                            <ul class="mobile-menu-level active" data-level="1">
+                                <li><a href="#">Početna</a></li>
+                                <li class="has-children">
+                                    <a href="#" class="d-flex justify-content-between align-items-center">Fakultet <span
+                                            class="arrow">&gt;</span></a>
+                                    <ul class="mobile-menu-level">
+                                        <li class="back-item"><a href="#" class="d-flex align-items-center"><span
+                                                    class="arrow me-2">&lt;</span> Nazad</a></li>
+                                        <li><a href="#">O nama</a></li>
+                                        <li><a href="#">Organizacija</a></li>
+                                        <li><a href="#">Dokumenti</a></li>
+                                        <li><a href="#">Historijat</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-children">
+                                    <a href="#" class="d-flex justify-content-between align-items-center">Studij <span
+                                            class="arrow">&gt;</span></a>
+                                    <ul class="mobile-menu-level">
+                                        <li class="back-item"><a href="#" class="d-flex align-items-center"><span
+                                                    class="arrow me-2">&lt;</span> Nazad</a></li>
+                                        <li class="has-children">
+                                            <a href="#"
+                                                class="d-flex justify-content-between align-items-center">Bachelor <span
+                                                    class="arrow">&gt;</span></a>
+                                            <ul class="mobile-menu-level">
+                                                <li class="back-item"><a href="#"
+                                                        class="d-flex align-items-center"><span
+                                                            class="arrow me-2">&lt;</span> Nazad</a></li>
+                                                <li><a href="#">Upis i prijem</a></li>
+                                                <li class="has-children">
+                                                    <a href="#"
+                                                        class="d-flex justify-content-between align-items-center">Studijski
+                                                        programi <span class="arrow">&gt;</span></a>
+                                                    <ul class="mobile-menu-level">
+                                                        <li class="back-item"><a href="#"
+                                                                class="d-flex align-items-center"><span
+                                                                    class="arrow me-2">&lt;</span> Nazad</a></li>
+                                                        <li><a href="#">Automatika i elektronika</a></li>
+                                                        <li><a href="#">Elektroenergetika</a></li>
+                                                        <li class="has-children">
+                                                            <a href="#"
+                                                                class="d-flex justify-content-between align-items-center">Računarstvo
+                                                                i informatika <span class="arrow">&gt;</span></a>
+                                                            <ul class="mobile-menu-level">
+                                                                <li class="back-item"><a href="#"
+                                                                        class="d-flex align-items-center"><span
+                                                                            class="arrow me-2">&lt;</span> Nazad</a>
+                                                                </li>
+                                                                <li><a href="#">Odsjek</a></li>
+                                                                <li class="has-children">
+                                                                    <a href="#"
+                                                                        class="d-flex justify-content-between align-items-center">Prva
+                                                                        godina <span class="arrow">&gt;</span></a>
+                                                                    <ul class="mobile-menu-level">
+                                                                        <li class="back-item"><a href="#"
+                                                                                class="d-flex align-items-center"><span
+                                                                                    class="arrow me-2">&lt;</span>
+                                                                                Nazad</a></li>
+                                                                        <li><a href="#">Matematika 1</a></li>
+                                                                        <li><a href="#">Fizika 1</a></li>
+                                                                        <li><a href="#">Uvod u programiranje</a></li>
+                                                                        <li><a href="#">Osnovi elektrotehnike</a></li>
+                                                                    </ul>
+                                                                </li>
+                                                                <li><a href="#">Druga godina</a></li>
+                                                                <li><a href="#">Treća godina</a></li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><a href="#">Telekomunikacije</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="has-children">
+                                            <a href="#"
+                                                class="d-flex justify-content-between align-items-center">Magistarski
+                                                <span class="arrow">&gt;</span></a>
+                                            <ul class="mobile-menu-level">
+                                                <li class="back-item"><a href="#"
+                                                        class="d-flex align-items-center"><span
+                                                            class="arrow me-2">&lt;</span> Nazad</a></li>
+                                                <li><a href="#">Upis</a></li>
+                                                <li><a href="#">Programi</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Doktorski</a></li>
+                                        <li><a href="#">Stručni</a></li>
+                                    </ul>
+                                </li>
+                                <li class="has-children">
+                                    <a href="#" class="d-flex justify-content-between align-items-center">Odsjeci <span
+                                            class="arrow">&gt;</span></a>
+                                    <ul class="mobile-menu-level">
+                                        <li class="back-item"><a href="#" class="d-flex align-items-center"><span
+                                                    class="arrow me-2">&lt;</span> Nazad</a></li>
+                                        <li><a href="#">Automatika i elektronika</a></li>
+                                        <li><a href="#">Elektroenergetika</a></li>
+                                        <li><a href="#">Računarstvo i informatika</a></li>
+                                        <li><a href="#">Telekomunikacije</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Istraživanje i saradnja</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
+
+        <div class="container mt-5">
+            <!-- News Section -->
+            <section class="mb-5">
+                <h2 class="mb-4 border-bottom pb-2">Obavještenja</h2>
+                <!-- Header Removed -->
+                <div class="row align-items-stretch g-0">
+                    <!-- Left Column: News Carousel -->
+                    <div class="col-md-8">
+                        <div id="newsCarousel" class="carousel slide h-100" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="0" class="active"
+                                    aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                            </div>
+                            <div class="carousel-inner h-100">
+                                <div class="carousel-item active h-100">
+                                    <div class="card h-100 shadow-sm bg-light border-0 rounded-0">
+                                        <div class="row g-0 h-100">
+                                            <div class="col-md-4">
+                                                <img src="../images/news_1.png"
+                                                    class="img-fluid h-100 object-fit-cover rounded-0"
+                                                    alt="Studenti rade u laboratoriji">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div
+                                                    class="card-body d-flex flex-column justify-content-center p-4 h-100">
+                                                    <h3 class="card-title">Lorem Ipsum Dolor Sit Amet</h3>
+                                                    <p class="card-text text-muted mb-2">27.11.2025</p>
+                                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur
+                                                        adipiscing elit. Sed do eiusmod tempor incididunt ut labore et
+                                                        dolore magna aliqua.</p>
+                                                    <a href="#"
+                                                        class="btn btn-primary mt-auto w-auto align-self-start">Lorem
+                                                        Ipsum</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item h-100">
+                                    <div class="card h-100 shadow-sm bg-light border-0 rounded-0">
+                                        <div class="row g-0 h-100">
+                                            <div class="col-md-4">
+                                                <img src="../images/news_2.png"
+                                                    class="img-fluid h-100 object-fit-cover rounded-0"
+                                                    alt="Grafički prikaz rezultata istraživanja">
+                                            </div>
+                                            <div class="col-md-8">
+                                                <div
+                                                    class="card-body d-flex flex-column justify-content-center p-4 h-100">
+                                                    <h3 class="card-title">Consectetur Adipiscing Elit</h3>
+                                                    <p class="card-text text-muted mb-2">26.11.2025</p>
+                                                    <p class="card-text">Duis aute irure dolor in reprehenderit in
+                                                        voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                                                    <a href="#"
+                                                        class="btn btn-primary mt-auto w-auto align-self-start">Lorem
+                                                        Ipsum</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: News List -->
+                    <div class="col-md-4 border-start border-secondary-subtle">
+                        <div class="list-group list-group-flush h-100">
+                            <a href="#"
+                                class="list-group-item list-group-item-action flex-fill d-flex flex-column justify-content-center border-0 border-bottom rounded-0 ps-4"
+                                aria-current="true">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1 fw-bold">Lorem Ipsum Dolor</h6>
+                                    <small class="text-muted">25.11.2025</small>
+                                </div>
+                                <small class="text-muted">Sit amet consectetur.</small>
+                            </a>
+                            <a href="#"
+                                class="list-group-item list-group-item-action flex-fill d-flex flex-column justify-content-center border-0 border-bottom rounded-0 ps-4">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1 fw-bold">Sed Do Eiusmod</h6>
+                                    <small class="text-muted">24.11.2025</small>
+                                </div>
+                                <small class="text-muted">Tempor incididunt ut.</small>
+                            </a>
+                            <a href="#"
+                                class="list-group-item list-group-item-action flex-fill d-flex flex-column justify-content-center border-0 border-bottom rounded-0 ps-4">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1 fw-bold">Labore Et Dolore</h6>
+                                    <small class="text-muted">20.11.2025</small>
+                                </div>
+                                <small class="text-muted">Magna aliqua.</small>
+                            </a>
+                            <a href="#"
+                                class="list-group-item list-group-item-action flex-fill d-flex flex-column justify-content-center border-0 border-bottom rounded-0 ps-4">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1 fw-bold">Ut Enim Ad Minim</h6>
+                                    <small class="text-muted">19.11.2025</small>
+                                </div>
+                                <small class="text-muted">Veniam quis nostrud.</small>
+                            </a>
+                            <a href="#"
+                                class="list-group-item list-group-item-action flex-fill d-flex flex-column justify-content-center border-0 rounded-0 ps-4">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h6 class="mb-1 fw-bold">Excepteur Sint Occaecat</h6>
+                                    <small class="text-muted">18.11.2025</small>
+                                </div>
+                                <small class="text-muted">Proident sunt in culpa.</small>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <!-- All News Link -->
+                <div class="row mt-3">
+                    <div class="col-12 text-end">
+                        <a href="#" class="text-decoration-none fw-bold text-primary">Sva obavještenja &rarr;</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Events Section -->
+        <section class="py-5" style="background-color: #f4f6f8;">
+            <div class="container">
+                <h2 class="mb-4 border-bottom pb-2">Događaji</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge bg-primary rounded-pill">15.12.2025</span>
+                                    <small class="text-muted"><i class="bi bi-geo-alt"></i> Amfiteatar 1</small>
+                                </div>
+                                <h5 class="card-title">Dan otvorenih vrata</h5>
+                                <p class="card-text text-muted">Prezentacija studijskih programa za buduće studente.</p>
+                                <a href="#" class="btn btn-link text-decoration-none p-0">Detaljnije &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge bg-primary rounded-pill">20.12.2025</span>
+                                    <small class="text-muted"><i class="bi bi-geo-alt"></i> Sala S1</small>
+                                </div>
+                                <h5 class="card-title">Radionica: AI u praksi</h5>
+                                <p class="card-text text-muted">Interaktivna radionica o primjeni umjetne inteligencije.
+                                </p>
+                                <a href="#" class="btn btn-link text-decoration-none p-0">Detaljnije &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow-sm border-0">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-3">
+                                    <span class="badge bg-primary rounded-pill">10.01.2026</span>
+                                    <small class="text-muted"><i class="bi bi-geo-alt"></i> Online</small>
+                                </div>
+                                <h5 class="card-title">Info sesija: Erasmus+</h5>
+                                <p class="card-text text-muted">Informacije o mogućnostima razmjene studenata.</p>
+                                <a href="#" class="btn btn-link text-decoration-none p-0">Detaljnije &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- All Events Link -->
+                <div class="row">
+                    <div class="col-12 text-end">
+                        <a href="#" class="text-decoration-none fw-bold text-primary">Svi događaji &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container mt-5">
+            <!-- Departments Section -->
+            <section class="mb-5">
+                <h2 class="mb-4 border-bottom pb-2">Odsjeci</h2>
+                <div class="row text-center">
+                    <div class="col-md-3 mb-3">
+                        <div class="card h-100 shadow-sm">
+                            <img src="../images/dept_ae.png" class="card-img-top" alt="Automatika i elektronika"
+                                style="height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Automatika i elektronika</h5>
+                                <a href="#" class="btn btn-outline-primary btn-sm mt-2">Detaljnije</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card h-100 shadow-sm">
+                            <img src="../images/dept_ee.png" class="card-img-top" alt="Elektroenergetika"
+                                style="height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Elektroenergetika</h5>
+                                <a href="#" class="btn btn-outline-primary btn-sm mt-2">Detaljnije</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card h-100 shadow-sm">
+                            <img src="../images/dept_ri.png" class="card-img-top" alt="Računarstvo i informatika"
+                                style="height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Računarstvo i informatika</h5>
+                                <a href="#" class="btn btn-outline-primary btn-sm mt-2">Detaljnije</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-3">
+                        <div class="card h-100 shadow-sm">
+                            <img src="../images/dept_tk.png" class="card-img-top" alt="Telekomunikacije"
+                                style="height: 150px; object-fit: cover;">
+                            <div class="card-body">
+                                <h5 class="card-title">Telekomunikacije</h5>
+                                <a href="#" class="btn btn-outline-primary btn-sm mt-2">Detaljnije</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Study Programs Section -->
+            <section class="mb-5">
+                <h2 class="mb-4 border-bottom pb-2">Studijski programi</h2>
+                <div class="row text-center">
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Prvi ciklus (Bachelor)</h5>
+                                <p class="card-text">Osnovne studije u trajanju od 3 godine (180 ECTS).</p>
+                                <a href="#" class="btn btn-outline-primary btn-sm mt-2">Detaljnije</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Drugi ciklus (Master)</h5>
+                                <p class="card-text">Specijalističke studije u trajanju od 2 godine (120 ECTS).</p>
+                                <a href="#" class="btn btn-outline-primary btn-sm mt-2">Detaljnije</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="card h-100 shadow-sm">
+                            <div class="card-body">
+                                <h5 class="card-title">Treći ciklus (PhD)</h5>
+                                <p class="card-text">Doktorske studije u trajanju od 3 godine (180 ECTS).</p>
+                                <a href="#" class="btn btn-outline-primary btn-sm mt-2">Detaljnije</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="text-white py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <!-- Col 1: Contact & Logo -->
+                <div class="col-md-3 mb-4">
+                    <h5 class="mb-4">Elektrotehnički fakultet</h5>
+                    <p class="mb-2">
+                        Kampus Univerziteta u Sarajevu<br>
+                        Zmaja od Bosne bb<br>
+                        71000 Sarajevo
+                    </p>
+                    <p class="mb-2">
+                        Tel: +387 33 250 700<br>
+                        Email: <a href="mailto:etf@etf.unsa.ba" class="d-inline text-white">etf@etf.unsa.ba</a>
+                    </p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Col 2: Studij -->
+                <div class="col-md-3 mb-4">
+                    <h5>Studij</h5>
+                    <a href="#">Prvi ciklus (Bachelor)</a>
+                    <a href="#">Drugi ciklus (Master)</a>
+                    <a href="#">Treći ciklus (Doktorski)</a>
+                    <a href="#">Stručni studij</a>
+                    <a href="#">Upis</a>
+                </div>
+
+                <!-- Col 3: Resursi -->
+                <div class="col-md-3 mb-4">
+                    <h5>Resursi</h5>
+                    <a href="#">Biblioteka</a>
+                    <a href="#">Zamger</a>
+                    <a href="#">E-učenje</a>
+                    <a href="components.html" class="text-warning">Dizajn Sistem</a>
+                    <a href="#">Oglasna ploča</a>
+                    <a href="#">Rasporedi</a>
+                </div>
+
+                <!-- Col 4: Informacije -->
+                <div class="col-md-3 mb-4">
+                    <h5>Informacije</h5>
+                    <a href="#">Privatnost</a>
+                    <a href="#">Javne nabavke</a>
+                    <a href="#">Pristupačnost</a>
+                    <a href="#">Transparentnost</a>
+                    <a href="#">Prijava korupcije</a>
+                </div>
+            </div>
+            <div class="row mt-4 border-top border-secondary pt-3">
+                <div class="col-12 text-center">
+                    <p class="mb-0">&copy; 2025 Elektrotehnički fakultet Univerziteta u Sarajevu</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="bs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layouts - Dizajn Sistem - ETF UNSA</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: IBM Plex Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+    <style>
+        /* Documentation specific styles */
+        .bd-sidebar {
+            position: sticky;
+            top: 4rem;
+            height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+
+        .bd-content {
+            padding-bottom: 3rem;
+        }
+
+        section {
+            padding-top: 4rem;
+            margin-top: -2rem;
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#sidebar-nav" tabindex="0">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">ETF UNSA <span class="fw-light">Dizajn Sistem</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Nazad na sajt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse bd-sidebar" id="sidebar-nav">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column nav-pills">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Pregled</a></li>
+                        <li class="nav-item"><a class="nav-link" href="hero.html">Hero</a></li>
+                        <li class="nav-item"><a class="nav-link" href="typography.html">Tipografija</a></li>
+                        <li class="nav-item"><a class="nav-link" href="colors.html">Boje</a></li>
+                        <li class="nav-item"><a class="nav-link" href="buttons.html">Dugmad</a></li>
+                        <li class="nav-item"><a class="nav-link" href="cards.html">Kartice</a></li>
+                        <li class="nav-item"><a class="nav-link" href="alerts.html">Upozorenja</a></li>
+                        <li class="nav-item"><a class="nav-link" href="accordion.html">Harmonika</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tabs.html">Tabovi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="carousel.html">Carousel</a></li>
+                        <li class="nav-item"><a class="nav-link" href="modals.html">Modali</a></li>
+                        <li class="nav-item"><a class="nav-link" href="lists.html">Liste</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="layouts.html">Layouts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="data.html">Podaci</a></li>
+                        <li class="nav-item"><a class="nav-link" href="forms.html">Forme</a></li>
+                        <li class="nav-item"><a class="nav-link" href="navigation.html">Navigacija</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bd-content">
+                <h1 class="bd-title mb-4">Standardni Layouts</h1>
+                <p class="lead">Kolekcija standardnih rasporeda stranica i šablona.</p>
+
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Osnovni Elementi</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><a href="../layouts/header-default.html"
+                                            target="_blank">Header (Default)</a></li>
+                                    <li class="list-group-item"><a href="../layouts/header-topbar.html"
+                                            target="_blank">Header (sa Top Bar)</a></li>
+                                    <li class="list-group-item"><a href="../layouts/footer.html"
+                                            target="_blank">Footer</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Rasporedi (Grids)</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><a href="../layouts/layout-full.html"
+                                            target="_blank">Puna širina (Bez sidebara)</a></li>
+                                    <li class="list-group-item"><a href="../layouts/layout-left-sidebar.html"
+                                            target="_blank">Lijevi Sidebar</a></li>
+                                    <li class="list-group-item"><a href="../layouts/layout-right-sidebar.html"
+                                            target="_blank">Desni Sidebar</a></li>
+                                    <li class="list-group-item"><a href="../layouts/layout-both-sidebars.html"
+                                            target="_blank">Oba Sidebara</a></li>
+                                    <li class="list-group-item"><a href="../layouts/layout-hero.html"
+                                            target="_blank">Stranica sa Hero sekcijom</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Kompleksne Komponente</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><a href="../layouts/sidebar-tree.html"
+                                            target="_blank">Sidebar Navigacija (5 nivoa)</a></li>
+                                    <li class="list-group-item"><a href="../layouts/top-news-carousel.html"
+                                            target="_blank">Top News Carousel</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">Šabloni Stranica</h5>
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item"><a href="../layouts/page-homepage.html"
+                                            target="_blank">Homepage (sa Hero i Carousel)</a></li>
+                                    <li class="list-group-item"><a href="../layouts/page-professor.html"
+                                            target="_blank">Profil Profesora</a></li>
+                                    <li class="list-group-item"><a href="../layouts/page-course.html"
+                                            target="_blank">Stranica Kursa</a></li>
+                                    <li class="list-group-item"><a href="../layouts/page-news.html"
+                                            target="_blank">Stranica Vijesti</a></li>
+                                    <li class="list-group-item"><a href="../layouts/page-project.html"
+                                            target="_blank">Stranica Projekta</a></li>
+                                    <li class="list-group-item"><a href="../layouts/page-program.html"
+                                            target="_blank">Studijski Program</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

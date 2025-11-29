@@ -1,0 +1,881 @@
+/* 
+ * ETF UNSA Website - Main Stylesheet
+ * ----------------------------------
+ * Optimized Structure with CSS Variables
+ */
+
+:root {
+    /* Bootstrap Overrides (IEEE Palette) */
+    --bs-primary: #00629B;
+    --bs-secondary: #63666A;
+    --bs-info: #00B5E2;
+    --bs-warning: #FFD100;
+    --bs-danger: #BA0C2F;
+
+    /* Colors */
+    --primary-color: #00629B;
+    --primary-dark: #004e7c;
+    --secondary-color: #63666A;
+    --text-color: #333333;
+    --text-light: #555555;
+    --bg-color: #ffffff;
+    --bg-light: #f8f9fa;
+    --border-color: #eaeaea;
+    --footer-bg: #000000;
+    --footer-text: #cccccc;
+
+    /* Fonts */
+    --font-main: 'IBM Plex Sans', sans-serif;
+
+    /* Dimensions */
+    --top-bar-height: 48px;
+    --header-height: 98px;
+}
+
+/* =========================================
+   1. Global Styles
+   ========================================= */
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Focus Styles for Accessibility */
+:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Skip Link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    z-index: 2000;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+    color: white;
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    color: #000000;
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+/* =========================================
+   2. Top Bar
+   ========================================= */
+.top-bar {
+    font-size: 0.85rem;
+    border-bottom: 1px solid #444;
+    min-height: var(--top-bar-height);
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1040;
+    /* Above sticky header (1030) */
+}
+
+.top-bar a {
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+.top-bar a:hover {
+    opacity: 1;
+    text-decoration: none !important;
+}
+
+.top-bar .dropdown-toggle::after {
+    vertical-align: middle;
+}
+
+.top-bar .dropdown-menu {
+    margin-top: 0.5rem !important;
+    border-radius: 0;
+    border: 1px solid #333;
+    font-size: 0.85rem;
+    background-color: #000000;
+}
+
+.top-bar .dropdown-item {
+    padding: 0.5rem 1rem;
+    color: #ffffff;
+}
+
+.top-bar .dropdown-item:hover,
+.top-bar .dropdown-item:focus {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+/* Mobile Top Bar Toggler */
+.top-bar .btn-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.top-bar .btn-link:hover {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+/* Search Box */
+.search-box {
+    right: 0;
+    top: 100%;
+    border-radius: 0 !important;
+    border: 1px solid #ddd;
+}
+
+.search-box input {
+    border-radius: 0;
+}
+
+.search-box .btn {
+    border-radius: 0;
+}
+
+/* =========================================
+   3. Header & Navigation
+   ========================================= */
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95) !important;
+    min-height: var(--header-height);
+    border-bottom: 1px solid var(--border-color);
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Sticky Header */
+header.sticky-top {
+    z-index: 1030;
+    top: 0;
+}
+
+.navbar-brand img {
+    height: 60px;
+}
+
+.nav-link {
+    color: var(--text-color) !important;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--primary-color) !important;
+}
+
+.nav-link.active {
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px;
+}
+
+/* Desktop Hover Support */
+/* Desktop Hover Support with Grace Period - ONLY for non-split dropdowns if any exist, or disable entirely for split ones */
+@media (min-width: 992px) {
+    /* We are disabling the CSS hover effect for the split dropdowns to rely on the click behavior */
+    /*
+    .navbar .dropdown-menu {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+        transition-delay: 0.15s;
+        pointer-events: none;
+    }
+
+    .navbar .dropdown:hover>.dropdown-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        transition-delay: 0s;
+        pointer-events: auto;
+    }
+    */
+}
+
+/* Split Dropdown Styles */
+.dropdown-toggle-split {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+    color: var(--text-color) !important;
+    opacity: 0.7;
+    transition: all 0.2s;
+}
+
+.dropdown-toggle-split:hover,
+.dropdown-toggle-split[aria-expanded="true"] {
+    color: var(--primary-color) !important;
+    opacity: 1;
+}
+
+/* Rotate arrow when open */
+.dropdown-toggle-split::after {
+    transition: transform 0.2s;
+}
+
+.dropdown-toggle-split[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
+
+/* Ensure the flex container in nav-item works well */
+.navbar .nav-item .d-flex {
+    height: 100%;
+    align-items: center;
+}
+
+/* Alerts */
+.alert-primary {
+    color: var(--primary-color);
+    background-color: rgba(0, 98, 155, 0.1);
+    border-color: rgba(0, 98, 155, 0.2);
+}
+
+.alert-secondary {
+    color: var(--secondary-color);
+    background-color: rgba(99, 102, 106, 0.1);
+    border-color: rgba(99, 102, 106, 0.2);
+}
+
+/* Adjust nav-link padding when inside split view */
+.navbar .nav-item .d-flex .nav-link {
+    margin-left: 0;
+    /* Reset margin since we use flex gap or padding */
+}
+
+/* Add spacing to the first link in the split */
+.navbar .nav-item .d-flex .nav-link:first-child {
+    margin-left: 15px;
+}
+
+/* Mega Menu Styles */
+/* .navbar .nav-item { position: static; } - Removed to allow relative positioning for simple dropdowns */
+
+.navbar .dropdown-menu {
+    top: 100%;
+    left: 0;
+    margin-top: 0;
+    border: none;
+    border-top: 1px solid var(--border-color);
+    border-radius: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-color);
+}
+
+/* Apply full width only when parent is static (Mega Menu) */
+.navbar .nav-item.position-static .dropdown-menu {
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding: 30px 0;
+}
+
+.navbar .dropdown-menu h6 {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.navbar .dropdown-menu a {
+    color: var(--text-light);
+    display: block;
+    padding: 5px 0;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+/* Specific padding for simple dropdown items */
+.navbar .dropdown-item {
+    padding: 8px 20px;
+}
+
+.navbar .dropdown-menu a:hover {
+    color: var(--primary-color);
+    background-color: transparent;
+}
+
+.navbar .dropdown-item:hover {
+    background-color: var(--bg-light);
+}
+
+/* Vertical Tabs in Mega Menu */
+.nav-pills .nav-link {
+    color: var(--text-color);
+    font-weight: 600;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    margin-left: 0;
+    /* Reset margin for tabs */
+    text-transform: none;
+    /* Reset transform */
+    letter-spacing: normal;
+    border-left: 3px solid transparent;
+    /* Prevent jump on active */
+}
+
+.nav-pills .nav-link:last-child {
+    border-bottom: none;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .nav-link:hover {
+    background-color: var(--bg-light);
+    color: var(--primary-color) !important;
+    border-left: 3px solid var(--primary-color);
+}
+
+/* Level 3 Split Tabs Styles */
+.nav-pills .nav-item {
+    border-bottom: 1px solid #eee;
+}
+
+.nav-pills .nav-item:last-child {
+    border-bottom: none;
+}
+
+/* Remove border from the link itself since we moved it to nav-item or container */
+.nav-pills .nav-link {
+    border-bottom: none;
+}
+
+.nav-pills .split-tab-container {
+    display: flex;
+    align-items: stretch;
+    border-left: 3px solid transparent;
+}
+
+.nav-pills .split-tab-container.active,
+.nav-pills .split-tab-container:hover {
+    background-color: var(--bg-light);
+    border-left-color: var(--primary-color);
+}
+
+.nav-pills .split-tab-link {
+    flex-grow: 1;
+    padding: 15px 10px 15px 20px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav-pills .split-tab-link:hover {
+    color: var(--primary-color);
+}
+
+.nav-pills .split-tab-toggle {
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    background: none;
+    border: none;
+}
+
+.nav-pills .split-tab-toggle:hover {
+    color: var(--primary-color);
+}
+
+/* Active state handling for the split container */
+.nav-pills .split-tab-container.active .split-tab-link,
+.nav-pills .split-tab-container.active .split-tab-toggle {
+    color: var(--primary-color);
+}
+
+/* =========================================
+   4. Components
+   ========================================= */
+
+/* Hero Carousel */
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.carousel-indicators {
+    bottom: -40px;
+}
+
+.carousel-indicators [data-bs-target] {
+    background-color: var(--primary-color);
+    width: 30px;
+    height: 3px;
+    border-radius: 0;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 0;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-title {
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 10px 20px;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 0;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+/* General Button Styles for Design System */
+.btn {
+    border-radius: 0;
+    /* Square buttons like Bootstrap Italia */
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-sm {
+    padding: 0.25rem 1rem;
+    font-size: 0.875rem;
+}
+
+.btn-lg {
+    padding: 0.75rem 2rem;
+    font-size: 1.25rem;
+}
+
+/* Badges */
+.badge {
+    border-radius: 0;
+    /* Square badges */
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 0.5em 0.8em;
+}
+
+.badge.rounded-pill {
+    border-radius: 50rem !important;
+    /* Keep pills round if explicitly requested */
+}
+
+/* Alerts */
+.alert {
+    border-radius: 0;
+    border: none;
+    border-left: 4px solid;
+}
+
+.alert-primary {
+    background-color: rgba(0, 98, 155, 0.1);
+    border-left-color: var(--primary-color);
+    color: var(--primary-dark);
+}
+
+.alert-success {
+    border-left-color: #198754;
+}
+
+.alert-danger {
+    border-left-color: #dc3545;
+}
+
+.alert-warning {
+    border-left-color: #ffc107;
+}
+
+.alert-info {
+    border-left-color: #0dcaf0;
+}
+
+/* Breadcrumbs */
+.breadcrumb-item a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.breadcrumb-item a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-item.active {
+    color: var(--text-light);
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    color: var(--text-light);
+}
+
+/* Pagination */
+.pagination {
+    --bs-pagination-border-radius: 0;
+    --bs-pagination-active-bg: var(--primary-color);
+    --bs-pagination-active-border-color: var(--primary-color);
+    --bs-pagination-color: var(--primary-color);
+    --bs-pagination-hover-color: var(--primary-dark);
+}
+
+.page-link {
+    border: 1px solid #dee2e6;
+    margin: 0 2px;
+    font-weight: 600;
+}
+
+.page-link:focus {
+    box-shadow: 0 0 0 0.25rem rgba(0, 98, 155, 0.25);
+}
+
+/* Accordion */
+.accordion-item {
+    border-radius: 0 !important;
+    border: 1px solid #dee2e6;
+}
+
+.accordion-button {
+    border-radius: 0 !important;
+    font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--primary-dark);
+    background-color: rgba(0, 98, 155, 0.1);
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, .125);
+}
+
+.accordion-button:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 0.25rem rgba(0, 98, 155, 0.25);
+}
+
+/* Modals */
+.modal-content {
+    border-radius: 0;
+    border: none;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6;
+    background-color: var(--bg-light);
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6;
+    background-color: var(--bg-light);
+}
+
+/* Tables */
+.table th {
+    font-weight: 600;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+    border-bottom: 2px solid #dee2e6;
+}
+
+/* Forms */
+.form-control,
+.form-select {
+    border-radius: 0;
+    border: 1px solid #ced4da;
+    padding: 0.5rem 0.75rem;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(0, 98, 155, 0.25);
+}
+
+.form-check-input:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.form-check-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(0, 98, 155, 0.25);
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Tabs */
+.nav-tabs {
+    border-bottom: 2px solid #dee2e6;
+}
+
+.nav-tabs .nav-link {
+    border-radius: 0;
+    color: var(--text-color);
+    font-weight: 600;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+}
+
+.nav-tabs .nav-link:hover {
+    border-color: transparent;
+    color: var(--primary-color);
+}
+
+.nav-tabs .nav-link.active {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Carousel */
+.carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 0;
+    /* Square indicators */
+    background-color: #fff;
+    border: 1px solid var(--primary-color);
+    opacity: 0.5;
+    margin: 0 4px;
+}
+
+.carousel-indicators .active {
+    opacity: 1;
+    background-color: var(--primary-color);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: var(--primary-color);
+    /* Make controls visible on light backgrounds if needed, or keep default */
+    border-radius: 0;
+}
+
+/* Carousel Caption */
+.carousel-caption {
+    bottom: 2rem;
+    z-index: 10;
+}
+
+/* Hero Component */
+.hero-example {
+    border-radius: 0 !important;
+    /* Square corners */
+    overflow: hidden;
+}
+
+.hero-example .overlay {
+    background: linear-gradient(rgba(0, 98, 155, 0.7), rgba(0, 98, 155, 0.4));
+    /* Primary color overlay */
+}
+
+/* Card Groups */
+.card-group .card {
+    border-radius: 0;
+}
+
+.card-group .card-footer {
+    background-color: var(--bg-light);
+    border-top: 1px solid #dee2e6;
+}
+
+/* =========================================
+   5. Footer
+   ========================================= */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    font-size: 0.9rem;
+}
+
+footer h5 {
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+footer a {
+    color: #999999 !important;
+    text-decoration: none;
+    transition: color 0.2s;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+footer a:hover {
+    color: #ffffff !important;
+    text-decoration: underline !important;
+}
+
+footer .social-icons a {
+    display: inline-block;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+
+/* =========================================
+   6. Mobile Menu
+   ========================================= */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1050;
+    display: none;
+}
+
+.mobile-menu-overlay.active {
+    display: block;
+}
+
+.mobile-menu-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 85%;
+    max-width: 400px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu-overlay.active .mobile-menu-container {
+    transform: translateX(0);
+}
+
+.mobile-menu-header {
+    padding: 1rem;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-menu-viewport {
+    position: relative;
+    flex-grow: 1;
+    overflow: hidden;
+    background-color: var(--bg-light);
+}
+
+.mobile-menu-level {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: #fff;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto;
+    z-index: 1;
+}
+
+.mobile-menu-level.active {
+    transform: translateX(0);
+    z-index: 2;
+}
+
+.mobile-menu-level[data-level="1"] {
+    transform: translateX(0);
+    z-index: 1;
+}
+
+.mobile-menu-level li {
+    border-bottom: 1px solid #eee;
+}
+
+.mobile-menu-level li a {
+    display: block;
+    padding: 1rem;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.mobile-menu-level li a:hover {
+    background-color: var(--bg-light);
+    color: var(--primary-color);
+}
+
+.mobile-menu-level .arrow {
+    font-weight: bold;
+    color: #999;
+}
+
+.mobile-menu-level .back-item {
+    background-color: #f1f1f1;
+}
+
+.mobile-menu-level .back-item a {
+    color: #666;
+    font-size: 0.9rem;
+}

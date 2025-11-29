@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="bs">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kartice - Dizajn Sistem - ETF UNSA</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts: IBM Plex Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link href="../css/style.css" rel="stylesheet">
+    <style>
+        /* Documentation specific styles */
+        .bd-sidebar {
+            position: sticky;
+            top: 4rem;
+            height: calc(100vh - 4rem);
+            overflow-y: auto;
+        }
+
+        .bd-content {
+            padding-bottom: 3rem;
+        }
+
+        section {
+            padding-top: 4rem;
+            margin-top: -2rem;
+        }
+    </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#sidebar-nav" tabindex="0">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">ETF UNSA <span class="fw-light">Dizajn Sistem</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Nazad na sajt</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse bd-sidebar" id="sidebar-nav">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column nav-pills">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Pregled</a></li>
+                        <li class="nav-item"><a class="nav-link" href="hero.html">Hero</a></li>
+                        <li class="nav-item"><a class="nav-link" href="typography.html">Tipografija</a></li>
+                        <li class="nav-item"><a class="nav-link" href="colors.html">Boje</a></li>
+                        <li class="nav-item"><a class="nav-link" href="buttons.html">Dugmad</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="cards.html">Kartice</a></li>
+                        <li class="nav-item"><a class="nav-link" href="alerts.html">Upozorenja</a></li>
+                        <li class="nav-item"><a class="nav-link" href="accordion.html">Harmonika</a></li>
+                        <li class="nav-item"><a class="nav-link" href="tabs.html">Tabovi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="carousel.html">Carousel</a></li>
+                        <li class="nav-item"><a class="nav-link" href="modals.html">Modali</a></li>
+                        <li class="nav-item"><a class="nav-link" href="lists.html">Liste</a></li>
+                        <li class="nav-item"><a class="nav-link" href="layouts.html">Layouts</a></li>
+                        <li class="nav-item"><a class="nav-link" href="data.html">Podaci</a></li>
+                        <li class="nav-item"><a class="nav-link" href="forms.html">Forme</a></li>
+                        <li class="nav-item"><a class="nav-link" href="navigation.html">Navigacija</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 bd-content">
+                <section id="cards">
+                    <h2 class="border-bottom pb-2 mb-4">Kartice</h2>
+
+                    <!-- Standard Card -->
+                    <div class="mb-5">
+                        <h3 class="mb-3">Osnovna Kartica</h3>
+                        <div class="card" style="width: 18rem;">
+                            <img src="../images/news_1.png" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Naslov Kartice</h5>
+                                <p class="card-text">Primjer teksta koji gradi naslov kartice i čini većinu sadržaja.
+                                </p>
+                                <a href="#" class="btn btn-primary">Idi negdje</a>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="card-header">Upotreba</div>
+                            <div class="card-body">
+                                <pre><code>&lt;div class="card" style="width: 18rem;"&gt;
+  &lt;img src="..." class="card-img-top" alt="..."&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Naslov Kartice&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Tekst...&lt;/p&gt;
+    &lt;a href="#" class="btn btn-primary"&gt;Idi negdje&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Header and Footer -->
+                    <div class="mb-5">
+                        <h3 class="mb-3">Zaglavlje i Podnožje</h3>
+                        <div class="card text-center">
+                            <div class="card-header">
+                                Zaglavlje
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Tretman posebnog naslova</h5>
+                                <p class="card-text">Sa pratećim tekstom ispod kao prirodnim uvodom u dodatni sadržaj.
+                                </p>
+                                <a href="#" class="btn btn-primary">Idi negdje</a>
+                            </div>
+                            <div class="card-footer text-muted">
+                                Prije 2 dana
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="card-header">Upotreba</div>
+                            <div class="card-body">
+                                <pre><code>&lt;div class="card text-center"&gt;
+  &lt;div class="card-header"&gt;Zaglavlje&lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Naslov&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Tekst...&lt;/p&gt;
+    &lt;a href="#" class="btn btn-primary"&gt;Akcija&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class="card-footer text-muted"&gt;Footer&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Horizontal Card -->
+                    <div class="mb-5">
+                        <h3 class="mb-3">Horizontalna Kartica</h3>
+                        <div class="card mb-3" style="max-width: 540px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="../images/news_1.png" class="img-fluid rounded-start h-100"
+                                        style="object-fit: cover;" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Naslov kartice</h5>
+                                        <p class="card-text">Ovo je šira kartica sa pratećim tekstom ispod kao prirodnim
+                                            uvodom u dodatni sadržaj.</p>
+                                        <p class="card-text"><small class="text-muted">Ažurirano prije 3 minute</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="card-header">Upotreba</div>
+                            <div class="card-body">
+                                <pre><code>&lt;div class="card mb-3" style="max-width: 540px;"&gt;
+  &lt;div class="row g-0"&gt;
+    &lt;div class="col-md-4"&gt;
+      &lt;img src="..." class="img-fluid rounded-start" alt="..."&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-8"&gt;
+      &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title"&gt;Naslov&lt;/h5&gt;
+        &lt;p class="card-text"&gt;Tekst...&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- List Group -->
+                    <div class="mb-5">
+                        <h3 class="mb-3">Lista u Kartici</h3>
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-header">
+                                Zaglavlje
+                            </div>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Stavka 1</li>
+                                <li class="list-group-item">Stavka 2</li>
+                                <li class="list-group-item">Stavka 3</li>
+                            </ul>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="card-header">Upotreba</div>
+                            <div class="card-body">
+                                <pre><code>&lt;div class="card" style="width: 18rem;"&gt;
+  &lt;div class="card-header"&gt;Zaglavlje&lt;/div&gt;
+  &lt;ul class="list-group list-group-flush"&gt;
+    &lt;li class="list-group-item"&gt;Stavka 1&lt;/li&gt;
+    &lt;li class="list-group-item"&gt;Stavka 2&lt;/li&gt;
+    &lt;li class="list-group-item"&gt;Stavka 3&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Image Overlay -->
+                    <div class="mb-5">
+                        <h3 class="mb-3">Slika sa Preklapanjem</h3>
+                        <div class="card text-bg-dark">
+                            <img src="../images/news_1.png" class="card-img" alt="..."
+                                style="max-height: 300px; object-fit: cover; opacity: 0.5;">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title">Naslov kartice</h5>
+                                <p class="card-text">Ovo je šira kartica sa pratećim tekstom ispod kao prirodnim uvodom
+                                    u dodatni sadržaj.</p>
+                                <p class="card-text"><small>Ažurirano prije 3 minute</small></p>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="card-header">Upotreba</div>
+                            <div class="card-body">
+                                <pre><code>&lt;div class="card text-bg-dark"&gt;
+  &lt;img src="..." class="card-img" alt="..."&gt;
+  &lt;div class="card-img-overlay"&gt;
+    &lt;h5 class="card-title"&gt;Naslov&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Tekst...&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation -->
+                    <div class="mb-5">
+                        <h3 class="mb-3">Navigacija</h3>
+                        <div class="card text-center">
+                            <div class="card-header">
+                                <ul class="nav nav-tabs card-header-tabs">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="true" href="#">Aktivno</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Link</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link disabled">Onemogućeno</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Tretman posebnog naslova</h5>
+                                <p class="card-text">Sa pratećim tekstom ispod kao prirodnim uvodom u dodatni sadržaj.
+                                </p>
+                                <a href="#" class="btn btn-primary">Idi negdje</a>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="card-header">Upotreba</div>
+                            <div class="card-body">
+                                <pre><code>&lt;div class="card text-center"&gt;
+  &lt;div class="card-header"&gt;
+    &lt;ul class="nav nav-tabs card-header-tabs"&gt;
+      &lt;li class="nav-item"&gt;
+        &lt;a class="nav-link active" aria-current="true" href="#"&gt;Aktivno&lt;/a&gt;
+      &lt;/li&gt;
+      &lt;li class="nav-item"&gt;
+        &lt;a class="nav-link" href="#"&gt;Link&lt;/a&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Naslov&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Tekst...&lt;/p&gt;
+    &lt;a href="#" class="btn btn-primary"&gt;Akcija&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Background Colors -->
+                    <div class="mb-5">
+                        <h3 class="mb-3">Pozadinske Boje</h3>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="card text-bg-primary mb-3" style="max-width: 18rem;">
+                                    <div class="card-header">Header</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Primary card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card text-bg-secondary mb-3" style="max-width: 18rem;">
+                                    <div class="card-header">Header</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Secondary card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card text-bg-success mb-3" style="max-width: 18rem;">
+                                    <div class="card-header">Header</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Success card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="card text-bg-danger mb-3" style="max-width: 18rem;">
+                                    <div class="card-header">Header</div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Danger card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make
+                                            up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card mt-3">
+                            <div class="card-header">Upotreba</div>
+                            <div class="card-body">
+                                <pre><code>&lt;div class="card text-bg-primary mb-3" style="max-width: 18rem;"&gt;
+  &lt;div class="card-header"&gt;Header&lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Primary card title&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Tekst...&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                            </div>
+                        </div>
+                        <!-- Border Colors -->
+                        <div class="mb-5">
+                            <h3 class="mb-3">Boje Bordera</h3>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <div class="card border-primary mb-3" style="max-width: 18rem;">
+                                        <div class="card-header">Header</div>
+                                        <div class="card-body text-primary">
+                                            <h5 class="card-title">Primary card title</h5>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make
+                                                up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="card border-secondary mb-3" style="max-width: 18rem;">
+                                        <div class="card-header">Header</div>
+                                        <div class="card-body text-secondary">
+                                            <h5 class="card-title">Secondary card title</h5>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make
+                                                up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="card border-success mb-3" style="max-width: 18rem;">
+                                        <div class="card-header">Header</div>
+                                        <div class="card-body text-success">
+                                            <h5 class="card-title">Success card title</h5>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make
+                                                up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="card border-danger mb-3" style="max-width: 18rem;">
+                                        <div class="card-header">Header</div>
+                                        <div class="card-body text-danger">
+                                            <h5 class="card-title">Danger card title</h5>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make
+                                                up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mt-3">
+                                <div class="card-header">Upotreba</div>
+                                <div class="card-body">
+                                    <pre><code>&lt;div class="card border-primary mb-3" style="max-width: 18rem;"&gt;
+  &lt;div class="card-header"&gt;Header&lt;/div&gt;
+  &lt;div class="card-body text-primary"&gt;
+    &lt;h5 class="card-title"&gt;Primary card title&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Tekst...&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Shadows -->
+                        <div class="mb-5">
+                            <h3 class="mb-3">Sjene</h3>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card shadow-sm mb-3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Mala Sjena</h5>
+                                            <p class="card-text">shadow-sm</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card shadow mb-3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Srednja Sjena</h5>
+                                            <p class="card-text">shadow</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card shadow-lg mb-3">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Velika Sjena</h5>
+                                            <p class="card-text">shadow-lg</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card mt-3">
+                                <div class="card-header">Upotreba</div>
+                                <div class="card-body">
+                                    <pre><code>&lt;div class="card shadow-sm"&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Mala Sjena&lt;/h5&gt;
+    &lt;p class="card-text"&gt;shadow-sm&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="card shadow"&gt;...&lt;/div&gt;
+
+&lt;div class="card shadow-lg"&gt;...&lt;/div&gt;</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                </section>
+
+
+            </main>
+        </div>
+    </div>
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
