@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  # Main Astro development server
+  web:
+    build:
+      context: .
+      dockerfile: Containerfile
+      target: development
+    container_name: etf-unsa-web-dev
+    ports:
+      - "4321:4321"  # Astro dev server
+    volumes:
+      - ./src:/app/src:z
+      - ./public:/app/public:z
+      - ./astro.config.mjs:/app/astro.config.mjs:z
+    environment:
+      - NODE_ENV=development
+    command: pnpm run dev --host
+    networks:
+      - etf-network
+
+  # Storybook development server
+  storybook:
+    build:
+      context: .
+      dockerfile: Containerfile
+      target: development
+    container_name: etf-unsa-storybook
+    ports:
+      - "6006:6006"  # Storybook server
+    volumes:
+      - ./src:/app/src:z
+      - ./.storybook:/app/.storybook:z
+    environment:
+      - NODE_ENV=development
+    command: pnpm run storybook
+    networks:
+      - etf-network
+
+networks:
+  etf-network:
+    driver: bridge
