@@ -1,0 +1,105 @@
+// ETF UNSA Design System - Mixins
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+// ======================
+// Responsive Breakpoints
+// ======================
+@mixin ez-responsive($breakpoint) {
+    @if $breakpoint ==xs {
+        @media (max-width: #{$ez-breakpoint-sm - 1}) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==sm {
+        @media (min-width: $ez-breakpoint-sm) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==md {
+        @media (min-width: $ez-breakpoint-md) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==lg {
+        @media (min-width: $ez-breakpoint-lg) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==xl {
+        @media (min-width: $ez-breakpoint-xl) {
+            @content;
+        }
+    }
+
+    @else if $breakpoint ==xxl {
+        @media (min-width: $ez-breakpoint-xxl) {
+            @content;
+        }
+    }
+}
+
+// ======================
+// Button Variant
+// ======================
+@mixin ez-button-variant($bg-color, $hover-color) {
+    background-color: $bg-color;
+    border-color: $bg-color;
+    color: white;
+
+    &:hover,
+    &:focus {
+        background-color: $hover-color;
+        border-color: $hover-color;
+    }
+}
+
+// ======================
+// Container
+// ======================
+@mixin ez-container {
+    width: 100%;
+    padding-right: $ez-spacing-md;
+    padding-left: $ez-spacing-md;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+// ======================
+// Clearfix
+// ======================
+@mixin ez-clearfix {
+    &::after {
+        display: block;
+        clear: both;
+        content: "";
+    }
+}
+
+// ======================
+// Text Truncate
+// ======================
+@mixin ez-text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// ======================
+// Visually Hidden
+// ======================
+@mixin ez-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

@@ -1,0 +1,74 @@
+// ETF UNSA Design System - Button Component
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+// BEM naming: ez-btn, ez-btn--variant, ez-btn__element
+
+.ez-btn {
+    display: inline-block;
+    padding: $ez-spacing-sm $ez-spacing-md;
+    font-family: $ez-font-family-sans;
+    font-size: $ez-font-size-base;
+    font-weight: $ez-font-weight-semibold;
+    line-height: $ez-line-height-base;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: $ez-border-radius;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+        border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:focus {
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba($ez-primary-color, 0.25);
+    }
+
+    &:disabled,
+    &.ez-btn--disabled {
+        pointer-events: none;
+        opacity: 0.65;
+    }
+
+    // Primary variant
+    &--primary {
+        @include ez-button-variant($ez-primary-color, $ez-primary-dark);
+    }
+
+    // Secondary variant
+    &--secondary {
+        @include ez-button-variant($ez-secondary-color, darken($ez-secondary-color, 10%));
+    }
+
+    // Success variant
+    &--success {
+        @include ez-button-variant($ez-success-color, darken($ez-success-color, 10%));
+    }
+
+    // Danger variant
+    &--danger {
+        @include ez-button-variant($ez-danger-color, darken($ez-danger-color, 10%));
+    }
+
+    // Sizes
+    &--sm {
+        padding: $ez-spacing-xs $ez-spacing-sm;
+        font-size: $ez-font-size-sm;
+    }
+
+    &--lg {
+        padding: $ez-spacing-md $ez-spacing-lg;
+        font-size: $ez-font-size-lg;
+    }
+
+    // Icon element
+    &__icon {
+        margin-right: $ez-spacing-xs;
+    }
+}
