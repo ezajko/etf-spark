@@ -6,8 +6,12 @@
 @import 'base/variables';
 @import 'base/mixins';
 
-// Components
+// Components (ez- prefixed)
 @import 'components/ez-button';
+@import 'components/ez-card';
+@import 'components/ez-form';
+@import 'components/ez-hero';
+@import 'components/ez-navbar';
 
 // Layouts (when created)
 // @import 'layouts/header';

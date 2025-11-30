@@ -1,0 +1,195 @@
+// ETF UNSA - Navigation Component SCSS
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+// Migrated from legacy/css/style.css
+
+// Variables from legacy
+$top-bar-height: 48px;
+$header-height: 98px;
+
+.ez-navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    min-height: $header-height;
+    border-bottom: 1px solid $ez-border-color;
+    padding-top: 0;
+    padding-bottom: 0;
+
+    // Brand/Logo
+    &__brand {
+        img {
+            height: 60px;
+        }
+    }
+
+    // Nav links
+    &__link {
+        color: $ez-text-color;
+        font-weight: $ez-font-weight-semibold;
+        font-size: 1.1rem;
+        margin-left: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover,
+        &--active {
+            color: $ez-primary-color;
+        }
+
+        &--active {
+            text-decoration: underline;
+            text-underline-offset: 5px;
+            text-decoration-thickness: 2px;
+        }
+    }
+
+    // Dropdown
+    &__dropdown {
+        position: relative;
+
+        &-menu {
+            top: 100%;
+            left: 0;
+            margin-top: 0;
+            border: none;
+            border-top: 1px solid $ez-border-color;
+            border-radius: 0;
+            box-shadow: $ez-shadow-lg;
+            background-color: white;
+            padding: $ez-spacing-lg 0;
+
+            h6 {
+                text-transform: uppercase;
+                font-weight: $ez-font-weight-bold;
+                color: $ez-primary-color;
+                margin-bottom: $ez-spacing-md;
+                font-size: $ez-font-size-sm;
+            }
+
+            a {
+                color: lighten($ez-text-color, 10%);
+                display: block;
+                padding: $ez-spacing-xs 0;
+                text-decoration: none;
+                transition: color 0.2s;
+
+                &:hover {
+                    color: $ez-primary-color;
+                    background-color: transparent;
+                }
+            }
+        }
+
+        &-item {
+            padding: 8px 20px;
+
+            &:hover {
+                background-color: $ez-bg-light;
+            }
+        }
+
+        // Split dropdown toggle
+        &-toggle-split {
+            padding-left: $ez-spacing-sm;
+            padding-right: $ez-spacing-sm;
+            color: $ez-text-color;
+            opacity: 0.7;
+            transition: all 0.2s ease;
+
+            &:hover,
+            &[aria-expanded="true"] {
+                color: $ez-primary-color;
+                opacity: 1;
+            }
+
+            &::after {
+                transition: transform 0.2s;
+            }
+
+            &[aria-expanded="true"]::after {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    // Mobile menu
+    &__toggler {
+        border: none;
+        padding: $ez-spacing-sm;
+
+        &-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba(0, 0, 0, 0.55)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+    }
+
+    // Sticky header
+    &--sticky {
+        position: sticky;
+        top: 0;
+        z-index: $ez-zindex-sticky;
+    }
+}
+
+// Top bar
+.ez-topbar {
+    font-size: 0.85rem;
+    border-bottom: 1px solid #444;
+    min-height: $top-bar-height;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: $ez-zindex-fixed;
+    background-color: #000;
+    color: white;
+
+    a {
+        opacity: 0.9;
+        transition: opacity 0.2s;
+        color: white;
+        text-decoration: none;
+
+        &:hover {
+            opacity: 1;
+            text-decoration: none;
+        }
+    }
+
+    &__dropdown {
+        &-menu {
+            margin-top: $ez-spacing-sm;
+            border-radius: 0;
+            border: 1px solid #333;
+            font-size: 0.85rem;
+            background-color: #000;
+        }
+
+        &-item {
+            padding: $ez-spacing-sm $ez-spacing-md;
+            color: white;
+
+            &:hover,
+            &:focus {
+                background-color: #333;
+                color: white;
+            }
+        }
+    }
+
+    // Search box
+    &__search {
+        position: absolute;
+        right: 0;
+        top: 100%;
+        border-radius: 0;
+        border: 1px solid $ez-border-color;
+
+        input {
+            border-radius: 0;
+        }
+
+        .ez-btn {
+            border-radius: 0;
+        }
+    }
+}

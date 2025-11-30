@@ -1,0 +1,141 @@
+// ETF UNSA - Hero Component SCSS
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+// Migrated from legacy/css/style.css
+
+.ez-hero {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    color: white;
+
+    // Overlay
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(rgba($ez-primary-color, 0.7),
+                rgba($ez-primary-color, 0.4));
+        z-index: 1;
+    }
+
+    // Content
+    &__content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: $ez-spacing-xxl;
+    }
+
+    &__title {
+        font-size: 3rem;
+        font-weight: $ez-font-weight-bold;
+        margin-bottom: $ez-spacing-lg;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+        @include ez-responsive(md) {
+            font-size: 4rem;
+        }
+    }
+
+    &__subtitle {
+        font-size: 1.5rem;
+        margin-bottom: $ez-spacing-xl;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+
+        @include ez-responsive(md) {
+            font-size: 2rem;
+        }
+    }
+
+    &__cta {
+        margin-top: $ez-spacing-lg;
+
+        .ez-btn {
+            margin: 0 $ez-spacing-sm;
+        }
+    }
+
+    // Variants
+    &--small {
+        min-height: 250px;
+
+        .ez-hero__title {
+            font-size: 2rem;
+        }
+
+        .ez-hero__subtitle {
+            font-size: 1.2rem;
+        }
+    }
+
+    &--large {
+        min-height: 600px;
+
+        .ez-hero__title {
+            font-size: 4rem;
+
+            @include ez-responsive(md) {
+                font-size: 5rem;
+            }
+        }
+    }
+
+    &--dark-overlay {
+        .ez-hero__overlay {
+            background: linear-gradient(rgba(0, 0, 0, 0.6),
+                    rgba(0, 0, 0, 0.4));
+        }
+    }
+}
+
+// Hero carousel variant
+.ez-hero-carousel {
+    .carousel-caption {
+        background: rgba(0, 0, 0, 0.5);
+        padding: $ez-spacing-lg;
+        border-radius: $ez-border-radius;
+        bottom: 2rem;
+        z-index: 10;
+    }
+
+    .carousel-indicators {
+        bottom: -40px;
+
+        [data-bs-target] {
+            background-color: $ez-primary-color;
+            width: 30px;
+            height: 3px;
+            border-radius: 0;
+        }
+    }
+
+    .carousel-indicators [data-bs-target] {
+        width: 12px;
+        height: 12px;
+        border-radius: 0;
+        background-color: white;
+        border: 1px solid $ez-primary-color;
+        opacity: 0.5;
+        margin: 0 4px;
+    }
+
+    .carousel-indicators .active {
+        opacity: 1;
+        background-color: $ez-primary-color;
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: $ez-primary-color;
+        border-radius: 0;
+    }
+}

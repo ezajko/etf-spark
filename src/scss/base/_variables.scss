@@ -7,21 +7,36 @@
 // Brand Colors (HSL format)
 // ======================
 
-// Primary Blue
-$ez-primary-h: 211;
+// Primary Blue (from legacy: #00629B)
+$ez-primary-h: 199;
 $ez-primary-s: 100%;
-$ez-primary-b: 25%;
-$ez-primary-color: hsl($ez-primary-h, $ez-primary-s, $ez-primary-b); // #003D82
+$ez-primary-l: 30%;
+$ez-primary-color: hsl($ez-primary-h, $ez-primary-s, $ez-primary-l); // #00629B
 
 // Primary Dark
-$ez-primary-dark: #002952;
+$ez-primary-dark: #004e7c;
 
 // Secondary Colors
-$ez-secondary-color: #6c757d;
-$ez-success-color: #28a745;
+$ez-secondary-color: #63666A;
+$ez-success-color: #198754;
 $ez-danger-color: #dc3545;
-$ez-warning-color: #ffd100;
-$ez-info-color: #17a2b8;
+$ez-warning-color: #ffc107;
+$ez-info-color: #0dcaf0;
+
+// Text Colors
+$ez-text-color: #333333;
+$ez-text-light: #555555;
+
+// Background Colors
+$ez-bg-color: #ffffff;
+$ez-bg-light: #f8f9fa;
+
+// Border Colors
+$ez-border-color: #eaeaea;
+
+// Footer
+$ez-footer-bg: #000000;
+$ez-footer-text: #cccccc;
 
 // ======================
 // Spacing System

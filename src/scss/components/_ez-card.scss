@@ -1,0 +1,85 @@
+// ETF UNSA - Card Component SCSS
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+// Migrated from legacy/css/style.css
+
+.ez-card {
+    border: none;
+    border-radius: 0;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    // Card title
+    &__title {
+        font-weight: $ez-font-weight-bold;
+        margin-bottom: $ez-spacing-md;
+        color: $ez-primary-color;
+    }
+
+    // Card body
+    &__body {
+        padding: $ez-spacing-lg;
+    }
+
+    // Card footer
+    &__footer {
+        background-color: $ez-bg-light;
+        border-top: 1px solid $ez-border-color;
+        padding: $ez-spacing-md;
+    }
+
+    // Variants
+    &--shadow {
+        box-shadow: $ez-shadow;
+    }
+
+    &--shadow-sm {
+        box-shadow: $ez-shadow-sm;
+    }
+
+    &--shadow-lg {
+        box-shadow: $ez-shadow-lg;
+    }
+
+    &--border {
+        border: 1px solid $ez-border-color;
+    }
+
+    &--hover-lift {
+        &:hover {
+            transform: translateY(-8px);
+            box-shadow: $ez-shadow-lg;
+        }
+    }
+}
+
+// Card group
+.ez-card-group {
+    .ez-card {
+        border-radius: 0;
+    }
+
+    .ez-card__footer {
+        background-color: $ez-bg-light;
+        border-top: 1px solid $ez-border-color;
+    }
+}
+
+// Department card variant
+.ez-card--department {
+    text-align: center;
+    transition: all 0.3s ease;
+
+    &:hover {
+        transform: translateY(-10px);
+        box-shadow: $ez-shadow-lg;
+    }
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
