@@ -1,6 +1,7 @@
-// ETF UNSA - Card Component Stories
+// ETF UNSA - Card Component Stories (Legacy Migration)
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
+// Migrated from legacy/design/components/cards.html
 
 export default {
     title: 'Components/Card',
@@ -8,24 +9,24 @@ export default {
     argTypes: {
         title: {
             control: 'text',
-            description: 'Card title',
+            description: 'Naslov kartice',
         },
         text: {
             control: 'text',
-            description: 'Card body text',
+            description: 'Tekst kartice',
         },
         imageUrl: {
             control: 'text',
-            description: 'URL to card image',
+            description: 'URL slike',
         },
         buttonText: {
             control: 'text',
-            description: 'Button label',
+            description: 'Tekst dugmeta',
         },
         variant: {
             control: 'select',
-            options: ['default', 'border', 'shadow', 'shadow-sm', 'shadow-lg'],
-            description: 'Card styling variant',
+            options: ['default', 'shadow-sm', 'shadow', 'shadow-lg'],
+            description: 'Sjena kartice',
         },
     },
 };
@@ -36,7 +37,7 @@ const createCard = ({ title, text, imageUrl, buttonText, variant }) => {
         ? `<img src="${imageUrl}" class="card-img-top" alt="${title}">`
         : '';
     const buttonHtml = buttonText
-        ? `<a href="#" class="btn btn-outline-primary">${buttonText}</a>`
+        ? `<a href="#" class="btn btn-primary">${buttonText}</a>`
         : '';
 
     return `
@@ -51,61 +52,148 @@ const createCard = ({ title, text, imageUrl, buttonText, variant }) => {
   `;
 };
 
-export const Default = {
+// Osnovna Kartica (iz legacy)
+export const Basic = {
     args: {
-        title: 'Card Title',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.',
+        title: 'Naslov Kartice',
+        text: 'Primjer teksta koji gradi naslov kartice i čini većinu sadržaja.',
+        imageUrl: '/images/news_1.png',
+        buttonText: 'Idi negdje',
         variant: 'default',
     },
     render: createCard,
 };
 
-export const WithImage = {
+// Sa zaglavljem i podnožjem
+export const WithHeaderFooter = {
+    render: () => `
+    <div class="card text-center" style="width: 18rem;">
+      <div class="card-header">
+        Zaglavlje
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Tretman posebnog naslova</h5>
+        <p class="card-text">Sa pratećim tekstom ispod kao prirodnim uvodom u dodatni sadržaj.</p>
+        <a href="#" class="btn btn-primary">Idi negdje</a>
+      </div>
+      <div class="card-footer text-muted">
+        Prije 2 dana
+      </div>
+    </div>
+  `,
+};
+
+// Horizontalna kartica
+export const Horizontal = {
+    render: () => `
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img src="/images/news_1.png" class="img-fluid rounded-start h-100" 
+               style="object-fit: cover;" alt="...">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">Naslov kartice</h5>
+            <p class="card-text">Ovo je šira kartica sa pratećim tekstom ispod kao prirodnim uvodom u dodatni sadržaj.</p>
+            <p class="card-text"><small class="text-muted">Ažurirano prije 3 minute</small></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  `,
+};
+
+// Lista u kartici
+export const WithList = {
+    render: () => `
+    <div class="card" style="width: 18rem;">
+      <div class="card-header">
+        Zaglavlje
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Stavka 1</li>
+        <li class="list-group-item">Stavka 2</li>
+        <li class="list-group-item">Stavka 3</li>
+      </ul>
+    </div>
+  `,
+};
+
+// Slika sa preklapanjem
+export const ImageOverlay = {
+    render: () => `
+    <div class="card text-bg-dark" style="width: 18rem;">
+      <img src="/images/news_1.png" class="card-img" alt="..." 
+           style="max-height: 300px; object-fit: cover; opacity: 0.5;">
+      <div class="card-img-overlay">
+        <h5 class="card-title">Naslov kartice</h5>
+        <p class="card-text">Ovo je šira kartica sa pratećim tekstom ispod kao prirodnim uvodom u dodatni sadržaj.</p>
+        <p class="card-text"><small>Ažurirano prije 3 minute</small></p>
+      </div>
+    </div>
+  `,
+};
+
+// Border variants
+export const BorderPrimary = {
     args: {
-        title: 'News Article',
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio.',
-        imageUrl: '/images/news_1.png',
-        buttonText: 'Pročitaj više',
+        title: 'Primary card title',
+        text: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
+        variant: 'border-primary',
+    },
+    render: ({ title, text, variant }) => `
+    <div class="card ${variant} mb-3" style="max-width: 18rem;">
+      <div class="card-header">Header</div>
+      <div class="card-body text-primary">
+        <h5 class="card-title">${title}</h5>
+        <p class="card-text">${text}</p>
+      </div>
+    </div>
+  `,
+};
+
+export const BorderSuccess = {
+    args: {
+        title: 'Success card title',
+        text: 'Some quick example text to build on the card title and make up the bulk of the card\'s content.',
+        variant: 'border-success',
+    },
+    render: ({ title, text, variant }) => `
+    <div class="card ${variant} mb-3" style="max-width: 18rem;">
+      <div class="card-header">Header</div>
+      <div class="card-body text-success">
+        <h5 class="card-title">${title}</h5>
+        <p class="card-text">${text}</p>
+      </div>
+    </div>
+  `,
+};
+
+// Shadows (iz legacy)
+export const SmallShadow = {
+    args: {
+        title: 'Mala Sjena',
+        text: 'shadow-sm',
         variant: 'shadow-sm',
     },
     render: createCard,
 };
 
-export const WithButton = {
+export const MediumShadow = {
     args: {
-        title: 'Department Info',
-        text: 'Automatika i elektronika - Moderni programi iz oblasti automatike, robotike i elektronike.',
-        buttonText: 'Saznaj više',
-        variant: 'default',
-    },
-    render: createCard,
-};
-
-export const WithBorder = {
-    args: {
-        title: 'Bordered Card',
-        text: 'This card has a border style applied to it.',
-        variant: 'border',
-    },
-    render: createCard,
-};
-
-export const WithShadow = {
-    args: {
-        title: 'Shadow Card',
-        text: 'This card has a shadow effect for better visual hierarchy.',
+        title: 'Srednja Sjena',
+        text: 'shadow',
         variant: 'shadow',
     },
     render: createCard,
 };
 
-export const Department = {
+export const LargeShadow = {
     args: {
-        title: 'Računarstvo i informatika',
-        text: 'Savremeni studijski programi iz oblasti računarskih nauka, softverskog inženjerstva i umjetne inteligencije.',
-        imageUrl: '/images/dept_ri.png',
-        buttonText: 'Više informacija',
-        variant: 'shadow-sm',
+        title: 'Velika Sjena',
+        text: 'shadow-lg',
+        variant: 'shadow-lg',
     },
     render: createCard,
 };
