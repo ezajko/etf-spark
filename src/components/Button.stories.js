@@ -1,104 +1,82 @@
-// ETF UNSA - Button Component Stories
+// ETF UNSA - Button Component Stories (Legacy Migration)
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
+// Migrated from legacy/design/components/buttons.html
 
 export default {
     title: 'Components/Button',
     tags: ['autodocs'],
-    argTypes: {
-        variant: {
-            control: 'select',
-            options: ['primary', 'secondary', 'success', 'danger'],
-            description: 'Button color variant',
-        },
-        size: {
-            control: 'select',
-            options: ['sm', 'default', 'lg'],
-            description: 'Button size',
-        },
-        label: {
-            control: 'text',
-            description: 'Button text',
-        },
-        icon: {
-            control: 'text',
-            description: 'Bootstrap icon class (e.g., "bi-star")',
-        },
-    },
 };
 
-const createButton = ({ variant, size, label, icon }) => {
-    const variantClass = variant ? `ez-btn--${variant}` : '';
-    const sizeClass = size && size !== 'default' ? `ez-btn--${size}` : '';
-    const iconHtml = icon ? `<i class="bi ${icon} ez-btn__icon"></i>` : '';
-
-    return `
-    <button class="ez-btn ${variantClass} ${sizeClass}">
-      ${iconHtml}${label}
-    </button>
-  `;
+// Solid Buttons (iz legacy)
+export const SolidButtons = {
+    render: () => `
+    <div>
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-secondary">Secondary</button>
+      <button type="button" class="btn btn-success">Success</button>
+      <button type="button" class="btn btn-danger">Danger</button>
+      <button type="button" class="btn btn-warning">Warning</button>
+      <button type="button" class="btn btn-info">Info</button>
+      <button type="button" class="btn btn-light">Light</button>
+      <button type="button" class="btn btn-dark">Dark</button>
+      <button type="button" class="btn btn-link">Link</button>
+    </div>
+  `,
 };
 
-export const Primary = {
-    args: {
-        variant: 'primary',
-        size: 'default',
-        label: 'Primary Button',
-    },
-    render: createButton,
+// Outline Buttons (iz legacy)
+export const OutlineButtons = {
+    render: () => `
+    <div>
+      <button type="button" class="btn btn-outline-primary">Primary</button>
+      <button type="button" class="btn btn-outline-secondary">Secondary</button>
+      <button type="button" class="btn btn-outline-success">Success</button>
+      <button type="button" class="btn btn-outline-danger">Danger</button>
+      <button type="button" class="btn btn-outline-dark">Dark</button>
+    </div>
+  `,
 };
 
-export const Secondary = {
-    args: {
-        variant: 'secondary',
-        size: 'default',
-        label: 'Secondary Button',
-    },
-    render: createButton,
+// Sizes (iz legacy)
+export const Sizes = {
+    render: () => `
+    <div>
+      <button type="button" class="btn btn-primary btn-lg">Large button</button>
+      <button type="button" class="btn btn-primary">Default button</button>
+      <button type="button" class="btn btn-primary btn-sm">Small button</button>
+    </div>
+  `,
 };
 
-export const Success = {
-    args: {
-        variant: 'success',
-        size: 'default',
-        label: 'Success Button',
-    },
-    render: createButton,
+// Disabled State (iz legacy)
+export const Disabled = {
+    render: () => `
+    <div>
+      <button type="button" class="btn btn-primary" disabled>Disabled Primary</button>
+      <button type="button" class="btn btn-outline-primary" disabled>Disabled Outline</button>
+    </div>
+  `,
 };
 
-export const Danger = {
-    args: {
-        variant: 'danger',
-        size: 'default',
-        label: 'Danger Button',
-    },
-    render: createButton,
+// ez- class variants
+export const EZButton = {
+    render: () => `
+    <div class="d-flex gap-2">
+      <button class="ez-btn ez-btn--primary">Primary</button>
+      <button class="ez-btn ez-btn--secondary">Secondary</button>
+      <button class="ez-btn ez-btn--success">Success</button>
+      <button class="ez-btn ez-btn--danger">Danger</button>
+    </div>
+  `,
 };
 
-export const Small = {
-    args: {
-        variant: 'primary',
-        size: 'sm',
-        label: 'Small Button',
-    },
-    render: createButton,
-};
-
-export const Large = {
-    args: {
-        variant: 'primary',
-        size: 'lg',
-        label: 'Large Button',
-    },
-    render: createButton,
-};
-
-export const WithIcon = {
-    args: {
-        variant: 'primary',
-        size: 'default',
-        label: 'Download',
-        icon: 'bi-download',
-    },
-    render: createButton,
+export const EZSizes = {
+    render: () => `
+    <div class="d-flex gap-2">
+      <button class="ez-btn ez-btn--primary ez-btn--sm">Small</button>
+      <button class="ez-btn ez-btn--primary">Default</button>
+      <button class="ez-btn ez-btn--primary ez-btn--lg">Large</button>
+    </div>
+  `,
 };
