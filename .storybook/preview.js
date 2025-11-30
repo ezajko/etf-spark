@@ -1,9 +1,5 @@
-// Import Bootstrap CSS
-import 'bootstrap/dist/css/bootstrap.min.css';
-// Import Bootstrap Icons
-import 'bootstrap-icons/font/bootstrap-icons.css';
-// Import custom SCSS (ez- components)
-import '../src/scss/_ez-custom.scss';
+// CSS imports moved to preview-head.html (CDN)
+// This allows Storybook/Vite to work without node_modules resolution issues
 
 export default {
     parameters: {
