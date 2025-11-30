@@ -11,4 +11,17 @@ export default {
     docs: {
         autodocs: 'tag',
     },
+    async viteFinal(config) {
+        // Import custom SCSS
+        return {
+            ...config,
+            css: {
+                preprocessorOptions: {
+                    scss: {
+                        additionalData: `@import "../src/scss/_ez-custom.scss";`
+                    }
+                }
+            }
+        };
+    }
 };

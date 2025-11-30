@@ -1,5 +1,5 @@
-// CSS imports moved to preview-head.html (CDN)
-// This allows Storybook/Vite to work without node_modules resolution issues
+// Import custom SCSS (ez- components with ETF UNSA colors)
+import './custom.scss';
 
 export default {
     parameters: {
