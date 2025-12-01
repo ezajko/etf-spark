@@ -1,0 +1,192 @@
+---
+// ETF UNSA - Header Mobile (Sliding Menu)
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+---
+
+<!-- Mobile Menu Container -->
+<div id="mobile-menu-overlay" class="mobile-menu-overlay d-lg-none" role="dialog" aria-modal="true" aria-label="Mobile Menu">
+  <div class="mobile-menu-container">
+    <div class="mobile-menu-header">
+      <h5 class="m-0 text-white">Izbornik</h5>
+      <button id="mobile-menu-close" class="btn-close btn-close-white" aria-label="Close Menu"></button>
+    </div>
+    <div class="mobile-menu-viewport">
+      <ul class="mobile-menu-level active" data-level="1">
+        <li><a href="/">Početna</a></li>
+        <li class="has-children">
+          <a href="#" class="d-flex justify-content-between align-items-center">Fakultet <span class="arrow">&gt;</span></a>
+          <ul class="mobile-menu-level">
+            <li class="back-item"><a href="#" class="d-flex align-items-center"><span class="arrow me-2">&lt;</span> Nazad</a></li>
+            <li><a href="#">O nama</a></li>
+            <li><a href="#">Organizacija</a></li>
+            <li><a href="#">Dokumenti</a></li>
+            <li><a href="#">Historijat</a></li>
+          </ul>
+        </li>
+        <li class="has-children">
+          <a href="#" class="d-flex justify-content-between align-items-center">Studij <span class="arrow">&gt;</span></a>
+          <ul class="mobile-menu-level">
+            <li class="back-item"><a href="#" class="d-flex align-items-center"><span class="arrow me-2">&lt;</span> Nazad</a></li>
+            <li class="has-children">
+              <a href="#" class="d-flex justify-content-between align-items-center">Bachelor <span class="arrow">&gt;</span></a>
+              <ul class="mobile-menu-level">
+                <li class="back-item"><a href="#" class="d-flex align-items-center"><span class="arrow me-2">&lt;</span> Nazad</a></li>
+                <li><a href="#">Upis i prijem</a></li>
+                <li class="has-children">
+                  <a href="#" class="d-flex justify-content-between align-items-center">Studijski programi <span class="arrow">&gt;</span></a>
+                  <ul class="mobile-menu-level">
+                    <li class="back-item"><a href="#" class="d-flex align-items-center"><span class="arrow me-2">&lt;</span> Nazad</a></li>
+                    <li><a href="#">Automatika i elektronika</a></li>
+                    <li><a href="#">Elektroenergetika</a></li>
+                    <li class="has-children">
+                      <a href="#" class="d-flex justify-content-between align-items-center">Računarstvo i informatika <span class="arrow">&gt;</span></a>
+                      <ul class="mobile-menu-level">
+                        <li class="back-item"><a href="#" class="d-flex align-items-center"><span class="arrow me-2">&lt;</span> Nazad</a></li>
+                        <li><a href="#">Odsjek</a></li>
+                        <li class="has-children">
+                          <a href="#" class="d-flex justify-content-between align-items-center">Prva godina <span class="arrow">&gt;</span></a>
+                          <ul class="mobile-menu-level">
+                            <li class="back-item"><a href="#" class="d-flex align-items-center"><span class="arrow me-2">&lt;</span> Nazad</a></li>
+                            <li><a href="#">Matematika 1</a></li>
+                            <li><a href="#">Fizika 1</a></li>
+                            <li><a href="#">Uvod u programiranje</a></li>
+                            <li><a href="#">Osnovi elektrotehnike</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Druga godina</a></li>
+                        <li><a href="#">Treća godina</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#">Telekomunikacije</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="has-children">
+              <a href="#" class="d-flex justify-content-between align-items-center">Magistarski <span class="arrow">&gt;</span></a>
+              <ul class="mobile-menu-level">
+                <li class="back-item"><a href="#" class="d-flex align-items-center"><span class="arrow me-2">&lt;</span> Nazad</a></li>
+                <li><a href="#">Upis</a></li>
+                <li><a href="#">Programi</a></li>
+              </ul>
+            </li>
+            <li><a href="#">Doktorski</a></li>
+            <li><a href="#">Stručni</a></li>
+          </ul>
+        </li>
+        <li class="has-children">
+          <a href="#" class="d-flex justify-content-between align-items-center">Odsjeci <span class="arrow">&gt;</span></a>
+          <ul class="mobile-menu-level">
+            <li class="back-item"><a href="#" class="d-flex align-items-center"><span class="arrow me-2">&lt;</span> Nazad</a></li>
+            <li><a href="#">Automatika i elektronika</a></li>
+            <li><a href="#">Elektroenergetika</a></li>
+            <li><a href="#">Računarstvo i informatika</a></li>
+            <li><a href="#">Telekomunikacije</a></li>
+          </ul>
+        </li>
+        <li><a href="#">Istraživanje i saradnja</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const navbarToggler = document.querySelector('.navbar-toggler'); // This is in HeaderBrand.astro
+    const menuLevels = document.querySelectorAll('.mobile-menu-level');
+
+    // Open Menu
+    if (navbarToggler) {
+        navbarToggler.addEventListener('click', function () {
+            mobileMenuOverlay?.classList.add('active');
+        });
+    }
+
+    // Close Menu
+    function closeMenu() {
+        mobileMenuOverlay?.classList.remove('active');
+        // Reset to level 1
+        setTimeout(() => {
+            menuLevels.forEach(level => {
+                level.classList.remove('active');
+                if ((level as HTMLElement).dataset.level === '1') {
+                    level.classList.add('active');
+                }
+            });
+        }, 300);
+    }
+
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', closeMenu);
+    }
+
+    if (mobileMenuOverlay) {
+        mobileMenuOverlay.addEventListener('click', function (e) {
+            if (e.target === mobileMenuOverlay) {
+                closeMenu();
+            }
+        });
+    }
+
+    // Navigation Logic
+    document.querySelectorAll('.has-children > a').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const parentLi = this.parentElement;
+            const subMenu = parentLi?.querySelector('.mobile-menu-level');
+            if (subMenu) {
+                subMenu.classList.add('active');
+            }
+        });
+    });
+
+    document.querySelectorAll('.back-item a').forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault();
+            const currentLevel = this.closest('.mobile-menu-level');
+            currentLevel?.classList.remove('active');
+        });
+    });
+
+    // Keyboard Support (Escape Key)
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            // Close Mobile Menu
+            if (mobileMenuOverlay && mobileMenuOverlay.classList.contains('active')) {
+                closeMenu();
+                (navbarToggler as HTMLElement)?.focus(); // Return focus to toggler
+            }
+        }
+    });
+
+    // Focus Trap for Mobile Menu
+    if (mobileMenuOverlay) {
+        const focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
+
+        mobileMenuOverlay.addEventListener('keydown', function (e) {
+            if (!mobileMenuOverlay.classList.contains('active')) return;
+
+            const focusableContent = mobileMenuOverlay.querySelectorAll(focusableElementsString);
+            const firstFocusableElement = focusableContent[0] as HTMLElement;
+            const lastFocusableElement = focusableContent[focusableContent.length - 1] as HTMLElement;
+
+            if (e.key === 'Tab') {
+                if (e.shiftKey) { // Shift + Tab
+                    if (document.activeElement === firstFocusableElement) {
+                        lastFocusableElement.focus();
+                        e.preventDefault();
+                    }
+                } else { // Tab
+                    if (document.activeElement === lastFocusableElement) {
+                        firstFocusableElement.focus();
+                        e.preventDefault();
+                    }
+                }
+            }
+        });
+    }
+  });
+</script>

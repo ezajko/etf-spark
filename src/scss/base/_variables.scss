@@ -26,6 +26,7 @@ $ez-info-color: #0dcaf0;
 // Text Colors
 $ez-text-color: #333333;
 $ez-text-light: #555555;
+$ez-text-muted: #6c757d;
 
 // Background Colors
 $ez-bg-color: #ffffff;
@@ -52,8 +53,14 @@ $ez-spacing-xxl: 3rem;
 // ======================
 // Typography
 // ======================
-$ez-font-family-sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-$ez-font-family-mono: 'Courier New', monospace;
+
+// Font Families - IBM Plex with system fallbacks
+$ez-font-family-sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+$ez-font-family-serif: 'IBM Plex Serif', 'Georgia', 'Times New Roman', serif;
+$ez-font-family-mono: 'IBM Plex Mono', 'Courier New', monospace;
+
+// Default font (sans-serif)
+$ez-font-family-base: $ez-font-family-sans;
 
 $ez-font-size-base: 1rem;
 $ez-font-size-sm: 0.875rem;
@@ -64,6 +71,7 @@ $ez-font-weight-light: 300;
 $ez-font-weight-normal: 400;
 $ez-font-weight-semibold: 600;
 $ez-font-weight-bold: 700;
+$ez-font-weight-medium: 500;
 
 $ez-line-height-base: 1.5;
 $ez-line-height-tight: 1.25;

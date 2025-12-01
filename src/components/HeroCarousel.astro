@@ -1,0 +1,96 @@
+---
+// ETF UNSA - Hero Carousel
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+---
+
+<div id="heroCarousel" class="carousel slide ez-hero-carousel" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <!-- Slide 1: Standard with Image -->
+    <div class="carousel-item active">
+      <div class="ez-hero" style="background-image: url('/images/news_1.png');">
+        <div class="ez-hero__overlay"></div>
+        <div class="ez-hero__content container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+              <h1 class="ez-hero__title text-white">Dobrodošli na ETF</h1>
+              <p class="ez-hero__subtitle text-white-50">
+                Vodeća visokoškolska ustanova u oblasti elektrotehnike i računarstva u Bosni i Hercegovini.
+              </p>
+              <div class="ez-hero__cta">
+                <a href="/studiji" class="btn btn-light btn-lg rounded-0 text-uppercase fw-bold px-4 py-3">
+                  <i class="bi bi-book me-2"></i> Studijski programi
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 2: Dark Theme (No Image) -->
+    <div class="carousel-item">
+      <div class="ez-hero bg-dark text-white">
+        <!-- No overlay needed for solid color, or use a subtle gradient -->
+        <div class="ez-hero__content container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <span class="badge bg-warning text-dark mb-3 rounded-0 px-3 py-2">NOVO</span>
+              <h1 class="ez-hero__title">Upis 2025/2026</h1>
+              <p class="ez-hero__subtitle">
+                Konkurs za upis studenata u prvu godinu prvog ciklusa studija je otvoren. Pridružite se generaciji budućnosti.
+              </p>
+              <div class="ez-hero__cta">
+                <a href="/upis" class="btn btn-primary btn-lg rounded-0 text-uppercase fw-bold px-4 py-3">
+                  <i class="bi bi-pencil-square me-2"></i> Apliciraj odmah
+                </a>
+                <a href="/informacije" class="btn btn-outline-light btn-lg rounded-0 text-uppercase fw-bold px-4 py-3 ms-3">
+                  Saznaj više
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Slide 3: Light/Info Theme -->
+    <div class="carousel-item">
+      <div class="ez-hero bg-light text-dark">
+        <div class="ez-hero__content container">
+          <div class="row align-items-center">
+            <div class="col-lg-6 text-start">
+              <h1 class="ez-hero__title text-primary mb-3">Nauka i Istraživanje</h1>
+              <p class="ez-hero__subtitle text-secondary mb-4">
+                Posvećeni smo izvrsnosti u istraživanju. Naši laboratoriji su opremljeni najsavremenijom tehnologijom za razvoj inovativnih rješenja.
+              </p>
+              <div class="ez-hero__cta m-0">
+                <a href="/istrazivanje" class="btn btn-outline-primary btn-lg rounded-0 text-uppercase fw-bold px-4 py-3">
+                  Projekti i saradnja <i class="bi bi-arrow-right ms-2"></i>
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-6 d-none d-lg-block">
+               <!-- Using an icon or illustration here instead of background image -->
+               <i class="bi bi-cpu text-primary opacity-25" style="font-size: 10rem;"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>

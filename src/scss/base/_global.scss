@@ -1,0 +1,38 @@
+// ETF UNSA - Base Global Styles
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+// ======================
+// Global Body Styles
+// ======================
+body {
+    font-family: $ez-font-family-base;
+    font-size: $ez-font-size-base;
+    font-weight: $ez-font-weight-normal;
+    line-height: $ez-line-height-base;
+    color: $ez-text-color;
+    background-color: $ez-bg-color;
+}
+
+// ======================
+// Typography Utilities
+// ======================
+.font-sans {
+    font-family: $ez-font-family-sans !important;
+}
+
+.font-serif {
+    font-family: $ez-font-family-serif !important;
+}
+
+.font-mono {
+    font-family: $ez-font-family-mono !important;
+}
+
+// Code elements default to mono
+code,
+pre,
+kbd,
+samp {
+    font-family: $ez-font-family-mono;
+}

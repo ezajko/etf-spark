@@ -1,0 +1,88 @@
+---
+// ETF UNSA - Header Slim Mobile (Secondary Menu)
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+---
+
+<div class="offcanvas offcanvas-top text-bg-dark" tabindex="-1" id="slimMobileMenu" aria-labelledby="slimMobileMenuLabel" style="height: auto; min-height: 50vh;">
+  <div class="offcanvas-header border-bottom border-secondary">
+    <h5 class="offcanvas-title" id="slimMobileMenuLabel">Brzi linkovi</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body p-0">
+    <div class="accordion accordion-flush bg-dark" id="accordionSlimMenu">
+      
+      <!-- Univerzitet Accordion -->
+      <div class="accordion-item bg-dark text-white">
+        <h2 class="accordion-header" id="flush-headingOne">
+          <button class="accordion-button collapsed bg-dark text-white shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+            Univerzitet
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionSlimMenu">
+          <div class="accordion-body p-0">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item bg-dark border-secondary"><a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3">UNSA</a></li>
+              <li class="list-group-item bg-dark border-secondary"><a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3">eUNSA</a></li>
+              <li class="list-group-item bg-dark border-secondary"><a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3">International</a></li>
+              <li class="list-group-item bg-dark border-secondary"><a href="/design/components/index.html" class="text-white-50 text-decoration-none d-block py-2 ps-3">Dizajn Sistem</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Servisi Accordion -->
+      <div class="accordion-item bg-dark text-white">
+        <h2 class="accordion-header" id="flush-headingTwo">
+          <button class="accordion-button collapsed bg-dark text-white shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+            Servisi
+          </button>
+        </h2>
+        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionSlimMenu">
+          <div class="accordion-body p-0">
+             <ul class="list-group list-group-flush">
+              <li class="list-group-item bg-dark border-secondary"><a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3">Courseware (C2)</a></li>
+              <li class="list-group-item bg-dark border-secondary"><a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3">Courseware (C3)</a></li>
+              <li class="list-group-item bg-dark border-secondary"><a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3">Webmail</a></li>
+              <li class="list-group-item bg-dark border-secondary"><a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3">Account</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+       <!-- Language (Simple List Item) -->
+       <div class="accordion-item bg-dark text-white border-bottom border-secondary">
+         <div class="p-3 d-flex align-items-center justify-content-between">
+            <span class="fw-bold">Jezik</span>
+            <div>
+                <a href="#" class="text-white text-decoration-none fw-bold me-2">BS</a>
+                <span class="text-secondary">|</span>
+                <a href="#" class="text-white-50 text-decoration-none ms-2">EN</a>
+            </div>
+         </div>
+       </div>
+
+       <!-- Search Box -->
+       <div class="p-3">
+         <form class="d-flex" role="search">
+           <div class="input-group">
+             <span class="input-group-text bg-dark border-secondary text-white-50"><i class="bi bi-search"></i></span>
+             <input class="form-control bg-dark border-secondary text-white shadow-none" type="search" placeholder="Pretraga..." aria-label="Search">
+           </div>
+         </form>
+       </div>
+
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Custom overrides for dark accordion */
+  .accordion-button::after {
+    filter: invert(1);
+  }
+  .accordion-button:not(.collapsed) {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+</style>

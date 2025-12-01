@@ -1,10 +1,14 @@
-// ETF UNSA Design System - Main SCSS Entry Point
+// ETF UNSA Custom Styles
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
+
+// Fonts (CDN)
+@import 'base/fonts';
 
 // Base
 @import 'base/variables';
 @import 'base/mixins';
+@import 'base/global';
 
 // Components (ez- prefixed)
 @import 'components/ez-button';
@@ -12,6 +16,7 @@
 @import 'components/ez-form';
 @import 'components/ez-hero';
 @import 'components/ez-navbar';
+@import 'components/ez-header';
 
 // Layouts (when created)
 // @import 'layouts/header';

@@ -14,6 +14,7 @@ services:
       - ./src:/app/src:z
       - ./public:/app/public:z
       - ./astro.config.mjs:/app/astro.config.mjs:z
+      - ./package.json:/app/package.json:z
     environment:
       - NODE_ENV=development
     command: pnpm run dev --host

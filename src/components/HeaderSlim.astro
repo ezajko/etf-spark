@@ -1,0 +1,43 @@
+---
+// ETF UNSA - Header Slim (Top Bar)
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import UniBrand from './header/UniBrand.astro';
+import UniLinks from './header/UniLinks.astro';
+import ServiceLinks from './header/ServiceLinks.astro';
+import LangLinks from './header/LangLinks.astro';
+import HeaderSlimMobile from './HeaderSlimMobile.astro';
+---
+
+<div class="ez-header-slim-wrapper">
+  <div class="container">
+    <div class="row align-items-center">
+      <!-- Left: University Brand -->
+      <UniBrand />
+      
+      <!-- Right: Links & Language (Desktop) -->
+      <div class="col-6 col-md-8 d-none d-lg-block">
+        <div class="ez-header-slim-right-zone d-flex justify-content-end align-items-center flex-wrap">
+          <span class="text-white-50 mx-2">|</span>
+          <UniLinks />
+          <span class="text-white-50 mx-2">|</span>
+          <ServiceLinks />
+          <span class="text-white-50 mx-2">|</span>
+          <LangLinks />
+          <span class="text-white-50 mx-2">|</span>
+        </div>
+      </div>
+
+      <!-- Right: Mobile Toggle (Mobile) -->
+      <div class="col-6 d-lg-none text-end">
+        <button class="btn btn-link text-white p-0 text-decoration-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#slimMobileMenu" aria-controls="slimMobileMenu">
+          <i class="bi bi-grid-3x3-gap-fill fs-4"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile Menu Component -->
+<HeaderSlimMobile />
