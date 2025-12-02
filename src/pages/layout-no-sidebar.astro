@@ -1,0 +1,38 @@
+---
+// ETF UNSA - No Sidebar Layout
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import PageLayout from '../layouts/PageLayout.astro';
+import LoremIpsum from '../components/LoremIpsum.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Layouts', href: '#' },
+  { label: 'Bez Sidebara', href: '#', active: true }
+];
+---
+
+<PageLayout title="Bez Sidebara | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+  <!-- Banner Slot -->
+  <section slot="banner" class="ez-hero ez-hero--small bg-info text-dark">
+    <div class="ez-hero__content container">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1 class="ez-hero__title mb-2">Bez Sidebara</h1>
+          <p class="ez-hero__subtitle text-dark-50">Primjer stranice bez sidebara (full width sadržaj).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Grid -->
+  <div class="col-12">
+    <h2 class="mb-4">Glavni Sadržaj</h2>
+    <p class="lead">
+      Ovaj layout koristi punu širinu kontejnera (ili centrirani uži stupac) za fokus na sadržaj bez distrakcija sa strane.
+    </p>
+    <hr class="my-5">
+    <LoremIpsum />
+  </div>
+</PageLayout>

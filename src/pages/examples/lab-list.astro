@@ -1,0 +1,75 @@
+---
+// ETF UNSA - Lab List Example
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Odsjeci', href: '#' },
+  { label: 'Računarstvo i informatika', href: '/examples/department' },
+  { label: 'Laboratorije', href: '#', active: true }
+];
+
+const labs = [
+  {
+    name: 'Laboratorija za Vještačku Inteligenciju (AI Lab)',
+    location: 'Sala 3-14',
+    focus: 'Machine Learning, Computer Vision, NLP',
+    equipment: 'GPU Cluster, Robots'
+  },
+  {
+    name: 'Laboratorija za Softverski Inženjering',
+    location: 'Sala 3-15',
+    focus: 'Agile Development, Software Testing, DevOps',
+    equipment: 'Development Workstations, CI/CD Servers'
+  },
+  {
+    name: 'Laboratorija za Računarsku Grafiku',
+    location: 'Sala 3-16',
+    focus: '3D Modeling, Rendering, VR/AR',
+    equipment: 'VR Headsets, High-end GPUs'
+  },
+  {
+    name: 'Laboratorija za Baze Podataka',
+    location: 'Sala 3-17',
+    focus: 'Big Data, Data Mining, NoSQL',
+    equipment: 'Database Servers'
+  }
+];
+---
+
+<PageLayout title="Laboratorije | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+  <div class="col-12">
+    <h1 class="mb-4">Laboratorije i Istraživanje</h1>
+    <p class="lead mb-5">Naše laboratorije su centri izvrsnosti za istraživanje i praktičnu nastavu, opremljene savremenom tehnologijom.</p>
+    
+    <div class="row g-4">
+      {labs.map(lab => (
+        <div class="col-md-6">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-start mb-3">
+                <h4 class="card-title mb-0">{lab.name}</h4>
+                <span class="badge bg-light text-dark border"><i class="bi bi-geo-alt me-1"></i> {lab.location}</span>
+              </div>
+              
+              <div class="mb-3">
+                <small class="text-muted text-uppercase fw-bold">Fokus istraživanja</small>
+                <p class="mb-0">{lab.focus}</p>
+              </div>
+              
+              <div class="mb-4">
+                <small class="text-muted text-uppercase fw-bold">Oprema</small>
+                <p class="mb-0">{lab.equipment}</p>
+              </div>
+              
+              <a href="#" class="btn btn-sm btn-outline-primary">Posjeti web stranicu laboratorije <i class="bi bi-box-arrow-up-right ms-1"></i></a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</PageLayout>

@@ -1,0 +1,59 @@
+---
+// ETF UNSA - Left Menu + Right Sidebar Layout
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import PageLayout from '../layouts/PageLayout.astro';
+import SideMenu from '../components/SideMenu.astro';
+import LoremIpsum from '../components/LoremIpsum.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Layouts', href: '#' },
+  { label: 'Lijevi Meni + Desni Sidebar', href: '#', active: true }
+];
+---
+
+<PageLayout title="Lijevi Meni + Desni Sidebar | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+  <!-- Banner Slot -->
+  <section slot="banner" class="ez-hero ez-hero--small bg-primary text-white">
+    <div class="ez-hero__content container">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1 class="ez-hero__title mb-2">Lijevi Meni + Desni Sidebar</h1>
+          <p class="ez-hero__subtitle text-white-50">Primjer stranice sa menijem lijevo i sidebarom desno.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Left Column: Side Menu -->
+  <div class="col-lg-3 mb-4 mb-lg-0 order-2 order-lg-1 d-none d-lg-block">
+    <SideMenu />
+  </div>
+
+  <!-- Center Column: Main Content -->
+  <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0">
+    <h2 class="mb-4">Glavni Sadržaj</h2>
+    <p class="lead">
+      Ovaj layout kombinuje navigaciju na lijevoj strani sa dodatnim informacijama na desnoj strani.
+    </p>
+    <hr class="my-4">
+    <LoremIpsum />
+  </div>
+
+  <!-- Right Column: Generic Sidebar -->
+  <div class="col-lg-3 order-3 order-lg-3">
+    <div class="card border-0 shadow-sm">
+      <div class="card-header bg-white border-bottom fw-bold py-3">
+        Desni Info
+      </div>
+      <div class="card-body">
+        <p class="card-text small">
+          Dodatne informacije, linkovi ili widgeti mogu se smjestiti ovdje.
+        </p>
+        <a href="#" class="btn btn-sm btn-outline-primary w-100">Akcija</a>
+      </div>
+    </div>
+  </div>
+</PageLayout>

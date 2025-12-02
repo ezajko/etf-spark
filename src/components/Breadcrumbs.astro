@@ -1,0 +1,29 @@
+---
+// ETF UNSA - Breadcrumbs Component
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+interface Props {
+  items: {
+    label: string;
+    href: string;
+    active?: boolean;
+  }[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav aria-label="breadcrumb" class="mb-4">
+  <ol class="breadcrumb">
+    {items.map((item, index) => (
+      <li class={`breadcrumb-item ${item.active ? 'active' : ''}`} aria-current={item.active ? 'page' : undefined}>
+        {item.active ? (
+          item.label
+        ) : (
+          <a href={item.href} class="text-decoration-none">{item.label}</a>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

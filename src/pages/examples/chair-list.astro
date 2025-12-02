@@ -1,0 +1,72 @@
+---
+// ETF UNSA - Chair List Example
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Odsjeci', href: '#' },
+  { label: 'Računarstvo i informatika', href: '/examples/department' },
+  { label: 'Katedre', href: '#', active: true }
+];
+
+const chairs = [
+  {
+    name: 'Katedra za računarstvo',
+    head: 'Prof. Dr. Vedran Ljubović',
+    description: 'Fokus na algoritme, strukture podataka, programske jezike i softverski inženjering.',
+    members: 15
+  },
+  {
+    name: 'Katedra za informatiku',
+    head: 'Prof. Dr. Dženana Đonko',
+    description: 'Istraživanje u oblastima informacionih sistema, baza podataka, web tehnologija i vještačke inteligencije.',
+    members: 12
+  }
+];
+---
+
+<PageLayout title="Katedre | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+  <div class="col-12">
+    <h1 class="mb-4">Katedre Odsjeka</h1>
+    <p class="lead mb-5">Odsjek za računarstvo i informatiku organizovan je kroz dvije katedre koje pokrivaju ključne oblasti računarskih nauka.</p>
+    
+    <div class="row g-4">
+      {chairs.map(chair => (
+        <div class="col-md-6">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <h3 class="card-title mb-3">{chair.name}</h3>
+              <p class="card-text text-muted mb-4">{chair.description}</p>
+              
+              <div class="d-flex align-items-center mb-3">
+                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                  <i class="bi bi-person text-primary"></i>
+                </div>
+                <div>
+                  <small class="text-muted d-block">Šef katedre</small>
+                  <span class="fw-bold">{chair.head}</span>
+                </div>
+              </div>
+              
+              <div class="d-flex align-items-center">
+                <div class="bg-light rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                  <i class="bi bi-people text-primary"></i>
+                </div>
+                <div>
+                  <small class="text-muted d-block">Članova</small>
+                  <span class="fw-bold">{chair.members}</span>
+                </div>
+              </div>
+              
+              <hr class="my-4">
+              <a href="/examples/staff-list" class="btn btn-outline-primary w-100">Pogledaj članove katedre</a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</PageLayout>

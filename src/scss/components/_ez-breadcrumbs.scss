@@ -1,0 +1,54 @@
+// ETF UNSA - Breadcrumbs Styles
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+.ez-page-breadcrumbs {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa; // Light gray background, adjust as needed
+    border-bottom: 1px solid #e9ecef;
+
+    .container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    nav {
+        margin-bottom: 0 !important; // Override Bootstrap mb-4
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .breadcrumb {
+        margin-bottom: 0;
+        font-size: 0.875rem; // 14px
+    }
+
+    .breadcrumb-item {
+        display: flex;
+        align-items: center;
+
+        a {
+            color: #6c757d;
+            text-decoration: none;
+            transition: color 0.2s ease;
+
+            &:hover {
+                color: #0d6efd; // Primary color
+            }
+        }
+
+        &.active {
+            color: #212529;
+            font-weight: 600;
+        }
+
+        // Custom separator if needed, otherwise Bootstrap default is used
+        // + .breadcrumb-item::before {
+        //   content: ">";
+        // }
+    }
+}

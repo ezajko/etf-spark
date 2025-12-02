@@ -1,0 +1,76 @@
+---
+// ETF UNSA - Staff List Example
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import PageLayout from '../../layouts/PageLayout.astro';
+import SideMenu from '../../components/SideMenu.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Odsjeci', href: '#' },
+  { label: 'Računarstvo i informatika', href: '#' },
+  { label: 'Osoblje', href: '#', active: true }
+];
+
+const staff = [
+  { name: 'Dr. Ime Prezime', title: 'Redovni profesor', email: 'ime.prezime@etf.unsa.ba' },
+  { name: 'Dr. Ime2 Prezime2', title: 'Vanredni profesor', email: 'ime2.prezime2@etf.unsa.ba' },
+  { name: 'Dr. Ime3 Prezime3', title: 'Docent', email: 'ime3.prezime3@etf.unsa.ba' },
+  { name: 'Mr. Ime4 Prezime4', title: 'Viši asistent', email: 'ime4.prezime4@etf.unsa.ba' },
+  { name: 'Ime5 Prezime5', title: 'Asistent', email: 'ime5.prezime5@etf.unsa.ba' },
+  { name: 'Ime6 Prezime6', title: 'Asistent', email: 'ime6.prezime6@etf.unsa.ba' },
+];
+---
+
+<PageLayout title="Osoblje | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+  <!-- Left Column: Side Menu -->
+  <div class="col-lg-3 mb-4 mb-lg-0 d-none d-lg-block">
+    <SideMenu />
+  </div>
+
+  <!-- Main Content -->
+  <div class="col-lg-9">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1 class="h2 mb-0">Osoblje Odsjeka</h1>
+      
+      <!-- Search/Filter -->
+      <div class="d-flex gap-2">
+        <input type="text" class="form-control form-control-sm" placeholder="Pretraži osoblje...">
+        <select class="form-select form-select-sm" style="width: auto;">
+          <option>Sva zvanja</option>
+          <option>Profesori</option>
+          <option>Asistenti</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      {staff.map(person => (
+        <div class="col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm text-center p-3">
+            <div class="mb-3">
+              <div class="bg-light rounded-circle d-inline-flex align-items-center justify-content-center text-secondary" style="width: 100px; height: 100px; font-size: 2.5rem;">
+                <i class="bi bi-person"></i>
+              </div>
+            </div>
+            <h5 class="card-title mb-1"><a href="/examples/staff-profile" class="text-decoration-none text-dark stretched-link">{person.name}</a></h5>
+            <p class="text-muted small mb-2">{person.title}</p>
+            <p class="small text-primary mb-0"><i class="bi bi-envelope me-1"></i> {person.email}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <!-- Pagination -->
+    <nav aria-label="Page navigation" class="mt-5">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled"><a class="page-link" href="#">Prethodna</a></li>
+        <li class="page-item active"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Sljedeća</a></li>
+      </ul>
+    </nav>
+  </div>
+</PageLayout>

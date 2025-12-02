@@ -1,0 +1,130 @@
+---
+// ETF UNSA - Side Menu Component (Multi-level)
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+---
+
+<div class="card border-0 bg-light">
+  <div class="card-body p-2">
+    <h5 class="card-title p-2 mb-0">Struktura Fakulteta</h5>
+    <ul class="nav flex-column nav-tree">
+      <!-- Level 1 -->
+      <li class="nav-item">
+        <a class="nav-link" href="#">Početna</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#level1-1" data-bs-toggle="collapse" aria-expanded="true">
+          Odsjeci
+          <i class="bi bi-chevron-right"></i>
+        </a>
+        <div class="collapse show" id="level1-1">
+          <ul class="nav flex-column">
+            <!-- Level 2 -->
+            <li class="nav-item">
+              <a class="nav-link active" href="#level2-1" data-bs-toggle="collapse" aria-expanded="true">
+                Računarstvo i informatika
+                <i class="bi bi-chevron-right"></i>
+              </a>
+              <div class="collapse show" id="level2-1">
+                <ul class="nav flex-column">
+                  <!-- Level 3 -->
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Osoblje</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="#level3-1" data-bs-toggle="collapse" aria-expanded="true">
+                      Predmeti
+                      <i class="bi bi-chevron-right"></i>
+                    </a>
+                    <div class="collapse show" id="level3-1">
+                      <ul class="nav flex-column">
+                        <!-- Level 4 -->
+                        <li class="nav-item">
+                          <a class="nav-link" href="#">Prva godina</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link active" href="#level4-1" data-bs-toggle="collapse" aria-expanded="true">
+                            Druga godina
+                            <i class="bi bi-chevron-right"></i>
+                          </a>
+                          <div class="collapse show" id="level4-1">
+                            <ul class="nav flex-column">
+                              <!-- Level 5 -->
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">Algoritmi i strukture podataka</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link active" href="#">Razvoj softvera</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="#">Baze podataka</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Automatika i elektronika</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Elektroenergetika</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Telekomunikacije</a>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Kontakt</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  /* Custom styles for nested navigation */
+  .nav-tree .nav-link {
+    color: var(--bs-body-color);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+  }
+
+  .nav-tree .nav-link:hover {
+    color: var(--bs-primary);
+    background-color: rgba(var(--bs-primary-rgb), 0.05);
+  }
+
+  .nav-tree .nav-link.active {
+    color: var(--bs-primary);
+    font-weight: 600;
+    background-color: rgba(var(--bs-primary-rgb), 0.1);
+  }
+
+  /* Indentation for nested levels */
+  .nav-tree .nav-item .nav {
+    padding-left: 1rem;
+    border-left: 1px solid #e9ecef;
+    margin-left: 0.5rem;
+  }
+
+  .nav-tree .nav-link[data-bs-toggle="collapse"] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav-tree .nav-link .bi-chevron-right {
+    font-size: 0.8em;
+    transition: transform 0.2s;
+  }
+
+  .nav-tree .nav-link[data-bs-toggle="collapse"][aria-expanded="true"] .bi-chevron-right {
+    transform: rotate(90deg);
+  }
+</style>

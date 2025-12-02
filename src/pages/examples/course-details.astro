@@ -1,0 +1,157 @@
+---
+// ETF UNSA - Course Details Example
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import PageLayout from '../../layouts/PageLayout.astro';
+import SideMenu from '../../components/SideMenu.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Odsjeci', href: '#' },
+  { label: 'Računarstvo i informatika', href: '#' },
+  { label: 'Predmeti', href: '#' },
+  { label: 'Algoritmi i strukture podataka', href: '#', active: true }
+];
+---
+
+<PageLayout title="Algoritmi i strukture podataka | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+  <!-- Banner Slot -->
+  <section slot="banner" class="ez-hero ez-hero--small bg-dark text-white">
+    <div class="ez-hero__content container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <span class="badge bg-primary mb-2">Obavezni predmet</span>
+          <h1 class="ez-hero__title mb-2">Algoritmi i strukture podataka</h1>
+          <p class="ez-hero__subtitle text-white-50">RI-2-1 / ECTS: 6.0</p>
+        </div>
+        <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+           <a href="#" class="btn btn-outline-light">Courseware (c2)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Left Column: Side Menu -->
+  <div class="col-lg-3 mb-4 mb-lg-0 d-none d-lg-block">
+    <SideMenu />
+    
+    <div class="card border-0 shadow-sm mt-4">
+      <div class="card-header bg-white border-bottom fw-bold py-3">
+        Nastavno osoblje
+      </div>
+      <div class="list-group list-group-flush">
+        <div class="list-group-item">
+          <small class="text-muted d-block">Predavač</small>
+          <a href="/examples/staff-profile" class="text-decoration-none fw-bold text-dark">Dr. Ime Prezime</a>
+        </div>
+        <div class="list-group-item">
+          <small class="text-muted d-block">Asistent</small>
+          <a href="#" class="text-decoration-none text-dark">Mr. Ime Asistenta</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="col-lg-9">
+    <div class="mb-5">
+      <h3 class="mb-3">O predmetu</h3>
+      <p>Cilj predmeta je upoznavanje studenata sa osnovnim i naprednim strukturama podataka i algoritmima za njihovu obradu. Studenti će naučiti analizirati složenost algoritama i odabrati optimalnu strukturu podataka za rješavanje konkretnih problema.</p>
+      
+      <div class="row mt-4 g-3">
+        <div class="col-md-4">
+          <div class="p-3 border rounded bg-light h-100">
+            <h6 class="fw-bold"><i class="bi bi-clock me-2"></i>Opterećenje</h6>
+            <ul class="list-unstyled small mb-0 mt-2">
+              <li>Predavanja: 3h</li>
+              <li>Tutorijali: 2h</li>
+              <li>Laboratorije: 2h</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 border rounded bg-light h-100">
+            <h6 class="fw-bold"><i class="bi bi-book me-2"></i>Literatura</h6>
+            <ul class="list-unstyled small mb-0 mt-2">
+              <li>Introduction to Algorithms (Cormen et al.)</li>
+              <li>Algorithms (Sedgewick)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 border rounded bg-light h-100">
+            <h6 class="fw-bold"><i class="bi bi-check-circle me-2"></i>Ishodi učenja</h6>
+            <ul class="list-unstyled small mb-0 mt-2">
+              <li>Analiza složenosti</li>
+              <li>Implementacija struktura</li>
+              <li>Rješavanje problema</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-5">
+      <h3 class="mb-4">Silabus</h3>
+      <div class="accordion" id="syllabusAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#week1" aria-expanded="true">
+              Sedmica 1-3: Osnovni koncepti i linearne strukture
+            </button>
+          </h2>
+          <div id="week1" class="accordion-collapse collapse show" data-bs-parent="#syllabusAccordion">
+            <div class="accordion-body">
+              Uvod u analizu algoritama (Big O notacija). Nizovi, vezane liste, stekovi i redovi. Implementacija i primjena.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#week4">
+              Sedmica 4-7: Stabla i grafovi
+            </button>
+          </h2>
+          <div id="week4" class="accordion-collapse collapse" data-bs-parent="#syllabusAccordion">
+            <div class="accordion-body">
+              Binarna stabla pretrage, AVL stabla, B-stabla. Predstavljanje grafova, obilazak grafova (BFS, DFS), najkraći putevi.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#week8">
+              Sedmica 8-12: Sortiranje i pretraživanje
+            </button>
+          </h2>
+          <div id="week8" class="accordion-collapse collapse" data-bs-parent="#syllabusAccordion">
+            <div class="accordion-body">
+              Algoritmi sortiranja (Merge Sort, Quick Sort, Heap Sort). Hash tabele i rješavanje kolizija.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="mb-5">
+      <h3 class="mb-4">Obavještenja</h3>
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Rezultati prvog parcijalnog ispita</h5>
+            <small>Prije 2 dana</small>
+          </div>
+          <p class="mb-1">Rezultati su objavljeni na c2. Uvid u radove je u četvrtak.</p>
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+          <div class="d-flex w-100 justify-content-between">
+            <h5 class="mb-1">Promjena termina laboratorijskih vježbi</h5>
+            <small>Prije 1 sedmicu</small>
+          </div>
+          <p class="mb-1">Laboratorijske vježbe za grupu 3 će se održati u sali 0-01.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</PageLayout>

@@ -1,0 +1,140 @@
+---
+// ETF UNSA - Department Page Example (Organizational Unit)
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import PageLayout from '../../layouts/PageLayout.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Odsjeci', href: '#' },
+  { label: 'Odsjek za računarstvo i informatiku', href: '#', active: true }
+];
+---
+
+<PageLayout title="Odsjek za računarstvo i informatiku | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+  <!-- Banner Slot -->
+  <section slot="banner" class="ez-hero ez-hero--small bg-dark text-white">
+    <div class="ez-hero__content container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h1 class="ez-hero__title mb-2">Odsjek za računarstvo i informatiku</h1>
+          <p class="ez-hero__subtitle text-white-50">Organizacioni dio Elektrotehničkog fakulteta</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Left Sidebar (Quick Links) -->
+  <div class="col-lg-3 order-lg-1 mb-4 mb-lg-0">
+    <div class="card border-0 shadow-sm">
+      <div class="card-header bg-primary text-white fw-bold py-3">
+        <i class="bi bi-link-45deg me-2"></i> Brzi linkovi
+      </div>
+        <a href="/examples/news-list" class="list-group-item list-group-item-action d-flex align-items-center py-3">
+          <i class="bi bi-newspaper me-3 text-primary"></i> Aktuelnosti
+        </a>
+        <a href="/examples/staff-list" class="list-group-item list-group-item-action d-flex align-items-center py-3">
+          <i class="bi bi-people me-3 text-primary"></i> Osoblje
+        </a>
+        <a href="/examples/chair-list" class="list-group-item list-group-item-action d-flex align-items-center py-3">
+          <i class="bi bi-diagram-3 me-3 text-primary"></i> Katedre
+        </a>
+        <a href="/examples/lab-list" class="list-group-item list-group-item-action d-flex align-items-center py-3">
+          <i class="bi bi-flask me-3 text-primary"></i> Laboratorije i istraživačke grupe
+        </a>
+        <a href="/examples/study-program-list" class="list-group-item list-group-item-action d-flex align-items-center py-3">
+          <i class="bi bi-mortarboard me-3 text-primary"></i> Studijski programi
+        </a>
+        <a href="/examples/course-list" class="list-group-item list-group-item-action d-flex align-items-center py-3">
+          <i class="bi bi-book me-3 text-primary"></i> Predmeti
+        </a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="col-md-9">
+    <div class="mb-5">
+      <h2 class="mb-4">O Odsjeku</h2>
+      <p class="lead">Odsjek za računarstvo i informatiku je najveći odsjek na Elektrotehničkom fakultetu u Sarajevu, posvećen obrazovanju vrhunskih stručnjaka u oblasti softverskog inženjeringa, vještačke inteligencije i informacionih sistema.</p>
+      <p>Naša misija je pružiti studentima teoretska znanja i praktične vještine potrebne za uspješnu karijeru u dinamičnom svijetu tehnologije. Kroz saradnju sa industrijom i učešće u međunarodnim projektima, osiguravamo da je naš nastavni plan i program usklađen sa najnovijim trendovima.</p>
+    </div>
+
+    <div class="row mb-5">
+      <div class="col-md-6">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body p-4">
+            <h4 class="card-title mb-3">Rukovodstvo Odsjeka</h4>
+            <div class="d-flex align-items-center mb-3">
+              <div class="bg-secondary rounded-circle me-3" style="width: 50px; height: 50px;"></div>
+              <div>
+                <h6 class="mb-0">Dr. Šef Odsjeka</h6>
+                <small class="text-muted">Šef Odsjeka</small>
+              </div>
+            </div>
+            <p class="card-text small mb-0"><i class="bi bi-envelope me-2"></i> sef.ri@etf.unsa.ba</p>
+            <p class="card-text small"><i class="bi bi-telephone me-2"></i> +387 33 123 456</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body p-4">
+            <h4 class="card-title mb-3">Sekretarijat</h4>
+            <div class="d-flex align-items-center mb-3">
+              <div class="bg-secondary rounded-circle me-3" style="width: 50px; height: 50px;"></div>
+              <div>
+                <h6 class="mb-0">Ime Prezime</h6>
+                <small class="text-muted">Sekretar Odsjeka</small>
+              </div>
+            </div>
+            <p class="card-text small mb-0"><i class="bi bi-envelope me-2"></i> sekretar.ri@etf.unsa.ba</p>
+            <p class="card-text small"><i class="bi bi-telephone me-2"></i> +387 33 123 457</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-5">
+      <h3 class="mb-4">Laboratorije i Istraživanje</h3>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card h-100 border-0 bg-light">
+            <div class="card-body">
+              <h5 class="card-title">Laboratorija za Vještačku Inteligenciju</h5>
+              <p class="card-text small">Istraživanje u oblastima mašinskog učenja, obrade prirodnog jezika i računarske vizije.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary">Saznaj više</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100 border-0 bg-light">
+            <div class="card-body">
+              <h5 class="card-title">Laboratorija za Softverski Inženjering</h5>
+              <p class="card-text small">Fokus na metodologije razvoja softvera, kvalitet softvera i agilne procese.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary">Saznaj više</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100 border-0 bg-light">
+            <div class="card-body">
+              <h5 class="card-title">Laboratorija za Računarsku Grafiku</h5>
+              <p class="card-text small">Razvoj naprednih tehnika vizualizacije i 3D modeliranja.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary">Saznaj više</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card h-100 border-0 bg-light">
+            <div class="card-body">
+              <h5 class="card-title">Laboratorija za Baze Podataka</h5>
+              <p class="card-text small">Istraživanje sistema za upravljanje bazama podataka i Big Data tehnologija.</p>
+              <a href="#" class="btn btn-sm btn-outline-primary">Saznaj više</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</PageLayout>

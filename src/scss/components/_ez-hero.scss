@@ -65,8 +65,12 @@
     }
 
     // Variants
+    &--full {
+        min-height: 100vh;
+    }
+
     &--small {
-        min-height: 250px;
+        min-height: 240px;
 
         .ez-hero__title {
             font-size: 2rem;
@@ -77,8 +81,12 @@
         }
     }
 
+    &--medium {
+        min-height: 480px;
+    }
+
     &--large {
-        min-height: 600px;
+        min-height: 640px;
 
         .ez-hero__title {
             font-size: 4rem;
@@ -105,15 +113,6 @@
         border-radius: $ez-border-radius;
         bottom: 2rem;
         z-index: 10;
-    }
-
-    // Enforce consistent height for all slides
-    .ez-hero {
-        min-height: 400px;
-
-        @include ez-responsive(lg) {
-            min-height: 450px;
-        }
     }
 
     .carousel-indicators {
