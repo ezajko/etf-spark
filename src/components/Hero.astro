@@ -1,0 +1,38 @@
+---
+// ETF UNSA - Generic Hero Component
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+interface Props {
+  height?: 'full' | 'large' | 'medium' | 'small' | 'auto';
+  backgroundImage?: string;
+  overlay?: boolean;
+  overlayClass?: string;
+  class?: string;
+  id?: string;
+}
+
+const { 
+  height = 'medium', 
+  backgroundImage, 
+  overlay = false, 
+  overlayClass,
+  class: className,
+  id 
+} = Astro.props;
+
+const heightClass = height !== 'auto' ? `ez-hero--${height}` : '';
+const style = backgroundImage ? `background-image: url('${backgroundImage}');` : '';
+---
+
+<section 
+  id={id} 
+  class={`ez-hero ${heightClass} ${className || ''}`} 
+  style={style}
+>
+  {overlay && <div class={`ez-hero__overlay ${overlayClass || ''}`}></div>}
+  
+  <div class="ez-hero__content container">
+    <slot />
+  </div>
+</section>

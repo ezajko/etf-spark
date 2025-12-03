@@ -1,0 +1,99 @@
+// ETF UNSA - Bootstrap Overrides
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+// Override Bootstrap CSS variables to match our design system
+:root {
+    // Primary Color
+    --bs-primary: #{$ez-primary-color};
+    --bs-primary-rgb: #{red($ez-primary-color)},
+    #{green($ez-primary-color)},
+    #{blue($ez-primary-color)};
+
+    // Secondary Color
+    --bs-secondary: #{$ez-secondary-color};
+    --bs-secondary-rgb: #{red($ez-secondary-color)},
+    #{green($ez-secondary-color)},
+    #{blue($ez-secondary-color)};
+
+    // Success Color
+    --bs-success: #{$ez-success-color};
+    --bs-success-rgb: #{red($ez-success-color)},
+    #{green($ez-success-color)},
+    #{blue($ez-success-color)};
+
+    // Danger Color
+    --bs-danger: #{$ez-danger-color};
+    --bs-danger-rgb: #{red($ez-danger-color)},
+    #{green($ez-danger-color)},
+    #{blue($ez-danger-color)};
+
+    // Warning Color
+    --bs-warning: #{$ez-warning-color};
+    --bs-warning-rgb: #{red($ez-warning-color)},
+    #{green($ez-warning-color)},
+    #{blue($ez-warning-color)};
+
+    // Info Color
+    --bs-info: #{$ez-info-color};
+    --bs-info-rgb: #{red($ez-info-color)},
+    #{green($ez-info-color)},
+    #{blue($ez-info-color)};
+
+    // Body Colors
+    --bs-body-color: #{$ez-text-color};
+    --bs-body-bg: #{$ez-bg-color};
+
+    // Font Family
+    --bs-body-font-family: #{$ez-font-family-base};
+}
+
+// Override Button Colors (because Bootstrap uses hardcoded hex in compiled CSS)
+.btn-primary {
+    --bs-btn-bg: #{$ez-primary-color};
+    --bs-btn-border-color: #{$ez-primary-color};
+    --bs-btn-hover-bg: #{$ez-primary-dark};
+    --bs-btn-hover-border-color: #{$ez-primary-dark};
+    --bs-btn-active-bg: #{$ez-primary-dark};
+    --bs-btn-active-border-color: #{$ez-primary-dark};
+    --bs-btn-disabled-bg: #{$ez-primary-color};
+    --bs-btn-disabled-border-color: #{$ez-primary-color};
+}
+
+.btn-secondary {
+    --bs-btn-bg: #{$ez-secondary-color};
+    --bs-btn-border-color: #{$ez-secondary-color};
+    --bs-btn-hover-bg: #{darken($ez-secondary-color, 10%)};
+    --bs-btn-hover-border-color: #{darken($ez-secondary-color, 10%)};
+    --bs-btn-active-bg: #{darken($ez-secondary-color, 10%)};
+    --bs-btn-active-border-color: #{darken($ez-secondary-color, 10%)};
+    --bs-btn-disabled-bg: #{$ez-secondary-color};
+    --bs-btn-disabled-border-color: #{$ez-secondary-color};
+}
+
+.btn-outline-primary {
+    --bs-btn-color: #{$ez-primary-color};
+    --bs-btn-border-color: #{$ez-primary-color};
+    --bs-btn-hover-bg: #{$ez-primary-color};
+    --bs-btn-hover-border-color: #{$ez-primary-color};
+    --bs-btn-active-bg: #{$ez-primary-color};
+    --bs-btn-active-border-color: #{$ez-primary-color};
+}
+
+// Override Text Colors
+.text-primary {
+    color: #{$ez-primary-color} !important;
+}
+
+.text-secondary {
+    color: #{$ez-secondary-color} !important;
+}
+
+// Override Background Colors
+.bg-primary {
+    background-color: #{$ez-primary-color} !important;
+}
+
+.bg-secondary {
+    background-color: #{$ez-secondary-color} !important;
+}

@@ -1,0 +1,16 @@
+---
+// ETF UNSA - Section Header Component
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+interface Props {
+  title: string;
+  level?: 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+  class?: string;
+}
+
+const { title, level = 'h2', class: className } = Astro.props;
+const Tag = level;
+---
+
+<Tag class={`mb-4 ${className || ''}`}>{title}</Tag>

@@ -1,0 +1,21 @@
+---
+// ETF UNSA - Info Card Component
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+interface Props {
+  title: string;
+  icon?: string;
+  class?: string;
+}
+
+const { title, icon, class: className } = Astro.props;
+---
+
+<div class={`card border-0 shadow-sm ${className || ''}`}>
+  <div class="card-header bg-primary text-white fw-bold py-3">
+    {icon && <i class={`bi ${icon} me-2`}></i>}
+    {title}
+  </div>
+  <slot />
+</div>

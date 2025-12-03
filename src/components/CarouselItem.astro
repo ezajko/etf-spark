@@ -1,0 +1,17 @@
+---
+// ETF UNSA - Carousel Item Component
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+interface Props {
+  active?: boolean;
+  interval?: number;
+  class?: string;
+}
+
+const { active = false, interval, class: className } = Astro.props;
+---
+
+<div class={`carousel-item ${active ? 'active' : ''} ${className || ''}`} data-bs-interval={interval}>
+  <slot />
+</div>

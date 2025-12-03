@@ -1,0 +1,75 @@
+// ETF UNSA - Footer Component SCSS
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+.ez-footer {
+    background-color: $ez-footer-bg;
+    color: $ez-footer-text;
+    margin-top: $ez-spacing-xxl;
+    font-size: 0.9rem;
+
+    .ez-footer-logos {
+        .ez-footer-logo-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            color: $ez-primary-color;
+            border-radius: 4px;
+            width: 48px;
+            height: 48px;
+
+            svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    }
+
+    h5 {
+        color: white;
+        margin-bottom: $ez-spacing-md;
+        font-weight: $ez-font-weight-bold;
+        text-transform: uppercase;
+        font-size: 1rem;
+    }
+
+    a {
+        color: $ez-footer-text;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: $ez-primary-color;
+            text-decoration: none;
+        }
+    }
+
+    .ez-footer-social {
+        a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: $ez-spacing-sm;
+            color: white;
+            transition: all 0.2s ease;
+
+            &:hover {
+                background-color: $ez-primary-color;
+                transform: translateY(-2px);
+            }
+        }
+    }
+
+    .ez-footer-bottom {
+        background-color: darken($ez-footer-bg, 5%);
+        padding: $ez-spacing-md 0;
+        margin-top: $ez-spacing-xl;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        font-size: 0.85rem;
+    }
+}

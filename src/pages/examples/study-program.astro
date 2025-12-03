@@ -4,6 +4,9 @@
 // License: GPL-2.0-or-later
 
 import PageLayout from '../../layouts/PageLayout.astro';
+import InfoCard from '../../components/InfoCard.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import PageHeader from '../../components/PageHeader.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
@@ -15,33 +18,31 @@ const breadcrumbItems = [
 
 <PageLayout title="Računarstvo i informatika | ETF UNSA" breadcrumbItems={breadcrumbItems}>
   <!-- Banner Slot -->
-  <section slot="banner" class="ez-hero ez-hero--small bg-primary text-white">
-    <div class="ez-hero__content container">
-      <div class="row align-items-center">
-        <div class="col-lg-8">
-          <span class="badge bg-white text-primary mb-2">Bachelor Program</span>
-          <h1 class="ez-hero__title mb-2">Računarstvo i informatika</h1>
-          <p class="ez-hero__subtitle text-white-50">Sveobuhvatno obrazovanje za digitalnu budućnost.</p>
-        </div>
-        <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
-           <a href="#admission" class="btn btn-light text-primary fw-bold px-4 py-2">Apliciraj odmah</a>
-        </div>
-      </div>
+  <PageHeader 
+    slot="banner"
+    title="Računarstvo i informatika" 
+    subtitle="Sveobuhvatno obrazovanje za digitalnu budućnost." 
+    badge="Bachelor Program"
+    badgeClass="bg-white text-primary"
+    bgClass="bg-primary"
+  >
+    <div slot="actions">
+       <a href="#admission" class="btn btn-light text-primary fw-bold px-4 py-2">Apliciraj odmah</a>
     </div>
-  </section>
+  </PageHeader>
 
   <!-- Main Content -->
   <div class="col-lg-8">
     <!-- Overview -->
     <div class="mb-5">
-      <h2 class="mb-4">Pregled programa</h2>
+      <SectionHeader title="Pregled programa" />
       <p class="lead">Studijski program Računarstvo i informatika (RI) dizajniran je da pruži studentima duboko razumijevanje teorijskih osnova i praktičnih vještina potrebnih za razvoj složenih softverskih sistema.</p>
       <p>Kroz kombinaciju predavanja, laboratorijskih vježbi i projektnog rada, studenti stiču kompetencije u oblastima kao što su softverski inženjering, vještačka inteligencija, baze podataka, računarske mreže i cyber sigurnost. Naš cilj je obrazovati inženjere koji su spremni odgovoriti na izazove moderne IT industrije i doprinijeti tehnološkom razvoju društva.</p>
     </div>
 
     <!-- Admission Requirements -->
     <div id="admission" class="mb-5">
-      <h3 class="mb-4">Upis i uslovi</h3>
+      <SectionHeader title="Upis i uslovi" level="h3" />
       <div class="card border-0 bg-light p-4">
         <div class="d-flex mb-3">
           <div class="flex-shrink-0">
@@ -78,7 +79,7 @@ const breadcrumbItems = [
 
     <!-- Curriculum -->
     <div class="mb-5">
-      <h3 class="mb-4">Struktura studija</h3>
+      <SectionHeader title="Struktura studija" level="h3" />
       <p class="mb-4">Studij traje 3 godine (6 semestara) i nosi ukupno 180 ECTS bodova. Nastava se odvija kroz predavanja, auditorne vježbe i laboratorijski rad.</p>
       
       <ul class="nav nav-tabs mb-3" id="curriculumTab" role="tablist">
@@ -127,7 +128,7 @@ const breadcrumbItems = [
 
     <!-- Career Prospects -->
     <div class="mb-5">
-      <h3 class="mb-4">Karijerne mogućnosti</h3>
+      <SectionHeader title="Karijerne mogućnosti" level="h3" />
       <p>Diplomanti ovog studijskog programa su visoko traženi na tržištu rada. Moguće karijere uključuju:</p>
       <div class="row g-3">
         <div class="col-md-6">
@@ -151,10 +152,7 @@ const breadcrumbItems = [
   <!-- Right Sidebar -->
   <div class="col-lg-4">
     <!-- Key Facts Widget -->
-    <div class="card border-0 shadow-sm mb-4">
-      <div class="card-header bg-primary text-white fw-bold py-3">
-        <i class="bi bi-info-circle me-2"></i> Ukratko o programu
-      </div>
+    <InfoCard title="Ukratko o programu" icon="bi-info-circle" class="mb-4">
       <div class="list-group list-group-flush">
         <div class="list-group-item d-flex justify-content-between align-items-center py-3">
           <span class="text-muted"><i class="bi bi-award me-2"></i> Zvanje</span>
@@ -177,7 +175,7 @@ const breadcrumbItems = [
           <span class="fw-bold">Oktobar (Zimski semestar)</span>
         </div>
       </div>
-    </div>
+    </InfoCard>
 
     <!-- Contact Widget -->
     <div class="card border-0 shadow-sm mb-4">
@@ -186,7 +184,7 @@ const breadcrumbItems = [
       </div>
       <div class="card-body">
         <div class="d-flex align-items-center mb-3">
-          <div class="bg-light rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+          <div class="ez-avatar ez-avatar--md bg-light me-3">
             <i class="bi bi-person text-secondary fs-4"></i>
           </div>
           <div>
@@ -198,7 +196,7 @@ const breadcrumbItems = [
         <p class="card-text small mb-3"><i class="bi bi-telephone me-2 text-primary"></i> +387 33 250 700</p>
         <hr>
         <div class="d-flex align-items-center mb-3">
-          <div class="bg-light rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+          <div class="ez-avatar ez-avatar--md bg-light me-3">
             <i class="bi bi-person-badge text-secondary fs-4"></i>
           </div>
           <div>

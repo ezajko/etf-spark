@@ -4,70 +4,86 @@
 // License: GPL-2.0-or-later
 ---
 
-<footer class="bg-dark text-white mt-5">
-  <div class="container py-5">
+<footer class="ez-footer">
+  <div class="container pt-5 pb-4">
     <div class="row">
       <!-- About Column -->
-      <div class="col-md-4 mb-3">
-        <h5 class="fw-bold">ETF UNSA</h5>
-        <p class="small">
+      <div class="col-md-4 mb-4">
+
+        <div class="ez-footer-logos mb-3 d-flex align-items-center gap-3">
+          <!-- UNSA Icon -->
+          <div class="ez-footer-logo-icon" title="Univerzitet u Sarajevu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
+              <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
+            </svg>
+          </div>
+          <!-- ETF Icon -->
+          <div class="ez-footer-logo-icon" title="Elektrotehnički fakultet">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-lightning-charge" viewBox="0 0 16 16">
+              <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z"/>
+            </svg>
+          </div>
+        </div>
+        <h5>ETF UNSA</h5>
+        <p>
           Elektrotehnički fakultet Univerziteta u Sarajevu je vodeća obrazovna i naučno-istraživačka 
           institucija u oblasti elektrotehnike, računarstva i telekomunikacija.
         </p>
       </div>
       
       <!-- Quick Links -->
-      <div class="col-md-4 mb-3">
-        <h5 class="fw-bold">Brzi linkovi</h5>
+      <div class="col-md-4 mb-4">
+        <h5>Brzi linkovi</h5>
         <ul class="list-unstyled">
-          <li><a href="/o-nama" class="text-white-50 text-decoration-none small">O fakultetu</a></li>
-          <li><a href="/studiji" class="text-white-50 text-decoration-none small">Studijski programi</a></li>
-          <li><a href="/prijava" class="text-white-50 text-decoration-none small">Prijava na fakultet</a></li>
-          <li><a href="/kontakt" class="text-white-50 text-decoration-none small">Kontakt</a></li>
+          <li class="mb-2"><a href="/o-nama">O fakultetu</a></li>
+          <li class="mb-2"><a href="/studiji">Studijski programi</a></li>
+          <li class="mb-2"><a href="/prijava">Prijava na fakultet</a></li>
+          <li class="mb-2"><a href="/kontakt">Kontakt</a></li>
         </ul>
       </div>
       
       <!-- Contact Info -->
-      <div class="col-md-4 mb-3">
-        <h5 class="fw-bold">Kontakt</h5>
-        <p class="small mb-1">
-          <i class="bi bi-geo-alt-fill me-2"></i>
+      <div class="col-md-4 mb-4">
+        <h5>Kontakt</h5>
+        <p class="mb-2">
+          <i class="bi bi-geo-alt-fill me-2 text-primary"></i>
           Zmaja od Bosne bb, 71000 Sarajevo
         </p>
-        <p class="small mb-1">
-          <i class="bi bi-telephone-fill me-2"></i>
+        <p class="mb-2">
+          <i class="bi bi-telephone-fill me-2 text-primary"></i>
           +387 33 729 800
         </p>
-        <p class="small mb-1">
-          <i class="bi bi-envelope-fill me-2"></i>
+        <p class="mb-2">
+          <i class="bi bi-envelope-fill me-2 text-primary"></i>
           info@etf.unsa.ba
         </p>
         
         <!-- Social Media -->
-        <div class="mt-3">
-          <a href="#" class="text-white me-3"><i class="bi bi-facebook fs-5"></i></a>
-          <a href="#" class="text-white me-3"><i class="bi bi-twitter fs-5"></i></a>
-          <a href="#" class="text-white me-3"><i class="bi bi-instagram fs-5"></i></a>
-          <a href="#" class="text-white"><i class="bi bi-linkedin fs-5"></i></a>
+        <div class="ez-footer-social mt-4">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
         </div>
       </div>
     </div>
   </div>
   
   <!-- Copyright -->
-  <div class="bg-black py-3">
+  <div class="ez-footer-bottom">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-md-6 text-center text-md-start">
-          <p class="small mb-0 text-white-50">
+        <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+          <p class="mb-0">
             &copy; 2024 ETF UNSA. Sva prava zadržana.
           </p>
         </div>
         <div class="col-md-6 text-center text-md-end">
-          <p class="small mb-0 text-white-50">
-            <a href="/privacy" class="text-white-50 text-decoration-none">Politika privatnosti</a>
+          <p class="mb-0">
+            <a href="/privacy">Politika privatnosti</a>
             <span class="mx-2">|</span>
-            <a href="/terms" class="text-white-50 text-decoration-none">Uslovi korištenja</a>
+            <a href="/terms">Uslovi korištenja</a>
           </p>
         </div>
       </div>

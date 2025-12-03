@@ -1,0 +1,51 @@
+// ETF UNSA - Sidebar Component SCSS
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+/* Custom styles for nested navigation */
+.nav-tree .nav-link {
+    color: var(--bs-body-color);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+}
+
+.nav-tree .nav-link:hover {
+    color: var(--bs-primary);
+    background-color: rgba(var(--bs-primary-rgb), 0.05);
+}
+
+.nav-tree .nav-link.active {
+    color: var(--bs-primary);
+    font-weight: 600;
+    // background-color: rgba(var(--bs-primary-rgb), 0.1); // Removed as requested
+}
+
+/* Indentation for nested levels */
+.nav-tree .nav-item .nav {
+    padding-left: 0.5rem;
+    /* Reduced from 1rem */
+    border-left: 1px solid #e9ecef;
+    margin-left: 0.25rem;
+    /* Reduced from 0.5rem */
+}
+
+.nav-tree .nav-link[data-bs-toggle="collapse"] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-tree .nav-link .bi-chevron-right {
+    font-size: 0.8em;
+    transition: transform 0.2s;
+}
+
+.nav-tree .nav-link[data-bs-toggle="collapse"][aria-expanded="true"] .bi-chevron-right {
+    transform: rotate(90deg);
+}
+
+/* Parent active state */
+.nav-tree .nav-link.parent-active {
+    color: var(--bs-primary);
+    font-weight: 600;
+}

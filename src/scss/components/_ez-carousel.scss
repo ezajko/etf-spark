@@ -1,0 +1,72 @@
+// ETF UNSA - Carousel Component SCSS
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+.ez-carousel {
+    position: relative;
+
+    // Height Variants
+    &--full {
+        .carousel-item {
+            height: 100vh;
+            min-height: 100vh;
+        }
+    }
+
+    &--small {
+        .carousel-item {
+            height: 240px;
+            min-height: 240px;
+        }
+    }
+
+    &--medium {
+        .carousel-item {
+            height: 480px;
+            min-height: 480px;
+        }
+    }
+
+    &--large {
+        .carousel-item {
+            height: 640px;
+            min-height: 640px;
+        }
+    }
+
+    // Indicators
+    .carousel-indicators {
+        bottom: -40px;
+        margin-bottom: 0;
+
+        [data-bs-target] {
+            width: 12px;
+            height: 12px;
+            border-radius: 0;
+            background-color: white;
+            border: 1px solid $ez-primary-color;
+            opacity: 0.5;
+            margin: 0 4px;
+            transition: opacity .6s ease;
+        }
+
+        .active {
+            opacity: 1;
+            background-color: $ez-primary-color;
+        }
+    }
+
+    // Controls
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: $ez-primary-color;
+        border-radius: 0;
+        background-size: 50%, 50%;
+    }
+
+    // Ensure content inside takes full height
+    .carousel-item>* {
+        height: 100%;
+        width: 100%;
+    }
+}

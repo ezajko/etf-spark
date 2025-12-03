@@ -8,6 +8,7 @@
 // Base
 @import 'base/variables';
 @import 'base/mixins';
+@import 'base/bootstrap-overrides';
 @import 'base/global';
 
 // Components (ez- prefixed)
@@ -19,6 +20,10 @@
 @import 'components/ez-header';
 @import 'components/ez-breadcrumbs';
 @import 'components/ez-layout';
+@import "components/ez-utilities";
+@import "components/ez-carousel";
+@import "components/ez-sidebar";
+@import "components/ez-footer";
 
 // Layouts (when created)
 // @import 'layouts/header';
