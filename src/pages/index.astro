@@ -8,19 +8,21 @@ import HeroCarousel from '../components/HeroCarousel.astro';
 import ContentCard from '../components/ContentCard.astro';
 import ProgramCard from '../components/ProgramCard.astro';
 import SimpleListItem from '../components/SimpleListItem.astro';
+import Tabs from '../components/Tabs.astro';
 ---
 
 <BaseLayout title="ETF UNSA - Početna stranica">
   <!-- Hero Carousel -->
   <HeroCarousel />
 
-
   <!-- News Section -->
   <section class="py-5">
     <div class="container">
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="mb-0">Aktuelnosti</h2>
-        <a href="/examples/news-list" class="btn btn-outline-primary btn-sm">Sve vijesti <i class="bi bi-arrow-right ms-1"></i></a>
+        <a href="/examples/news-list" class="btn btn-outline-primary btn-sm"
+          >Sve vijesti <i class="bi bi-arrow-right ms-1"></i></a
+        >
       </div>
 
       <!-- Categorized News Lists -->
@@ -29,7 +31,9 @@ import SimpleListItem from '../components/SimpleListItem.astro';
         <div class="col-lg-4">
           <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
             <h3 class="h4 mb-0 text-primary">Konkursi</h3>
-            <a href="/examples/news-list" class="small text-decoration-none">Svi konkursi <i class="bi bi-arrow-right"></i></a>
+            <a href="/examples/news-list" class="small text-decoration-none"
+              >Svi konkursi <i class="bi bi-arrow-right"></i></a
+            >
           </div>
           <div class="list-group list-group-flush">
             <SimpleListItem
@@ -69,7 +73,9 @@ import SimpleListItem from '../components/SimpleListItem.astro';
         <div class="col-lg-4">
           <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
             <h3 class="h4 mb-0 text-primary">Nastava</h3>
-            <a href="/examples/news-list" class="small text-decoration-none">Sve vijesti <i class="bi bi-arrow-right"></i></a>
+            <a href="/examples/news-list" class="small text-decoration-none"
+              >Sve vijesti <i class="bi bi-arrow-right"></i></a
+            >
           </div>
           <div class="list-group list-group-flush">
             <SimpleListItem
@@ -109,7 +115,9 @@ import SimpleListItem from '../components/SimpleListItem.astro';
         <div class="col-lg-4">
           <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
             <h3 class="h4 mb-0 text-primary">Obavještenja</h3>
-            <a href="/examples/news-list" class="small text-decoration-none">Sva obavještenja <i class="bi bi-arrow-right"></i></a>
+            <a href="/examples/news-list" class="small text-decoration-none"
+              >Sva obavještenja <i class="bi bi-arrow-right"></i></a
+            >
           </div>
           <div class="list-group list-group-flush">
             <SimpleListItem
@@ -153,7 +161,9 @@ import SimpleListItem from '../components/SimpleListItem.astro';
     <div class="container">
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="mb-0">Događaji</h2>
-        <a href="/examples/event-list" class="btn btn-outline-primary btn-sm">Svi događaji <i class="bi bi-arrow-right ms-1"></i></a>
+        <a href="/examples/event-list" class="btn btn-outline-primary btn-sm"
+          >Svi događaji <i class="bi bi-arrow-right ms-1"></i></a
+        >
       </div>
 
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
@@ -205,81 +215,95 @@ import SimpleListItem from '../components/SimpleListItem.astro';
     </div>
   </section>
 
-  <!-- Study Programs Section -->
+  <!-- Study Programs Section with Tabs -->
   <section class="py-5">
     <div class="container">
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="mb-0">Studijski programi</h2>
-        <a href="/examples/study-program-list" class="btn btn-outline-primary btn-sm">Svi programi <i class="bi bi-arrow-right ms-1"></i></a>
+        <a href="/examples/study-program-list" class="btn btn-outline-primary btn-sm"
+          >Svi programi <i class="bi bi-arrow-right ms-1"></i></a
+        >
       </div>
 
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="col">
-          <ContentCard
-            title="I Ciklus Studija"
-            href="/examples/study-program-list"
-            icon="bi-1-circle"
-            layout="vertical"
-            excerpt="Bachelor studij (180 ECTS). Steknite temeljna inženjerska znanja i pripremite se za tržište rada ili nastavak školovanja."
-            category="Bachelor"
-          />
-        </div>
-        <div class="col">
-          <ContentCard
-            title="II Ciklus Studija"
-            href="/examples/study-program-list"
-            icon="bi-2-circle"
-            layout="vertical"
-            excerpt="Master studij (120 ECTS). Specijalizirajte se u odabranoj oblasti i steknite napredna akademska i stručna znanja."
-            category="Master"
-          />
-        </div>
-        <div class="col">
-          <ContentCard
-            title="III Ciklus Studija"
-            href="/examples/study-program-list"
-            icon="bi-3-circle"
-            layout="vertical"
-            excerpt="Doktorski studij (180 ECTS). Uključite se u vrhunska naučna istraživanja i doprinesite razvoju novih tehnologija."
-            category="PhD"
-          />
-        </div>
-      </div>
-    </div>
-  </section>
+      <Tabs
+        id="studyProgramTabs"
+        tabs={[
+          { id: 'cycles', label: 'Po ciklusima', active: true },
+          { id: 'fields', label: 'Po oblastima' },
+        ]}
+        class="mb-4"
+      >
+        <div class="tab-content" id="studyProgramTabsContent">
+          <!-- Tab 1: By Cycles -->
+          <div
+            class="tab-pane fade show active"
+            id="cycles"
+            role="tabpanel"
+            aria-labelledby="cycles-tab"
+          >
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+              <div class="col">
+                <ContentCard
+                  title="I Ciklus Studija"
+                  href="/examples/study-program-list"
+                  icon="bi-1-circle"
+                  layout="vertical"
+                  excerpt="Bachelor studij (180 ECTS). Steknite temeljna inženjerska znanja i pripremite se za tržište rada ili nastavak školovanja."
+                  category="Bachelor"
+                />
+              </div>
+              <div class="col">
+                <ContentCard
+                  title="II Ciklus Studija"
+                  href="/examples/study-program-list"
+                  icon="bi-2-circle"
+                  layout="vertical"
+                  excerpt="Master studij (120 ECTS). Specijalizirajte se u odabranoj oblasti i steknite napredna akademska i stručna znanja."
+                  category="Master"
+                />
+              </div>
+              <div class="col">
+                <ContentCard
+                  title="III Ciklus Studija"
+                  href="/examples/study-program-list"
+                  icon="bi-3-circle"
+                  layout="vertical"
+                  excerpt="Doktorski studij (180 ECTS). Uključite se u vrhunska naučna istraživanja i doprinesite razvoju novih tehnologija."
+                  category="PhD"
+                />
+              </div>
+            </div>
+          </div>
 
-  <!-- Study Programs (Variant 2: By Field) -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <div class="d-flex justify-content-between align-items-center mb-4">
-        <h2 class="mb-0">Studijski programi (Po oblastima)</h2>
-        <a href="/examples/study-program-list" class="btn btn-outline-primary btn-sm">Svi programi <i class="bi bi-arrow-right ms-1"></i></a>
-      </div>
-
-      <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col">
-          <ContentCard
-            title="Računarstvo i informatika"
-            href="/examples/study-program-list"
-            icon="bi-laptop"
-            layout="horizontal"
-            imagePosition="left"
-            excerpt="Studijski programi fokusirani na razvoj softvera, vještačku inteligenciju, nauku o podacima i informacione sisteme."
-            category="Oblast"
-          />
+          <!-- Tab 2: By Fields -->
+          <div class="tab-pane fade" id="fields" role="tabpanel" aria-labelledby="fields-tab">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+              <div class="col">
+                <ContentCard
+                  title="Računarstvo i informatika"
+                  href="/examples/study-program-list"
+                  icon="bi-laptop"
+                  layout="horizontal"
+                  imagePosition="left"
+                  excerpt="Studijski programi fokusirani na razvoj softvera, vještačku inteligenciju, nauku o podacima i informacione sisteme."
+                  category="Oblast"
+                />
+              </div>
+              <div class="col">
+                <ContentCard
+                  title="Elektrotehnika"
+                  href="/examples/study-program-list"
+                  icon="bi-lightning-charge"
+                  layout="horizontal"
+                  imagePosition="left"
+                  excerpt="Programi iz oblasti automatike, elektronike, elektroenergetike i telekomunikacija. Spoj hardvera i sistema."
+                  category="Oblast"
+                />
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="col">
-          <ContentCard
-            title="Elektrotehnika"
-            href="/examples/study-program-list"
-            icon="bi-lightning-charge"
-            layout="horizontal"
-            imagePosition="left"
-            excerpt="Programi iz oblasti automatike, elektronike, elektroenergetike i telekomunikacija. Spoj hardvera i sistema."
-            category="Oblast"
-          />
-        </div>
-      </div>
+      </Tabs>
     </div>
   </section>
 
@@ -288,7 +312,9 @@ import SimpleListItem from '../components/SimpleListItem.astro';
     <div class="container">
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="mb-0">Odsjeci</h2>
-        <a href="/examples/department" class="btn btn-outline-primary btn-sm">Više o odsjecima <i class="bi bi-arrow-right ms-1"></i></a>
+        <a href="/examples/department" class="btn btn-outline-primary btn-sm"
+          >Više o odsjecima <i class="bi bi-arrow-right ms-1"></i></a
+        >
       </div>
 
       <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">

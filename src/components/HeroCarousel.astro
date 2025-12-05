@@ -10,9 +10,17 @@ import Hero from './Hero.astro';
 
 <Carousel id="heroCarousel" height="medium" showControls={false}>
   <Fragment slot="indicators">
-    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button
+      type="button"
+      data-bs-target="#heroCarousel"
+      data-bs-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"
+    ></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"
+    ></button>
   </Fragment>
 
   <!-- Slide 1: Standard with Image -->
@@ -22,10 +30,14 @@ import Hero from './Hero.astro';
         <div class="col-lg-10">
           <h1 class="ez-hero__title text-white">Dobrodošli na ETF</h1>
           <p class="ez-hero__subtitle text-white-50">
-            Vodeća visokoškolska ustanova u oblasti elektrotehnike i računarstva u Bosni i Hercegovini.
+            Vodeća visokoškolska ustanova u oblasti elektrotehnike i računarstva u Bosni i
+            Hercegovini.
           </p>
           <div class="ez-hero__cta">
-            <a href="/studiji" class="btn btn-light btn-lg rounded-0 text-uppercase fw-bold px-4 py-3">
+            <a
+              href="/studiji"
+              class="btn btn-light btn-lg rounded-0 text-uppercase fw-bold px-4 py-3"
+            >
               <i class="bi bi-book me-2"></i> Studijski programi
             </a>
           </div>
@@ -42,13 +54,20 @@ import Hero from './Hero.astro';
           <span class="badge bg-warning text-dark mb-3 rounded-0 px-3 py-2">NOVO</span>
           <h1 class="ez-hero__title">Upis 2025/2026</h1>
           <p class="ez-hero__subtitle">
-            Konkurs za upis studenata u prvu godinu prvog ciklusa studija je otvoren. Pridružite se generaciji budućnosti.
+            Konkurs za upis studenata u prvu godinu prvog ciklusa studija je otvoren. Pridružite se
+            generaciji budućnosti.
           </p>
           <div class="ez-hero__cta">
-            <a href="/upis" class="btn btn-primary btn-lg rounded-0 text-uppercase fw-bold px-4 py-3">
+            <a
+              href="/upis"
+              class="btn btn-primary btn-lg rounded-0 text-uppercase fw-bold px-4 py-3"
+            >
               <i class="bi bi-pencil-square me-2"></i> Apliciraj odmah
             </a>
-            <a href="/informacije" class="btn btn-outline-light btn-lg rounded-0 text-uppercase fw-bold px-4 py-3 ms-3">
+            <a
+              href="/informacije"
+              class="btn btn-outline-light btn-lg rounded-0 text-uppercase fw-bold px-4 py-3 ms-3"
+            >
               Saznaj više
             </a>
           </div>
@@ -64,13 +83,16 @@ import Hero from './Hero.astro';
         <div class="col-lg-6 text-start">
           <h1 class="ez-hero__title text-primary mb-3">Nauka i Istraživanje</h1>
           <div class="ez-hero__cta m-0">
-            <a href="/istrazivanje" class="btn btn-outline-primary btn-lg rounded-0 text-uppercase fw-bold px-4 py-3">
+            <a
+              href="/istrazivanje"
+              class="btn btn-outline-primary btn-lg rounded-0 text-uppercase fw-bold px-4 py-3"
+            >
               Projekti i saradnja <i class="bi bi-arrow-right ms-2"></i>
             </a>
           </div>
         </div>
         <div class="col-lg-6 d-none d-lg-block">
-           <i class="bi bi-cpu text-primary opacity-25" style="font-size: 10rem;"></i>
+          <i class="bi bi-cpu text-primary opacity-25" style="font-size: 10rem;"></i>
         </div>
       </div>
     </Hero>
@@ -82,20 +104,25 @@ import Hero from './Hero.astro';
   #heroCarousel .carousel-indicators {
     bottom: 2rem; /* Move up slightly */
     margin-bottom: 0;
+    z-index: 20; /* Ensure it's above hero content */
   }
-  
+
   #heroCarousel .carousel-indicators button {
     width: 12px;
     height: 12px;
-    border-radius: 50%;
+    /* border-radius: 50%; RE MOVED for squares */
     margin: 0 6px;
-    background-color: rgba(255, 255, 255, 0.5);
-    border: 2px solid transparent;
+    background-color: #fff; /* Always start with white */
+    opacity: 0.6; /* Semi-transparent inactive */
+    border: 1px solid rgba(0, 0, 0, 0.3); /* Subtle dark border for visibility on white */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Shadow for visibility on light backgrounds */
     transition: all 0.3s ease;
   }
 
   #heroCarousel .carousel-indicators button.active {
-    background-color: #fff;
+    opacity: 1;
+    background-color: #fff; /* Keep white for active for now, or match brand */
+    border-color: rgba(0, 0, 0, 0.5);
     transform: scale(1.2);
   }
 </style>
