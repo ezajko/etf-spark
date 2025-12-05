@@ -1,0 +1,26 @@
+---
+// ETF UNSA - Card Group Component
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+interface Props {
+  cols?: 1 | 2 | 3 | 4;
+  class?: string;
+}
+
+const { cols = 3, class: className } = Astro.props;
+
+// Map columns to Bootstrap classes
+const colClasses = {
+  1: 'row-cols-1',
+  2: 'row-cols-1 row-cols-md-2',
+  3: 'row-cols-1 row-cols-md-2 row-cols-lg-3',
+  4: 'row-cols-1 row-cols-md-2 row-cols-lg-4'
+};
+
+const gridClass = colClasses[cols] || colClasses[3];
+---
+
+<div class={`row g-4 ${gridClass} ${className || ''}`}>
+  <slot />
+</div>

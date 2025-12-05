@@ -1,0 +1,47 @@
+---
+// ETF UNSA - Generic Tabs Component
+// Author: Ernedin Zajko <ezajko@root.ba>
+
+interface Tab {
+  id: string;
+  label: string;
+  active?: boolean;
+}
+
+interface Props {
+  id: string; // Unique ID for the tab group
+  tabs: Tab[];
+  class?: string;
+  pills?: boolean; // Style as pills instead of tabs
+}
+
+const { id, tabs, class: className, pills = false } = Astro.props;
+
+// Determine which tab is active (default to first if none specified)
+const activeTabId = tabs.find(t => t.active)?.id || tabs[0]?.id;
+---
+
+<div class={className}>
+  <!-- Tab Navigation -->
+  <ul class={`nav ${pills ? 'nav-pills' : 'nav-tabs'} mb-3`} id={id} role="tablist">
+    {tabs.map((tab) => (
+      <li class="nav-item" role="presentation">
+        <button 
+          class={`nav-link ${tab.id === activeTabId ? 'active' : ''}`} 
+          id={`${tab.id}-tab`} 
+          data-bs-toggle={pills ? 'pill' : 'tab'} 
+          data-bs-target={`#${tab.id}`} 
+          type="button" 
+          role="tab" 
+          aria-controls={tab.id} 
+          aria-selected={tab.id === activeTabId}
+        >
+          {tab.label}
+        </button>
+      </li>
+    ))}
+  </ul>
+  
+  <!-- Content should be rendered by the parent using the IDs provided -->
+  <slot />
+</div>

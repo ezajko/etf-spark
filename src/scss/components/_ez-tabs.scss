@@ -1,0 +1,45 @@
+// ETF UNSA - Tabs Styles
+// Author: Ernedin Zajko <ezajko@root.ba>
+
+.nav-tabs {
+    border-bottom: 2px solid $ez-border-color;
+
+    .nav-link {
+        border: none;
+        border-bottom: 2px solid transparent;
+        color: $ez-text-muted;
+        font-weight: $ez-font-weight-bold;
+        padding: $ez-spacing-sm $ez-spacing-md;
+        margin-bottom: -2px; // Overlap border
+        transition: all 0.2s ease;
+
+        &:hover {
+            border-color: transparent;
+            color: $ez-primary-color;
+        }
+
+        &.active {
+            color: $ez-primary-color;
+            background-color: transparent;
+            border-bottom-color: $ez-primary-color;
+        }
+    }
+}
+
+.nav-pills {
+    .nav-link {
+        color: $ez-text-color;
+        font-weight: $ez-font-weight-bold;
+        border-radius: $ez-border-radius;
+        padding: $ez-spacing-sm $ez-spacing-lg;
+
+        &.active {
+            background-color: $ez-primary-color;
+            color: #fff;
+        }
+    }
+}
+
+.tab-content {
+    // Ensure content has some spacing if needed, though utility classes usually handle this
+}

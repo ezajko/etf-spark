@@ -14,9 +14,10 @@ interface Props {
     href: string;
     active?: boolean;
   }[];
+  useGrid?: boolean;
 }
 
-const { title, description, breadcrumbItems } = Astro.props;
+const { title, description, breadcrumbItems, useGrid = true } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
@@ -44,9 +45,13 @@ const { title, description, breadcrumbItems } = Astro.props;
 
       <!-- Main Content Grid -->
       <div class="ez-page-content">
-        <div class="row">
+        {useGrid ? (
+          <div class="row">
+            <slot />
+          </div>
+        ) : (
           <slot />
-        </div>
+        )}
       </div>
 
       <!-- Content After Grid -->

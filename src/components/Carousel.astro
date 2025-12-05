@@ -7,9 +7,10 @@ interface Props {
   id: string;
   height?: 'full' | 'small' | 'medium' | 'large';
   class?: string;
+  showControls?: boolean;
 }
 
-const { id, height = 'medium', class: className } = Astro.props;
+const { id, height = 'medium', class: className, showControls = true } = Astro.props;
 
 const heightClass = `ez-carousel--${height}`;
 ---
@@ -21,12 +22,16 @@ const heightClass = `ez-carousel--${height}`;
   <div class="carousel-inner">
     <slot />
   </div>
-  <button class="carousel-control-prev" type="button" data-bs-target={`#${id}`} data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target={`#${id}`} data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
+  {showControls && (
+    <>
+      <button class="carousel-control-prev" type="button" data-bs-target={`#${id}`} data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target={`#${id}`} data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </>
+  )}
 </div>

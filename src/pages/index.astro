@@ -5,6 +5,9 @@
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroCarousel from '../components/HeroCarousel.astro';
+import ContentCard from '../components/ContentCard.astro';
+import ProgramCard from '../components/ProgramCard.astro';
+import SimpleListItem from '../components/SimpleListItem.astro';
 ---
 
 <BaseLayout title="ETF UNSA - Početna stranica">
@@ -12,100 +15,320 @@ import HeroCarousel from '../components/HeroCarousel.astro';
   <HeroCarousel />
 
 
-  <!-- Typography Examples Section -->
+  <!-- News Section -->
   <section class="py-5">
     <div class="container">
-      <h1>H1 Header - Lorem Ipsum Dolor Sit Amet</h1>
-      <p class="lead">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </p>
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Aktuelnosti</h2>
+        <a href="/examples/news-list" class="btn btn-outline-primary btn-sm">Sve vijesti <i class="bi bi-arrow-right ms-1"></i></a>
+      </div>
 
-      <h2>H2 Header - Consectetur Adipiscing Elit</h2>
-      <p>
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-      </p>
-
-      <h3>H3 Header - Sed Do Eiusmod Tempor</h3>
-      <p>
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </p>
-
-      <h4>H4 Header - Ut Labore Et Dolore</h4>
-      <p>
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
-        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
-      </p>
-
-      <h5>H5 Header - Nemo Enim Ipsam</h5>
-      <p>
-        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
-      </p>
-
-      <h6>H6 Header - Quis Autem Vel</h6>
-      <p>
-        Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat.
-      </p>
-
-      <hr class="my-5">
-
-      <h2>Text Formatting Examples</h2>
-      <p>
-        <strong>Bold text</strong> and <em>italic text</em> can be combined with <u>underlined text</u>. 
-        You can also use <mark>highlighted text</mark> or <small>small text</small>.
-      </p>
-      
-      <p>
-        <a href="#">This is a link</a> to nowhere, and here's <code>some code</code> inline.
-      </p>
-
-      <blockquote class="blockquote my-4">
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."</p>
-        <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-      </blockquote>
-
-      <h2>Lists</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <h4>Unordered List</h4>
-          <ul>
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Consectetur adipiscing elit</li>
-            <li>Integer molestie lorem at massa
-              <ul>
-                <li>Nested item 1</li>
-                <li>Nested item 2</li>
-              </ul>
-            </li>
-            <li>Facilisis in pretium nisl aliquet</li>
-          </ul>
+      <!-- Categorized News Lists -->
+      <div class="row g-4">
+        <!-- Column 1: Konkursi -->
+        <div class="col-lg-4">
+          <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
+            <h3 class="h4 mb-0 text-primary">Konkursi</h3>
+            <a href="/examples/news-list" class="small text-decoration-none">Svi konkursi <i class="bi bi-arrow-right"></i></a>
+          </div>
+          <div class="list-group list-group-flush">
+            <SimpleListItem
+              label="Konkurs za upis na treći ciklus studija 2023/2024"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Konkurs za izbor u zvanje nastavnika i saradnika"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Javni poziv za sufinansiranje naučno-istraživačkih projekata"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Rezultati konkursa za Erasmus+ razmjenu"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Odluka o poništenju dijela konkursa"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+          </div>
         </div>
-        <div class="col-md-6">
-          <h4>Ordered List</h4>
-          <ol>
-            <li>Lorem ipsum dolor sit amet</li>
-            <li>Consectetur adipiscing elit</li>
-            <li>Integer molestie lorem at massa</li>
-            <li>Facilisis in pretium nisl aliquet</li>
-          </ol>
+
+        <!-- Column 2: Nastava -->
+        <div class="col-lg-4">
+          <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
+            <h3 class="h4 mb-0 text-primary">Nastava</h3>
+            <a href="/examples/news-list" class="small text-decoration-none">Sve vijesti <i class="bi bi-arrow-right"></i></a>
+          </div>
+          <div class="list-group list-group-flush">
+            <SimpleListItem
+              label="Raspored ispita za januarsko-februarski rok"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Poziv za učešće na hackathonu 'CodeSmash'"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Obavijest o neradnim danima za Dan državnosti"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Rezultati parcijalnih ispita iz Matematike 1"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Otvorene prijave za studentsku praksu"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+          </div>
+        </div>
+
+        <!-- Column 3: Obavještenja -->
+        <div class="col-lg-4">
+          <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
+            <h3 class="h4 mb-0 text-primary">Obavještenja</h3>
+            <a href="/examples/news-list" class="small text-decoration-none">Sva obavještenja <i class="bi bi-arrow-right"></i></a>
+          </div>
+          <div class="list-group list-group-flush">
+            <SimpleListItem
+              label="Gostujuće predavanje: AI u modernoj industriji"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Održana sjednica Nastavno-naučnog vijeća"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Prezentacija stipendija Vlade Francuske"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Nabavka nove laboratorijske opreme"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Posjeta delegacije sa Univerziteta u Grazu"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Lorem Ipsum Content -->
+  <!-- Events Section -->
   <section class="py-5 bg-light">
     <div class="container">
-      <h2 class="mb-4">Lorem Ipsum Dolor</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </p>
-      <p>
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-      </p>
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Događaji</h2>
+        <a href="/examples/event-list" class="btn btn-outline-primary btn-sm">Svi događaji <i class="bi bi-arrow-right ms-1"></i></a>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <div class="col">
+          <ContentCard
+            title="Dan otvorenih vrata"
+            href="/examples/event-single"
+            date="15.05.2024"
+            isEvent={true}
+            time="10:00 - 14:00"
+            location="Kampus ETF-a"
+            layout="vertical"
+          />
+        </div>
+        <div class="col">
+          <ContentCard
+            title="Sajam zapošljavanja JobFair '24"
+            href="/examples/event-single"
+            date="22.05.2024"
+            isEvent={true}
+            time="09:00 - 17:00"
+            location="Hol fakulteta"
+            layout="vertical"
+          />
+        </div>
+        <div class="col">
+          <ContentCard
+            title="Radionica: Cyber Security"
+            href="/examples/event-single"
+            date="01.06.2024"
+            isEvent={true}
+            time="12:00"
+            location="Sala S1"
+            layout="vertical"
+          />
+        </div>
+        <div class="col">
+          <ContentCard
+            title="Sjednica NNV-a"
+            href="/examples/event-single"
+            date="05.06.2024"
+            isEvent={true}
+            time="11:00"
+            location="Svečana sala"
+            layout="vertical"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Study Programs Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Studijski programi</h2>
+        <a href="/examples/study-program-list" class="btn btn-outline-primary btn-sm">Svi programi <i class="bi bi-arrow-right ms-1"></i></a>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <div class="col">
+          <ContentCard
+            title="I Ciklus Studija"
+            href="/examples/study-program-list"
+            icon="bi-1-circle"
+            layout="vertical"
+            excerpt="Bachelor studij (180 ECTS). Steknite temeljna inženjerska znanja i pripremite se za tržište rada ili nastavak školovanja."
+            category="Bachelor"
+          />
+        </div>
+        <div class="col">
+          <ContentCard
+            title="II Ciklus Studija"
+            href="/examples/study-program-list"
+            icon="bi-2-circle"
+            layout="vertical"
+            excerpt="Master studij (120 ECTS). Specijalizirajte se u odabranoj oblasti i steknite napredna akademska i stručna znanja."
+            category="Master"
+          />
+        </div>
+        <div class="col">
+          <ContentCard
+            title="III Ciklus Studija"
+            href="/examples/study-program-list"
+            icon="bi-3-circle"
+            layout="vertical"
+            excerpt="Doktorski studij (180 ECTS). Uključite se u vrhunska naučna istraživanja i doprinesite razvoju novih tehnologija."
+            category="PhD"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Study Programs (Variant 2: By Field) -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Studijski programi (Po oblastima)</h2>
+        <a href="/examples/study-program-list" class="btn btn-outline-primary btn-sm">Svi programi <i class="bi bi-arrow-right ms-1"></i></a>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 g-4">
+        <div class="col">
+          <ContentCard
+            title="Računarstvo i informatika"
+            href="/examples/study-program-list"
+            icon="bi-laptop"
+            layout="horizontal"
+            imagePosition="left"
+            excerpt="Studijski programi fokusirani na razvoj softvera, vještačku inteligenciju, nauku o podacima i informacione sisteme."
+            category="Oblast"
+          />
+        </div>
+        <div class="col">
+          <ContentCard
+            title="Elektrotehnika"
+            href="/examples/study-program-list"
+            icon="bi-lightning-charge"
+            layout="horizontal"
+            imagePosition="left"
+            excerpt="Programi iz oblasti automatike, elektronike, elektroenergetike i telekomunikacija. Spoj hardvera i sistema."
+            category="Oblast"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Departments Section -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Odsjeci</h2>
+        <a href="/examples/department" class="btn btn-outline-primary btn-sm">Više o odsjecima <i class="bi bi-arrow-right ms-1"></i></a>
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <div class="col">
+          <ContentCard
+            title="Računarstvo i informatika"
+            href="/examples/department"
+            icon="bi-laptop"
+            layout="vertical"
+            excerpt="Fokus na softversko inženjerstvo, vještačku inteligenciju i informacione sisteme."
+          />
+        </div>
+        <div class="col">
+          <ContentCard
+            title="Automatika i elektronika"
+            href="/examples/department"
+            icon="bi-cpu"
+            layout="vertical"
+            excerpt="Istraživanje sistema upravljanja, robotike i elektronskih kola."
+          />
+        </div>
+        <div class="col">
+          <ContentCard
+            title="Elektroenergetika"
+            href="/examples/department"
+            icon="bi-lightning-charge"
+            layout="vertical"
+            excerpt="Proizvodnja, prenos i distribucija električne energije."
+          />
+        </div>
+        <div class="col">
+          <ContentCard
+            title="Telekomunikacije"
+            href="/examples/department"
+            icon="bi-broadcast"
+            layout="vertical"
+            excerpt="Razvoj komunikacijskih mreža, bežičnih tehnologija i obrade signala."
+          />
+        </div>
+      </div>
     </div>
   </section>
 </BaseLayout>

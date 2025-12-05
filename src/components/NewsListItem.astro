@@ -1,0 +1,37 @@
+---
+interface Props {
+  title: string;
+  href: string;
+  image?: string;
+  date?: string;
+  class?: string;
+}
+
+const { title, href, image, date, class: className } = Astro.props;
+---
+
+<a href={href} class={`d-flex text-decoration-none text-dark align-items-start group-hover ${className || ''}`}>
+  {image && (
+    <div class="flex-shrink-0 me-3">
+      <img 
+        src={image} 
+        alt={title} 
+        class="rounded object-fit-cover" 
+        style="width: 100px; height: 70px;"
+      />
+    </div>
+  )}
+  <div>
+    <h6 class="mb-1 fw-bold lh-sm text-primary-hover">{title}</h6>
+    {date && <small class="text-muted"><i class="bi bi-calendar-event me-1"></i> {date}</small>}
+  </div>
+</a>
+
+<style>
+  .text-primary-hover {
+    transition: color 0.2s;
+  }
+  .group-hover:hover .text-primary-hover {
+    color: var(--bs-primary);
+  }
+</style>

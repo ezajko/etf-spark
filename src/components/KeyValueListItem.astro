@@ -1,0 +1,22 @@
+---
+// ETF UNSA - Key Value List Item Component
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+interface Props {
+  label: string;
+  value: string | number;
+  icon?: string;
+  class?: string;
+}
+
+const { label, value, icon, class: className } = Astro.props;
+---
+
+<div class={`d-flex justify-content-between align-items-center py-2 ${className || ''}`}>
+  <span class="text-muted">
+    {icon && <i class={`bi ${icon} me-2`}></i>}
+    {label}
+  </span>
+  <span class="fw-bold text-end">{value}</span>
+</div>

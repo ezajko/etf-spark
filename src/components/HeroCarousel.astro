@@ -8,7 +8,7 @@ import CarouselItem from './CarouselItem.astro';
 import Hero from './Hero.astro';
 ---
 
-<Carousel id="heroCarousel" height="medium">
+<Carousel id="heroCarousel" height="medium" showControls={false}>
   <Fragment slot="indicators">
     <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -76,3 +76,26 @@ import Hero from './Hero.astro';
     </Hero>
   </CarouselItem>
 </Carousel>
+
+<style is:global>
+  /* Custom styles for Hero Carousel indicators */
+  #heroCarousel .carousel-indicators {
+    bottom: 2rem; /* Move up slightly */
+    margin-bottom: 0;
+  }
+  
+  #heroCarousel .carousel-indicators button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 6px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+  }
+
+  #heroCarousel .carousel-indicators button.active {
+    background-color: #fff;
+    transform: scale(1.2);
+  }
+</style>

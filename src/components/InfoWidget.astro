@@ -13,9 +13,11 @@ const { title, icon, class: className } = Astro.props;
 ---
 
 <div class={`card border-0 shadow-sm ${className || ''}`}>
-  <div class="card-header bg-primary text-white fw-bold py-3">
+  <div class="card-header ez-card__header">
     {icon && <i class={`bi ${icon} me-2`}></i>}
     {title}
   </div>
-  <slot />
+  <div class="list-group list-group-flush">
+    <slot />
+  </div>
 </div>

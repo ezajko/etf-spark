@@ -1,0 +1,189 @@
+---
+// ETF UNSA - Curriculum Component
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+interface Course {
+  name: string;
+  type: 'mandatory' | 'elective';
+  electiveGroup?: string;
+  hours: {
+    p: number; // Predavanja
+    a: number; // Auditorne
+    l: number; // Laboratorijske
+    s: number; // Seminari
+  };
+  individualWork: number; // Samostalni rad
+  ects: number;
+}
+
+interface ElectiveGroup {
+  id: string;
+  label: string;
+  courses: Course[];
+}
+
+interface Semester {
+  id: string;
+  label: string;
+  courses: Course[];
+  electiveGroups?: ElectiveGroup[];
+}
+
+interface Year {
+  id: string;
+  label: string;
+  semesters: Semester[];
+}
+
+interface Props {
+  years: Year[];
+  class?: string;
+}
+
+import Accordion from './Accordion.astro';
+import AccordionItem from './AccordionItem.astro';
+import Tabs from './Tabs.astro';
+
+const { years, class: className } = Astro.props;
+
+// Helper to calculate totals
+const getTotals = (courses: Course[]) => {
+  return courses.reduce((acc, course) => ({
+    p: acc.p + course.hours.p,
+    a: acc.a + course.hours.a,
+    l: acc.l + course.hours.l,
+    s: acc.s + course.hours.s,
+    individual: acc.individual + course.individualWork,
+    ects: acc.ects + course.ects
+  }), { p: 0, a: 0, l: 0, s: 0, individual: 0, ects: 0 });
+};
+---
+
+<div class={`ez-curriculum ${className || ''}`}>
+  <Accordion id="curriculumAccordion">
+    {years.map((year, yearIndex) => (
+      <AccordionItem 
+        id={`year-${year.id}`} 
+        title={year.label} 
+        parent="curriculumAccordion" 
+        open={yearIndex === 0}
+      >
+        <Tabs 
+          id={`semTabs-${year.id}`} 
+          tabs={year.semesters.map((sem, i) => ({ 
+            id: `sem-${sem.id}`, 
+            label: sem.label,
+            active: i === 0
+          }))}
+        >
+          <div class="tab-content border border-top-0 p-4 bg-white rounded-bottom">
+            {year.semesters.map((sem, i) => {
+              const totals = getTotals(sem.courses);
+              return (
+                <div 
+                  class={`tab-pane fade ${i === 0 ? 'show active' : ''}`} 
+                  id={`sem-${sem.id}`} 
+                  role="tabpanel"
+                >
+                  <div class="table-responsive mb-4">
+                    <table class="table table-hover align-middle mb-0">
+                      <thead class="table-light">
+                        <tr>
+                          <th style="width: 35%;">Predmet</th>
+                          <th class="text-center">Tip</th>
+                          <th class="text-center" title="Predavanja + Auditorne + Laboratorijske + Seminari">P+A+L+S</th>
+                          <th class="text-center fw-bold" title="Ukupno sati nastave">Ukupno</th>
+                          <th class="text-center" title="Samostalni rad">Samostalni</th>
+                          <th class="text-center fw-bold">ECTS</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {sem.courses.map(course => (
+                          <tr>
+                            <td>
+                              <div class="fw-bold">{course.name}</div>
+                              {course.electiveGroup && <div class="small text-muted fst-italic">{course.electiveGroup}</div>}
+                            </td>
+                            <td class="text-center">
+                              {course.type === 'mandatory' ? (
+                                <span class="badge bg-light text-dark border">Obavezni</span>
+                              ) : (
+                                <span class="badge bg-info bg-opacity-10 text-info border border-info">Izborni</span>
+                              )}
+                            </td>
+                            <td class="text-center font-monospace small">
+                              {course.hours.p}+{course.hours.a}+{course.hours.l}+{course.hours.s}
+                            </td>
+                            <td class="text-center font-monospace fw-bold">
+                              {course.hours.p + course.hours.a + course.hours.l + course.hours.s}h
+                            </td>
+                            <td class="text-center font-monospace">{course.individualWork}h</td>
+                            <td class="text-center fw-bold text-primary">{course.ects}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                      <tfoot class="table-light fw-bold">
+                        <tr>
+                          <td colspan="2" class="text-end">Ukupno:</td>
+                          <td class="text-center font-monospace small">
+                            {totals.p}+{totals.a}+{totals.l}+{totals.s}
+                          </td>
+                          <td class="text-center font-monospace">
+                            {totals.p + totals.a + totals.l + totals.s}h
+                          </td>
+                          <td class="text-center font-monospace">{totals.individual}h</td>
+                          <td class="text-center text-primary">{totals.ects}</td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+
+                  {/* Elective Groups */}
+                  {sem.electiveGroups && sem.electiveGroups.length > 0 && (
+                    <div class="mt-4">
+                      <h5 class="mb-3 text-primary border-bottom pb-2">Izborni predmeti</h5>
+                      {sem.electiveGroups.map(group => (
+                        <div class="mb-4">
+                          <h6 class="fw-bold mb-2">{group.label}</h6>
+                          <div class="table-responsive">
+                            <table class="table table-sm table-bordered align-middle">
+                              <thead class="bg-light">
+                                <tr>
+                                  <th style="width: 40%;">Predmet</th>
+                                  <th class="text-center">P+A+L+S</th>
+                                  <th class="text-center">Ukupno</th>
+                                  <th class="text-center">Samostalni</th>
+                                  <th class="text-center">ECTS</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {group.courses.map(course => (
+                                  <tr>
+                                    <td>{course.name}</td>
+                                    <td class="text-center font-monospace small">
+                                      {course.hours.p}+{course.hours.a}+{course.hours.l}+{course.hours.s}
+                                    </td>
+                                    <td class="text-center font-monospace fw-bold">
+                                      {course.hours.p + course.hours.a + course.hours.l + course.hours.s}h
+                                    </td>
+                                    <td class="text-center font-monospace">{course.individualWork}h</td>
+                                    <td class="text-center fw-bold text-primary">{course.ects}</td>
+                                  </tr>
+                                ))}
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </Tabs>
+      </AccordionItem>
+    ))}
+  </Accordion>
+</div>

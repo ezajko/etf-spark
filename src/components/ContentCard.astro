@@ -1,0 +1,115 @@
+---
+// ETF UNSA - Content Card Component
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+interface Props {
+  title: string;
+  href: string;
+  image?: string;
+  icon?: string;
+  category?: string;
+  date?: string;
+  time?: string;
+  location?: string;
+  excerpt?: string;
+  status?: string;
+  statusColor?: string; // e.g. "success", "warning", "secondary"
+  isEvent?: boolean;
+  layout?: 'horizontal' | 'vertical';
+  imagePosition?: 'left' | 'right';
+}
+
+const {
+  title,
+  href,
+  image,
+  icon,
+  category,
+  date,
+  time,
+  location,
+  excerpt,
+  status,
+  statusColor = 'primary',
+  isEvent = false,
+  layout = 'horizontal',
+  imagePosition = 'left'
+} = Astro.props;
+
+// Helper: Parse date for event overlay (DD.MM.YYYY)
+let eventDay = '';
+let eventMonth = '';
+if (isEvent && date) {
+  const parts = date.split('.');
+  if (parts.length >= 2) {
+    eventDay = parts[0];
+    const monthIndex = parseInt(parts[1]) - 1;
+    const months = ['JAN','FEB','MAR','APR','MAJ','JUN','JUL','AUG','SEP','OKT','NOV','DEC'];
+    eventMonth = months[monthIndex] || '';
+  }
+}
+
+const isHorizontal = layout === 'horizontal';
+const imageColClass = isHorizontal ? 'col-md-4' : 'col-12';
+const contentColClass = isHorizontal ? ((image || icon) ? 'col-md-8' : 'col-12') : 'col-12';
+const imageOrder = imagePosition === 'right' ? 'order-md-2' : 'order-md-1';
+const contentOrder = imagePosition === 'right' ? 'order-md-1' : 'order-md-2';
+---
+
+<div class={`card border-0 shadow-sm overflow-hidden h-100 ${isHorizontal ? '' : ''}`}>
+  <slot name="header" />
+  
+  <div class={`row g-0 h-100 ${isHorizontal ? '' : 'flex-column'}`}>
+    {(image || icon) && (
+      <div class={`${imageColClass} ${isHorizontal ? imageOrder : ''} position-relative`}>
+        {image ? (
+          <img 
+            src={image} 
+            class="img-fluid h-100 object-fit-cover w-100" 
+            alt={title} 
+            style="min-height: 200px;" 
+          />
+        ) : (
+          <div class="bg-light h-100 w-100 d-flex align-items-center justify-content-center" style="min-height: 200px;">
+            <i class={`bi ${icon} text-secondary`} style="font-size: 4rem;"></i>
+          </div>
+        )}
+        {isEvent && (
+          <div class="position-absolute top-0 start-0 bg-primary text-white p-2 text-center" style="width: 60px; opacity: 0.9;">
+            <span class="d-block fw-bold fs-4 lh-1">{eventDay}</span>
+            <span class="d-block small text-uppercase">{eventMonth}</span>
+          </div>
+        )}
+      </div>
+    )}
+    <div class={`${contentColClass} ${isHorizontal ? contentOrder : ''} d-flex flex-column ${isHorizontal ? '' : 'flex-grow-1'}`}>
+      <div class="card-body d-flex flex-column flex-grow-1">
+        <slot>
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div>
+              {category && <span class="badge bg-light text-primary border me-2">{category}</span>}
+              {status && <span class={`badge bg-${statusColor} ${statusColor === 'warning' ? 'text-dark' : ''}`}>{status}</span>}
+            </div>
+            {time && <small class="text-muted"><i class="bi bi-clock me-1"></i> {time}</small>}
+          </div>
+          
+          <h5 class="card-title mb-2">
+            <a href={href} class="text-decoration-none text-dark stretched-link">{title}</a>
+          </h5>
+          
+          {location && <p class="card-text text-muted small mb-2"><i class="bi bi-geo-alt me-1"></i> {location}</p>}
+          
+          {excerpt && <p class="card-text text-muted small">{excerpt}</p>}
+        </slot>
+      </div>
+      <div class="card-footer bg-white border-top">
+         <div class="d-flex justify-content-end align-items-center">
+            <span class="btn btn-sm btn-link text-decoration-none p-0">Detalji <i class="bi bi-arrow-right ms-1"></i></span>
+         </div>
+      </div>
+    </div>
+  </div>
+  
+  <slot name="footer" />
+</div>

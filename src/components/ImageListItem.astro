@@ -1,0 +1,37 @@
+---
+// ETF UNSA - Image List Item Component
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+interface Props {
+  image?: string; // URL or generic icon class if no image
+  value: string;
+  label?: string;
+  subtext?: string;
+  subtextIcon?: string;
+  class?: string;
+}
+
+const { image, value, label, subtext, subtextIcon, class: className } = Astro.props;
+---
+
+<div class={`d-flex align-items-center ${className || ''}`}>
+  <div class="ez-avatar ez-avatar--md bg-light me-3 flex-shrink-0">
+    {image && image.startsWith('bi-') ? (
+      <i class={`bi ${image} text-secondary fs-4`}></i>
+    ) : (
+      <img src={image || '/images/avatar-placeholder.png'} alt={value} class="img-fluid rounded-circle" />
+    )}
+  </div>
+  <div>
+    <h6 class="mb-0">{value}</h6>
+    {label && <small class="text-muted d-block">{label}</small>}
+    {subtext && (
+      <small class="text-muted d-block mt-1">
+        {subtextIcon && <i class={`bi ${subtextIcon} me-1 text-primary`}></i>}
+        {subtext}
+      </small>
+    )}
+    <slot />
+  </div>
+</div>

@@ -4,6 +4,8 @@
 // License: GPL-2.0-or-later
 
 import PageLayout from '../../layouts/PageLayout.astro';
+import ContentCard from '../../components/ContentCard.astro';
+import CardGroup from '../../components/CardGroup.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
@@ -45,31 +47,24 @@ const labs = [
     <h1 class="mb-4">Laboratorije i Istraživanje</h1>
     <p class="lead mb-5">Naše laboratorije su centri izvrsnosti za istraživanje i praktičnu nastavu, opremljene savremenom tehnologijom.</p>
     
-    <div class="row g-4">
+    <CardGroup cols={2}>
       {labs.map(lab => (
-        <div class="col-md-6">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body p-4">
-              <div class="d-flex justify-content-between align-items-start mb-3">
-                <h4 class="card-title mb-0">{lab.name}</h4>
-                <span class="badge bg-light text-dark border"><i class="bi bi-geo-alt me-1"></i> {lab.location}</span>
-              </div>
-              
-              <div class="mb-3">
-                <small class="text-muted text-uppercase fw-bold">Fokus istraživanja</small>
-                <p class="mb-0">{lab.focus}</p>
-              </div>
-              
-              <div class="mb-4">
-                <small class="text-muted text-uppercase fw-bold">Oprema</small>
-                <p class="mb-0">{lab.equipment}</p>
-              </div>
-              
-              <a href="#" class="btn btn-sm btn-outline-primary">Posjeti web stranicu laboratorije <i class="bi bi-box-arrow-up-right ms-1"></i></a>
-            </div>
-          </div>
+        <div class="col">
+          <ContentCard
+            title={lab.name}
+            href="#"
+            category={lab.location}
+            excerpt={lab.focus}
+            layout="vertical"
+            status="Oprema: "
+            statusColor="light text-dark border"
+          >
+             <div class="mt-2 small text-muted">
+                <strong>Oprema:</strong> {lab.equipment}
+             </div>
+          </ContentCard>
         </div>
       ))}
-    </div>
+    </CardGroup>
   </div>
 </PageLayout>

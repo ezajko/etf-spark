@@ -1,0 +1,15 @@
+---
+// ETF UNSA - Generic Accordion Wrapper
+// Author: Ernedin Zajko <ezajko@root.ba>
+
+interface Props {
+  id: string;
+  class?: string;
+}
+
+const { id, class: className } = Astro.props;
+---
+
+<div class={`accordion ${className || ''}`} id={id}>
+  <slot />
+</div>

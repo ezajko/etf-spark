@@ -4,6 +4,12 @@
 // License: GPL-2.0-or-later
 
 import PageLayout from '../../layouts/PageLayout.astro';
+import Tabs from '../../components/Tabs.astro';
+import ProfileCard from '../../components/ProfileCard.astro';
+import IconListItem from '../../components/IconListItem.astro';
+import ContentCard from '../../components/ContentCard.astro';
+import Accordion from '../../components/Accordion.astro';
+import AccordionItem from '../../components/AccordionItem.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
@@ -16,141 +22,208 @@ const breadcrumbItems = [
 
 <PageLayout title="Dr. Ime Prezime | ETF UNSA" breadcrumbItems={breadcrumbItems}>
   <!-- Left Column: Profile Card -->
-  <div class="col-lg-3 mb-4">
-    <div class="card border-0 shadow-sm text-center p-3 sticky-top" style="top: 2rem; z-index: 1;">
-      <div class="mb-3">
-        <div class="bg-secondary rounded-circle d-inline-flex align-items-center justify-content-center text-white" style="width: 150px; height: 150px; font-size: 3rem;">
-          <i class="bi bi-person"></i>
-        </div>
-      </div>
-      <h4 class="mb-1">Dr. Ime Prezime</h4>
-      <p class="text-muted mb-3">Redovni profesor</p>
-      
-      <div class="mb-3">
-        <span class="d-block small text-muted text-uppercase fw-bold">Matična oblast</span>
-        <span class="d-block small mb-2">Računarstvo i informatika</span>
-        
-        <span class="d-block small text-muted text-uppercase fw-bold">Odsjek</span>
-        <span class="d-block small mb-2">Odsjek za računarstvo i informatiku</span>
-        
-        <span class="d-block small text-muted text-uppercase fw-bold">Katedra</span>
-        <span class="d-block small">Katedra za računarstvo</span>
-      </div>
-      <hr>
-      <div class="text-start">
-        <p class="mb-2"><i class="bi bi-envelope me-2 text-primary"></i> ime.prezime@etf.unsa.ba</p>
-        <p class="mb-2"><i class="bi bi-telephone me-2 text-primary"></i> +387 33 123 456</p>
-        <p class="mb-2"><i class="bi bi-geo-alt me-2 text-primary"></i> Kabinet 3-24</p>
-        <p class="mb-0"><i class="bi bi-globe me-2 text-primary"></i> <a href="#" class="text-decoration-none">Lična web stranica</a></p>
-      </div>
-      <hr>
-      <div class="d-grid gap-2">
-        <a href="#" class="btn btn-light btn-outline-primary">
-          Preuzmi Biografiju (PDF)
-        </a>
-      </div>
-      <hr>
-      <div class="d-grid gap-2">
-        <a href="#" class="btn btn-outline-primary btn-sm">Google Scholar</a>
-        <a href="#" class="btn btn-outline-secondary btn-sm">ResearchGate</a>
-      </div>
-    </div>
+  <div class="col-lg-4 mb-4">
+    <ProfileCard
+      name="Dr. Ime Prezime"
+      title="Redovni profesor"
+      details={[
+        { label: 'Matična oblast', value: 'Računarstvo i informatika' },
+        { label: 'Odsjek', value: 'Odsjek za računarstvo i informatiku' },
+        { label: 'Katedra', value: 'Katedra za računarstvo' }
+      ]}
+      contact={{
+        email: 'ime.prezime@etf.unsa.ba',
+        phone: '+387 33 123 456',
+        office: 'Kabinet 3-24',
+        website: { label: 'Lična web stranica', url: '#' }
+      }}
+      cvLink="#"
+      socialLinks={[
+        { label: 'Google Scholar', url: '#', icon: 'bi-google' },
+        { label: 'ResearchGate', url: '#', icon: 'bi-journal-text' },
+        { label: 'LinkedIn', url: '#', icon: 'bi-linkedin' },
+        { label: 'GitHub', url: '#', icon: 'bi-github' }
+      ]}
+    />
   </div>
 
   <!-- Main Content: Tabs -->
-  <div class="col-lg-9">
-    <ul class="nav nav-tabs mb-4" id="profTab" role="tablist">
-      <li class="nav-item" role="presentation">
-        <button class="nav-link active" id="biography-tab" data-bs-toggle="tab" data-bs-target="#biography" type="button" role="tab">Biografija</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="teaching-tab" data-bs-toggle="tab" data-bs-target="#teaching" type="button" role="tab">Nastava</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="research-tab" data-bs-toggle="tab" data-bs-target="#research" type="button" role="tab">Istraživanje</button>
-      </li>
-      <li class="nav-item" role="presentation">
-        <button class="nav-link" id="publications-tab" data-bs-toggle="tab" data-bs-target="#publications" type="button" role="tab">Publikacije</button>
-      </li>
-    </ul>
-
-    <div class="tab-content" id="profTabContent">
-      <!-- Biografija -->
-      <div class="tab-pane fade show active" id="biography" role="tabpanel">
-        <h3 class="mb-3">Biografija</h3>
-        <p>Dr. Ime Prezime je redovni profesor na Odsjeku za računarstvo i informatiku Elektrotehničkog fakulteta Univerziteta u Sarajevu. Diplomirao je, magistrirao i doktorirao na istom fakultetu, fokusirajući se na oblasti vještačke inteligencije i mašinskog učenja. Tokom svoje akademske karijere, objavio je preko 50 naučnih radova u prestižnim međunarodnim časopisima i konferencijama.</p>
-        <p>Njegova istraživačka interesovanja uključuju primjenu naprednih algoritama mašinskog učenja u medicinskoj dijagnostici, analizu velikih skupova podataka (Big Data) i razvoj inteligentnih sistema za podršku odlučivanju. Vodio je nekoliko značajnih istraživačkih projekata finansiranih od strane domaćih i međunarodnih fondova, te aktivno sarađuje sa industrijom na primjeni akademskih istraživanja u realnom sektoru.</p>
-        <p>Pored istraživačkog rada, Dr. Prezime je posvećen nastavnom procesu, gdje predaje ključne predmete na dodiplomskom i postdiplomskom studiju. Mentor je brojnim studentima na master i doktorskim studijama, potičući ih na inovativnost i kritičko razmišljanje. Član je nekoliko međunarodnih strukovnih udruženja, uključujući IEEE i ACM, te redovno učestvuje u organizaciji naučnih skupova i radionica.</p>
-        
-        <h5 class="mt-4">Obrazovanje</h5>
-        <ul class="list-unstyled">
-          <li class="mb-3">
-            <strong>2010 - Doktorat iz Računarstva</strong><br>
-            <span class="text-muted">Univerzitet u Sarajevu, Elektrotehnički fakultet</span>
-          </li>
-          <li class="mb-3">
-            <strong>2005 - Magisterij iz Elektrotehnike</strong><br>
-            <span class="text-muted">Univerzitet u Sarajevu, Elektrotehnički fakultet</span>
-          </li>
-          <li>
-            <strong>2000 - Diploma inženjera elektrotehnike</strong><br>
-            <span class="text-muted">Univerzitet u Sarajevu, Elektrotehnički fakultet</span>
-          </li>
-        </ul>
-      </div>
-
-      <!-- Nastava -->
-      <div class="tab-pane fade" id="teaching" role="tabpanel">
-        <h3 class="mb-3">Predmeti</h3>
-        <div class="list-group">
-          <a href="#" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Algoritmi i strukture podataka</h5>
-              <small>I ciklus</small>
-            </div>
-            <p class="mb-1">Obavezni predmet na drugoj godini RI.</p>
-          </a>
-          <a href="#" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1">Napredne baze podataka</h5>
-              <small>II ciklus</small>
-            </div>
-            <p class="mb-1">Izborni predmet na master studiju.</p>
-          </a>
+  <div class="col-lg-8">
+    <Tabs 
+      id="profTab" 
+      tabs={[
+        { id: 'biography', label: 'Biografija', active: true },
+        { id: 'education', label: 'Obrazovanje' },
+        { id: 'teaching', label: 'Nastava' },
+        { id: 'mentorship', label: 'Mentorstvo' },
+        { id: 'research', label: 'Istraživanje' },
+        { id: 'publications', label: 'Publikacije' }
+      ]}
+    >
+      <div class="tab-content border border-top-0 p-4 bg-white rounded-bottom" id="profTabContent">
+        <!-- Biografija -->
+        <div class="tab-pane fade show active" id="biography" role="tabpanel">
+          <h3 class="mb-3">Biografija</h3>
+          <p>Dr. Ime Prezime je redovni profesor na Odsjeku za računarstvo i informatiku Elektrotehničkog fakulteta Univerziteta u Sarajevu. Diplomirao je, magistrirao i doktorirao na istom fakultetu, fokusirajući se na oblasti vještačke inteligencije i mašinskog učenja. Tokom svoje akademske karijere, objavio je preko 50 naučnih radova u prestižnim međunarodnim časopisima i konferencijama.</p>
+          <p>Njegova istraživačka interesovanja uključuju primjenu naprednih algoritama mašinskog učenja u medicinskoj dijagnostici, analizu velikih skupova podataka (Big Data) i razvoj inteligentnih sistema za podršku odlučivanju. Vodio je nekoliko značajnih istraživačkih projekata finansiranih od strane domaćih i međunarodnih fondova, te aktivno sarađuje sa industrijom na primjeni akademskih istraživanja u realnom sektoru.</p>
+          <p>Pored istraživačkog rada, Dr. Prezime je posvećen nastavnom procesu, gdje predaje ključne predmete na dodiplomskom i postdiplomskom studiju. Mentor je brojnim studentima na master i doktorskim studijama, potičući ih na inovativnost i kritičko razmišljanje. Član je nekoliko međunarodnih strukovnih udruženja, uključujući IEEE i ACM, te redovno učestvuje u organizaciji naučnih skupova i radionica.</p>
         </div>
-      </div>
 
-      <!-- Istraživanje -->
-      <div class="tab-pane fade" id="research" role="tabpanel">
-        <h3 class="mb-3">Oblasti interesovanja</h3>
-        <div class="mb-4">
-          <span class="badge bg-light text-dark border me-2 mb-2 p-2">Vještačka inteligencija</span>
-          <span class="badge bg-light text-dark border me-2 mb-2 p-2">Mašinsko učenje</span>
-          <span class="badge bg-light text-dark border me-2 mb-2 p-2">Data Mining</span>
-          <span class="badge bg-light text-dark border me-2 mb-2 p-2">Bioinformatika</span>
-        </div>
-        
-        <h5 class="mt-4">Projekti</h5>
-        <div class="card mb-3">
-          <div class="card-body">
-            <h6 class="card-title"><a href="/examples/project-single" class="text-decoration-none">AI for Healthcare</a></h6>
-            <p class="card-text small">Primjena metoda mašinskog učenja u dijagnostici.</p>
+        <!-- Obrazovanje -->
+        <div class="tab-pane fade" id="education" role="tabpanel">
+          <h3 class="mb-3">Obrazovanje</h3>
+          <div class="list-group list-group-flush">
+            <IconListItem 
+              icon="bi-mortarboard" 
+              value="Doktorat iz Računarstva (2010)" 
+              label="Univerzitet u Sarajevu, Elektrotehnički fakultet"
+              class="px-0 py-3"
+            />
+            <IconListItem 
+              icon="bi-mortarboard" 
+              value="Magisterij iz Elektrotehnike (2005)" 
+              label="Univerzitet u Sarajevu, Elektrotehnički fakultet"
+              class="px-0 py-3"
+            />
+            <IconListItem 
+              icon="bi-mortarboard" 
+              value="Diploma inženjera elektrotehnike (2000)" 
+              label="Univerzitet u Sarajevu, Elektrotehnički fakultet"
+              class="px-0 py-3"
+            />
           </div>
         </div>
-      </div>
 
-      <!-- Publikacije -->
-      <div class="tab-pane fade" id="publications" role="tabpanel">
-        <h3 class="mb-3">Odabrane publikacije</h3>
-        <ol>
-          <li class="mb-3">
-            <strong>Prezime, I.</strong>, Autor, D. (2023). "Naslov rada o vještačkoj inteligenciji". <em>Journal of Computer Science</em>, 15(2), 123-145.
-          </li>
-          <li class="mb-3">
-            Autor, A., <strong>Prezime, I.</strong> (2022). "Analiza podataka u realnom vremenu". <em>Proceedings of the International Conference</em>, 45-50.
-          </li>
-        </ol>
+        <!-- Nastava -->
+        <div class="tab-pane fade" id="teaching" role="tabpanel">
+          <h3 class="mb-3">Predmeti</h3>
+          <div class="list-group list-group-flush">
+            <IconListItem 
+              icon="bi-book" 
+              value="Algoritmi i strukture podataka" 
+              label="Obavezni predmet / I ciklus"
+              link="#"
+              class="px-0 py-3"
+            />
+            <IconListItem 
+              icon="bi-book" 
+              value="Napredne baze podataka" 
+              label="Izborni predmet / II ciklus"
+              link="#"
+              class="px-0 py-3"
+            />
+          </div>
+        </div>
+
+        <!-- Istraživanje -->
+        <div class="tab-pane fade" id="research" role="tabpanel">
+          <h3 class="mb-3">Oblasti interesovanja</h3>
+          <div class="mb-4">
+            <span class="badge bg-light text-dark border me-2 mb-2 p-2">Vještačka inteligencija</span>
+            <span class="badge bg-light text-dark border me-2 mb-2 p-2">Mašinsko učenje</span>
+            <span class="badge bg-light text-dark border me-2 mb-2 p-2">Data Mining</span>
+            <span class="badge bg-light text-dark border me-2 mb-2 p-2">Bioinformatika</span>
+          </div>
+          
+          <h5 class="mt-4 mb-3">Laboratorije i Grupe</h5>
+          <div class="list-group list-group-flush mb-4">
+            <IconListItem 
+              icon="bi-cpu" 
+              value="Laboratorija za vještačku inteligenciju (AILab)" 
+              label="Voditelj laboratorije"
+              link="/examples/lab-list"
+              class="px-0 py-3"
+            />
+            <IconListItem 
+              icon="bi-people" 
+              value="Istraživačka grupa za Data Science" 
+              label="Član grupe"
+              link="#"
+              class="px-0 py-3"
+            />
+          </div>
+          
+          <h5 class="mt-4 mb-3">Projekti</h5>
+          <div class="list-group list-group-flush">
+            <IconListItem 
+              icon="bi-kanban" 
+              value="AI for Healthcare" 
+              label="EU Horizon / 2022-2024 / Primjena metoda mašinskog učenja u dijagnostici"
+              link="/examples/project-single"
+              class="px-0 py-3"
+            />
+            <IconListItem 
+              icon="bi-kanban" 
+              value="Smart City Traffic" 
+              label="Kantonalni / 2021-2023 / Optimizacija saobraćaja u urbanim sredinama"
+              link="/examples/project-single"
+              class="px-0 py-3"
+            />
+          </div>
+        </div>
+
+        <!-- Mentorstvo -->
+        <div class="tab-pane fade" id="mentorship" role="tabpanel">
+          <h3 class="mb-3">Mentorstvo</h3>
+          
+          <h5 class="mb-3">Doktorski studij</h5>
+          <div class="list-group list-group-flush mb-4">
+            <IconListItem 
+              icon="bi-person-badge" 
+              value="Mr. Kandidat Jedan" 
+              label="Tema: Napredne metode dubokog učenja / U toku"
+              class="px-0 py-3"
+            />
+            <IconListItem 
+              icon="bi-check-circle" 
+              value="Dr. Bivši Student" 
+              label="Tema: Analiza medicinskih slika / Odbranjeno 2022."
+              class="px-0 py-3"
+              iconColor="text-success"
+            />
+          </div>
+
+          <h5 class="mb-3">Master studij</h5>
+          <div class="list-group list-group-flush">
+            <IconListItem 
+              icon="bi-person" 
+              value="Student Jedan" 
+              label="Tema: Detekcija anomalija u mrežnom saobraćaju"
+              class="px-0 py-3"
+            />
+            <IconListItem 
+              icon="bi-person" 
+              value="Student Dva" 
+              label="Tema: Predikcija potrošnje električne energije"
+              class="px-0 py-3"
+            />
+          </div>
+        </div>
+
+        <!-- Publikacije -->
+        <div class="tab-pane fade" id="publications" role="tabpanel">
+          <h3 class="mb-3">Odabrane publikacije</h3>
+          <Accordion id="publicationsAccordion">
+            <AccordionItem id="pub2023" title="2023" parent="publicationsAccordion" open={true}>
+              <ol class="mb-0">
+                <li class="mb-2">
+                  <strong>Prezime, I.</strong>, Autor, D. (2023). "Naslov rada o vještačkoj inteligenciji". <em>Journal of Computer Science</em>, 15(2), 123-145.
+                </li>
+                <li>
+                  Autor, B., <strong>Prezime, I.</strong> (2023). "Novi pristupi u analizi podataka". <em>IEEE Transactions</em>, 10(1), 50-60.
+                </li>
+              </ol>
+            </AccordionItem>
+            <AccordionItem id="pub2022" title="2022" parent="publicationsAccordion">
+              <ol class="mb-0">
+                <li class="mb-2">
+                  Autor, A., <strong>Prezime, I.</strong> (2022). "Analiza podataka u realnom vremenu". <em>Proceedings of the International Conference</em>, 45-50.
+                </li>
+              </ol>
+            </AccordionItem>
+          </Accordion>
+        </div>
       </div>
-    </div>
+    </Tabs>
   </div>
 </PageLayout>
