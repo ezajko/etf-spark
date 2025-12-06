@@ -10,6 +10,8 @@ import ProgramCard from '../components/ProgramCard.astro';
 import SimpleListItem from '../components/SimpleListItem.astro';
 import Tabs from '../components/Tabs.astro';
 import TabItem from '../components/TabItem.astro';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="ETF UNSA - Početna stranica">
@@ -21,7 +23,7 @@ import TabItem from '../components/TabItem.astro';
     <div class="container">
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="mb-0">Aktuelnosti</h2>
-        <a href="/examples/news-list" class="btn btn-outline-primary btn-sm"
+        <a href={base + "/examples/news-list"} class="btn btn-outline-primary btn-sm"
           >Sve vijesti <i class="bi bi-arrow-right ms-1"></i></a
         >
       </div>
@@ -32,7 +34,7 @@ import TabItem from '../components/TabItem.astro';
         <div class="col-lg-4">
           <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
             <h3 class="h4 mb-0 text-primary">Konkursi</h3>
-            <a href="/examples/news-list" class="small text-decoration-none"
+            <a href={base + "/examples/news-list"} class="small text-decoration-none"
               >Svi konkursi <i class="bi bi-arrow-right"></i></a
             >
           </div>
@@ -74,7 +76,7 @@ import TabItem from '../components/TabItem.astro';
         <div class="col-lg-4">
           <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
             <h3 class="h4 mb-0 text-primary">Nastava</h3>
-            <a href="/examples/news-list" class="small text-decoration-none"
+            <a href={base + "/examples/news-list"} class="small text-decoration-none"
               >Sve vijesti <i class="bi bi-arrow-right"></i></a
             >
           </div>
@@ -116,7 +118,7 @@ import TabItem from '../components/TabItem.astro';
         <div class="col-lg-4">
           <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
             <h3 class="h4 mb-0 text-primary">Obavještenja</h3>
-            <a href="/examples/news-list" class="small text-decoration-none"
+            <a href={base + "/examples/news-list"} class="small text-decoration-none"
               >Sva obavještenja <i class="bi bi-arrow-right"></i></a
             >
           </div>
@@ -162,7 +164,7 @@ import TabItem from '../components/TabItem.astro';
     <div class="container">
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="mb-0">Događaji</h2>
-        <a href="/examples/event-list" class="btn btn-outline-primary btn-sm"
+        <a href={base + "/examples/event-list"} class="btn btn-outline-primary btn-sm"
           >Svi događaji <i class="bi bi-arrow-right ms-1"></i></a
         >
       </div>
@@ -171,7 +173,7 @@ import TabItem from '../components/TabItem.astro';
         <div class="col">
           <ContentCard
             title="Dan otvorenih vrata"
-            href="/examples/event-single"
+            href={base + "/examples/event-single"}
             date="15.05.2024"
             isEvent={true}
             time="10:00 - 14:00"
@@ -182,7 +184,7 @@ import TabItem from '../components/TabItem.astro';
         <div class="col">
           <ContentCard
             title="Sajam zapošljavanja JobFair '24"
-            href="/examples/event-single"
+            href={base + "/examples/event-single"}
             date="22.05.2024"
             isEvent={true}
             time="09:00 - 17:00"
@@ -193,7 +195,7 @@ import TabItem from '../components/TabItem.astro';
         <div class="col">
           <ContentCard
             title="Radionica: Cyber Security"
-            href="/examples/event-single"
+            href={base + "/examples/event-single"}
             date="01.06.2024"
             isEvent={true}
             time="12:00"
@@ -204,7 +206,7 @@ import TabItem from '../components/TabItem.astro';
         <div class="col">
           <ContentCard
             title="Sjednica NNV-a"
-            href="/examples/event-single"
+            href={base + "/examples/event-single"}
             date="05.06.2024"
             isEvent={true}
             time="11:00"
@@ -221,7 +223,7 @@ import TabItem from '../components/TabItem.astro';
     <div class="container">
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="mb-0">Studijski programi</h2>
-        <a href="/examples/study-program-list" class="btn btn-outline-primary btn-sm"
+        <a href={base + "/examples/study-program-list"} class="btn btn-outline-primary btn-sm"
           >Svi programi <i class="bi bi-arrow-right ms-1"></i></a
         >
       </div>
@@ -241,7 +243,7 @@ import TabItem from '../components/TabItem.astro';
               <div class="col">
                 <ContentCard
                   title="I Ciklus Studija"
-                  href="/examples/study-program-list"
+                  href={base + "/examples/study-program-list"}
                   icon="bi-1-circle"
                   layout="vertical"
                   excerpt="Bachelor studij (180 ECTS). Steknite temeljna inženjerska znanja i pripremite se za tržište rada ili nastavak školovanja."
@@ -251,7 +253,7 @@ import TabItem from '../components/TabItem.astro';
               <div class="col">
                 <ContentCard
                   title="II Ciklus Studija"
-                  href="/examples/study-program-list"
+                  href={base + "/examples/study-program-list"}
                   icon="bi-2-circle"
                   layout="vertical"
                   excerpt="Master studij (120 ECTS). Specijalizirajte se u odabranoj oblasti i steknite napredna akademska i stručna znanja."
@@ -261,7 +263,7 @@ import TabItem from '../components/TabItem.astro';
               <div class="col">
                 <ContentCard
                   title="III Ciklus Studija"
-                  href="/examples/study-program-list"
+                  href={base + "/examples/study-program-list"}
                   icon="bi-3-circle"
                   layout="vertical"
                   excerpt="Doktorski studij (180 ECTS). Uključite se u vrhunska naučna istraživanja i doprinesite razvoju novih tehnologija."
@@ -277,7 +279,7 @@ import TabItem from '../components/TabItem.astro';
               <div class="col">
                 <ContentCard
                   title="Računarstvo i informatika"
-                  href="/examples/study-program-list"
+                  href={base + "/examples/study-program-list"}
                   icon="bi-laptop"
                   layout="horizontal"
                   imagePosition="left"
@@ -288,7 +290,7 @@ import TabItem from '../components/TabItem.astro';
               <div class="col">
                 <ContentCard
                   title="Elektrotehnika"
-                  href="/examples/study-program-list"
+                  href={base + "/examples/study-program-list"}
                   icon="bi-lightning-charge"
                   layout="horizontal"
                   imagePosition="left"
@@ -308,7 +310,7 @@ import TabItem from '../components/TabItem.astro';
     <div class="container">
       <div class="d-flex justify-content-between align-items-center mb-4">
         <h2 class="mb-0">Odsjeci</h2>
-        <a href="/examples/department" class="btn btn-outline-primary btn-sm"
+        <a href={base + "/examples/department"} class="btn btn-outline-primary btn-sm"
           >Više o odsjecima <i class="bi bi-arrow-right ms-1"></i></a
         >
       </div>
@@ -317,7 +319,7 @@ import TabItem from '../components/TabItem.astro';
         <div class="col">
           <ContentCard
             title="Računarstvo i informatika"
-            href="/examples/department"
+            href={base + "/examples/department"}
             icon="bi-laptop"
             layout="vertical"
             excerpt="Fokus na softversko inženjerstvo, vještačku inteligenciju i informacione sisteme."
@@ -326,7 +328,7 @@ import TabItem from '../components/TabItem.astro';
         <div class="col">
           <ContentCard
             title="Automatika i elektronika"
-            href="/examples/department"
+            href={base + "/examples/department"}
             icon="bi-cpu"
             layout="vertical"
             excerpt="Istraživanje sistema upravljanja, robotike i elektronskih kola."
@@ -335,7 +337,7 @@ import TabItem from '../components/TabItem.astro';
         <div class="col">
           <ContentCard
             title="Elektroenergetika"
-            href="/examples/department"
+            href={base + "/examples/department"}
             icon="bi-lightning-charge"
             layout="vertical"
             excerpt="Proizvodnja, prenos i distribucija električne energije."
@@ -344,7 +346,7 @@ import TabItem from '../components/TabItem.astro';
         <div class="col">
           <ContentCard
             title="Telekomunikacije"
-            href="/examples/department"
+            href={base + "/examples/department"}
             icon="bi-broadcast"
             layout="vertical"
             excerpt="Razvoj komunikacijskih mreža, bežičnih tehnologija i obrade signala."

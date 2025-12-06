@@ -23,6 +23,8 @@ const staff = [
   { name: 'Ime5 Prezime5', title: 'Asistent', email: 'ime5.prezime5@etf.unsa.ba' },
   { name: 'Ime6 Prezime6', title: 'Asistent', email: 'ime6.prezime6@etf.unsa.ba' },
 ];
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <PageLayout title="Osoblje | ETF UNSA" breadcrumbItems={breadcrumbItems}>
@@ -62,7 +64,7 @@ const staff = [
                 </div>
               </div>
               <h5 class="card-title mb-1">
-                <a href="/examples/staff-profile" class="text-decoration-none text-dark stretched-link">{person.name}</a>
+                <a href={base + "/examples/staff-profile"} class="text-decoration-none text-dark stretched-link">{person.name}</a>
               </h5>
               <p class="text-muted small mb-2">{person.title}</p>
               <p class="small text-primary mb-0"><i class="bi bi-envelope me-1"></i> {person.email}</p>

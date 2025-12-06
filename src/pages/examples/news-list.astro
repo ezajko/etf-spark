@@ -49,6 +49,8 @@ const news = [
     image: '/images/news-graduation.png',
   },
 ];
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <SectionRightSidebar title="Vijesti | ETF UNSA" breadcrumbItems={breadcrumbItems}>
@@ -61,7 +63,7 @@ const news = [
       news.map((item) => (
         <ContentCard
           title={item.title}
-          href="/examples/news-single"
+          href={base + "/examples/news-single"}
           image={item.image}
           category={item.category}
           excerpt={item.excerpt}

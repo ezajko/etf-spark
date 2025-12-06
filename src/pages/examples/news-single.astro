@@ -12,6 +12,8 @@ const breadcrumbItems = [
   { label: 'Vijesti', href: '/examples/news-list' },
   { label: 'Održana svečana promocija...', href: '#', active: true },
 ];
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <SectionRightSidebar title="Vijest | ETF UNSA" breadcrumbItems={breadcrumbItems}>
@@ -30,7 +32,7 @@ const breadcrumbItems = [
       </p>
     </div>
 
-    <img src="/images/news-graduation.png" class="img-fluid rounded mb-4 w-100" alt="Promocija" />
+    <img src={base + "/images/news-graduation.png"} class="img-fluid rounded mb-4 w-100" alt="Promocija" />
 
     <div class="content mb-5">
       <p>

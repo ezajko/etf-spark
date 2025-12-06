@@ -18,6 +18,8 @@ const breadcrumbItems = [
   { label: 'Odsjeci', href: '#' },
   { label: 'Odsjek za računarstvo i informatiku', href: '#', active: true }
 ];
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <PageLayout title="Odsjek za računarstvo i informatiku | ETF UNSA" breadcrumbItems={breadcrumbItems}>
@@ -101,7 +103,7 @@ const breadcrumbItems = [
         <div class="col">
           <ContentCard
             title="Računarstvo i informatika (RI)"
-            href="/examples/study-program"
+            href={base + "/examples/study-program"}
             excerpt="Prvi ciklus studija (Bachelor), 3 godine, 180 ECTS."
             layout="vertical"
           />
@@ -109,7 +111,7 @@ const breadcrumbItems = [
         <div class="col">
           <ContentCard
             title="Softversko inženjerstvo (SI)"
-            href="/examples/study-program"
+            href={base + "/examples/study-program"}
             excerpt="Drugi ciklus studija (Master), 2 godine, 120 ECTS."
             layout="vertical"
           />
@@ -117,7 +119,7 @@ const breadcrumbItems = [
         <div class="col">
           <ContentCard
             title="Data Science"
-            href="/examples/study-program"
+            href={base + "/examples/study-program"}
             excerpt="Treći ciklus studija (Doktorski), 3 godine, 180 ECTS."
             layout="vertical"
           />
@@ -198,7 +200,7 @@ const breadcrumbItems = [
         <div class="col">
           <ContentCard
             title="AI for Healthcare"
-            href="/examples/project-single"
+            href={base + "/examples/project-single"}
             excerpt="Primjena metoda mašinskog učenja u dijagnostici i personaliziranoj medicini."
             layout="vertical"
           />
@@ -206,7 +208,7 @@ const breadcrumbItems = [
         <div class="col">
           <ContentCard
             title="Smart City Traffic"
-            href="/examples/project-single"
+            href={base + "/examples/project-single"}
             excerpt="Optimizacija saobraćaja u urbanim sredinama korištenjem IoT senzora."
             layout="vertical"
           />
@@ -214,7 +216,7 @@ const breadcrumbItems = [
         <div class="col">
           <ContentCard
             title="Green Energy Grid"
-            href="/examples/project-single"
+            href={base + "/examples/project-single"}
             excerpt="Upravljanje distribucijom električne energije iz obnovljivih izvora."
             layout="vertical"
           />
@@ -222,7 +224,7 @@ const breadcrumbItems = [
         <div class="col">
           <ContentCard
             title="Cyber Defense System"
-            href="/examples/project-single"
+            href={base + "/examples/project-single"}
             excerpt="Razvoj naprednih sistema za detekciju i prevenciju cyber napada."
             layout="vertical"
           />

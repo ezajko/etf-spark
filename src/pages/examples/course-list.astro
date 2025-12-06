@@ -21,6 +21,8 @@ const courses = [
   { code: 'RI-3-1', name: 'Baze podataka', semester: 5, ects: 6.0, type: 'Obavezni' },
   { code: 'RI-3-2', name: 'Web tehnologije', semester: 5, ects: 5.0, type: 'Izborni' }
 ];
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <PageLayout title="Predmeti | ETF UNSA" breadcrumbItems={breadcrumbItems}>
@@ -71,12 +73,12 @@ const courses = [
           {courses.map(course => (
             <tr>
               <td><span class="font-monospace text-muted">{course.code}</span></td>
-              <td><a href="/examples/course-details" class="text-decoration-none fw-bold text-dark">{course.name}</a></td>
+              <td><a href={base + "/examples/course-details"} class="text-decoration-none fw-bold text-dark">{course.name}</a></td>
               <td class="text-center">{course.semester}</td>
               <td class="text-center">{course.ects}</td>
               <td class="text-center"><span class={`badge ${course.type === 'Obavezni' ? 'bg-primary' : 'bg-secondary'}`}>{course.type}</span></td>
               <td class="text-end">
-                <a href="/examples/course-details" class="btn btn-sm btn-outline-primary">Detalji</a>
+                <a href={base + "/examples/course-details"} class="btn btn-sm btn-outline-primary">Detalji</a>
               </td>
             </tr>
           ))}

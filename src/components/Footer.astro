@@ -2,6 +2,8 @@
 // ETF UNSA - Footer Component
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <footer class="ez-footer">
@@ -9,40 +11,60 @@
     <div class="row">
       <!-- About Column -->
       <div class="col-md-4 mb-4">
-
         <div class="ez-footer-logos mb-3 d-flex align-items-center gap-3">
           <!-- UNSA Icon -->
           <div class="ez-footer-logo-icon" title="Univerzitet u Sarajevu">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
-              <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              class="bi bi-building"
+              viewBox="0 0 16 16"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"
+              ></path>
+              <path
+                d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"
+              ></path>
             </svg>
           </div>
           <!-- ETF Icon -->
           <div class="ez-footer-logo-icon" title="Elektrotehnički fakultet">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-lightning-charge" viewBox="0 0 16 16">
-              <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="currentColor"
+              class="bi bi-lightning-charge"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z"
+              ></path>
             </svg>
           </div>
         </div>
         <h5>ETF UNSA</h5>
         <p>
-          Elektrotehnički fakultet Univerziteta u Sarajevu je vodeća obrazovna i naučno-istraživačka 
+          Elektrotehnički fakultet Univerziteta u Sarajevu je vodeća obrazovna i naučno-istraživačka
           institucija u oblasti elektrotehnike, računarstva i telekomunikacija.
         </p>
       </div>
-      
+
       <!-- Quick Links -->
       <div class="col-md-4 mb-4">
         <h5>Brzi linkovi</h5>
         <ul class="list-unstyled">
-          <li class="mb-2"><a href="/o-nama">O fakultetu</a></li>
-          <li class="mb-2"><a href="/studiji">Studijski programi</a></li>
-          <li class="mb-2"><a href="/prijava">Prijava na fakultet</a></li>
-          <li class="mb-2"><a href="/kontakt">Kontakt</a></li>
+          <li class="mb-2"><a href={base + 'o-nama'}>O fakultetu</a></li>
+          <li class="mb-2"><a href={base + 'studiji'}>Studijski programi</a></li>
+          <li class="mb-2"><a href={base + 'prijava'}>Prijava na fakultet</a></li>
+          <li class="mb-2"><a href={base + 'kontakt'}>Kontakt</a></li>
         </ul>
       </div>
-      
+
       <!-- Contact Info -->
       <div class="col-md-4 mb-4">
         <h5>Kontakt</h5>
@@ -58,7 +80,7 @@
           <i class="bi bi-envelope-fill me-2 text-primary"></i>
           info@etf.unsa.ba
         </p>
-        
+
         <!-- Social Media -->
         <div class="ez-footer-social mt-4">
           <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
@@ -69,21 +91,19 @@
       </div>
     </div>
   </div>
-  
+
   <!-- Copyright -->
   <div class="ez-footer-bottom">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
-          <p class="mb-0">
-            &copy; 2024 ETF UNSA. Sva prava zadržana.
-          </p>
+          <p class="mb-0">&copy; 2024 ETF UNSA. Sva prava zadržana.</p>
         </div>
         <div class="col-md-6 text-center text-md-end">
           <p class="mb-0">
-            <a href="/privacy">Politika privatnosti</a>
+            <a href={base + 'privacy'}>Politika privatnosti</a>
             <span class="mx-2">|</span>
-            <a href="/terms">Uslovi korištenja</a>
+            <a href={base + 'terms'}>Uslovi korištenja</a>
           </p>
         </div>
       </div>

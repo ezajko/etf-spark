@@ -43,6 +43,8 @@ const projects = [
     image: '/images/project-smart-city.png'
   }
 ];
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <PageLayout title="Projekti | ETF UNSA" breadcrumbItems={breadcrumbItems}>
@@ -73,7 +75,7 @@ const projects = [
         <div class="col">
           <ContentCard
             title={project.title}
-            href="/examples/project-single"
+            href={base + "/examples/project-single"}
             image={project.image}
             category={project.category}
             excerpt={project.description}

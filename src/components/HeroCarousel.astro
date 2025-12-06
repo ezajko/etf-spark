@@ -6,6 +6,8 @@
 import Carousel from './Carousel.astro';
 import CarouselItem from './CarouselItem.astro';
 import Hero from './Hero.astro';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <Carousel id="heroCarousel" height="medium" showControls={false}>
@@ -25,7 +27,7 @@ import Hero from './Hero.astro';
 
   <!-- Slide 1: Standard with Image -->
   <CarouselItem active={true}>
-    <Hero height="auto" class="h-100" backgroundImage="/images/news_1.png" overlay={true}>
+    <Hero height="auto" class="h-100" backgroundImage={base + 'images/news_1.png'} overlay={true}>
       <div class="row justify-content-center">
         <div class="col-lg-10">
           <h1 class="ez-hero__title text-white">Dobrodošli na ETF</h1>
@@ -35,7 +37,7 @@ import Hero from './Hero.astro';
           </p>
           <div class="ez-hero__cta">
             <a
-              href="/studiji"
+              href={base + 'studiji'}
               class="btn btn-light btn-lg rounded-0 text-uppercase fw-bold px-4 py-3"
             >
               <i class="bi bi-book me-2"></i> Studijski programi
@@ -59,13 +61,13 @@ import Hero from './Hero.astro';
           </p>
           <div class="ez-hero__cta">
             <a
-              href="/upis"
+              href={base + 'upis'}
               class="btn btn-primary btn-lg rounded-0 text-uppercase fw-bold px-4 py-3"
             >
               <i class="bi bi-pencil-square me-2"></i> Apliciraj odmah
             </a>
             <a
-              href="/informacije"
+              href={base + 'informacije'}
               class="btn btn-outline-light btn-lg rounded-0 text-uppercase fw-bold px-4 py-3 ms-3"
             >
               Saznaj više
@@ -84,7 +86,7 @@ import Hero from './Hero.astro';
           <h1 class="ez-hero__title text-primary mb-3">Nauka i Istraživanje</h1>
           <div class="ez-hero__cta m-0">
             <a
-              href="/istrazivanje"
+              href={base + 'istrazivanje'}
               class="btn btn-outline-primary btn-lg rounded-0 text-uppercase fw-bold px-4 py-3"
             >
               Projekti i saradnja <i class="bi bi-arrow-right ms-2"></i>
