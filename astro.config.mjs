@@ -3,8 +3,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-    site: 'https://etf-unsa.github.io',
-    base: '/www-ng',
+    site: 'https://ezajko.github.io',
+    base: '/etf-spark',
     integrations: [sitemap()],
     vite: {
         css: {
