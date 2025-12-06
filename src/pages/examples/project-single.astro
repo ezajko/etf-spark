@@ -3,120 +3,135 @@
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
-import PageLayout from '../../layouts/PageLayout.astro';
+import SectionRightSidebar from '../../layouts/SectionRightSidebar.astro';
+import InfoWidget from '../../components/InfoWidget.astro';
+import KeyValueListItem from '../../components/KeyValueListItem.astro';
+import ContactWidget from '../../components/ContactWidget.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
   { label: 'Istraživanje', href: '#' },
   { label: 'Projekti', href: '/examples/project-list' },
-  { label: 'Smart City IoT Infrastructure', href: '#', active: true }
+  { label: 'Smart City IoT Infrastructure', href: '#', active: true },
 ];
 ---
 
-<PageLayout title="Smart City IoT | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+<SectionRightSidebar title="Smart City IoT | ETF UNSA" breadcrumbItems={breadcrumbItems}>
   <!-- Main Content -->
-  <div class="col-lg-8">
-    <div class="mb-4">
-      <span class="badge bg-success mb-2">EU Horizon 2020</span>
-      <h1 class="fw-bold mb-3">Smart City IoT Infrastructure</h1>
-      <p class="lead text-muted">Razvoj inteligentne infrastrukture za pametne gradove korištenjem IoT tehnologija.</p>
-    </div>
+  <div class="mb-4">
+    <span class="badge bg-success mb-2">EU Horizon 2020</span>
+    <h1 class="fw-bold mb-3">Smart City IoT Infrastructure</h1>
+    <p class="lead text-muted">
+      Razvoj inteligentne infrastrukture za pametne gradove korištenjem IoT tehnologija.
+    </p>
+  </div>
 
-    <img src="/images/project-smart-city.png" class="img-fluid rounded mb-4 w-100" alt="Project Image">
+  <img
+    src="/images/project-smart-city.png"
+    class="img-fluid rounded mb-4 w-100"
+    alt="Project Image"
+  />
 
-    <div class="mb-5">
-      <h3>Opis projekta</h3>
-      <p>Ovaj projekat ima za cilj istraživanje i razvoj novih rješenja za pametne gradove. Fokus je na korištenju Internet of Things (IoT) uređaja za prikupljanje podataka o okolišu, saobraćaju i potrošnji energije, te primjeni naprednih algoritama za analizu tih podataka.</p>
-      <p>Rezultati projekta će omogućiti gradskim upravama bolje planiranje i upravljanje resursima, smanjenje zagađenja i poboljšanje kvaliteta života građana.</p>
-    </div>
+  <div class="mb-5">
+    <h3>Opis projekta</h3>
+    <p>
+      Ovaj projekat ima za cilj istraživanje i razvoj novih rješenja za pametne gradove. Fokus je na
+      korištenju Internet of Things (IoT) uređaja za prikupljanje podataka o okolišu, saobraćaju i
+      potrošnji energije, te primjeni naprednih algoritama za analizu tih podataka.
+    </p>
+    <p>
+      Rezultati projekta će omogućiti gradskim upravama bolje planiranje i upravljanje resursima,
+      smanjenje zagađenja i poboljšanje kvaliteta života građana.
+    </p>
+  </div>
 
-    <div class="mb-5">
-      <h3>Ciljevi</h3>
-      <div class="row g-3">
-        <div class="col-md-6">
-          <div class="card h-100 border-0 bg-light">
-            <div class="card-body">
-              <h5 class="card-title"><i class="bi bi-check-circle text-success me-2"></i>Energetska efikasnost</h5>
-              <p class="card-text small">Smanjenje potrošnje energije u javnoj rasvjeti za 30%.</p>
-            </div>
+  <div class="mb-5">
+    <h3>Ciljevi</h3>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <div class="card h-100 border-0 bg-light">
+          <div class="card-body">
+            <h5 class="card-title">
+              <i class="bi bi-check-circle text-success me-2"></i>Energetska efikasnost
+            </h5>
+            <p class="card-text small">Smanjenje potrošnje energije u javnoj rasvjeti za 30%.</p>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="card h-100 border-0 bg-light">
-            <div class="card-body">
-              <h5 class="card-title"><i class="bi bi-check-circle text-success me-2"></i>Monitoring zraka</h5>
-              <p class="card-text small">Postavljanje mreže senzora za praćenje kvaliteta zraka u realnom vremenu.</p>
-            </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card h-100 border-0 bg-light">
+          <div class="card-body">
+            <h5 class="card-title">
+              <i class="bi bi-check-circle text-success me-2"></i>Monitoring zraka
+            </h5>
+            <p class="card-text small">
+              Postavljanje mreže senzora za praćenje kvaliteta zraka u realnom vremenu.
+            </p>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="card h-100 border-0 bg-light">
-            <div class="card-body">
-              <h5 class="card-title"><i class="bi bi-check-circle text-success me-2"></i>Pametni parking</h5>
-              <p class="card-text small">Sistem za detekciju slobodnih parking mjesta i navođenje vozača.</p>
-            </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card h-100 border-0 bg-light">
+          <div class="card-body">
+            <h5 class="card-title">
+              <i class="bi bi-check-circle text-success me-2"></i>Pametni parking
+            </h5>
+            <p class="card-text small">
+              Sistem za detekciju slobodnih parking mjesta i navođenje vozača.
+            </p>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="mb-5">
-      <h3>Partneri</h3>
-      <div class="d-flex align-items-center gap-4 flex-wrap">
-        <div class="bg-light p-3 rounded border text-center" style="width: 150px;">Partner 1 Logo</div>
-        <div class="bg-light p-3 rounded border text-center" style="width: 150px;">Partner 2 Logo</div>
-        <div class="bg-light p-3 rounded border text-center" style="width: 150px;">Partner 3 Logo</div>
+  <div class="mb-5">
+    <h3>Partneri</h3>
+    <div class="d-flex align-items-center gap-4 flex-wrap">
+      <div class="bg-light p-3 rounded border text-center" style="width: 150px;">
+        Partner 1 Logo
+      </div>
+      <div class="bg-light p-3 rounded border text-center" style="width: 150px;">
+        Partner 2 Logo
+      </div>
+      <div class="bg-light p-3 rounded border text-center" style="width: 150px;">
+        Partner 3 Logo
       </div>
     </div>
   </div>
 
   <!-- Right Sidebar -->
-  <div class="col-lg-4">
-    <div class="card mb-4 border-0 shadow-sm">
-      <div class="card-header bg-white border-bottom fw-bold py-3">Info o projektu</div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          Status
-          <span class="badge bg-success rounded-pill">U toku</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          Trajanje
-          <span>2022 - 2025</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          Budžet
-          <span>€ 1.5M</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center">
-          Koordinator
-          <span>ETF Sarajevo</span>
-        </li>
-      </ul>
-    </div>
+  <Fragment slot="sidebar">
+    <InfoWidget title="Info o projektu" class="mb-4">
+      <KeyValueListItem
+        label="Status"
+        value="U toku"
+        badgeClass="bg-success rounded-pill"
+        icon="bi-activity"
+      />
+      <KeyValueListItem label="Trajanje" value="2022 - 2025" icon="bi-calendar-event" />
+      <KeyValueListItem label="Budžet" value="€ 1.5M" icon="bi-currency-euro" />
+      <KeyValueListItem label="Koordinator" value="ETF Sarajevo" icon="bi-building" />
+    </InfoWidget>
 
-    <div class="card mb-4 border-0 shadow-sm">
-      <div class="card-header bg-white border-bottom fw-bold py-3">Projektni tim</div>
-      <div class="list-group list-group-flush">
-        <div class="list-group-item">
-          <div class="d-flex align-items-center">
-            <div class="bg-secondary rounded-circle me-3" style="width: 40px; height: 40px;"></div>
-            <div>
-              <h6 class="mb-0">Dr. Ime Prezime</h6>
-              <small class="text-muted">Voditelj projekta</small>
-            </div>
-          </div>
-        </div>
-        <div class="list-group-item">
-          <div class="d-flex align-items-center">
-            <div class="bg-secondary rounded-circle me-3" style="width: 40px; height: 40px;"></div>
-            <div>
-              <h6 class="mb-0">Dr. Član Tima</h6>
-              <small class="text-muted">Istraživač</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <ContactWidget
+      title="Projektni tim"
+      class="mb-4"
+      contacts={[
+        {
+          name: 'Dr. Ime Prezime',
+          role: 'Voditelj projekta',
+          email: 'voditelj@etf.unsa.ba',
+          avatarIcon: 'bi-person',
+        },
+        {
+          name: 'Dr. Član Tima',
+          role: 'Istraživač',
+          email: 'clan@etf.unsa.ba',
+          avatarIcon: 'bi-person',
+        },
+      ]}
+    />
 
     <div class="card border-0 shadow-sm">
       <div class="card-body">
@@ -125,5 +140,5 @@ const breadcrumbItems = [
         <a href="#" class="btn btn-outline-primary btn-sm w-100">Kontaktirajte nas</a>
       </div>
     </div>
-  </div>
-</PageLayout>
+  </Fragment>
+</SectionRightSidebar>

@@ -13,23 +13,23 @@ interface Props {
 const { id, parent, title, open = false, class: className } = Astro.props;
 ---
 
-<div class={`accordion-item border-0 shadow-sm mb-3 ${className || ''}`}>
+<div class={`accordion-item ${className || ''}`}>
   <h2 class="accordion-header" id={`heading-${id}`}>
-    <button 
-      class={`accordion-button fw-bold ${!open ? 'collapsed' : ''}`} 
-      type="button" 
-      data-bs-toggle="collapse" 
-      data-bs-target={`#collapse-${id}`} 
-      aria-expanded={open} 
+    <button
+      class={`accordion-button fw-bold ${!open ? 'collapsed' : ''}`}
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target={`#collapse-${id}`}
+      aria-expanded={open}
       aria-controls={`collapse-${id}`}
     >
       {title}
     </button>
   </h2>
-  <div 
-    id={`collapse-${id}`} 
-    class={`accordion-collapse collapse ${open ? 'show' : ''}`} 
-    aria-labelledby={`heading-${id}`} 
+  <div
+    id={`collapse-${id}`}
+    class={`accordion-collapse collapse ${open ? 'show' : ''}`}
+    aria-labelledby={`heading-${id}`}
     data-bs-parent={`#${parent}`}
   >
     <div class="accordion-body bg-white">

@@ -1,0 +1,93 @@
+// ETF UNSA - Table Styles
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+.ez-table {
+    width: 100%;
+    margin-bottom: $ez-spacing-lg;
+    color: $ez-text-color;
+    background-color: #fff;
+    border-collapse: separate;
+    border-spacing: 0;
+    box-shadow: $ez-shadow-sm;
+    border-radius: $ez-border-radius;
+    overflow: hidden;
+
+    // Header
+    thead {
+        background-color: $ez-bg-light;
+
+        th {
+            border-bottom: 2px solid $ez-border-color;
+            color: $ez-primary-color;
+            font-weight: $ez-font-weight-bold;
+            padding: $ez-spacing-md;
+            text-align: left;
+            vertical-align: bottom;
+            white-space: nowrap;
+
+            &:first-child {
+                padding-left: $ez-spacing-lg;
+            }
+
+            &:last-child {
+                padding-right: $ez-spacing-lg;
+            }
+        }
+    }
+
+    // Body
+    tbody {
+        tr {
+            transition: background-color 0.2s ease;
+
+            &:last-child td {
+                border-bottom: none;
+            }
+
+            &:hover {
+                background-color: rgba($ez-primary-color, 0.05);
+            }
+        }
+
+        td {
+            padding: $ez-spacing-md;
+            vertical-align: middle;
+            border-bottom: 1px solid $ez-border-color;
+
+            &:first-child {
+                padding-left: $ez-spacing-lg;
+            }
+
+            &:last-child {
+                padding-right: $ez-spacing-lg;
+            }
+        }
+    }
+
+    // Variants
+    &--striped {
+        tbody tr:nth-of-type(odd) {
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+    }
+
+    &--hover {
+        tbody tr:hover {
+            background-color: rgba($ez-primary-color, 0.05);
+        }
+    }
+}
+
+// Responsive wrapper
+.ez-table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: $ez-border-radius;
+    box-shadow: $ez-shadow-sm;
+
+    .ez-table {
+        box-shadow: none; // Remove shadow from table if wrapper has it to avoid double shadow
+        margin-bottom: 0;
+    }
+}

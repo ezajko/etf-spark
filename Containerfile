@@ -7,26 +7,17 @@
 # ======================
 FROM docker.io/library/node:20-alpine AS development
 
-# Install pnpm
-RUN corepack enable && corepack prepare pnpm@latest --activate
-
-# Set working directory
-WORKDIR /app
-
-# Copy package files
-COPY package.json pnpm-lock.yaml* ./
-
 # Install dependencies
-RUN pnpm install --frozen-lockfile
+RUN npm install
 
 # Copy source code
 COPY . .
 
 # Expose ports
-EXPOSE 4321 6006
+EXPOSE 4321
 
 # Development command
-CMD ["pnpm", "run", "dev", "--host"]
+CMD ["npm", "run", "dev", "--", "--host"]
 
 # ======================
 # Build Stage
@@ -34,7 +25,7 @@ CMD ["pnpm", "run", "dev", "--host"]
 FROM development AS builder
 
 # Build the application
-RUN pnpm run build
+RUN npm run build
 
 # ======================
 # Production Stage

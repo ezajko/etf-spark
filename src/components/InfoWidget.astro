@@ -12,9 +12,9 @@ interface Props {
 const { title, icon, class: className } = Astro.props;
 ---
 
-<div class={`card border-0 shadow-sm ${className || ''}`}>
-  <div class="card-header ez-card__header">
-    {icon && <i class={`bi ${icon} me-2`}></i>}
+<div class={`ez-card ${className || ''}`}>
+  <div class="ez-card__header">
+    {icon && <i class={`bi ${icon} me-2`} />}
     {title}
   </div>
   <div class="list-group list-group-flush">

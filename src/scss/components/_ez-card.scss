@@ -1,34 +1,77 @@
 // ETF UNSA - Card Component SCSS
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
-// Migrated from legacy/css/style.css
 
 .ez-card {
     border: none;
     border-radius: 0;
-    transition: transform 0.2s ease-in-out;
+    box-shadow: $ez-shadow-sm;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    height: 100%; 
+    overflow: hidden;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+
+    &--auto-height {
+        height: auto !important;
+    }
+    word-wrap: break-word;
+    background-clip: border-box;
 
     &:hover {
-        transform: translateY(-5px);
+        transform: translateY(-2px);
+        box-shadow: $ez-shadow;
     }
 
-    // Card title
+    // Header
+    &__header {
+        background-color: $ez-primary-color;
+        color: #ffffff;
+        font-weight: $ez-font-weight-bold;
+        padding: $ez-spacing-md;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+        // Ensure icons are white
+        .bi {
+            color: #ffffff;
+        }
+
+        // Remove default bootstrap card-header styles if causing conflict
+        &:first-child {
+            border-radius: 0;
+        }
+    }
+
+    // Body
+    &__body {
+        padding: $ez-spacing-lg;
+        flex: 1 1 auto; // Ensure it grows in flex container
+    }
+
+    // Title
     &__title {
         font-weight: $ez-font-weight-bold;
         margin-bottom: $ez-spacing-md;
         color: $ez-primary-color;
     }
 
-    // Card body
-    &__body {
-        padding: $ez-spacing-lg;
-    }
-
-    // Card footer
+    // Footer
     &__footer {
         background-color: $ez-bg-light;
         border-top: 1px solid $ez-border-color;
         padding: $ez-spacing-md;
+    }
+
+    // Images
+    .card-img-top,
+    .img-fluid {
+        transition: transform 0.3s ease;
+    }
+
+    &:hover .card-img-top,
+    &:hover .img-fluid {
+        transform: scale(1.02);
     }
 
     // Variants
@@ -46,6 +89,7 @@
 
     &--border {
         border: 1px solid $ez-border-color;
+        box-shadow: none;
     }
 
     &--hover-lift {
@@ -54,32 +98,64 @@
             box-shadow: $ez-shadow-lg;
         }
     }
+
+    // Department/Grid variant
+    &--department {
+        text-align: center;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-10px);
+            box-shadow: $ez-shadow-lg;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
 }
 
-// Card group
+// Card group / Grid helpers
 .ez-card-group {
     .ez-card {
         border-radius: 0;
     }
-
-    .ez-card__footer {
-        background-color: $ez-bg-light;
-        border-top: 1px solid $ez-border-color;
-    }
 }
 
-// Department card variant
-.ez-card--department {
-    text-align: center;
-    transition: all 0.3s ease;
+// Avatars (moved from _ez-cards.scss)
+.ez-avatar {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: $ez-bg-light;
+    color: $ez-primary-color;
 
-    &:hover {
-        transform: translateY(-10px);
-        box-shadow: $ez-shadow-lg;
+    &--sm {
+        width: 32px;
+        height: 32px;
+        font-size: 0.875rem;
+    }
+
+    &--md {
+        width: 48px;
+        height: 48px;
+        font-size: 1.25rem;
+    }
+
+    &--xl {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
     }
 
     img {
         width: 100%;
-        height: auto;
+        height: 100%;
+        object-fit: cover;
     }
 }

@@ -1,0 +1,101 @@
+---
+// ETF UNSA - Section Layout Example (Left Sidebar)
+// Author: Ernedin Zajko <ezajko@root.ba>
+
+import SectionLeftSidebar from '../../layouts/SectionLeftSidebar.astro';
+import SectionLinksMenu from '../../components/SectionLinksMenu.astro';
+import ContactWidget from '../../components/ContactWidget.astro';
+import DocumentWidget from '../../components/DocumentWidget.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Layouts', href: '#' },
+  { label: 'Section Left Sidebar', href: '#', active: true },
+];
+
+const quickLinks = [
+  { label: 'Opšte informacije', link: '#', active: true },
+  { label: 'Historijat', link: '#' },
+  { label: 'Misija i vizija', link: '#' },
+  { label: 'Organizacija', link: '#' },
+  { label: 'Akti i propisi', link: '#' },
+];
+---
+
+<SectionLeftSidebar
+  title="Primjer Generičke Stranice (Lijevo) | ETF UNSA"
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle="Odsjek za automatiku"
+  bannerSubtitle="Primjer stranice sa lijevim sidebarom"
+  bannerBgClass="bg-dark"
+>
+  <!-- Sidebar Content -->
+  <Fragment slot="sidebar">
+    <SectionLinksMenu links={quickLinks} class="mb-4" />
+
+    <DocumentWidget
+      title="Ključni dokumenti"
+      documents={[
+        { title: 'Brošura Odsjeka', size: '2 MB', format: 'PDF', link: '#' },
+        { title: 'Plan studija', size: '1.5 MB', format: 'PDF', link: '#' },
+      ]}
+      class="mb-4"
+    />
+
+    <ContactWidget
+      title="Kontakt"
+      contacts={[
+        {
+          name: 'Studentska služba',
+          role: 'Informacije',
+          email: 'info@etf.unsa.ba',
+          phone: '+387 33 250 700',
+        },
+      ]}
+    />
+  </Fragment>
+
+  <!-- Main Content -->
+  <div class="mb-5">
+    <SectionHeader title="O Odsjeku" />
+    <p class="lead">
+      Ovo je primjer generičke stranice koja koristi <strong>SectionLeftSidebar</strong> layout. Sadržaj
+      je desno, a navigacija i widgeti lijevo.
+    </p>
+    <p>
+      Ovakav raspored je idealan za stranice odsjeka, administrativnih jedinica ili bilo koje
+      sekcije koja zahtijeva hijerarhijsku navigaciju.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus
+      hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh
+      porttitor. Ut in nulla enim. Phasellus molestie magna non est bibendum non venenatis nisl
+      tempor. Suspendisse dictum feugiat nisl ut dapibus.
+    </p>
+  </div>
+
+  <div class="mb-5">
+    <SectionHeader title="Istraživački fokus" level="h3" />
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title text-primary"><i class="bi bi-robot me-2"></i>Robotika</h5>
+            <p class="card-text text-muted">Razvoj autonomnih sistema i industrijskih robota.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card h-100 border-0 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title text-primary">
+              <i class="bi bi-cpu me-2"></i>Sistemi upravljanja
+            </h5>
+            <p class="card-text text-muted">Dizajn i analiza složenih sistema upravljanja.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</SectionLeftSidebar>

@@ -24,14 +24,14 @@ interface Props {
 const { title, icon, contacts, class: className } = Astro.props;
 ---
 
-<div class={`card border-0 shadow-sm ${className || ''}`}>
-  <div class="card-header ez-card__header">
-    {icon && <i class={`bi ${icon} me-2`}></i>}
+<div class={`ez-card ${className || ''}`}>
+  <div class="ez-card__header">
+    {icon && <i class={`bi ${icon} me-2`} />}
     {title}
   </div>
-  <div class="card-body p-0">
-    <div class="p-3">
-      {contacts.map((contact, index) => (
+  <div class="ez-card__body">
+    {
+      contacts.map((contact, index) => (
         <>
           <ImageListItem
             value={contact.name}
@@ -43,13 +43,13 @@ const { title, icon, contacts, class: className } = Astro.props;
           >
             {contact.phone && (
               <small class="text-muted d-block mt-1">
-                <i class="bi bi-telephone me-1 text-primary"></i> {contact.phone}
+                <i class="bi bi-telephone me-1 text-primary" /> {contact.phone}
               </small>
             )}
           </ImageListItem>
           {index < contacts.length - 1 && <hr class="my-3" />}
         </>
-      ))}
-    </div>
+      ))
+    }
   </div>
 </div>

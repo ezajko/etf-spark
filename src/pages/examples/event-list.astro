@@ -3,13 +3,16 @@
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
-import PageLayout from '../../layouts/PageLayout.astro';
+import SectionRightSidebar from '../../layouts/SectionRightSidebar.astro';
 import ContentCard from '../../components/ContentCard.astro';
+import InfoWidget from '../../components/InfoWidget.astro';
+import KeyValueListItem from '../../components/KeyValueListItem.astro';
+import CalendarWidget from '../../components/CalendarWidget.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
   { label: 'Aktuelnosti', href: '#' },
-  { label: 'Događaji', href: '#', active: true }
+  { label: 'Događaji', href: '#', active: true },
 ];
 
 const events = [
@@ -20,7 +23,8 @@ const events = [
     location: 'Kampus Univerziteta',
     category: 'Promocija',
     image: '/images/etf-building.png',
-    description: 'Pozivamo sve buduće studente da posjete naš fakultet, upoznaju se sa studijskim programima i obiđu laboratorije.'
+    description:
+      'Pozivamo sve buduće studente da posjete naš fakultet, upoznaju se sa studijskim programima i obiđu laboratorije.',
   },
   {
     title: 'Gostujuće predavanje: AI u Industriji 4.0',
@@ -29,7 +33,8 @@ const events = [
     location: 'Amfiteatar "Mladen Deželić"',
     category: 'Nastava',
     image: '/images/project-smart-city.png',
-    description: 'Predavanje stručnjaka iz vodeće IT kompanije o primjeni vještačke inteligencije u modernoj industriji.'
+    description:
+      'Predavanje stručnjaka iz vodeće IT kompanije o primjeni vještačke inteligencije u modernoj industriji.',
   },
   {
     title: 'Sajam zapošljavanja "JobFair 2024"',
@@ -38,7 +43,8 @@ const events = [
     location: 'Hol Fakulteta',
     category: 'Karijera',
     image: '/images/news-graduation.png',
-    description: 'Povežite se sa najboljim poslodavcima u IT sektoru i pronađite svoju prvu praksu ili posao.'
+    description:
+      'Povežite se sa najboljim poslodavcima u IT sektoru i pronađite svoju prvu praksu ili posao.',
   },
   {
     title: 'Radionica: Cyber Security Basics',
@@ -47,18 +53,19 @@ const events = [
     location: 'Laboratorija 0-01',
     category: 'Radionica',
     image: '/images/project-smart-city.png',
-    description: 'Praktična radionica o osnovama cyber sigurnosti i zaštite podataka na internetu.'
-  }
+    description: 'Praktična radionica o osnovama cyber sigurnosti i zaštite podataka na internetu.',
+  },
 ];
 ---
 
-<PageLayout title="Događaji | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+<SectionRightSidebar title="Događaji | ETF UNSA" breadcrumbItems={breadcrumbItems}>
   <!-- Main Content -->
-  <div class="col-lg-8">
-    <h1 class="mb-4">Nadolazeći događaji</h1>
-    
-    <div class="d-flex flex-column gap-4">
-      {events.map(item => (
+
+  <h1 class="mb-4">Nadolazeći događaji</h1>
+
+  <div class="d-flex flex-column gap-4">
+    {
+      events.map((item) => (
         <ContentCard
           title={item.title}
           href="/examples/event-single"
@@ -71,102 +78,50 @@ const events = [
           isEvent={true}
           layout="horizontal"
         />
-      ))}
-    </div>
-
-    <!-- Pagination -->
-    <nav aria-label="Page navigation" class="mt-5">
-      <ul class="pagination justify-content-center">
-        <li class="page-item disabled"><a class="page-link" href="#">Prethodna</a></li>
-        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">Sljedeća</a></li>
-      </ul>
-    </nav>
+      ))
+    }
   </div>
 
-  <!-- Right Sidebar -->
-  <div class="col-lg-4">
-    <div class="card border-0 shadow-sm mb-4">
-      <div class="card-header bg-white border-bottom fw-bold py-3">
-        Kategorije događaja
-      </div>
-      <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-          Konferencije <span class="badge bg-primary rounded-pill">3</span>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-          Radionice <span class="badge bg-primary rounded-pill">5</span>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-          Gostujuća predavanja <span class="badge bg-primary rounded-pill">2</span>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-          Sajmovi <span class="badge bg-primary rounded-pill">1</span>
-        </a>
-      </div>
-    </div>
+  <!-- Pagination -->
+  <nav aria-label="Page navigation" class="mt-5">
+    <ul class="pagination justify-content-center">
+      <li class="page-item disabled"><a class="page-link" href="#">Prethodna</a></li>
+      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">Sljedeća</a></li>
+    </ul>
+  </nav>
 
-    <div class="card border-0 shadow-sm">
-      <div class="card-header bg-white border-bottom fw-bold py-3">
-        Kalendar
-      </div>
-      <div class="card-body text-center">
-        <!-- Simple Static Calendar Placeholder -->
-        <div class="table-responsive">
-            <table class="table table-sm table-borderless mb-0">
-                <thead>
-                    <tr>
-                        <th class="text-muted small">Pon</th>
-                        <th class="text-muted small">Uto</th>
-                        <th class="text-muted small">Sri</th>
-                        <th class="text-muted small">Čet</th>
-                        <th class="text-muted small">Pet</th>
-                        <th class="text-muted small">Sub</th>
-                        <th class="text-muted small">Ned</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="text-muted">29</td>
-                        <td class="text-muted">30</td>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                        <td>4</td>
-                        <td>5</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>7</td>
-                        <td>8</td>
-                        <td>9</td>
-                        <td>10</td>
-                        <td>11</td>
-                        <td>12</td>
-                    </tr>
-                    <tr>
-                        <td>13</td>
-                        <td>14</td>
-                        <td class="bg-primary text-white rounded-circle">15</td>
-                        <td>16</td>
-                        <td>17</td>
-                        <td>18</td>
-                        <td>19</td>
-                    </tr>
-                    <tr>
-                        <td>20</td>
-                        <td>21</td>
-                        <td class="bg-primary text-white rounded-circle">22</td>
-                        <td>23</td>
-                        <td>24</td>
-                        <td>25</td>
-                        <td>26</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</PageLayout>
+  <!-- Sidebar -->
+  <Fragment slot="sidebar">
+    <!-- Categories Widget -->
+    <InfoWidget title="Kategorije događaja" icon="bi-tags" class="mb-4">
+      <KeyValueListItem
+        label="Konferencije"
+        value="3"
+        badgeClass="bg-primary rounded-pill text-white"
+      />
+      <KeyValueListItem
+        label="Radionice"
+        value="5"
+        badgeClass="bg-primary rounded-pill text-white"
+      />
+      <KeyValueListItem
+        label="Gostujuća predavanja"
+        value="2"
+        badgeClass="bg-primary rounded-pill text-white"
+      />
+      <KeyValueListItem label="Sajmovi" value="1" badgeClass="bg-primary rounded-pill text-white" />
+    </InfoWidget>
+
+    <!-- Calendar Widget -->
+    <CalendarWidget
+      initialDate={new Date()}
+      events={[
+        { date: new Date(new Date().getFullYear(), new Date().getMonth(), 15), url: '#' },
+        { date: new Date(new Date().getFullYear(), new Date().getMonth(), 22), url: '#' },
+        { date: new Date(new Date().getFullYear(), new Date().getMonth(), 5), url: '#' },
+      ]}
+    />
+  </Fragment>
+</SectionRightSidebar>

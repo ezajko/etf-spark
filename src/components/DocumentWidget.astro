@@ -22,20 +22,22 @@ interface Props {
 const { title, icon, documents, class: className } = Astro.props;
 ---
 
-<div class={`card border-0 shadow-sm ${className || ''}`}>
-  <div class="card-header ez-card__header">
-    {icon && <i class={`bi ${icon} me-2`}></i>}
+<div class={`ez-card ${className || ''}`}>
+  <div class="ez-card__header">
+    {icon && <i class={`bi ${icon} me-2`} />}
     {title}
   </div>
   <div class="list-group list-group-flush">
-    {documents.map(doc => (
-      <IconListItem
-        icon={`bi-file-earmark-${doc.format.toLowerCase() === 'pdf' ? 'pdf' : 'text'}`}
-        iconColor={doc.format.toLowerCase() === 'pdf' ? 'text-danger' : 'text-primary'}
-        value={doc.title}
-        label={`${doc.format}, ${doc.size}`}
-        link={doc.link}
-      />
-    ))}
+    {
+      documents.map((doc) => (
+        <IconListItem
+          icon={`bi-file-earmark-${doc.format.toLowerCase() === 'pdf' ? 'pdf' : 'text'}`}
+          iconColor={doc.format.toLowerCase() === 'pdf' ? 'text-danger' : 'text-primary'}
+          value={doc.title}
+          label={`${doc.format}, ${doc.size}`}
+          link={doc.link}
+        />
+      ))
+    }
   </div>
 </div>

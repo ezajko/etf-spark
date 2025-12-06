@@ -1,0 +1,23 @@
+---
+// ETF UNSA - Tab Item Component
+// Author: Ernedin Zajko <ezajko@root.ba>
+
+interface Props {
+  id: string;
+  active?: boolean;
+  fade?: boolean;
+  class?: string;
+}
+
+const { id, active = false, fade = true, class: className } = Astro.props;
+---
+
+<div
+  class={`tab-pane ${fade ? 'fade' : ''} ${active ? 'show active' : ''} ${className || ''}`}
+  id={id}
+  role="tabpanel"
+  aria-labelledby={`${id}-tab`}
+  tabindex="0"
+>
+  <slot />
+</div>

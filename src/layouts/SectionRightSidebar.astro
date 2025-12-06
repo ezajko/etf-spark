@@ -1,0 +1,49 @@
+---
+// ETF UNSA - Generic Section Page Layout (Right Sidebar)
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import PageLayout from './PageLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+  active?: boolean;
+}
+
+interface Props {
+  title: string;
+  breadcrumbItems?: BreadcrumbItem[];
+  bannerTitle?: string;
+  bannerSubtitle?: string;
+  bannerBgClass?: string;
+}
+
+const {
+  title,
+  breadcrumbItems,
+  bannerTitle,
+  bannerSubtitle,
+  bannerBgClass = 'bg-primary',
+} = Astro.props;
+---
+
+<PageLayout title={title} breadcrumbItems={breadcrumbItems}>
+  <!-- Banner Slot: Allow passing direct props OR usage of slot -->
+  <slot name="banner" slot="banner">
+    {
+      bannerTitle && (
+        <PageHeader title={bannerTitle} subtitle={bannerSubtitle} bgClass={bannerBgClass} />
+      )
+    }
+  </slot>
+
+  <div class="col-lg-8 mb-4 mb-lg-0">
+    <slot />
+  </div>
+
+  <div class="col-lg-4">
+    <slot name="sidebar" />
+  </div>
+</PageLayout>

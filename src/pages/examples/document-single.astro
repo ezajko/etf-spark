@@ -3,92 +3,83 @@
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
-import PageLayout from '../../layouts/PageLayout.astro';
+import SectionRightSidebar from '../../layouts/SectionRightSidebar.astro';
+import InfoWidget from '../../components/InfoWidget.astro';
+import KeyValueListItem from '../../components/KeyValueListItem.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
   { label: 'Fakultet', href: '#' },
   { label: 'Dokumenti', href: '/examples/document-list' },
-  { label: 'Odluka 01-123/24', href: '#', active: true }
+  { label: 'Odluka 01-123/24', href: '#', active: true },
 ];
 ---
 
-<PageLayout title="Detalji dokumenta | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+<SectionRightSidebar title="Detalji dokumenta | ETF UNSA" breadcrumbItems={breadcrumbItems}>
   <!-- Main Content -->
-  <div class="col-lg-8">
-    <div class="mb-4">
-      <span class="badge bg-secondary mb-2">Odluka</span>
-      <h1 class="fw-bold mb-3">Odluka o usvajanju nastavnog plana i programa za I ciklus studija</h1>
-      <p class="text-muted">
-        <i class="bi bi-calendar3 me-2"></i> 15.01.2024. &nbsp;|&nbsp; 
-        <i class="bi bi-hash me-2"></i> 01-123/24
-      </p>
-    </div>
+  <div class="mb-4">
+    <span class="badge bg-secondary mb-2">Odluka</span>
+    <h1 class="fw-bold mb-3">Odluka o usvajanju nastavnog plana i programa za I ciklus studija</h1>
+    <p class="text-muted">
+      <i class="bi bi-calendar3 me-2"></i> 15.01.2024. &nbsp;|&nbsp;
+      <i class="bi bi-hash me-2"></i> 01-123/24
+    </p>
+  </div>
 
-    <div class="card border-0 shadow-sm mb-5">
-      <div class="card-body p-5 text-center bg-light">
-        <i class="bi bi-file-earmark-pdf text-danger display-1 mb-3"></i>
-        <h5 class="card-title mb-3">Pregled dokumenta</h5>
-        <p class="card-text text-muted mb-4">Dokument je dostupan za preuzimanje u PDF formatu.</p>
-        <a href="#" class="btn btn-primary px-4 py-2">
-          <i class="bi bi-download me-2"></i> Preuzmi PDF (2.5 MB)
-        </a>
-      </div>
+  <div class="card border-0 shadow-sm mb-5">
+    <div class="card-body p-5 text-center bg-light">
+      <i class="bi bi-file-earmark-pdf text-danger display-1 mb-3"></i>
+      <h5 class="card-title mb-3">Pregled dokumenta</h5>
+      <p class="card-text text-muted mb-4">Dokument je dostupan za preuzimanje u PDF formatu.</p>
+      <a href="#" class="btn btn-primary px-4 py-2">
+        <i class="bi bi-download me-2"></i> Preuzmi PDF (2.5 MB)
+      </a>
     </div>
+  </div>
 
-    <div class="mb-5">
-      <h3>Sadržaj odluke</h3>
-      <p>Na osnovu člana 123. Statuta Univerziteta u Sarajevu, Naučno-nastavno vijeće Elektrotehničkog fakulteta na svojoj 5. redovnoj sjednici održanoj 10.01.2024. godine donijelo je:</p>
-      
-      <h5 class="text-center my-4 fw-bold">ODLUKU<br>o usvajanju nastavnog plana i programa</h5>
-      
-      <p><strong>I</strong><br>Usvaja se inovirani Nastavni plan i program za I ciklus studija na Odsjeku za računarstvo i informatiku, koji je sastavni dio ove odluke.</p>
-      
-      <p><strong>II</strong><br>Inovirani Nastavni plan i program iz tačke I ove odluke primjenjivat će se od akademske 2024/2025. godine.</p>
-      
-      <p><strong>III</strong><br>Ova odluka stupa na snagu danom donošenja.</p>
-      
-      <div class="mt-5 text-end">
-        <p class="mb-0">Predsjedavajući NNV-a</p>
-        <p class="fw-bold">Prof. Dr. Dekan Fakulteta</p>
-      </div>
+  <div class="mb-5">
+    <h3>Sadržaj odluke</h3>
+    <p>
+      Na osnovu člana 123. Statuta Univerziteta u Sarajevu, Naučno-nastavno vijeće Elektrotehničkog
+      fakulteta na svojoj 5. redovnoj sjednici održanoj 10.01.2024. godine donijelo je:
+    </p>
+
+    <h5 class="text-center my-4 fw-bold">ODLUKU<br />o usvajanju nastavnog plana i programa</h5>
+
+    <p>
+      <strong>I</strong><br />Usvaja se inovirani Nastavni plan i program za I ciklus studija na
+      Odsjeku za računarstvo i informatiku, koji je sastavni dio ove odluke.
+    </p>
+
+    <p>
+      <strong>II</strong><br />Inovirani Nastavni plan i program iz tačke I ove odluke primjenjivat
+      će se od akademske 2024/2025. godine.
+    </p>
+
+    <p><strong>III</strong><br />Ova odluka stupa na snagu danom donošenja.</p>
+
+    <div class="mt-5 text-end">
+      <p class="mb-0">Predsjedavajući NNV-a</p>
+      <p class="fw-bold">Prof. Dr. Dekan Fakulteta</p>
     </div>
   </div>
 
   <!-- Right Sidebar -->
-  <div class="col-lg-4">
-    <div class="card border-0 shadow-sm mb-4">
-      <div class="card-header bg-white border-bottom fw-bold py-3">
-        Metapodaci
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item d-flex justify-content-between align-items-center py-3">
-          <span class="text-muted">Broj protokola</span>
-          <span class="fw-bold">01-123/24</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center py-3">
-          <span class="text-muted">Datum donošenja</span>
-          <span>10.01.2024.</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center py-3">
-          <span class="text-muted">Datum objave</span>
-          <span>15.01.2024.</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center py-3">
-          <span class="text-muted">Donosilac</span>
-          <span>NNV ETF-a</span>
-        </li>
-        <li class="list-group-item d-flex justify-content-between align-items-center py-3">
-          <span class="text-muted">Kategorija</span>
-          <span class="badge bg-light text-dark border">Nastavni proces</span>
-        </li>
-      </ul>
-    </div>
+  <Fragment slot="sidebar">
+    <InfoWidget title="Metapodaci" class="mb-4">
+      <KeyValueListItem label="Broj protokola" value="01-123/24" />
+      <KeyValueListItem label="Datum donošenja" value="10.01.2024." />
+      <KeyValueListItem label="Datum objave" value="15.01.2024." />
+      <KeyValueListItem label="Donosilac" value="NNV ETF-a" />
+      <KeyValueListItem
+        label="Kategorija"
+        value="Nastavni proces"
+        badgeClass="bg-light text-dark border"
+      />
+    </InfoWidget>
 
     <div class="card border-0 shadow-sm">
-      <div class="card-header bg-white border-bottom fw-bold py-3">
-        Povezani dokumenti
-      </div>
+      <div class="card-header bg-white border-bottom fw-bold py-3">Povezani dokumenti</div>
       <div class="list-group list-group-flush">
         <a href="#" class="list-group-item list-group-item-action">
           <i class="bi bi-link-45deg me-2 text-muted"></i> Zapisnik sa 5. sjednice NNV-a
@@ -98,5 +89,5 @@ const breadcrumbItems = [
         </a>
       </div>
     </div>
-  </div>
-</PageLayout>
+  </Fragment>
+</SectionRightSidebar>

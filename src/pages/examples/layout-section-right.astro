@@ -1,0 +1,84 @@
+---
+// ETF UNSA - Section Layout Example (Right Sidebar)
+// Author: Ernedin Zajko <ezajko@root.ba>
+
+import SectionRightSidebar from '../../layouts/SectionRightSidebar.astro';
+import SectionLinksMenu from '../../components/SectionLinksMenu.astro';
+import ContactWidget from '../../components/ContactWidget.astro';
+import DocumentWidget from '../../components/DocumentWidget.astro';
+import InfoWidget from '../../components/InfoWidget.astro';
+import KeyValueListItem from '../../components/KeyValueListItem.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Layouts', href: '#' },
+  { label: 'Section Right Sidebar', href: '#', active: true },
+];
+
+const quickLinks = [
+  { label: 'Pregled programa', link: '#section-overview' },
+  { label: 'Nastavni plan', link: '#section-curriculum' },
+  { label: 'Upis', link: '#section-admission' },
+];
+---
+
+<SectionRightSidebar
+  title="Primjer Generičke Stranice (Desno) | ETF UNSA"
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle="Softversko inženjerstvo"
+  bannerSubtitle="Master studijski program"
+  bannerBgClass="bg-primary"
+>
+  <!-- Main Content -->
+  <div id="section-overview" class="mb-5">
+    <SectionHeader title="Pregled programa" />
+    <p class="lead">
+      Ovo je primjer generičke stranice koja koristi <strong>SectionRightSidebar</strong> layout. Sadržaj
+      je lijevo (široki stubac), a widgeti desno.
+    </p>
+    <p>
+      Ovaj layout je pogodan za studijske programe, članke, vijesti ili bilo koji sadržaj gdje je
+      fokus na tekstu, a sidebar pruža dodatne informacije.
+    </p>
+  </div>
+
+  <div id="section-curriculum" class="mb-5">
+    <SectionHeader title="Nastavni plan" level="h3" />
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+      labore et dolore magna aliqua.
+    </p>
+    <div class="alert alert-info">
+      <i class="bi bi-info-circle-fill me-2"></i> Detaljan plan dostupan je u dokumentima.
+    </div>
+  </div>
+
+  <!-- Sidebar Content -->
+  <Fragment slot="sidebar">
+    <InfoWidget title="Informacije" icon="bi-info-circle" class="mb-4">
+      <KeyValueListItem label="ECTS" value="120" />
+      <KeyValueListItem label="Trajanje" value="2 Godine" />
+      <KeyValueListItem label="Jezik" value="EN / BS" />
+    </InfoWidget>
+
+    <SectionLinksMenu title="Sadržaj stranice" icon="bi-list-ul" links={quickLinks} class="mb-4" />
+
+    <ContactWidget
+      title="Kontakt"
+      contacts={[
+        {
+          name: 'Koordinator programa',
+          role: 'Prof. Dr. Ime Prezime',
+          email: 'koordinator@etf.unsa.ba',
+        },
+      ]}
+      class="mb-4"
+    />
+
+    <DocumentWidget
+      title="Dokumenti"
+      documents={[{ title: 'Informator', size: '3 MB', format: 'PDF', link: '#' }]}
+    />
+  </Fragment>
+</SectionRightSidebar>

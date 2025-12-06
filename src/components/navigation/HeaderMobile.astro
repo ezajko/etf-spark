@@ -5,33 +5,56 @@
 ---
 
 <!-- Mobile Menu Container -->
-<div id="mobile-menu-overlay" class="mobile-menu-overlay d-lg-none" role="dialog" aria-modal="true" aria-label="Mobile Menu">
+<div
+  id="mobile-menu-overlay"
+  class="mobile-menu-overlay d-lg-none"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Mobile Menu"
+>
   <div class="mobile-menu-container">
     <div class="mobile-menu-header">
       <h5 class="m-0 text-white">Izbornik</h5>
-      <button id="mobile-menu-close" class="btn-close btn-close-white" aria-label="Close Menu"></button>
+      <button id="mobile-menu-close" class="btn-close btn-close-white" aria-label="Close Menu"
+      ></button>
     </div>
     <div class="mobile-menu-viewport">
       <ul class="mobile-menu-level active" data-level="1">
         <li><a href="/">Početna</a></li>
         <li class="has-children">
-          <a href="#" class="d-flex justify-content-between align-items-center">Layouts <span class="arrow">&gt;</span></a>
+          <a href="#" class="d-flex justify-content-between align-items-center"
+            >Layouts <span class="arrow">&gt;</span></a
+          >
           <ul class="mobile-menu-level">
-            <li class="back-item"><a href="#" class="d-flex align-items-center"><span class="arrow me-2">&lt;</span> Nazad</a></li>
+            <li class="back-item">
+              <a href="#" class="d-flex align-items-center"
+                ><span class="arrow me-2">&lt;</span> Nazad</a>
+            </li>
             <li><a href="/layout-left-sidebar">Lijevi Sidebar</a></li>
             <li><a href="/layout-right-sidebar">Desni Sidebar</a></li>
             <li><a href="/layout-both-sidebars">Oba Sidebara</a></li>
             <li><a href="/layout-no-sidebar">Bez Sidebara</a></li>
+            <li><a href="/examples/layout-section-left">Sekcijska Str. (Lijevo)</a></li>
+            <li><a href="/examples/layout-section-right">Sekcijska Str. (Desno)</a></li>
             <li><a href="/layout-side-bar-menu-left">Lijevi Meni (Tree)</a></li>
             <li><a href="/layout-side-bar-menu-right">Desni Meni (Tree)</a></li>
-            <li><a href="/layout-side-bar-menu-left-right-sidebar">Lijevi Meni + Desni Sidebar</a></li>
-            <li><a href="/layout-side-bar-menu-right-left-sidebar">Lijevi Sidebar + Desni Meni</a></li>
+            <li>
+              <a href="/layout-side-bar-menu-left-right-sidebar">Lijevi Meni + Desni Sidebar</a>
+            </li>
+            <li>
+              <a href="/layout-side-bar-menu-right-left-sidebar">Lijevi Sidebar + Desni Meni</a>
+            </li>
           </ul>
         </li>
         <li class="has-children">
-          <a href="#" class="d-flex justify-content-between align-items-center">Primjeri stranica <span class="arrow">&gt;</span></a>
+          <a href="#" class="d-flex justify-content-between align-items-center"
+            >Primjeri stranica <span class="arrow">&gt;</span></a
+          >
           <ul class="mobile-menu-level">
-            <li class="back-item"><a href="#" class="d-flex align-items-center"><span class="arrow me-2">&lt;</span> Nazad</a></li>
+            <li class="back-item">
+              <a href="#" class="d-flex align-items-center"
+                ><span class="arrow me-2">&lt;</span> Nazad</a>
+            </li>
             <li class="menu-title">Odsjeci i Osoblje</li>
             <li><a href="/examples/department">Stranica Odsjeka</a></li>
             <li><a href="/examples/study-program">Studijski Program</a></li>
@@ -51,29 +74,54 @@
           </ul>
         </li>
         <li class="has-children">
-          <a href="#" class="d-flex justify-content-between align-items-center">Studij <span class="arrow">&gt;</span></a>
+          <a href="#" class="d-flex justify-content-between align-items-center"
+            >Studij <span class="arrow">&gt;</span></a
+          >
           <ul class="mobile-menu-level">
-            <li class="back-item"><a href="#" class="d-flex align-items-center"><span class="arrow me-2">&lt;</span> Nazad</a></li>
+            <li class="back-item">
+              <a href="#" class="d-flex align-items-center"
+                ><span class="arrow me-2">&lt;</span> Nazad</a>
+            </li>
             <li class="has-children">
-              <a href="#" class="d-flex justify-content-between align-items-center">Bachelor <span class="arrow">&gt;</span></a>
+              <a href="#" class="d-flex justify-content-between align-items-center"
+                >Bachelor <span class="arrow">&gt;</span></a
+              >
               <ul class="mobile-menu-level">
-                <li class="back-item"><a href="#" class="d-flex align-items-center"><span class="arrow me-2">&lt;</span> Nazad</a></li>
+                <li class="back-item">
+                  <a href="#" class="d-flex align-items-center"
+                    ><span class="arrow me-2">&lt;</span> Nazad</a>
+                </li>
                 <li><a href="#">Upis i prijem</a></li>
                 <li class="has-children">
-                  <a href="#" class="d-flex justify-content-between align-items-center">Studijski programi <span class="arrow">&gt;</span></a>
+                  <a href="#" class="d-flex justify-content-between align-items-center"
+                    >Studijski programi <span class="arrow">&gt;</span></a
+                  >
                   <ul class="mobile-menu-level">
-                    <li class="back-item"><a href="#" class="d-flex align-items-center"><span class="arrow me-2">&lt;</span> Nazad</a></li>
+                    <li class="back-item">
+                      <a href="#" class="d-flex align-items-center"
+                        ><span class="arrow me-2">&lt;</span> Nazad</a>
+                    </li>
                     <li><a href="#">Automatika i elektronika</a></li>
                     <li><a href="#">Elektroenergetika</a></li>
                     <li class="has-children">
-                      <a href="#" class="d-flex justify-content-between align-items-center">Računarstvo i informatika <span class="arrow">&gt;</span></a>
+                      <a href="#" class="d-flex justify-content-between align-items-center"
+                        >Računarstvo i informatika <span class="arrow">&gt;</span></a
+                      >
                       <ul class="mobile-menu-level">
-                        <li class="back-item"><a href="#" class="d-flex align-items-center"><span class="arrow me-2">&lt;</span> Nazad</a></li>
+                        <li class="back-item">
+                          <a href="#" class="d-flex align-items-center"
+                            ><span class="arrow me-2">&lt;</span> Nazad</a>
+                        </li>
                         <li><a href="#">Odsjek</a></li>
                         <li class="has-children">
-                          <a href="#" class="d-flex justify-content-between align-items-center">Prva godina <span class="arrow">&gt;</span></a>
+                          <a href="#" class="d-flex justify-content-between align-items-center"
+                            >Prva godina <span class="arrow">&gt;</span></a
+                          >
                           <ul class="mobile-menu-level">
-                            <li class="back-item"><a href="#" class="d-flex align-items-center"><span class="arrow me-2">&lt;</span> Nazad</a></li>
+                            <li class="back-item">
+                              <a href="#" class="d-flex align-items-center"
+                                ><span class="arrow me-2">&lt;</span> Nazad</a>
+                            </li>
                             <li><a href="#">Matematika 1</a></li>
                             <li><a href="#">Fizika 1</a></li>
                             <li><a href="#">Uvod u programiranje</a></li>
@@ -90,9 +138,14 @@
               </ul>
             </li>
             <li class="has-children">
-              <a href="#" class="d-flex justify-content-between align-items-center">Magistarski <span class="arrow">&gt;</span></a>
+              <a href="#" class="d-flex justify-content-between align-items-center"
+                >Magistarski <span class="arrow">&gt;</span></a
+              >
               <ul class="mobile-menu-level">
-                <li class="back-item"><a href="#" class="d-flex align-items-center"><span class="arrow me-2">&lt;</span> Nazad</a></li>
+                <li class="back-item">
+                  <a href="#" class="d-flex align-items-center"
+                    ><span class="arrow me-2">&lt;</span> Nazad</a>
+                </li>
                 <li><a href="#">Upis</a></li>
                 <li><a href="#">Programi</a></li>
               </ul>
@@ -102,9 +155,14 @@
           </ul>
         </li>
         <li class="has-children">
-          <a href="#" class="d-flex justify-content-between align-items-center">Odsjeci <span class="arrow">&gt;</span></a>
+          <a href="#" class="d-flex justify-content-between align-items-center"
+            >Odsjeci <span class="arrow">&gt;</span></a
+          >
           <ul class="mobile-menu-level">
-            <li class="back-item"><a href="#" class="d-flex align-items-center"><span class="arrow me-2">&lt;</span> Nazad</a></li>
+            <li class="back-item">
+              <a href="#" class="d-flex align-items-center"
+                ><span class="arrow me-2">&lt;</span> Nazad</a>
+            </li>
             <li><a href="#">Automatika i elektronika</a></li>
             <li><a href="#">Elektroenergetika</a></li>
             <li><a href="#">Računarstvo i informatika</a></li>
@@ -126,93 +184,96 @@
 
     // Open Menu
     if (navbarToggler) {
-        navbarToggler.addEventListener('click', function () {
-            mobileMenuOverlay?.classList.add('active');
-        });
+      navbarToggler.addEventListener('click', function () {
+        mobileMenuOverlay?.classList.add('active');
+      });
     }
 
     // Close Menu
     function closeMenu() {
-        mobileMenuOverlay?.classList.remove('active');
-        // Reset to level 1
-        setTimeout(() => {
-            menuLevels.forEach(level => {
-                level.classList.remove('active');
-                if ((level as HTMLElement).dataset.level === '1') {
-                    level.classList.add('active');
-                }
-            });
-        }, 300);
+      mobileMenuOverlay?.classList.remove('active');
+      // Reset to level 1
+      setTimeout(() => {
+        menuLevels.forEach((level) => {
+          level.classList.remove('active');
+          if ((level as HTMLElement).dataset.level === '1') {
+            level.classList.add('active');
+          }
+        });
+      }, 300);
     }
 
     if (mobileMenuClose) {
-        mobileMenuClose.addEventListener('click', closeMenu);
+      mobileMenuClose.addEventListener('click', closeMenu);
     }
 
     if (mobileMenuOverlay) {
-        mobileMenuOverlay.addEventListener('click', function (e) {
-            if (e.target === mobileMenuOverlay) {
-                closeMenu();
-            }
-        });
+      mobileMenuOverlay.addEventListener('click', function (e) {
+        if (e.target === mobileMenuOverlay) {
+          closeMenu();
+        }
+      });
     }
 
     // Navigation Logic
-    document.querySelectorAll('.has-children > a').forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const parentLi = this.parentElement;
-            const subMenu = parentLi?.querySelector('.mobile-menu-level');
-            if (subMenu) {
-                subMenu.classList.add('active');
-            }
-        });
+    document.querySelectorAll('.has-children > a').forEach((link) => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const parentLi = this.parentElement;
+        const subMenu = parentLi?.querySelector('.mobile-menu-level');
+        if (subMenu) {
+          subMenu.classList.add('active');
+        }
+      });
     });
 
-    document.querySelectorAll('.back-item a').forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const currentLevel = this.closest('.mobile-menu-level');
-            currentLevel?.classList.remove('active');
-        });
+    document.querySelectorAll('.back-item a').forEach((link) => {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        const currentLevel = this.closest('.mobile-menu-level');
+        currentLevel?.classList.remove('active');
+      });
     });
 
     // Keyboard Support (Escape Key)
     document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') {
-            // Close Mobile Menu
-            if (mobileMenuOverlay && mobileMenuOverlay.classList.contains('active')) {
-                closeMenu();
-                (navbarToggler as HTMLElement)?.focus(); // Return focus to toggler
-            }
+      if (e.key === 'Escape') {
+        // Close Mobile Menu
+        if (mobileMenuOverlay && mobileMenuOverlay.classList.contains('active')) {
+          closeMenu();
+          (navbarToggler as HTMLElement)?.focus(); // Return focus to toggler
         }
+      }
     });
 
     // Focus Trap for Mobile Menu
     if (mobileMenuOverlay) {
-        const focusableElementsString = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
+      const focusableElementsString =
+        'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), iframe, object, embed, [tabindex="0"], [contenteditable]';
 
-        mobileMenuOverlay.addEventListener('keydown', function (e) {
-            if (!mobileMenuOverlay.classList.contains('active')) return;
+      mobileMenuOverlay.addEventListener('keydown', function (e) {
+        if (!mobileMenuOverlay.classList.contains('active')) return;
 
-            const focusableContent = mobileMenuOverlay.querySelectorAll(focusableElementsString);
-            const firstFocusableElement = focusableContent[0] as HTMLElement;
-            const lastFocusableElement = focusableContent[focusableContent.length - 1] as HTMLElement;
+        const focusableContent = mobileMenuOverlay.querySelectorAll(focusableElementsString);
+        const firstFocusableElement = focusableContent[0] as HTMLElement;
+        const lastFocusableElement = focusableContent[focusableContent.length - 1] as HTMLElement;
 
-            if (e.key === 'Tab') {
-                if (e.shiftKey) { // Shift + Tab
-                    if (document.activeElement === firstFocusableElement) {
-                        lastFocusableElement.focus();
-                        e.preventDefault();
-                    }
-                } else { // Tab
-                    if (document.activeElement === lastFocusableElement) {
-                        firstFocusableElement.focus();
-                        e.preventDefault();
-                    }
-                }
+        if (e.key === 'Tab') {
+          if (e.shiftKey) {
+            // Shift + Tab
+            if (document.activeElement === firstFocusableElement) {
+              lastFocusableElement.focus();
+              e.preventDefault();
             }
-        });
+          } else {
+            // Tab
+            if (document.activeElement === lastFocusableElement) {
+              firstFocusableElement.focus();
+              e.preventDefault();
+            }
+          }
+        }
+      });
     }
   });
 </script>

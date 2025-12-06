@@ -41,5 +41,30 @@
 }
 
 .tab-content {
-    // Ensure content has some spacing if needed, though utility classes usually handle this
+    background: #fff;
+    border-radius: 0 0 $ez-border-radius $ez-border-radius;
+    // Optional: Add global border/padding if desired, but often it's context specific.
+    // We can define a generic look:
+
+    &.ez-tabs-content {
+        border: 1px solid $ez-border-color;
+        border-top: none;
+        padding: $ez-spacing-lg;
+    }
+}
+
+.tab-pane {
+    &.active {
+        animation: fadeIn 0.3s ease-in-out;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }

@@ -9,6 +9,7 @@ import ContentCard from '../components/ContentCard.astro';
 import ProgramCard from '../components/ProgramCard.astro';
 import SimpleListItem from '../components/SimpleListItem.astro';
 import Tabs from '../components/Tabs.astro';
+import TabItem from '../components/TabItem.astro';
 ---
 
 <BaseLayout title="ETF UNSA - Početna stranica">
@@ -235,12 +236,7 @@ import Tabs from '../components/Tabs.astro';
       >
         <div class="tab-content" id="studyProgramTabsContent">
           <!-- Tab 1: By Cycles -->
-          <div
-            class="tab-pane fade show active"
-            id="cycles"
-            role="tabpanel"
-            aria-labelledby="cycles-tab"
-          >
+          <TabItem id="cycles" active>
             <div class="row row-cols-1 row-cols-md-3 g-4">
               <div class="col">
                 <ContentCard
@@ -273,10 +269,10 @@ import Tabs from '../components/Tabs.astro';
                 />
               </div>
             </div>
-          </div>
+          </TabItem>
 
           <!-- Tab 2: By Fields -->
-          <div class="tab-pane fade" id="fields" role="tabpanel" aria-labelledby="fields-tab">
+          <TabItem id="fields">
             <div class="row row-cols-1 row-cols-md-2 g-4">
               <div class="col">
                 <ContentCard
@@ -301,7 +297,7 @@ import Tabs from '../components/Tabs.astro';
                 />
               </div>
             </div>
-          </div>
+          </TabItem>
         </div>
       </Tabs>
     </div>

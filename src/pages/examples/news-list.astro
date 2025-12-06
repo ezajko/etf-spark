@@ -3,13 +3,16 @@
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
-import PageLayout from '../../layouts/PageLayout.astro';
+import SectionRightSidebar from '../../layouts/SectionRightSidebar.astro';
 import ContentCard from '../../components/ContentCard.astro';
+import InfoWidget from '../../components/InfoWidget.astro';
+import KeyValueListItem from '../../components/KeyValueListItem.astro';
+import SimpleListItem from '../../components/SimpleListItem.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
   { label: 'Aktuelnosti', href: '#' },
-  { label: 'Vijesti', href: '#', active: true }
+  { label: 'Vijesti', href: '#', active: true },
 ];
 
 const news = [
@@ -17,40 +20,45 @@ const news = [
     title: 'Održana svečana promocija diplomanata i magistranata',
     date: '01.12.2023',
     category: 'Fakultet',
-    excerpt: 'U subotu je u Bosanskom kulturnom centru održana svečana promocija diplomanata i magistranata Univerziteta u Sarajevu.',
-    image: '/images/news-graduation.png'
+    excerpt:
+      'U subotu je u Bosanskom kulturnom centru održana svečana promocija diplomanata i magistranata Univerziteta u Sarajevu.',
+    image: '/images/news-graduation.png',
   },
   {
     title: 'Poziv za prijavu na Erasmus+ razmjenu',
     date: '28.11.2023',
     category: 'Međunarodna saradnja',
-    excerpt: 'Otvoren je konkurs za prijavu studenata za Erasmus+ razmjenu u ljetnom semestru 2023/2024. godine.',
-    image: '/images/etf-building.png'
+    excerpt:
+      'Otvoren je konkurs za prijavu studenata za Erasmus+ razmjenu u ljetnom semestru 2023/2024. godine.',
+    image: '/images/etf-building.png',
   },
   {
     title: 'Gostujuće predavanje iz oblasti Cyber Security',
     date: '25.11.2023',
     category: 'Nastava',
-    excerpt: 'Pozivamo sve studente da prisustvuju gostujućem predavanju stručnjaka iz industrije na temu Cyber Security izazova.',
-    image: '/images/project-smart-city.png'
+    excerpt:
+      'Pozivamo sve studente da prisustvuju gostujućem predavanju stručnjaka iz industrije na temu Cyber Security izazova.',
+    image: '/images/project-smart-city.png',
   },
   {
     title: 'Rezultati takmičenja u programiranju',
     date: '20.11.2023',
     category: 'Takmičenja',
-    excerpt: 'Studenti ETF-a ostvarili zapažene rezultate na regionalnom takmičenju u programiranju.',
-    image: '/images/news-graduation.png'
-  }
+    excerpt:
+      'Studenti ETF-a ostvarili zapažene rezultate na regionalnom takmičenju u programiranju.',
+    image: '/images/news-graduation.png',
+  },
 ];
 ---
 
-<PageLayout title="Vijesti | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+<SectionRightSidebar title="Vijesti | ETF UNSA" breadcrumbItems={breadcrumbItems}>
   <!-- Main Content -->
-  <div class="col-lg-8">
-    <h1 class="mb-4">Arhiva Vijesti</h1>
-    
-    <div class="d-flex flex-column gap-4">
-      {news.map(item => (
+
+  <h1 class="mb-4">Arhiva Vijesti</h1>
+
+  <div class="d-flex flex-column gap-4">
+    {
+      news.map((item) => (
         <ContentCard
           title={item.title}
           href="/examples/news-single"
@@ -59,53 +67,49 @@ const news = [
           excerpt={item.excerpt}
           layout="horizontal"
         />
-      ))}
-    </div>
-
-    <!-- Pagination -->
-    <nav aria-label="Page navigation" class="mt-5">
-      <ul class="pagination justify-content-center">
-        <li class="page-item disabled"><a class="page-link" href="#">Prethodna</a></li>
-        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-        <li class="page-item"><a class="page-link" href="#">2</a></li>
-        <li class="page-item"><a class="page-link" href="#">3</a></li>
-        <li class="page-item"><a class="page-link" href="#">Sljedeća</a></li>
-      </ul>
-    </nav>
+      ))
+    }
   </div>
 
-  <!-- Right Sidebar -->
-  <div class="col-lg-4">
-    <div class="card border-0 shadow-sm mb-4">
-      <div class="card-header bg-white border-bottom fw-bold py-3">
-        Kategorije
-      </div>
-      <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-          Fakultet <span class="badge bg-primary rounded-pill">14</span>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-          Nastava <span class="badge bg-primary rounded-pill">8</span>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-          Obavještenja <span class="badge bg-primary rounded-pill">21</span>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
-          Međunarodna saradnja <span class="badge bg-primary rounded-pill">5</span>
-        </a>
-      </div>
-    </div>
+  <!-- Pagination -->
+  <nav aria-label="Page navigation" class="mt-5">
+    <ul class="pagination justify-content-center">
+      <li class="page-item disabled"><a class="page-link" href="#">Prethodna</a></li>
+      <li class="page-item active"><a class="page-link" href="#">1</a></li>
+      <li class="page-item"><a class="page-link" href="#">2</a></li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item"><a class="page-link" href="#">Sljedeća</a></li>
+    </ul>
+  </nav>
 
-    <div class="card border-0 shadow-sm">
-      <div class="card-header bg-white border-bottom fw-bold py-3">
-        Arhiva
-      </div>
-      <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action">Decembar 2023</a>
-        <a href="#" class="list-group-item list-group-item-action">Novembar 2023</a>
-        <a href="#" class="list-group-item list-group-item-action">Oktobar 2023</a>
-        <a href="#" class="list-group-item list-group-item-action">Septembar 2023</a>
-      </div>
-    </div>
-  </div>
-</PageLayout>
+  <!-- Sidebar -->
+  <Fragment slot="sidebar">
+    <!-- Categories Widget -->
+    <InfoWidget title="Kategorije" icon="bi-tags" class="mb-4">
+      <KeyValueListItem
+        label="Fakultet"
+        value="14"
+        badgeClass="bg-primary rounded-pill text-white"
+      />
+      <KeyValueListItem label="Nastava" value="8" badgeClass="bg-primary rounded-pill text-white" />
+      <KeyValueListItem
+        label="Obavještenja"
+        value="21"
+        badgeClass="bg-primary rounded-pill text-white"
+      />
+      <KeyValueListItem
+        label="Međunarodna saradnja"
+        value="5"
+        badgeClass="bg-primary rounded-pill text-white"
+      />
+    </InfoWidget>
+
+    <!-- Archive Widget -->
+    <InfoWidget title="Arhiva" icon="bi-calendar3">
+      <SimpleListItem label="Decembar 2023" icon="bi-chevron-right" link="#" />
+      <SimpleListItem label="Novembar 2023" icon="bi-chevron-right" link="#" />
+      <SimpleListItem label="Oktobar 2023" icon="bi-chevron-right" link="#" />
+      <SimpleListItem label="Septembar 2023" icon="bi-chevron-right" link="#" />
+    </InfoWidget>
+  </Fragment>
+</SectionRightSidebar>

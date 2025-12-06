@@ -8,15 +8,20 @@ interface Props {
   value: string | number;
   icon?: string;
   class?: string;
+  badgeClass?: string;
 }
 
-const { label, value, icon, class: className } = Astro.props;
+const { label, value, icon, class: className, badgeClass } = Astro.props;
 ---
 
-<div class={`d-flex justify-content-between align-items-center py-2 ${className || ''}`}>
+<div
+  class={`list-group-item d-flex justify-content-between align-items-center bg-transparent ${className || ''}`}
+>
   <span class="text-muted">
-    {icon && <i class={`bi ${icon} me-2`}></i>}
+    {icon && <i class={`bi ${icon} me-2`} />}
     {label}
   </span>
-  <span class="fw-bold text-end">{value}</span>
+  <span class={`fw-bold text-end ${badgeClass ? `badge ${badgeClass}` : ''}`}>
+    {value}
+  </span>
 </div>

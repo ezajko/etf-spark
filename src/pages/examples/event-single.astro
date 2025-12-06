@@ -3,90 +3,102 @@
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
-import PageLayout from '../../layouts/PageLayout.astro';
+import SectionRightSidebar from '../../layouts/SectionRightSidebar.astro';
+import InfoWidget from '../../components/InfoWidget.astro';
+
+import KeyValueListItem from '../../components/KeyValueListItem.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
   { label: 'Aktuelnosti', href: '#' },
   { label: 'Događaji', href: '/examples/event-list' },
-  { label: 'Dan otvorenih vrata ETF-a', href: '#', active: true }
+  { label: 'Dan otvorenih vrata ETF-a', href: '#', active: true },
 ];
 ---
 
-<PageLayout title="Dan otvorenih vrata | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+<SectionRightSidebar title="Dan otvorenih vrata | ETF UNSA" breadcrumbItems={breadcrumbItems}>
   <!-- Main Content -->
-  <div class="col-lg-8">
-    <div class="mb-4">
-      <span class="badge bg-primary mb-2">Promocija</span>
-      <h1 class="fw-bold mb-3">Dan otvorenih vrata ETF-a</h1>
-      <p class="lead text-muted">Pridružite nam se na godišnjem Danu otvorenih vrata i otkrijte svijet mogućnosti koje nudi Elektrotehnički fakultet.</p>
-    </div>
+  <div class="mb-4">
+    <span class="badge bg-primary mb-2">Promocija</span>
+    <h1 class="fw-bold mb-3">Dan otvorenih vrata ETF-a</h1>
+    <p class="lead text-muted">
+      Pridružite nam se na godišnjem Danu otvorenih vrata i otkrijte svijet mogućnosti koje nudi
+      Elektrotehnički fakultet.
+    </p>
+  </div>
 
-    <img src="/images/etf-building.png" class="img-fluid rounded mb-4 w-100" alt="ETF Zgrada">
+  <img src="/images/etf-building.png" class="img-fluid rounded mb-4 w-100" alt="ETF Zgrada" />
 
-    <div class="mb-5">
-      <h3>O događaju</h3>
-      <p>Dan otvorenih vrata je jedinstvena prilika za sve srednjoškolce, njihove roditelje i nastavnike da posjete naš fakultet i iz prve ruke saznaju sve o studiranju na ETF-u. Očekuje vas bogat program koji uključuje prezentacije studijskih programa, obilazak laboratorija, razgovor sa profesorima i studentima, te demonstracije studentskih projekata.</p>
-      <p>Cilj događaja je približiti nauku i tehnologiju mladima i inspirisati ih da postanu inženjeri budućnosti.</p>
-    </div>
+  <div class="mb-5">
+    <h3>O događaju</h3>
+    <p>
+      Dan otvorenih vrata je jedinstvena prilika za sve srednjoškolce, njihove roditelje i
+      nastavnike da posjete naš fakultet i iz prve ruke saznaju sve o studiranju na ETF-u. Očekuje
+      vas bogat program koji uključuje prezentacije studijskih programa, obilazak laboratorija,
+      razgovor sa profesorima i studentima, te demonstracije studentskih projekata.
+    </p>
+    <p>
+      Cilj događaja je približiti nauku i tehnologiju mladima i inspirisati ih da postanu inženjeri
+      budućnosti.
+    </p>
+  </div>
 
-    <div class="mb-5">
-      <h3>Agenda</h3>
-      <div class="list-group">
-        <div class="list-group-item">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">10:00 - 10:30</h5>
-            <small class="text-muted">Amfiteatar</small>
-          </div>
-          <p class="mb-1 fw-bold">Pozdravni govor Dekana</p>
-          <small>Uvodna riječ i prezentacija fakulteta.</small>
+  <div class="mb-5">
+    <h3>Agenda</h3>
+    <div class="list-group">
+      <div class="list-group-item">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">10:00 - 10:30</h5>
+          <small class="text-muted">Amfiteatar</small>
         </div>
-        <div class="list-group-item">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">10:30 - 12:00</h5>
-            <small class="text-muted">Hol Fakulteta</small>
-          </div>
-          <p class="mb-1 fw-bold">Sajam studijskih programa</p>
-          <small>Prezentacija odsjeka na štandovima.</small>
+        <p class="mb-1 fw-bold">Pozdravni govor Dekana</p>
+        <small>Uvodna riječ i prezentacija fakulteta.</small>
+      </div>
+      <div class="list-group-item">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">10:30 - 12:00</h5>
+          <small class="text-muted">Hol Fakulteta</small>
         </div>
-        <div class="list-group-item">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">12:00 - 13:30</h5>
-            <small class="text-muted">Laboratorije</small>
-          </div>
-          <p class="mb-1 fw-bold">Obilazak laboratorija</p>
-          <small>Demonstracija opreme i eksperimenata.</small>
+        <p class="mb-1 fw-bold">Sajam studijskih programa</p>
+        <small>Prezentacija odsjeka na štandovima.</small>
+      </div>
+      <div class="list-group-item">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">12:00 - 13:30</h5>
+          <small class="text-muted">Laboratorije</small>
         </div>
-        <div class="list-group-item">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">13:30 - 14:00</h5>
-            <small class="text-muted">Klub studenata</small>
-          </div>
-          <p class="mb-1 fw-bold">Druženje i zakuska</p>
-          <small>Neformalno druženje sa studentima.</small>
+        <p class="mb-1 fw-bold">Obilazak laboratorija</p>
+        <small>Demonstracija opreme i eksperimenata.</small>
+      </div>
+      <div class="list-group-item">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">13:30 - 14:00</h5>
+          <small class="text-muted">Klub studenata</small>
         </div>
+        <p class="mb-1 fw-bold">Druženje i zakuska</p>
+        <small>Neformalno druženje sa studentima.</small>
       </div>
     </div>
+  </div>
 
-    <div class="mb-5">
-      <h3>Govornici</h3>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="d-flex align-items-center">
-            <div class="bg-secondary rounded-circle me-3" style="width: 60px; height: 60px;"></div>
-            <div>
-              <h6 class="mb-0">Prof. Dr. Ime Prezime</h6>
-              <small class="text-muted">Dekan Fakulteta</small>
-            </div>
+  <div class="mb-5">
+    <h3>Govornici</h3>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="d-flex align-items-center">
+          <div class="bg-secondary rounded-circle me-3" style="width: 60px; height: 60px;"></div>
+          <div>
+            <h6 class="mb-0">Prof. Dr. Ime Prezime</h6>
+            <small class="text-muted">Dekan Fakulteta</small>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="d-flex align-items-center">
-            <div class="bg-secondary rounded-circle me-3" style="width: 60px; height: 60px;"></div>
-            <div>
-              <h6 class="mb-0">Ime Prezime</h6>
-              <small class="text-muted">Predsjednik Studentskog vijeća</small>
-            </div>
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex align-items-center">
+          <div class="bg-secondary rounded-circle me-3" style="width: 60px; height: 60px;"></div>
+          <div>
+            <h6 class="mb-0">Ime Prezime</h6>
+            <small class="text-muted">Predsjednik Studentskog vijeća</small>
           </div>
         </div>
       </div>
@@ -94,42 +106,36 @@ const breadcrumbItems = [
   </div>
 
   <!-- Right Sidebar -->
-  <div class="col-lg-4">
-    <div class="card border-0 shadow-sm mb-4">
-      <div class="card-header bg-primary text-white fw-bold py-3">
-        Informacije
-      </div>
-      <div class="list-group list-group-flush">
-        <div class="list-group-item d-flex justify-content-between align-items-center py-3">
-          <span class="text-muted"><i class="bi bi-calendar-event me-2"></i> Datum</span>
-          <span class="fw-bold">15. Maj 2024.</span>
-        </div>
-        <div class="list-group-item d-flex justify-content-between align-items-center py-3">
-          <span class="text-muted"><i class="bi bi-clock me-2"></i> Vrijeme</span>
-          <span class="fw-bold">10:00 - 14:00</span>
-        </div>
-        <div class="list-group-item d-flex justify-content-between align-items-center py-3">
-          <span class="text-muted"><i class="bi bi-geo-alt me-2"></i> Lokacija</span>
-          <span class="fw-bold text-end">Kampus Univerziteta<br><small class="text-muted fw-normal">Zmaja od Bosne bb</small></span>
-        </div>
-        <div class="list-group-item d-flex justify-content-between align-items-center py-3">
-          <span class="text-muted"><i class="bi bi-ticket-perforated me-2"></i> Ulaz</span>
-          <span class="badge bg-success rounded-pill">Besplatan</span>
-        </div>
-      </div>
-      <div class="card-body border-top">
+  <Fragment slot="sidebar">
+    <InfoWidget title="Informacije" icon="bi-info-circle" class="mb-4">
+      <KeyValueListItem label="Datum" value="15. Maj 2024." icon="bi-calendar-event" />
+      <KeyValueListItem label="Vrijeme" value="10:00 - 14:00" icon="bi-clock" />
+      <KeyValueListItem label="Lokacija" value="Kampus Univerziteta" icon="bi-geo-alt" />
+      <KeyValueListItem
+        label="Ulaz"
+        value="Besplatan"
+        icon="bi-ticket-perforated"
+        badgeClass="bg-success rounded-pill text-white"
+      />
+
+      <div class="mt-3">
         <a href="#" class="btn btn-primary w-100 mb-2">Registrujte se</a>
-        <a href="#" class="btn btn-outline-secondary w-100"><i class="bi bi-calendar-plus me-2"></i> Dodaj u kalendar</a>
+        <a href="#" class="btn btn-outline-secondary w-100">
+          <i class="bi bi-calendar-plus me-2"></i> Dodaj u kalendar
+        </a>
       </div>
-    </div>
+    </InfoWidget>
 
     <div class="card border-0 shadow-sm">
       <div class="card-header bg-white border-bottom fw-bold py-3">
-        Lokacija
+        <i class="bi bi-map me-2"></i>Lokacija
       </div>
       <div class="card-body p-0">
         <!-- Static Map Placeholder -->
-        <div class="bg-light d-flex align-items-center justify-content-center text-muted" style="height: 250px;">
+        <div
+          class="bg-light d-flex align-items-center justify-content-center text-muted"
+          style="height: 250px;"
+        >
           <div class="text-center">
             <i class="bi bi-map fs-1 mb-2"></i>
             <p class="mb-0">Google Maps Placeholder</p>
@@ -137,5 +143,5 @@ const breadcrumbItems = [
         </div>
       </div>
     </div>
-  </div>
-</PageLayout>
+  </Fragment>
+</SectionRightSidebar>
