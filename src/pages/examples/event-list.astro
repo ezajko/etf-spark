@@ -6,6 +6,7 @@
 import SectionRightSidebar from '../../layouts/SectionRightSidebar.astro';
 import ContentCard from '../../components/ContentCard.astro';
 import InfoWidget from '../../components/InfoWidget.astro';
+import Pagination from '../../components/navigation/Pagination.astro';
 import KeyValueListItem from '../../components/KeyValueListItem.astro';
 import CalendarWidget from '../../components/CalendarWidget.astro';
 
@@ -70,7 +71,7 @@ const base = import.meta.env.BASE_URL;
       events.map((item) => (
         <ContentCard
           title={item.title}
-          href={base + "/examples/event-single"}
+          href={base + '/examples/event-single'}
           image={item.image}
           category={item.category}
           date={item.date}
@@ -85,14 +86,9 @@ const base = import.meta.env.BASE_URL;
   </div>
 
   <!-- Pagination -->
-  <nav aria-label="Page navigation" class="mt-5">
-    <ul class="pagination justify-content-center">
-      <li class="page-item disabled"><a class="page-link" href="#">Prethodna</a></li>
-      <li class="page-item active"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">Sljedeća</a></li>
-    </ul>
-  </nav>
+  <div class="mt-5">
+    <Pagination currentPage={1} totalPages={2} baseUrl={base + '/examples/event-list'} />
+  </div>
 
   <!-- Sidebar -->
   <Fragment slot="sidebar">

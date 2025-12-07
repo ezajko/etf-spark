@@ -4,7 +4,7 @@
 // License: GPL-2.0-or-later
 
 import SectionRightSidebar from '../../layouts/SectionRightSidebar.astro';
-import ContentCard from '../../components/ContentCard.astro';
+import Pagination from '../../components/navigation/Pagination.astro';
 import InfoWidget from '../../components/InfoWidget.astro';
 import KeyValueListItem from '../../components/KeyValueListItem.astro';
 import SimpleListItem from '../../components/SimpleListItem.astro';
@@ -63,7 +63,7 @@ const base = import.meta.env.BASE_URL;
       news.map((item) => (
         <ContentCard
           title={item.title}
-          href={base + "/examples/news-single"}
+          href={base + '/examples/news-single'}
           image={item.image}
           category={item.category}
           excerpt={item.excerpt}
@@ -73,16 +73,9 @@ const base = import.meta.env.BASE_URL;
     }
   </div>
 
-  <!-- Pagination -->
-  <nav aria-label="Page navigation" class="mt-5">
-    <ul class="pagination justify-content-center">
-      <li class="page-item disabled"><a class="page-link" href="#">Prethodna</a></li>
-      <li class="page-item active"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item"><a class="page-link" href="#">Sljedeća</a></li>
-    </ul>
-  </nav>
+  <div class="mt-4">
+    <Pagination currentPage={1} totalPages={5} baseUrl="/examples/news-list" />
+  </div>
 
   <!-- Sidebar -->
   <Fragment slot="sidebar">

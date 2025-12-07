@@ -22,7 +22,7 @@ const nextPage = currentPage < totalPages ? `${cleanBaseUrl}${currentPage + 1}` 
 // For robustness, full ellipsize logic can be complex. We'll implement a reasonable sliding window.
 function getPageNumbers(current: number, total: number) {
   const delta = 2;
-  const range = [];
+  const range: (number | string)[] = [];
   for (let i = Math.max(2, current - delta); i <= Math.min(total - 1, current + delta); i++) {
     range.push(i);
   }
