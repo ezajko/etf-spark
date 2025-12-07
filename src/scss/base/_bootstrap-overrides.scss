@@ -45,6 +45,9 @@
     --bs-body-bg: #{$ez-bg-color};
 
     // Font Family
+    --bs-font-sans-serif: #{$ez-font-family-sans};
+    --bs-font-serif: #{$ez-font-family-serif};
+    --bs-font-monospace: #{$ez-font-family-mono};
     --bs-body-font-family: #{$ez-font-family-base};
 }
 

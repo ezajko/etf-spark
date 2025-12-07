@@ -4,8 +4,9 @@ Our typography system is based on Bootstrap 5 defaults, enhanced with our custom
 
 ## Font Stack
 
-*   **Primary Font**: System UI font stack (Segoe UI, Roboto, Helvetica, Arial, sans-serif) for maximum performance and native feel.
-*   **Monospace**: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace.
+*   **Primary Font (Sans)**: `IBM Plex Sans` - Used for body text, UI elements, and navigation.
+*   **Serif**: `IBM Plex Serif` - Used for headings/titles where appropriate.
+*   **Monospace**: `IBM Plex Mono` - Used for code blocks and tabular data.
 
 ## Headings
 
