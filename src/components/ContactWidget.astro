@@ -4,6 +4,7 @@
 // License: GPL-2.0-or-later
 
 import ImageListItem from './ImageListItem.astro';
+import SidebarWidget from './SidebarWidget.astro';
 
 interface Contact {
   name: string;
@@ -24,32 +25,26 @@ interface Props {
 const { title, icon, contacts, class: className } = Astro.props;
 ---
 
-<div class={`ez-card ${className || ''}`}>
-  <div class="ez-card__header">
-    {icon && <i class={`bi ${icon} me-2`} />}
-    {title}
-  </div>
-  <div class="ez-card__body">
-    {
-      contacts.map((contact, index) => (
-        <>
-          <ImageListItem
-            value={contact.name}
-            label={contact.role}
-            subtext={contact.email}
-            subtextIcon="bi-envelope"
-            image={contact.image || contact.avatarIcon || 'bi-person'}
-            class="mb-3"
-          >
-            {contact.phone && (
-              <small class="text-muted d-block mt-1">
-                <i class="bi bi-telephone me-1 text-primary" /> {contact.phone}
-              </small>
-            )}
-          </ImageListItem>
-          {index < contacts.length - 1 && <hr class="my-3" />}
-        </>
-      ))
-    }
-  </div>
-</div>
+<SidebarWidget title={title} icon={icon} class={className}>
+  {
+    contacts.map((contact, index) => (
+      <>
+        <ImageListItem
+          value={contact.name}
+          label={contact.role}
+          subtext={contact.email}
+          subtextIcon="bi-envelope"
+          image={contact.image || contact.avatarIcon || 'bi-person'}
+          class="mb-3"
+        >
+          {contact.phone && (
+            <small class="text-muted d-block mt-1">
+              <i class="bi bi-telephone me-1 text-primary" /> {contact.phone}
+            </small>
+          )}
+        </ImageListItem>
+        {index < contacts.length - 1 && <hr class="my-3" />}
+      </>
+    ))
+  }
+</SidebarWidget>

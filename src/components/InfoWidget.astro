@@ -3,6 +3,8 @@
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
+import SidebarWidget from './SidebarWidget.astro';
+
 interface Props {
   title: string;
   icon?: string;
@@ -12,12 +14,8 @@ interface Props {
 const { title, icon, class: className } = Astro.props;
 ---
 
-<div class={`ez-card ${className || ''}`}>
-  <div class="ez-card__header">
-    {icon && <i class={`bi ${icon} me-2`} />}
-    {title}
-  </div>
+<SidebarWidget title={title} icon={icon} class={className}>
   <div class="list-group list-group-flush">
     <slot />
   </div>
-</div>
+</SidebarWidget>

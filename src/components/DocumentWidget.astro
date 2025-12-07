@@ -4,6 +4,7 @@
 // License: GPL-2.0-or-later
 
 import IconListItem from './IconListItem.astro';
+import SidebarWidget from './SidebarWidget.astro';
 
 interface Document {
   title: string;
@@ -22,11 +23,7 @@ interface Props {
 const { title, icon, documents, class: className } = Astro.props;
 ---
 
-<div class={`ez-card ${className || ''}`}>
-  <div class="ez-card__header">
-    {icon && <i class={`bi ${icon} me-2`} />}
-    {title}
-  </div>
+<SidebarWidget title={title} icon={icon} class={className}>
   <div class="list-group list-group-flush">
     {
       documents.map((doc) => (
@@ -40,4 +37,4 @@ const { title, icon, documents, class: className } = Astro.props;
       ))
     }
   </div>
-</div>
+</SidebarWidget>
