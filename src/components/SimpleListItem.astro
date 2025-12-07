@@ -8,22 +8,27 @@ interface Props {
   link?: string;
   icon?: string; // e.g. "bi-chevron-right"
   iconColor?: string; // e.g. "text-primary"
+  active?: boolean;
   class?: string;
 }
 
-const { label, link, icon, iconColor = "text-primary", class: className } = Astro.props;
+const { label, link, icon, iconColor = 'text-primary', active, class: className } = Astro.props;
+
+const baseClass = `list-group-item d-flex align-items-center ez-list-item ${active ? 'ez-list-item--active' : ''} ${className || ''}`;
 
 const Wrapper = link ? 'a' : 'div';
-const wrapperProps = link 
-  ? { href: link, class: `list-group-item list-group-item-action d-flex align-items-center ${className || ''}` } 
-  : { class: `list-group-item d-flex align-items-center ${className || ''}` };
+const wrapperProps = link
+  ? { href: link, class: `list-group-item-action ${baseClass}` }
+  : { class: baseClass };
 ---
 
 <Wrapper {...wrapperProps}>
-  {icon && (
-    <div class="flex-shrink-0 me-2">
-      <i class={`bi ${icon} ${iconColor}`}></i>
-    </div>
-  )}
+  {
+    icon && (
+      <div class="flex-shrink-0 me-2">
+        <i class={`bi ${icon} ${iconColor}`} />
+      </div>
+    )
+  }
   <div>{label}</div>
 </Wrapper>
