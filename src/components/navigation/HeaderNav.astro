@@ -6,7 +6,7 @@
 const base = import.meta.env.BASE_URL;
 ---
 
-<div class="ez-header-navbar-wrapper">
+<div class="ez-nav-main ez-header-navbar-wrapper">
   <nav class="navbar navbar-expand-lg" aria-label="Navigazione principale">
     <div class="container">
       <!-- Desktop Navigation -->
@@ -14,7 +14,7 @@ const base = import.meta.env.BASE_URL;
         <ul class="navbar-nav mx-auto">
           <!-- Level 0: Direct Link -->
           <li class="nav-item">
-            <a class="nav-link" href={base + ""}>Početna</a>
+            <a class="nav-link" href={base + ''}>Početna</a>
           </li>
 
           <!-- Level 1: Split Dropdown -->
@@ -32,33 +32,49 @@ const base = import.meta.env.BASE_URL;
                 <span class="visually-hidden">Toggle Dropdown</span>
               </a>
               <ul class="dropdown-menu shadow-lg border-0" aria-labelledby="navbarDropdownLevel1">
-                <li><a class="dropdown-item" href={base + "/layout-left-sidebar"}>Lijevi Sidebar</a></li>
-                <li><a class="dropdown-item" href={base + "/layout-right-sidebar"}>Desni Sidebar</a></li>
-                <li><a class="dropdown-item" href={base + "/layout-both-sidebars"}>Oba Sidebara</a></li>
-                <li><a class="dropdown-item" href={base + "/layout-no-sidebar"}>Bez Sidebara</a></li>
+                <li>
+                  <a class="dropdown-item" href={base + '/layout-left-sidebar'}>Lijevi Sidebar</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href={base + '/layout-right-sidebar'}>Desni Sidebar</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href={base + '/layout-both-sidebars'}>Oba Sidebara</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href={base + '/layout-no-sidebar'}>Bez Sidebara</a>
+                </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <a class="dropdown-item" href={base + "/examples/layout-section-left"}
-                    >Sekcijska Str. (Lijevo)</a>
+                  <a class="dropdown-item" href={base + '/examples/layout-section-left'}
+                    >Sekcijska Str. (Lijevo)</a
+                  >
                 </li>
                 <li>
-                  <a class="dropdown-item" href={base + "/examples/layout-section-right"}
-                    >Sekcijska Str. (Desno)</a>
+                  <a class="dropdown-item" href={base + '/examples/layout-section-right'}
+                    >Sekcijska Str. (Desno)</a
+                  >
                 </li>
                 <li><hr class="dropdown-divider" /></li>
                 <li>
-                  <a class="dropdown-item" href={base + "/layout-side-bar-menu-left"}>Lijevi Meni (Tree)</a>
+                  <a class="dropdown-item" href={base + '/layout-side-bar-menu-left'}
+                    >Lijevi Meni (Tree)</a
+                  >
                 </li>
                 <li>
-                  <a class="dropdown-item" href={base + "/layout-side-bar-menu-right"}>Desni Meni (Tree)</a>
+                  <a class="dropdown-item" href={base + '/layout-side-bar-menu-right'}
+                    >Desni Meni (Tree)</a
+                  >
                 </li>
                 <li>
-                  <a class="dropdown-item" href={base + "/layout-side-bar-menu-left-right-sidebar"}
-                    >Lijevi Meni + Desni Sidebar</a>
+                  <a class="dropdown-item" href={base + '/layout-side-bar-menu-left-right-sidebar'}
+                    >Lijevi Meni + Desni Sidebar</a
+                  >
                 </li>
                 <li>
-                  <a class="dropdown-item" href={base + "/layout-side-bar-menu-right-left-sidebar"}
-                    >Lijevi Sidebar + Desni Meni</a>
+                  <a class="dropdown-item" href={base + '/layout-side-bar-menu-right-left-sidebar'}
+                    >Lijevi Sidebar + Desni Meni</a
+                  >
                 </li>
               </ul>
             </div>
@@ -89,27 +105,34 @@ const base = import.meta.env.BASE_URL;
                       <h6 class="text-uppercase fw-bold text-primary mb-3">Odsjeci i Osoblje</h6>
                       <ul class="list-unstyled">
                         <li>
-                          <a class="text-decoration-none mb-1 d-block" href={base + "/examples/department"}
-                            >Stranica Odsjeka</a>
+                          <a
+                            class="text-decoration-none mb-1 d-block"
+                            href={base + '/examples/department'}>Stranica Odsjeka</a
+                          >
                         </li>
                         <li>
                           <a
                             class="text-decoration-none mb-1 d-block"
-                            href={base + "/examples/study-program"}>Studijski Program</a>
-                        </li>
-                        <li>
-                          <a class="text-decoration-none mb-1 d-block" href={base + "/examples/staff-list"}
-                            >Lista Osoblja</a>
+                            href={base + '/examples/study-program'}>Studijski Program</a
+                          >
                         </li>
                         <li>
                           <a
                             class="text-decoration-none mb-1 d-block"
-                            href={base + "/examples/staff-profile"}>Profil Profesora</a>
+                            href={base + '/examples/staff-list'}>Lista Osoblja</a
+                          >
                         </li>
                         <li>
                           <a
                             class="text-decoration-none mb-1 d-block"
-                            href={base + "/examples/course-details"}>Detalji Predmeta</a>
+                            href={base + '/examples/staff-profile'}>Profil Profesora</a
+                          >
+                        </li>
+                        <li>
+                          <a
+                            class="text-decoration-none mb-1 d-block"
+                            href={base + '/examples/course-details'}>Detalji Predmeta</a
+                          >
                         </li>
                       </ul>
                     </div>
@@ -117,20 +140,28 @@ const base = import.meta.env.BASE_URL;
                       <h6 class="text-uppercase fw-bold text-primary mb-3">Aktuelnosti</h6>
                       <ul class="list-unstyled">
                         <li>
-                          <a class="text-decoration-none mb-1 d-block" href={base + "/examples/news-list"}
-                            >Arhiva Vijesti</a>
+                          <a
+                            class="text-decoration-none mb-1 d-block"
+                            href={base + '/examples/news-list'}>Arhiva Vijesti</a
+                          >
                         </li>
                         <li>
-                          <a class="text-decoration-none mb-1 d-block" href={base + "/examples/news-single"}
-                            >Pojedinačna Vijest</a>
+                          <a
+                            class="text-decoration-none mb-1 d-block"
+                            href={base + '/examples/news-single'}>Pojedinačna Vijest</a
+                          >
                         </li>
                         <li>
-                          <a class="text-decoration-none mb-1 d-block" href={base + "/examples/event-list"}
-                            >Arhiva Događaja</a>
+                          <a
+                            class="text-decoration-none mb-1 d-block"
+                            href={base + '/examples/event-list'}>Arhiva Događaja</a
+                          >
                         </li>
                         <li>
-                          <a class="text-decoration-none mb-1 d-block" href={base + "/examples/event-single"}
-                            >Pojedinačni Događaj</a>
+                          <a
+                            class="text-decoration-none mb-1 d-block"
+                            href={base + '/examples/event-single'}>Pojedinačni Događaj</a
+                          >
                         </li>
                       </ul>
                     </div>
@@ -138,21 +169,28 @@ const base = import.meta.env.BASE_URL;
                       <h6 class="text-uppercase fw-bold text-primary mb-3">Istraživanje</h6>
                       <ul class="list-unstyled">
                         <li>
-                          <a class="text-decoration-none mb-1 d-block" href={base + "/examples/project-list"}
-                            >Lista Projekata</a>
+                          <a
+                            class="text-decoration-none mb-1 d-block"
+                            href={base + '/examples/project-list'}>Lista Projekata</a
+                          >
                         </li>
                         <li>
                           <a
                             class="text-decoration-none mb-1 d-block"
-                            href={base + "/examples/project-single"}>Pojedinačni Projekat</a>
+                            href={base + '/examples/project-single'}>Pojedinačni Projekat</a
+                          >
                         </li>
                         <li>
-                          <a class="text-decoration-none mb-1 d-block" href={base + "/examples/lab-list"}
-                            >Lista Laboratorija</a>
+                          <a
+                            class="text-decoration-none mb-1 d-block"
+                            href={base + '/examples/lab-list'}>Lista Laboratorija</a
+                          >
                         </li>
                         <li>
-                          <a class="text-decoration-none mb-1 d-block" href={base + "/examples/lab-single"}
-                            >Pojedinačna Laboratorija</a>
+                          <a
+                            class="text-decoration-none mb-1 d-block"
+                            href={base + '/examples/lab-single'}>Pojedinačna Laboratorija</a
+                          >
                         </li>
                       </ul>
                     </div>
@@ -162,22 +200,26 @@ const base = import.meta.env.BASE_URL;
                         <li>
                           <a
                             class="text-decoration-none mb-1 d-block"
-                            href={base + "/examples/document-list"}>Arhiva Odluka</a>
+                            href={base + '/examples/document-list'}>Arhiva Odluka</a
+                          >
                         </li>
                         <li>
                           <a
                             class="text-decoration-none mb-1 d-block"
-                            href={base + "/examples/document-list"}>Pravilnici</a>
+                            href={base + '/examples/document-list'}>Pravilnici</a
+                          >
                         </li>
                         <li>
                           <a
                             class="text-decoration-none mb-1 d-block"
-                            href={base + "/examples/document-list"}>Zapisnici NNV-a</a>
+                            href={base + '/examples/document-list'}>Zapisnici NNV-a</a
+                          >
                         </li>
                         <li>
                           <a
                             class="text-decoration-none mb-1 d-block"
-                            href={base + "/examples/document-single"}>Primjer Dokumenta</a>
+                            href={base + '/examples/document-single'}>Primjer Dokumenta</a
+                          >
                         </li>
                       </ul>
                     </div>

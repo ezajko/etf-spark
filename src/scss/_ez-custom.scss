@@ -18,16 +18,24 @@
 @import 'components/ez-table';
 @import 'components/ez-lists';
 @import "components/ez-accordion";
-@import "components/ez-tabs";
+// @import "components/ez-tabs"; // Migrated to navigation/ez-nav-tabs
 @import 'components/ez-form';
 @import 'components/ez-hero';
-@import 'components/ez-navbar';
-@import 'components/ez-header';
+// @import 'components/ez-navbar'; // Migrated to navigation/ez-nav-main
+@import "components/ez-header";
 @import 'components/ez-breadcrumbs';
+
+// Navigation System
+@import 'components/navigation/ez-nav-main';
+@import 'components/navigation/ez-nav-utility';
+@import 'components/navigation/ez-nav-tree';
+@import 'components/navigation/ez-nav-tabs';
+@import 'components/navigation/ez-nav-pills';
+
 @import 'components/ez-layout';
 @import "components/ez-utilities";
 @import "components/ez-carousel";
-@import "components/ez-sidebar";
+// @import "components/ez-sidebar"; // Migrated to navigation/ez-nav-tree
 @import "components/ez-footer";
 @import "components/ez-sidebar-widget";
 

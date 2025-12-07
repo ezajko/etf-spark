@@ -1,0 +1,16 @@
+// ETF UNSA - Pills Navigation
+// Split from _ez-tabs.scss
+
+.nav-pills {
+    .nav-link {
+        color: $ez-text-color;
+        font-weight: $ez-font-weight-bold;
+        border-radius: $ez-border-radius;
+        padding: $ez-spacing-sm $ez-spacing-lg;
+
+        &.active {
+            background-color: $ez-primary-color;
+            color: #fff;
+        }
+    }
+}

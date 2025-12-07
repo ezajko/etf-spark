@@ -1,5 +1,5 @@
-// ETF UNSA - Tabs Styles
-// Author: Ernedin Zajko <ezajko@root.ba>
+// ETF UNSA - Tabs Navigation
+// Migrated from _ez-tabs.scss
 
 .nav-tabs {
     border-bottom: 2px solid $ez-border-color;
@@ -26,25 +26,9 @@
     }
 }
 
-.nav-pills {
-    .nav-link {
-        color: $ez-text-color;
-        font-weight: $ez-font-weight-bold;
-        border-radius: $ez-border-radius;
-        padding: $ez-spacing-sm $ez-spacing-lg;
-
-        &.active {
-            background-color: $ez-primary-color;
-            color: #fff;
-        }
-    }
-}
-
 .tab-content {
     background: #fff;
     border-radius: 0 0 $ez-border-radius $ez-border-radius;
-    // Optional: Add global border/padding if desired, but often it's context specific.
-    // We can define a generic look:
 
     &.ez-tabs-content {
         border: 1px solid $ez-border-color;

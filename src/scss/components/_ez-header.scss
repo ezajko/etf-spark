@@ -15,47 +15,14 @@
     position: relative;
     z-index: 1030; // Above sticky header (1020)
 
-    a {
-        color: white;
-        opacity: 0.9;
-        transition: opacity 0.2s;
-
-        &:hover {
-            opacity: 1;
-            text-decoration: none;
-        }
-    }
-
-    .dropdown-menu {
-        margin-top: $ez-spacing-sm;
-        border-radius: 0;
-        border: 1px solid #333;
-        font-size: 0.85rem;
-        background-color: #000;
-    }
-
-    .dropdown-item {
-        padding: $ez-spacing-sm $ez-spacing-md;
-        color: white;
-
-        &:hover,
-        &:focus {
-            background-color: #333;
-            color: white;
-        }
-    }
-
-    .ez-header-slim-right-zone {
-        gap: $ez-spacing-sm;
-    }
-
-    .search-box {
-
-        input,
-        .btn {
-            border-radius: 0;
-        }
-    }
+    // Layout only - styles moved to _ez-nav-utility.scss
+    background-color: $ez-footer-bg; // #000
+    color: white;
+    min-height: 48px;
+    padding: 12px 0;
+    font-size: 1rem;
+    position: relative;
+    z-index: 1030;
 }
 
 // ======================
@@ -153,166 +120,9 @@
     background-color: white;
     min-height: 48px;
 
-    .navbar {
-        padding: 0;
-        min-height: 48px;
-    }
-
-    .navbar-collapse {
-        width: 100%;
-    }
-
-    .navbar-nav {
-        gap: 0;
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .nav-link {
-        color: $ez-text-color;
-        font-weight: $ez-font-weight-semibold;
-        font-size: 1rem;
-        padding: 14px $ez-spacing-md;
-        text-transform: uppercase;
-        letter-spacing: 0.3px;
-        transition: color 0.2s ease;
-        white-space: nowrap;
-
-        &:hover,
-        &.active {
-            color: $ez-primary-color;
-        }
-
-        &.active {
-            text-decoration: underline;
-            text-underline-offset: 4px;
-            text-decoration-thickness: 2px;
-        }
-    }
-
-    // Split dropdown styling
-    .dropdown-toggle-split {
-        padding-left: $ez-spacing-xs;
-        padding-right: $ez-spacing-xs;
-        opacity: 0.7;
-        transition: all 0.2s ease;
-
-        &:hover,
-        &[aria-expanded="true"] {
-            opacity: 1;
-            color: $ez-primary-color;
-        }
-
-        &::after {
-            transition: transform 0.2s;
-        }
-
-        &[aria-expanded="true"]::after {
-            transform: rotate(180deg);
-        }
-    }
-
-    // Dropdown menus
-    .dropdown-menu {
-        border: none;
-        border-top: 1px solid $ez-border-color;
-        border-radius: 0;
-        box-shadow: $ez-shadow-lg;
-        background-color: white;
-        padding: $ez-spacing-lg;
-        margin-top: 0;
-
-        h6 {
-            text-transform: uppercase;
-            font-weight: $ez-font-weight-bold;
-            color: $ez-primary-color;
-            margin-bottom: $ez-spacing-md;
-            // font-size: $ez-font-size-sm; // Removed to allow h6 to be larger (default 1rem) than links if needed, or at least equal.
-        }
-
-        a {
-            color: $ez-text-color;
-            display: block;
-            padding: $ez-spacing-sm; // Increased padding for hit area
-            text-decoration: none;
-            transition: all 0.2s;
-            border-radius: $ez-border-radius; // Rounded corners for hover state
-
-            &:hover {
-                color: $ez-primary-color;
-                background-color: $ez-bg-light; // Light gray background on hover
-            }
-        }
-    }
-
-    // Mega menu specific - full width centered
-    .dropdown-menu.w-100 {
-        left: 0 !important;
-        right: 0 !important;
-        transform: none !important;
-        width: 100vw;
-        margin-left: calc(-50vw + 50%);
-    }
-
-    // Position static parent for mega menu
-    .dropdown.position-static {
-        position: static !important;
-    }
-
-    // Tabbed mega menu (Level 3)
-    .split-tab-container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: $ez-spacing-sm $ez-spacing-md;
-        border-bottom: 1px solid $ez-border-color;
-
-        &:hover {
-            background-color: $ez-bg-light;
-        }
-    }
-
-    .split-tab-link {
-        flex: 1;
-        color: $ez-text-color;
-        text-decoration: none;
-        font-weight: $ez-font-weight-semibold;
-        text-transform: uppercase; // Added as requested
-
-        &:hover {
-            color: $ez-primary-color;
-        }
-    }
-
-    .split-tab-toggle {
-        background: none;
-        border: none;
-        color: $ez-text-color;
-        padding: 0 $ez-spacing-sm;
-        cursor: pointer;
-        opacity: 0.5;
-        transition: all 0.2s;
-
-        &:hover,
-        &.active {
-            opacity: 1;
-            color: $ez-primary-color;
-        }
-
-        &.active i {
-            transform: rotate(90deg);
-        }
-    }
-
-    .nav-pills {
-        .nav-item {
-            margin-bottom: 0;
-        }
-    }
-
-    .tab-content {
-        padding: $ez-spacing-lg;
-    }
+    // Layout only - styles moved to _ez-nav-main.scss
+    background-color: white;
+    min-height: 48px;
 }
 
 // ======================

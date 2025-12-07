@@ -1,0 +1,61 @@
+// ETF UNSA - Utility Navigation (Top Bar)
+// Extracted from _ez-header.scss and _ez-navbar.scss
+
+.ez-nav-utility {
+    // Shared styles for top utility bars (like .ez-header-slim-wrapper)
+    background-color: $ez-footer-bg; // #000
+    color: white;
+    min-height: 48px;
+    padding: 12px 0;
+    font-size: 1rem;
+    position: relative;
+    z-index: 1030; // Above sticky header (1020)
+
+    a {
+        color: white;
+        opacity: 0.9;
+        transition: opacity 0.2s;
+        text-decoration: none;
+
+        &:hover {
+            opacity: 1;
+            text-decoration: none;
+        }
+    }
+
+    .dropdown-menu {
+        margin-top: $ez-spacing-sm;
+        border-radius: 0;
+        border: 1px solid #333;
+        font-size: 0.85rem;
+        background-color: #000;
+    }
+
+    .dropdown-item {
+        padding: $ez-spacing-sm $ez-spacing-md;
+        color: white;
+
+        &:hover,
+        &:focus {
+            background-color: #333;
+            color: white;
+        }
+    }
+
+    // Right side items container
+    &__right {
+        gap: $ez-spacing-sm;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    // Search box integration
+    .search-box {
+
+        input,
+        .btn {
+            border-radius: 0;
+        }
+    }
+}

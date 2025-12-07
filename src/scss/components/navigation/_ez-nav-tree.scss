@@ -1,6 +1,5 @@
-// ETF UNSA - Sidebar Component SCSS
-// Author: Ernedin Zajko <ezajko@root.ba>
-// License: GPL-2.0-or-later
+// ETF UNSA - Tree Navigation (Sidebar)
+// Migrated from _ez-sidebar.scss
 
 /* Custom styles for nested navigation */
 .ez-nav-tree .nav-link {
@@ -17,7 +16,6 @@
 .ez-nav-tree .nav-link.active {
     color: var(--bs-primary);
     font-weight: 600;
-    // background-color: rgba(var(--bs-primary-rgb), 0.1); // Removed as requested
 }
 
 /* Indentation for nested levels */
