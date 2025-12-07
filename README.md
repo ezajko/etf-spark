@@ -1,127 +1,104 @@
-# ETF UNSA Web - Modern Tooling
+# ETF UNSA Web
 
 [![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
 
-Elektrotehnički fakultet Univerziteta u Sarajevu - Web stranica i dizajn sistem.
+Web stranica i dizajn sistem Elektrotehničkog fakulteta Univerziteta u Sarajevu.
 
-## 🚀 Technology Stack
+## Tech Stack
 
-- **Framework**: [Astro](https://astro.build/)
-- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Framework**: Astro
+- **Build Tool**: Vite
 - **Styling**: SCSS (Bootstrap Italia inspired)
-- **Icons**: [Bootstrap Icons](https://icons.getbootstrap.com/)
-- **Component Library**: [Storybook](https://storybook.js.org/)
+- **Icons**: Bootstrap Icons
 - **Containerization**: Podman
-- **Package Manager**: pnpm
+- **Package Manager**: npm
 
-## 📋 Prerequisites
+## Prerequisites
 
-- [Podman](https://podman.io/) installed
-- OR Node.js 20+ and pnpm (for local development)
+- Podman installed (for containerized development)
+- OR Node.js 20+ and npm (for local development)
 
-## 🐳 Development with Podman (Recommended)
+## Development (Podman)
+
+Recommended for consistent environment.
 
 ```bash
-# Build and start development containers
+# Start development environment
 podman-compose up
 
-# Access:
-# - Astro dev server: http://localhost:4321
-# - Storybook: http://localhost:6006
+# Access: http://localhost:4321
 ```
 
-## 💻 Local Development (Without Podman)
+## Development (Local)
 
 ```bash
 # Install dependencies
-pnpm install
+npm install
 
-# Start Astro dev server
-pnpm run dev
-
-# Start Storybook
-pnpm run storybook
+# Start dev server
+npm run dev
 
 # Build for production
-pnpm run build
+npm run build
 ```
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 www-ng/
-├── legacy/                 # Original static site (preserved)
+├── legacy/                 # Preserved original static site
 ├── src/
 │   ├── components/        # Astro components
 │   ├── layouts/           # Page layouts
-│   ├── pages/             # Routes (file-based routing)
-│   ├── scss/              # SCSS with ez- prefix components
+│   ├── pages/             # Routes (file-based)
+│   ├── scss/              # Styles
 │   │   ├── base/         # Variables, mixins
-│   │   ├── components/   # Component styles  (_ez-button, _ez-card, etc.)
-│   │   ├── layouts/      # Layout styles
-│   │   └── utilities/    # Utility classes
+│   │   ├── components/   # Component styles (ez- prefix)
+│   │   └── utilities/    # Utilities
 │   └── scripts/           # JavaScript modules
 ├── public/                # Static assets (images, fonts)
-├── .storybook/            # Storybook configuration
-├── Containerfile          # Podman container definition
-└── podman-compose.yml     # Development orchestration
+├── Containerfile          # Container definition
+└── podman-compose.yml     # Container orchestration
 ```
 
-## 🎨 Design System
+## Design System
 
-Component prefix: `ez-` (e.g., `ez-btn`, `ez-card`)
+- **Prefix**: `ez-` (e.g., `ez-btn`, `ez-card`)
+- **Convention**: BEM (Block Element Modifier)
 
-Naming convention: BEM (Block Element Modifier)
-- Block: `.ez-btn`
-- Element: `.ez-btn__icon`
-- Modifier: `.ez-btn--primary`
+## Deployment
 
-## 📚 Documentation
+The project is deployed to **GitHub Pages**.
 
-- Component documentation: Run Storybook (`pnpm run storybook`)
-- Legacy site: Open `legacy/index.html` in browser
+- **Workflow**: `.github/workflows/deploy.yml`
+- **Base URL**: `/etf-spark/`
+- **Branch**: `gh-pages`
 
-## 🧪 Code Quality
+### Handling Paths
+To ensure links work correctly in the subdirectory deployment, use `import.meta.env.BASE_URL`:
+
+```astro
+const base = import.meta.env.BASE_URL;
+<a href={base + "my-page"}>Link</a>
+<img src={base + "images/logo.png"} />
+```
+
+## Code Quality
 
 ```bash
 # Run linters
-pnpm run lint
+npm run lint
 
 # Format code
-pnpm run format
+npm run format
 ```
 
-## 📝 License
+## License
 
 GPL-2.0-or-later
 
 Copyright (C) 2024 Elektrotehnički fakultet Univerziteta u Sarajevu
 
-## 👤 Author
+## Author
 
 Ernedin Zajko <ezajko@root.ba>
-
-## 🔧 Build Commands
-
-```bash
-# Development
-pnpm run dev              # Start Astro dev server
-pnpm run storybook        # Start Storybook
-
-# Production
-pnpm run build            # Build for production
-pnpm run preview          # Preview production build
-pnpm run build-storybook  # Build Storybook static site
-```
-
-## 🐋 Container Commands
-
-```bash
-# Development
-podman-compose up         # Start all services
-podman-compose down       # Stop all services
-
-# Production build
-podman build -t etf-unsa-web:latest .
-podman run -p 80:80 etf-unsa-web:latest
-```
