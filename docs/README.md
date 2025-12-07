@@ -61,6 +61,6 @@ The project documentation is organized as follows:
 - **[Layouts](docs/layout/layouts.md)**: Grid system and page layouts.
 - **[Content](docs/content/typography.md)**: Typography, colors, and icons.
 - **[Menus](docs/menus/main-nav.md)**: Navigation components (Header, Sidebar, [Pagination](docs/menus/pagination.md)).
-- **[Components](docs/components/cards.md)**: Modular UI elements (Cards, Lists, [CTA](docs/components/cta.md), [Structural](docs/components/structural.md)).
+- **[Components](docs/components/cards.md)**: Modular UI elements (Cards, Lists, [CTA](docs/components/cta.md), [Carousel](docs/components/carousel.md), [Structural](docs/components/structural.md)).
 
 
