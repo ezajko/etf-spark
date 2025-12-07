@@ -6,7 +6,7 @@ The project uses Astro's layout system to ensure consistent page structures. Lay
 
 ### `BaseLayout.astro`
 The root layout (HTML shell).
-*   **Responsibility**: Defines `<head>`, meta tags, favicon, global CSS imports, and the basic `<body>` structure with `Header` and `Footer`.
+*   **Responsibility**: Defines `<head>`, meta tags, favicon, Global CSS imports, and the basic `<body>` structure with `Header` and `Footer`.
 *   **Props**: `title` (Page title meta tag).
 
 ### `PageLayout.astro`

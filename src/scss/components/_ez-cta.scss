@@ -1,0 +1,79 @@
+// ETF UNSA - Call To Action (CTA)
+
+.ez-cta {
+    padding: $ez-spacing-xl 0;
+    border-radius: $ez-border-radius;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: $ez-spacing-xl;
+
+    // Default (Light/Base)
+    background-color: $ez-bg-light;
+    border: 1px solid $ez-border-color;
+
+    &__content {
+        position: relative;
+        z-index: 2;
+    }
+
+    &__title {
+        font-weight: $ez-font-weight-bold;
+        margin-bottom: $ez-spacing-md;
+    }
+
+    &__description {
+        margin-bottom: $ez-spacing-lg;
+        font-size: 1.1rem;
+        color: $ez-text-muted;
+        max-width: 800px;
+    }
+
+    // Variants
+    &--primary {
+        background-color: $ez-primary-color;
+        border-color: $ez-primary-color;
+        color: white;
+
+        .ez-cta__title {
+            color: white;
+        }
+
+        .ez-cta__description {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .btn-outline-primary {
+            color: white;
+            border-color: white;
+
+            &:hover {
+                background-color: white;
+                color: $ez-primary-color;
+            }
+        }
+    }
+
+    &--dark {
+        background-color: $ez-footer-bg;
+        border-color: $ez-footer-bg;
+        color: white;
+
+        .ez-cta__title {
+            color: white;
+        }
+
+        .ez-cta__description {
+            color: rgba(255, 255, 255, 0.8);
+        }
+    }
+
+    // Centered variant
+    &--center {
+        text-align: center;
+
+        .ez-cta__description {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}

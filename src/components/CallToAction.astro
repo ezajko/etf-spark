@@ -1,0 +1,51 @@
+---
+// ETF UNSA - Call to Action Component
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+interface Props {
+  title: string;
+  description: string;
+  actionLabel: string;
+  actionUrl: string;
+  variant?: 'light' | 'primary' | 'dark';
+  centered?: boolean;
+  class?: string;
+  icon?: string;
+}
+
+const {
+  title,
+  description,
+  actionLabel,
+  actionUrl,
+  variant = 'light',
+  centered = false,
+  class: className,
+  icon,
+} = Astro.props;
+
+const variantClass = `ez-cta--${variant}`;
+const alignClass = centered ? 'ez-cta--center' : '';
+const btnClass = variant === 'primary' ? 'btn-outline-light' : 'btn-primary';
+---
+
+<div class={`ez-cta ${variantClass} ${alignClass} ${className || ''}`}>
+  <div class="container ez-cta__content">
+    <div class="row align-items-center">
+      <div class="col-lg-8 mb-4 mb-lg-0">
+        <h2 class="ez-cta__title h3">
+          {icon && <i class={`bi ${icon} me-2`} />}
+          {title}
+        </h2>
+        <p class="ez-cta__description mb-0">{description}</p>
+      </div>
+      <div class="col-lg-4 text-lg-end">
+        <a href={actionUrl} class={`btn ${btnClass} btn-lg px-4`}>
+          {actionLabel}
+          <i class="bi bi-chevron-right ms-2 small"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

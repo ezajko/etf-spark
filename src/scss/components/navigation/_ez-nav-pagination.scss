@@ -1,0 +1,50 @@
+// ETF UNSA - Pagination
+// Extends Bootstrap .pagination
+
+.ez-pagination {
+    // Custom wrapper if needed, but we mainly style Bootstrap classes
+
+    .pagination {
+        margin-bottom: 0;
+        gap: 5px; // Small gap between items for modern look
+    }
+
+    .page-item {
+        .page-link {
+            border: 1px solid $ez-border-color;
+            color: $ez-text-color;
+            border-radius: 4px; // Slight rounding
+            min-width: 40px;
+            text-align: center;
+            transition: all 0.2s ease;
+            margin: 0;
+
+            &:hover {
+                background-color: $ez-bg-light;
+                color: $ez-primary-color;
+                border-color: $ez-border-color;
+            }
+
+            &:focus {
+                box-shadow: 0 0 0 0.25rem rgba($ez-primary-color, 0.25);
+            }
+        }
+
+        &.active {
+            .page-link {
+                background-color: $ez-primary-color;
+                border-color: $ez-primary-color;
+                color: white;
+            }
+        }
+
+        &.disabled {
+            .page-link {
+                color: $ez-text-muted;
+                background-color: transparent;
+                border-color: $ez-border-color;
+                opacity: 0.6;
+            }
+        }
+    }
+}

@@ -55,7 +55,12 @@ The project uses a custom component library prefix `ez-` class names to separate
 
 *   `ez-card`: Standard content container.
 *   `ez-button`: Custom button styles.
-*   `ez-hero`: Hero section styles.
-*   `ez-navbar`: Navigation styles.
+## Documentation
 
-See [STYLES.md](./STYLES.md) and [COMPONENTS.md](./COMPONENTS.md) for deeper technical details.
+The project documentation is organized as follows:
+- **[Layouts](docs/layout/layouts.md)**: Grid system and page layouts.
+- **[Content](docs/content/typography.md)**: Typography, colors, and icons.
+- **[Menus](docs/menus/main-nav.md)**: Navigation components (Header, Sidebar, [Pagination](docs/menus/pagination.md)).
+- **[Components](docs/components/cards.md)**: Modular UI elements (Cards, Lists, [CTA](docs/components/cta.md), [Structural](docs/components/structural.md)).
+
+
