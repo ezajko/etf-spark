@@ -2,6 +2,7 @@
 // ETF UNSA - Header Slim: University Links
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
+const base = import.meta.env.BASE_URL;
 ---
 
 <div class="dropdown d-inline-block">
@@ -19,6 +20,6 @@
     <li><a class="dropdown-item" href="#">UNSA</a></li>
     <li><a class="dropdown-item" href="#">eUNSA</a></li>
     <li><a class="dropdown-item" href="#">International</a></li>
-    <li><a class="dropdown-item" href="/design/components/index.html">Dizajn Sistem</a></li>
+    <li><a class="dropdown-item" href={base + "/design/components/index.html"}>Dizajn Sistem</a></li>
   </ul>
 </div>

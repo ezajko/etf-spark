@@ -2,6 +2,7 @@
 // ETF UNSA - Header Slim Mobile (Secondary Menu)
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
+const base = import.meta.env.BASE_URL;
 ---
 
 <div class="offcanvas offcanvas-top text-bg-dark" tabindex="-1" id="slimMobileMenu" aria-labelledby="slimMobileMenuLabel" style="height: auto; min-height: 50vh;">
@@ -25,7 +26,7 @@
               <li class="list-group-item bg-dark border-secondary"><a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3">UNSA</a></li>
               <li class="list-group-item bg-dark border-secondary"><a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3">eUNSA</a></li>
               <li class="list-group-item bg-dark border-secondary"><a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3">International</a></li>
-              <li class="list-group-item bg-dark border-secondary"><a href="/design/components/index.html" class="text-white-50 text-decoration-none d-block py-2 ps-3">Dizajn Sistem</a></li>
+              <li class="list-group-item bg-dark border-secondary"><a href={base + "/design/components/index.html"} class="text-white-50 text-decoration-none d-block py-2 ps-3">Dizajn Sistem</a></li>
             </ul>
           </div>
         </div>
