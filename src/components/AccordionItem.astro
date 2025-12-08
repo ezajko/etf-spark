@@ -32,7 +32,7 @@ const { id, parent, title, open = false, class: className } = Astro.props;
     aria-labelledby={`heading-${id}`}
     data-bs-parent={`#${parent}`}
   >
-    <div class="accordion-body bg-white">
+    <div class="accordion-body">
       <slot />
     </div>
   </div>
