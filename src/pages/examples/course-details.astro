@@ -13,7 +13,7 @@ const breadcrumbItems = [
   { label: 'Odsjeci', href: '#' },
   { label: 'Računarstvo i informatika', href: '#' },
   { label: 'Predmeti', href: '#' },
-  { label: 'Algoritmi i strukture podataka', href: '#', active: true }
+  { label: 'Algoritmi i strukture podataka', href: '#', active: true },
 ];
 
 const base = import.meta.env.BASE_URL;
@@ -30,7 +30,7 @@ const base = import.meta.env.BASE_URL;
           <p class="ez-hero__subtitle text-white-50">RI-2-1 / ECTS: 6.0</p>
         </div>
         <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
-           <a href="#" class="btn btn-outline-light">Courseware (c2)</a>
+          <a href="#" class="btn btn-outline-light">Courseware (c2)</a>
         </div>
       </div>
     </div>
@@ -39,15 +39,15 @@ const base = import.meta.env.BASE_URL;
   <!-- Left Column: Side Menu -->
   <div class="col-lg-3 mb-4 mb-lg-0 d-none d-lg-block">
     <SideMenu />
-    
+
     <div class="card border-0 shadow-sm mt-4">
-      <div class="card-header bg-white border-bottom fw-bold py-3">
-        Nastavno osoblje
-      </div>
+      <div class="card-header border-bottom fw-bold py-3">Nastavno osoblje</div>
       <div class="list-group list-group-flush">
         <div class="list-group-item">
           <small class="text-muted d-block">Predavač</small>
-          <a href={base + "/examples/staff-profile"} class="text-decoration-none fw-bold text-dark">Dr. Ime Prezime</a>
+          <a href={base + '/examples/staff-profile'} class="text-decoration-none fw-bold text-dark"
+            >Dr. Ime Prezime</a
+          >
         </div>
         <div class="list-group-item">
           <small class="text-muted d-block">Asistent</small>
@@ -61,8 +61,12 @@ const base = import.meta.env.BASE_URL;
   <div class="col-lg-9">
     <div class="mb-5">
       <h3 class="mb-3">O predmetu</h3>
-      <p>Cilj predmeta je upoznavanje studenata sa osnovnim i naprednim strukturama podataka i algoritmima za njihovu obradu. Studenti će naučiti analizirati složenost algoritama i odabrati optimalnu strukturu podataka za rješavanje konkretnih problema.</p>
-      
+      <p>
+        Cilj predmeta je upoznavanje studenata sa osnovnim i naprednim strukturama podataka i
+        algoritmima za njihovu obradu. Studenti će naučiti analizirati složenost algoritama i
+        odabrati optimalnu strukturu podataka za rješavanje konkretnih problema.
+      </p>
+
       <div class="row mt-4 g-3">
         <div class="col-md-4">
           <div class="p-3 border rounded bg-light h-100">
@@ -99,31 +103,30 @@ const base = import.meta.env.BASE_URL;
     <div class="mb-5">
       <h3 class="mb-4">Silabus</h3>
       <Accordion id="syllabusAccordion">
-        <AccordionItem 
-          id="week1" 
-          title="Sedmica 1-3: Osnovni koncepti i linearne strukture" 
-          parent="syllabusAccordion" 
+        <AccordionItem
+          id="week1"
+          title="Sedmica 1-3: Osnovni koncepti i linearne strukture"
+          parent="syllabusAccordion"
           open={true}
         >
-          Uvod u analizu algoritama (Big O notacija). Nizovi, vezane liste, stekovi i redovi. Implementacija i primjena.
+          Uvod u analizu algoritama (Big O notacija). Nizovi, vezane liste, stekovi i redovi.
+          Implementacija i primjena.
         </AccordionItem>
-        <AccordionItem 
-          id="week4" 
-          title="Sedmica 4-7: Stabla i grafovi" 
+        <AccordionItem id="week4" title="Sedmica 4-7: Stabla i grafovi" parent="syllabusAccordion">
+          Binarna stabla pretrage, AVL stabla, B-stabla. Predstavljanje grafova, obilazak grafova
+          (BFS, DFS), najkraći putevi.
+        </AccordionItem>
+        <AccordionItem
+          id="week8"
+          title="Sedmica 8-12: Sortiranje i pretraživanje"
           parent="syllabusAccordion"
         >
-          Binarna stabla pretrage, AVL stabla, B-stabla. Predstavljanje grafova, obilazak grafova (BFS, DFS), najkraći putevi.
-        </AccordionItem>
-        <AccordionItem 
-          id="week8" 
-          title="Sedmica 8-12: Sortiranje i pretraživanje" 
-          parent="syllabusAccordion"
-        >
-          Algoritmi sortiranja (Merge Sort, Quick Sort, Heap Sort). Hash tabele i rješavanje kolizija.
+          Algoritmi sortiranja (Merge Sort, Quick Sort, Heap Sort). Hash tabele i rješavanje
+          kolizija.
         </AccordionItem>
       </Accordion>
     </div>
-    
+
     <div class="mb-5">
       <h3 class="mb-4">Obavještenja</h3>
       <div class="list-group">
