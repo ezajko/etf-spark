@@ -58,9 +58,13 @@ The project uses a custom component library prefix `ez-` class names to separate
 ## Documentation
 
 The project documentation is organized as follows:
-- **[Layouts](docs/layout/layouts.md)**: Grid system and page layouts.
-- **[Content](docs/content/typography.md)**: Typography, colors, and icons.
-- **[Menus](docs/menus/main-nav.md)**: Navigation components (Header, Sidebar, [Pagination](docs/menus/pagination.md)).
-- **[Components](docs/components/cards.md)**: Modular UI elements (Cards, Lists, [CTA](docs/components/cta.md), [Carousel](docs/components/carousel.md), [Structural](docs/components/structural.md)).
-
-
+- **[Foundations](docs/foundations/)**: Core design elements (Colors, Typography, Icons, Grid).
+- **[Components](docs/components/)**: Reusable UI elements:
+    - [Cards](docs/components/cards.md) & [Lists](docs/components/lists.md)
+    - [Carousel](docs/components/carousel.md) & [Hero](docs/components/carousel.md#herocarouselastro)
+    - [Call To Action](docs/components/cta.md)
+    - [Pagination](docs/components/pagination.md)
+    - [Widgets](docs/components/widgets.md)
+- **[Patterns](docs/patterns/)**: Complex UI organisms and layouts:
+    - **Navigation**: [Main](docs/patterns/navigation/main-nav.md), [Sidebar](docs/patterns/navigation/sidebar-nav.md), [Section](docs/patterns/navigation/section-nav.md)
+    - **Layouts**: [Page Templates](docs/patterns/layouts.md)
