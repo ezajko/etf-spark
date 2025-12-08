@@ -14,7 +14,7 @@
 }
 
 .accordion-button {
-    background-color: #fff;
+    background-color: var(--bs-body-bg);
     color: $ez-text-color;
     font-weight: $ez-font-weight-bold;
     box-shadow: none !important; // Remove default bootstrap focus shadow
@@ -37,5 +37,5 @@
 
 .accordion-body {
     padding: $ez-spacing-md;
-    background-color: #fff;
+    background-color: var(--bs-body-bg);
 }

@@ -68,7 +68,7 @@
         border-top: 1px solid $ez-border-color;
         border-radius: 0;
         box-shadow: $ez-shadow-lg;
-        background-color: white;
+        background-color: var(--bs-body-bg);
         padding: $ez-spacing-lg;
         margin-top: 0;
 

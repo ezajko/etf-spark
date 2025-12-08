@@ -6,7 +6,7 @@
     width: 100%;
     margin-bottom: $ez-spacing-lg;
     color: $ez-text-color;
-    background-color: #fff;
+    background-color: var(--bs-body-bg);
     border-collapse: separate;
     border-spacing: 0;
     box-shadow: $ez-shadow-sm;

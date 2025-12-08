@@ -1,5 +1,5 @@
 ---
-// ColorSwitcher.astro
+// ThemeSwitcher.astro
 ---
 
 <div class="dropdown d-inline-block">
@@ -9,18 +9,38 @@
     id="themeDropdown"
     data-bs-toggle="dropdown"
     aria-expanded="false"
-    title="Change Theme Color"
+    title="Appearance"
   >
-    <i class="bi bi-palette-fill"></i>
+    <i class="bi bi-circle-half"></i>
   </button>
   <ul
     class="dropdown-menu dropdown-menu-end p-2"
     aria-labelledby="themeDropdown"
-    style="min-width: 200px;"
+    style="min-width: 220px;"
   >
+    <!-- Mode Toggle -->
+    <li><h6 class="dropdown-header">Mode</h6></li>
+    <li class="mb-3 px-2">
+      <div class="btn-group w-100" role="group">
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-secondary mode-btn active"
+          data-mode="light"
+        >
+          <i class="bi bi-sun-fill"></i> Light
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-secondary mode-btn" data-mode="dark">
+          <i class="bi bi-moon-stars-fill"></i> Dark
+        </button>
+      </div>
+    </li>
+
+    <li><hr class="dropdown-divider" /></li>
+
+    <!-- Theme Color -->
     <li><h6 class="dropdown-header">Theme Color</h6></li>
     <li>
-      <div class="d-flex flex-wrap gap-2 px-2">
+      <div class="d-flex flex-wrap gap-2 px-2 justify-content-center">
         <!-- Blue (Default) -->
         <button
           class="btn btn-sm rounded-circle p-0 border-0 theme-btn"
@@ -63,11 +83,31 @@
 </div>
 
 <script>
-  // Initialize Theme
+  // --- Initialization ---
   const storedTheme = localStorage.getItem('ez-theme') || 'blue';
-  document.documentElement.setAttribute('data-ez-theme', storedTheme);
+  const storedMode = localStorage.getItem('ez-mode') || 'light';
 
-  // Handle Clicks
+  document.documentElement.setAttribute('data-ez-theme', storedTheme);
+  document.documentElement.setAttribute('data-bs-theme', storedMode);
+
+  // Update Active State for Mode Buttons
+  const updateModeButtons = (mode) => {
+    document.querySelectorAll('.mode-btn').forEach((btn) => {
+      if (btn.getAttribute('data-mode') === mode) {
+        btn.classList.add('active', 'btn-secondary');
+        btn.classList.remove('btn-outline-secondary');
+      } else {
+        btn.classList.remove('active', 'btn-secondary');
+        btn.classList.add('btn-outline-secondary');
+      }
+    });
+  };
+
+  updateModeButtons(storedMode);
+
+  // --- Event Listeners ---
+
+  // Theme Color
   document.querySelectorAll('.theme-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
       const color = btn.getAttribute('data-color');
@@ -77,13 +117,29 @@
       }
     });
   });
+
+  // Dark/Light Mode
+  document.querySelectorAll('.mode-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const mode = btn.getAttribute('data-mode');
+      if (mode) {
+        document.documentElement.setAttribute('data-bs-theme', mode);
+        localStorage.setItem('ez-mode', mode);
+        updateModeButtons(mode);
+      }
+    });
+  });
 </script>
 
 <style>
   .theme-btn {
     transition: transform 0.2s;
+    cursor: pointer;
   }
   .theme-btn:hover {
     transform: scale(1.2);
+  }
+  .mode-btn {
+    cursor: pointer;
   }
 </style>
