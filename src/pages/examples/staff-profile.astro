@@ -80,110 +80,182 @@ const breadcrumbItems = [
             industrijom na primjeni akademskih istraživanja u realnom sektoru.
           </p>
           <p>
-            Pored istraživačkog rada, Dr. Prezime je posvećen nastavnom procesu, gdje predaje
-            ključne predmete na dodiplomskom i postdiplomskom studiju. Mentor je brojnim studentima
-            na master i doktorskim studijama, potičući ih na inovativnost i kritičko razmišljanje.
-            Član je nekoliko međunarodnih strukovnih udruženja, uključujući IEEE i ACM, te redovno
-            učestvuje u organizaciji naučnih skupova i radionica.
+            Pored istraživačkog rada, Dr. Prezime je posvećen nastavnom procesu, <div class="row">
+              <!-- Sidebar / Profile Card -->
+              <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="card border-0 shadow-sm text-center p-4 h-100">
+                  <div class="mb-4 position-relative d-inline-block mx-auto">
+                    <img
+                      src="/images/staff/staff-1.jpg"
+                      alt="Profile Image"
+                      class="rounded-circle img-fluid border border-3 border-light shadow-sm"
+                      style="width: 180px; height: 180px; object-fit: cover;"
+                    />
+                  </div>
+
+                  <h2 class="h4 fw-bold mb-1">Dr. Name Surname</h2>
+                  <p class="text-muted mb-3">Academic Title</p>
+                  <span
+                    class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill mb-4 px-3"
+                    >Role</span
+                  >
+
+                  <div class="text-start mt-4 px-xl-3">
+                    <div class="mb-3 d-flex align-items-center">
+                      <div
+                        class="bg-body-tertiary rounded-circle p-2 me-3 d-flex align-items-center justify-content-center"
+                        style="width: 40px; height: 40px;"
+                      >
+                        <i class="bi bi-envelope text-primary"></i>
+                      </div>
+                      <div>
+                        <small class="text-muted d-block" style="font-size: 0.75rem;">EMAIL</small>
+                        <a
+                          href="mailto:email@example.com"
+                          class="text-decoration-none text-body fw-medium">email@example.com</a
+                        >
+                      </div>
+                    </div>
+
+                    <div class="mb-3 d-flex align-items-center">
+                      <div
+                        class="bg-body-tertiary rounded-circle p-2 me-3 d-flex align-items-center justify-content-center"
+                        style="width: 40px; height: 40px;"
+                      >
+                        <i class="bi bi-telephone text-primary"></i>
+                      </div>
+                      <div>
+                        <small class="text-muted d-block" style="font-size: 0.75rem;">PHONE</small>
+                        <span class="fw-medium">+123 456 789</span>
+                      </div>
+                    </div>
+
+                    <div class="mb-3 d-flex align-items-center">
+                      <div
+                        class="bg-body-tertiary rounded-circle p-2 me-3 d-flex align-items-center justify-content-center"
+                        style="width: 40px; height: 40px;"
+                      >
+                        <i class="bi bi-geo-alt text-primary"></i>
+                      </div>
+                      <div>
+                        <small class="text-muted d-block" style="font-size: 0.75rem;">OFFICE</small>
+                        <span class="fw-medium">Room 123</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-center gap-2 mt-4 pt-3 border-top">
+                    <a href="#" class="btn btn-outline-secondary btn-sm rounded-circle"
+                      ><i class="bi bi-linkedin"></i></a
+                    >
+                    <a href="#" class="btn btn-outline-secondary btn-sm rounded-circle"
+                      ><i class="bi bi-google"></i></a
+                    >
+                    <a href="#" class="btn btn-outline-secondary btn-sm rounded-circle"
+                      ><i class="bi bi-globe"></i></a
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <!-- Main Content -->
+              <div class="col-lg-8">
+                <div class="card border-0 shadow-sm mb-4">
+                  <div class="card-body p-4 p-lg-5">
+                    <h3 class="h5 fw-bold text-uppercase text-secondary mb-4 border-bottom pb-2">
+                      Biography
+                    </h3>
+                    <div class="mb-5">
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat.
+                      </p>
+                      <p>
+                        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                        sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      </p>
+                    </div>
+
+                    <h3 class="h5 fw-bold text-uppercase text-secondary mb-4 border-bottom pb-2">
+                      Research Interests
+                    </h3>
+                    <div class="mb-5">
+                      <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-body-tertiary text-body border px-3 py-2 rounded-pill"
+                          >Interest 1</span
+                        >
+                        <span class="badge bg-body-tertiary text-body border px-3 py-2 rounded-pill"
+                          >Interest 2</span
+                        >
+                        <span class="badge bg-body-tertiary text-body border px-3 py-2 rounded-pill"
+                          >Interest 3</span
+                        >
+                        <span class="badge bg-body-tertiary text-body border px-3 py-2 rounded-pill"
+                          >Interest 4</span
+                        >
+                      </div>
+                    </div>
+
+                    <h3 class="h5 fw-bold text-uppercase text-secondary mb-4 border-bottom pb-2">
+                      Selected Publications
+                    </h3>
+                    <ul class="list-unstyled">
+                      <li class="mb-3 pb-3 border-bottom">
+                        <p class="mb-1 fw-bold">"Paper Title 1"</p>
+                        <small class="text-muted">Authors list, Journal/Conference Name, Year</small
+                        >
+                      </li>
+                      <li class="mb-3 pb-3 border-bottom">
+                        <p class="mb-1 fw-bold">"Paper Title 2"</p>
+                        <small class="text-muted">Authors list, Journal/Conference Name, Year</small
+                        >
+                      </li>
+                      <li class="mb-0">
+                        <p class="mb-1 fw-bold">"Paper Title 3"</p>
+                        <small class="text-muted">Authors list, Journal/Conference Name, Year</small
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="card border-0 shadow-sm">
+                  <div class="card-body p-4 p-lg-5">
+                    <h3 class="h5 fw-bold text-uppercase text-secondary mb-4 border-bottom pb-2">
+                      Courses
+                    </h3>
+                    <div class="row row-cols-1 row-cols-md-2 g-3">
+                      <div class="col">
+                        <a
+                          href="#"
+                          class="d-block p-3 rounded bg-light text-decoration-none text-dark h-100 border border-transparent-hover"
+                        >
+                          <small class="text-muted fw-bold d-block mb-1">CODE101</small>
+                          <span class="fw-bold">Course Name 1</span>
+                        </a>
+                      </div>
+                      <div class="col">
+                        <a
+                          href="#"
+                          class="d-block p-3 rounded bg-light text-decoration-none text-dark h-100 border border-transparent-hover"
+                        >
+                          <small class="text-muted fw-bold d-block mb-1">CODE102</small>
+                          <span class="fw-bold">Course Name 2</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>alue="Dr. Bivši Student" label="Tema: Analiza medicinskih slika / Odbranjeno
+            2022." class="px-0 py-3" iconColor="text-success" />
           </p>
         </TabItem>
 
-        <!-- Obrazovanje -->
-        <TabItem id="education">
-          <h3 class="mb-3">Obrazovanje</h3>
-          <div class="list-group list-group-flush">
-            <IconListItem
-              icon="bi-mortarboard"
-              value="Doktorat iz Računarstva (2010)"
-              label="Univerzitet u Sarajevu, Elektrotehnički fakultet"
-              class="px-0 py-3"
-            />
-            <IconListItem
-              icon="bi-mortarboard"
-              value="Magisterij iz Elektrotehnike (2005)"
-              label="Univerzitet u Sarajevu, Elektrotehnički fakultet"
-              class="px-0 py-3"
-            />
-            <IconListItem
-              icon="bi-mortarboard"
-              value="Diploma inženjera elektrotehnike (2000)"
-              label="Univerzitet u Sarajevu, Elektrotehnički fakultet"
-              class="px-0 py-3"
-            />
-          </div>
-        </TabItem>
-
-        <!-- Nastava -->
-        <TabItem id="teaching">
-          <h3 class="mb-3">Predmeti</h3>
-          <div class="list-group list-group-flush">
-            <IconListItem
-              icon="bi-book"
-              value="Algoritmi i strukture podataka"
-              label="Obavezni predmet / I ciklus"
-              link="#"
-              class="px-0 py-3"
-            />
-            <IconListItem
-              icon="bi-book"
-              value="Napredne baze podataka"
-              label="Izborni predmet / II ciklus"
-              link="#"
-              class="px-0 py-3"
-            />
-          </div>
-        </TabItem>
-
-        <!-- Istraživanje -->
-        <TabItem id="research">
-          <h3 class="mb-3">Oblasti interesovanja</h3>
-          <div class="mb-4">
-            <span class="badge bg-light text-dark border me-2 mb-2 p-2"
-              >Vještačka inteligencija</span
-            >
-            <span class="badge bg-light text-dark border me-2 mb-2 p-2">Mašinsko učenje</span>
-            <span class="badge bg-light text-dark border me-2 mb-2 p-2">Data Mining</span>
-            <span class="badge bg-light text-dark border me-2 mb-2 p-2">Bioinformatika</span>
-          </div>
-
-          <h5 class="mt-4 mb-3">Laboratorije i Grupe</h5>
-          <div class="list-group list-group-flush mb-4">
-            <IconListItem
-              icon="bi-cpu"
-              value="Laboratorija za vještačku inteligenciju (AILab)"
-              label="Voditelj laboratorije"
-              link="/examples/lab-list"
-              class="px-0 py-3"
-            />
-            <IconListItem
-              icon="bi-people"
-              value="Istraživačka grupa za Data Science"
-              label="Član grupe"
-              link="#"
-              class="px-0 py-3"
-            />
-          </div>
-
-          <h5 class="mt-4 mb-3">Projekti</h5>
-          <div class="list-group list-group-flush">
-            <IconListItem
-              icon="bi-kanban"
-              value="AI for Healthcare"
-              label="EU Horizon / 2022-2024 / Primjena metoda mašinskog učenja u dijagnostici"
-              link="/examples/project-single"
-              class="px-0 py-3"
-            />
-            <IconListItem
-              icon="bi-kanban"
-              value="Smart City Traffic"
-              label="Kantonalni / 2021-2023 / Optimizacija saobraćaja u urbanim sredinama"
-              link="/examples/project-single"
-              class="px-0 py-3"
-            />
-          </div>
-        </TabItem>
-
-        <!-- Mentorstvo -->
+        <!-- Master studij -->
         <TabItem id="mentorship">
           <h3 class="mb-3">Mentorstvo</h3>
 

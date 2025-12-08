@@ -19,62 +19,100 @@ const base = import.meta.env.BASE_URL;
 <SectionRightSidebar title="Vijest | ETF UNSA" breadcrumbItems={breadcrumbItems}>
   <!-- Main Content -->
   <article>
-    <div class="mb-4">
-      <span class="badge bg-primary mb-2">Fakultet</span>
-      <h1 class="fw-bold mb-3">Održana svečana promocija diplomanata i magistranata</h1>
-      <div class="text-muted small mb-3">
-        <i class="bi bi-calendar3 me-2"></i> 01.12.2023. |
-        <i class="bi bi-person me-2 ms-3"></i> Autor: Služba za odnose s javnošću
+    <header class="mb-5">
+      <div class="mb-3">
+        <span
+          class="badge bg-primary-subtle text-primary border border-primary-subtle px-3 py-2 rounded-pill"
+          >Category</span
+        >
       </div>
-      <p class="lead">
-        U subotu je u Bosanskom kulturnom centru održana svečana promocija diplomanata i
-        magistranata Univerziteta u Sarajevu, uključujući i studente Elektrotehničkog fakulteta.
-      </p>
-    </div>
+      <h1 class="display-4 fw-bold text-body-emphasis mb-4">
+        Lorem Ipsum Dolor Sit Amet Consectetur Adipiscing Elit
+      </h1>
+      <div class="d-flex align-items-center text-muted">
+        <i class="bi bi-calendar3 me-2"></i>
+        <span>October 20, 2023</span>
+      </div>
 
-    <img src={base + "/images/news-graduation.png"} class="img-fluid rounded mb-4 w-100" alt="Promocija" />
+      <figure class="mt-4 mb-0">
+        <img
+          src="/images/news-graduation.png"
+          class="img-fluid rounded-4 shadow-sm w-100"
+          alt="News Image"
+        />
+        <figcaption class="text-muted text-center mt-2 small">
+          Figure caption describing the image
+        </figcaption>
+      </figure>
+    </header>
 
-    <div class="content mb-5">
-      <p>
+    <div class="fs-5 text-body-secondary">
+      <p class="mb-4">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
         labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
         laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
         voluptate velit esse cillum dolore eu fugiat nulla pariatur.
       </p>
-      <p>
+
+      <p class="mb-4">
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
         anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-        accusantium doloremque laudantium, totam rem aperiam.
+        accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore
+        veritatis et quasi architecto beatae vitae dicta sunt explicabo.
       </p>
-      <blockquote class="blockquote my-4 p-3 border-start border-4 border-primary bg-light">
-        <p class="mb-0">
-          "Ovo je veliki dan za naš fakultet i naše studente koji su pokazali izuzetno znanje i trud
-          tokom studija."
-        </p>
-        <footer class="blockquote-footer mt-2">Dekan Fakulteta</footer>
-      </blockquote>
-      <p>
+
+      <h3 class="fw-bold text-body-emphasis mt-5 mb-4">Subtitle Heading</h3>
+
+      <p class="mb-4">
         Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
         consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam
-        est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
+        est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
+        numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
+      </p>
+
+      <blockquote
+        class="blockquote my-5 p-4 bg-body-tertiary rounded-3 border-start border-4 border-primary"
+      >
+        <p class="mb-0 fst-italic">
+          "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
+          consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+        </p>
+      </blockquote>
+
+      <p class="mb-4">
+        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+        voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati
+        cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id
+        est laborum et dolorum fuga.
       </p>
     </div>
 
-    <div class="d-flex align-items-center justify-content-between border-top pt-4">
-      <div class="d-flex gap-2">
-        <span class="fw-bold me-2">Podijeli:</span>
-        <a href="#" class="text-decoration-none text-secondary"
-          ><i class="bi bi-facebook fs-5"></i></a
-        >
-        <a href="#" class="text-decoration-none text-secondary"
-          ><i class="bi bi-twitter-x fs-5"></i></a
-        >
-        <a href="#" class="text-decoration-none text-secondary"
-          ><i class="bi bi-linkedin fs-5"></i></a
-        >
+    <!-- Related Links/Documents -->
+    <div class="mt-5 pt-4 border-top">
+      <h4 class="h5 mb-3">Related Documents</h4>
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+          <i class="bi bi-file-earmark-pdf text-danger me-3 fs-4"></i>
+          <div>
+            <div class="fw-bold">Related Document.pdf</div>
+            <small class="text-muted">PDF, 1.2 MB</small>
+          </div>
+        </a>
       </div>
     </div>
   </article>
+  <div class="d-flex align-items-center justify-content-between border-top pt-4">
+    <div class="d-flex gap-2">
+      <span class="fw-bold me-2">Podijeli:</span>
+      <a href="#" class="text-decoration-none text-secondary"><i class="bi bi-facebook fs-5"></i></a
+      >
+      <a href="#" class="text-decoration-none text-secondary"
+        ><i class="bi bi-twitter-x fs-5"></i></a
+      >
+      <a href="#" class="text-decoration-none text-secondary"><i class="bi bi-linkedin fs-5"></i></a
+      >
+    </div>
+  </div>
 
   <!-- Right Sidebar -->
   <Fragment slot="sidebar">

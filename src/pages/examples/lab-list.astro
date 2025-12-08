@@ -11,7 +11,7 @@ const breadcrumbItems = [
   { label: 'Početna', href: '/' },
   { label: 'Odsjeci', href: '#' },
   { label: 'Računarstvo i informatika', href: '/examples/department' },
-  { label: 'Laboratorije', href: '#', active: true }
+  { label: 'Laboratorije', href: '#', active: true },
 ];
 
 const labs = [
@@ -19,52 +19,66 @@ const labs = [
     name: 'Laboratorija za Vještačku Inteligenciju (AI Lab)',
     location: 'Sala 3-14',
     focus: 'Machine Learning, Computer Vision, NLP',
-    equipment: 'GPU Cluster, Robots'
+    equipment: 'GPU Cluster, Robots',
   },
   {
     name: 'Laboratorija za Softverski Inženjering',
     location: 'Sala 3-15',
     focus: 'Agile Development, Software Testing, DevOps',
-    equipment: 'Development Workstations, CI/CD Servers'
+    equipment: 'Development Workstations, CI/CD Servers',
   },
   {
-    name: 'Laboratorija za Računarsku Grafiku',
-    location: 'Sala 3-16',
-    focus: '3D Modeling, Rendering, VR/AR',
-    equipment: 'VR Headsets, High-end GPUs'
+    name: 'Laboratory 1',
+    location: 'Room 101',
+    focus:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    equipment: '', // Not directly used in the new structure, but keeping for consistency if needed elsewhere
   },
   {
-    name: 'Laboratorija za Baze Podataka',
-    location: 'Sala 3-17',
-    focus: 'Big Data, Data Mining, NoSQL',
-    equipment: 'Database Servers'
-  }
+    name: 'Laboratory 2',
+    location: 'Room 102',
+    focus:
+      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    equipment: '',
+  },
+  {
+    name: 'Laboratory 3',
+    location: 'Room 103',
+    focus:
+      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    equipment: '',
+  },
 ];
 ---
 
 <PageLayout title="Laboratorije | ETF UNSA" breadcrumbItems={breadcrumbItems}>
   <div class="col-12">
     <h1 class="mb-4">Laboratorije i Istraživanje</h1>
-    <p class="lead mb-5">Naše laboratorije su centri izvrsnosti za istraživanje i praktičnu nastavu, opremljene savremenom tehnologijom.</p>
-    
+    <p class="lead mb-5">
+      Naše laboratorije su centri izvrsnosti za istraživanje i praktičnu nastavu, opremljene
+      savremenom tehnologijom.
+    </p>
+
     <CardGroup cols={2}>
-      {labs.map(lab => (
-        <div class="col">
-          <ContentCard
-            title={lab.name}
-            href="#"
-            category={lab.location}
-            excerpt={lab.focus}
-            layout="vertical"
-            status="Oprema: "
-            statusColor="light text-dark border"
-          >
-             <div class="mt-2 small text-muted">
-                <strong>Oprema:</strong> {lab.equipment}
-             </div>
-          </ContentCard>
-        </div>
-      ))}
+      {
+        labs.map((lab) => (
+          <div class="col">
+            <ContentCard
+              title={lab.name}
+              href="#"
+              layout="horizontal"
+              imagePosition="left"
+              excerpt={lab.focus}
+            >
+              <div class="mt-3">
+                <small class="text-muted d-block mb-1">Location:</small>
+                <span class="fw-bold">{lab.location}</span>
+              </div>
+            </ContentCard>
+          </div>
+        ))
+      }
     </CardGroup>
   </div>
 </PageLayout>
+```

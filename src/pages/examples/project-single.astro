@@ -19,74 +19,101 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <SectionRightSidebar title="Smart City IoT | ETF UNSA" breadcrumbItems={breadcrumbItems}>
-  <!-- Main Content -->
-  <div class="mb-4">
-    <span class="badge bg-success mb-2">EU Horizon 2020</span>
-    <h1 class="fw-bold mb-3">Smart City IoT Infrastructure</h1>
-    <p class="lead text-muted">
-      Razvoj inteligentne infrastrukture za pametne gradove korištenjem IoT tehnologija.
-    </p>
-  </div>
-
-  <img
-    src={base + "/images/project-smart-city.png"}
-    class="img-fluid rounded mb-4 w-100"
-    alt="Project Image"
-  />
-
-  <div class="mb-5">
-    <h3>Opis projekta</h3>
-    <p>
-      Ovaj projekat ima za cilj istraživanje i razvoj novih rješenja za pametne gradove. Fokus je na
-      korištenju Internet of Things (IoT) uređaja za prikupljanje podataka o okolišu, saobraćaju i
-      potrošnji energije, te primjeni naprednih algoritama za analizu tih podataka.
-    </p>
-    <p>
-      Rezultati projekta će omogućiti gradskim upravama bolje planiranje i upravljanje resursima,
-      smanjenje zagađenja i poboljšanje kvaliteta života građana.
-    </p>
-  </div>
-
-  <div class="mb-5">
-    <h3>Ciljevi</h3>
-    <div class="row g-3">
-      <div class="col-md-6">
-        <div class="card h-100 border-0 bg-light">
-          <div class="card-body">
-            <h5 class="card-title">
-              <i class="bi bi-check-circle text-success me-2"></i>Energetska efikasnost
-            </h5>
-            <p class="card-text small">Smanjenje potrošnje energije u javnoj rasvjeti za 30%.</p>
+  <div class="col-12">
+    <div class="card border-0 shadow-sm mb-5 overflow-hidden">
+      <div class="position-relative" style="height: 300px;">
+        <img
+          src="/images/project-smart-city.png"
+          class="w-100 h-100 object-fit-cover"
+          alt="Project Image"
+        />
+        <div
+          class="position-absolute bottom-0 start-0 w-100 bg-gradient-dark p-4 d-flex align-items-end"
+          style="background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);"
+        >
+          <div class="text-white">
+            <span class="badge bg-primary mb-2">International Project</span>
+            <h1 class="h2 fw-bold mb-0">Lorem Ipsum Project Title</h1>
           </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="card h-100 border-0 bg-light">
-          <div class="card-body">
-            <h5 class="card-title">
-              <i class="bi bi-check-circle text-success me-2"></i>Monitoring zraka
-            </h5>
-            <p class="card-text small">
-              Postavljanje mreže senzora za praćenje kvaliteta zraka u realnom vremenu.
+      <div class="card-body p-4 p-lg-5">
+        <div class="row">
+          <div class="col-lg-8">
+            <h3 class="h5 mb-3 fw-bold text-uppercase text-secondary">Project Description</h3>
+            <p class="lead mb-4">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
             </p>
+            <div class="text-muted mb-5">
+              <p>
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+                esse cillum dolore eu fugiat nulla pariatur.
+              </p>
+              <p>
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+                mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit
+                voluptatem accusantium doloremque laudantium.
+              </p>
+            </div>
+
+            <h3 class="h5 mb-3 fw-bold text-uppercase text-secondary">Objectives</h3>
+            <ul class="list-check mb-5">
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-primary me-2"></i> Objective 1
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-primary me-2"></i> Objective 2
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-primary me-2"></i> Objective 3
+              </li>
+            </ul>
           </div>
-        </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card h-100 border-0 bg-light">
-          <div class="card-body">
-            <h5 class="card-title">
-              <i class="bi bi-check-circle text-success me-2"></i>Pametni parking
-            </h5>
-            <p class="card-text small">
-              Sistem za detekciju slobodnih parking mjesta i navođenje vozača.
-            </p>
+
+          <div class="col-lg-4">
+            <div class="bg-body-tertiary p-4 rounded-3">
+              <h4 class="h5 fw-bold mb-4">Project Details</h4>
+
+              <div class="mb-3">
+                <small class="text-uppercase text-muted fw-bold" style="font-size: 0.7rem;"
+                  >Duration</small
+                >
+                <div class="fw-medium">2023 - 2025</div>
+              </div>
+
+              <div class="mb-3">
+                <small class="text-uppercase text-muted fw-bold" style="font-size: 0.7rem;"
+                  >Funding</small
+                >
+                <div class="fw-medium">Program Name</div>
+              </div>
+
+              <div class="mb-3">
+                <small class="text-uppercase text-muted fw-bold" style="font-size: 0.7rem;"
+                  >Coordinator</small
+                >
+                <div class="fw-medium">Organization Name</div>
+              </div>
+
+              <hr class="my-4" />
+
+              <h5 class="h6 fw-bold mb-3">Project Team</h5>
+              <div class="d-flex align-items-center mb-2">
+                <div class="ez-avatar ez-avatar--sm me-2"><i class="bi bi-person"></i></div>
+                <small>John Doe (Lead)</small>
+              </div>
+              <div class="d-flex align-items-center">
+                <div class="ez-avatar ez-avatar--sm me-2"><i class="bi bi-person"></i></div>
+                <small>Jane Smith</small>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-
   <div class="mb-5">
     <h3>Partneri</h3>
     <div class="d-flex align-items-center gap-4 flex-wrap">

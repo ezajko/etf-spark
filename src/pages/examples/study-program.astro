@@ -16,22 +16,22 @@ const breadcrumbItems = [
   { label: 'Početna', href: '/' },
   { label: 'Studij', href: '#' },
   { label: 'Prvi ciklus', href: '#' },
-  { label: 'Računarstvo i informatika', href: '#', active: true }
+  { label: 'Računarstvo i informatika', href: '#', active: true },
 ];
 ---
 
 <PageLayout title="Računarstvo i informatika | ETF UNSA" breadcrumbItems={breadcrumbItems}>
   <!-- Banner Slot -->
-  <PageHeader 
+  <PageHeader
     slot="banner"
-    title="Računarstvo i informatika" 
-    subtitle="Sveobuhvatno obrazovanje za digitalnu budućnost." 
+    title="Study Program Name"
+    subtitle="Comprehensive education for digital future."
     badge="Bachelor Program"
     badgeClass="bg-white text-primary"
     bgClass="bg-primary"
   >
     <div slot="actions">
-       <a href="#admission" class="btn btn-light text-primary fw-bold px-4 py-2">Apliciraj odmah</a>
+      <a href="#admission" class="btn btn-light text-primary fw-bold px-4 py-2">Apliciraj odmah</a>
     </div>
   </PageHeader>
 
@@ -40,8 +40,17 @@ const breadcrumbItems = [
     <!-- Overview -->
     <div class="mb-5">
       <SectionHeader title="Pregled programa" />
-      <p class="lead">Studijski program Računarstvo i informatika (RI) dizajniran je da pruži studentima duboko razumijevanje teorijskih osnova i praktičnih vještina potrebnih za razvoj složenih softverskih sistema.</p>
-      <p>Kroz kombinaciju predavanja, laboratorijskih vježbi i projektnog rada, studenti stiču kompetencije u oblastima kao što su softverski inženjering, vještačka inteligencija, baze podataka, računarske mreže i cyber sigurnost. Naš cilj je obrazovati inženjere koji su spremni odgovoriti na izazove moderne IT industrije i doprinijeti tehnološkom razvoju društva.</p>
+      <p class="lead">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat.
+      </p>
+      <p>
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+        mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+        accusantium doloremque laudantium.
+      </p>
     </div>
 
     <!-- Admission Requirements -->
@@ -53,8 +62,10 @@ const breadcrumbItems = [
             <i class="bi bi-check-circle-fill text-success fs-4"></i>
           </div>
           <div class="flex-grow-1 ms-3">
-            <h5 class="mb-1">Srednjoškolsko obrazovanje</h5>
-            <p class="mb-0 small">Završena četverogodišnja srednja škola sa odličnim ili vrlo dobrim uspjehom.</p>
+            <h5 class="mb-1">High School Education</h5>
+            <p class="mb-0 small">
+              Completed four-year high school with excellent or very good success.
+            </p>
           </div>
         </div>
         <div class="d-flex mb-3">
@@ -62,8 +73,8 @@ const breadcrumbItems = [
             <i class="bi bi-check-circle-fill text-success fs-4"></i>
           </div>
           <div class="flex-grow-1 ms-3">
-            <h5 class="mb-1">Prijemni ispit</h5>
-            <p class="mb-0 small">Položen prijemni ispit iz matematike (min. 20 bodova).</p>
+            <h5 class="mb-1">Entrance Exam</h5>
+            <p class="mb-0 small">Passed entrance exam in mathematics (min. 20 points).</p>
           </div>
         </div>
         <div class="d-flex">
@@ -71,237 +82,245 @@ const breadcrumbItems = [
             <i class="bi bi-check-circle-fill text-success fs-4"></i>
           </div>
           <div class="flex-grow-1 ms-3">
-            <h5 class="mb-1">Rang lista</h5>
-            <p class="mb-0 small">Plasman unutar odobrene kvote za upis (Redovni / Redovni samofinansirajući).</p>
+            <h5 class="mb-1">Ranking List</h5>
+            <p class="mb-0 small">
+              Placement within the approved enrollment quota (Regular / Self-financing).
+            </p>
           </div>
         </div>
       </div>
       <div class="mt-3">
-        <a href="#" class="text-decoration-none fw-bold">Pogledajte detaljan vodič za upis <i class="bi bi-arrow-right"></i></a>
+        <a href="#" class="text-decoration-none fw-bold"
+          >Pogledajte detaljan vodič za upis <i class="bi bi-arrow-right"></i></a
+        >
       </div>
     </div>
 
     <!-- Curriculum -->
     <div class="mb-5">
       <SectionHeader title="Struktura studija" level="h3" />
-      <p class="mb-4">Studij traje 3 godine (6 semestara) i nosi ukupno 180 ECTS bodova. Nastava se odvija kroz predavanja, auditorne vježbe i laboratorijski rad.</p>
-      
-      <Curriculum 
+      <p class="mb-4">
+        The study lasts 3 years (6 semesters) and carries a total of 180 ECTS credits. Teaching
+        takes place through lectures, auditory exercises, and laboratory work.
+      </p>
+
+      <Curriculum
         years={[
           {
-            id: "1",
-            label: "1. Godina",
+            id: '1',
+            label: '1. Godina',
             semesters: [
               {
-                id: "1",
-                label: "1. Semestar (Zimski)",
+                id: '1',
+                label: '1. Semestar (Winter)',
                 courses: [
                   {
-                    name: "Matematika 1",
-                    type: "mandatory",
+                    name: 'Course Name 1',
+                    type: 'mandatory',
                     hours: { p: 3, a: 2, l: 0, s: 0 },
                     individualWork: 100,
-                    ects: 7.0
+                    ects: 7.0,
                   },
                   {
-                    name: "Osnove računarstva",
-                    type: "mandatory",
+                    name: 'Course Name 2',
+                    type: 'mandatory',
                     hours: { p: 3, a: 1, l: 2, s: 0 },
                     individualWork: 90,
-                    ects: 6.0
+                    ects: 6.0,
                   },
                   {
-                    name: "Fizika 1",
-                    type: "mandatory",
+                    name: 'Course Name 3',
+                    type: 'mandatory',
                     hours: { p: 3, a: 1, l: 1, s: 0 },
                     individualWork: 90,
-                    ects: 6.0
+                    ects: 6.0,
                   },
                   {
-                    name: "Linearna algebra i geometrija",
-                    type: "mandatory",
+                    name: 'Course Name 4',
+                    type: 'mandatory',
                     hours: { p: 2, a: 2, l: 0, s: 0 },
                     individualWork: 75,
-                    ects: 5.0
+                    ects: 5.0,
                   },
                   {
-                    name: "Uvod u programiranje",
-                    type: "mandatory",
+                    name: 'Course Name 5',
+                    type: 'mandatory',
                     hours: { p: 2, a: 0, l: 3, s: 0 },
                     individualWork: 90,
-                    ects: 6.0
-                  }
-                ]
+                    ects: 6.0,
+                  },
+                ],
               },
               {
-                id: "2",
-                label: "2. Semestar (Ljetni)",
+                id: '2',
+                label: '2. Semestar (Summer)',
                 courses: [
                   {
-                    name: "Matematika 2",
-                    type: "mandatory",
+                    name: 'Course Name 6',
+                    type: 'mandatory',
                     hours: { p: 3, a: 2, l: 0, s: 0 },
                     individualWork: 100,
-                    ects: 7.0
+                    ects: 7.0,
                   },
                   {
-                    name: "Osnove elektrotehnike",
-                    type: "mandatory",
+                    name: 'Course Name 7',
+                    type: 'mandatory',
                     hours: { p: 3, a: 2, l: 1, s: 0 },
                     individualWork: 90,
-                    ects: 6.0
+                    ects: 6.0,
                   },
                   {
-                    name: "Algoritmi i strukture podataka",
-                    type: "mandatory",
+                    name: 'Algoritmi i strukture podataka', // Intentional or typo to leave one? Let's make it generic
+                    name: 'Course Name 8',
+                    type: 'mandatory',
                     hours: { p: 3, a: 1, l: 2, s: 0 },
                     individualWork: 90,
-                    ects: 6.0
+                    ects: 6.0,
                   },
                   {
-                    name: "Tehnike programiranja",
-                    type: "mandatory",
+                    name: 'Course Name 9',
+                    type: 'mandatory',
                     hours: { p: 2, a: 0, l: 3, s: 0 },
                     individualWork: 90,
-                    ects: 6.0
+                    ects: 6.0,
                   },
                   {
-                    name: "Logički dizajn",
-                    type: "mandatory",
+                    name: 'Course Name 10',
+                    type: 'mandatory',
                     hours: { p: 2, a: 1, l: 1, s: 0 },
                     individualWork: 75,
-                    ects: 5.0
-                  }
-                ]
-              }
-            ]
+                    ects: 5.0,
+                  },
+                ],
+              },
+            ],
           },
           {
-            id: "2",
-            label: "2. Godina",
+            id: '2',
+            label: '2. Godina',
             semesters: [
               {
-                id: "3",
-                label: "3. Semestar",
+                id: '3',
+                label: '3. Semestar',
                 courses: [
                   {
-                    name: "Diskretna matematika",
-                    type: "mandatory",
+                    name: 'Course Name 11',
+                    type: 'mandatory',
                     hours: { p: 3, a: 2, l: 0, s: 0 },
                     individualWork: 75,
-                    ects: 5.0
+                    ects: 5.0,
                   },
                   {
-                    name: "Razvoj softvera",
-                    type: "mandatory",
+                    name: 'Course Name 12',
+                    type: 'mandatory',
                     hours: { p: 3, a: 1, l: 2, s: 0 },
                     individualWork: 90,
-                    ects: 6.0
+                    ects: 6.0,
                   },
                   {
-                    name: "Baze podataka",
-                    type: "mandatory",
+                    name: 'Course Name 13',
+                    type: 'mandatory',
                     hours: { p: 3, a: 1, l: 2, s: 0 },
                     individualWork: 90,
-                    ects: 6.0
+                    ects: 6.0,
                   },
                   {
-                    name: "Sistemsko programiranje",
-                    type: "mandatory",
+                    name: 'Course Name 14',
+                    type: 'mandatory',
                     hours: { p: 2, a: 0, l: 2, s: 0 },
                     individualWork: 75,
-                    ects: 5.0
+                    ects: 5.0,
                   },
                   {
-                    name: "Izborni predmet 1",
-                    type: "elective",
-                    electiveGroup: "Grupa A: Napredne tehnologije",
+                    name: 'Elective Course 1',
+                    type: 'elective',
+                    electiveGroup: 'Group A: Advanced Technologies',
                     hours: { p: 2, a: 1, l: 1, s: 0 },
                     individualWork: 75,
-                    ects: 5.0
+                    ects: 5.0,
                   },
                   {
-                    name: "Izborni predmet 2",
-                    type: "elective",
-                    electiveGroup: "Grupa B: Društvene nauke",
+                    name: 'Elective Course 2',
+                    type: 'elective',
+                    electiveGroup: 'Group B: Social Sciences',
                     hours: { p: 2, a: 0, l: 0, s: 0 },
                     individualWork: 45,
-                    ects: 3.0
-                  }
+                    ects: 3.0,
+                  },
                 ],
                 electiveGroups: [
                   {
-                    id: "grp-a",
-                    label: "Grupa A: Napredne tehnologije (Bira se 1 predmet)",
+                    id: 'grp-a',
+                    label: 'Group A: Advanced Technologies (Select 1)',
                     courses: [
                       {
-                        name: "Vještačka inteligencija",
-                        type: "elective",
+                        name: 'Advanced Course 1',
+                        type: 'elective',
                         hours: { p: 2, a: 1, l: 1, s: 0 },
                         individualWork: 75,
-                        ects: 5.0
+                        ects: 5.0,
                       },
                       {
-                        name: "Računarska grafika",
-                        type: "elective",
+                        name: 'Advanced Course 2',
+                        type: 'elective',
                         hours: { p: 2, a: 1, l: 1, s: 0 },
                         individualWork: 75,
-                        ects: 5.0
+                        ects: 5.0,
                       },
                       {
-                        name: "Internet of Things",
-                        type: "elective",
+                        name: 'Advanced Course 3',
+                        type: 'elective',
                         hours: { p: 2, a: 1, l: 1, s: 0 },
                         individualWork: 75,
-                        ects: 5.0
-                      }
-                    ]
+                        ects: 5.0,
+                      },
+                    ],
                   },
                   {
-                    id: "grp-b",
-                    label: "Grupa B: Društvene nauke (Bira se 1 predmet)",
+                    id: 'grp-b',
+                    label: 'Group B: Social Sciences (Select 1)',
                     courses: [
                       {
-                        name: "Inženjerska etika",
-                        type: "elective",
+                        name: 'Social Science Course 1',
+                        type: 'elective',
                         hours: { p: 2, a: 0, l: 0, s: 0 },
                         individualWork: 45,
-                        ects: 3.0
+                        ects: 3.0,
                       },
                       {
-                        name: "Ekonomija i menadžment",
-                        type: "elective",
+                        name: 'Social Science Course 2',
+                        type: 'elective',
                         hours: { p: 2, a: 0, l: 0, s: 0 },
                         individualWork: 45,
-                        ects: 3.0
-                      }
-                    ]
-                  }
-                ]
+                        ects: 3.0,
+                      },
+                    ],
+                  },
+                ],
               },
               {
-                id: "4",
-                label: "4. Semestar",
-                courses: []
-              }
-            ]
+                id: '4',
+                label: '4. Semestar',
+                courses: [],
+              },
+            ],
           },
           {
-            id: "3",
-            label: "3. Godina",
+            id: '3',
+            label: '3. Godina',
             semesters: [
               {
-                id: "5",
-                label: "5. Semestar",
-                courses: []
+                id: '5',
+                label: '5. Semestar',
+                courses: [],
               },
               {
-                id: "6",
-                label: "6. Semestar",
-                courses: []
-              }
-            ]
-          }
+                id: '6',
+                label: '6. Semestar',
+                courses: [],
+              },
+            ],
+          },
         ]}
       />
     </div>
@@ -309,20 +328,35 @@ const breadcrumbItems = [
     <!-- Career Prospects -->
     <div class="mb-5">
       <SectionHeader title="Karijerne mogućnosti" level="h3" />
-      <p>Diplomanti ovog studijskog programa su visoko traženi na tržištu rada. Moguće karijere uključuju:</p>
+      <p>
+        Diplomanti ovog studijskog programa su visoko traženi na tržištu rada. Moguće karijere
+        uključuju:
+      </p>
       <div class="row g-3">
         <div class="col-md-6">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item bg-transparent"><i class="bi bi-check2 text-primary me-2"></i> Software Engineer</li>
-            <li class="list-group-item bg-transparent"><i class="bi bi-check2 text-primary me-2"></i> Web Developer (Frontend/Backend)</li>
-            <li class="list-group-item bg-transparent"><i class="bi bi-check2 text-primary me-2"></i> Mobile App Developer</li>
+            <li class="list-group-item bg-transparent">
+              <i class="bi bi-check2 text-primary me-2"></i> Software Engineer
+            </li>
+            <li class="list-group-item bg-transparent">
+              <i class="bi bi-check2 text-primary me-2"></i> Web Developer (Frontend/Backend)
+            </li>
+            <li class="list-group-item bg-transparent">
+              <i class="bi bi-check2 text-primary me-2"></i> Mobile App Developer
+            </li>
           </ul>
         </div>
         <div class="col-md-6">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item bg-transparent"><i class="bi bi-check2 text-primary me-2"></i> Data Analyst / Scientist</li>
-            <li class="list-group-item bg-transparent"><i class="bi bi-check2 text-primary me-2"></i> System Architect</li>
-            <li class="list-group-item bg-transparent"><i class="bi bi-check2 text-primary me-2"></i> IT Consultant</li>
+            <li class="list-group-item bg-transparent">
+              <i class="bi bi-check2 text-primary me-2"></i> Data Analyst / Scientist
+            </li>
+            <li class="list-group-item bg-transparent">
+              <i class="bi bi-check2 text-primary me-2"></i> System Architect
+            </li>
+            <li class="list-group-item bg-transparent">
+              <i class="bi bi-check2 text-primary me-2"></i> IT Consultant
+            </li>
           </ul>
         </div>
       </div>
@@ -333,11 +367,36 @@ const breadcrumbItems = [
   <div class="col-lg-4">
     <!-- Key Facts Widget -->
     <InfoWidget title="Ukratko o programu" icon="bi-info-circle" class="mb-4">
-      <KeyValueListItem label="Zvanje" value="Bachelor inženjer elektrotehnike" icon="bi-award" class="list-group-item bg-transparent border-0" />
-      <KeyValueListItem label="Trajanje" value="3 Godine (6 semestara)" icon="bi-clock" class="list-group-item bg-transparent border-0" />
-      <KeyValueListItem label="ECTS" value="180" icon="bi-journal-bookmark" class="list-group-item bg-transparent border-0" />
-      <KeyValueListItem label="Jezik" value="Bosanski / Engleski" icon="bi-translate" class="list-group-item bg-transparent border-0" />
-      <KeyValueListItem label="Početak" value="Oktobar (Zimski semestar)" icon="bi-calendar-event" class="list-group-item bg-transparent border-0" />
+      <KeyValueListItem
+        label="Zvanje"
+        value="Bachelor inženjer elektrotehnike"
+        icon="bi-award"
+        class="list-group-item bg-transparent border-0"
+      />
+      <KeyValueListItem
+        label="Trajanje"
+        value="3 Godine (6 semestara)"
+        icon="bi-clock"
+        class="list-group-item bg-transparent border-0"
+      />
+      <KeyValueListItem
+        label="ECTS"
+        value="180"
+        icon="bi-journal-bookmark"
+        class="list-group-item bg-transparent border-0"
+      />
+      <KeyValueListItem
+        label="Jezik"
+        value="Bosanski / Engleski"
+        icon="bi-translate"
+        class="list-group-item bg-transparent border-0"
+      />
+      <KeyValueListItem
+        label="Početak"
+        value="Oktobar (Zimski semestar)"
+        icon="bi-calendar-event"
+        class="list-group-item bg-transparent border-0"
+      />
     </InfoWidget>
 
     <!-- Contact Widget -->
@@ -346,18 +405,18 @@ const breadcrumbItems = [
       class="mb-4"
       contacts={[
         {
-          name: "Studentska služba",
-          role: "Za pitanja o upisu i administraciji",
-          email: "studentska.sluzba@etf.unsa.ba",
-          phone: "+387 33 250 700",
-          avatarIcon: "bi-person"
+          name: 'Studentska služba',
+          role: 'Za pitanja o upisu i administraciji',
+          email: 'studentska.sluzba@etf.unsa.ba',
+          phone: '+387 33 250 700',
+          avatarIcon: 'bi-person',
         },
         {
-          name: "Dr. Šef Odsjeka",
-          role: "Akademski savjetnik",
-          email: "sef.ri@etf.unsa.ba",
-          avatarIcon: "bi-person-badge"
-        }
+          name: 'Dr. Šef Odsjeka',
+          role: 'Akademski savjetnik',
+          email: 'sef.ri@etf.unsa.ba',
+          avatarIcon: 'bi-person-badge',
+        },
       ]}
     />
 
@@ -365,9 +424,9 @@ const breadcrumbItems = [
     <DocumentWidget
       title="Dokumenti"
       documents={[
-        { title: "Nastavni plan i program", size: "2.5 MB", format: "PDF", link: "#" },
-        { title: "Pravilnik o studiranju", size: "1.2 MB", format: "PDF", link: "#" },
-        { title: "Informator za brucoše", size: "5.0 MB", format: "PDF", link: "#" }
+        { title: 'Nastavni plan i program', size: '2.5 MB', format: 'PDF', link: '#' },
+        { title: 'Pravilnik o studiranju', size: '1.2 MB', format: 'PDF', link: '#' },
+        { title: 'Informator za brucoše', size: '5.0 MB', format: 'PDF', link: '#' },
       ]}
     />
   </div>

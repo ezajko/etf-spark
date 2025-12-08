@@ -10,61 +10,70 @@ const breadcrumbItems = [
   { label: 'Početna', href: '/' },
   { label: 'Odsjeci', href: '#' },
   { label: 'Računarstvo i informatika', href: '/examples/department' },
-  { label: 'Studijski programi', href: '#', active: true }
+  { label: 'Studijski programi', href: '#', active: true },
 ];
 
 const programs = [
   {
-    cycle: 'I Ciklus (Bachelor)',
-    name: 'Računarstvo i informatika',
-    duration: '3 Godine',
+    name: 'Study Program 1',
+    cycle: 'I Cycle',
+    title: 'Bachelor of Engineering',
+    duration: '3 Years',
     ects: '180 ECTS',
-    title: 'Bachelor inženjer elektrotehnike',
-    link: '/examples/study-program'
+    type: 'Bachelor',
+    link: '#',
   },
   {
-    cycle: 'II Ciklus (Master)',
-    name: 'Računarstvo i informatika',
-    duration: '2 Godine',
-    ects: '120 ECTS',
-    title: 'Magistar inženjer elektrotehnike',
-    link: '#'
-  },
-  {
-    cycle: 'II Ciklus (Master)',
-    name: 'Software Engineering (English)',
-    duration: '2 Godine',
-    ects: '120 ECTS',
-    title: 'Master of Software Engineering',
-    link: '#'
-  },
-  {
-    cycle: 'III Ciklus (Doktorski)',
-    name: 'Računarstvo i informatika',
-    duration: '3 Godine',
+    name: 'Study Program 2',
+    cycle: 'I Cycle',
+    title: 'Bachelor of Engineering',
+    duration: '3 Years',
     ects: '180 ECTS',
-    title: 'Doktor tehničkih nauka',
-    link: '#'
-  }
+    type: 'Bachelor',
+    link: '#',
+  },
+  {
+    name: 'Study Program 3',
+    cycle: 'I Cycle',
+    title: 'Bachelor of Engineering',
+    duration: '3 Years',
+    ects: '180 ECTS',
+    type: 'Bachelor',
+    link: '#',
+  },
+  {
+    name: 'Study Program 4',
+    cycle: 'I Cycle',
+    title: 'Bachelor of Engineering',
+    duration: '3 Years',
+    ects: '180 ECTS',
+    type: 'Bachelor',
+    link: '#',
+  },
 ];
 ---
 
 <PageLayout title="Studijski programi | ETF UNSA" breadcrumbItems={breadcrumbItems}>
   <div class="col-12">
     <h1 class="mb-4">Studijski programi</h1>
-    <p class="lead mb-5">Odsjek nudi programe na sva tri ciklusa studija, usklađene sa Bolonjskim procesom i potrebama tržišta rada.</p>
-    
+    <p class="lead mb-5">
+      Odsjek nudi programe na sva tri ciklusa studija, usklađene sa Bolonjskim procesom i potrebama
+      tržišta rada.
+    </p>
+
     <div class="d-flex flex-column gap-4">
-      {programs.map(prog => (
-        <ProgramCard
-          name={prog.name}
-          cycle={prog.cycle}
-          title={prog.title}
-          duration={prog.duration}
-          ects={prog.ects}
-          link={prog.link}
-        />
-      ))}
+      {
+        programs.map((prog) => (
+          <ProgramCard
+            name={prog.name}
+            cycle={prog.cycle}
+            title={prog.title}
+            duration={prog.duration}
+            ects={prog.ects}
+            link={prog.link}
+          />
+        ))
+      }
     </div>
   </div>
 </PageLayout>

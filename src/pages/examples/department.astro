@@ -29,22 +29,22 @@ const base = import.meta.env.BASE_URL;
   <!-- Banner Slot -->
   <PageHeader
     slot="banner"
-    title="Odsjek za računarstvo i informatiku"
-    subtitle="Organizacioni dio Elektrotehničkog fakulteta"
+    title="Department Name"
+    subtitle="Organizational Unit of the Faculty"
     bgClass="bg-dark"
   />
 
   <!-- Left Sidebar (Quick Links) -->
   <div class="col-md-4 order-lg-1 mb-4 mb-lg-0">
-    <InfoWidget title="Brzi linkovi" icon="bi-link-45deg" class="mb-4">
-      <SimpleListItem label="Osoblje Odsjeka" link="/examples/staff-list" />
-      <SimpleListItem label="Studijski programi" link="examples/study-program-list" />
-      <SimpleListItem label="Predmeti" link="/examples/course-list" />
-      <SimpleListItem label="Laboratorije" link="/examples/lab-list" />
-      <SimpleListItem label="Istraživačke grupe" link="/examples/lab-list" />
-      <SimpleListItem label="Projekti" link="/examples/project-list" />
-      <SimpleListItem label="Novosti" link="/examples/news-list" />
-      <SimpleListItem label="Događaji" link="/examples/event-list" />
+    <InfoWidget title="Quick Links" icon="bi-link-45deg" class="mb-4">
+      <SimpleListItem label="Staff" link="/examples/staff-list" />
+      <SimpleListItem label="Study Programs" link="examples/study-program-list" />
+      <SimpleListItem label="Courses" link="/examples/course-list" />
+      <SimpleListItem label="Laboratories" link="/examples/lab-list" />
+      <SimpleListItem label="Research Groups" link="/examples/lab-list" />
+      <SimpleListItem label="Projects" link="/examples/project-list" />
+      <SimpleListItem label="News" link="/examples/news-list" />
+      <SimpleListItem label="Events" link="/examples/event-list" />
     </InfoWidget>
 
     <DocumentWidget
@@ -61,24 +61,19 @@ const base = import.meta.env.BASE_URL;
   <!-- Main Content -->
   <div class="col-md-8">
     <div class="mb-5">
-      <SectionHeader title="O Odsjeku" />
+      <SectionHeader title="About the Department" />
       <p class="lead">
-        Odsjek za računarstvo i informatiku je najveći odsjek na Elektrotehničkom fakultetu u
-        Sarajevu, posvećen obrazovanju vrhunskih stručnjaka u oblasti softverskog inženjeringa,
-        vještačke inteligencije i informacionih sistema.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua.
       </p>
       <p>
-        Naša misija je pružiti studentima teoretska znanja i praktične vještine potrebne za uspješnu
-        karijeru u dinamičnom svijetu tehnologije. Kroz saradnju sa industrijom i učešće u
-        međunarodnim projektima, osiguravamo da je naš nastavni plan i program usklađen sa
-        najnovijim trendovima.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur.
       </p>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+        anim id est laborum.
       </p>
     </div>
 
@@ -116,29 +111,29 @@ const base = import.meta.env.BASE_URL;
     </div>
 
     <div class="mb-5">
-      <SectionHeader title="Studijski programi" level="h3" />
+      <SectionHeader title="Study Programs" level="h3" />
       <CardGroup cols={3}>
         <div class="col">
           <ContentCard
-            title="Računarstvo i informatika (RI)"
+            title="Study Program 1"
             href={base + '/examples/study-program'}
-            excerpt="Prvi ciklus studija (Bachelor), 3 godine, 180 ECTS."
+            excerpt="First cycle of studies (Bachelor), 3 years, 180 ECTS."
             layout="vertical"
           />
         </div>
         <div class="col">
           <ContentCard
-            title="Softversko inženjerstvo (SI)"
+            title="Study Program 2"
             href={base + '/examples/study-program'}
-            excerpt="Drugi ciklus studija (Master), 2 godine, 120 ECTS."
+            excerpt="Second cycle of studies (Master), 2 years, 120 ECTS."
             layout="vertical"
           />
         </div>
         <div class="col">
           <ContentCard
-            title="Data Science"
+            title="Study Program 3"
             href={base + '/examples/study-program'}
-            excerpt="Treći ciklus studija (Doktorski), 3 godine, 180 ECTS."
+            excerpt="Third cycle of studies (PhD), 3 years, 180 ECTS."
             layout="vertical"
           />
         </div>
@@ -146,37 +141,37 @@ const base = import.meta.env.BASE_URL;
     </div>
 
     <div class="mb-5">
-      <SectionHeader title="Laboratorije" level="h3" />
+      <SectionHeader title="Laboratories" level="h3" />
       <CardGroup cols={2}>
         <div class="col">
           <ContentCard
-            title="Laboratorija za Vještačku Inteligenciju"
+            title="Laboratory 1"
             href="#"
-            excerpt="Istraživanje u oblastima mašinskog učenja, obrade prirodnog jezika i računarske vizije."
+            excerpt="Research in machine learning, natural language processing and computer vision."
             layout="vertical"
           />
         </div>
         <div class="col">
           <ContentCard
-            title="Laboratorija za Softverski Inženjering"
+            title="Laboratory 2"
             href="#"
-            excerpt="Fokus na metodologije razvoja softvera, kvalitet softvera i agilne procese."
+            excerpt="Focus on software development methodologies, software quality and agile processes."
             layout="vertical"
           />
         </div>
         <div class="col">
           <ContentCard
-            title="Laboratorija za Računarsku Grafiku"
+            title="Laboratory 3"
             href="#"
-            excerpt="Razvoj naprednih tehnika vizualizacije i 3D modeliranja."
+            excerpt="Development of advanced visualization techniques and 3D modeling."
             layout="vertical"
           />
         </div>
         <div class="col">
           <ContentCard
-            title="Laboratorija za Baze Podataka"
+            title="Laboratory 4"
             href="#"
-            excerpt="Istraživanje sistema za upravljanje bazama podataka i Big Data tehnologija."
+            excerpt="Research of database management systems and Big Data technologies."
             layout="vertical"
           />
         </div>
@@ -184,66 +179,66 @@ const base = import.meta.env.BASE_URL;
     </div>
 
     <div class="mb-5">
-      <SectionHeader title="Istraživačke grupe" level="h3" />
+      <SectionHeader title="Research Groups" level="h3" />
       <CardGroup cols={3}>
         <div class="col">
           <ContentCard
-            title="Data Science Group"
+            title="Research Group 1"
             href="#"
-            excerpt="Napredna analitika podataka i prediktivno modeliranje."
+            excerpt="Advanced data analytics and predictive modeling."
             layout="vertical"
           />
         </div>
         <div class="col">
           <ContentCard
-            title="Cyber Security Group"
+            title="Research Group 2"
             href="#"
-            excerpt="Sigurnost mrežnih sistema i kriptografija."
+            excerpt="Security of network systems and cryptography."
             layout="vertical"
           />
         </div>
         <div class="col">
           <ContentCard
-            title="IoT Research Group"
+            title="Research Group 3"
             href="#"
-            excerpt="Internet of Things, pametni gradovi i senzorske mreže."
+            excerpt="Internet of Things, smart cities and sensor networks."
             layout="vertical"
           />
         </div>
       </CardGroup>
     </div>
     <div class="mb-5">
-      <SectionHeader title="Projekti" level="h3" />
+      <SectionHeader title="Projects" level="h3" />
       <CardGroup cols={2}>
         <div class="col">
           <ContentCard
-            title="AI for Healthcare"
+            title="Project 1"
             href={base + '/examples/project-single'}
-            excerpt="Primjena metoda mašinskog učenja u dijagnostici i personaliziranoj medicini."
+            excerpt="Application of machine learning methods in diagnostics and personalized medicine."
             layout="vertical"
           />
         </div>
         <div class="col">
           <ContentCard
-            title="Smart City Traffic"
+            title="Project 2"
             href={base + '/examples/project-single'}
-            excerpt="Optimizacija saobraćaja u urbanim sredinama korištenjem IoT senzora."
+            excerpt="Traffic optimization in urban areas using IoT sensors."
             layout="vertical"
           />
         </div>
         <div class="col">
           <ContentCard
-            title="Green Energy Grid"
+            title="Project 3"
             href={base + '/examples/project-single'}
-            excerpt="Upravljanje distribucijom električne energije iz obnovljivih izvora."
+            excerpt="Management of electricity distribution from renewable sources."
             layout="vertical"
           />
         </div>
         <div class="col">
           <ContentCard
-            title="Cyber Defense System"
+            title="Project 4"
             href={base + '/examples/project-single'}
-            excerpt="Razvoj naprednih sistema za detekciju i prevenciju cyber napada."
+            excerpt="Development of advanced systems for detection and prevention of cyber attacks."
             layout="vertical"
           />
         </div>
