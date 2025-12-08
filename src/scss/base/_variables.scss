@@ -16,12 +16,32 @@ $ez-primary-color: hsl($ez-primary-h, $ez-primary-s, $ez-primary-l); // #00629B
 // Primary Dark
 $ez-primary-dark: #004e7c;
 
-// Secondary Colors
+// ======================
+// Primary Tonal Scale (Blue)
+// ======================
+$ez-blue-100: #E3F2FD; // Backgrounds, very light tints
+$ez-blue-200: #BBDEFB; // Secondary surfaces, hover states
+$ez-blue-300: #64B5F6; // Borders, dividers
+$ez-blue-400: #1E88E5; // Accents, active states
+$ez-blue-500: #00629B; // Primary Brand Color
+$ez-blue-600: #003B5C; // High contrast text
+
+// ======================
+// Section / Branding Palette (6 Categorical Colors)
+// ======================
+$ez-theme-blue: $ez-blue-500; // #00629B (Official)
+$ez-theme-teal: #00897B; // Research / Academy
+$ez-theme-green: #2E7D32; // Student / Sustainability
+$ez-theme-purple: #8E24AA; // Innovation / Tech
+$ez-theme-orange: #F57F17; // Events / Highlights
+$ez-theme-red: #D32F2F; // Alerts / Urgent
+
+// Secondary Colors (Legacy + New Mappings)
 $ez-secondary-color: #63666A;
-$ez-success-color: #198754;
-$ez-danger-color: #dc3545;
-$ez-warning-color: #ffc107;
-$ez-info-color: #0dcaf0;
+$ez-success-color: $ez-theme-green;
+$ez-danger-color: $ez-theme-red;
+$ez-warning-color: $ez-theme-orange;
+$ez-info-color: $ez-theme-teal;
 
 // Text Colors
 $ez-text-color: #333333;
