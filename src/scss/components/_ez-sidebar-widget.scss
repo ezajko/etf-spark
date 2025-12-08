@@ -1,26 +1,26 @@
 // Sidebar Widget
 .ez-sidebar-widget {
-    background-color: var(--bs-white);
-    border: 1px solid var(--bs-gray-200);
+    background-color: var(--bs-body-bg);
+    border: 1px solid var(--bs-border-color);
     margin-bottom: 1.5rem;
     // border-radius: var(--bs-border-radius); // Optional: if we want rounded corners
 
     &__header {
         padding: 1rem 1.25rem;
         // border-bottom: 1px solid var(--bs-gray-200); // Removed border as it clashes with blue bg
-        background-color: $ez-primary-color;
+        background-color: var(--bs-primary);
         display: flex;
         align-items: center;
 
         i {
-            color: #fff;
+            color: var(--bs-body-bg);
         }
     }
 
     &__title {
         font-size: 1.1rem;
         font-weight: 600;
-        color: #fff;
+        color: var(--bs-body-bg);
     }
 
     &__body {

@@ -5,7 +5,7 @@
 .ez-table {
     width: 100%;
     margin-bottom: $ez-spacing-lg;
-    color: $ez-text-color;
+    color: var(--bs-body-color);
     background-color: var(--bs-body-bg);
     border-collapse: separate;
     border-spacing: 0;
@@ -15,11 +15,11 @@
 
     // Header
     thead {
-        background-color: $ez-bg-light;
+        background-color: var(--bs-tertiary-bg);
 
         th {
-            border-bottom: 2px solid $ez-border-color;
-            color: $ez-primary-color;
+            border-bottom: 2px solid var(--bs-border-color);
+            color: var(--bs-primary);
             font-weight: $ez-font-weight-bold;
             padding: $ez-spacing-md;
             text-align: left;
@@ -46,14 +46,14 @@
             }
 
             &:hover {
-                background-color: rgba($ez-primary-color, 0.05);
+                background-color: rgba(var(--bs-primary-rgb), 0.05);
             }
         }
 
         td {
             padding: $ez-spacing-md;
             vertical-align: middle;
-            border-bottom: 1px solid $ez-border-color;
+            border-bottom: 1px solid var(--bs-border-color);
 
             &:first-child {
                 padding-left: $ez-spacing-lg;
@@ -74,7 +74,7 @@
 
     &--hover {
         tbody tr:hover {
-            background-color: rgba($ez-primary-color, 0.05);
+            background-color: rgba(var(--bs-primary-rgb), 0.05);
         }
     }
 }

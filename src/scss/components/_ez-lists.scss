@@ -32,7 +32,7 @@
         transition: background-color 0.2s ease;
 
         &:hover {
-            background-color: rgba($ez-primary-color, 0.05);
+            background-color: rgba(var(--bs-primary-rgb), 0.05);
             cursor: pointer;
         }
     }
@@ -41,7 +41,7 @@
         flex-shrink: 0;
         margin-right: $ez-spacing-md;
         font-size: 1.25rem;
-        color: $ez-primary-color;
+        color: var(--bs-primary);
     }
 
     &__content {
@@ -53,13 +53,13 @@
         display: block;
         font-weight: $ez-font-weight-bold;
         margin-bottom: 0;
-        color: $ez-text-color;
+        color: var(--bs-body-color);
     }
 
     &__subtitle {
         display: block;
         font-size: $ez-font-size-sm;
-        color: $ez-text-muted;
+        color: var(--bs-secondary-color);
     }
 
     // Key-Value variant
@@ -67,7 +67,7 @@
         justify-content: space-between;
 
         .ez-list-item__key {
-            color: $ez-text-muted;
+            color: var(--bs-secondary-color);
             display: flex;
             align-items: center;
         }

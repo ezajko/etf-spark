@@ -9,7 +9,7 @@
     transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
     height: 100%;
     overflow: hidden;
-    background-color: $ez-bg-color;
+    background-color: var(--bs-body-bg);
     display: flex;
     flex-direction: column;
 
@@ -27,15 +27,15 @@
 
     // Header
     &__header {
-        background-color: $ez-primary-color;
-        color: $ez-bg-color;
+        background-color: var(--bs-primary);
+        color: var(--bs-body-bg);
         font-weight: $ez-font-weight-bold;
         padding: $ez-spacing-md;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 
         // Ensure icons are white
         .bi {
-            color: $ez-bg-color;
+            color: var(--bs-body-bg);
         }
 
         // Remove default bootstrap card-header styles if causing conflict
@@ -54,13 +54,13 @@
     &__title {
         font-weight: $ez-font-weight-bold;
         margin-bottom: $ez-spacing-md;
-        color: $ez-primary-color;
+        color: var(--bs-primary);
     }
 
     // Footer
     &__footer {
-        background-color: $ez-bg-light;
-        border-top: 1px solid $ez-border-color;
+        background-color: var(--bs-tertiary-bg);
+        border-top: 1px solid var(--bs-border-color);
         padding: $ez-spacing-md;
     }
 
@@ -89,7 +89,7 @@
     }
 
     &--border {
-        border: 1px solid $ez-border-color;
+        border: 1px solid var(--bs-border-color);
         box-shadow: none;
     }
 
@@ -133,8 +133,8 @@
     justify-content: center;
     border-radius: 50%;
     overflow: hidden;
-    background-color: $ez-bg-light;
-    color: $ez-primary-color;
+    background-color: var(--bs-tertiary-bg);
+    color: var(--bs-primary);
 
     &--sm {
         width: 32px;

@@ -8,8 +8,8 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background-color: $ez-bg-light;
-    color: $ez-secondary-color;
+    background-color: var(--bs-tertiary-bg);
+    color: var(--bs-secondary-color);
     flex-shrink: 0;
 
     &--sm {

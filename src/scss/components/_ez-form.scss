@@ -14,7 +14,7 @@
     // Form label
     &__label {
         font-weight: $ez-font-weight-semibold;
-        color: $ez-text-color;
+        color: var(--bs-body-color);
         margin-bottom: $ez-spacing-xs;
         display: block;
     }
@@ -22,20 +22,20 @@
     // Form control (input, textarea, select)
     &__control {
         border-radius: 0;
-        border: 1px solid $ez-border-color;
+        border: 1px solid var(--bs-border-color);
         padding: $ez-spacing-sm $ez-spacing-md;
         font-family: $ez-font-family-sans;
         width: 100%;
         transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 
         &:focus {
-            border-color: $ez-primary-color;
-            box-shadow: 0 0 0 0.25rem rgba($ez-primary-color, 0.25);
+            border-color: var(--bs-primary);
+            box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
             outline: 0;
         }
 
         &::placeholder {
-            color: lighten($ez-text-color, 40%);
+            color: var(--bs-secondary-color);
         }
     }
 
@@ -67,13 +67,13 @@
             margin-right: $ez-spacing-xs;
 
             &:checked {
-                background-color: $ez-primary-color;
-                border-color: $ez-primary-color;
+                background-color: var(--bs-primary);
+                border-color: var(--bs-primary);
             }
 
             &:focus {
-                border-color: $ez-primary-color;
-                box-shadow: 0 0 0 0.25rem rgba($ez-primary-color, 0.25);
+                border-color: var(--bs-primary);
+                box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
             }
         }
 
@@ -86,7 +86,7 @@
     // Help text
     &__help-text {
         font-size: $ez-font-size-sm;
-        color: lighten($ez-text-color, 20%);
+        color: var(--bs-secondary-text-emphasis);
         margin-top: $ez-spacing-xs;
     }
 
