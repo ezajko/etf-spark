@@ -5,8 +5,8 @@
     // Shared styles for top utility bars (like .ez-header-slim-wrapper)
     background-color: $ez-footer-bg; // #000
     color: white;
-    min-height: 48px;
-    padding: 12px 0;
+    min-height: 3rem; // 48px
+    padding: 0.75rem 0; // 12px
     font-size: 1rem;
     position: relative;
     z-index: 1030; // Above sticky header (1020)

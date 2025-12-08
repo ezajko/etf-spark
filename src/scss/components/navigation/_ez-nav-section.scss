@@ -9,7 +9,7 @@
         border-bottom: 1px solid $ez-border-color;
         transition: all 0.2s ease;
         border-radius: $ez-border-radius;
-        margin-bottom: 2px;
+        margin-bottom: 0.125rem; // 2px
 
         &:last-child {
             border-bottom: none;
@@ -19,7 +19,7 @@
         &:hover {
             background-color: $ez-bg-light;
             color: $ez-primary-color;
-            transform: translateX(4px); // Subtle slide effect
+            transform: translateX(0.25rem); // 4px
 
             .ez-list-item__title {
                 color: $ez-primary-color;

@@ -15,38 +15,38 @@
 
     &--small {
         .carousel-item {
-            height: 240px;
-            min-height: 240px;
+            height: 15rem; // 240px
+            min-height: 15rem;
         }
     }
 
     &--medium {
         .carousel-item {
-            height: 480px;
-            min-height: 480px;
+            height: 30rem; // 480px
+            min-height: 30rem;
         }
     }
 
     &--large {
         .carousel-item {
-            height: 640px;
-            min-height: 640px;
+            height: 40rem; // 640px
+            min-height: 40rem;
         }
     }
 
     // Indicators
     .carousel-indicators {
-        bottom: -40px;
+        bottom: -2.5rem; // -40px
         margin-bottom: 0;
 
         [data-bs-target] {
-            width: 12px;
-            height: 12px;
+            width: 0.75rem; // 12px
+            height: 0.75rem; // 12px
             border-radius: 0;
             background-color: white;
             border: 1px solid $ez-primary-color;
             opacity: 0.5;
-            margin: 0 4px;
+            margin: 0 0.25rem; // 4px
             transition: opacity .6s ease;
         }
 
