@@ -63,8 +63,12 @@ The project documentation is organized as follows:
     - [Cards](docs/components/cards.md) & [Lists](docs/components/lists.md)
     - [Carousel](docs/components/carousel.md) & [Hero](docs/components/carousel.md#herocarouselastro)
     - [Call To Action](docs/components/cta.md)
-    - [Pagination](docs/components/pagination.md)
     - [Widgets](docs/components/widgets.md)
 - **[Patterns](docs/patterns/)**: Complex UI organisms and layouts:
-    - **Navigation**: [Main](docs/patterns/navigation/main-nav.md), [Sidebar](docs/patterns/navigation/sidebar-nav.md), [Section](docs/patterns/navigation/section-nav.md)
+    - **Navigation**:
+        - [Main Menu](docs/patterns/navigation/main-nav.md)
+        - [Sidebar](docs/patterns/navigation/sidebar-nav.md)
+        - [Section Links](docs/patterns/navigation/section-nav.md)
+        - [Breadcrumbs](docs/patterns/navigation/breadcrumbs.md)
+        - [Pagination](docs/patterns/navigation/pagination.md)
     - **Layouts**: [Page Templates](docs/patterns/layouts.md)
