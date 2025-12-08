@@ -27,7 +27,7 @@
 
     &:focus {
         outline: 0;
-        box-shadow: 0 0 0 0.2rem rgba($ez-primary-color, 0.25);
+        box-shadow: 0 0 0 0.2rem rgba(var(--bs-primary-rgb), 0.25);
     }
 
     &:disabled,
@@ -38,7 +38,14 @@
 
     // Primary variant
     &--primary {
-        @include ez-button-variant($ez-primary-color, $ez-primary-dark);
+        // @include ez-button-variant($ez-primary-color, $ez-primary-dark);
+        background-color: var(--bs-primary);
+        border-color: var(--bs-primary);
+        color: white;
+
+        &:hover {
+            filter: brightness(90%);
+        }
     }
 
     // Secondary variant

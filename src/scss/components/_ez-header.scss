@@ -46,7 +46,7 @@
     background-color: var(--bs-body-bg);
     min-height: 96px;
     padding: $ez-spacing-lg 0;
-    border-bottom: 1px solid $ez-border-color;
+    border-bottom: 1px solid var(--bs-border-color);
 
     .ez-header-center-content {
         min-height: 64px; // Logo height + padding
@@ -56,7 +56,7 @@
         display: flex;
         align-items: center;
         text-decoration: none;
-        color: $ez-text-color;
+        color: var(--bs-body-color);
         transition: opacity 0.2s;
 
         &:hover {
@@ -92,14 +92,14 @@
     .ez-brand-main {
         font-size: 1.25rem;
         font-weight: $ez-font-weight-bold;
-        color: $ez-primary-color;
+        color: var(--bs-primary);
         text-transform: uppercase;
         margin-bottom: 2px;
     }
 
     .ez-brand-sub {
         font-size: 0.9rem;
-        color: $ez-text-color;
+        color: var(--bs-body-color);
         font-weight: $ez-font-weight-medium;
     }
 
@@ -166,7 +166,7 @@
 
     .mobile-menu-header {
         padding: $ez-spacing-md;
-        background-color: $ez-primary-color;
+        background-color: var(--bs-primary);
         color: white;
         display: flex;
         justify-content: space-between;
@@ -185,7 +185,7 @@
         position: relative;
         flex-grow: 1;
         overflow: hidden;
-        background-color: $ez-bg-light;
+        background-color: var(--bs-tertiary-bg);
     }
 
     .mobile-menu-level {
@@ -214,17 +214,17 @@
         }
 
         li {
-            border-bottom: 1px solid $ez-border-color;
+            border-bottom: 1px solid var(--bs-border-color);
 
             a {
                 display: block;
                 padding: $ez-spacing-md;
-                color: $ez-text-color;
+                color: var(--bs-body-color);
                 text-decoration: none;
                 font-weight: $ez-font-weight-medium;
 
                 &:hover {
-                    background-color: $ez-bg-light;
+                    background-color: var(--bs-tertiary-bg);
                     color: $ez-primary-color;
                 }
             }
@@ -236,7 +236,7 @@
         }
 
         .back-item {
-            background-color: $ez-bg-light;
+            background-color: var(--bs-tertiary-bg);
 
             a {
                 color: $ez-text-muted;
@@ -254,7 +254,7 @@
     left: -9999px;
     z-index: 999;
     padding: $ez-spacing-sm $ez-spacing-md;
-    background-color: $ez-primary-color;
+    background-color: var(--bs-primary);
     color: white;
     text-decoration: none;
 

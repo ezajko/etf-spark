@@ -19,7 +19,7 @@
 
     // Link styling
     .nav-link {
-        color: $ez-text-color;
+        color: var(--bs-body-color);
         font-weight: $ez-font-weight-semibold;
         font-size: 1rem;
         padding: 0.75rem $ez-spacing-md; // 12px top/bottom -> Total height 24px(line-height) + 24px(padding) = 48px (3rem)
@@ -30,7 +30,7 @@
 
         &:hover,
         &.active {
-            color: $ez-primary-color;
+            color: var(--bs-primary);
         }
 
         &.active {
@@ -50,7 +50,7 @@
         &:hover,
         &[aria-expanded="true"] {
             opacity: 1;
-            color: $ez-primary-color;
+            color: var(--bs-primary);
         }
 
         &::after {
@@ -75,12 +75,12 @@
         h6 {
             text-transform: uppercase;
             font-weight: $ez-font-weight-bold;
-            color: $ez-primary-color;
+            color: var(--bs-primary);
             margin-bottom: $ez-spacing-md;
         }
 
         a {
-            color: $ez-text-color;
+            color: var(--bs-body-color);
             display: block;
             padding: $ez-spacing-sm;
             text-decoration: none;
@@ -88,8 +88,8 @@
             border-radius: $ez-border-radius;
 
             &:hover {
-                color: $ez-primary-color;
-                background-color: $ez-bg-light;
+                color: var(--bs-primary);
+                background-color: var(--bs-tertiary-bg);
             }
         }
     }
@@ -123,20 +123,20 @@
 
     .split-tab-link {
         flex: 1;
-        color: $ez-text-color;
+        color: var(--bs-body-color);
         text-decoration: none;
         font-weight: $ez-font-weight-semibold;
         text-transform: uppercase;
 
         &:hover {
-            color: $ez-primary-color;
+            color: var(--bs-primary);
         }
     }
 
     .split-tab-toggle {
         background: none;
         border: none;
-        color: $ez-text-color;
+        color: var(--bs-body-color);
         padding: 0 $ez-spacing-sm;
         cursor: pointer;
         opacity: 0.5;
@@ -145,7 +145,7 @@
         &:hover,
         &.active {
             opacity: 1;
-            color: $ez-primary-color;
+            color: var(--bs-primary);
         }
 
         &.active i {

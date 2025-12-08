@@ -3,7 +3,7 @@
 
 .nav-pills {
     .nav-link {
-        color: $ez-text-color;
+        color: var(--bs-body-color);
         font-weight: $ez-font-weight-bold;
         border-radius: $ez-border-radius;
         padding: $ez-spacing-sm $ez-spacing-lg;
