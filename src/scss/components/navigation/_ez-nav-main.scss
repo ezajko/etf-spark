@@ -22,7 +22,7 @@
         color: $ez-text-color;
         font-weight: $ez-font-weight-semibold;
         font-size: 1rem;
-        padding: 0.875rem $ez-spacing-md; // 14px
+        padding: 0.75rem $ez-spacing-md; // 12px top/bottom -> Total height 24px(line-height) + 24px(padding) = 48px (3rem)
         text-transform: uppercase;
         letter-spacing: 0.01875rem; // 0.3px -> approx 0.02rem or just keep simple? 0.3px is very small. Let's use 0.02rem.
         letter-spacing: 0.02rem;
