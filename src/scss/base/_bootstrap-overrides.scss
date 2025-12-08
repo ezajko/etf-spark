@@ -4,11 +4,15 @@
 
 // Override Bootstrap CSS variables to match our design system
 :root {
-    // Primary Color
-    --bs-primary: #{$ez-primary-color};
-    --bs-primary-rgb: #{red($ez-primary-color)},
-    #{green($ez-primary-color)},
-    #{blue($ez-primary-color)};
+    // Default Theme Color (Blue)
+    --ez-theme-color: #{$ez-theme-blue};
+    --ez-theme-color-rgb: #{red($ez-theme-blue)},
+    #{green($ez-theme-blue)},
+    #{blue($ez-theme-blue)};
+
+    // Primary Color mapped to Theme Color
+    --bs-primary: var(--ez-theme-color);
+    --bs-primary-rgb: var(--ez-theme-color-rgb);
 
     // Secondary Color
     --bs-secondary: #{$ez-secondary-color};
@@ -51,6 +55,49 @@
     --bs-body-font-family: #{$ez-font-family-base};
 }
 
+// Dynamic Theme Overrides
+[data-ez-theme="teal"] {
+    --ez-theme-color: #{$ez-theme-teal};
+    --ez-theme-color-rgb: #{red($ez-theme-teal)},
+    #{green($ez-theme-teal)},
+    #{blue($ez-theme-teal)};
+}
+
+[data-ez-theme="green"] {
+    --ez-theme-color: #{$ez-theme-green};
+    --ez-theme-color-rgb: #{red($ez-theme-green)},
+    #{green($ez-theme-green)},
+    #{blue($ez-theme-green)};
+}
+
+[data-ez-theme="purple"] {
+    --ez-theme-color: #{$ez-theme-purple};
+    --ez-theme-color-rgb: #{red($ez-theme-purple)},
+    #{green($ez-theme-purple)},
+    #{blue($ez-theme-purple)};
+}
+
+[data-ez-theme="orange"] {
+    --ez-theme-color: #{$ez-theme-orange};
+    --ez-theme-color-rgb: #{red($ez-theme-orange)},
+    #{green($ez-theme-orange)},
+    #{blue($ez-theme-orange)};
+}
+
+[data-ez-theme="red"] {
+    --ez-theme-color: #{$ez-theme-red};
+    --ez-theme-color-rgb: #{red($ez-theme-red)},
+    #{green($ez-theme-red)},
+    #{blue($ez-theme-red)};
+}
+
+[data-ez-theme="blue"] {
+    --ez-theme-color: #{$ez-theme-blue};
+    --ez-theme-color-rgb: #{red($ez-theme-blue)},
+    #{green($ez-theme-blue)},
+    #{blue($ez-theme-blue)};
+}
+
 // Dark Mode Overrides
 [data-bs-theme="dark"] {
     --bs-body-color: #{$ez-text-dark};
@@ -78,14 +125,19 @@
 
 // Override Button Colors (because Bootstrap uses hardcoded hex in compiled CSS)
 .btn-primary {
-    --bs-btn-bg: #{$ez-primary-color};
-    --bs-btn-border-color: #{$ez-primary-color};
-    --bs-btn-hover-bg: #{$ez-primary-dark};
-    --bs-btn-hover-border-color: #{$ez-primary-dark};
-    --bs-btn-active-bg: #{$ez-primary-dark};
-    --bs-btn-active-border-color: #{$ez-primary-dark};
-    --bs-btn-disabled-bg: #{$ez-primary-color};
-    --bs-btn-disabled-border-color: #{$ez-primary-color};
+    --bs-btn-bg: var(--ez-theme-color);
+    --bs-btn-border-color: var(--ez-theme-color);
+    --bs-btn-hover-bg: var(--ez-theme-color); // Using same color for now, relying on filter or opacity if needed, or define dark var
+    --bs-btn-hover-border-color: var(--ez-theme-color);
+    --bs-btn-active-bg: var(--ez-theme-color);
+    --bs-btn-active-border-color: var(--ez-theme-color);
+    --bs-btn-disabled-bg: var(--ez-theme-color);
+    --bs-btn-disabled-border-color: var(--ez-theme-color);
+
+    // To darken on hover without JS, we might need --ez-theme-color-dark
+    &:hover {
+        filter: brightness(90%);
+    }
 }
 
 .btn-secondary {
@@ -100,17 +152,17 @@
 }
 
 .btn-outline-primary {
-    --bs-btn-color: #{$ez-primary-color};
-    --bs-btn-border-color: #{$ez-primary-color};
-    --bs-btn-hover-bg: #{$ez-primary-color};
-    --bs-btn-hover-border-color: #{$ez-primary-color};
-    --bs-btn-active-bg: #{$ez-primary-color};
-    --bs-btn-active-border-color: #{$ez-primary-color};
+    --bs-btn-color: var(--ez-theme-color);
+    --bs-btn-border-color: var(--ez-theme-color);
+    --bs-btn-hover-bg: var(--ez-theme-color);
+    --bs-btn-hover-border-color: var(--ez-theme-color);
+    --bs-btn-active-bg: var(--ez-theme-color);
+    --bs-btn-active-border-color: var(--ez-theme-color);
 }
 
 // Override Text Colors
 .text-primary {
-    color: #{$ez-primary-color} !important;
+    color: var(--ez-theme-color) !important;
 }
 
 .text-secondary {
@@ -119,7 +171,7 @@
 
 // Override Background Colors
 .bg-primary {
-    background-color: #{$ez-primary-color} !important;
+    background-color: var(--ez-theme-color) !important;
 }
 
 .bg-secondary {

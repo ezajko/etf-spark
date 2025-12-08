@@ -1,0 +1,89 @@
+---
+// ColorSwitcher.astro
+---
+
+<div class="dropdown d-inline-block">
+  <button
+    class="btn btn-link text-white-50 p-2 text-decoration-none dropdown-toggle"
+    type="button"
+    id="themeDropdown"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+    title="Change Theme Color"
+  >
+    <i class="bi bi-palette-fill"></i>
+  </button>
+  <ul
+    class="dropdown-menu dropdown-menu-end p-2"
+    aria-labelledby="themeDropdown"
+    style="min-width: 200px;"
+  >
+    <li><h6 class="dropdown-header">Theme Color</h6></li>
+    <li>
+      <div class="d-flex flex-wrap gap-2 px-2">
+        <!-- Blue (Default) -->
+        <button
+          class="btn btn-sm rounded-circle p-0 border-0 theme-btn"
+          data-color="blue"
+          style="width: 24px; height: 24px; background-color: #00629B;"
+          title="Blue (Default)"></button>
+        <!-- Teal -->
+        <button
+          class="btn btn-sm rounded-circle p-0 border-0 theme-btn"
+          data-color="teal"
+          style="width: 24px; height: 24px; background-color: #00897B;"
+          title="Teal"></button>
+        <!-- Green -->
+        <button
+          class="btn btn-sm rounded-circle p-0 border-0 theme-btn"
+          data-color="green"
+          style="width: 24px; height: 24px; background-color: #2E7D32;"
+          title="Green"></button>
+        <!-- Purple -->
+        <button
+          class="btn btn-sm rounded-circle p-0 border-0 theme-btn"
+          data-color="purple"
+          style="width: 24px; height: 24px; background-color: #8E24AA;"
+          title="Purple"></button>
+        <!-- Orange -->
+        <button
+          class="btn btn-sm rounded-circle p-0 border-0 theme-btn"
+          data-color="orange"
+          style="width: 24px; height: 24px; background-color: #F57F17;"
+          title="Orange"></button>
+        <!-- Red -->
+        <button
+          class="btn btn-sm rounded-circle p-0 border-0 theme-btn"
+          data-color="red"
+          style="width: 24px; height: 24px; background-color: #D32F2F;"
+          title="Red"></button>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<script>
+  // Initialize Theme
+  const storedTheme = localStorage.getItem('ez-theme') || 'blue';
+  document.documentElement.setAttribute('data-ez-theme', storedTheme);
+
+  // Handle Clicks
+  document.querySelectorAll('.theme-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const color = btn.getAttribute('data-color');
+      if (color) {
+        document.documentElement.setAttribute('data-ez-theme', color);
+        localStorage.setItem('ez-theme', color);
+      }
+    });
+  });
+</script>
+
+<style>
+  .theme-btn {
+    transition: transform 0.2s;
+  }
+  .theme-btn:hover {
+    transform: scale(1.2);
+  }
+</style>
