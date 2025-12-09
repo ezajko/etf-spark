@@ -1,0 +1,18 @@
+---
+// ETF UNSA - Front Page Layout (Full Width, No Container)
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import Base from './Base.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<Base title={title} description={description}>
+  <slot />
+</Base>
