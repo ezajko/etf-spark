@@ -15,7 +15,7 @@ const { title, description } = Astro.props;
 
 <Base title={title} description={description}>
   <slot name="banner" />
-  <div class="content-slot py-4">
+  <div class="content-slot">
     <slot />
   </div>
 </Base>

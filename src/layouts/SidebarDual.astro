@@ -40,27 +40,27 @@ const {
   </slot>
 
   <!-- Pass content-before through -->
-  <div class="content-slot py-4" slot="content-before">
+  <div class="content-slot" slot="content-before">
     <slot name="content-before" />
   </div>
 
   <!-- Left Sidebar -->
-  <div class="col-lg-3 mb-4 mb-lg-0 order-2 order-lg-1 content-slot py-4">
+  <div class="col-lg-3 mb-4 mb-lg-0 order-2 order-lg-1 content-slot">
     <slot name="sidebar-left" />
   </div>
 
   <!-- Main Content -->
-  <div class="col-lg-6 order-1 order-lg-2 content-slot py-4">
+  <div class="col-lg-6 order-1 order-lg-2 content-slot">
     <slot />
   </div>
 
   <!-- Right Sidebar -->
-  <div class="col-lg-3 mb-4 mb-lg-0 order-3 content-slot py-4">
+  <div class="col-lg-3 mb-4 mb-lg-0 order-3 content-slot">
     <slot name="sidebar-right" />
   </div>
 
   <!-- Pass content-after through -->
-  <div class="content-slot py-4" slot="content-after">
+  <div class="content-slot" slot="content-after">
     <slot name="content-after" />
   </div>
 </Default>

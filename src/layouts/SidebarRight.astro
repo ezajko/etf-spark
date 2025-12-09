@@ -40,21 +40,21 @@ const {
   </slot>
 
   <!-- Pass content-before through -->
-  <div class="content-slot py-4" slot="content-before">
+  <div class="content-slot" slot="content-before">
     <slot name="content-before" />
   </div>
 
   <!-- Main Grid -->
-  <div class="col-lg-9 mb-4 mb-lg-0 content-slot py-4">
+  <div class="col-lg-9 mb-4 mb-lg-0 content-slot">
     <slot />
   </div>
 
-  <div class="col-lg-3 content-slot py-4">
+  <div class="col-lg-3 content-slot">
     <slot name="sidebar" />
   </div>
 
   <!-- Pass content-after through -->
-  <div class="content-slot py-4" slot="content-after">
+  <div class="content-slot" slot="content-after">
     <slot name="content-after" />
   </div>
 </Default>
