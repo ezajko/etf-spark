@@ -43,7 +43,11 @@ const { title, description, breadcrumbItems, useGrid = true } = Astro.props;
     <div class="container mb-5">
       <!-- Content Before Grid -->
       <div class="ez-page-content-before">
-        <slot name="content-before" />
+        <div class="row">
+          <div class="col-12">
+            <slot name="content-before" />
+          </div>
+        </div>
       </div>
 
       <!-- Main Content Grid -->
@@ -61,7 +65,11 @@ const { title, description, breadcrumbItems, useGrid = true } = Astro.props;
 
       <!-- Content After Grid -->
       <div class="ez-page-content-after">
-        <slot name="content-after" />
+        <div class="row">
+          <div class="col-12">
+            <slot name="content-after" />
+          </div>
+        </div>
       </div>
     </div>
   </main>
