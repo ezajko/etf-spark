@@ -14,6 +14,14 @@
     --bs-primary: var(--ez-theme-color);
     --bs-primary-rgb: var(--ez-theme-color-rgb);
 
+    // Disable Rounded Corners
+    --bs-border-radius: 0;
+    --bs-border-radius-sm: 0;
+    --bs-border-radius-lg: 0;
+    --bs-border-radius-xl: 0;
+    --bs-border-radius-2xl: 0;
+    --bs-border-radius-pill: 0;
+
     // Secondary Color
     --bs-secondary: #{$ez-secondary-color};
     --bs-secondary-rgb: #{red($ez-secondary-color)},
