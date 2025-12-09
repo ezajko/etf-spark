@@ -4,6 +4,15 @@
 
 import SidebarLeft from '../../layouts/SidebarLeft.astro';
 import SlotPlaceholder from '../../components/debug/SlotPlaceholder.astro';
+import SectionLinksMenu from '../../components/SectionLinksMenu.astro';
+
+const sectionLinks = [
+  { label: 'Opšte informacije', link: '#', active: true },
+  { label: 'Historijat', link: '#' },
+  { label: 'Misija i vizija', link: '#' },
+  { label: 'Organizacija', link: '#' },
+  { label: 'Akti i propisi', link: '#' },
+];
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
@@ -24,7 +33,8 @@ const breadcrumbItems = [
 
   <!-- Sidebar Content with Widgets -->
   <Fragment slot="sidebar">
-    <SlotPlaceholder name="sidebar (widgets)" minHeight="400px" color="warning" />
+    <SectionLinksMenu links={sectionLinks} class="mb-4" />
+    <SlotPlaceholder name="widget slots (empty)" minHeight="200px" color="warning" />
   </Fragment>
 
   <!-- Banner Slot -->
