@@ -40,8 +40,8 @@ const {
   </slot>
 
   <!-- Pass content-before through -->
-  <div class="content-slot py-4">
-    <slot name="content-before" slot="content-before" />
+  <div class="content-slot py-4" slot="content-before">
+    <slot name="content-before" />
   </div>
 
   <!-- Main Content (Full Width) -->
@@ -50,7 +50,7 @@ const {
   </div>
 
   <!-- Pass content-after through -->
-  <div class="content-slot py-4">
-    <slot name="content-after" slot="content-after" />
+  <div class="content-slot py-4" slot="content-after">
+    <slot name="content-after" />
   </div>
 </Default>
