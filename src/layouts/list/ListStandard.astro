@@ -1,0 +1,55 @@
+---
+// ETF UNSA - Standard List Layout
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import SidebarRight from '../SidebarRight.astro';
+import Pagination from '../../components/navigation/Pagination.astro';
+
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+  active?: boolean;
+}
+
+interface Props {
+  title: string;
+  listTitle: string;
+  listDescription?: string;
+  breadcrumbItems?: BreadcrumbItem[];
+  bannerTitle?: string;
+  totalPages?: number;
+  currentPage?: number;
+}
+
+const {
+  title,
+  listTitle,
+  listDescription,
+  breadcrumbItems,
+  bannerTitle,
+  totalPages,
+  currentPage = 1,
+} = Astro.props;
+---
+
+<SidebarRight title={title} breadcrumbItems={breadcrumbItems} bannerTitle={bannerTitle || title}>
+  <h1 class="mb-4">{listTitle}</h1>
+  {listDescription && <p class="lead mb-5">{listDescription}</p>}
+
+  <div class="d-flex flex-column gap-4">
+    <slot />
+  </div>
+
+  {
+    totalPages && (
+      <div class="mt-5">
+        <Pagination currentPage={currentPage} totalPages={totalPages} baseUrl="#" />
+      </div>
+    )
+  }
+
+  <Fragment slot="sidebar">
+    <slot name="sidebar" />
+  </Fragment>
+</SidebarRight>

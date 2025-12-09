@@ -3,7 +3,7 @@
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
-import SectionRightSidebar from '../../layouts/SectionRightSidebar.astro';
+import ListStandard from '../../layouts/list/ListStandard.astro';
 import ContentCard from '../../components/ContentCard.astro';
 import InfoWidget from '../../components/InfoWidget.astro';
 import Pagination from '../../components/navigation/Pagination.astro';
@@ -62,34 +62,29 @@ const events = [
 const base = import.meta.env.BASE_URL;
 ---
 
-<SectionRightSidebar title="Događaji | ETF UNSA" breadcrumbItems={breadcrumbItems}>
-  <!-- Main Content -->
-
-  <h1 class="mb-4">Nadolazeći događaji</h1>
-
-  <div class="d-flex flex-column gap-4">
-    {
-      events.map((item) => (
-        <ContentCard
-          title={item.title}
-          href={base + '/examples/event-single'}
-          image={item.image}
-          category={item.category}
-          date={item.date}
-          time={item.time}
-          location={item.location}
-          excerpt={item.description}
-          isEvent={true}
-          layout="horizontal"
-        />
-      ))
-    }
-  </div>
-
-  <!-- Pagination -->
-  <div class="mt-5">
-    <Pagination currentPage={1} totalPages={2} baseUrl={base + '/examples/event-list'} />
-  </div>
+<ListStandard
+  title="Događaji | ETF UNSA"
+  breadcrumbItems={breadcrumbItems}
+  listTitle="Nadolazeći događaji"
+  totalPages={2}
+  currentPage={1}
+>
+  {
+    events.map((item) => (
+      <ContentCard
+        title={item.title}
+        href={base + '/examples/event-single'}
+        image={item.image}
+        category={item.category}
+        date={item.date}
+        time={item.time}
+        location={item.location}
+        excerpt={item.description}
+        isEvent={true}
+        layout="horizontal"
+      />
+    ))
+  }
 
   <!-- Sidebar -->
   <Fragment slot="sidebar">
@@ -123,4 +118,4 @@ const base = import.meta.env.BASE_URL;
       ]}
     />
   </Fragment>
-</SectionRightSidebar>
+</ListStandard>

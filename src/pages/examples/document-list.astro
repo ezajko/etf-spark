@@ -3,7 +3,7 @@
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
-import PageLayout from '../../layouts/PageLayout.astro';
+import ListStandard from '../../layouts/list/ListStandard.astro';
 import Pagination from '../../components/navigation/Pagination.astro';
 
 const breadcrumbItems = [
@@ -78,79 +78,75 @@ const documents = [
 const base = import.meta.env.BASE_URL;
 ---
 
-<PageLayout title="Dokumenti | ETF UNSA" breadcrumbItems={breadcrumbItems}>
-  <!-- Main Content -->
-  <div class="col-lg-8">
-    <h1 class="mb-4">Arhiva Dokumenata</h1>
-
-    <div class="card border-0 shadow-sm mb-4">
-      <div class="card-body bg-light">
-        <form class="row g-3">
-          <div class="col-md-6">
-            <input type="text" class="form-control" placeholder="Pretraga po nazivu..." />
-          </div>
-          <div class="col-md-4">
-            <select class="form-select">
-              <option selected>Svi tipovi</option>
-              <option value="1">Odluke</option>
-              <option value="2">Zapisnici</option>
-              <option value="3">Pravilnici</option>
-            </select>
-          </div>
-          <div class="col-md-2">
-            <button type="submit" class="btn btn-primary w-100"><i class="bi bi-search"></i></button
-            >
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <div class="table-responsive">
-      <table class="table table-hover align-middle">
-        <thead class="table-light">
-          <tr>
-            <th scope="col" style="width: 50%;">Naziv dokumenta</th>
-            <th scope="col">Tip</th>
-            <th scope="col">Datum</th>
-            <th scope="col" class="text-end">Akcija</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            documents.map((doc) => (
-              <tr>
-                <td>
-                  <a
-                    href={base + '/examples/document-single'}
-                    class="text-decoration-none fw-bold text-dark d-block mb-1"
-                  >
-                    <i class="bi bi-file-earmark-text me-2 text-primary" /> {doc.title}
-                  </a>
-                  <small class="text-muted">Broj: {doc.number}</small>
-                </td>
-                <td>
-                  <span class="badge bg-light text-dark border">{doc.type}</span>
-                </td>
-                <td>{doc.date}</td>
-                <td class="text-end">
-                  <a href="#" class="btn btn-sm btn-outline-primary" title="Preuzmi">
-                    <i class="bi bi-download" />
-                  </a>
-                </td>
-              </tr>
-            ))
-          }
-        </tbody>
-      </table>
-    </div>
-
-    <div class="mt-4">
-      <Pagination currentPage={1} totalPages={3} baseUrl="#" />
+<ListStandard
+  title="Dokumenti | ETF UNSA"
+  breadcrumbItems={breadcrumbItems}
+  listTitle="Arhiva Dokumenata"
+  totalPages={3}
+  currentPage={1}
+>
+  <div class="card border-0 shadow-sm mb-4">
+    <div class="card-body bg-light">
+      <form class="row g-3">
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Pretraga po nazivu..." />
+        </div>
+        <div class="col-md-4">
+          <select class="form-select">
+            <option selected>Svi tipovi</option>
+            <option value="1">Odluke</option>
+            <option value="2">Zapisnici</option>
+            <option value="3">Pravilnici</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-primary w-100"><i class="bi bi-search"></i></button>
+        </div>
+      </form>
     </div>
   </div>
 
+  <div class="table-responsive">
+    <table class="table table-hover align-middle">
+      <thead class="table-light">
+        <tr>
+          <th scope="col" style="width: 50%;">Naziv dokumenta</th>
+          <th scope="col">Tip</th>
+          <th scope="col">Datum</th>
+          <th scope="col" class="text-end">Akcija</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          documents.map((doc) => (
+            <tr>
+              <td>
+                <a
+                  href={base + '/examples/document-single'}
+                  class="text-decoration-none fw-bold text-dark d-block mb-1"
+                >
+                  <i class="bi bi-file-earmark-text me-2 text-primary" /> {doc.title}
+                </a>
+                <small class="text-muted">Broj: {doc.number}</small>
+              </td>
+              <td>
+                <span class="badge bg-light text-dark border">{doc.type}</span>
+              </td>
+              <td>{doc.date}</td>
+              <td class="text-end">
+                <a href="#" class="btn btn-sm btn-outline-primary" title="Preuzmi">
+                  <i class="bi bi-download" />
+                </a>
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+
   <!-- Right Sidebar -->
-  <div class="col-lg-4">
+  <Fragment slot="sidebar">
     <div class="card border-0 shadow-sm mb-4">
       <div class="card-header bg-white border-bottom fw-bold py-3">Kategorije</div>
       <div class="list-group list-group-flush">
@@ -208,5 +204,5 @@ const base = import.meta.env.BASE_URL;
         </a>
       </div>
     </div>
-  </div>
-</PageLayout>
+  </Fragment>
+</ListStandard>

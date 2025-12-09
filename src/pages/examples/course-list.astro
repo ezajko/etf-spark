@@ -3,7 +3,7 @@
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
-import PageLayout from '../../layouts/PageLayout.astro';
+import ListGrid from '../../layouts/list/ListGrid.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
@@ -66,87 +66,83 @@ const courses = [
 const base = import.meta.env.BASE_URL;
 ---
 
-<PageLayout title="Predmeti | ETF UNSA" breadcrumbItems={breadcrumbItems}>
-  <div class="col-12">
-    <h1 class="mb-4">Katalog Predmeta</h1>
-
-    <div class="card border-0 shadow-sm mb-4">
-      <div class="card-body bg-light">
-        <form class="row g-3">
-          <div class="col-md-4">
-            <input type="text" class="form-control" placeholder="Naziv ili šifra predmeta..." />
-          </div>
-          <div class="col-md-3">
-            <select class="form-select">
-              <option selected>Svi semestri</option>
-              <option value="1">Semestar 1</option>
-              <option value="2">Semestar 2</option>
-              <option value="3">Semestar 3</option>
-            </select>
-          </div>
-          <div class="col-md-3">
-            <select class="form-select">
-              <option selected>Svi tipovi</option>
-              <option value="obavezni">Obavezni</option>
-              <option value="izborni">Izborni</option>
-            </select>
-          </div>
-          <div class="col-md-2">
-            <button type="submit" class="btn btn-primary w-100">Filtriraj</button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <div class="table-responsive">
-      <table class="table table-hover align-middle">
-        <thead class="table-light">
-          <tr>
-            <th>Šifra</th>
-            <th>Naziv predmeta</th>
-            <th class="text-center">Semestar</th>
-            <th class="text-center">ECTS</th>
-            <th class="text-center">Tip</th>
-            <th class="text-end">Akcija</th>
-          </tr>
-        </thead>
-        <tbody>
-          {
-            courses.map((course) => (
-              <tr>
-                <td>
-                  <span class="font-monospace text-muted">{course.code}</span>
-                </td>
-                <td>
-                  <a
-                    href={base + '/examples/course-details'}
-                    class="text-decoration-none fw-bold text-dark"
-                  >
-                    {course.name}
-                  </a>
-                </td>
-                <td class="text-center">{course.semester}</td>
-                <td class="text-center">{course.ects}</td>
-                <td class="text-center">
-                  <span
-                    class={`badge ${course.type === 'Obavezni' ? 'bg-primary' : 'bg-secondary'}`}
-                  >
-                    {course.type}
-                  </span>
-                </td>
-                <td class="text-end">
-                  <a
-                    href={base + '/examples/course-details'}
-                    class="btn btn-sm btn-outline-primary"
-                  >
-                    Detalji
-                  </a>
-                </td>
-              </tr>
-            ))
-          }
-        </tbody>
-      </table>
+<ListGrid
+  title="Predmeti | ETF UNSA"
+  breadcrumbItems={breadcrumbItems}
+  listTitle="Katalog Predmeta"
+  sidebarSide="none"
+>
+  <div class="card border-0 shadow-sm mb-4">
+    <div class="card-body bg-light">
+      <form class="row g-3">
+        <div class="col-md-4">
+          <input type="text" class="form-control" placeholder="Naziv ili šifra predmeta..." />
+        </div>
+        <div class="col-md-3">
+          <select class="form-select">
+            <option selected>Svi semestri</option>
+            <option value="1">Semestar 1</option>
+            <option value="2">Semestar 2</option>
+            <option value="3">Semestar 3</option>
+          </select>
+        </div>
+        <div class="col-md-3">
+          <select class="form-select">
+            <option selected>Svi tipovi</option>
+            <option value="obavezni">Obavezni</option>
+            <option value="izborni">Izborni</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <button type="submit" class="btn btn-primary w-100">Filtriraj</button>
+        </div>
+      </form>
     </div>
   </div>
-</PageLayout>
+
+  <div class="table-responsive">
+    <table class="table table-hover align-middle">
+      <thead class="table-light">
+        <tr>
+          <th>Šifra</th>
+          <th>Naziv predmeta</th>
+          <th class="text-center">Semestar</th>
+          <th class="text-center">ECTS</th>
+          <th class="text-center">Tip</th>
+          <th class="text-end">Akcija</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          courses.map((course) => (
+            <tr>
+              <td>
+                <span class="font-monospace text-muted">{course.code}</span>
+              </td>
+              <td>
+                <a
+                  href={base + '/examples/course-details'}
+                  class="text-decoration-none fw-bold text-dark"
+                >
+                  {course.name}
+                </a>
+              </td>
+              <td class="text-center">{course.semester}</td>
+              <td class="text-center">{course.ects}</td>
+              <td class="text-center">
+                <span class={`badge ${course.type === 'Obavezni' ? 'bg-primary' : 'bg-secondary'}`}>
+                  {course.type}
+                </span>
+              </td>
+              <td class="text-end">
+                <a href={base + '/examples/course-details'} class="btn btn-sm btn-outline-primary">
+                  Detalji
+                </a>
+              </td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</ListGrid>

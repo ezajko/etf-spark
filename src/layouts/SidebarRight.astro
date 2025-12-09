@@ -1,0 +1,56 @@
+---
+// ETF UNSA - Sidebar Right Layout
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import Default from './Default.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+  active?: boolean;
+}
+
+interface Props {
+  title: string;
+  breadcrumbItems?: BreadcrumbItem[];
+  bannerTitle?: string;
+  bannerSubtitle?: string;
+  bannerBgClass?: string;
+}
+
+const {
+  title,
+  breadcrumbItems,
+  bannerTitle,
+  bannerSubtitle,
+  bannerBgClass = 'bg-primary',
+} = Astro.props;
+---
+
+<Default title={title} breadcrumbItems={breadcrumbItems}>
+  <!-- Banner Slot -->
+  <slot name="banner" slot="banner">
+    {
+      bannerTitle && (
+        <PageHeader title={bannerTitle} subtitle={bannerSubtitle} bgClass={bannerBgClass} />
+      )
+    }
+  </slot>
+
+  <!-- Pass content-before through -->
+  <slot name="content-before" slot="content-before" />
+
+  <!-- Main Grid -->
+  <div class="col-lg-9 mb-4 mb-lg-0">
+    <slot />
+  </div>
+
+  <div class="col-lg-3">
+    <slot name="sidebar" />
+  </div>
+
+  <!-- Pass content-after through -->
+  <slot name="content-after" slot="content-after" />
+</Default>

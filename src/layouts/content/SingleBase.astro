@@ -1,0 +1,38 @@
+---
+// ETF UNSA - Single Base Content Layout
+// Uses SidebarRight by default, but can be configured
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import SidebarRight from '../SidebarRight.astro';
+
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+  active?: boolean;
+}
+
+interface Props {
+  title: string;
+  breadcrumbItems?: BreadcrumbItem[];
+  bannerTitle?: string;
+  bannerSubtitle?: string;
+  bannerBgClass?: string;
+}
+
+const { title, breadcrumbItems, bannerTitle, bannerSubtitle, bannerBgClass } = Astro.props;
+---
+
+<SidebarRight
+  title={title}
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle={bannerTitle}
+  bannerSubtitle={bannerSubtitle}
+  bannerBgClass={bannerBgClass}
+>
+  <slot />
+
+  <Fragment slot="sidebar">
+    <slot name="sidebar" />
+  </Fragment>
+</SidebarRight>
