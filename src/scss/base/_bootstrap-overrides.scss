@@ -153,6 +153,10 @@
     .btn-close {
         filter: invert(1) grayscale(100%) brightness(200%);
     }
+
+    // Accessible Link Color for Dark Mode (Lighter Blue)
+    --bs-link-color: #64B5F6;
+    --bs-link-hover-color: #90CAF9; // Even lighter on hover
 }
 
 // Override Button Colors (because Bootstrap uses hardcoded hex in compiled CSS)

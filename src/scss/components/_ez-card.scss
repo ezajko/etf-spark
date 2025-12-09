@@ -55,6 +55,11 @@
         font-weight: $ez-font-weight-bold;
         margin-bottom: $ez-spacing-md;
         color: var(--bs-primary);
+
+        // Dark mode override for better contrast
+        [data-bs-theme="dark"] & {
+            color: var(--bs-body-color);
+        }
     }
 
     // Footer
