@@ -1,0 +1,34 @@
+---
+// ETF UNSA - Document Layout
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import SidebarRight from '../SidebarRight.astro';
+
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+  active?: boolean;
+}
+
+interface Props {
+  title: string;
+  breadcrumbItems?: BreadcrumbItem[];
+  bannerTitle?: string;
+}
+
+const { title, breadcrumbItems, bannerTitle } = Astro.props;
+---
+
+<SidebarRight
+  title={title}
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle={bannerTitle || 'Dokumenti'}
+  bannerBgClass="bg-secondary"
+>
+  <slot />
+
+  <Fragment slot="sidebar">
+    <slot name="sidebar" />
+  </Fragment>
+</SidebarRight>

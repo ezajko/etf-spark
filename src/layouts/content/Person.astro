@@ -1,0 +1,38 @@
+---
+// ETF UNSA - Person Profile Layout
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import SidebarRight from '../SidebarRight.astro';
+
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+  active?: boolean;
+}
+
+interface Props {
+  title: string;
+  breadcrumbItems?: BreadcrumbItem[];
+  bannerTitle?: string;
+  bannerSubtitle?: string;
+}
+
+const { title, breadcrumbItems, bannerTitle, bannerSubtitle } = Astro.props;
+---
+
+<SidebarRight
+  title={title}
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle={bannerTitle || title}
+  bannerSubtitle={bannerSubtitle}
+  bannerBgClass="bg-primary"
+>
+  <!-- Main Content Slot -->
+  <slot />
+
+  <!-- Sidebar Slot -->
+  <Fragment slot="sidebar">
+    <slot name="sidebar" />
+  </Fragment>
+</SidebarRight>
