@@ -10,8 +10,8 @@ body {
     font-size: $ez-font-size-base;
     font-weight: $ez-font-weight-normal;
     line-height: $ez-line-height-base;
-    color: $ez-text-color;
-    background-color: $ez-bg-color;
+    color: var(--bs-body-color);
+    background-color: var(--bs-body-bg);
 }
 
 // ======================
