@@ -71,6 +71,111 @@ const base = import.meta.env.BASE_URL;
   </Fragment>
 
   <!-- Main Content -->
+  <div class="mb-5">
+    <SectionHeader title="O Laboratoriji" />
+    <p class="lead">
+      Laboratorija za Vještačku Inteligenciju (AILab) je vodeći istraživački centar fokusiran na
+      razvoj i primjenu naprednih algoritama mašinskog učenja.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
+      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+      voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    </p>
+  </div>
 
-  <!-- About Section -->
+  <div class="mb-5">
+    <SectionHeader title="Istraživačke Oblasti" level="h3" />
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card h-100 border-0 shadow-sm bg-body-tertiary">
+          <div class="card-body">
+            <h5 class="card-title fw-bold mb-3">
+              <i class="bi bi-cpu text-primary me-2"></i>Mašinsko Učenje
+            </h5>
+            <p class="card-text text-muted mb-0">
+              Razvoj novih algoritama za nadzirano i nenadzirano učenje, sa primjenom u analizi
+              podataka.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card h-100 border-0 shadow-sm bg-body-tertiary">
+          <div class="card-body">
+            <h5 class="card-title fw-bold mb-3">
+              <i class="bi bi-eye text-primary me-2"></i>Računarska Vizija
+            </h5>
+            <p class="card-text text-muted mb-0">
+              Analiza i interpretacija digitalnih slika i videa za prepoznavanje objekata i scena.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card h-100 border-0 shadow-sm bg-body-tertiary">
+          <div class="card-body">
+            <h5 class="card-title fw-bold mb-3">
+              <i class="bi bi-chat-dots text-primary me-2"></i>Obrada Prirodnog Jezika
+            </h5>
+            <p class="card-text text-muted mb-0">
+              Razumijevanje i generisanje ljudskog jezika kroz napredne NLP modele.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card h-100 border-0 shadow-sm bg-body-tertiary">
+          <div class="card-body">
+            <h5 class="card-title fw-bold mb-3">
+              <i class="bi bi-robot text-primary me-2"></i>Robotika
+            </h5>
+            <p class="card-text text-muted mb-0">
+              Primjena AI metoda u autonomnoj navigaciji i interakciji robota sa okolinom.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mb-5">
+    <SectionHeader title="Tim Istraživača" level="h3" />
+    <CardGroup cols={3}>
+      <div class="col">
+        <ContentCard title="Dr. Ime Prezime" href="#" layout="vertical">
+          <div class="text-center">
+            <div class="mb-3">
+              <div class="ez-avatar ez-avatar--xl mx-auto"><i class="bi bi-person"></i></div>
+            </div>
+            <h5 class="card-title mb-1">Dr. Ime Prezime</h5>
+            <p class="text-muted small mb-0">Voditelj Laboratorije</p>
+          </div>
+        </ContentCard>
+      </div>
+      <div class="col">
+        <ContentCard title="Mr. Istraživač 1" href="#" layout="vertical">
+          <div class="text-center">
+            <div class="mb-3">
+              <div class="ez-avatar ez-avatar--xl mx-auto"><i class="bi bi-person"></i></div>
+            </div>
+            <h5 class="card-title mb-1">Mr. Istraživač 1</h5>
+            <p class="text-muted small mb-0">Viši Asistent</p>
+          </div>
+        </ContentCard>
+      </div>
+      <div class="col">
+        <ContentCard title="Mr. Istraživač 2" href="#" layout="vertical">
+          <div class="text-center">
+            <div class="mb-3">
+              <div class="ez-avatar ez-avatar--xl mx-auto"><i class="bi bi-person"></i></div>
+            </div>
+            <h5 class="card-title mb-1">Mr. Istraživač 2</h5>
+            <p class="text-muted small mb-0">Asistent</p>
+          </div>
+        </ContentCard>
+      </div>
+    </CardGroup>
+  </div>
 </SectionRightSidebar>
