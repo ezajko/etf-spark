@@ -1,10 +1,10 @@
 ---
-// ETF UNSA - Both Sidebars Layout
+// ETF UNSA - Dual Sidebar Layout
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
 import SidebarDual from '../layouts/SidebarDual.astro';
-import LoremIpsum from '../components/LoremIpsum.astro';
+import SlotPlaceholder from '../components/debug/SlotPlaceholder.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
@@ -15,44 +15,20 @@ const breadcrumbItems = [
 
 <SidebarDual title="Oba Sidebara | ETF UNSA" breadcrumbItems={breadcrumbItems}>
   <!-- Banner Slot -->
-  <section slot="banner" class="ez-hero ez-hero--small bg-secondary text-white">
-    <div class="ez-hero__content container">
-      <div class="row">
-        <div class="col-lg-8">
-          <h1 class="ez-hero__title mb-2">Oba Sidebara</h1>
-          <p class="ez-hero__subtitle text-white-50">
-            Primjer stranice sa sidebarima na obje strane.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <SlotPlaceholder slot="banner" name="banner" minHeight="150px" />
+
+  <!-- Content Before Slot -->
+  <SlotPlaceholder slot="content-before" name="content-before" minHeight="80px" color="info" />
 
   <!-- Left Sidebar -->
-  <Fragment slot="sidebar-left">
-    <div class="card border-0 shadow-sm">
-      <div class="card-header bg-white border-bottom fw-bold py-3">Lijevi Widget</div>
-      <div class="card-body">
-        <p class="card-text small">Generički sadržaj za lijevi sidebar.</p>
-      </div>
-    </div>
-  </Fragment>
+  <SlotPlaceholder slot="sidebar-left" name="sidebar-left" minHeight="400px" color="warning" />
 
   <!-- Main Content -->
-  <h2 class="mb-4">Centralni Sadržaj</h2>
-  <LoremIpsum />
+  <SlotPlaceholder name="main content" minHeight="400px" />
 
   <!-- Right Sidebar -->
-  <Fragment slot="sidebar-right">
-    <div class="card border-0 shadow-sm">
-      <div class="card-header bg-white border-bottom fw-bold py-3">Desni Info</div>
-      <div class="card-body">
-        <p class="card-text small">
-          Ovaj layout je koristan za portale s puno informacija gdje je potrebno prikazati
-          navigaciju i dodatne widgete istovremeno.
-        </p>
-        <a href="#" class="btn btn-sm btn-outline-primary w-100">Saznaj više</a>
-      </div>
-    </div>
-  </Fragment>
+  <SlotPlaceholder slot="sidebar-right" name="sidebar-right" minHeight="400px" color="warning" />
+
+  <!-- Content After Slot -->
+  <SlotPlaceholder slot="content-after" name="content-after" minHeight="80px" color="info" />
 </SidebarDual>

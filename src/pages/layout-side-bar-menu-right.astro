@@ -5,7 +5,7 @@
 
 import SidebarRight from '../layouts/SidebarRight.astro';
 import SideMenu from '../components/navigation/SideMenu.astro';
-import LoremIpsum from '../components/LoremIpsum.astro';
+import SlotPlaceholder from '../components/debug/SlotPlaceholder.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
@@ -16,27 +16,11 @@ const breadcrumbItems = [
 
 <SidebarRight title="Desni Meni | ETF UNSA" breadcrumbItems={breadcrumbItems}>
   <!-- Banner Slot -->
-  <section slot="banner" class="ez-hero ez-hero--small bg-dark text-white">
-    <div class="ez-hero__content container">
-      <div class="row">
-        <div class="col-lg-8">
-          <h1 class="ez-hero__title mb-2">Desni Side Meni</h1>
-          <p class="ez-hero__subtitle text-white-50">
-            Primjer stranice sa višeslojnim menijem na desnoj strani.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <SlotPlaceholder slot="banner" name="banner" minHeight="150px" />
 
   <!-- Main Content -->
-  <h2 class="mb-4">Glavni Sadržaj</h2>
-  <p class="lead">
-    Ova stranica koristi <code>SideMenu</code> komponentu na desnoj strani.
-  </p>
-  <hr class="my-4" />
-  <LoremIpsum />
+  <SlotPlaceholder name="main content" minHeight="500px" />
 
-  <!-- Side Menu Slot -->
+  <!-- Side Menu Slot (Fixed) -->
   <SideMenu slot="sidebar" />
 </SidebarRight>

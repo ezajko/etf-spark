@@ -1,0 +1,21 @@
+---
+// ETF UNSA - Front Layout Example
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import Front from '../layouts/Front.astro';
+import SlotPlaceholder from '../components/debug/SlotPlaceholder.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Layouts', href: '#' },
+  { label: 'Front Layout', href: '#', active: true },
+];
+---
+
+<Front title="Front Layout Example | ETF UNSA">
+  <!-- Front layout is full width, so we can demonstrate that -->
+  <div class="container-fluid p-0">
+    <SlotPlaceholder name="main content (full width)" minHeight="500px" />
+  </div>
+</Front>

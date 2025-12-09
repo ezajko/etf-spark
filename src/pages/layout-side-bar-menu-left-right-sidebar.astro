@@ -1,11 +1,11 @@
 ---
-// ETF UNSA - Left Menu + Right Sidebar Layout
+// ETF UNSA - Left Side Menu + Right Sidebar Layout
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
 import SidebarDual from '../layouts/SidebarDual.astro';
 import SideMenu from '../components/navigation/SideMenu.astro';
-import LoremIpsum from '../components/LoremIpsum.astro';
+import SlotPlaceholder from '../components/debug/SlotPlaceholder.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
@@ -16,42 +16,19 @@ const breadcrumbItems = [
 
 <SidebarDual title="Lijevi Meni + Desni Sidebar | ETF UNSA" breadcrumbItems={breadcrumbItems}>
   <!-- Banner Slot -->
-  <section slot="banner" class="ez-hero ez-hero--small bg-primary text-white">
-    <div class="ez-hero__content container">
-      <div class="row">
-        <div class="col-lg-8">
-          <h1 class="ez-hero__title mb-2">Lijevi Meni + Desni Sidebar</h1>
-          <p class="ez-hero__subtitle text-white-50">
-            Primjer stranice sa menijem lijevo i sidebarom desno.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <SlotPlaceholder slot="banner" name="banner" minHeight="150px" />
 
   <!-- Left Sidebar (Menu) -->
-  <Fragment slot="sidebar-left">
-    <SideMenu />
-  </Fragment>
+  <SideMenu slot="sidebar-left" />
 
   <!-- Main Content -->
-  <h2 class="mb-4">Glavni Sadržaj</h2>
-  <p class="lead">
-    Ovaj layout kombinuje navigaciju na lijevoj strani sa dodatnim informacijama na desnoj strani.
-  </p>
-  <hr class="my-4" />
-  <LoremIpsum />
+  <SlotPlaceholder name="main content" minHeight="500px" />
 
   <!-- Right Sidebar -->
-  <Fragment slot="sidebar-right">
-    <div class="card border-0 shadow-sm">
-      <div class="card-header bg-white border-bottom fw-bold py-3">Desni Info</div>
-      <div class="card-body">
-        <p class="card-text small">
-          Dodatne informacije, linkovi ili widgeti mogu se smjestiti ovdje.
-        </p>
-        <a href="#" class="btn btn-sm btn-outline-primary w-100">Akcija</a>
-      </div>
-    </div>
-  </Fragment>
+  <SlotPlaceholder
+    slot="sidebar-right"
+    name="sidebar-right (widgets)"
+    minHeight="400px"
+    color="warning"
+  />
 </SidebarDual>

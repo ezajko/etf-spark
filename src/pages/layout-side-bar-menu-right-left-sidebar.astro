@@ -1,11 +1,11 @@
 ---
-// ETF UNSA - Left Sidebar + Right Menu Layout
+// ETF UNSA - Right Side Menu + Left Sidebar Layout
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
 import SidebarDual from '../layouts/SidebarDual.astro';
 import SideMenu from '../components/navigation/SideMenu.astro';
-import LoremIpsum from '../components/LoremIpsum.astro';
+import SlotPlaceholder from '../components/debug/SlotPlaceholder.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
@@ -16,37 +16,19 @@ const breadcrumbItems = [
 
 <SidebarDual title="Lijevi Sidebar + Desni Meni | ETF UNSA" breadcrumbItems={breadcrumbItems}>
   <!-- Banner Slot -->
-  <section slot="banner" class="ez-hero ez-hero--small bg-dark text-white">
-    <div class="ez-hero__content container">
-      <div class="row">
-        <div class="col-lg-8">
-          <h1 class="ez-hero__title mb-2">Lijevi Sidebar + Desni Meni</h1>
-          <p class="ez-hero__subtitle text-white-50">
-            Primjer stranice sa sidebarom lijevo i menijem desno.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+  <SlotPlaceholder slot="banner" name="banner" minHeight="150px" />
 
   <!-- Left Sidebar -->
-  <Fragment slot="sidebar-left">
-    <div class="card border-0 shadow-sm">
-      <div class="card-header bg-white border-bottom fw-bold py-3">Lijevi Widget</div>
-      <div class="card-body">
-        <p class="card-text small">Generički sadržaj za lijevi sidebar.</p>
-      </div>
-    </div>
-  </Fragment>
+  <SlotPlaceholder
+    slot="sidebar-left"
+    name="sidebar-left (widgets)"
+    minHeight="400px"
+    color="warning"
+  />
 
   <!-- Main Content -->
-  <h2 class="mb-4">Glavni Sadržaj</h2>
-  <p class="lead">Ovaj layout postavlja navigaciju na desnu stranu, a dodatne widgete na lijevu.</p>
-  <hr class="my-4" />
-  <LoremIpsum />
+  <SlotPlaceholder name="main content" minHeight="500px" />
 
   <!-- Right Sidebar (Menu) -->
-  <Fragment slot="sidebar-right">
-    <SideMenu />
-  </Fragment>
+  <SideMenu slot="sidebar-right" />
 </SidebarDual>

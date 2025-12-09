@@ -1,0 +1,16 @@
+---
+interface Props {
+  name: string;
+  minHeight?: string;
+  color?: string; // Optional custom color class (border/bg/text)
+}
+
+const { name, minHeight = '100px', color = 'success' } = Astro.props;
+---
+
+<div
+  class={`d-flex align-items-center justify-content-center w-100 border border-2 border-${color} bg-${color}-subtle text-${color}-emphasis rounded fw-bold text-uppercase`}
+  style={`min-height: ${minHeight}; letter-spacing: 1px;`}
+>
+  {name} SLOT
+</div>
