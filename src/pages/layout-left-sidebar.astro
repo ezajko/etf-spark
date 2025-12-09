@@ -3,56 +3,56 @@
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
-import PageLayout from '../layouts/PageLayout.astro';
+import SidebarLeft from '../layouts/SidebarLeft.astro';
 import LoremIpsum from '../components/LoremIpsum.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
   { label: 'Layouts', href: '#' },
-  { label: 'Lijevi Sidebar', href: '#', active: true }
+  { label: 'Lijevi Sidebar', href: '#', active: true },
 ];
 ---
 
-<PageLayout title="Lijevi Sidebar | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+<SidebarLeft title="Lijevi Sidebar | ETF UNSA" breadcrumbItems={breadcrumbItems}>
   <!-- Banner Slot -->
   <section slot="banner" class="ez-hero ez-hero--small bg-primary text-white">
     <div class="ez-hero__content container">
       <div class="row">
         <div class="col-lg-8">
           <h1 class="ez-hero__title mb-2">Lijevi Sidebar</h1>
-          <p class="ez-hero__subtitle text-white-50">Primjer stranice sa sidebarom na lijevoj strani.</p>
+          <p class="ez-hero__subtitle text-white-50">
+            Primjer stranice sa sidebarom na lijevoj strani.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Main Content Grid -->
-  <div class="col-md-3 mb-4 mb-md-0">
+  <!-- Sidebar Content -->
+  <Fragment slot="sidebar">
     <div class="card border-0 shadow-sm">
-      <div class="card-header bg-white border-bottom fw-bold py-3">
-        Widget Naslov
-      </div>
+      <div class="card-header bg-white border-bottom fw-bold py-3">Widget Naslov</div>
       <div class="card-body">
         <p class="card-text small text-muted">
-          Ovo je generički widget koji se može koristiti za razne namjene (npr. najnovije vijesti, kalendar, itd.).
+          Ovo je generički widget koji se može koristiti za razne namjene (npr. najnovije vijesti,
+          kalendar, itd.).
         </p>
       </div>
     </div>
-    
+
     <div class="card border-0 shadow-sm mt-4">
       <div class="card-body">
         <h6 class="card-title fw-bold">Kontakt</h6>
         <p class="card-text small text-muted">
-          Zmaja od Bosne bb<br>
-          Kampus Univerziteta<br>
+          Zmaja od Bosne bb<br />
+          Kampus Univerziteta<br />
           71000 Sarajevo
         </p>
       </div>
     </div>
-  </div>
+  </Fragment>
 
-  <div class="col-md-9">
-    <h2 class="mb-4">Glavni Sadržaj</h2>
-    <LoremIpsum />
-  </div>
-</PageLayout>
+  <!-- Main Content -->
+  <h2 class="mb-4">Glavni Sadržaj</h2>
+  <LoremIpsum />
+</SidebarLeft>

@@ -2,7 +2,7 @@
 // ETF UNSA - Section Layout Example (Left Sidebar)
 // Author: Ernedin Zajko <ezajko@root.ba>
 
-import SectionLeftSidebar from '../../layouts/SectionLeftSidebar.astro';
+import SidebarLeft from '../../layouts/SidebarLeft.astro';
 import SectionLinksMenu from '../../components/SectionLinksMenu.astro';
 import ContactWidget from '../../components/ContactWidget.astro';
 import DocumentWidget from '../../components/DocumentWidget.astro';
@@ -23,7 +23,7 @@ const quickLinks = [
 ];
 ---
 
-<SectionLeftSidebar
+<SidebarLeft
   title="Primjer Generičke Stranice (Lijevo) | ETF UNSA"
   breadcrumbItems={breadcrumbItems}
   bannerTitle="Odsjek za automatiku"
@@ -98,4 +98,4 @@ const quickLinks = [
       </div>
     </div>
   </div>
-</SectionLeftSidebar>
+</SidebarLeft>

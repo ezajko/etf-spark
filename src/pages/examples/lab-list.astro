@@ -3,7 +3,7 @@
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
-import PageLayout from '../../layouts/PageLayout.astro';
+import NoSidebar from '../../layouts/NoSidebar.astro';
 import ContentCard from '../../components/ContentCard.astro';
 import CardGroup from '../../components/CardGroup.astro';
 
@@ -51,33 +51,31 @@ const labs = [
 ];
 ---
 
-<PageLayout title="Laboratorije | ETF UNSA" breadcrumbItems={breadcrumbItems}>
-  <div class="col-12">
-    <h1 class="mb-4">Laboratorije i Istraživanje</h1>
-    <p class="lead mb-5">
-      Naše laboratorije su centri izvrsnosti za istraživanje i praktičnu nastavu, opremljene
-      savremenom tehnologijom.
-    </p>
+<NoSidebar title="Laboratorije | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+  <h1 class="mb-4">Laboratorije i Istraživanje</h1>
+  <p class="lead mb-5">
+    Naše laboratorije su centri izvrsnosti za istraživanje i praktičnu nastavu, opremljene
+    savremenom tehnologijom.
+  </p>
 
-    <CardGroup cols={2}>
-      {
-        labs.map((lab) => (
-          <div class="col">
-            <ContentCard
-              title={lab.name}
-              href="#"
-              layout="horizontal"
-              imagePosition="left"
-              excerpt={lab.focus}
-            >
-              <div class="mt-3">
-                <small class="text-muted d-block mb-1">Location:</small>
-                <span class="fw-bold">{lab.location}</span>
-              </div>
-            </ContentCard>
-          </div>
-        ))
-      }
-    </CardGroup>
-  </div>
-</PageLayout>
+  <CardGroup cols={2}>
+    {
+      labs.map((lab) => (
+        <div class="col">
+          <ContentCard
+            title={lab.name}
+            href="#"
+            layout="horizontal"
+            imagePosition="left"
+            excerpt={lab.focus}
+          >
+            <div class="mt-3">
+              <small class="text-muted d-block mb-1">Location:</small>
+              <span class="fw-bold">{lab.location}</span>
+            </div>
+          </ContentCard>
+        </div>
+      ))
+    }
+  </CardGroup>
+</NoSidebar>

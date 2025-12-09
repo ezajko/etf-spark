@@ -3,40 +3,39 @@
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
-import PageLayout from '../layouts/PageLayout.astro';
+import SidebarRight from '../layouts/SidebarRight.astro';
 import LoremIpsum from '../components/LoremIpsum.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
   { label: 'Layouts', href: '#' },
-  { label: 'Desni Sidebar', href: '#', active: true }
+  { label: 'Desni Sidebar', href: '#', active: true },
 ];
 ---
 
-<PageLayout title="Desni Sidebar | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+<SidebarRight title="Desni Sidebar | ETF UNSA" breadcrumbItems={breadcrumbItems}>
   <!-- Banner Slot -->
   <section slot="banner" class="ez-hero ez-hero--small bg-dark text-white">
     <div class="ez-hero__content container">
       <div class="row">
         <div class="col-lg-8">
           <h1 class="ez-hero__title mb-2">Desni Sidebar</h1>
-          <p class="ez-hero__subtitle text-white-50">Primjer stranice sa sidebarom na desnoj strani.</p>
+          <p class="ez-hero__subtitle text-white-50">
+            Primjer stranice sa sidebarom na desnoj strani.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Main Content Grid -->
-  <div class="col-md-9">
-    <h2 class="mb-4">Glavni Sadržaj</h2>
-    <LoremIpsum />
-  </div>
+  <!-- Main Content -->
+  <h2 class="mb-4">Glavni Sadržaj</h2>
+  <LoremIpsum />
 
-  <div class="col-md-3 mt-4 mt-md-0">
+  <!-- Sidebar Content -->
+  <Fragment slot="sidebar">
     <div class="card border-0 shadow-sm">
-      <div class="card-header bg-white border-bottom fw-bold py-3">
-        Korisni Linkovi
-      </div>
+      <div class="card-header bg-white border-bottom fw-bold py-3">Korisni Linkovi</div>
       <div class="list-group list-group-flush">
         <a href="#" class="list-group-item list-group-item-action">Link 1</a>
         <a href="#" class="list-group-item list-group-item-action">Link 2</a>
@@ -48,9 +47,10 @@ const breadcrumbItems = [
       <div class="card-body">
         <h6 class="card-title fw-bold">Napomena</h6>
         <p class="card-text small text-muted">
-          Ovo je primjer sidebara sa desne strane koji se često koristi za dodatne informacije ili povezane linkove.
+          Ovo je primjer sidebara sa desne strane koji se često koristi za dodatne informacije ili
+          povezane linkove.
         </p>
       </div>
     </div>
-  </div>
-</PageLayout>
+  </Fragment>
+</SidebarRight>

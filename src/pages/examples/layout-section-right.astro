@@ -2,7 +2,7 @@
 // ETF UNSA - Section Layout Example (Right Sidebar)
 // Author: Ernedin Zajko <ezajko@root.ba>
 
-import SectionRightSidebar from '../../layouts/SectionRightSidebar.astro';
+import SidebarRight from '../../layouts/SidebarRight.astro';
 import SectionLinksMenu from '../../components/SectionLinksMenu.astro';
 import ContactWidget from '../../components/ContactWidget.astro';
 import DocumentWidget from '../../components/DocumentWidget.astro';
@@ -23,7 +23,7 @@ const quickLinks = [
 ];
 ---
 
-<SectionRightSidebar
+<SidebarRight
   title="Primjer Generičke Stranice (Desno) | ETF UNSA"
   breadcrumbItems={breadcrumbItems}
   bannerTitle="Softversko inženjerstvo"
@@ -38,7 +38,7 @@ const quickLinks = [
       je lijevo (široki stubac), a widgeti desno.
     </p>
     <p>
-      Ovaj layout je pogodan za studijske programe, članke, vijesti ili bilo koji sadržaj gdje je
+      Ovaj layout je pogodan za studijske programe, članke, vijesti ili bilo koje sadržaj gdje je
       fokus na tekstu, a sidebar pruža dodatne informacije.
     </p>
   </div>
@@ -81,4 +81,4 @@ const quickLinks = [
       documents={[{ title: 'Informator', size: '3 MB', format: 'PDF', link: '#' }]}
     />
   </Fragment>
-</SectionRightSidebar>
+</SidebarRight>

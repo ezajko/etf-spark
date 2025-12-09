@@ -1,0 +1,31 @@
+---
+// ETF UNSA - Lab Content Layout
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import SidebarRight from '../SidebarRight.astro';
+
+interface Props {
+  title: string;
+  breadcrumbItems?: { label: string; href: string; active?: boolean }[];
+  bannerTitle?: string;
+  bannerSubtitle?: string;
+  bannerBgClass?: string;
+}
+
+const { title, breadcrumbItems, bannerTitle, bannerSubtitle, bannerBgClass = 'bg-primary' } = Astro.props;
+---
+
+<SidebarRight
+  title={title}
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle={bannerTitle}
+  bannerSubtitle={bannerSubtitle}
+  bannerBgClass={bannerBgClass}
+>
+  <slot />
+
+  <Fragment slot="sidebar">
+    <slot name="sidebar" />
+  </Fragment>
+</SidebarRight>

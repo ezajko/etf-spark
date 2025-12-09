@@ -3,54 +3,50 @@
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
-import PageLayout from '../layouts/PageLayout.astro';
+import SidebarDual from '../layouts/SidebarDual.astro';
 import SideMenu from '../components/navigation/SideMenu.astro';
 import LoremIpsum from '../components/LoremIpsum.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
   { label: 'Layouts', href: '#' },
-  { label: 'Lijevi Sidebar + Desni Meni', href: '#', active: true }
+  { label: 'Lijevi Sidebar + Desni Meni', href: '#', active: true },
 ];
 ---
 
-<PageLayout title="Lijevi Sidebar + Desni Meni | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+<SidebarDual title="Lijevi Sidebar + Desni Meni | ETF UNSA" breadcrumbItems={breadcrumbItems}>
   <!-- Banner Slot -->
   <section slot="banner" class="ez-hero ez-hero--small bg-dark text-white">
     <div class="ez-hero__content container">
       <div class="row">
         <div class="col-lg-8">
           <h1 class="ez-hero__title mb-2">Lijevi Sidebar + Desni Meni</h1>
-          <p class="ez-hero__subtitle text-white-50">Primjer stranice sa sidebarom lijevo i menijem desno.</p>
+          <p class="ez-hero__subtitle text-white-50">
+            Primjer stranice sa sidebarom lijevo i menijem desno.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Left Column: Generic Sidebar -->
-  <div class="col-lg-3 mb-4 mb-lg-0 order-2 order-lg-1">
+  <!-- Left Sidebar -->
+  <Fragment slot="sidebar-left">
     <div class="card border-0 shadow-sm">
-      <div class="card-header bg-white border-bottom fw-bold py-3">
-        Lijevi Widget
-      </div>
+      <div class="card-header bg-white border-bottom fw-bold py-3">Lijevi Widget</div>
       <div class="card-body">
-         <p class="card-text small">Generički sadržaj za lijevi sidebar.</p>
+        <p class="card-text small">Generički sadržaj za lijevi sidebar.</p>
       </div>
     </div>
-  </div>
+  </Fragment>
 
-  <!-- Center Column: Main Content -->
-  <div class="col-lg-6 order-1 order-lg-2 mb-4 mb-lg-0">
-    <h2 class="mb-4">Glavni Sadržaj</h2>
-    <p class="lead">
-      Ovaj layout postavlja navigaciju na desnu stranu, a dodatne widgete na lijevu.
-    </p>
-    <hr class="my-4">
-    <LoremIpsum />
-  </div>
+  <!-- Main Content -->
+  <h2 class="mb-4">Glavni Sadržaj</h2>
+  <p class="lead">Ovaj layout postavlja navigaciju na desnu stranu, a dodatne widgete na lijevu.</p>
+  <hr class="my-4" />
+  <LoremIpsum />
 
-  <!-- Right Column: Side Menu -->
-  <div class="col-lg-3 order-3 order-lg-3 d-none d-lg-block">
+  <!-- Right Sidebar (Menu) -->
+  <Fragment slot="sidebar-right">
     <SideMenu />
-  </div>
-</PageLayout>
+  </Fragment>
+</SidebarDual>

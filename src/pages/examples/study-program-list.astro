@@ -3,7 +3,7 @@
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
-import PageLayout from '../../layouts/PageLayout.astro';
+import NoSidebar from '../../layouts/NoSidebar.astro';
 import ProgramCard from '../../components/ProgramCard.astro';
 
 const breadcrumbItems = [
@@ -53,27 +53,25 @@ const programs = [
 ];
 ---
 
-<PageLayout title="Studijski programi | ETF UNSA" breadcrumbItems={breadcrumbItems}>
-  <div class="col-12">
-    <h1 class="mb-4">Studijski programi</h1>
-    <p class="lead mb-5">
-      Odsjek nudi programe na sva tri ciklusa studija, usklađene sa Bolonjskim procesom i potrebama
-      tržišta rada.
-    </p>
+<NoSidebar title="Studijski programi | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+  <h1 class="mb-4">Studijski programi</h1>
+  <p class="lead mb-5">
+    Odsjek nudi programe na sva tri ciklusa studija, usklađene sa Bolonjskim procesom i potrebama
+    tržišta rada.
+  </p>
 
-    <div class="d-flex flex-column gap-4">
-      {
-        programs.map((prog) => (
-          <ProgramCard
-            name={prog.name}
-            cycle={prog.cycle}
-            title={prog.title}
-            duration={prog.duration}
-            ects={prog.ects}
-            link={prog.link}
-          />
-        ))
-      }
-    </div>
+  <div class="d-flex flex-column gap-4">
+    {
+      programs.map((prog) => (
+        <ProgramCard
+          name={prog.name}
+          cycle={prog.cycle}
+          title={prog.title}
+          duration={prog.duration}
+          ects={prog.ects}
+          link={prog.link}
+        />
+      ))
+    }
   </div>
-</PageLayout>
+</NoSidebar>

@@ -3,7 +3,7 @@
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
-import PageLayout from '../../layouts/PageLayout.astro';
+import SidebarLeft from '../../layouts/SidebarLeft.astro';
 import SideMenu from '../../components/navigation/SideMenu.astro';
 import Pagination from '../../components/navigation/Pagination.astro';
 import ContentCard from '../../components/ContentCard.astro';
@@ -74,61 +74,57 @@ const staff = [
 const base = import.meta.env.BASE_URL;
 ---
 
-<PageLayout title="Osoblje | ETF UNSA" breadcrumbItems={breadcrumbItems}>
-  <!-- Left Column: Side Menu -->
-  <div class="col-lg-3 mb-4 mb-lg-0 d-none d-lg-block">
-    <SideMenu />
-  </div>
+<SidebarLeft title="Osoblje | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+  <!-- Side Menu Slot -->
+  <SideMenu slot="sidebar" />
 
   <!-- Main Content -->
-  <div class="col-lg-9">
-    <div class="d-flex justify-content-between align-items-center mb-4">
-      <h1 class="h2 mb-0">Osoblje Odsjeka</h1>
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h2 mb-0">Osoblje Odsjeka</h1>
 
-      <!-- Search/Filter -->
-      <div class="d-flex gap-2">
-        <input type="text" class="form-control form-control-sm" placeholder="Pretraži osoblje..." />
-        <select class="form-select form-select-sm" style="width: auto;">
-          <option>Sva zvanja</option>
-          <option>Profesori</option>
-          <option>Asistenti</option>
-        </select>
-      </div>
-    </div>
-
-    <CardGroup cols={3}>
-      {
-        staff.map((person) => (
-          <div class="col">
-            <ContentCard title={person.name} href="#" layout="vertical">
-              <div class="text-center">
-                <div class="mb-3">
-                  <div class="ez-avatar ez-avatar--xl mx-auto">
-                    <i class="bi bi-person" />
-                  </div>
-                </div>
-                <h5 class="card-title mb-1">
-                  <a
-                    href={base + '/examples/staff-profile'}
-                    class="text-decoration-none text-dark stretched-link"
-                  >
-                    {person.name}
-                  </a>
-                </h5>
-                <p class="text-muted small mb-2">{person.title}</p>
-                <p class="small text-primary mb-0">
-                  <i class="bi bi-envelope me-1" /> {person.email}
-                </p>
-              </div>
-            </ContentCard>
-          </div>
-        ))
-      }
-    </CardGroup>
-
-    <!-- Pagination -->
-    <div class="mt-5">
-      <Pagination currentPage={1} totalPages={3} baseUrl={base + '/examples/staff-list'} />
+    <!-- Search/Filter -->
+    <div class="d-flex gap-2">
+      <input type="text" class="form-control form-control-sm" placeholder="Pretraži osoblje..." />
+      <select class="form-select form-select-sm" style="width: auto;">
+        <option>Sva zvanja</option>
+        <option>Profesori</option>
+        <option>Asistenti</option>
+      </select>
     </div>
   </div>
-</PageLayout>
+
+  <CardGroup cols={3}>
+    {
+      staff.map((person) => (
+        <div class="col">
+          <ContentCard title={person.name} href="#" layout="vertical">
+            <div class="text-center">
+              <div class="mb-3">
+                <div class="ez-avatar ez-avatar--xl mx-auto">
+                  <i class="bi bi-person" />
+                </div>
+              </div>
+              <h5 class="card-title mb-1">
+                <a
+                  href={base + '/examples/staff-profile'}
+                  class="text-decoration-none text-dark stretched-link"
+                >
+                  {person.name}
+                </a>
+              </h5>
+              <p class="text-muted small mb-2">{person.title}</p>
+              <p class="small text-primary mb-0">
+                <i class="bi bi-envelope me-1" /> {person.email}
+              </p>
+            </div>
+          </ContentCard>
+        </div>
+      ))
+    }
+  </CardGroup>
+
+  <!-- Pagination -->
+  <div class="mt-5">
+    <Pagination currentPage={1} totalPages={3} baseUrl={base + '/examples/staff-list'} />
+  </div>
+</SidebarLeft>

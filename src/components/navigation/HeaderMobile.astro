@@ -21,7 +21,7 @@ const base = import.meta.env.BASE_URL;
     </div>
     <div class="mobile-menu-viewport">
       <ul class="mobile-menu-level active" data-level="1">
-        <li><a href={base + "/"}>Početna</a></li>
+        <li><a href={base + '/'}>Početna</a></li>
         <li class="has-children">
           <a href="#" class="d-flex justify-content-between align-items-center"
             >Layouts <span class="arrow">&gt;</span></a
@@ -29,21 +29,26 @@ const base = import.meta.env.BASE_URL;
           <ul class="mobile-menu-level">
             <li class="back-item">
               <a href="#" class="d-flex align-items-center"
-                ><span class="arrow me-2">&lt;</span> Nazad</a>
+                ><span class="arrow me-2">&lt;</span> Nazad</a
+              >
             </li>
-            <li><a href={base + "/layout-left-sidebar"}>Lijevi Sidebar</a></li>
-            <li><a href={base + "/layout-right-sidebar"}>Desni Sidebar</a></li>
-            <li><a href={base + "/layout-both-sidebars"}>Oba Sidebara</a></li>
-            <li><a href={base + "/layout-no-sidebar"}>Bez Sidebara</a></li>
-            <li><a href={base + "/examples/layout-section-left"}>Sekcijska Str. (Lijevo)</a></li>
-            <li><a href={base + "/examples/layout-section-right"}>Sekcijska Str. (Desno)</a></li>
-            <li><a href={base + "/layout-side-bar-menu-left"}>Lijevi Meni (Tree)</a></li>
-            <li><a href={base + "/layout-side-bar-menu-right"}>Desni Meni (Tree)</a></li>
+            <li><a href={base + '/layout-left-sidebar'}>Lijevi Sidebar</a></li>
+            <li><a href={base + '/layout-right-sidebar'}>Desni Sidebar</a></li>
+            <li><a href={base + '/layout-both-sidebars'}>Oba Sidebara</a></li>
+            <li><a href={base + '/layout-no-sidebar'}>Bez Sidebara</a></li>
+            <li><a href={base + '/examples/layout-section-left'}>Sekcijska Str. (Lijevo)</a></li>
+            <li><a href={base + '/examples/layout-section-right'}>Sekcijska Str. (Desno)</a></li>
+            <li><a href={base + '/layout-side-bar-menu-left'}>Lijevi Meni (Tree)</a></li>
+            <li><a href={base + '/layout-side-bar-menu-right'}>Desni Meni (Tree)</a></li>
             <li>
-              <a href={base + "/layout-side-bar-menu-left-right-sidebar"}>Lijevi Meni + Desni Sidebar</a>
+              <a href={base + '/layout-side-bar-menu-left-right-sidebar'}
+                >Lijevi Meni + Desni Sidebar</a
+              >
             </li>
             <li>
-              <a href={base + "/layout-side-bar-menu-right-left-sidebar"}>Lijevi Sidebar + Desni Meni</a>
+              <a href={base + '/layout-side-bar-menu-right-left-sidebar'}
+                >Lijevi Sidebar + Desni Meni</a
+              >
             </li>
           </ul>
         </li>
@@ -54,24 +59,27 @@ const base = import.meta.env.BASE_URL;
           <ul class="mobile-menu-level">
             <li class="back-item">
               <a href="#" class="d-flex align-items-center"
-                ><span class="arrow me-2">&lt;</span> Nazad</a>
+                ><span class="arrow me-2">&lt;</span> Nazad</a
+              >
             </li>
             <li class="menu-title">Odsjeci i Osoblje</li>
-            <li><a href={base + "/examples/department"}>Stranica Odsjeka</a></li>
-            <li><a href={base + "/examples/study-program"}>Studijski Program</a></li>
-            <li><a href={base + "/examples/staff-list"}>Lista Osoblja</a></li>
-            <li><a href={base + "/examples/staff-profile"}>Profil Profesora</a></li>
-            <li><a href={base + "/examples/course-details"}>Detalji Predmeta</a></li>
+            <li><a href={base + '/examples/department'}>Stranica Odsjeka</a></li>
+            <li><a href={base + '/examples/study-program'}>Studijski Program</a></li>
+            <li><a href={base + '/examples/study-program-list'}>Lista Programa</a></li>
+            <li><a href={base + '/examples/staff-list'}>Lista Osoblja</a></li>
+            <li><a href={base + '/examples/staff-profile'}>Profil Profesora</a></li>
+            <li><a href={base + '/examples/chair-list'}>Lista Katedri</a></li>
+            <li><a href={base + '/examples/course-details'}>Detalji Predmeta</a></li>
             <li class="menu-title">Aktuelnosti</li>
-            <li><a href={base + "/examples/news-list"}>Arhiva Vijesti</a></li>
-            <li><a href={base + "/examples/news-single"}>Pojedinačna Vijest</a></li>
-            <li><a href={base + "/examples/event-list"}>Arhiva Događaja</a></li>
-            <li><a href={base + "/examples/event-single"}>Pojedinačni Događaj</a></li>
+            <li><a href={base + '/examples/news-list'}>Arhiva Vijesti</a></li>
+            <li><a href={base + '/examples/news-single'}>Pojedinačna Vijest</a></li>
+            <li><a href={base + '/examples/event-list'}>Arhiva Događaja</a></li>
+            <li><a href={base + '/examples/event-single'}>Pojedinačni Događaj</a></li>
             <li class="menu-title">Dokumenti</li>
-            <li><a href={base + "/examples/document-list"}>Arhiva Dokumenata</a></li>
-            <li><a href={base + "/examples/document-single"}>Pojedinačni Dokument</a></li>
-            <li><a href={base + "/examples/project-list"}>Lista Projekata</a></li>
-            <li><a href={base + "/examples/project-single"}>Pojedinačni Projekat</a></li>
+            <li><a href={base + '/examples/document-list'}>Arhiva Dokumenata</a></li>
+            <li><a href={base + '/examples/document-single'}>Pojedinačni Dokument</a></li>
+            <li><a href={base + '/examples/project-list'}>Lista Projekata</a></li>
+            <li><a href={base + '/examples/project-single'}>Pojedinačni Projekat</a></li>
           </ul>
         </li>
         <li class="has-children">
@@ -81,7 +89,8 @@ const base = import.meta.env.BASE_URL;
           <ul class="mobile-menu-level">
             <li class="back-item">
               <a href="#" class="d-flex align-items-center"
-                ><span class="arrow me-2">&lt;</span> Nazad</a>
+                ><span class="arrow me-2">&lt;</span> Nazad</a
+              >
             </li>
             <li class="has-children">
               <a href="#" class="d-flex justify-content-between align-items-center"
@@ -90,7 +99,8 @@ const base = import.meta.env.BASE_URL;
               <ul class="mobile-menu-level">
                 <li class="back-item">
                   <a href="#" class="d-flex align-items-center"
-                    ><span class="arrow me-2">&lt;</span> Nazad</a>
+                    ><span class="arrow me-2">&lt;</span> Nazad</a
+                  >
                 </li>
                 <li><a href="#">Upis i prijem</a></li>
                 <li class="has-children">
@@ -100,7 +110,8 @@ const base = import.meta.env.BASE_URL;
                   <ul class="mobile-menu-level">
                     <li class="back-item">
                       <a href="#" class="d-flex align-items-center"
-                        ><span class="arrow me-2">&lt;</span> Nazad</a>
+                        ><span class="arrow me-2">&lt;</span> Nazad</a
+                      >
                     </li>
                     <li><a href="#">Automatika i elektronika</a></li>
                     <li><a href="#">Elektroenergetika</a></li>
@@ -111,7 +122,8 @@ const base = import.meta.env.BASE_URL;
                       <ul class="mobile-menu-level">
                         <li class="back-item">
                           <a href="#" class="d-flex align-items-center"
-                            ><span class="arrow me-2">&lt;</span> Nazad</a>
+                            ><span class="arrow me-2">&lt;</span> Nazad</a
+                          >
                         </li>
                         <li><a href="#">Odsjek</a></li>
                         <li class="has-children">
@@ -121,7 +133,8 @@ const base = import.meta.env.BASE_URL;
                           <ul class="mobile-menu-level">
                             <li class="back-item">
                               <a href="#" class="d-flex align-items-center"
-                                ><span class="arrow me-2">&lt;</span> Nazad</a>
+                                ><span class="arrow me-2">&lt;</span> Nazad</a
+                              >
                             </li>
                             <li><a href="#">Matematika 1</a></li>
                             <li><a href="#">Fizika 1</a></li>
@@ -145,7 +158,8 @@ const base = import.meta.env.BASE_URL;
               <ul class="mobile-menu-level">
                 <li class="back-item">
                   <a href="#" class="d-flex align-items-center"
-                    ><span class="arrow me-2">&lt;</span> Nazad</a>
+                    ><span class="arrow me-2">&lt;</span> Nazad</a
+                  >
                 </li>
                 <li><a href="#">Upis</a></li>
                 <li><a href="#">Programi</a></li>
@@ -162,7 +176,8 @@ const base = import.meta.env.BASE_URL;
           <ul class="mobile-menu-level">
             <li class="back-item">
               <a href="#" class="d-flex align-items-center"
-                ><span class="arrow me-2">&lt;</span> Nazad</a>
+                ><span class="arrow me-2">&lt;</span> Nazad</a
+              >
             </li>
             <li><a href="#">Automatika i elektronika</a></li>
             <li><a href="#">Elektroenergetika</a></li>

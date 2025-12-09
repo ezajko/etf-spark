@@ -3,7 +3,7 @@
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
-import PageLayout from '../../layouts/PageLayout.astro';
+import NoSidebar from '../../layouts/NoSidebar.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
@@ -32,49 +32,47 @@ const chairs = [
 const base = import.meta.env.BASE_URL;
 ---
 
-<PageLayout title="Katedre | ETF UNSA" breadcrumbItems={breadcrumbItems}>
-  <div class="col-12">
-    <h1 class="mb-4">Katedre Odsjeka</h1>
-    <p class="lead mb-5">Odsjek za računarstvo i informatiku organizovan je kroz dvije katedre</p>
+<NoSidebar title="Katedre | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+  <h1 class="mb-4">Katedre Odsjeka</h1>
+  <p class="lead mb-5">Odsjek za računarstvo i informatiku organizovan je kroz dvije katedre</p>
 
-    <div class="row g-4">
-      {
-        chairs.map((chair) => (
-          <div class="col-md-6">
-            <div class="card h-100 border-0 shadow-sm">
-              <div class="card-body p-4">
-                <h3 class="card-title mb-3">{chair.name}</h3>
-                <p class="card-text text-muted mb-4">{chair.description}</p>
+  <div class="row g-4">
+    {
+      chairs.map((chair) => (
+        <div class="col-md-6">
+          <div class="card h-100 border-0 shadow-sm">
+            <div class="card-body p-4">
+              <h3 class="card-title mb-3">{chair.name}</h3>
+              <p class="card-text text-muted mb-4">{chair.description}</p>
 
-                <div class="d-flex align-items-center mb-3">
-                  <div class="ez-avatar ez-avatar--sm me-3">
-                    <i class="bi bi-person text-primary" />
-                  </div>
-                  <div>
-                    <small class="text-muted d-block">Head of Chair</small>
-                    <span class="fw-bold">{chair.head}</span>
-                  </div>
+              <div class="d-flex align-items-center mb-3">
+                <div class="ez-avatar ez-avatar--sm me-3">
+                  <i class="bi bi-person text-primary" />
                 </div>
-
-                <div class="d-flex align-items-center">
-                  <div class="ez-avatar ez-avatar--sm me-3">
-                    <i class="bi bi-people text-primary" />
-                  </div>
-                  <div>
-                    <small class="text-muted d-block">Members</small>
-                    <span class="fw-bold">{chair.members}</span>
-                  </div>
+                <div>
+                  <small class="text-muted d-block">Head of Chair</small>
+                  <span class="fw-bold">{chair.head}</span>
                 </div>
-
-                <hr class="my-4" />
-                <a href={base + '/examples/staff-list'} class="btn btn-outline-primary w-100">
-                  View Members
-                </a>
               </div>
+
+              <div class="d-flex align-items-center">
+                <div class="ez-avatar ez-avatar--sm me-3">
+                  <i class="bi bi-people text-primary" />
+                </div>
+                <div>
+                  <small class="text-muted d-block">Members</small>
+                  <span class="fw-bold">{chair.members}</span>
+                </div>
+              </div>
+
+              <hr class="my-4" />
+              <a href={base + '/examples/staff-list'} class="btn btn-outline-primary w-100">
+                View Members
+              </a>
             </div>
           </div>
-        ))
-      }
-    </div>
+        </div>
+      ))
+    }
   </div>
-</PageLayout>
+</NoSidebar>
