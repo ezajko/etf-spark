@@ -7,6 +7,7 @@ import SidebarLeft from '../../layouts/SidebarLeft.astro';
 import InfoWidget from '../../components/InfoWidget.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
 import PageHeader from '../../components/PageHeader.astro';
+import Banner from '../../components/Banner.astro';
 import ContentCard from '../../components/ContentCard.astro';
 import CardGroup from '../../components/CardGroup.astro';
 import ContactWidget from '../../components/ContactWidget.astro';
@@ -27,11 +28,13 @@ const base = import.meta.env.BASE_URL;
   breadcrumbItems={breadcrumbItems}
 >
   <!-- Banner Slot -->
-  <PageHeader
+  <!-- Banner Slot -->
+  <Banner
     slot="banner"
     title="Department Name"
     subtitle="Organizational Unit of the Faculty"
-    bgClass="bg-dark"
+    size="m"
+    image="/images/campus.jpg"
   />
 
   <!-- Sidebar Content -->

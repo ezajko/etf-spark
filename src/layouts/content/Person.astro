@@ -28,6 +28,9 @@ const { title, breadcrumbItems, bannerTitle, bannerSubtitle } = Astro.props;
   bannerSubtitle={bannerSubtitle}
   bannerBgClass="bg-primary"
 >
+  <!-- Banner Slot -->
+  <slot name="banner" slot="banner" />
+
   <!-- Main Content Slot -->
   <slot />
 

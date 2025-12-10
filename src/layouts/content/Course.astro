@@ -28,6 +28,9 @@ const { title, breadcrumbItems, bannerTitle, bannerSubtitle } = Astro.props;
   bannerSubtitle={bannerSubtitle}
   bannerBgClass="bg-dark"
 >
+  <!-- Banner Slot -->
+  <slot name="banner" slot="banner" />
+
   <!-- Left Sidebar (Menu) -->
   <Fragment slot="sidebar-left">
     <slot name="sidebar-left" />

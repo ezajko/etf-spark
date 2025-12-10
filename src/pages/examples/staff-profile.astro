@@ -11,6 +11,7 @@ import IconListItem from '../../components/IconListItem.astro';
 import ContentCard from '../../components/ContentCard.astro';
 import Accordion from '../../components/Accordion.astro';
 import AccordionItem from '../../components/AccordionItem.astro';
+import Banner from '../../components/Banner.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
@@ -21,12 +22,15 @@ const breadcrumbItems = [
 ];
 ---
 
-<Person
-  title="Dr. Ime Prezime | ETF UNSA"
-  breadcrumbItems={breadcrumbItems}
-  bannerTitle="Dr. Ime Prezime"
-  bannerSubtitle="Redovni profesor"
->
+<Person title="Dr. Ime Prezime | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+  <!-- Banner Slot -->
+  <Banner
+    slot="banner"
+    title="Dr. Ime Prezime"
+    subtitle="Redovni profesor"
+    size="s"
+    image="/images/staff-banner.jpg"
+  />
   <!-- Left Column: Profile Card -->
   <!-- Using sidebar slot to place the profile card in the sidebar -->
   <Fragment slot="sidebar">

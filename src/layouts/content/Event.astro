@@ -26,6 +26,9 @@ const { title, breadcrumbItems, bannerTitle } = Astro.props;
   bannerTitle={bannerTitle || 'Događaji'}
   bannerBgClass="bg-primary"
 >
+  <!-- Banner Slot -->
+  <slot name="banner" slot="banner" />
+
   <slot />
 
   <Fragment slot="sidebar">
