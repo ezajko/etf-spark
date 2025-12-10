@@ -81,7 +81,7 @@ const getTotals = (courses: Course[]) => {
               active: i === 0,
             }))}
           >
-            <div class="tab-content border border-top-0 p-4 bg-white rounded-bottom">
+            <div class="tab-content border border-top-0 p-4 rounded-bottom">
               {year.semesters.map((sem, i) => {
                 const totals = getTotals(sem.courses);
                 return (

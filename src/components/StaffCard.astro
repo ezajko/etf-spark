@@ -10,7 +10,7 @@ interface Props {
   profileLink?: string;
 }
 
-const { name, title, email, profileLink = "/examples/staff-profile" } = Astro.props;
+const { name, title, email, profileLink = '/examples/staff-profile' } = Astro.props;
 ---
 
 <div class="card h-100 border-0 shadow-sm text-center p-3">
@@ -20,7 +20,7 @@ const { name, title, email, profileLink = "/examples/staff-profile" } = Astro.pr
     </div>
   </div>
   <h5 class="card-title mb-1">
-    <a href={profileLink} class="text-decoration-none text-dark stretched-link">{name}</a>
+    <a href={profileLink} class="text-decoration-none stretched-link">{name}</a>
   </h5>
   <p class="text-muted small mb-2">{title}</p>
   <p class="small text-primary mb-0"><i class="bi bi-envelope me-1"></i> {email}</p>

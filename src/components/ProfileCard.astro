@@ -27,115 +27,136 @@ interface Props {
   class?: string;
 }
 
-const { 
-  name, 
-  title, 
-  image, 
-  details = [], 
-  contact, 
-  cvLink, 
+const {
+  name,
+  title,
+  image,
+  details = [],
+  contact,
+  cvLink,
   socialLinks = [],
-  class: className 
+  class: className,
 } = Astro.props;
 ---
 
-<div class={`card border-0 shadow-sm text-center p-3 sticky-top ${className || ''}`} style="top: 2rem; z-index: 1;">
+<div
+  class={`card border-0 shadow-sm text-center p-3 sticky-top ${className || ''}`}
+  style="top: 2rem; z-index: 1;"
+>
   <div class="mb-3">
-    {image ? (
-      <img src={image} alt={name} class="rounded-circle" style="width: 150px; height: 150px; object-fit: cover;" />
-    ) : (
-      <div class="bg-secondary rounded-circle d-inline-flex align-items-center justify-content-center text-white" style="width: 150px; height: 150px; font-size: 3rem;">
-        <i class="bi bi-person"></i>
-      </div>
-    )}
+    {
+      image ? (
+        <img
+          src={image}
+          alt={name}
+          class="rounded-circle"
+          style="width: 150px; height: 150px; object-fit: cover;"
+        />
+      ) : (
+        <div
+          class="bg-secondary rounded-circle d-inline-flex align-items-center justify-content-center text-white"
+          style="width: 150px; height: 150px; font-size: 3rem;"
+        >
+          <i class="bi bi-person" />
+        </div>
+      )
+    }
   </div>
-  
+
   <h4 class="mb-1">{name}</h4>
   <p class="text-muted mb-3">{title}</p>
-  
-  {details.length > 0 && (
-    <div class="mb-3">
-      {details.map(detail => (
-        <div class="mb-2">
-          <span class="d-block small text-muted text-uppercase fw-bold">{detail.label}</span>
-          <span class="d-block small">{detail.value}</span>
-        </div>
-      ))}
-    </div>
-  )}
-  
-  {(contact || details.length > 0) && <hr>}
-  
-  {contact && (
-    <div class="list-group list-group-flush text-start mb-3">
-      {contact.email && (
-        <IconListItem 
-          icon="bi-envelope" 
-          value={contact.email} 
-          class="px-0 py-2 border-0"
-          iconColor="text-primary"
-        />
-      )}
-      {contact.phone && (
-        <IconListItem 
-          icon="bi-telephone" 
-          value={contact.phone} 
-          class="px-0 py-2 border-0"
-          iconColor="text-primary"
-        />
-      )}
-      {contact.office && (
-        <IconListItem 
-          icon="bi-geo-alt" 
-          value={contact.office} 
-          class="px-0 py-2 border-0"
-          iconColor="text-primary"
-        />
-      )}
-      {contact.website && (
-        <IconListItem 
-          icon="bi-globe" 
-          value={contact.website.label} 
-          link={contact.website.url}
-          class="px-0 py-2 border-0"
-          iconColor="text-primary"
-        />
-      )}
-    </div>
-  )}
-  
-  {contact && cvLink && <hr>}
 
-  {cvLink && (
-    <div class="list-group list-group-flush text-start mb-3">
-      <IconListItem 
-        icon="bi-file-earmark-person" 
-        value="Preuzmi Biografiju" 
-        label="PDF Dokument"
-        link={cvLink}
-        class="px-0 py-2 border-0"
-        iconColor="text-danger"
-      />
-    </div>
-  )}
-  
-  {(cvLink || (socialLinks && socialLinks.length > 0)) && <hr>}
-
-  {socialLinks && socialLinks.length > 0 && (
-    <div class="text-start">
-      <h6 class="text-uppercase text-muted small fw-bold mb-3">Profili</h6>
-      <div class="d-flex flex-column gap-2">
-        {socialLinks.map(link => (
-          <a href={link.url} class="text-decoration-none d-flex align-items-center text-dark">
-            {link.icon ? (
-              <i class={`bi ${link.icon} me-2 text-primary`}></i>
-            ) : (
-              <i class="bi bi-link-45deg me-2 text-primary"></i>
-            )}
-            {link.label}
-          </a>
+  {
+    details.length > 0 && (
+      <div class="mb-3">
+        {details.map((detail) => (
+          <div class="mb-2">
+            <span class="d-block small text-muted text-uppercase fw-bold">{detail.label}</span>
+            <span class="d-block small">{detail.value}</span>
+          </div>
         ))}
       </div>
-    </div>
-  )}
+    )
+  }
+
+  {(contact || details.length > 0) && <hr />}
+
+  {
+    contact && (
+      <div class="list-group list-group-flush text-start mb-3">
+        {contact.email && (
+          <IconListItem
+            icon="bi-envelope"
+            value={contact.email}
+            class="px-0 py-2 border-0"
+            iconColor="text-primary"
+          />
+        )}
+        {contact.phone && (
+          <IconListItem
+            icon="bi-telephone"
+            value={contact.phone}
+            class="px-0 py-2 border-0"
+            iconColor="text-primary"
+          />
+        )}
+        {contact.office && (
+          <IconListItem
+            icon="bi-geo-alt"
+            value={contact.office}
+            class="px-0 py-2 border-0"
+            iconColor="text-primary"
+          />
+        )}
+        {contact.website && (
+          <IconListItem
+            icon="bi-globe"
+            value={contact.website.label}
+            link={contact.website.url}
+            class="px-0 py-2 border-0"
+            iconColor="text-primary"
+          />
+        )}
+      </div>
+    )
+  }
+
+  {contact && cvLink && <hr />}
+
+  {
+    cvLink && (
+      <div class="list-group list-group-flush text-start mb-3">
+        <IconListItem
+          icon="bi-file-earmark-person"
+          value="Preuzmi Biografiju"
+          label="PDF Dokument"
+          link={cvLink}
+          class="px-0 py-2 border-0"
+          iconColor="text-danger"
+        />
+      </div>
+    )
+  }
+
+  {(cvLink || (socialLinks && socialLinks.length > 0)) && <hr />}
+
+  {
+    socialLinks && socialLinks.length > 0 && (
+      <div class="text-start">
+        <h6 class="text-uppercase text-muted small fw-bold mb-3">Profili</h6>
+        <div class="d-flex flex-column gap-2">
+          {socialLinks.map((link) => (
+            <a href={link.url} class="text-decoration-none d-flex align-items-center">
+              {link.icon ? (
+                <i class={`bi ${link.icon} me-2 text-primary`} />
+              ) : (
+                <i class="bi bi-link-45deg me-2 text-primary" />
+              )}
+              {link.label}
+            </a>
+          ))}
+        </div>
+      </div>
+    )
+  }
 </div>
