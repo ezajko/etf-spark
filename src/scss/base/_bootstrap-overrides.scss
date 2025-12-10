@@ -157,6 +157,9 @@
     // Accessible Link Color for Dark Mode (Lighter Blue)
     --bs-link-color: #64B5F6;
     --bs-link-hover-color: #90CAF9; // Even lighter on hover
+
+    // Card Footer Background in Dark Mode
+    --bs-tertiary-bg: #{$ez-bg-dark-secondary};
 }
 
 // Override Button Colors (because Bootstrap uses hardcoded hex in compiled CSS)
