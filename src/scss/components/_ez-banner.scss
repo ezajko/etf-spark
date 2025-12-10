@@ -1,0 +1,99 @@
+// ETF UNSA - Banner Component
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+:root {
+    // Banner Heights Scale
+    --ez-banner-xs: 7.5rem; // 120px - Strip / Header
+    --ez-banner-s: 15rem; // 240px - Standard Page
+    --ez-banner-m: 24rem; // 384px - Feature / Blog
+    --ez-banner-l: 30rem; // 480px - Desktop Hero
+    // XL is viewport dependent
+}
+
+.ez-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100%;
+    color: white; // Default text color
+    border-radius: 0; // Ensure flat design
+
+    // Dark Overlay
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+    }
+
+    // High Contrast Overlay Override
+    [data-ez-theme="high-contrast"] &::before {
+        background: rgba(0, 0, 0, 0.7); // Darker overlay for better contrast
+    }
+
+    // Content
+    &__content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        padding: $ez-spacing-md;
+        width: 100%;
+        max-width: 1200px; // Standard container width
+        margin: 0 auto;
+    }
+
+    // --- Sizes ---
+
+    // XS - 7.5rem (120px)
+    &--xs {
+        height: var(--ez-banner-xs);
+
+        .ez-banner__title,
+        h1,
+        h2 {
+            font-size: 1.5rem;
+            margin: 0;
+            line-height: 1.2;
+        }
+    }
+
+    // S - 15rem (240px)
+    &--s {
+        height: var(--ez-banner-s);
+    }
+
+    // M - 24rem (384px)
+    &--m {
+        height: var(--ez-banner-m);
+    }
+
+    // L - 30rem (480px)
+    &--l {
+        height: var(--ez-banner-l);
+    }
+
+    // XL - Full Screen
+    &--xl {
+        min-height: 100vh;
+        min-height: 100dvh; // Dynamic Viewport Height for mobile
+        flex-direction: column;
+    }
+
+    // --- Variants ---
+
+    // No Overlay
+    &--no-overlay {
+        &::before {
+            display: none;
+        }
+    }
+}
