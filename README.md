@@ -97,7 +97,6 @@ npm run format
 
 GPL-2.0-or-later
 
-Copyright (C) 2024 Elektrotehnički fakultet Univerziteta u Sarajevu
 
 ## Author
 
