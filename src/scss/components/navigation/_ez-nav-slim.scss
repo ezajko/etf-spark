@@ -21,6 +21,24 @@
             opacity: 1;
             text-decoration: none;
         }
+
+        // High Contrast Override:
+        // Even though Global HC forces theme color (mostly black/yellow),
+        // Slim Header is ALWAYS black, so links must be white/yellow.
+        [data-ez-theme="high-contrast"] & {
+            color: #FFFFFF !important;
+            text-decoration: underline !important;
+
+            // In Dark Mode HC, Yellow is fine too, but White pops on Black.
+            // Let's stick to White to respect the "always dark header" logic, 
+            // or Yellow if we want it to match the HC Dark theme.
+            // Given the user said "black bg", white or yellow works.
+            // White is safest for "Light HC on Black Header".
+        }
+
+        [data-ez-theme="high-contrast"][data-bs-theme="dark"] & {
+            color: #FFD700 !important; // Yellow for Dark HC
+        }
     }
 
     .dropdown-menu {
