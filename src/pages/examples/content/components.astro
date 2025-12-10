@@ -11,6 +11,7 @@ import Accordion from '../../../components/Accordion.astro';
 import AccordionItem from '../../../components/AccordionItem.astro';
 import ContentCard from '../../../components/ContentCard.astro';
 import ProfileCard from '../../../components/ProfileCard.astro';
+import SimpleListItem from '../../../components/SimpleListItem.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
@@ -54,31 +55,13 @@ const base = import.meta.env.BASE_URL;
       >
         <div class="tab-content border border-top-0 p-4 rounded-bottom" id="exampleTabsContent">
           <TabItem id="tab1" active>
-            <h5>Sadržaj prvog taba</h5>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
-            </p>
+            Ovo je primjer običnog tekstualnog sadržaja za prvi vertikalni tab. Jednostavan opis.
           </TabItem>
           <TabItem id="tab2">
-            <h5>Tehničke specifikacije</h5>
-            <ul>
-              <li>Karakteristika 1: Vrijednost A</li>
-              <li>Karakteristika 2: Vrijednost B</li>
-              <li>Karakteristika 3: Vrijednost C</li>
-            </ul>
+            Ovo je primjer običnog tekstualnog sadržaja za drugi vertikalni tab. Specifikacije.
           </TabItem>
           <TabItem id="tab3">
-            <h5>Korisničke recenzije</h5>
-            <p>
-              <i class="bi bi-star-fill text-warning"></i>
-              <i class="bi bi-star-fill text-warning"></i>
-              <i class="bi bi-star-fill text-warning"></i>
-              <i class="bi bi-star-fill text-warning"></i>
-              <i class="bi bi-star text-warning"></i>
-              <br />
-              "Odličan proizvod, ali bi mogao biti jeftiniji." - <strong>Korisnik123</strong>
-            </p>
+            Ovo je primjer običnog tekstualnog sadržaja za treći vertikalni tab. Recenzije.
           </TabItem>
         </div>
       </Tabs>
@@ -100,55 +83,13 @@ const base = import.meta.env.BASE_URL;
               id="verticalTabsContent"
             >
               <TabItem id="vtab1" active>
-                <h5 class="border-bottom pb-2 mb-3">Korisnički Profil</h5>
-                <p>
-                  Ovo je sadržaj za tab Profil. Ovdje možete vidjeti osnovne informacije o
-                  korisniku.
-                </p>
-                <button class="btn btn-sm btn-primary">Uredi profil</button>
+                Ovo je primjer običnog tekstualnog sadržaja za vertikalni tab "Profil".
               </TabItem>
               <TabItem id="vtab2">
-                <h5 class="border-bottom pb-2 mb-3">Postavke Naloga</h5>
-                <form>
-                  <div class="mb-3">
-                    <label class="form-label">Email adresa</label>
-                    <input type="email" class="form-control" placeholder="name@example.com" />
-                  </div>
-                  <div class="form-check form-switch">
-                    <input
-                      class="form-check-input"
-                      type="checkbox"
-                      id="flexSwitchCheckChecked"
-                      checked
-                    />
-                    <label class="form-check-label" for="flexSwitchCheckChecked"
-                      >Primaj obavijesti</label
-                    >
-                  </div>
-                </form>
+                Ovo je primjer običnog tekstualnog sadržaja za vertikalni tab "Postavke".
               </TabItem>
               <TabItem id="vtab3">
-                <h5 class="border-bottom pb-2 mb-3">Moje Poruke</h5>
-                <div class="list-group">
-                  <a
-                    href="#"
-                    class="list-group-item list-group-item-action active"
-                    aria-current="true"
-                  >
-                    <div class="d-flex w-100 justify-content-between">
-                      <h6 class="mb-1">Dobrodošli!</h6>
-                      <small>3 dana</small>
-                    </div>
-                    <p class="mb-1">Hvala vam što koristite naše usluge.</p>
-                  </a>
-                  <a href="#" class="list-group-item list-group-item-action">
-                    <div class="d-flex w-100 justify-content-between">
-                      <h6 class="mb-1">Podsjetnik</h6>
-                      <small class="text-muted">1 sedmica</small>
-                    </div>
-                    <p class="mb-1">Ne zaboravite ažurirati lozinku.</p>
-                  </a>
-                </div>
+                Ovo je primjer običnog tekstualnog sadržaja za vertikalni tab "Poruke".
               </TabItem>
             </div>
           </Tabs>
@@ -175,6 +116,24 @@ const base = import.meta.env.BASE_URL;
           Prvi ciklus traje 3 godine (180 ECTS), a drugi ciklus 2 godine (120 ECTS).
         </AccordionItem>
       </Accordion>
+    </div>
+
+    <!-- List Groups -->
+    <div class="col-lg-6 mb-5">
+      <h3 class="mb-4 text-primary">Liste (List Groups)</h3>
+      <p>Prikaz listi koristeći prilagođene komponente.</p>
+
+      <div class="list-group">
+        <SimpleListItem label="Ovo je jednostavna lista" />
+        <SimpleListItem label="Sa aktivnim statusom" active={true} />
+        <SimpleListItem label="Link u listi" link="#" icon="bi-link-45deg" />
+        <SimpleListItem label="Sa ikonom" icon="bi-check-circle" iconColor="text-success" />
+        <SimpleListItem
+          label="Sa drugom ikonom"
+          icon="bi-exclamation-circle"
+          iconColor="text-danger"
+        />
+      </div>
     </div>
 
     <!-- Alerts -->
@@ -205,11 +164,15 @@ const base = import.meta.env.BASE_URL;
       <div class="row g-4 mb-4">
         <div class="col-md-4">
           <ContentCard
-            title="Projektni zadatak"
-            excerpt="Kratki opis projektnog zadatka koji stane u dvije linije."
+            title="Card sa Headerom"
+            excerpt="Ova kartica koristi 'header' slot za dodatni kontekst."
             href="#"
             layout="vertical"
-          />
+          >
+            <div slot="header" class="card-header bg-primary text-white text-center fw-bold">
+              ISTAKNUTO
+            </div>
+          </ContentCard>
         </div>
         <div class="col-md-4">
           <ContentCard

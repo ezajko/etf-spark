@@ -25,7 +25,7 @@ const activeTabId = tabs.find(t => t.active)?.id || tabs[0]?.id;
 {vertical ? (
   <div class={`d-flex align-items-start ${className || ''}`}>
     <div 
-      class="nav flex-column nav-pills me-3" 
+      class={`nav flex-column ${pills ? 'nav-pills' : 'nav-tabs'} me-3`} 
       id={id} 
       role="tablist" 
       aria-orientation="vertical"
@@ -34,7 +34,7 @@ const activeTabId = tabs.find(t => t.active)?.id || tabs[0]?.id;
         <button 
           class={`nav-link ${tab.id === activeTabId ? 'active' : ''} text-start`} 
           id={`${tab.id}-tab`} 
-          data-bs-toggle="pill" 
+          data-bs-toggle={pills ? 'pill' : 'tab'} 
           data-bs-target={`#${tab.id}`} 
           type="button" 
           role="tab" 
