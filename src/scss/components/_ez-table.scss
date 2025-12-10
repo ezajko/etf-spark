@@ -10,8 +10,14 @@
     border-collapse: separate;
     border-spacing: 0;
     box-shadow: $ez-shadow-sm;
-    border-radius: $ez-border-radius;
+    border-radius: var(--bs-border-radius);
     overflow: hidden;
+
+    // High Contrast Borders
+    [data-ez-theme="high-contrast"] & {
+        border: 2px solid var(--bs-border-color);
+        box-shadow: none;
+    }
 
     // Header
     thead {
@@ -25,6 +31,13 @@
             text-align: left;
             vertical-align: bottom;
             white-space: nowrap;
+
+            [data-ez-theme="high-contrast"] & {
+                border-bottom-width: 2px;
+                color: var(--bs-body-color); // Ensure contrast against tertiary bg
+                background-color: var(--bs-body-bg); // Force black/white in HC
+                border-bottom-color: var(--bs-border-color);
+            }
 
             &:first-child {
                 padding-left: $ez-spacing-lg;
@@ -46,7 +59,16 @@
             }
 
             &:hover {
-                background-color: rgba(var(--bs-primary-rgb), 0.05);
+                background-color: rgba(var(--bs-primary-rgb), 0.1);
+
+                [data-ez-theme="high-contrast"] & {
+                    background-color: var(--bs-primary);
+                    color: var(--bs-body-bg); // Invert text on hover
+
+                    td {
+                        border-bottom-color: var(--bs-body-bg);
+                    }
+                }
             }
         }
 
@@ -54,6 +76,10 @@
             padding: $ez-spacing-md;
             vertical-align: middle;
             border-bottom: 1px solid var(--bs-border-color);
+
+            [data-ez-theme="high-contrast"] & {
+                border-bottom-width: 1px;
+            }
 
             &:first-child {
                 padding-left: $ez-spacing-lg;
@@ -68,13 +94,13 @@
     // Variants
     &--striped {
         tbody tr:nth-of-type(odd) {
-            background-color: rgba(0, 0, 0, 0.02);
+            background-color: var(--bs-tertiary-bg); // Use theme-aware tertiary bg instead of hardcoded rgba
         }
     }
 
     &--hover {
         tbody tr:hover {
-            background-color: rgba(var(--bs-primary-rgb), 0.05);
+            background-color: rgba(var(--bs-primary-rgb), 0.1);
         }
     }
 }
