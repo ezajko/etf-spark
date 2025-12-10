@@ -13,23 +13,28 @@ interface Props {
   tabs: Tab[];
   class?: string;
   pills?: boolean; // Style as pills instead of tabs
+  vertical?: boolean; // Style as vertical tabs
 }
 
-const { id, tabs, class: className, pills = false } = Astro.props;
+const { id, tabs, class: className, pills = false, vertical = false } = Astro.props;
 
 // Determine which tab is active (default to first if none specified)
 const activeTabId = tabs.find(t => t.active)?.id || tabs[0]?.id;
 ---
 
-<div class={className}>
-  <!-- Tab Navigation -->
-  <ul class={`nav ${pills ? 'nav-pills' : 'nav-tabs'} mb-3`} id={id} role="tablist">
-    {tabs.map((tab) => (
-      <li class="nav-item" role="presentation">
+{vertical ? (
+  <div class={`d-flex align-items-start ${className || ''}`}>
+    <div 
+      class="nav flex-column nav-pills me-3" 
+      id={id} 
+      role="tablist" 
+      aria-orientation="vertical"
+    >
+      {tabs.map((tab) => (
         <button 
-          class={`nav-link ${tab.id === activeTabId ? 'active' : ''}`} 
+          class={`nav-link ${tab.id === activeTabId ? 'active' : ''} text-start`} 
           id={`${tab.id}-tab`} 
-          data-bs-toggle={pills ? 'pill' : 'tab'} 
+          data-bs-toggle="pill" 
           data-bs-target={`#${tab.id}`} 
           type="button" 
           role="tab" 
@@ -38,10 +43,35 @@ const activeTabId = tabs.find(t => t.active)?.id || tabs[0]?.id;
         >
           {tab.label}
         </button>
-      </li>
-    ))}
-  </ul>
-  
-  <!-- Content should be rendered by the parent using the IDs provided -->
-  <slot />
-</div>
+      ))}
+    </div>
+    <div class="tab-content flex-grow-1 w-100">
+      <slot />
+    </div>
+  </div>
+) : (
+  <div class={className}>
+    <!-- Tab Navigation -->
+    <ul class={`nav ${pills ? 'nav-pills' : 'nav-tabs'} mb-3`} id={id} role="tablist">
+      {tabs.map((tab) => (
+        <li class="nav-item" role="presentation">
+          <button 
+            class={`nav-link ${tab.id === activeTabId ? 'active' : ''}`} 
+            id={`${tab.id}-tab`} 
+            data-bs-toggle={pills ? 'pill' : 'tab'} 
+            data-bs-target={`#${tab.id}`} 
+            type="button" 
+            role="tab" 
+            aria-controls={tab.id} 
+            aria-selected={tab.id === activeTabId}
+          >
+            {tab.label}
+          </button>
+        </li>
+      ))}
+    </ul>
+    
+    <!-- Content should be rendered by the parent using the IDs provided -->
+    <slot />
+  </div>
+)}
