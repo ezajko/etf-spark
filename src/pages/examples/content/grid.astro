@@ -1,0 +1,152 @@
+---
+// ETF UNSA - Content Example: Grid Layouts
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import NoSidebar from '../../../layouts/NoSidebar.astro';
+import SlotPlaceholder from '../../../components/debug/SlotPlaceholder.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Primjeri sadržaja', href: '#' },
+  { label: 'Grid Sistemi', href: '#', active: true },
+];
+
+const boxStyle =
+  'background-color: #e9ecef; border: 1px solid #dee2e6; padding: 1rem; text-align: center; border-radius: 0.25rem; height: 100%; display: flex; align-items: center; justify-content: center; color: #495057; font-weight: bold;';
+---
+
+<NoSidebar title="Grid Sistemi | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+  <!-- Banner Slot -->
+  <SlotPlaceholder slot="banner" name="banner" minHeight="15rem" />
+
+  <!-- Main Content -->
+  <div class="row">
+    <div class="col-12">
+      <h1 class="mb-4">Grid Sistemi i Raspored</h1>
+      <p class="lead">
+        Vizuelni prikaz različitih rasporeda kolona koje možete koristiti za organizaciju sadržaja
+        na stranici koristeći Bootstrap grid sistem.
+      </p>
+      <hr class="my-5" />
+    </div>
+
+    <!-- 12 Columns (Full Width) -->
+    <div class="col-12 mb-4">
+      <h4 class="mb-3 text-secondary">Puna Širina (12 col)</h4>
+      <div class="row g-3">
+        <div class="col-12">
+          <div style={boxStyle}>col-12</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2 Columns Equal (6+6) -->
+    <div class="col-12 mb-4">
+      <h4 class="mb-3 text-secondary">Dvije Kolone (6 + 6)</h4>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div style={boxStyle}>col-md-6</div>
+        </div>
+        <div class="col-md-6">
+          <div style={boxStyle}>col-md-6</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 Columns Equal (4+4+4) -->
+    <div class="col-12 mb-4">
+      <h4 class="mb-3 text-secondary">Tri Kolone (4 + 4 + 4)</h4>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div style={boxStyle}>col-md-4</div>
+        </div>
+        <div class="col-md-4">
+          <div style={boxStyle}>col-md-4</div>
+        </div>
+        <div class="col-md-4">
+          <div style={boxStyle}>col-md-4</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 Columns Equal (3+3+3+3) -->
+    <div class="col-12 mb-4">
+      <h4 class="mb-3 text-secondary">Četiri Kolone (3 + 3 + 3 + 3)</h4>
+      <div class="row g-3">
+        <div class="col-6 col-md-3">
+          <div style={boxStyle}>col-6 col-md-3</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div style={boxStyle}>col-6 col-md-3</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div style={boxStyle}>col-6 col-md-3</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div style={boxStyle}>col-6 col-md-3</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Asymmetric: 8 + 4 -->
+    <div class="col-12 mb-4">
+      <h4 class="mb-3 text-secondary">Asimetrično (8 + 4)</h4>
+      <div class="row g-3">
+        <div class="col-md-8">
+          <div style={boxStyle}>col-md-8 (Glavni sadržaj)</div>
+        </div>
+        <div class="col-md-4">
+          <div style={boxStyle}>col-md-4 (Sidebar)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Asymmetric: 4 + 8 -->
+    <div class="col-12 mb-4">
+      <h4 class="mb-3 text-secondary">Asimetrično (4 + 8)</h4>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div style={boxStyle}>col-md-4 (Sidebar)</div>
+        </div>
+        <div class="col-md-8">
+          <div style={boxStyle}>col-md-8 (Glavni sadržaj)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nested Grid -->
+    <div class="col-12 mb-5">
+      <h4 class="mb-3 text-secondary">Ugniježdeni Grid</h4>
+      <div class="row g-3">
+        <div class="col-md-8">
+          <div class="p-3 border rounded h-100">
+            <p class="mb-3 text-center">Roditelj: col-md-8</p>
+            <!-- Nested Row -->
+            <div class="row g-2">
+              <div class="col-6">
+                <div
+                  style={boxStyle +
+                    ' background-color: #cfe2ff; border-color: #b6d4fe; color: #084298;'}
+                >
+                  Nested col-6
+                </div>
+              </div>
+              <div class="col-6">
+                <div
+                  style={boxStyle +
+                    ' background-color: #cfe2ff; border-color: #b6d4fe; color: #084298;'}
+                >
+                  Nested col-6
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div style={boxStyle}>col-md-4</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</NoSidebar>

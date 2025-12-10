@@ -1,0 +1,224 @@
+---
+// ETF UNSA - Content Example: Components
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import NoSidebar from '../../../layouts/NoSidebar.astro';
+import SlotPlaceholder from '../../../components/debug/SlotPlaceholder.astro';
+import Tabs from '../../../components/Tabs.astro';
+import TabItem from '../../../components/TabItem.astro';
+import Accordion from '../../../components/Accordion.astro';
+import AccordionItem from '../../../components/AccordionItem.astro';
+import ContentCard from '../../../components/ContentCard.astro';
+import ProfileCard from '../../../components/ProfileCard.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Primjeri sadržaja', href: '#' },
+  { label: 'Elementi interfejsa', href: '#', active: true },
+];
+
+const base = import.meta.env.BASE_URL;
+---
+
+<NoSidebar title="Elementi interfejsa | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+  <!-- Banner Slot -->
+  <SlotPlaceholder slot="banner" name="banner" minHeight="15rem" />
+
+  <!-- Main Content -->
+  <div class="row">
+    <div class="col-12">
+      <h1 class="mb-4">Komponente i Interaktivni Elementi</h1>
+      <p class="lead">
+        Primjeri korištenja gotovih UI komponenti kao što su tabovi, harmonike, kartice i drugi
+        elementi za organizaciju sadržaja.
+      </p>
+      <hr class="my-5" />
+    </div>
+
+    <!-- Tabs -->
+    <div class="col-12 mb-5">
+      <h3 class="mb-4 text-primary">Tabovi (Tabs)</h3>
+      <p class="mb-3">
+        Koristite tabove za organizaciju velike količine sadržaja u sekcije koje se mogu
+        prebacivati.
+      </p>
+
+      <Tabs
+        id="exampleTabs"
+        tabs={[
+          { id: 'tab1', label: 'Opis', active: true },
+          { id: 'tab2', label: 'Specifikacije' },
+          { id: 'tab3', label: 'Recenzije' },
+        ]}
+      >
+        <div class="tab-content border border-top-0 p-4 rounded-bottom" id="exampleTabsContent">
+          <TabItem id="tab1" active>
+            <h5>Sadržaj prvog taba</h5>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+            </p>
+          </TabItem>
+          <TabItem id="tab2">
+            <h5>Tehničke specifikacije</h5>
+            <ul>
+              <li>Karakteristika 1: Vrijednost A</li>
+              <li>Karakteristika 2: Vrijednost B</li>
+              <li>Karakteristika 3: Vrijednost C</li>
+            </ul>
+          </TabItem>
+          <TabItem id="tab3">
+            <h5>Korisničke recenzije</h5>
+            <p>Nema recenzija za ovaj proizvod.</p>
+          </TabItem>
+        </div>
+      </Tabs>
+    </div>
+
+    <!-- Accordions -->
+    <div class="col-lg-6 mb-5">
+      <h3 class="mb-4 text-primary">Harmonika (Accordion)</h3>
+      <p>Idealno za FAQ sekcije ili skrivanje dugog teksta.</p>
+      <Accordion id="faqAccordion">
+        <AccordionItem id="faq1" title="Koja su pravila upisa?" parent="faqAccordion" open={true}>
+          Pravila upisa su definisana konkursom koji se objavljuje svake godine u junu.
+        </AccordionItem>
+        <AccordionItem
+          id="faq2"
+          title="Mogu li se prebaciti sa drugog fakulteta?"
+          parent="faqAccordion"
+        >
+          Proces prepisa zavisi od srodnosti studijskog programa i broja ECTS bodova.
+        </AccordionItem>
+        <AccordionItem id="faq3" title="Koliko traje studij?" parent="faqAccordion">
+          Prvi ciklus traje 3 godine (180 ECTS), a drugi ciklus 2 godine (120 ECTS).
+        </AccordionItem>
+      </Accordion>
+    </div>
+
+    <!-- Alerts -->
+    <div class="col-lg-6 mb-5">
+      <h3 class="mb-4 text-primary">Upozorenja (Alerts)</h3>
+      <div class="alert alert-primary" role="alert">
+        Jednostavno upozorenje sa <a href="#" class="alert-link">linkom</a>.
+      </div>
+      <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Uspješno obavljeno!</h4>
+        <p>Aww yeah, you successfully read this important alert message.</p>
+        <hr />
+        <p class="mb-0">
+          Whenever you need to, be sure to use margin utilities to keep things nice and tidy.
+        </p>
+      </div>
+      <div class="alert alert-warning d-flex align-items-center" role="alert">
+        <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2 fs-4"></i>
+        <div>Važna napomena: Rok za prijavu ispita ističe sutra.</div>
+      </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="col-12 mb-5">
+      <h3 class="mb-4 text-primary">Kartice (Cards)</h3>
+
+      <h5 class="mb-3">Standardne Kartice</h5>
+      <div class="row g-4 mb-4">
+        <div class="col-md-4">
+          <ContentCard
+            title="Projektni zadatak"
+            excerpt="Kratki opis projektnog zadatka koji stane u dvije linije."
+            href="#"
+            layout="vertical"
+            readMore={true}
+          />
+        </div>
+        <div class="col-md-4">
+          <ContentCard
+            title="Laboratorijska vježba"
+            excerpt="Uputstvo za izradu laboratorijske vježbe iz predmeta OE."
+            href="#"
+            layout="vertical"
+            icon="bi-file-earmark-code"
+            readMore={true}
+          />
+        </div>
+        <div class="col-md-4">
+          <ContentCard
+            title="Rezultati ispita"
+            excerpt="Preliminarni rezultati pismenog ispita održanog dana..."
+            href="#"
+            layout="vertical"
+            icon="bi-graph-up"
+            readMore={true}
+          />
+        </div>
+      </div>
+
+      <h5 class="mb-3">Horizontalne Kartice</h5>
+      <div class="row g-4 mb-4">
+        <div class="col-lg-6">
+          <ContentCard
+            title="Horizontalna Kartica"
+            excerpt="Ovo je primjer kartice koja koristi horizontalni layout. Slika ili ikona je lijevo."
+            href="#"
+            layout="horizontal"
+            icon="bi-hdd-network"
+          />
+        </div>
+        <div class="col-lg-6">
+          <ContentCard
+            title="Druga Horizontalna"
+            excerpt="Fleksibilna komponenta za prikaz sažetaka postova ili linkova."
+            href="#"
+            layout="horizontal"
+            icon="bi-cpu"
+          />
+        </div>
+      </div>
+
+      <h5 class="mb-3">Profile Card</h5>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <ProfileCard
+            name="Dr. Ime Prezime"
+            title="Redovni profesor"
+            details={[{ label: 'Odsjek', value: 'Računarstvo i informatika' }]}
+            contact={{
+              email: 'ime.prezime@etf.unsa.ba',
+            }}
+            socialLinks={[{ label: 'LinkedIn', url: '#', icon: 'bi-linkedin' }]}
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Buttons & Badges -->
+    <div class="col-12 mb-5">
+      <h3 class="mb-4 text-primary">Dugmad i Oznake</h3>
+      <div class="mb-3">
+        <button type="button" class="btn btn-primary">Primary</button>
+        <button type="button" class="btn btn-secondary">Secondary</button>
+        <button type="button" class="btn btn-success">Success</button>
+        <button type="button" class="btn btn-danger">Danger</button>
+        <button type="button" class="btn btn-warning">Warning</button>
+        <button type="button" class="btn btn-info">Info</button>
+        <button type="button" class="btn btn-light">Light</button>
+        <button type="button" class="btn btn-dark">Dark</button>
+        <button type="button" class="btn btn-link">Link</button>
+      </div>
+      <div class="mb-3">
+        <button type="button" class="btn btn-outline-primary">Primary</button>
+        <button type="button" class="btn btn-outline-secondary">Secondary</button>
+      </div>
+      <div class="mb-3">
+        <span class="badge bg-primary">Primary</span>
+        <span class="badge bg-secondary">Secondary</span>
+        <span class="badge bg-success">Success</span>
+        <span class="badge bg-danger">Danger</span>
+        <span class="badge bg-warning text-dark">Warning</span>
+        <span class="badge bg-info text-dark">Info</span>
+        <span class="badge rounded-pill bg-primary">Pill Badge</span>
+      </div>
+    </div>
+  </div>
+</NoSidebar>
