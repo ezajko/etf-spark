@@ -14,6 +14,17 @@
     --bs-primary: var(--ez-theme-color);
     --bs-primary-rgb: var(--ez-theme-color-rgb);
 
+    // High Contrast Enforcement (Global)
+    [data-ez-theme="high-contrast"] & {
+
+        // Force links and primary text to follow theme color
+        a,
+        .text-primary,
+        .btn-link {
+            color: var(--ez-theme-color) !important;
+        }
+    }
+
     // Disable Rounded Corners
     --bs-border-radius: 0;
     --bs-border-radius-sm: 0;

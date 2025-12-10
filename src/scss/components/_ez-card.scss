@@ -60,6 +60,19 @@
         [data-bs-theme="dark"] & {
             color: var(--bs-body-color);
         }
+
+        // Ensure link inherits color
+        a {
+            color: inherit;
+
+            &:hover {
+                color: var(--bs-primary);
+
+                [data-ez-theme="high-contrast"] & {
+                    color: inherit; // Keep high contrast color on hover, handled by global override
+                }
+            }
+        }
     }
 
     // Footer
