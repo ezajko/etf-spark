@@ -128,6 +128,44 @@
     --bs-secondary-rgb: #{red($ez-theme-blue-secondary)},
     #{green($ez-theme-blue-secondary)},
     #{blue($ez-theme-blue-secondary)};
+    --bs-secondary: #{$ez-theme-blue-secondary};
+    --bs-secondary-rgb: #{red($ez-theme-blue-secondary)},
+    #{green($ez-theme-blue-secondary)},
+    #{blue($ez-theme-blue-secondary)};
+}
+
+[data-ez-theme="high-contrast"] {
+    // High Contrast Yellow/Black
+    $ez-hc-yellow: #FFD700;
+    $ez-hc-black: #000000;
+
+    --ez-theme-color: #{$ez-hc-black};
+    --ez-theme-color-rgb: 0, 0, 0;
+
+    --bs-secondary: #000000;
+    --bs-secondary-rgb: 0, 0, 0;
+
+    // Force high contrast borders
+    --bs-border-width: 2px;
+    --bs-border-color: #000000;
+
+    // In Dark Mode, switch to Yellow on Black
+    &[data-bs-theme="dark"] {
+        --ez-theme-color: #{$ez-hc-yellow};
+        --ez-theme-color-rgb: 255, 215, 0;
+        --bs-secondary: #{$ez-hc-yellow};
+
+        --bs-body-color: #{$ez-hc-yellow};
+        --bs-body-bg: #000000;
+        --bs-border-color: #{$ez-hc-yellow};
+
+        --bs-link-color: #{$ez-hc-yellow};
+        --bs-link-hover-color: #FFFFFF;
+
+        .text-muted {
+            color: #{$ez-hc-yellow} !important;
+        }
+    }
 }
 
 // Dark Mode Overrides

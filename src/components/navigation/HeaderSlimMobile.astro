@@ -5,28 +5,62 @@
 const base = import.meta.env.BASE_URL;
 ---
 
-<div class="offcanvas offcanvas-top text-bg-dark" tabindex="-1" id="slimMobileMenu" aria-labelledby="slimMobileMenuLabel" style="height: auto; min-height: 50vh;">
+<div
+  class="offcanvas offcanvas-top text-bg-dark"
+  tabindex="-1"
+  id="slimMobileMenu"
+  aria-labelledby="slimMobileMenuLabel"
+  style="height: auto; min-height: 50vh;"
+>
   <div class="offcanvas-header border-bottom border-secondary">
     <h5 class="offcanvas-title" id="slimMobileMenuLabel">Brzi linkovi</h5>
-    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <button
+      type="button"
+      class="btn-close btn-close-white"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"></button>
   </div>
   <div class="offcanvas-body p-0">
     <div class="accordion accordion-flush bg-dark" id="accordionSlimMenu">
-      
       <!-- Univerzitet Accordion -->
       <div class="accordion-item bg-dark text-white">
         <h2 class="accordion-header" id="flush-headingOne">
-          <button class="accordion-button collapsed bg-dark text-white shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+          <button
+            class="accordion-button collapsed bg-dark text-white shadow-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseOne"
+            aria-expanded="false"
+            aria-controls="flush-collapseOne"
+          >
             Univerzitet
           </button>
         </h2>
-        <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionSlimMenu">
+        <div
+          id="flush-collapseOne"
+          class="accordion-collapse collapse"
+          aria-labelledby="flush-headingOne"
+          data-bs-parent="#accordionSlimMenu"
+        >
           <div class="accordion-body p-0">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item bg-dark border-secondary"><a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3">UNSA</a></li>
-              <li class="list-group-item bg-dark border-secondary"><a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3">eUNSA</a></li>
-              <li class="list-group-item bg-dark border-secondary"><a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3">International</a></li>
-              <li class="list-group-item bg-dark border-secondary"><a href={base + "/design/components/index.html"} class="text-white-50 text-decoration-none d-block py-2 ps-3">Dizajn Sistem</a></li>
+              <li class="list-group-item bg-dark border-secondary">
+                <a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3">UNSA</a>
+              </li>
+              <li class="list-group-item bg-dark border-secondary">
+                <a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3">eUNSA</a>
+              </li>
+              <li class="list-group-item bg-dark border-secondary">
+                <a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3"
+                  >International</a
+                >
+              </li>
+              <li class="list-group-item bg-dark border-secondary">
+                <a
+                  href={base + '/design/components/index.html'}
+                  class="text-white-50 text-decoration-none d-block py-2 ps-3">Dizajn Sistem</a
+                >
+              </li>
             </ul>
           </div>
         </div>
@@ -35,44 +69,115 @@ const base = import.meta.env.BASE_URL;
       <!-- Servisi Accordion -->
       <div class="accordion-item bg-dark text-white">
         <h2 class="accordion-header" id="flush-headingTwo">
-          <button class="accordion-button collapsed bg-dark text-white shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+          <button
+            class="accordion-button collapsed bg-dark text-white shadow-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#flush-collapseTwo"
+            aria-expanded="false"
+            aria-controls="flush-collapseTwo"
+          >
             Servisi
           </button>
         </h2>
-        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionSlimMenu">
+        <div
+          id="flush-collapseTwo"
+          class="accordion-collapse collapse"
+          aria-labelledby="flush-headingTwo"
+          data-bs-parent="#accordionSlimMenu"
+        >
           <div class="accordion-body p-0">
-             <ul class="list-group list-group-flush">
-              <li class="list-group-item bg-dark border-secondary"><a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3">Courseware (C2)</a></li>
-              <li class="list-group-item bg-dark border-secondary"><a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3">Courseware (C3)</a></li>
-              <li class="list-group-item bg-dark border-secondary"><a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3">Webmail</a></li>
-              <li class="list-group-item bg-dark border-secondary"><a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3">Account</a></li>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item bg-dark border-secondary">
+                <a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3"
+                  >Courseware (C2)</a
+                >
+              </li>
+              <li class="list-group-item bg-dark border-secondary">
+                <a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3"
+                  >Courseware (C3)</a
+                >
+              </li>
+              <li class="list-group-item bg-dark border-secondary">
+                <a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3">Webmail</a>
+              </li>
+              <li class="list-group-item bg-dark border-secondary">
+                <a href="#" class="text-white-50 text-decoration-none d-block py-2 ps-3">Account</a>
+              </li>
             </ul>
           </div>
         </div>
       </div>
 
-       <!-- Language (Simple List Item) -->
-       <div class="accordion-item bg-dark text-white border-bottom border-secondary">
-         <div class="p-3 d-flex align-items-center justify-content-between">
-            <span class="fw-bold">Jezik</span>
-            <div>
-                <a href="#" class="text-white text-decoration-none fw-bold me-2">BS</a>
-                <span class="text-secondary">|</span>
-                <a href="#" class="text-white-50 text-decoration-none ms-2">EN</a>
+      <!-- Language (Simple List Item) -->
+      <div class="accordion-item bg-dark text-white border-bottom border-secondary">
+        <div class="p-3 d-flex align-items-center justify-content-between">
+          <span class="fw-bold">Jezik</span>
+          <div>
+            <a href="#" class="text-white text-decoration-none fw-bold me-2">BS</a>
+            <span class="text-secondary">|</span>
+            <a href="#" class="text-white-50 text-decoration-none ms-2">EN</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Appearance (Mode & High Contrast) -->
+      <div class="accordion-item bg-dark text-white border-bottom border-secondary">
+        <div class="p-3">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <span class="fw-bold">Način rada</span>
+            <div class="btn-group" role="group">
+              <button
+                type="button"
+                class="btn btn-sm btn-outline-light mode-btn-mobile active"
+                data-mode="light"
+              >
+                <i class="bi bi-sun-fill"></i>
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm btn-outline-light mode-btn-mobile"
+                data-mode="dark"
+              >
+                <i class="bi bi-moon-stars-fill"></i>
+              </button>
             </div>
-         </div>
-       </div>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <label
+              class="form-check-label small fw-bold mb-0 text-white"
+              for="mobileHighContrastSwitch"
+            >
+              <i class="bi bi-eye-fill me-1"></i> Visoki kontrast
+            </label>
+            <div class="form-check form-switch m-0">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="mobileHighContrastSwitch"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
 
-       <!-- Search Box -->
-       <div class="p-3">
-         <form class="d-flex" role="search">
-           <div class="input-group">
-             <span class="input-group-text bg-dark border-secondary text-white-50"><i class="bi bi-search"></i></span>
-             <input class="form-control bg-dark border-secondary text-white shadow-none" type="search" placeholder="Pretraga..." aria-label="Search">
-           </div>
-         </form>
-       </div>
-
+      <!-- Search Box -->
+      <div class="p-3">
+        <form class="d-flex" role="search">
+          <div class="input-group">
+            <span class="input-group-text bg-dark border-secondary text-white-50"
+              ><i class="bi bi-search"></i></span
+            >
+            <input
+              class="form-control bg-dark border-secondary text-white shadow-none"
+              type="search"
+              placeholder="Pretraga..."
+              aria-label="Search"
+            />
+          </div>
+        </form>
+      </div>
     </div>
   </div>
 </div>
@@ -87,3 +192,68 @@ const base = import.meta.env.BASE_URL;
     background-color: rgba(255, 255, 255, 0.1);
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // --- Mobile Theme Logic ---
+    const storedThemeMobile = localStorage.getItem('ez-theme') || 'blue';
+    const storedModeMobile = localStorage.getItem('ez-mode') || 'light';
+    const mobileHcSwitch = document.getElementById('mobileHighContrastSwitch') as HTMLInputElement;
+
+    // Sync Mobile UI
+    if (mobileHcSwitch) {
+      mobileHcSwitch.checked = storedThemeMobile === 'high-contrast';
+    }
+
+    const updateMobileModeButtons = (mode) => {
+      document.querySelectorAll('.mode-btn-mobile').forEach((btn) => {
+        if (btn.getAttribute('data-mode') === mode) {
+          btn.classList.add('active', 'btn-light');
+          btn.classList.remove('btn-outline-light');
+        } else {
+          btn.classList.remove('active', 'btn-light');
+          btn.classList.add('btn-outline-light');
+        }
+      });
+    };
+    updateMobileModeButtons(storedModeMobile);
+
+    // Mobile Event Listeners
+    if (mobileHcSwitch) {
+      mobileHcSwitch.addEventListener('change', (e) => {
+        const target = e.target as HTMLInputElement;
+        const isChecked = target.checked;
+        const newTheme = isChecked ? 'high-contrast' : 'blue';
+
+        document.documentElement.setAttribute('data-ez-theme', newTheme);
+        localStorage.setItem('ez-theme', newTheme);
+
+        // Sync desktop switch if exists
+        const desktopSwitch = document.getElementById('highContrastSwitch') as HTMLInputElement;
+        if (desktopSwitch) desktopSwitch.checked = isChecked;
+      });
+    }
+
+    document.querySelectorAll('.mode-btn-mobile').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const mode = btn.getAttribute('data-mode');
+        if (mode) {
+          document.documentElement.setAttribute('data-bs-theme', mode);
+          localStorage.setItem('ez-mode', mode);
+          updateMobileModeButtons(mode);
+
+          // Sync desktop buttons
+          document.querySelectorAll('.mode-btn').forEach((dBtn) => {
+            if (dBtn.getAttribute('data-mode') === mode) {
+              dBtn.classList.add('active', 'btn-secondary');
+              dBtn.classList.remove('btn-outline-secondary');
+            } else {
+              dBtn.classList.remove('active', 'btn-secondary');
+              dBtn.classList.add('btn-outline-secondary');
+            }
+          });
+        }
+      });
+    });
+  });
+</script>

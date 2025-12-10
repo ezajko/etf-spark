@@ -19,7 +19,7 @@
     style="min-width: 220px;"
   >
     <!-- Mode Toggle -->
-    <li><h6 class="dropdown-header">Mode</h6></li>
+    <li><h6 class="dropdown-header">Način rada</h6></li>
     <li class="mb-3 px-2">
       <div class="btn-group w-100" role="group">
         <button
@@ -37,46 +37,13 @@
 
     <li><hr class="dropdown-divider" /></li>
 
-    <!-- Theme Color -->
-    <li><h6 class="dropdown-header">Theme Color</h6></li>
-    <li>
-      <div class="d-flex flex-wrap gap-2 px-2 justify-content-center">
-        <!-- Blue (Default) -->
-        <button
-          class="btn btn-sm rounded-circle p-0 border-0 theme-btn"
-          data-color="blue"
-          style="width: 24px; height: 24px; background-color: #00629B;"
-          title="Blue (Default)"></button>
-        <!-- Teal -->
-        <button
-          class="btn btn-sm rounded-circle p-0 border-0 theme-btn"
-          data-color="teal"
-          style="width: 24px; height: 24px; background-color: #00897B;"
-          title="Teal"></button>
-        <!-- Green -->
-        <button
-          class="btn btn-sm rounded-circle p-0 border-0 theme-btn"
-          data-color="green"
-          style="width: 24px; height: 24px; background-color: #2E7D32;"
-          title="Green"></button>
-        <!-- Purple -->
-        <button
-          class="btn btn-sm rounded-circle p-0 border-0 theme-btn"
-          data-color="purple"
-          style="width: 24px; height: 24px; background-color: #8E24AA;"
-          title="Purple"></button>
-        <!-- Orange -->
-        <button
-          class="btn btn-sm rounded-circle p-0 border-0 theme-btn"
-          data-color="orange"
-          style="width: 24px; height: 24px; background-color: #F57F17;"
-          title="Orange"></button>
-        <!-- Red -->
-        <button
-          class="btn btn-sm rounded-circle p-0 border-0 theme-btn"
-          data-color="red"
-          style="width: 24px; height: 24px; background-color: #D32F2F;"
-          title="Red"></button>
+    <!-- High Contrast Toggle -->
+    <li class="px-2 d-flex justify-content-between align-items-center">
+      <label class="form-check-label small fw-bold mb-0" for="highContrastSwitch">
+        <i class="bi bi-eye-fill me-1"></i> Visoki kontrast
+      </label>
+      <div class="form-check form-switch m-0">
+        <input class="form-check-input" type="checkbox" role="switch" id="highContrastSwitch" />
       </div>
     </li>
   </ul>
@@ -86,9 +53,15 @@
   // --- Initialization ---
   const storedTheme = localStorage.getItem('ez-theme') || 'blue';
   const storedMode = localStorage.getItem('ez-mode') || 'light';
+  const hcSwitch = document.getElementById('highContrastSwitch') as HTMLInputElement;
 
   document.documentElement.setAttribute('data-ez-theme', storedTheme);
   document.documentElement.setAttribute('data-bs-theme', storedMode);
+
+  // Sync Switch UI
+  if (hcSwitch) {
+    hcSwitch.checked = storedTheme === 'high-contrast';
+  }
 
   // Update Active State for Mode Buttons
   const updateModeButtons = (mode) => {
@@ -107,16 +80,19 @@
 
   // --- Event Listeners ---
 
-  // Theme Color
-  document.querySelectorAll('.theme-btn').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      const color = btn.getAttribute('data-color');
-      if (color) {
-        document.documentElement.setAttribute('data-ez-theme', color);
-        localStorage.setItem('ez-theme', color);
-      }
+  // High Contrast Switch
+  if (hcSwitch) {
+    hcSwitch.addEventListener('change', (e) => {
+      const target = e.target as HTMLInputElement;
+      const isChecked = target.checked;
+      // If checked, set high-contrast. If unchecked, revert to default 'blue'.
+      // NOTE: We are intentionally discarding other colored themes logic for this simplified UI.
+      const newTheme = isChecked ? 'high-contrast' : 'blue';
+
+      document.documentElement.setAttribute('data-ez-theme', newTheme);
+      localStorage.setItem('ez-theme', newTheme);
     });
-  });
+  }
 
   // Dark/Light Mode
   document.querySelectorAll('.mode-btn').forEach((btn) => {
