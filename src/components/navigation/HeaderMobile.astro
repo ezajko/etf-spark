@@ -63,24 +63,79 @@ const base = import.meta.env.BASE_URL;
                 ><span class="arrow me-2">&lt;</span> Nazad</a
               >
             </li>
-            <li class="menu-title">Odsjeci i Osoblje</li>
-            <li><a href={base + '/examples/department'}>Stranica Odsjeka</a></li>
-            <li><a href={base + '/examples/study-program'}>Studijski Program</a></li>
-            <li><a href={base + '/examples/study-program-list'}>Lista Programa</a></li>
-            <li><a href={base + '/examples/staff-list'}>Lista Osoblja</a></li>
-            <li><a href={base + '/examples/staff-profile'}>Profil Profesora</a></li>
-            <li><a href={base + '/examples/chair-list'}>Lista Katedri</a></li>
-            <li><a href={base + '/examples/course-details'}>Detalji Predmeta</a></li>
-            <li class="menu-title">Aktuelnosti</li>
-            <li><a href={base + '/examples/news-list'}>Arhiva Vijesti</a></li>
-            <li><a href={base + '/examples/news-single'}>Pojedinačna Vijest</a></li>
-            <li><a href={base + '/examples/event-list'}>Arhiva Događaja</a></li>
-            <li><a href={base + '/examples/event-single'}>Pojedinačni Događaj</a></li>
-            <li class="menu-title">Dokumenti</li>
-            <li><a href={base + '/examples/document-list'}>Arhiva Dokumenata</a></li>
-            <li><a href={base + '/examples/document-single'}>Pojedinačni Dokument</a></li>
-            <li><a href={base + '/examples/project-list'}>Lista Projekata</a></li>
-            <li><a href={base + '/examples/project-single'}>Pojedinačni Projekat</a></li>
+
+            <!-- Odsjeci i Osoblje -->
+            <li class="has-children">
+              <a href="#" class="d-flex justify-content-between align-items-center"
+                >Odsjeci i Osoblje <span class="arrow">&gt;</span></a
+              >
+              <ul class="mobile-menu-level">
+                <li class="back-item">
+                  <a href="#" class="d-flex align-items-center"
+                    ><span class="arrow me-2">&lt;</span> Nazad</a
+                  >
+                </li>
+                <li><a href={base + '/examples/department'}>Stranica Odsjeka</a></li>
+                <li><a href={base + '/examples/study-program'}>Studijski Program</a></li>
+                <li><a href={base + '/examples/study-program-list'}>Lista Programa</a></li>
+                <li><a href={base + '/examples/staff-list'}>Lista Osoblja</a></li>
+                <li><a href={base + '/examples/staff-profile'}>Profil Profesora</a></li>
+                <li><a href={base + '/examples/chair-list'}>Lista Katedri</a></li>
+                <li><a href={base + '/examples/course-details'}>Detalji Predmeta</a></li>
+              </ul>
+            </li>
+
+            <!-- Aktuelnosti -->
+            <li class="has-children">
+              <a href="#" class="d-flex justify-content-between align-items-center"
+                >Aktuelnosti <span class="arrow">&gt;</span></a
+              >
+              <ul class="mobile-menu-level">
+                <li class="back-item">
+                  <a href="#" class="d-flex align-items-center"
+                    ><span class="arrow me-2">&lt;</span> Nazad</a
+                  >
+                </li>
+                <li><a href={base + '/examples/news-list'}>Arhiva Vijesti</a></li>
+                <li><a href={base + '/examples/news-single'}>Pojedinačna Vijest</a></li>
+                <li><a href={base + '/examples/event-list'}>Arhiva Događaja</a></li>
+                <li><a href={base + '/examples/event-single'}>Pojedinačni Događaj</a></li>
+              </ul>
+            </li>
+
+            <!-- Istraživanje -->
+            <li class="has-children">
+              <a href="#" class="d-flex justify-content-between align-items-center"
+                >Istraživanje <span class="arrow">&gt;</span></a
+              >
+              <ul class="mobile-menu-level">
+                <li class="back-item">
+                  <a href="#" class="d-flex align-items-center"
+                    ><span class="arrow me-2">&lt;</span> Nazad</a
+                  >
+                </li>
+                <li><a href={base + '/examples/project-list'}>Lista Projekata</a></li>
+                <li><a href={base + '/examples/project-single'}>Pojedinačni Projekat</a></li>
+                <li><a href={base + '/examples/lab-list'}>Lista Laboratorija</a></li>
+                <li><a href={base + '/examples/lab-single'}>Pojedinačna Laboratorija</a></li>
+              </ul>
+            </li>
+
+            <!-- Dokumenti -->
+            <li class="has-children">
+              <a href="#" class="d-flex justify-content-between align-items-center"
+                >Dokumenti <span class="arrow">&gt;</span></a
+              >
+              <ul class="mobile-menu-level">
+                <li class="back-item">
+                  <a href="#" class="d-flex align-items-center"
+                    ><span class="arrow me-2">&lt;</span> Nazad</a
+                  >
+                </li>
+                <li><a href={base + '/examples/document-list'}>Arhiva Dokumenata</a></li>
+                <li><a href={base + '/examples/document-single'}>Pojedinačni Dokument</a></li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li class="has-children">
