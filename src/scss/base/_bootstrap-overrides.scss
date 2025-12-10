@@ -149,6 +149,12 @@
     --bs-border-width: 2px;
     --bs-border-color: #000000;
 
+    // Enforce link underlining for WCAG compliance
+    a {
+        text-decoration: underline !important;
+        text-decoration-thickness: 2px !important;
+    }
+
     // In Dark Mode, switch to Yellow on Black
     &[data-bs-theme="dark"] {
         --ez-theme-color: #{$ez-hc-yellow};
@@ -162,8 +168,31 @@
         --bs-link-color: #{$ez-hc-yellow};
         --bs-link-hover-color: #FFFFFF;
 
+        a {
+            color: #{$ez-hc-yellow} !important;
+
+            &:hover,
+            &:focus {
+                color: #FFFFFF !important;
+                background-color: #000000 !important;
+            }
+        }
+
         .text-muted {
             color: #{$ez-hc-yellow} !important;
+        }
+    }
+
+    // In Light Mode (explicit override for full contrast)
+    &[data-bs-theme="light"] {
+        a {
+            color: #000000 !important;
+            font-weight: 700;
+
+            &:hover,
+            &:focus {
+                background-color: #FFFF00 !important; // Yellow bg highlight on hover
+            }
         }
     }
 }
