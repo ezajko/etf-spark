@@ -5,12 +5,39 @@
     .nav-link {
         color: var(--bs-body-color);
         font-weight: $ez-font-weight-bold;
-        border-radius: $ez-border-radius;
+        border-radius: var(--bs-border-radius); // 0
         padding: $ez-spacing-sm $ez-spacing-lg;
+        transition: all 0.2s ease;
+        margin-right: $ez-spacing-xs;
+
+        &:hover {
+            color: var(--bs-primary);
+            background-color: var(--bs-tertiary-bg);
+            // Creates a subtle hover background using the tertiary var we defined
+        }
 
         &.active {
-            background-color: $ez-primary-color;
-            color: #fff;
+            background-color: var(--bs-primary);
+            color: #ffffff; // Default white text on colored bg
+
+            // High Contrast Dark Mode Override for Text Color
+            // When bg is Yellow (Primary), Text must be Black
+            @media (prefers-contrast: more) {
+                color: #000000;
+            }
+
+            [data-ez-theme="high-contrast"][data-bs-theme="dark"] & {
+                color: #000000;
+            }
+
+            &:hover {
+                filter: brightness(110%); // Lighten slightly on hover
+                color: #ffffff;
+
+                [data-ez-theme="high-contrast"][data-bs-theme="dark"] & {
+                    color: #000000;
+                }
+            }
         }
     }
 }
