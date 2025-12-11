@@ -10,38 +10,33 @@ const breadcrumbItems = [
   { label: 'Liste', href: '#', active: true },
 ];
 
-const standardListsCode = `<div class="row">
-  <div class="col-md-6 mb-4 mb-md-0">
-    <h6 class="fw-bold mb-3">Neuređena lista (ul)</h6>
+const unorderedListCode = `<h6 class="fw-bold mb-3">Neuređena lista (ul)</h6>
+<ul>
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>
+    Integra facilisis nulla
     <ul>
-      <li>Lorem ipsum dolor sit amet</li>
-      <li>Consectetur adipiscing elit</li>
-      <li>
-        Integra facilisis nulla
-        <ul>
-          <li>Phasellus iaculis neque</li>
-          <li>Purus sodales ultricies</li>
-        </ul>
-      </li>
-      <li>Faucibus porta lacus fringilla vel</li>
+      <li>Phasellus iaculis neque</li>
+      <li>Purus sodales ultricies</li>
     </ul>
-  </div>
-  <div class="col-md-6">
-    <h6 class="fw-bold mb-3">Uređena lista (ol)</h6>
+  </li>
+  <li>Faucibus porta lacus fringilla vel</li>
+</ul>`;
+
+const orderedListCode = `<h6 class="fw-bold mb-3">Uređena lista (ol)</h6>
+<ol>
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>
+    Integra facilisis nulla
     <ol>
-      <li>Lorem ipsum dolor sit amet</li>
-      <li>Consectetur adipiscing elit</li>
-      <li>
-        Integra facilisis nulla
-        <ol>
-          <li>Phasellus iaculis neque</li>
-          <li>Purus sodales ultricies</li>
-        </ol>
-      </li>
-      <li>Faucibus porta lacus fringilla vel</li>
+      <li>Phasellus iaculis neque</li>
+      <li>Purus sodales ultricies</li>
     </ol>
-  </div>
-</div>`;
+  </li>
+  <li>Faucibus porta lacus fringilla vel</li>
+</ol>`;
 
 const descriptionListsCode = `<dl class="row mb-0">
   <dt class="col-sm-3">Description lists</dt>
@@ -60,35 +55,30 @@ const descriptionListsCode = `<dl class="row mb-0">
   </dd>
 </dl>`;
 
-const utilityListsCode = `<div class="row">
-  <div class="col-md-6">
-    <h6 class="fw-bold mb-3">List Unstyled (list-unstyled)</h6>
-    <ul class="list-unstyled">
-      <li>Ovo je lista bez standardnih bulleta.</li>
-      <li>Ali zadržava semantičku vrijednost liste.</li>
-      <li>
-        Nulla volutpat aliquam velit
-        <ul>
-          <li>Nested liste ostaju netaknute bez dodatne klase</li>
-        </ul>
-      </li>
+const unstyledListCode = `<h6 class="fw-bold mb-3">List Unstyled (list-unstyled)</h6>
+<ul class="list-unstyled">
+  <li>Ovo je lista bez standardnih bulleta.</li>
+  <li>Ali zadržava semantičku vrijednost liste.</li>
+  <li>
+    Nulla volutpat aliquam velit
+    <ul>
+      <li>Nested liste ostaju netaknute bez dodatne klase</li>
     </ul>
-  </div>
-  <div class="col-md-6">
-    <h6 class="fw-bold mb-3">List Inline (list-inline)</h6>
-    <ul class="list-inline">
-      <li class="list-inline-item">Lorem ipsum</li>
-      <li class="list-inline-item">Phasellus iaculis</li>
-      <li class="list-inline-item">Nulla volutpat</li>
-    </ul>
-    <hr />
-    <ul class="list-inline mb-0">
-      <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
-      <li class="list-inline-item"><a href="#">Terms of Use</a></li>
-      <li class="list-inline-item"><a href="#">Support</a></li>
-    </ul>
-  </div>
-</div>`;
+  </li>
+</ul>`;
+
+const inlineListCode = `<h6 class="fw-bold mb-3">List Inline (list-inline)</h6>
+<ul class="list-inline">
+  <li class="list-inline-item">Lorem ipsum</li>
+  <li class="list-inline-item">Phasellus iaculis</li>
+  <li class="list-inline-item">Nulla volutpat</li>
+</ul>
+<hr />
+<ul class="list-inline mb-0">
+  <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+  <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+  <li class="list-inline-item"><a href="#">Support</a></li>
+</ul>`;
 ---
 
 <NoSidebar
@@ -100,9 +90,15 @@ const utilityListsCode = `<div class="row">
   <div class="row">
     <div class="col-12">
       <ExampleSnippet
-        title="Osnovne Liste"
-        description="Standardne neuređene (bullet) i uređene (numbered) liste."
-        code={standardListsCode}
+        title="Neuređena Lista (ul)"
+        description="Standardna lista sa bulletima."
+        code={unorderedListCode}
+      />
+
+      <ExampleSnippet
+        title="Uređena Lista (ol)"
+        description="Numerisana lista za prikaz redoslijeda."
+        code={orderedListCode}
       />
 
       <ExampleSnippet
@@ -112,9 +108,15 @@ const utilityListsCode = `<div class="row">
       />
 
       <ExampleSnippet
-        title="Utility Klase za Liste"
-        description="Bootstrap klase za uklanjanje stila ili prikaz u jednom redu."
-        code={utilityListsCode}
+        title="List Unstyled"
+        description="Uklanjanje default stila liste."
+        code={unstyledListCode}
+      />
+
+      <ExampleSnippet
+        title="List Inline"
+        description="Prikazivanje elemenata liste u jednom redu."
+        code={inlineListCode}
       />
     </div>
   </div>
