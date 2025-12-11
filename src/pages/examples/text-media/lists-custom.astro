@@ -1,0 +1,127 @@
+---
+// ETF UNSA - Custom Lists Example
+import ContentExampleLayout from '../../../layouts/ContentExampleLayout.astro';
+import List from '../../../components/ez-lists/List.astro';
+import ListGroup from '../../../components/ez-lists/ListGroup.astro';
+import SimpleListItem from '../../../components/ez-lists/SimpleListItem.astro';
+import IconListItem from '../../../components/ez-lists/IconListItem.astro';
+import ImageListItem from '../../../components/ez-lists/ImageListItem.astro';
+import ContactListItem from '../../../components/ez-lists/ContactListItem.astro';
+import FileListItem from '../../../components/ez-lists/FileListItem.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Primjeri', href: '#' },
+  { label: 'Tekst & Mediji', href: '#' },
+  { label: 'Custom Liste', href: '#', active: true },
+];
+---
+
+<ContentExampleLayout
+  title="Custom Liste"
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle="Custom Liste"
+  bannerSubtitle="Primjeri prilagođenih listi za widgete i specifične sadržaje"
+>
+  <div class="row g-5">
+    <!-- Simple List -->
+    <div class="col-md-4">
+      <div class="p-4 border rounded shadow-sm bg-white h-100">
+        <List>
+          <ListGroup title="Jednostavna Lista">
+            <SimpleListItem label="Stavka liste 1" href="#" />
+            <SimpleListItem label="Stavka liste 2 (Active)" href="#" active={true} />
+            <SimpleListItem label="Stavka liste 3" href="#" />
+            <SimpleListItem label="Stavka liste 4" />
+          </ListGroup>
+        </List>
+      </div>
+    </div>
+
+    <!-- Icon List -->
+    <div class="col-md-4">
+      <div class="p-4 border rounded shadow-sm bg-white h-100">
+        <List>
+          <ListGroup title="Lista sa Ikonama">
+            <IconListItem icon="bi-star-fill" label="Istaknuto" href="#" />
+            <IconListItem icon="bi-gear" label="Postavke" href="#" />
+            <IconListItem icon="bi-bell" label="Obavještenja" href="#" />
+            <IconListItem icon="bi-shield-lock" label="Sigurnost" href="#" />
+          </ListGroup>
+        </List>
+      </div>
+    </div>
+
+    <!-- Image List -->
+    <div class="col-md-4">
+      <div class="p-4 border rounded shadow-sm bg-white h-100">
+        <List>
+          <ListGroup title="Lista sa Slikama">
+            <ImageListItem
+              imageSrc="https://placehold.co/100x100/EEE/333?text=1"
+              label="Vijest Broj Jedan"
+              description="Kratki opis vijesti ili članka."
+              href="#"
+            />
+            <ImageListItem
+              imageSrc="https://placehold.co/100x100/EEE/333?text=2"
+              label="Druga Vijest"
+              description="Još jedan opis sa datumom: 12.12.2024"
+              href="#"
+            />
+          </ListGroup>
+        </List>
+      </div>
+    </div>
+
+    <!-- Contact List -->
+    <div class="col-md-6">
+      <div class="p-4 border rounded shadow-sm bg-white h-100">
+        <List>
+          <ListGroup title="Kontakt Informacije">
+            <ContactListItem type="email" value="info@etf.unsa.ba" />
+            <ContactListItem
+              type="phone"
+              value="+387 33 250 700"
+              label="Centrala: +387 33 250 700"
+            />
+            <ContactListItem
+              type="address"
+              value="Zmaja od Bosne bb, Kampus Univerziteta, 71000 Sarajevo"
+            />
+            <ContactListItem type="website" value="www.etf.unsa.ba" />
+          </ListGroup>
+        </List>
+      </div>
+    </div>
+
+    <!-- File List -->
+    <div class="col-md-6">
+      <div class="p-4 border rounded shadow-sm bg-white h-100">
+        <List>
+          <ListGroup title="Dokumenti za Preuzimanje">
+            <FileListItem
+              fileType="pdf"
+              fileName="Pravilnik o studiranju.pdf"
+              fileSize="2.4 MB"
+              href="#"
+            />
+            <FileListItem
+              fileType="doc"
+              fileName="Zahtjev za ispis.docx"
+              fileSize="45 KB"
+              href="#"
+            />
+            <FileListItem fileType="xls" fileName="Raspored 2024.xlsx" fileSize="1.1 MB" href="#" />
+            <FileListItem
+              fileType="zip"
+              fileName="Materijali za vježbe.zip"
+              fileSize="150 MB"
+              href="#"
+            />
+          </ListGroup>
+        </List>
+      </div>
+    </div>
+  </div>
+</ContentExampleLayout>

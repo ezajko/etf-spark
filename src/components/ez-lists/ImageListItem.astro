@@ -1,0 +1,29 @@
+---
+// ETF UNSA - Image List Item
+import ListItem from './ListItem.astro';
+
+interface Props {
+  imageSrc: string;
+  label: string;
+  description?: string;
+  href?: string;
+  active?: boolean;
+}
+
+const { imageSrc, label, description, href, active } = Astro.props;
+---
+
+<ListItem href={href} active={active} className="d-flex align-items-center">
+  <div class="flex-shrink-0">
+    <img
+      src={imageSrc}
+      alt=""
+      class="rounded"
+      style="width: 48px; height: 48px; object-fit: cover;"
+    />
+  </div>
+  <div class="flex-grow-1 ms-3">
+    <div class="fw-bold">{label}</div>
+    {description && <div class="small text-muted">{description}</div>}
+  </div>
+</ListItem>

@@ -1,0 +1,54 @@
+---
+// ETF UNSA - Contact List Item
+import ListItem from './ListItem.astro';
+
+interface Props {
+  type: 'email' | 'phone' | 'address' | 'website' | 'fax';
+  value: string;
+  label?: string; // Optional custom label, defaults to value if not present
+}
+
+const { type, value, label } = Astro.props;
+
+let icon = 'bi-circle';
+let href = '';
+let displayValue = label || value;
+
+switch (type) {
+  case 'email':
+    icon = 'bi-envelope';
+    href = `mailto:${value}`;
+    break;
+  case 'phone':
+    icon = 'bi-telephone';
+    href = `tel:${value}`;
+    break;
+  case 'fax':
+    icon = 'bi-printer';
+    href = ''; // Fax usually no link
+    break;
+  case 'address':
+    icon = 'bi-geo-alt';
+    href = `https://maps.google.com/?q=${encodeURIComponent(value)}`;
+    break;
+  case 'website':
+    icon = 'bi-globe';
+    href = value.startsWith('http') ? value : `https://${value}`;
+    break;
+}
+
+// If no href (e.g. fax), render as div via ListItem logic (pass nothing for href)
+const linkHref = href ? href : undefined;
+---
+
+<ListItem href={linkHref} className="d-flex align-items-center contact-list-item">
+  <div
+    class="flex-shrink-0 bg-light rounded-circle d-flex align-items-center justify-content-center me-3"
+    style="width: 40px; height: 40px;"
+  >
+    <i class={`bi ${icon} text-primary`}></i>
+  </div>
+  <div class="flex-grow-1 text-break">
+    {displayValue}
+  </div>
+</ListItem>

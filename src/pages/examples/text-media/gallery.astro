@@ -1,0 +1,73 @@
+---
+// ETF UNSA - Gallery Example
+import ContentExampleLayout from '../../../layouts/ContentExampleLayout.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Primjeri', href: '#' },
+  { label: 'Tekst & Mediji', href: '#' },
+  { label: 'Galerija', href: '#', active: true },
+];
+
+const galleryImages = [
+  { src: 'https://placehold.co/600x400/EEE/31343C', title: 'Image 1' },
+  { src: 'https://placehold.co/600x400/DDD/31343C', title: 'Image 2' },
+  { src: 'https://placehold.co/600x400/CCC/31343C', title: 'Image 3' },
+  { src: 'https://placehold.co/600x400/BBB/31343C', title: 'Image 4' },
+  { src: 'https://placehold.co/600x400/AAA/31343C', title: 'Image 5' },
+  { src: 'https://placehold.co/600x400/999/31343C', title: 'Image 6' },
+];
+---
+
+<ContentExampleLayout
+  title="Galerija (Gallery)"
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle="Galerija"
+  bannerSubtitle="Primjer prikaza galerije slika koristeći Grid sistem"
+>
+  <div class="row g-5">
+    <!-- Grid Gallery -->
+    <div class="col-12">
+      <div class="p-4 border rounded shadow-sm bg-white">
+        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">Grid Gallery (3 Columns)</h5>
+        <div class="row g-3">
+          {
+            galleryImages.map((img) => (
+              <div class="col-sm-6 col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                  <a href="#" class="d-block text-decoration-none">
+                    <img src={img.src} class="card-img-top img-fluid rounded" alt={img.title} />
+                  </a>
+                  <div class="card-body p-2 text-center">
+                    <small class="text-muted">{img.title}</small>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 Column Gallery -->
+    <div class="col-12">
+      <div class="p-4 border rounded shadow-sm bg-white">
+        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">Grid Gallery (4 Columns)</h5>
+        <div class="row g-2">
+          {
+            galleryImages.slice(0, 4).map((img) => (
+              <div class="col-6 col-md-3">
+                <a
+                  href="#"
+                  class="d-block position-relative overflow-hidden rounded group-hover-zoom"
+                >
+                  <img src={img.src} class="img-fluid w-100 shadow-sm" alt={img.title} />
+                </a>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</ContentExampleLayout>

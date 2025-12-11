@@ -1,0 +1,65 @@
+---
+// ETF UNSA - Video Example
+import ContentExampleLayout from '../../../layouts/ContentExampleLayout.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Primjeri', href: '#' },
+  { label: 'Tekst & Mediji', href: '#' },
+  { label: 'Video', href: '#', active: true },
+];
+---
+
+<ContentExampleLayout
+  title="Video"
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle="Video"
+  bannerSubtitle="Primjeri responsivnog prikaza videa (YouTube, Vimeo, HTML5)"
+>
+  <div class="row g-5">
+    <!-- Ratio 16x9 -->
+    <div class="col-md-6">
+      <div class="p-4 border rounded shadow-sm bg-white h-100">
+        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">16x9 Aspect Ratio</h5>
+        <div class="ratio ratio-16x9">
+          <iframe
+            src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+            title="YouTube video"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ratio 4x3 -->
+    <div class="col-md-6">
+      <div class="p-4 border rounded shadow-sm bg-white h-100">
+        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">4x3 Aspect Ratio</h5>
+        <div class="ratio ratio-4x3">
+          <iframe
+            src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0"
+            title="YouTube video"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+    <!-- HTML5 Video -->
+    <div class="col-12">
+      <div class="p-4 border rounded shadow-sm bg-white">
+        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">HTML5 Video Tag</h5>
+        <p class="text-muted mb-3">
+          Za lokalne video fajlove koristite standardni <code>&lt;video&gt;</code> tag.
+        </p>
+        <div class="ratio ratio-21x9">
+          <video controls poster="https://placehold.co/800x400/333/EEE?text=Poster+Image">
+            <source
+              src="https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4"
+              type="video/mp4"
+            />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</ContentExampleLayout>

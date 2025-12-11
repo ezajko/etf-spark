@@ -1,0 +1,80 @@
+---
+// ETF UNSA - Headers Example
+import ContentExampleLayout from '../../../layouts/ContentExampleLayout.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Primjeri', href: '#' },
+  { label: 'Tekst & Mediji', href: '#' },
+  { label: 'Naslovi', href: '#', active: true },
+];
+---
+
+<ContentExampleLayout
+  title="Naslovi (Headers)"
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle="Naslovi"
+  bannerSubtitle="Primjeri tipografskih naslova H1-H6 i Display varijanti"
+>
+  <div class="row g-5">
+    <!-- Standard Headings -->
+    <div class="col-md-6">
+      <div class="p-4 border rounded shadow-sm h-100 bg-white">
+        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">Standardni Naslovi</h5>
+        <h1>h1. Bootstrap heading</h1>
+        <h2>h2. Bootstrap heading</h2>
+        <h3>h3. Bootstrap heading</h3>
+        <h4>h4. Bootstrap heading</h4>
+        <h5>h5. Bootstrap heading</h5>
+        <h6>h6. Bootstrap heading</h6>
+      </div>
+    </div>
+
+    <!-- Headings with Secondary Text -->
+    <div class="col-md-6">
+      <div class="p-4 border rounded shadow-sm h-100 bg-white">
+        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">Naslovi sa sekundarnim tekstom</h5>
+        <h1>Fancy display heading <small class="text-muted">With faded secondary text</small></h1>
+        <h2>Fancy display heading <small class="text-muted">With faded secondary text</small></h2>
+        <h3>Fancy display heading <small class="text-muted">With faded secondary text</small></h3>
+      </div>
+    </div>
+
+    <!-- Display Headings -->
+    <div class="col-12">
+      <div class="p-4 border rounded shadow-sm bg-white">
+        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">Display Naslovi</h5>
+        <div class="table-responsive">
+          <table class="table align-middle">
+            <tbody>
+              <tr>
+                <td style="width: 30%;"><h1 class="display-1 mb-0">Display 1</h1></td>
+                <td class="text-muted">Koristi se za hero sekcije i glavne banere.</td>
+              </tr>
+              <tr>
+                <td><h1 class="display-2 mb-0">Display 2</h1></td>
+                <td class="text-muted">Veliki naslovi za istaknute sekcije.</td>
+              </tr>
+              <tr>
+                <td><h1 class="display-3 mb-0">Display 3</h1></td>
+                <td class="text-muted">Standardni istaknuti naslov.</td>
+              </tr>
+              <tr>
+                <td><h1 class="display-4 mb-0">Display 4</h1></td>
+                <td class="text-muted">Manji display naslov.</td>
+              </tr>
+              <tr>
+                <td><h1 class="display-5 mb-0">Display 5</h1></td>
+                <td class="text-muted">Još manji, ali i dalje istaknutiji od H1.</td>
+              </tr>
+              <tr>
+                <td><h1 class="display-6 mb-0">Display 6</h1></td>
+                <td class="text-muted">Najmanji display naslov.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</ContentExampleLayout>

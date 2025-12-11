@@ -1,0 +1,46 @@
+---
+// ETF UNSA - Content Example Layout
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import Default from './Default.astro';
+import PageHeader from '../components/PageHeader.astro';
+
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+  active?: boolean;
+}
+
+interface Props {
+  title: string;
+  breadcrumbItems?: BreadcrumbItem[];
+  bannerTitle?: string;
+  bannerSubtitle?: string;
+  bannerBgClass?: string;
+}
+
+const {
+  title,
+  breadcrumbItems,
+  bannerTitle,
+  bannerSubtitle,
+  bannerBgClass = 'bg-primary',
+} = Astro.props;
+---
+
+<Default title={title} breadcrumbItems={breadcrumbItems}>
+  <!-- Banner Slot -->
+  <slot name="banner" slot="banner">
+    {
+      bannerTitle && (
+        <PageHeader title={bannerTitle} subtitle={bannerSubtitle} bgClass={bannerBgClass} />
+      )
+    }
+  </slot>
+
+  <!-- Content Example Wrapper -->
+  <div class="col-12 content-example-slot">
+    <slot />
+  </div>
+</Default>

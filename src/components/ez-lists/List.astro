@@ -1,0 +1,12 @@
+---
+// ETF UNSA - Generic List Wrapper
+interface Props {
+  className?: string;
+}
+
+const { className = '' } = Astro.props;
+---
+
+<div class={`ez-list ${className}`}>
+  <slot />
+</div>

@@ -1,0 +1,16 @@
+---
+// ETF UNSA - Simple List Item
+import ListItem from './ListItem.astro';
+
+interface Props {
+  label: string;
+  href?: string;
+  active?: boolean;
+}
+
+const { label, href, active } = Astro.props;
+---
+
+<ListItem href={href} active={active} className="d-flex align-items-center">
+  {label}
+</ListItem>

@@ -1,0 +1,83 @@
+---
+// ETF UNSA - Code Example
+import ContentExampleLayout from '../../../layouts/ContentExampleLayout.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Primjeri', href: '#' },
+  { label: 'Tekst & Mediji', href: '#' },
+  { label: 'Kod', href: '#', active: true },
+];
+---
+
+<ContentExampleLayout
+  title="Kod (Code)"
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle="Kod"
+  bannerSubtitle="Primjeri formatiranja koda: inline, blokovi, varijable i input"
+>
+  <div class="row g-5">
+    <!-- Inline Code -->
+    <div class="col-md-6">
+      <div class="p-4 border rounded shadow-sm bg-white h-100">
+        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">Inline Code</h5>
+        <p>
+          Za prikazivanje kratkih isječaka koda unutar teksta koristite <code>&lt;code&gt;</code> element.
+        </p>
+        <p>
+          Na primjer, <code>&lt;section&gt;</code> treba biti omotan kao inline element.
+        </p>
+      </div>
+    </div>
+
+    <!-- User Input & Variables -->
+    <div class="col-md-6">
+      <div class="p-4 border rounded shadow-sm bg-white h-100">
+        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">User Input & Variables</h5>
+        <p>
+          Koristite <code>&lt;kbd&gt;</code> da označite input koji se unosi putem tastature:
+        </p>
+        <p>
+          Pritisnite <kbd>Ctrl</kbd> + <kbd>,</kbd> da otvorite postavke.
+        </p>
+        <hr class="my-4" />
+        <p>
+          Koristite <code>&lt;var&gt;</code> za označavanje varijabli:
+        </p>
+        <p>
+          <var>y</var> = <var>m</var><var>x</var> + <var>b</var>
+        </p>
+      </div>
+    </div>
+
+    <!-- Code Blocks -->
+    <div class="col-12">
+      <div class="p-4 border rounded shadow-sm bg-white">
+        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">Code Blocks</h5>
+        <p>
+          Koristite <code>&lt;pre&gt;</code> element za višelinijske blokove koda. Pobrinite se da escape-ate
+          uglaste zagrade u HTML-u.
+        </p>
+        <pre
+          class="bg-light p-3 border rounded"><code>&lt;article class="blog-post"&gt;
+  &lt;h2 class="blog-post-title"&gt;Naslov posta&lt;/h2&gt;
+  &lt;p class="blog-post-meta"&gt;December 23, 2024 by &lt;a href="#"&gt;Mark&lt;/a&gt;&lt;/p&gt;
+
+  &lt;p&gt;This is an example blog post. Look there seems to be some code here.&lt;/p&gt;
+&lt;/article&gt;
+</code></pre>
+      </div>
+    </div>
+
+    <!-- Sample Output -->
+    <div class="col-12">
+      <div class="p-4 border rounded shadow-sm bg-white">
+        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">Sample Output</h5>
+        <p>
+          Koristite <code>&lt;samp&gt;</code> za prikaz outputa iz programa:
+        </p>
+        <samp>This text is meant to be treated as sample output from a computer program.</samp>
+      </div>
+    </div>
+  </div>
+</ContentExampleLayout>

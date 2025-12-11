@@ -1,0 +1,78 @@
+---
+// ETF UNSA - File List Item
+import ListItem from './ListItem.astro';
+
+export interface Props {
+  fileType:
+    | 'pdf'
+    | 'doc'
+    | 'docx'
+    | 'xls'
+    | 'xlsx'
+    | 'ppt'
+    | 'pptx'
+    | 'zip'
+    | 'image'
+    | 'video'
+    | 'default';
+  fileName: string;
+  fileSize?: string;
+  href: string;
+}
+
+const { fileType = 'default', fileName, fileSize, href } = Astro.props;
+
+let icon = 'bi-file-earmark';
+let colorClass = 'text-secondary';
+
+switch (fileType) {
+  case 'pdf':
+    icon = 'bi-file-earmark-pdf';
+    colorClass = 'text-danger';
+    break;
+  case 'doc':
+  case 'docx':
+    icon = 'bi-file-earmark-word';
+    colorClass = 'text-primary';
+    break;
+  case 'xls':
+  case 'xlsx':
+    icon = 'bi-file-earmark-excel';
+    colorClass = 'text-success';
+    break;
+  case 'ppt':
+  case 'pptx':
+    icon = 'bi-file-earmark-slides';
+    colorClass = 'text-warning';
+    break;
+  case 'zip':
+    icon = 'bi-file-earmark-zip';
+    colorClass = 'text-dark';
+    break;
+  case 'image':
+    icon = 'bi-file-earmark-image';
+    colorClass = 'text-info';
+    break;
+  case 'video':
+    icon = 'bi-file-earmark-play';
+    colorClass = 'text-danger';
+    break;
+}
+---
+
+<ListItem href={href} className="file-list-item">
+  <div class="d-flex align-items-center">
+    <i class={`bi ${icon} ${colorClass} me-3 fs-3`}></i>
+    <div class="flex-grow-1">
+      <div class="fw-medium text-dark">{fileName}</div>
+      {
+        fileSize && (
+          <small class="text-muted text-uppercase">
+            {fileType} • {fileSize}
+          </small>
+        )
+      }
+    </div>
+    <i class="bi bi-download text-muted ms-3"></i>
+  </div>
+</ListItem>
