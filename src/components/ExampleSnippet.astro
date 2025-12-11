@@ -1,10 +1,8 @@
 ---
 // ExampleSnippet.astro
-// Renders a code snippet as both a live preview and visible source code.
-// Props:
-// - code: The HTML string to render and display.
-// - title: Optional title for the snippet card.
-// - description: Optional description text.
+import { Code } from 'astro:components';
+import prettier from 'prettier';
+import * as htmlPlugin from 'prettier/plugins/html';
 
 interface Props {
   code: string;
@@ -14,9 +12,6 @@ interface Props {
 
 const { code, title, description } = Astro.props;
 
-import prettier from 'prettier';
-import * as htmlPlugin from 'prettier/plugins/html';
-
 let formattedCode = code;
 try {
   formattedCode = await prettier.format(code, {
@@ -25,9 +20,10 @@ try {
     printWidth: 60,
     htmlWhitespaceSensitivity: 'css',
     tabWidth: 2,
+    useTabs: false,
   });
 } catch (e) {
-  console.warn('Failed to format snippet:', e);
+  console.warn('ExampleSnippet: Failed to format snippet with Prettier:', e);
   // Fallback to original code if prettier fails
 }
 ---
@@ -60,23 +56,24 @@ try {
       <h6 class="text-uppercase text-muted fw-bold small mb-2 ls-1">
         <i class="bi bi-code-slash me-2"></i>HTML Source
       </h6>
-      <pre class="mb-0"><code class="language-html text-wrap">{formattedCode}</code></pre>
+      <div class="code-wrapper">
+        <Code code={formattedCode} lang="html" theme="github-light" />
+      </div>
     </div>
   </div>
 </div>
 
 <style>
   .preview-content {
-    /* Ensure preview content doesn't break out unexpectedly */
     overflow-x: auto;
   }
-  pre {
+  .code-wrapper {
     max-height: 400px;
     overflow-y: auto;
-    white-space: pre-wrap; /* css-3 */
-    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
-    white-space: -pre-wrap; /* Opera 4-6 */
-    white-space: -o-pre-wrap; /* Opera 7 */
-    word-wrap: break-word; /* Internet Explorer 5.5+ */
+  }
+  /* Override Shiki's default background to match card */
+  :global(.code-wrapper pre.astro-code) {
+    background-color: transparent !important;
+    margin-bottom: 0;
   }
 </style>
