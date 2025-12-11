@@ -20,35 +20,41 @@ const galleryImages = [
 ];
 
 const gridGallery3Code = `<div class="row g-3">
-  {
-    galleryImages.map((img) => (
-      <div class="col-sm-6 col-md-4">
-        <div class="card h-100 border-0 shadow-sm">
-          <a href="#" class="d-block text-decoration-none">
-            <img src={img.src} class="card-img-top img-fluid rounded" alt={img.title} />
-          </a>
-          <div class="card-body p-2 text-center">
-            <small class="text-muted">{img.title}</small>
-          </div>
-        </div>
+  <div class="col-sm-6 col-md-4">
+    <div class="card h-100 border-0 shadow-sm">
+      <a href="#" class="d-block text-decoration-none">
+        <img src="..." class="card-img-top img-fluid rounded" alt="Image 1" />
+      </a>
+      <div class="card-body p-2 text-center">
+        <small class="text-muted">Image 1</small>
       </div>
-    ))
-  }
+    </div>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <div class="card h-100 border-0 shadow-sm">
+      <a href="#" class="d-block text-decoration-none">
+        <img src="..." class="card-img-top img-fluid rounded" alt="Image 2" />
+      </a>
+      <div class="card-body p-2 text-center">
+        <small class="text-muted">Image 2</small>
+      </div>
+    </div>
+  </div>
+  <!-- More columns... -->
 </div>`;
 
 const gridGallery4Code = `<div class="row g-2">
-  {
-    galleryImages.slice(0, 4).map((img) => (
-      <div class="col-6 col-md-3">
-        <a
-          href="#"
-          class="d-block position-relative overflow-hidden rounded group-hover-zoom"
-        >
-          <img src={img.src} class="img-fluid w-100 shadow-sm" alt={img.title} />
-        </a>
-      </div>
-    ))
-  }
+  <div class="col-6 col-md-3">
+    <a href="#" class="d-block position-relative overflow-hidden rounded group-hover-zoom">
+      <img src="..." class="img-fluid w-100 shadow-sm" alt="Image 1" />
+    </a>
+  </div>
+  <div class="col-6 col-md-3">
+    <a href="#" class="d-block position-relative overflow-hidden rounded group-hover-zoom">
+      <img src="..." class="img-fluid w-100 shadow-sm" alt="Image 2" />
+    </a>
+  </div>
+  <!-- More columns... -->
 </div>`;
 ---
 
@@ -62,7 +68,7 @@ const gridGallery4Code = `<div class="row g-2">
     <div class="col-12">
       <ExampleSnippet
         title="Grid Gallery (3 Columns)"
-        description="Galerija koristeći Astro mapiranje i Bootstrap Grid."
+        description="Galerija koristeći Bootstrap Grid sistem."
         code={gridGallery3Code}
       >
         <div class="row g-3">
