@@ -9,6 +9,7 @@
 @import 'base/variables';
 @import 'base/mixins'; // Custom mixins
 @import 'base/bootstrap-overrides'; // This likely imports bootstrap or sets vars
+@import 'overrides/card'; // Custom component overrides
 
 // Ensure Bootstrap Mixins/Functions are available for our components
 // We need to import these if they aren't fully exposed by bootstrap-overrides

@@ -1,0 +1,14 @@
+// Custom Bootstrap Card Overrides
+// Restoring "Classic" ez-card feel with native classes
+
+.card {
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    border-width: 0; // Default to no border as per modern style
+    box-shadow: var(--ez-shadow-sm, 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075));
+
+    &:hover {
+        transform: translateY(-5px); // The "lifting" effect
+        box-shadow: var(--ez-shadow, 0 0.5rem 1rem rgba(0, 0, 0, 0.15));
+        z-index: 1; // Ensure it stays on top nicely
+    }
+}
