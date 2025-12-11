@@ -13,6 +13,23 @@ interface Props {
 }
 
 const { code, title, description } = Astro.props;
+
+import prettier from 'prettier';
+import * as htmlPlugin from 'prettier/plugins/html';
+
+let formattedCode = code;
+try {
+  formattedCode = await prettier.format(code, {
+    parser: 'html',
+    plugins: [htmlPlugin],
+    printWidth: 80,
+    htmlWhitespaceSensitivity: 'ignore',
+    tabWidth: 2,
+  });
+} catch (e) {
+  console.warn('Failed to format snippet:', e);
+  // Fallback to original code if prettier fails
+}
 ---
 
 <div class="card shadow-sm mb-4">
@@ -43,7 +60,7 @@ const { code, title, description } = Astro.props;
       <h6 class="text-uppercase text-muted fw-bold small mb-2 ls-1">
         <i class="bi bi-code-slash me-2"></i>HTML Source
       </h6>
-      <pre class="mb-0"><code class="language-html text-wrap">{code}</code></pre>
+      <pre class="mb-0"><code class="language-html text-wrap">{formattedCode}</code></pre>
     </div>
   </div>
 </div>
