@@ -108,48 +108,93 @@
         position: static !important;
     }
 
-    // Tabbed mega menu (Level 3)
-    .split-tab-container {
+    // Tabbed Menu Section (Vertical Tabs in Mega Menu)
+    .ez-nav-tabs {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: $ez-spacing-sm $ez-spacing-md;
-        border-bottom: 1px solid $ez-border-color;
+        flex-direction: column;
+        border-right: 1px solid var(--bs-border-color);
+        padding-right: 0;
+        margin-right: $ez-spacing-lg; // Spacing to content
+        height: 100%;
 
-        &:hover {
-            background-color: $ez-bg-light;
-        }
-    }
-
-    .split-tab-link {
-        flex: 1;
-        color: var(--bs-body-color);
-        text-decoration: none;
-        font-weight: $ez-font-weight-semibold;
-        text-transform: uppercase;
-
-        &:hover {
-            color: var(--bs-primary);
-        }
-    }
-
-    .split-tab-toggle {
-        background: none;
-        border: none;
-        color: var(--bs-body-color);
-        padding: 0 $ez-spacing-sm;
-        cursor: pointer;
-        opacity: 0.5;
-        transition: all 0.2s;
-
-        &:hover,
-        &.active {
-            opacity: 1;
-            color: var(--bs-primary);
+        .nav-item {
+            margin-bottom: 0;
         }
 
-        &.active i {
-            transform: rotate(90deg);
+        // Container for the Split Tab (Link + Toggle)
+        .split-tab-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: $ez-spacing-sm $ez-spacing-md;
+            margin-right: -1px; // Overlap border
+            border-right: 0.125rem solid transparent; // Active indicator
+            transition: all 0.2s ease;
+            cursor: pointer;
+
+            // Hover effect on the whole row
+            &:hover {
+                background-color: rgba(var(--bs-primary-rgb), 0.05);
+                color: var(--bs-primary);
+
+                .split-tab-link,
+                .split-tab-toggle {
+                    color: var(--bs-primary);
+                }
+            }
+
+            // Active State (Triggered when the button inside is active)
+            // We use :has() selector if supported, or target the active button directly
+            &:has(.split-tab-toggle.active),
+            &.active-parent {
+                border-right-color: var(--bs-primary);
+                background-color: transparent; // No pill bg
+
+                .split-tab-link,
+                .split-tab-toggle {
+                    color: var(--bs-primary);
+                    font-weight: $ez-font-weight-bold;
+                }
+            }
+        }
+
+        // The Link part
+        .split-tab-link {
+            flex: 1;
+            color: var(--bs-body-color);
+            text-decoration: none;
+            font-weight: $ez-font-weight-semibold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            padding-right: $ez-spacing-sm;
+
+            &:hover {
+                color: var(--bs-primary);
+            }
+        }
+
+        // The Toggle Button part (Chevron)
+        .split-tab-toggle {
+            background: none;
+            border: none;
+            padding: 0;
+            color: var(--bs-secondary-color);
+            transition: transform 0.2s ease;
+            opacity: 0.7;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &.active {
+                opacity: 1;
+                color: var(--bs-primary);
+
+                // i {
+                //     // Rotate arrow if desired, or keep right pointing
+                //     // For vertical tabs, usually right pointing is fine, or active state implies selection
+                // }
+            }
         }
     }
 }

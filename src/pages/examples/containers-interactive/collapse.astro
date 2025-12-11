@@ -1,0 +1,62 @@
+---
+// ETF UNSA - Collapse Example
+import NoSidebar from '../../../layouts/NoSidebar.astro';
+import ExampleSnippet from '../../../components/ExampleSnippet.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Primjeri', href: '#' },
+  { label: 'Containers & Interactive', href: '#' },
+  { label: 'Collapse', href: '#', active: true },
+];
+
+const basicCollapseCode = `<p class="d-inline-flex gap-1">
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Link with href
+  </button>
+  <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Button with data-bs-target
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+  </div>
+</div>`;
+
+const horizontalCollapseCode = `<p>
+  <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+    Toggle width collapse
+  </button>
+</p>
+<div style="min-height: 120px;">
+  <div class="collapse collapse-horizontal" id="collapseWidthExample">
+    <div class="card card-body" style="width: 300px;">
+      This is some placeholder content for a horizontal collapse. It's hidden by default and shown when triggered.
+    </div>
+  </div>
+</div>`;
+---
+
+<NoSidebar
+  title="Collapse"
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle="Collapse"
+  bannerSubtitle="Prikaz i sakrivanje sadržaja"
+>
+  <div class="row">
+    <div class="col-12">
+      <ExampleSnippet
+        title="Basic Collapse"
+        description="Jednostavno sakrivanje i prikazivanje elementa."
+        code={basicCollapseCode}
+      />
+
+      <ExampleSnippet
+        title="Horizontal Collapse"
+        description="Sakrivanje i prikazivanje elementa horizontalnom animacijom."
+        code={horizontalCollapseCode}
+      />
+    </div>
+  </div>
+</NoSidebar>

@@ -1,41 +1,58 @@
 // ETF UNSA - Accordion Styles
 // Author: Ernedin Zajko <ezajko@root.ba>
 
-.accordion-item {
-    border: none;
-    box-shadow: $ez-shadow-sm;
-    margin-bottom: $ez-spacing-md;
-    border-radius: $ez-border-radius !important;
-    overflow: hidden;
+// ETF UNSA - Accordion Styles
+// Author: Ernedin Zajko <ezajko@root.ba>
 
-    &:last-child {
-        margin-bottom: 0;
-    }
-}
+.ez-accordion {
+    .accordion-item {
+        border: none;
+        box-shadow: $ez-shadow-sm;
+        margin-bottom: $ez-spacing-md;
+        border-radius: $ez-border-radius;
+        overflow: hidden;
+        border: 1px solid var(--bs-border-color); // Explicit border
 
-.accordion-button {
-    background-color: var(--bs-body-bg);
-    color: var(--bs-body-color);
-    font-weight: $ez-font-weight-bold;
-    box-shadow: none !important; // Remove default bootstrap focus shadow
-    padding: $ez-spacing-md;
-
-    &:not(.collapsed) {
-        background-color: rgba(var(--bs-primary-rgb), 0.05);
-        color: var(--bs-primary);
-
-        &::after {
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230d6efd'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+        &:last-child {
+            margin-bottom: 0;
         }
     }
 
-    &:focus {
-        border-color: rgba(var(--bs-primary-rgb), 0.5);
-        box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
-    }
-}
+    .accordion-button {
+        background-color: var(--bs-body-bg);
+        color: var(--bs-body-color);
+        font-weight: $ez-font-weight-bold;
+        box-shadow: none !important;
+        padding: $ez-spacing-md;
+        transition: background-color 0.2s ease, color 0.2s ease;
 
-.accordion-body {
-    padding: $ez-spacing-md;
-    background-color: var(--bs-body-bg);
+        &:not(.collapsed) {
+            background-color: rgba(var(--bs-primary-rgb), 0.05);
+            color: var(--bs-primary);
+
+            &::after {
+                background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%230d6efd'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+            }
+        }
+
+        &:focus {
+            box-shadow: inset 0 0 0 1px rgba(var(--bs-primary-rgb), 0.25);
+        }
+    }
+
+    .accordion-body {
+        padding: $ez-spacing-lg; // Larger padding for better readability
+        background-color: var(--bs-body-bg);
+    }
+
+    // Flush variant styling updates within ez-accordion
+    &.accordion-flush {
+        .accordion-item {
+            box-shadow: none;
+            border: none;
+            border-bottom: 1px solid var(--bs-border-color);
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+    }
 }

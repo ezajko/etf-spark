@@ -7,8 +7,15 @@
 
 // Base
 @import 'base/variables';
-@import 'base/mixins';
-@import 'base/bootstrap-overrides';
+@import 'base/mixins'; // Custom mixins
+@import 'base/bootstrap-overrides'; // This likely imports bootstrap or sets vars
+
+// Ensure Bootstrap Mixins/Functions are available for our components
+// We need to import these if they aren't fully exposed by bootstrap-overrides
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
 @import 'base/global';
 
 // Components (ez- prefixed)
@@ -32,7 +39,13 @@
 @import 'components/navigation/ez-nav-tree';
 @import 'components/navigation/ez-nav-section';
 @import 'components/navigation/ez-nav-pagination';
-@import 'components/navigation/ez-nav-tabs';
+@import 'components/navigation/ez-nav-main';
+@import 'components/navigation/ez-nav-slim';
+@import 'components/navigation/ez-nav-tree';
+@import 'components/navigation/ez-nav-section';
+@import 'components/navigation/ez-nav-pagination';
+@import 'components/ez-tabs'; // General component
+
 @import 'components/navigation/ez-nav-pills';
 
 @import "components/ez-utilities";
