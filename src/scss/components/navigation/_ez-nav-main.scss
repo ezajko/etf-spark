@@ -197,4 +197,15 @@
             }
         }
     }
+
+    // Tab Content Persistence Fix for Mega Menu
+    .tab-content {
+        >.tab-pane {
+            display: none;
+        }
+
+        >.active {
+            display: block;
+        }
+    }
 }
