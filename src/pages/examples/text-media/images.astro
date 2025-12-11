@@ -1,6 +1,7 @@
 ---
 // ETF UNSA - Images Example
-import ContentExampleLayout from '../../../layouts/ContentExampleLayout.astro';
+import NoSidebar from '../../../layouts/NoSidebar.astro';
+import ExampleSnippet from '../../../components/ExampleSnippet.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
@@ -8,106 +9,91 @@ const breadcrumbItems = [
   { label: 'Tekst & Mediji', href: '#' },
   { label: 'Slike', href: '#', active: true },
 ];
+
+const responsiveImageCode = `<img
+  src="https://placehold.co/800x400/EEE/31343C"
+  class="img-fluid rounded"
+  alt="Responsive image example"
+/>`;
+
+const thumbnailCode = `<img
+  src="https://placehold.co/200x200/EEE/31343C"
+  class="img-thumbnail"
+  alt="Thumbnail image example"
+/>`;
+
+const alignmentImagesCode = `<div class="clearfix mb-3">
+  <img
+    src="https://placehold.co/200x200/EEE/31343C"
+    class="rounded float-start me-3 mb-3"
+    alt="Left aligned"
+  />
+  <p>
+    Ova slika je poravnata lijevo (<code>.float-start</code>). Tekst teče oko nje.
+  </p>
+</div>
+
+<div class="clearfix mb-3">
+  <img
+    src="https://placehold.co/200x200/EEE/31343C"
+    class="rounded float-end ms-3 mb-3"
+    alt="Right aligned"
+  />
+  <p>
+    Ova slika je poravnata desno (<code>.float-end</code>). Tekst teče oko nje.
+  </p>
+</div>
+
+<div class="text-center">
+  <img
+    src="https://placehold.co/300x200/EEE/31343C"
+    class="rounded mx-auto d-block"
+    alt="Centered image"
+  />
+  <p class="mt-2 text-muted">Centrirana slika</p>
+</div>`;
+
+const figureCode = `<figure class="figure">
+  <img
+    src="https://placehold.co/600x400/EEE/31343C"
+    class="figure-img img-fluid rounded"
+    alt="A generic square placeholder image."
+  />
+  <figcaption class="figure-caption">A caption for the above image.</figcaption>
+</figure>`;
 ---
 
-<ContentExampleLayout
+<NoSidebar
   title="Slike (Images)"
   breadcrumbItems={breadcrumbItems}
   bannerTitle="Slike"
   bannerSubtitle="Primjeri responsivnih slika, thumbnails-a i figura"
 >
-  <div class="row g-5">
-    <!-- Responsive Images -->
-    <div class="col-md-6">
-      <div class="p-4 border rounded shadow-sm bg-white h-100">
-        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">Responsive Images (.img-fluid)</h5>
-        <p>
-          Slike sa klasom <code>.img-fluid</code> se prilagođavaju širini roditeljskog elementa.
-        </p>
-        <img
-          src="https://placehold.co/800x400/EEE/31343C"
-          class="img-fluid rounded"
-          alt="Responsive image example"
-        />
-      </div>
-    </div>
-
-    <!-- Thumbnails -->
-    <div class="col-md-6">
-      <div class="p-4 border rounded shadow-sm bg-white h-100">
-        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">Thumbnails (.img-thumbnail)</h5>
-        <p>Dodaje okvir oko slike.</p>
-        <img
-          src="https://placehold.co/200x200/EEE/31343C"
-          class="img-thumbnail"
-          alt="Thumbnail image example"
-        />
-      </div>
-    </div>
-
-    <!-- Alignment -->
+  <div class="row">
     <div class="col-12">
-      <div class="p-4 border rounded shadow-sm bg-white">
-        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">Poravnanje Slika</h5>
-        <div class="clearfix">
-          <img
-            src="https://placehold.co/200x200/EEE/31343C"
-            class="rounded float-start me-3 mb-3"
-            alt="Left aligned"
-          />
-          <p>
-            Ova slika je poravnata lijevo (<code>.float-start</code>). Tekst teče oko nje. Lorem
-            ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua.
-          </p>
-          <p>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-            commodo consequat. Duis aute irure dolor in reprehenderit.
-          </p>
-        </div>
-        <hr class="my-4" />
-        <div class="clearfix">
-          <img
-            src="https://placehold.co/200x200/EEE/31343C"
-            class="rounded float-end ms-3 mb-3"
-            alt="Right aligned"
-          />
-          <p>
-            Ova slika je poravnata desno (<code>.float-end</code>). Tekst teče oko nje. Lorem ipsum
-            dolor sit amet, consectetur adipiscing elit.
-          </p>
-          <p>
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum.
-          </p>
-        </div>
-        <hr class="my-4" />
-        <div class="text-center">
-          <p class="mb-3">
-            Centrirana slika (<code>.mx-auto .d-block</code> ili unutar <code>.text-center</code> diva)
-          </p>
-          <img
-            src="https://placehold.co/300x200/EEE/31343C"
-            class="rounded mx-auto d-block"
-            alt="Centered image"
-          />
-        </div>
-      </div>
-    </div>
+      <ExampleSnippet
+        title="Responsive Images (.img-fluid)"
+        description="Slike sa klasom .img-fluid se prilagođavaju širini roditeljskog elementa."
+        code={responsiveImageCode}
+      />
 
-    <!-- Figures -->
-    <div class="col-12">
-      <div class="p-4 border rounded shadow-sm bg-white">
-        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">Figure (Slika sa potpisom)</h5>
-        <figure class="figure">
-          <img
-            src="https://placehold.co/600x400/EEE/31343C"
-            class="figure-img img-fluid rounded"
-            alt="A generic square placeholder image."
-          />
-          <figcaption class="figure-caption">A caption for the above image.</figcaption>
-        </figure>
-      </div>
+      <ExampleSnippet
+        title="Thumbnails (.img-thumbnail)"
+        description="Dodajte okvir oko slike koristeći .img-thumbnail klasu."
+        code={thumbnailCode}
+      />
+
+      <ExampleSnippet
+        title="Poravnanje Slika"
+        description="Float klase i text-alignment utility klase za pozicioniranje slika."
+        code={alignmentImagesCode}
+      />
+
+      <ExampleSnippet
+        title="Figure (Slika sa potpisom)"
+        description="HTML5 figure i figcaption elementi sa Bootstrap stilovima."
+        code={figureCode}
+      />
     </div>
   </div>
-</ContentExampleLayout>
+</NoSidebar>

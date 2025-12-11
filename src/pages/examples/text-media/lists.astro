@@ -1,6 +1,7 @@
 ---
 // ETF UNSA - Standard Lists Example
-import ContentExampleLayout from '../../../layouts/ContentExampleLayout.astro';
+import NoSidebar from '../../../layouts/NoSidebar.astro';
+import ExampleSnippet from '../../../components/ExampleSnippet.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
@@ -8,9 +9,119 @@ const breadcrumbItems = [
   { label: 'Tekst & Mediji', href: '#' },
   { label: 'Liste', href: '#', active: true },
 ];
+
+const standardListsCode = `<div class="row">
+  <div class="col-md-6 mb-4 mb-md-0">
+    <h6 class="fw-bold mb-3">Neuređena lista (ul)</h6>
+    <ul>
+      <li>Lorem ipsum dolor sit amet</li>
+      <li>Consectetur adipiscing elit</li>
+      <li>
+        Integra facilisis nulla
+        <ul>
+          <li>Phasellus iaculis neque</li>
+          <li>Purus sodales ultricies</li>
+        </ul>
+      </li>
+      <li>Faucibus porta lacus fringilla vel</li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <h6 class="fw-bold mb-3">Uređena lista (ol)</h6>
+    <ol>
+      <li>Lorem ipsum dolor sit amet</li>
+      <li>Consectetur adipiscing elit</li>
+      <li>
+        Integra facilisis nulla
+        <ol>
+          <li>Phasellus iaculis neque</li>
+          <li>Purus sodales ultricies</li>
+        </ol>
+      </li>
+      <li>Faucibus porta lacus fringilla vel</li>
+    </ol>
+  </div>
+</div>`;
+
+const descriptionListsCode = `<dl class="row mb-0">
+  <dt class="col-sm-3">Description lists</dt>
+  <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+
+  <dt class="col-sm-3">Term</dt>
+  <dd class="col-sm-9">
+    <p>Definition for the term.</p>
+    <p class="mb-0">And some more placeholder definition text.</p>
+  </dd>
+
+  <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+  <dd class="col-sm-9">
+    Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
+    massa justo sit amet risus.
+  </dd>
+</dl>`;
+
+const utilityListsCode = `<div class="row">
+  <div class="col-md-6">
+    <h6 class="fw-bold mb-3">List Unstyled (list-unstyled)</h6>
+    <ul class="list-unstyled">
+      <li>Ovo je lista bez standardnih bulleta.</li>
+      <li>Ali zadržava semantičku vrijednost liste.</li>
+      <li>
+        Nulla volutpat aliquam velit
+        <ul>
+          <li>Nested liste ostaju netaknute bez dodatne klase</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <h6 class="fw-bold mb-3">List Inline (list-inline)</h6>
+    <ul class="list-inline">
+      <li class="list-inline-item">Lorem ipsum</li>
+      <li class="list-inline-item">Phasellus iaculis</li>
+      <li class="list-inline-item">Nulla volutpat</li>
+    </ul>
+    <hr />
+    <ul class="list-inline mb-0">
+      <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+      <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+      <li class="list-inline-item"><a href="#">Support</a></li>
+    </ul>
+  </div>
+</div>`;
 ---
 
-<ContentExampleLayout
+<NoSidebar
+  title="Liste (Standardne)"
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle="Liste"
+  bannerSubtitle="Standardne HTML liste: neuređene, uređene, bez stila i inline"
+>
+  <div class="row">
+    <div class="col-12">
+      <ExampleSnippet
+        title="Osnovne Liste"
+        description="Standardne neuređene (bullet) i uređene (numbered) liste."
+        code={standardListsCode}
+      />
+
+      <ExampleSnippet
+        title="Opisne Liste"
+        description="Liste za definiranje pojmova (definition lists)."
+        code={descriptionListsCode}
+      />
+
+      <ExampleSnippet
+        title="Utility Klase za Liste"
+        description="Bootstrap klase za uklanjanje stila ili prikaz u jednom redu."
+        code={utilityListsCode}
+      />
+    </div>
+  </div>
+</NoSidebar>
+---
+
+<NoSidebar
   title="Liste (Standardne)"
   breadcrumbItems={breadcrumbItems}
   bannerTitle="Liste"
@@ -125,4 +236,4 @@ const breadcrumbItems = [
       </div>
     </div>
   </div>
-</ContentExampleLayout>
+</NoSidebar>

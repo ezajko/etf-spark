@@ -1,6 +1,7 @@
 ---
 // ETF UNSA - Gallery Example
-import ContentExampleLayout from '../../../layouts/ContentExampleLayout.astro';
+import NoSidebar from '../../../layouts/NoSidebar.astro';
+import ExampleSnippet from '../../../components/ExampleSnippet.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
@@ -17,19 +18,53 @@ const galleryImages = [
   { src: 'https://placehold.co/600x400/AAA/31343C', title: 'Image 5' },
   { src: 'https://placehold.co/600x400/999/31343C', title: 'Image 6' },
 ];
+
+const gridGallery3Code = `<div class="row g-3">
+  {
+    galleryImages.map((img) => (
+      <div class="col-sm-6 col-md-4">
+        <div class="card h-100 border-0 shadow-sm">
+          <a href="#" class="d-block text-decoration-none">
+            <img src={img.src} class="card-img-top img-fluid rounded" alt={img.title} />
+          </a>
+          <div class="card-body p-2 text-center">
+            <small class="text-muted">{img.title}</small>
+          </div>
+        </div>
+      </div>
+    ))
+  }
+</div>`;
+
+const gridGallery4Code = `<div class="row g-2">
+  {
+    galleryImages.slice(0, 4).map((img) => (
+      <div class="col-6 col-md-3">
+        <a
+          href="#"
+          class="d-block position-relative overflow-hidden rounded group-hover-zoom"
+        >
+          <img src={img.src} class="img-fluid w-100 shadow-sm" alt={img.title} />
+        </a>
+      </div>
+    ))
+  }
+</div>`;
 ---
 
-<ContentExampleLayout
+<NoSidebar
   title="Galerija (Gallery)"
   breadcrumbItems={breadcrumbItems}
   bannerTitle="Galerija"
   bannerSubtitle="Primjer prikaza galerije slika koristeći Grid sistem"
 >
-  <div class="row g-5">
-    <!-- Grid Gallery -->
+  <div class="row">
     <div class="col-12">
-      <div class="p-4 border rounded shadow-sm bg-white">
-        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">Grid Gallery (3 Columns)</h5>
+      <ExampleSnippet
+        title="Grid Gallery (3 Columns)"
+        description="Galerija koristeći Astro mapiranje i Bootstrap Grid."
+        code={gridGallery3Code}
+      >
         <div class="row g-3">
           {
             galleryImages.map((img) => (
@@ -46,13 +81,13 @@ const galleryImages = [
             ))
           }
         </div>
-      </div>
-    </div>
+      </ExampleSnippet>
 
-    <!-- 4 Column Gallery -->
-    <div class="col-12">
-      <div class="p-4 border rounded shadow-sm bg-white">
-        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">Grid Gallery (4 Columns)</h5>
+      <ExampleSnippet
+        title="Grid Gallery (4 Columns)"
+        description="Kompatknija galerija sa 4 kolone."
+        code={gridGallery4Code}
+      >
         <div class="row g-2">
           {
             galleryImages.slice(0, 4).map((img) => (
@@ -67,7 +102,7 @@ const galleryImages = [
             ))
           }
         </div>
-      </div>
+      </ExampleSnippet>
     </div>
   </div>
-</ContentExampleLayout>
+</NoSidebar>

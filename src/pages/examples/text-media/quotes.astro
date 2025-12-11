@@ -1,6 +1,7 @@
 ---
 // ETF UNSA - Quotes Example
-import ContentExampleLayout from '../../../layouts/ContentExampleLayout.astro';
+import NoSidebar from '../../../layouts/NoSidebar.astro';
+import ExampleSnippet from '../../../components/ExampleSnippet.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
@@ -8,95 +9,91 @@ const breadcrumbItems = [
   { label: 'Tekst & Mediji', href: '#' },
   { label: 'Citati', href: '#', active: true },
 ];
+
+const standardQuoteCode = `<blockquote class="blockquote">
+  <p>A well-known quote, contained in a blockquote element.</p>
+</blockquote>`;
+
+const sourceCitationCode = `<figure>
+  <blockquote class="blockquote">
+    <p>Knowledge is power.</p>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+    Francis Bacon in <cite title="Source Title">Meditationes Sacrae</cite>
+  </figcaption>
+</figure>`;
+
+const alignmentQuotesCode = `<figure class="text-center mb-4">
+  <blockquote class="blockquote">
+    <p>Center aligned quote.</p>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+    Someone famous in <cite title="Source Title">Source Title</cite>
+  </figcaption>
+</figure>
+
+<figure class="text-end">
+  <blockquote class="blockquote">
+    <p>Right aligned quote.</p>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+    Someone famous in <cite title="Source Title">Source Title</cite>
+  </figcaption>
+</figure>`;
+
+const pullQuoteCode = `<div class="row align-items-center">
+  <div class="col-md-8">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+      exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    <p>
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+      nulla pariatur.
+    </p>
+  </div>
+  <div class="col-md-4">
+    <blockquote class="blockquote border-start border-primary border-5 ps-3 py-2 bg-light">
+      <p class="mb-0 fst-italic fs-5">
+        "Ovo je primjer istaknutog pull-quote citata koji prekida tekst."
+      </p>
+    </blockquote>
+  </div>
+</div>`;
 ---
 
-<ContentExampleLayout
+<NoSidebar
   title="Citati (Quotes)"
   breadcrumbItems={breadcrumbItems}
   bannerTitle="Citati"
   bannerSubtitle="Primjeri blockquote elemenata i citiranja izvora"
 >
-  <div class="row g-5">
-    <!-- Standard Blockquote -->
-    <div class="col-md-6">
-      <div class="p-4 border rounded shadow-sm bg-white h-100">
-        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">Standardni Citat</h5>
-        <blockquote class="blockquote">
-          <p>A well-known quote, contained in a blockquote element.</p>
-        </blockquote>
-      </div>
-    </div>
-
-    <!-- Naming a Source -->
-    <div class="col-md-6">
-      <div class="p-4 border rounded shadow-sm bg-white h-100">
-        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">Imenovanje Izvora</h5>
-        <figure>
-          <blockquote class="blockquote">
-            <p>Knowledge is power.</p>
-          </blockquote>
-          <figcaption class="blockquote-footer">
-            Francis Bacon in <cite title="Source Title">Meditationes Sacrae</cite>
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <!-- Alignment -->
+  <div class="row">
     <div class="col-12">
-      <div class="p-4 border rounded shadow-sm bg-white">
-        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">Poravnanje</h5>
-        <div class="row">
-          <div class="col-md-6">
-            <figure class="text-center">
-              <blockquote class="blockquote">
-                <p>A well-known quote, contained in a blockquote element.</p>
-              </blockquote>
-              <figcaption class="blockquote-footer">
-                Someone famous in <cite title="Source Title">Source Title</cite>
-              </figcaption>
-            </figure>
-          </div>
-          <div class="col-md-6">
-            <figure class="text-end">
-              <blockquote class="blockquote">
-                <p>A well-known quote, contained in a blockquote element.</p>
-              </blockquote>
-              <figcaption class="blockquote-footer">
-                Someone famous in <cite title="Source Title">Source Title</cite>
-              </figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </div>
+      <ExampleSnippet
+        title="Standardni Citat"
+        description="Osnovni blockquote element."
+        code={standardQuoteCode}
+      />
 
-    <!-- Pull Quotes (Custom Style Example) -->
-    <div class="col-12">
-      <div class="p-4 border rounded shadow-sm bg-white">
-        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">Istaknuti Citati (Pull Quotes)</h5>
-        <div class="row align-items-center">
-          <div class="col-md-8">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
-            <p>
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum.
-            </p>
-          </div>
-          <div class="col-md-4">
-            <blockquote class="blockquote border-start border-primary border-5 ps-3 py-2 bg-light">
-              <p class="mb-0 fst-italic fs-5">
-                "Ovo je primjer istaknutog pull-quote citata koji prekida tekst."
-              </p>
-            </blockquote>
-          </div>
-        </div>
-      </div>
+      <ExampleSnippet
+        title="Imenovanje Izvora"
+        description="Dodavanje izvora citata koristeći <figcaption> i <cite>."
+        code={sourceCitationCode}
+      />
+
+      <ExampleSnippet
+        title="Poravnanje"
+        description="Korištenje utility klasa za poravnanje citata."
+        code={alignmentQuotesCode}
+      />
+
+      <ExampleSnippet
+        title="Istaknuti Citati (Pull Quotes)"
+        description="Primjer prilagođenog stila za isticanje citata unutar teksta."
+        code={pullQuoteCode}
+      />
     </div>
   </div>
-</ContentExampleLayout>
+</NoSidebar>

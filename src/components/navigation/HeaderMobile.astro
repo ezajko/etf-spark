@@ -160,13 +160,10 @@ const base = import.meta.env.BASE_URL;
                     ><span class="arrow me-2">&lt;</span> Nazad</a
                   >
                 </li>
-                <li><a href={base + '/examples/text-media/headers'}>Naslovi (Headers)</a></li>
-                <li><a href={base + '/examples/text-media/rich-text'}>Rich Text</a></li>
-                <li><a href={base + '/examples/text-media/quotes'}>Citati (Quotes)</a></li>
-                <li><a href={base + '/examples/text-media/code'}>Kod (Code)</a></li>
-                <li><a href={base + '/examples/text-media/lists'}>Standardne Liste</a></li>
-                <li><a href={base + '/examples/text-media/tables'}>Tabele</a></li>
-                <li><a href={base + '/examples/text-media/columns'}>Kolone</a></li>
+                <li><a href={base + '/examples/content/typography'}>Osnovni Tekst i Naslovi</a></li>
+                <li><a href={base + '/examples/content/typography'}>Liste i Citati</a></li>
+                <li><a href={base + '/examples/content/typography'}>Kod blokovi</a></li>
+                <li><a href={base + '/examples/content/typography'}>Tabele</a></li>
               </ul>
             </li>
 
@@ -181,16 +178,18 @@ const base = import.meta.env.BASE_URL;
                     ><span class="arrow me-2">&lt;</span> Nazad</a
                   >
                 </li>
-                <li><a href={base + '/examples/text-media/images'}>Slike (Images)</a></li>
-                <li><a href={base + '/examples/text-media/gallery'}>Galerija</a></li>
-                <li><a href={base + '/examples/text-media/video'}>Video</a></li>
+                <li><a href={base + '/examples/content/media'}>Slike i Galerije</a></li>
+                <li><a href={base + '/examples/content/media'}>Video Embed</a></li>
+                <li><a href={base + '/examples/content/media'}>Floating Images</a></li>
+                <li><a href={base + '/examples/content/grid'}>Prikaz Kolona (Grids)</a></li>
+                <li><a href={base + '/examples/content/grid'}>Ugniježdeni Grid</a></li>
               </ul>
             </li>
 
-            <!-- Widgeti i Liste -->
+            <!-- Elementi interfejsa -->
             <li class="has-children">
               <a href="#" class="d-flex justify-content-between align-items-center"
-                >Widgeti i Liste <span class="arrow">&gt;</span></a
+                >Elementi interfejsa <span class="arrow">&gt;</span></a
               >
               <ul class="mobile-menu-level">
                 <li class="back-item">
@@ -198,7 +197,48 @@ const base = import.meta.env.BASE_URL;
                     ><span class="arrow me-2">&lt;</span> Nazad</a
                   >
                 </li>
-                <li><a href={base + '/examples/text-media/lists-custom'}>Widget Liste</a></li>
+                <li><a href={base + '/examples/content/components'}>Kartice (Cards)</a></li>
+                <li><a href={base + '/examples/content/components'}>Tabovi i Harmonike</a></li>
+                <li><a href={base + '/examples/content/components'}>Alerts i Badges</a></li>
+                <li><a href={base + '/examples/content/components'}>Dugmad</a></li>
+              </ul>
+            </li>
+
+            <!-- New: Text & Media -->
+            <li class="has-children">
+              <a href="#" class="d-flex justify-content-between align-items-center"
+                >Text & Media <span class="arrow">&gt;</span></a
+              >
+              <ul class="mobile-menu-level">
+                <li class="back-item">
+                  <a href="#" class="d-flex align-items-center"
+                    ><span class="arrow me-2">&lt;</span> Nazad</a
+                  >
+                </li>
+                <!-- Text Group -->
+                <li class="menu-label text-uppercase text-muted fw-bold ps-3 mt-2 mb-1 small">
+                  Text Group
+                </li>
+                <li><a href={base + '/examples/text-media/headers'}>Headers</a></li>
+                <li><a href={base + '/examples/text-media/rich-text'}>Rich Text</a></li>
+                <li><a href={base + '/examples/text-media/lists'}>Lists</a></li>
+                <li><a href={base + '/examples/text-media/tables'}>Tables</a></li>
+
+                <!-- Media Group -->
+                <li class="menu-label text-uppercase text-muted fw-bold ps-3 mt-3 mb-1 small">
+                  Media Group
+                </li>
+                <li><a href={base + '/examples/text-media/images'}>Images</a></li>
+                <li><a href={base + '/examples/text-media/gallery'}>Gallery</a></li>
+                <li><a href={base + '/examples/text-media/video'}>Video</a></li>
+
+                <!-- Lists Group -->
+                <li class="menu-label text-uppercase text-muted fw-bold ps-3 mt-3 mb-1 small">
+                  Lists Example
+                </li>
+                <li><a href={base + '/examples/text-media/lists-custom'}>Custom Lists</a></li>
+                <li><a href={base + '/examples/text-media/code'}>Code Blocks</a></li>
+                <li><a href={base + '/examples/text-media/quotes'}>Quotes</a></li>
               </ul>
             </li>
           </ul>

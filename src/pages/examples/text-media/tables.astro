@@ -1,6 +1,7 @@
 ---
 // ETF UNSA - Tables Example
-import ContentExampleLayout from '../../../layouts/ContentExampleLayout.astro';
+import NoSidebar from '../../../layouts/NoSidebar.astro';
+import ExampleSnippet from '../../../components/ExampleSnippet.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
@@ -8,186 +9,141 @@ const breadcrumbItems = [
   { label: 'Tekst & Mediji', href: '#' },
   { label: 'Tabele', href: '#', active: true },
 ];
+
+const stripedCode = `<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Ime</th>
+      <th scope="col">Prezime</th>
+      <th scope="col">Korisničko ime</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+  </tbody>
+</table>`;
+
+const borderedCode = `<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+  </tbody>
+</table>`;
+
+const hoverCode = `<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+  </tbody>
+</table>`;
+
+const responsiveCode = `<div class="table-responsive">
+  <table class="table text-nowrap">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Header 1</th>
+        <th scope="col">Header 2</th>
+        <th scope="col">Header 3</th>
+        <th scope="col">Header 4</th>
+        <th scope="col">Header 5</th>
+        <th scope="col">Header 6</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Content A</td>
+        <td>Content B</td>
+        <td>Content C</td>
+        <td>Content D</td>
+        <td>Content E</td>
+        <td>Content F</td>
+      </tr>
+    </tbody>
+  </table>
+</div>`;
 ---
 
-<ContentExampleLayout
+<NoSidebar
   title="Tabele"
   breadcrumbItems={breadcrumbItems}
   bannerTitle="Tabele"
   bannerSubtitle="Primjeri stiliziranja tabela: striped, bordered, hover i responsive"
 >
-  <div class="row g-5">
-    <!-- Basic & Striped -->
+  <div class="row">
     <div class="col-12">
-      <div class="p-4 border rounded shadow-sm bg-white">
-        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">Striped Rows (.table-striped)</h5>
-        <table class="table table-striped">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Ime</th>
-              <th scope="col">Prezime</th>
-              <th scope="col">Korisničko ime</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+      <ExampleSnippet
+        title="Striped Rows"
+        description="Dodajte .table-striped za naizmjeničnu boju pozadine redova."
+        code={stripedCode}
+      />
 
-    <!-- Bordered -->
-    <div class="col-md-6">
-      <div class="p-4 border rounded shadow-sm bg-white h-100">
-        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">
-          Bordered Table (.table-bordered)
-        </h5>
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+      <ExampleSnippet
+        title="Bordered Table"
+        description="Dodajte .table-bordered za obrube na svim stranama ćelija."
+        code={borderedCode}
+      />
 
-    <!-- Hoverable -->
-    <div class="col-md-6">
-      <div class="p-4 border rounded shadow-sm bg-white h-100">
-        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">Hoverable Rows (.table-hover)</h5>
-        <table class="table table-hover">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">First</th>
-              <th scope="col">Last</th>
-              <th scope="col">Handle</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
+      <ExampleSnippet
+        title="Hoverable Rows"
+        description="Dodajte .table-hover za efekt na prelasku mišem preko redova."
+        code={hoverCode}
+      />
 
-    <!-- Responsive -->
-    <div class="col-12">
-      <div class="p-4 border rounded shadow-sm bg-white">
-        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">
-          Responsive Table (.table-responsive)
-        </h5>
-        <p class="text-muted mb-3">
-          Dodajte <code>.table-responsive</code> wrapper oko tabele za horizontalni skrol na manjim ekranima.
-        </p>
-        <div class="table-responsive">
-          <table class="table text-nowrap">
-            <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Heading 1</th>
-                <th scope="col">Heading 2</th>
-                <th scope="col">Heading 3</th>
-                <th scope="col">Heading 4</th>
-                <th scope="col">Heading 5</th>
-                <th scope="col">Heading 6</th>
-                <th scope="col">Heading 7</th>
-                <th scope="col">Heading 8</th>
-                <th scope="col">Heading 9</th>
-                <th scope="col">Heading 10</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-                <td>Cell content</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <ExampleSnippet
+        title="Responsive Table"
+        description="Wrapper .table-responsive omogućava horizontalni skrol na manjim ekranima."
+        code={responsiveCode}
+      />
     </div>
   </div>
-</ContentExampleLayout>
+</NoSidebar>

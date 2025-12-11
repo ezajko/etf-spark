@@ -1,0 +1,65 @@
+---
+// ExampleSnippet.astro
+// Renders a code snippet as both a live preview and visible source code.
+// Props:
+// - code: The HTML string to render and display.
+// - title: Optional title for the snippet card.
+// - description: Optional description text.
+
+interface Props {
+  code: string;
+  title?: string;
+  description?: string;
+}
+
+const { code, title, description } = Astro.props;
+---
+
+<div class="card shadow-sm mb-4">
+  {
+    title && (
+      <div class="card-header bg-light py-3">
+        <h5 class="card-title mb-0 fw-bold">{title}</h5>
+      </div>
+    )
+  }
+  <div class="card-body">
+    {description && <p class="card-text text-muted mb-4">{description}</p>}
+
+    <!-- Live Preview -->
+    <div class="p-4 border rounded bg-white mb-3">
+      <h6 class="text-uppercase text-muted fw-bold small mb-3 ls-1">
+        <i class="bi bi-eye me-2"></i>Preview
+      </h6>
+      <div class="preview-content">
+        <slot>
+          <Fragment set:html={code} />
+        </slot>
+      </div>
+    </div>
+
+    <!-- Code Display -->
+    <div class="bg-light p-3 rounded position-relative">
+      <h6 class="text-uppercase text-muted fw-bold small mb-2 ls-1">
+        <i class="bi bi-code-slash me-2"></i>HTML Source
+      </h6>
+      <pre class="mb-0"><code class="language-html text-wrap">{code}</code></pre>
+    </div>
+  </div>
+</div>
+
+<style>
+  .preview-content {
+    /* Ensure preview content doesn't break out unexpectedly */
+    overflow-x: auto;
+  }
+  pre {
+    max-height: 400px;
+    overflow-y: auto;
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+  }
+</style>

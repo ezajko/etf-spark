@@ -323,7 +323,7 @@ const base = import.meta.env.BASE_URL;
                         </div>
                         <div class="nav-item">
                           <div class="split-tab-container">
-                            <a href="#" class="split-tab-link">Widgeti i Liste</a>
+                            <a href="#" class="split-tab-link">Elementi interfejsa</a>
                             <button
                               class="split-tab-toggle"
                               id="v-pills-ui-tab"
@@ -332,6 +332,24 @@ const base = import.meta.env.BASE_URL;
                               type="button"
                               role="tab"
                               aria-controls="v-pills-ui"
+                              aria-selected="false"
+                            >
+                              <i class="bi bi-chevron-right">></i>
+                            </button>
+                          </div>
+                        </div>
+                        <!-- New Tab: Text & Media -->
+                        <div class="nav-item">
+                          <div class="split-tab-container">
+                            <a href="#" class="split-tab-link">Text & Media</a>
+                            <button
+                              class="split-tab-toggle"
+                              id="v-pills-new-tab"
+                              data-bs-toggle="pill"
+                              data-bs-target="#v-pills-new"
+                              type="button"
+                              role="tab"
+                              aria-controls="v-pills-new"
                               aria-selected="false"
                             >
                               <i class="bi bi-chevron-right">></i>
@@ -355,65 +373,42 @@ const base = import.meta.env.BASE_URL;
                               <ul class="list-unstyled">
                                 <li>
                                   <a
-                                    href={base + '/examples/text-media/headers'}
+                                    href={base + '/examples/content/typography'}
                                     class="text-decoration-none mb-2 d-block"
                                   >
-                                    <i class="bi bi-type me-2 text-muted"></i>Naslovi (Headers)
+                                    <i class="bi bi-type me-2 text-muted"></i>Osnovni Tekst i
+                                    Naslovi
                                   </a>
                                 </li>
                                 <li>
                                   <a
-                                    href={base + '/examples/text-media/rich-text'}
+                                    href={base + '/examples/content/typography'}
                                     class="text-decoration-none mb-2 d-block"
                                   >
-                                    <i class="bi bi-file-text me-2 text-muted"></i>Rich Text
+                                    <i class="bi bi-list-ul me-2 text-muted"></i>Liste i Citati
                                   </a>
                                 </li>
                                 <li>
                                   <a
-                                    href={base + '/examples/text-media/quotes'}
+                                    href={base + '/examples/content/typography'}
                                     class="text-decoration-none mb-2 d-block"
                                   >
-                                    <i class="bi bi-quote me-2 text-muted"></i>Citati (Quotes)
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href={base + '/examples/text-media/code'}
-                                    class="text-decoration-none mb-2 d-block"
-                                  >
-                                    <i class="bi bi-code-slash me-2 text-muted"></i>Kod (Code)
+                                    <i class="bi bi-code-slash me-2 text-muted"></i>Kod blokovi
                                   </a>
                                 </li>
                               </ul>
                             </div>
                             <div class="col-md-6">
                               <h6 class="text-uppercase fw-bold mb-3 text-primary">
-                                Liste i Tabele
+                                Tabele i Podaci
                               </h6>
                               <ul class="list-unstyled">
                                 <li>
                                   <a
-                                    href={base + '/examples/text-media/lists'}
+                                    href={base + '/examples/content/typography'}
                                     class="text-decoration-none mb-2 d-block"
                                   >
-                                    <i class="bi bi-list-ul me-2 text-muted"></i>Standardne Liste
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href={base + '/examples/text-media/tables'}
-                                    class="text-decoration-none mb-2 d-block"
-                                  >
-                                    <i class="bi bi-table me-2 text-muted"></i>Tabele
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href={base + '/examples/text-media/columns'}
-                                    class="text-decoration-none mb-2 d-block"
-                                  >
-                                    <i class="bi bi-layout-three-columns me-2 text-muted"></i>Kolone
+                                    <i class="bi bi-table me-2 text-muted"></i>Stilizirane Tabele
                                   </a>
                                 </li>
                               </ul>
@@ -436,26 +431,58 @@ const base = import.meta.env.BASE_URL;
                               <ul class="list-unstyled">
                                 <li>
                                   <a
-                                    href={base + '/examples/text-media/images'}
+                                    href={base + '/examples/content/media'}
                                     class="text-decoration-none mb-2 d-block"
                                   >
-                                    <i class="bi bi-image me-2 text-muted"></i>Slike (Images)
+                                    <i class="bi bi-image me-2 text-muted"></i>Slike i Galerije
                                   </a>
                                 </li>
                                 <li>
                                   <a
-                                    href={base + '/examples/text-media/gallery'}
+                                    href={base + '/examples/content/media'}
                                     class="text-decoration-none mb-2 d-block"
                                   >
-                                    <i class="bi bi-grid-3x3 me-2 text-muted"></i>Galerija
+                                    <i class="bi bi-play-btn me-2 text-muted"></i>Video Embed
                                   </a>
                                 </li>
                                 <li>
                                   <a
-                                    href={base + '/examples/text-media/video'}
+                                    href={base + '/examples/content/media'}
                                     class="text-decoration-none mb-2 d-block"
                                   >
-                                    <i class="bi bi-play-btn me-2 text-muted"></i>Video
+                                    <i class="bi bi-text-wrap me-2 text-muted"></i>Tekst oko slika
+                                    (Floating)
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="col-md-6">
+                              <h6 class="text-uppercase fw-bold mb-3 text-primary">Grid Sistem</h6>
+                              <ul class="list-unstyled">
+                                <li>
+                                  <a
+                                    href={base + '/examples/content/grid'}
+                                    class="text-decoration-none mb-2 d-block"
+                                  >
+                                    <i class="bi bi-grid-3x3 me-2 text-muted"></i>Prikaz Kolona
+                                    (Grids)
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    href={base + '/examples/content/grid'}
+                                    class="text-decoration-none mb-2 d-block"
+                                  >
+                                    <i class="bi bi-layout-split me-2 text-muted"></i>Raspored
+                                    Sadržaja
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    href={base + '/examples/content/grid'}
+                                    class="text-decoration-none mb-2 d-block"
+                                  >
+                                    <i class="bi bi-bricks me-2 text-muted"></i>Nested Grids
                                   </a>
                                 </li>
                               </ul>
@@ -463,7 +490,7 @@ const base = import.meta.env.BASE_URL;
                           </div>
                         </div>
 
-                        <!-- Tab 3: Widgeti i Liste -->
+                        <!-- Tab 3: Elementi interfejsa -->
                         <div
                           class="tab-pane fade"
                           id="v-pills-ui"
@@ -472,18 +499,153 @@ const base = import.meta.env.BASE_URL;
                         >
                           <div class="row">
                             <div class="col-md-6">
-                              <h6 class="text-uppercase fw-bold mb-3 text-primary">Custom Liste</h6>
+                              <h6 class="text-uppercase fw-bold mb-3 text-primary">Komponente</h6>
+                              <ul class="list-unstyled">
+                                <li>
+                                  <a
+                                    href={base + '/examples/content/components'}
+                                    class="text-decoration-none mb-2 d-block"
+                                  >
+                                    <i class="bi bi-card-text me-2 text-muted"></i>Kartice (Cards)
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    href={base + '/examples/content/components'}
+                                    class="text-decoration-none mb-2 d-block"
+                                  >
+                                    <i class="bi bi-folder2-open me-2 text-muted"></i>Tabovi (Tabs)
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    href={base + '/examples/content/components'}
+                                    class="text-decoration-none mb-2 d-block"
+                                  >
+                                    <i class="bi bi-arrows-collapse me-2 text-muted"></i>Harmonike
+                                    (Accordions)
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="col-md-6">
+                              <h6 class="text-uppercase fw-bold mb-3 text-primary">UI Elementi</h6>
+                              <ul class="list-unstyled">
+                                <li>
+                                  <a
+                                    href={base + '/examples/content/components'}
+                                    class="text-decoration-none mb-2 d-block"
+                                  >
+                                    <i class="bi bi-info-circle me-2 text-muted"></i>Alerts i Badges
+                                  </a>
+                                </li>
+                                <li>
+                                  <a
+                                    href={base + '/examples/content/components'}
+                                    class="text-decoration-none mb-2 d-block"
+                                  >
+                                    <i class="bi bi-hand-index-thumb me-2 text-muted"></i>Dugmad
+                                    (Buttons)
+                                  </a>
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Tab 4: Text & Media (New) -->
+                        <div
+                          class="tab-pane fade"
+                          id="v-pills-new"
+                          role="tabpanel"
+                          aria-labelledby="v-pills-new-tab"
+                        >
+                          <div class="row">
+                            <!-- Text Group -->
+                            <div class="col-md-4">
+                              <h6 class="text-uppercase fw-bold mb-3 text-primary">Text Group</h6>
+                              <ul class="list-unstyled">
+                                <li>
+                                  <a
+                                    href={base + '/examples/text-media/headers'}
+                                    class="text-decoration-none mb-2 d-block"
+                                    ><i class="bi bi-type me-2 text-muted"></i>Headers</a>
+                                </li>
+                                <li>
+                                  <a
+                                    href={base + '/examples/text-media/rich-text'}
+                                    class="text-decoration-none mb-2 d-block"
+                                    ><i class="bi bi-file-text me-2 text-muted"></i>Rich Text</a>
+                                </li>
+                                <li>
+                                  <a
+                                    href={base + '/examples/text-media/lists'}
+                                    class="text-decoration-none mb-2 d-block"
+                                    ><i class="bi bi-list-ul me-2 text-muted"></i>Lists</a>
+                                </li>
+                                <li>
+                                  <a
+                                    href={base + '/examples/text-media/tables'}
+                                    class="text-decoration-none mb-2 d-block"
+                                    ><i class="bi bi-table me-2 text-muted"></i>Tables</a>
+                                </li>
+                              </ul>
+                            </div>
+                            <!-- Media Group -->
+                            <div class="col-md-4">
+                              <h6 class="text-uppercase fw-bold mb-3 text-primary">Media Group</h6>
+                              <ul class="list-unstyled">
+                                <li>
+                                  <a
+                                    href={base + '/examples/text-media/images'}
+                                    class="text-decoration-none mb-2 d-block"
+                                    ><i class="bi bi-image me-2 text-muted"></i>Images</a>
+                                </li>
+                                <li>
+                                  <a
+                                    href={base + '/examples/text-media/gallery'}
+                                    class="text-decoration-none mb-2 d-block"
+                                    ><i class="bi bi-grid-3x3 me-2 text-muted"></i>Gallery</a>
+                                </li>
+                                <li>
+                                  <a
+                                    href={base + '/examples/text-media/video'}
+                                    class="text-decoration-none mb-2 d-block"
+                                    ><i class="bi bi-play-btn me-2 text-muted"></i>Video</a>
+                                </li>
+                                <li>
+                                  <a
+                                    href={base + '/examples/text-media/columns'}
+                                    class="text-decoration-none mb-2 d-block"
+                                    ><i class="bi bi-layout-three-columns me-2 text-muted"
+                                    ></i>Columns</a>
+                                </li>
+                              </ul>
+                            </div>
+                            <!-- Lists Group -->
+                            <div class="col-md-4">
+                              <h6 class="text-uppercase fw-bold mb-3 text-primary">
+                                Lists (Custom)
+                              </h6>
                               <ul class="list-unstyled">
                                 <li>
                                   <a
                                     href={base + '/examples/text-media/lists-custom'}
                                     class="text-decoration-none mb-2 d-block"
-                                  >
-                                    <i class="bi bi-check-circle me-2 text-muted"></i>Widget Liste
-                                  </a>
-                                  <small class="text-muted d-block ps-4 mb-2"
-                                    >Icon, Image, Contact, & File Lists</small
-                                  >
+                                    ><i class="bi bi-check-circle me-2 text-muted"></i>Custom
+                                    Components</a>
+                                </li>
+                                <li>
+                                  <a
+                                    href={base + '/examples/text-media/code'}
+                                    class="text-decoration-none mb-2 d-block"
+                                    ><i class="bi bi-code-slash me-2 text-muted"></i>Code Blocks</a>
+                                </li>
+                                <li>
+                                  <a
+                                    href={base + '/examples/text-media/quotes'}
+                                    class="text-decoration-none mb-2 d-block"
+                                    ><i class="bi bi-quote me-2 text-muted"></i>Quotes</a>
                                 </li>
                               </ul>
                             </div>

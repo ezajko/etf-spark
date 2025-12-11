@@ -1,6 +1,7 @@
 ---
 // ETF UNSA - Rich Text Example
-import ContentExampleLayout from '../../../layouts/ContentExampleLayout.astro';
+import NoSidebar from '../../../layouts/NoSidebar.astro';
+import ExampleSnippet from '../../../components/ExampleSnippet.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
@@ -8,9 +9,84 @@ const breadcrumbItems = [
   { label: 'Tekst & Mediji', href: '#' },
   { label: 'Rich Text', href: '#', active: true },
 ];
+
+const blockStylesCode = `<p class="lead">
+  Ovo je vodeći paragraf (lead paragraph). Ističe se veličinom i težinom fonta kako bi
+  privukao pažnju na početku sekcije.
+</p>
+<p>
+  Ovo je standardni paragraf teksta. Koristi se za većinu sadržaja na stranici. Lorem ipsum
+  dolor sit amet, consectetur adipiscing elit. Nothing is permanent but change.
+</p>
+<p class="small text-muted mb-0">
+  Ovo je mali tekst (small text) sa muted klasom, često se koristi za fusnote.
+</p>`;
+
+const inlineStylesCode = `<p>Možete koristiti različite HTML tagove za stiliziranje teksta:</p>
+<ul class="list-unstyled">
+  <li class="mb-2"><strong>Bold text</strong> (Strong) za isticanje važnosti.</li>
+  <li class="mb-2"><em>Italic text</em> (Emphasis) za naglašavanje.</li>
+  <li class="mb-2"><u>Underlined text</u> za podvlačenje.</li>
+  <li class="mb-2"><del>Deleted text</del> za označavanje obrisanog sadržaja.</li>
+  <li class="mb-2"><mark>Highlighted text</mark> za označavanje rezultata.</li>
+  <li class="mb-2"><a href="#">Ovo je link</a> unutar teksta.</li>
+  <li class="mb-2"><abbr title="Univerzitet u Sarajevu">UNSA</abbr> (Abbreviation) sa tooltipom.</li>
+  <li class="mb-2"><code>Inline code</code> snippet.</li>
+  <li class="mb-0">Pritisnite <kbd>Ctrl</kbd> + <kbd>C</kbd> za kopiranje.</li>
+</ul>`;
+
+const alignmentCode = `<div class="p-3 border bg-light mb-2">
+  <p class="text-start mb-0">Left aligned text (text-start).</p>
+</div>
+<div class="p-3 border bg-light mb-2">
+  <p class="text-center mb-0">Center aligned text (text-center).</p>
+</div>
+<div class="p-3 border bg-light">
+  <p class="text-end mb-0">Right aligned text (text-end).</p>
+</div>`;
+
+const transformationCode = `<p class="text-lowercase">Lowercased text.</p>
+<p class="text-uppercase">Uppercased text.</p>
+<p class="text-capitalize mb-0">Capitalized text.</p>`;
 ---
 
-<ContentExampleLayout
+<NoSidebar
+  title="Rich Text"
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle="Rich Text"
+  bannerSubtitle="Primjeri formatiranja teksta, paragrafa i inline elemenata"
+>
+  <div class="row">
+    <div class="col-12">
+      <ExampleSnippet
+        title="Block Styles"
+        description="Paragrafi i varijacije veličine teksta."
+        code={blockStylesCode}
+      />
+
+      <ExampleSnippet
+        title="Inline Text Elements"
+        description="HTML elementi za stiliziranje dijelova teksta."
+        code={inlineStylesCode}
+      />
+
+      <ExampleSnippet
+        title="Poravnanje (Alignment)"
+        description="Klase za poravnanje teksta."
+        code={alignmentCode}
+      />
+
+      <ExampleSnippet
+        title="Transformacija"
+        description="Klase za transformaciju slova (velika, mala, prvo slovo)."
+        code={transformationCode}
+      />
+    </div>
+  </div>
+</NoSidebar>
+---
+
+<NoSidebar
   title="Rich Text"
   breadcrumbItems={breadcrumbItems}
   bannerTitle="Rich Text"
@@ -105,4 +181,4 @@ const breadcrumbItems = [
       </div>
     </div>
   </div>
-</ContentExampleLayout>
+</NoSidebar>
