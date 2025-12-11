@@ -374,6 +374,24 @@ const base = import.meta.env.BASE_URL;
                             </button>
                           </div>
                         </div>
+                        <!-- New Tab: Buttons, Grids & Frames -->
+                        <div class="nav-item">
+                          <div class="split-tab-container">
+                            <a href="#" class="split-tab-link">Buttons, Grids & Frames</a>
+                            <button
+                              class="split-tab-toggle"
+                              id="v-pills-buttons-tab"
+                              data-bs-toggle="pill"
+                              data-bs-target="#v-pills-buttons"
+                              type="button"
+                              role="tab"
+                              aria-controls="v-pills-buttons"
+                              aria-selected="false"
+                            >
+                              <i class="bi bi-chevron-right"></i>
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <div class="col-md-9">
@@ -764,6 +782,67 @@ const base = import.meta.env.BASE_URL;
                                     href={base + '/examples/containers-interactive/cta'}
                                     class="text-decoration-none mb-2 d-block"
                                     ><i class="bi bi-megaphone me-2 text-muted"></i>Call to Action</a
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+
+                        <!-- Tab 6: Buttons, Grids & Frames (New) -->
+                        <div
+                          class="tab-pane fade"
+                          id="v-pills-buttons"
+                          role="tabpanel"
+                          aria-labelledby="v-pills-buttons-tab"
+                        >
+                          <div class="row">
+                            <!-- Buttons Group -->
+                            <div class="col-md-6">
+                              <h6 class="text-uppercase fw-bold mb-3 text-primary">Buttons</h6>
+                              <ul class="list-unstyled">
+                                <li>
+                                  <a
+                                    href={base + '/examples/buttons-grids-frames/buttons'}
+                                    class="text-decoration-none mb-2 d-block"
+                                    ><i class="bi bi-hand-index-thumb me-2 text-muted"
+                                    ></i>Buttons</a
+                                  >
+                                </li>
+                                <li>
+                                  <a
+                                    href={base + '/examples/buttons-grids-frames/badges'}
+                                    class="text-decoration-none mb-2 d-block"
+                                    ><i class="bi bi-patch-check me-2 text-muted"></i>Badges & Pills</a
+                                  >
+                                </li>
+                                <li>
+                                  <a
+                                    href={base + '/examples/buttons-grids-frames/button-groups'}
+                                    class="text-decoration-none mb-2 d-block"
+                                    ><i class="bi bi-justify me-2 text-muted"></i>Button Groups</a
+                                  >
+                                </li>
+                              </ul>
+                            </div>
+                            <!-- Frames & Grids Group -->
+                            <div class="col-md-6">
+                              <h6 class="text-uppercase fw-bold mb-3 text-primary">
+                                Frames & Grids
+                              </h6>
+                              <ul class="list-unstyled">
+                                <li>
+                                  <a
+                                    href={base + '/examples/buttons-grids-frames/frames'}
+                                    class="text-decoration-none mb-2 d-block"
+                                    ><i class="bi bi-window-desktop me-2 text-muted"></i>Frames</a
+                                  >
+                                </li>
+                                <li>
+                                  <a
+                                    href={base + '/examples/buttons-grids-frames/grids'}
+                                    class="text-decoration-none mb-2 d-block"
+                                    ><i class="bi bi-grid-3x3-gap me-2 text-muted"></i>Grids</a
                                   >
                                 </li>
                               </ul>
