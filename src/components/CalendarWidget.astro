@@ -78,7 +78,7 @@ const today = new Date();
 <calendar-widget>
   <!-- We put data-events on this div so script can read it easily -->
   <div
-    class={`ez-card calendar-widget ${className || ''}`}
+    class={`card shadow-sm calendar-widget ${className || ''}`}
     data-year={year}
     data-month={month}
     data-events={JSON.stringify(serializedEvents)}
