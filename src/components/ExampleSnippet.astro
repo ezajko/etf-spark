@@ -22,8 +22,8 @@ try {
   formattedCode = await prettier.format(code, {
     parser: 'html',
     plugins: [htmlPlugin],
-    printWidth: 80,
-    htmlWhitespaceSensitivity: 'ignore',
+    printWidth: 60,
+    htmlWhitespaceSensitivity: 'css',
     tabWidth: 2,
   });
 } catch (e) {
