@@ -36,6 +36,15 @@
         padding: $ez-spacing-lg;
         border: 1px solid var(--bs-border-color);
         border-top: none;
+
+        // Force Bootstrap behavior if missing
+        >.tab-pane {
+            display: none;
+        }
+
+        >.active {
+            display: block;
+        }
     }
 
     // Vertical Tabs Variant
