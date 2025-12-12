@@ -2,7 +2,7 @@
 // ETF UNSA - Tabs Example
 import NoSidebar from '../../../layouts/NoSidebar.astro';
 import ExampleSnippet from '../../../components/ExampleSnippet.astro';
-import Tabs from '../../../components/Tabs.astro';
+import TabsComponent from '../../../components/Tabs.astro';
 import TabItem from '../../../components/TabItem.astro';
 
 const breadcrumbItems = [
@@ -43,7 +43,7 @@ const pillsTabs = [
       <p>Standardni tabovi sa borderima i sadržajem.</p>
 
       <div class="p-4 border rounded mb-4">
-        <Tabs id="basicTabs" tabs={basicTabs}>
+        <TabsComponent id="basicTabs" tabs={basicTabs}>
           <TabItem id="home" active>
             <p class="mb-0">
               This is the Home tab content. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -61,7 +61,7 @@ const pillsTabs = [
               ullamco laboris nisi ut aliquip.
             </p>
           </TabItem>
-        </Tabs>
+        </TabsComponent>
       </div>
     </div>
 
@@ -70,7 +70,7 @@ const pillsTabs = [
       <p>Verikalni tabovi za navigaciju sa lijeve strane.</p>
 
       <div class="p-4 border rounded mb-4">
-        <Tabs id="verticalTabs" tabs={verticalTabs} vertical>
+        <TabsComponent id="verticalTabs" tabs={verticalTabs} vertical>
           <TabItem id="v-home" active>
             <p>Home content (Vertical). Lorem ipsum dolor sit amet.</p>
           </TabItem>
@@ -80,7 +80,7 @@ const pillsTabs = [
           <TabItem id="v-messages">
             <p>Messages content (Vertical). Sed do eiusmod tempor incididunt.</p>
           </TabItem>
-        </Tabs>
+        </TabsComponent>
       </div>
     </div>
 
@@ -89,11 +89,11 @@ const pillsTabs = [
       <p>Tabovi u stilu pilula (buttons).</p>
 
       <div class="p-4 border rounded mb-4">
-        <Tabs id="pillsTabs" tabs={pillsTabs} pills>
+        <TabsComponent id="pillsTabs" tabs={pillsTabs} pills>
           <TabItem id="pills-home" active> Home Content... </TabItem>
           <TabItem id="pills-profile"> Profile Content... </TabItem>
           <TabItem id="pills-contact"> Contact Content... </TabItem>
-        </Tabs>
+        </TabsComponent>
       </div>
     </div>
   </div>
