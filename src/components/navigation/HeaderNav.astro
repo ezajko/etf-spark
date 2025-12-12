@@ -287,58 +287,7 @@ const base = import.meta.env.BASE_URL;
                         aria-orientation="vertical"
                       >
                         <!-- Tab Categories -->
-                        <div class="nav-item">
-                          <div class="split-tab-container">
-                            <a href="#" class="split-tab-link">Tekst i Struktura</a>
-                            <button
-                              class="split-tab-toggle"
-                              id="v-pills-txt-tab"
-                              data-bs-toggle="pill"
-                              data-bs-target="#v-pills-txt"
-                              type="button"
-                              role="tab"
-                              aria-controls="v-pills-txt"
-                              aria-selected="true"
-                            >
-                              <i class="bi bi-chevron-right"></i>
-                            </button>
-                          </div>
-                        </div>
-                        <div class="nav-item">
-                          <div class="split-tab-container">
-                            <a href="#" class="split-tab-link">Mediji i Raspored</a>
-                            <button
-                              class="split-tab-toggle"
-                              id="v-pills-media-tab"
-                              data-bs-toggle="pill"
-                              data-bs-target="#v-pills-media"
-                              type="button"
-                              role="tab"
-                              aria-controls="v-pills-media"
-                              aria-selected="false"
-                            >
-                              <i class="bi bi-chevron-right"></i>
-                            </button>
-                          </div>
-                        </div>
-                        <div class="nav-item">
-                          <div class="split-tab-container">
-                            <a href="#" class="split-tab-link">Elementi interfejsa</a>
-                            <button
-                              class="split-tab-toggle"
-                              id="v-pills-ui-tab"
-                              data-bs-toggle="pill"
-                              data-bs-target="#v-pills-ui"
-                              type="button"
-                              role="tab"
-                              aria-controls="v-pills-ui"
-                              aria-selected="false"
-                            >
-                              <i class="bi bi-chevron-right"></i>
-                            </button>
-                          </div>
-                        </div>
-                        <!-- New Tab: Text & Media -->
+                        <!-- Tab 1: Text & Media (New) -->
                         <div class="nav-item">
                           <div class="split-tab-container">
                             <a href="#" class="split-tab-link">Text & Media</a>
@@ -350,13 +299,13 @@ const base = import.meta.env.BASE_URL;
                               type="button"
                               role="tab"
                               aria-controls="v-pills-new"
-                              aria-selected="false"
+                              aria-selected="true"
                             >
                               <i class="bi bi-chevron-right"></i>
                             </button>
                           </div>
                         </div>
-                        <!-- New Tab: Containers & Interactive -->
+                        <!-- Tab 2: Containers & Interactive (New) -->
                         <div class="nav-item">
                           <div class="split-tab-container">
                             <a href="#" class="split-tab-link">Containers & Interactive</a>
@@ -374,7 +323,7 @@ const base = import.meta.env.BASE_URL;
                             </button>
                           </div>
                         </div>
-                        <!-- New Tab: Buttons, Grids & Frames -->
+                        <!-- Tab 3: Buttons, Grids & Frames (New) -->
                         <div class="nav-item">
                           <div class="split-tab-container">
                             <a href="#" class="split-tab-link">Buttons, Grids & Frames</a>
@@ -400,202 +349,9 @@ const base = import.meta.env.BASE_URL;
                         id="v-pills-tabContent-examples"
                         style="min-height: 400px;"
                       >
-                        <!-- Tab 1: Tekst i Struktura -->
+                        <!-- Tab 1: Text & Media (New) -->
                         <div
                           class="tab-pane fade show active"
-                          id="v-pills-txt"
-                          role="tabpanel"
-                          aria-labelledby="v-pills-txt-tab"
-                        >
-                          <div class="row">
-                            <div class="col-md-6">
-                              <h6 class="text-uppercase fw-bold mb-3 text-primary">Tipografija</h6>
-                              <ul class="list-unstyled">
-                                <li>
-                                  <a
-                                    href={base + '/examples/content/typography'}
-                                    class="text-decoration-none mb-2 d-block"
-                                  >
-                                    <i class="bi bi-type me-2 text-muted"></i>Osnovni Tekst i
-                                    Naslovi
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href={base + '/examples/content/typography'}
-                                    class="text-decoration-none mb-2 d-block"
-                                  >
-                                    <i class="bi bi-list-ul me-2 text-muted"></i>Liste i Citati
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href={base + '/examples/content/typography'}
-                                    class="text-decoration-none mb-2 d-block"
-                                  >
-                                    <i class="bi bi-code-slash me-2 text-muted"></i>Kod blokovi
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div class="col-md-6">
-                              <h6 class="text-uppercase fw-bold mb-3 text-primary">
-                                Tabele i Podaci
-                              </h6>
-                              <ul class="list-unstyled">
-                                <li>
-                                  <a
-                                    href={base + '/examples/content/typography'}
-                                    class="text-decoration-none mb-2 d-block"
-                                  >
-                                    <i class="bi bi-table me-2 text-muted"></i>Stilizirane Tabele
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- Tab 2: Mediji i Raspored -->
-                        <div
-                          class="tab-pane fade"
-                          id="v-pills-media"
-                          role="tabpanel"
-                          aria-labelledby="v-pills-media-tab"
-                        >
-                          <div class="row">
-                            <div class="col-md-6">
-                              <h6 class="text-uppercase fw-bold mb-3 text-primary">
-                                Slike i Video
-                              </h6>
-                              <ul class="list-unstyled">
-                                <li>
-                                  <a
-                                    href={base + '/examples/content/media'}
-                                    class="text-decoration-none mb-2 d-block"
-                                  >
-                                    <i class="bi bi-image me-2 text-muted"></i>Slike i Galerije
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href={base + '/examples/content/media'}
-                                    class="text-decoration-none mb-2 d-block"
-                                  >
-                                    <i class="bi bi-play-btn me-2 text-muted"></i>Video Embed
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href={base + '/examples/content/media'}
-                                    class="text-decoration-none mb-2 d-block"
-                                  >
-                                    <i class="bi bi-text-wrap me-2 text-muted"></i>Tekst oko slika
-                                    (Floating)
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div class="col-md-6">
-                              <h6 class="text-uppercase fw-bold mb-3 text-primary">Grid Sistem</h6>
-                              <ul class="list-unstyled">
-                                <li>
-                                  <a
-                                    href={base + '/examples/content/grid'}
-                                    class="text-decoration-none mb-2 d-block"
-                                  >
-                                    <i class="bi bi-grid-3x3 me-2 text-muted"></i>Prikaz Kolona
-                                    (Grids)
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href={base + '/examples/content/grid'}
-                                    class="text-decoration-none mb-2 d-block"
-                                  >
-                                    <i class="bi bi-layout-split me-2 text-muted"></i>Raspored
-                                    Sadržaja
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href={base + '/examples/content/grid'}
-                                    class="text-decoration-none mb-2 d-block"
-                                  >
-                                    <i class="bi bi-bricks me-2 text-muted"></i>Nested Grids
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- Tab 3: Elementi interfejsa -->
-                        <div
-                          class="tab-pane fade"
-                          id="v-pills-ui"
-                          role="tabpanel"
-                          aria-labelledby="v-pills-ui-tab"
-                        >
-                          <div class="row">
-                            <div class="col-md-6">
-                              <h6 class="text-uppercase fw-bold mb-3 text-primary">Komponente</h6>
-                              <ul class="list-unstyled">
-                                <li>
-                                  <a
-                                    href={base + '/examples/content/components'}
-                                    class="text-decoration-none mb-2 d-block"
-                                  >
-                                    <i class="bi bi-card-text me-2 text-muted"></i>Kartice (Cards)
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href={base + '/examples/content/components'}
-                                    class="text-decoration-none mb-2 d-block"
-                                  >
-                                    <i class="bi bi-folder2-open me-2 text-muted"></i>Tabovi (Tabs)
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href={base + '/examples/content/components'}
-                                    class="text-decoration-none mb-2 d-block"
-                                  >
-                                    <i class="bi bi-arrows-collapse me-2 text-muted"></i>Harmonike
-                                    (Accordions)
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                            <div class="col-md-6">
-                              <h6 class="text-uppercase fw-bold mb-3 text-primary">UI Elementi</h6>
-                              <ul class="list-unstyled">
-                                <li>
-                                  <a
-                                    href={base + '/examples/content/components'}
-                                    class="text-decoration-none mb-2 d-block"
-                                  >
-                                    <i class="bi bi-info-circle me-2 text-muted"></i>Alerts i Badges
-                                  </a>
-                                </li>
-                                <li>
-                                  <a
-                                    href={base + '/examples/content/components'}
-                                    class="text-decoration-none mb-2 d-block"
-                                  >
-                                    <i class="bi bi-hand-index-thumb me-2 text-muted"></i>Dugmad
-                                    (Buttons)
-                                  </a>
-                                </li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- Tab 4: Text & Media (New) -->
-                        <div
-                          class="tab-pane fade"
                           id="v-pills-new"
                           role="tabpanel"
                           aria-labelledby="v-pills-new-tab"
