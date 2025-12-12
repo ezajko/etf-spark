@@ -30,23 +30,25 @@
     }
 
     .card-footer {
-        background-color: var(--bs-secondary);
-        color: white;
+        background-color: var(--bs-gray-200); // Lighter background
+        color: var(--bs-secondary); // Darker text for contrast
         border-top: none;
 
-        // Ensure links are white and readable
+        // Link styling in footer
         a {
-            color: white;
+            color: var(--bs-secondary); // Match text color
             text-decoration: none;
+            font-weight: 500;
 
             &:hover {
                 text-decoration: underline;
-                color: var(--bs-gray-200); // Slight dim or keep white
+                color: var(--bs-primary); // Brand highlight on hover
             }
         }
     }
 
     // Default title color for card body properties
+    // Force direct links inside titles to inherit brand color
     .card-title,
     h1,
     h2,
@@ -55,6 +57,16 @@
     h5,
     h6 {
         color: var(--bs-primary);
+
+        a {
+            color: inherit;
+            text-decoration: none;
+
+            &:hover {
+                color: var(--ez-primary-dark);
+                text-decoration: underline;
+            }
+        }
     }
 }
 
