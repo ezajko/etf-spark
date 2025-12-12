@@ -70,7 +70,7 @@ const imageOrder = imagePosition === 'right' ? 'order-md-2' : 'order-md-1';
 const contentOrder = imagePosition === 'right' ? 'order-md-1' : 'order-md-2';
 ---
 
-<div class={`card ${isHorizontal ? '' : ''}`}>
+<div class={`card h-100 ${isHorizontal ? '' : ''}`}>
   <slot name="header" />
 
   <div class={`row g-0 h-100 ${isHorizontal ? '' : 'flex-column'}`}>
