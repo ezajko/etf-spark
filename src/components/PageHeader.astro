@@ -9,20 +9,22 @@ interface Props {
   badge?: string;
   badgeClass?: string;
   bgClass?: string;
+  height?: 'full' | 'large' | 'medium' | 'small' | 'xs' | 'auto';
 }
 
 import Hero from './Hero.astro';
 
-const { 
-  title, 
-  subtitle, 
-  badge, 
-  badgeClass = "bg-primary", 
-  bgClass = "bg-primary" 
+const {
+  title,
+  subtitle,
+  badge,
+  badgeClass = 'bg-primary',
+  bgClass = 'bg-primary',
+  height = 'small',
 } = Astro.props;
 ---
 
-<Hero height="small" class={`${bgClass} text-white`}>
+<Hero height={height} class={`${bgClass} text-white`}>
   <div class="row align-items-center">
     <div class="col-lg-8">
       {badge && <span class={`badge ${badgeClass} mb-2`}>{badge}</span>}
