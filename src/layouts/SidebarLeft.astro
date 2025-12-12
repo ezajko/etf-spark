@@ -18,6 +18,7 @@ interface Props {
   bannerTitle?: string;
   bannerSubtitle?: string;
   bannerBgClass?: string;
+  bannerSize?: 'full' | 'large' | 'medium' | 'small' | 'auto' | 'xs';
 }
 
 const {
@@ -26,6 +27,7 @@ const {
   bannerTitle,
   bannerSubtitle,
   bannerBgClass = 'bg-primary',
+  bannerSize = 'medium',
 } = Astro.props;
 ---
 
@@ -34,7 +36,12 @@ const {
   <slot name="banner" slot="banner">
     {
       bannerTitle && (
-        <PageHeader title={bannerTitle} subtitle={bannerSubtitle} bgClass={bannerBgClass} />
+        <PageHeader
+          title={bannerTitle}
+          subtitle={bannerSubtitle}
+          bgClass={bannerBgClass}
+          height={bannerSize}
+        />
       )
     }
   </slot>

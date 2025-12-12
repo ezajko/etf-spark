@@ -20,6 +20,7 @@ interface Props {
   bannerTitle?: string;
   totalPages?: number;
   currentPage?: number;
+  bannerSize?: 'full' | 'large' | 'medium' | 'small' | 'auto' | 'xs';
 }
 
 const {
@@ -30,10 +31,16 @@ const {
   bannerTitle,
   totalPages,
   currentPage = 1,
+  bannerSize = 'medium',
 } = Astro.props;
 ---
 
-<SidebarRight title={title} breadcrumbItems={breadcrumbItems} bannerTitle={bannerTitle || title}>
+<SidebarRight
+  title={title}
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle={bannerTitle || title}
+  bannerSize={bannerSize}
+>
   <h1 class="mb-4">{listTitle}</h1>
   {listDescription && <p class="lead mb-5">{listDescription}</p>}
 
