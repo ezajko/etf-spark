@@ -121,79 +121,33 @@
             margin-bottom: 0;
         }
 
-        // Container for the Split Tab (Link + Toggle)
-        .split-tab-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: $ez-spacing-sm $ez-spacing-md;
-            margin-right: -1px; // Overlap border
-            border-right: 0.125rem solid transparent; // Active indicator
-            transition: all 0.2s ease;
-            cursor: pointer;
-
-            // Hover effect on the whole row
-            &:hover {
-                background-color: rgba(var(--bs-primary-rgb), 0.05);
-                color: var(--bs-primary);
-
-                .split-tab-link,
-                .split-tab-toggle {
-                    color: var(--bs-primary);
-                }
-            }
-
-            // Active State (Triggered when the button inside is active)
-            // We use :has() selector if supported, or target the active button directly
-            &:has(.split-tab-toggle.active),
-            &.active-parent {
-                border-right-color: var(--bs-primary);
-                background-color: transparent; // No pill bg
-
-                .split-tab-link,
-                .split-tab-toggle {
-                    color: var(--bs-primary);
-                    font-weight: $ez-font-weight-bold;
-                }
-            }
-        }
-
-        // The Link part
-        .split-tab-link {
-            flex: 1;
-            color: var(--bs-body-color);
-            text-decoration: none;
-            font-weight: $ez-font-weight-semibold;
-            text-transform: uppercase;
-            font-size: 0.9rem;
-            padding-right: $ez-spacing-sm;
-
-            &:hover {
-                color: var(--bs-primary);
-            }
-        }
-
-        // The Toggle Button part (Chevron)
-        .split-tab-toggle {
-            background: none;
+        // Simplified Nav Link Buttons
+        .nav-link {
             border: none;
-            padding: 0;
+            border-right: 0.125rem solid transparent;
+            margin-right: -1px; // Overlap border
             color: var(--bs-secondary-color);
-            transition: transform 0.2s ease;
-            opacity: 0.7;
+            transition: all 0.2s ease;
 
             &:hover {
-                opacity: 1;
+                background-color: var(--bs-gray-100);
+                color: var(--bs-primary);
             }
 
             &.active {
-                opacity: 1;
+                background-color: transparent;
                 color: var(--bs-primary);
+                font-weight: $ez-font-weight-bold;
+                border-right-color: var(--bs-primary);
 
-                // i {
-                //     // Rotate arrow if desired, or keep right pointing
-                //     // For vertical tabs, usually right pointing is fine, or active state implies selection
-                // }
+                i {
+                    color: var(--bs-primary);
+                }
+            }
+
+            i {
+                font-size: 0.8em;
+                opacity: 0.7;
             }
         }
     }
