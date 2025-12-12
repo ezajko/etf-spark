@@ -1,6 +1,8 @@
 // ETF UNSA - Call To Action (CTA)
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
 
-.ez-cta {
+.cta {
     padding: $ez-spacing-xl 0;
     border-radius: $ez-border-radius;
     position: relative;
@@ -11,17 +13,17 @@
     background-color: var(--bs-tertiary-bg);
     border: 1px solid var(--bs-border-color);
 
-    &__content {
+    .cta-content {
         position: relative;
         z-index: 2;
     }
 
-    &__title {
+    .cta-title {
         font-weight: $ez-font-weight-bold;
         margin-bottom: $ez-spacing-md;
     }
 
-    &__description {
+    .cta-description {
         margin-bottom: $ez-spacing-lg;
         font-size: 1.1rem;
         color: $ez-text-muted;
@@ -29,16 +31,16 @@
     }
 
     // Variants
-    &--primary {
+    &.cta-primary {
         background-color: var(--bs-primary);
         border-color: var(--bs-primary);
         color: white;
 
-        .ez-cta__title {
+        .cta-title {
             color: white;
         }
 
-        .ez-cta__description {
+        .cta-description {
             color: rgba(255, 255, 255, 0.9);
         }
 
@@ -53,25 +55,25 @@
         }
     }
 
-    &--dark {
+    &.cta-dark {
         background-color: $ez-footer-bg;
         border-color: $ez-footer-bg;
         color: white;
 
-        .ez-cta__title {
+        .cta-title {
             color: white;
         }
 
-        .ez-cta__description {
+        .cta-description {
             color: rgba(255, 255, 255, 0.8);
         }
     }
 
     // Centered variant
-    &--center {
+    &.cta-center {
         text-align: center;
 
-        .ez-cta__description {
+        .cta-description {
             margin-left: auto;
             margin-right: auto;
         }

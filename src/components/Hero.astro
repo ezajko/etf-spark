@@ -12,27 +12,34 @@ interface Props {
   id?: string;
 }
 
-const { 
-  height = 'medium', 
-  backgroundImage, 
-  overlay = false, 
+const {
+  height = 'medium',
+  backgroundImage,
+  overlay = false,
   overlayClass,
   class: className,
-  id 
+  id,
 } = Astro.props;
 
-const heightClass = height !== 'auto' ? `ez-hero--${height}` : '';
+const heightMap: Record<string, string> = {
+  medium: 'md',
+  large: 'lg',
+  full: 'full', // or xl/100
+  sm: 'sm',
+  md: 'md',
+  lg: 'lg',
+  xl: 'full',
+};
+
+const finalHeightClass =
+  height !== 'auto' ? (heightMap[height] ? `hero-${heightMap[height]}` : `hero-${height}`) : '';
 const style = backgroundImage ? `background-image: url('${backgroundImage}');` : '';
 ---
 
-<section 
-  id={id} 
-  class={`ez-hero ${heightClass} ${className || ''}`} 
-  style={style}
->
-  {overlay && <div class={`ez-hero__overlay ${overlayClass || ''}`}></div>}
-  
-  <div class="ez-hero__content container">
+<section id={id} class={`hero ${finalHeightClass} ${className || ''}`} style={style}>
+  {overlay && <div class={`hero-overlay ${overlayClass || ''}`} />}
+
+  <div class="hero-content container">
     <slot />
   </div>
 </section>

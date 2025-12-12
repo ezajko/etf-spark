@@ -25,20 +25,20 @@ const {
   icon,
 } = Astro.props;
 
-const variantClass = `ez-cta--${variant}`;
-const alignClass = centered ? 'ez-cta--center' : '';
+const variantClass = `cta-${variant}`;
+const alignClass = centered ? 'cta-center' : '';
 const btnClass = variant === 'primary' ? 'btn-outline-light' : 'btn-primary';
 ---
 
-<div class={`ez-cta ${variantClass} ${alignClass} ${className || ''}`}>
-  <div class="container ez-cta__content">
+<div class={`cta ${variantClass} ${alignClass} ${className || ''}`}>
+  <div class="container cta-content">
     <div class="row align-items-center">
       <div class="col-lg-8 mb-4 mb-lg-0">
-        <h2 class="ez-cta__title h3">
+        <h2 class="cta-title h3">
           {icon && <i class={`bi ${icon} me-2`} />}
           {title}
         </h2>
-        <p class="ez-cta__description mb-0">{description}</p>
+        <p class="cta-description mb-0">{description}</p>
       </div>
       <div class="col-lg-4 text-lg-end">
         <a href={actionUrl} class={`btn ${btnClass} btn-lg px-4`}>

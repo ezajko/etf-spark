@@ -42,8 +42,8 @@
 
 
 // 3. Vertical Tabs Variant (Custom extension of native nav)
-// Usage: <div class="d-flex align-items-start gap-4 flex-column flex-md-row"> <ul class="nav nav-tabs nav-tabs-vertical ..."> ... </div>
-.nav-tabs-vertical {
+// Usage: <div class="d-flex align-items-start gap-4 flex-column flex-md-row"> <ul class="nav nav-tabs vertical-tabs ..."> ... </div>
+.vertical-tabs {
     flex-direction: column;
     border-bottom: none;
     border-right: 0.125rem solid var(--bs-border-color);
