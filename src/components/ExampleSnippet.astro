@@ -12,6 +12,9 @@ interface Props {
 
 const { code, title, description } = Astro.props;
 
+// Generate a stable-ish unique ID for the collapse component
+const uniqueId = Math.random().toString(36).slice(2, 11);
+
 let formattedCode = code;
 try {
   formattedCode = await prettier.format(code, {
@@ -53,11 +56,26 @@ try {
 
     <!-- Code Display -->
     <div class="bg-light p-3 rounded position-relative">
-      <h6 class="text-uppercase text-muted fw-bold small mb-2 ls-1">
-        <i class="bi bi-code-slash me-2"></i>HTML Source
-      </h6>
-      <div class="code-wrapper">
-        <Code code={formattedCode} lang="html" theme="github-light" />
+      <div class="d-flex justify-content-between align-items-center">
+        <h6 class="text-uppercase text-muted fw-bold small mb-0 ls-1">
+          <i class="bi bi-code-slash me-2"></i>HTML Source
+        </h6>
+        <button
+          class="btn btn-sm btn-outline-secondary py-0 px-2"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target={`#code-${uniqueId}`}
+          aria-expanded="false"
+          aria-controls={`code-${uniqueId}`}
+        >
+          <i class="bi bi-chevron-expand me-1"></i>Toggle Code
+        </button>
+      </div>
+
+      <div class="collapse" id={`code-${uniqueId}`}>
+        <div class="code-wrapper mt-3">
+          <Code code={formattedCode} lang="html" theme="github-light" />
+        </div>
       </div>
     </div>
   </div>
