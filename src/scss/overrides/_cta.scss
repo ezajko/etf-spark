@@ -13,6 +13,28 @@
     background-color: var(--bs-tertiary-bg);
     border: 1px solid var(--bs-border-color);
 
+    // Sizing Variants (Matching Banner Heights)
+    &.cta-xs {
+        min-height: 7.5rem;
+    }
+
+    &.cta-sm {
+        min-height: 15rem;
+    }
+
+    &.cta-md {
+        min-height: 24rem;
+    }
+
+    &.cta-lg {
+        min-height: 30rem;
+    }
+
+    &.cta-xl {
+        min-height: 100vh;
+    }
+
+
     .cta-content {
         position: relative;
         z-index: 2;
@@ -76,6 +98,52 @@
         .cta-description {
             margin-left: auto;
             margin-right: auto;
+        }
+    }
+}
+
+// --- Theme Overrides ---
+
+// High Contrast Theme
+[data-ez-theme="high-contrast"] {
+    .cta {
+        border-width: 2px;
+        border-color: currentColor; // Inherit text color for border
+
+        // Primary variant in High Contrast
+        &.cta-primary {
+            background-color: black;
+            border-color: white;
+            color: white;
+
+            .cta-title,
+            .cta-description {
+                color: white !important;
+            }
+
+            .btn-outline-primary {
+                border-color: white;
+                color: white;
+                background-color: black;
+                border-width: 2px;
+
+                &:hover {
+                    background-color: white;
+                    color: black;
+                }
+            }
+        }
+
+        // Dark variant in High Contrast
+        &.cta-dark {
+            background-color: white;
+            color: black;
+            border-color: black;
+
+            .cta-title,
+            .cta-description {
+                color: black !important;
+            }
         }
     }
 }

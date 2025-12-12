@@ -10,6 +10,7 @@ interface Props {
   actionUrl: string;
   variant?: 'light' | 'primary' | 'dark';
   centered?: boolean;
+  height?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   class?: string;
   icon?: string;
 }
@@ -21,16 +22,18 @@ const {
   actionUrl,
   variant = 'light',
   centered = false,
+  height,
   class: className,
   icon,
 } = Astro.props;
 
 const variantClass = `cta-${variant}`;
 const alignClass = centered ? 'cta-center' : '';
+const heightClass = height ? `cta-${height}` : '';
 const btnClass = variant === 'primary' ? 'btn-outline-light' : 'btn-primary';
 ---
 
-<div class={`cta ${variantClass} ${alignClass} ${className || ''}`}>
+<div class={`cta ${variantClass} ${alignClass} ${heightClass} ${className || ''}`}>
   <div class="container cta-content">
     <div class="row align-items-center">
       <div class="col-lg-8 mb-4 mb-lg-0">

@@ -93,3 +93,50 @@
     border-radius: $ez-border-radius;
     padding: $ez-spacing-lg;
 }
+
+// --- Theme Overrides ---
+
+// High Contrast Theme
+[data-ez-theme="high-contrast"] {
+    .nav-tabs {
+        border-bottom-color: currentColor; // Inherit high contrast color
+        border-width: 2px; // Thicker border
+
+        .nav-link {
+            color: black;
+            background-color: white;
+            border: 2px solid transparent; // Thicker active border
+            margin-bottom: -2px;
+
+            &:hover {
+                text-decoration: underline;
+                background-color: #f0f0f0;
+            }
+
+            &.active {
+                background-color: black;
+                color: white;
+                border-color: black;
+                border-bottom-color: black; // Override standard bottom border behavior for visibility
+            }
+        }
+    }
+
+    // Vertical specific overrides
+    .vertical-tabs {
+        border-right-color: currentColor;
+        border-bottom: none;
+
+        .nav-link {
+            border-right: 2px solid transparent;
+            margin-right: -2px;
+
+            &.active {
+                border-right-color: black;
+                border-bottom-color: transparent;
+                background-color: black;
+                color: white;
+            }
+        }
+    }
+}

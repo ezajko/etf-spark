@@ -22,13 +22,14 @@ const {
 } = Astro.props;
 
 const heightMap: Record<string, string> = {
+  xs: 'xs',
   medium: 'md',
   large: 'lg',
-  full: 'full', // or xl/100
+  full: 'xl', // or 100vh
   sm: 'sm',
   md: 'md',
   lg: 'lg',
-  xl: 'full',
+  xl: 'xl',
 };
 
 const finalHeightClass =

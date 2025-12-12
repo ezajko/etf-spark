@@ -2,64 +2,47 @@
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
-// Fonts (CDN)
+// 1. Core Configuration & Fonts
 @import 'base/fonts';
-
-// Base
-@import 'base/variables';
+@import 'base/variables'; // Custom variables
 @import 'base/mixins'; // Custom mixins
-@import 'base/bootstrap-overrides'; // This likely imports bootstrap or sets vars
-@import 'overrides/card'; // Custom component overrides
 
-// Ensure Bootstrap Mixins/Functions are available for our components
-// We need to import these if they aren't fully exposed by bootstrap-overrides
+// 2. Vendor / Bootstrap Core
+// Imports variables, mixins, and core Bootstrap styles (via overrides file)
+@import 'base/bootstrap-overrides';
 @import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables"; // Standard Bootstrap variables
 @import "bootstrap/scss/mixins";
 
+// 3. Base Styles
 @import 'base/global';
 
-// Components (ez- prefixed)
-// Components (ez- prefixed)
-@import 'components/ez-button';
-
-// @import 'components/ez-cards'; // Consolidated into ez-card
-
-
+// 4. Native Bootstrap Overrides (Theming)
+// These files extend standard Bootstrap classes (.btn, .card, etc.)
+@import 'overrides/buttons';
+@import 'overrides/card';
+@import 'overrides/carousel';
 @import 'overrides/cta';
-
-@import "overrides/tabs";
-
 @import 'overrides/hero';
-@import 'components/ez-banner';
-// @import 'components/ez-navbar'; // Migrated to navigation/ez-nav-main
+@import 'overrides/tabs';
 
-// Navigation System
-@import 'components/navigation/ez-nav-main';
-@import 'components/navigation/ez-nav-slim';
-@import 'components/navigation/ez-nav-tree';
-@import 'components/navigation/ez-nav-section';
-@import 'components/navigation/ez-nav-pagination';
-@import 'components/navigation/ez-nav-main';
-@import 'components/navigation/ez-nav-slim';
-@import 'components/navigation/ez-nav-tree';
-@import 'components/navigation/ez-nav-section';
-@import 'components/navigation/ez-nav-pagination';
-
-
-
-
-@import "components/ez-utilities";
-@import "overrides/carousel";
-// @import "components/ez-sidebar"; // Migrated to navigation/ez-nav-tree
+// 5. Custom Components ("ez-" Prefixed - Legacy/Specific)
 @import "components/ez-sidebar-widget";
 
-// Layouts
+// 6. Navigation System
+@import 'components/navigation/ez-nav-main';
+@import 'components/navigation/ez-nav-slim';
+@import 'components/navigation/ez-nav-tree';
+@import 'components/navigation/ez-nav-section';
+@import 'components/navigation/ez-nav-pagination';
+
+// 7. Layouts
 @import 'layouts/header';
+@import 'layouts/banner';
 @import 'layouts/footer';
 @import 'layouts/breadcrumbs';
 @import 'layouts/main';
 @import 'layouts/regions';
 
-// Themes
-// @import 'themes/etf';
+// 8. Utilities
+@import "components/ez-utilities";

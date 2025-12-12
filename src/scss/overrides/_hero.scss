@@ -64,9 +64,25 @@
     }
 }
 
-// Sizing Variants
+// Sizing Variants (Matching Standard Banner Heights)
+// XS - 7.5rem (120px)
+.hero-xs {
+    min-height: 7.5rem;
+    padding: $ez-spacing-sm;
+
+    .hero-title {
+        font-size: 1.5rem;
+        margin-bottom: 0;
+    }
+
+    .hero-subtitle {
+        display: none; // Hide subtitle on very small banners
+    }
+}
+
+// SM - 15rem (240px)
 .hero-sm {
-    min-height: 240px;
+    min-height: 15rem;
 
     .hero-title {
         font-size: 2rem;
@@ -77,24 +93,32 @@
     }
 }
 
+// MD - 24rem (384px)
 .hero-md {
-    min-height: 480px;
+    min-height: 24rem;
 }
 
+// LG - 30rem (480px)
 .hero-lg {
-    min-height: 640px;
+    min-height: 30rem;
 
     .hero-title {
-        font-size: 4rem;
+        font-size: 3.5rem;
 
         @include media-breakpoint-up(md) {
-            font-size: 5rem;
+            font-size: 4.5rem;
         }
     }
 }
 
-.hero-full {
+// XL - Full Screen
+.hero-xl {
     min-height: 100vh;
+}
+
+// Legacy support (map 'full' to xl)
+.hero-full {
+    @extend .hero-xl;
 }
 
 // Overlay Variants
@@ -119,4 +143,29 @@
     }
 
     // Indicators/Controls managed by override/_carousel.scss global overrides usually
+}
+
+// --- Theme Overrides ---
+
+// High Contrast Theme
+[data-ez-theme="high-contrast"] {
+    .hero {
+        .hero-overlay {
+            // Much darker overlay for high contrast
+            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7));
+        }
+
+        .hero-title,
+        .hero-subtitle {
+            text-shadow: 2px 2px 8px black; // Stronger shadow
+            color: #fff !important; // Force white
+        }
+
+        .hero-carousel {
+            .carousel-caption {
+                background: rgba(0, 0, 0, 0.9); // Nearly opaque background for captions
+                border: 2px solid white;
+            }
+        }
+    }
 }

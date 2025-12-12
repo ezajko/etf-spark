@@ -1,17 +1,17 @@
-// ETF UNSA - Banner Component
+// ETF UNSA - Banner Layout Component
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
 :root {
     // Banner Heights Scale
-    --ez-banner-xs: 7.5rem; // 120px - Strip / Header
-    --ez-banner-s: 15rem; // 240px - Standard Page
-    --ez-banner-m: 24rem; // 384px - Feature / Blog
-    --ez-banner-l: 30rem; // 480px - Desktop Hero
+    --banner-height-xs: 7.5rem; // 120px - Strip / Header
+    --banner-height-sm: 15rem; // 240px - Standard Page
+    --banner-height-md: 24rem; // 384px - Feature / Blog
+    --banner-height-lg: 30rem; // 480px - Desktop Hero
     // XL is viewport dependent
 }
 
-.ez-banner {
+.banner {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -41,7 +41,7 @@
     }
 
     // Content
-    &__content {
+    .banner-content {
         position: relative;
         z-index: 2;
         text-align: center;
@@ -54,10 +54,10 @@
     // --- Sizes ---
 
     // XS - 7.5rem (120px)
-    &--xs {
-        height: var(--ez-banner-xs);
+    &.banner-xs {
+        height: var(--banner-height-xs);
 
-        .ez-banner__title,
+        .banner-title,
         h1,
         h2 {
             font-size: 1.5rem;
@@ -66,32 +66,32 @@
         }
     }
 
-    // S - 15rem (240px)
-    &--s {
-        height: var(--ez-banner-s);
+    // SM - 15rem (240px)
+    &.banner-sm {
+        height: var(--banner-height-sm);
     }
 
-    // M - 24rem (384px)
-    &--m {
-        height: var(--ez-banner-m);
+    // MD - 24rem (384px)
+    &.banner-md {
+        height: var(--banner-height-md);
     }
 
-    // L - 30rem (480px)
-    &--l {
-        height: var(--ez-banner-l);
+    // LG - 30rem (480px)
+    &.banner-lg {
+        height: var(--banner-height-lg);
     }
 
     // XL - Full Screen
-    &--xl {
+    &.banner-xl {
         min-height: 100vh;
-        min-height: 100dvh; // Dynamic Viewport Height for mobile
+        min-height: 100dvh;
         flex-direction: column;
     }
 
     // --- Variants ---
 
     // No Overlay
-    &--no-overlay {
+    &.banner-no-overlay {
         &::before {
             display: none;
         }

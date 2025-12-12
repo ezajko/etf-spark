@@ -7,30 +7,30 @@ interface Props {
   title?: string;
   subtitle?: string;
   image?: string;
-  size?: 'xs' | 's' | 'm' | 'l' | 'xl';
+  size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   overlay?: boolean;
   className?: string;
 }
 
-const { 
-  title, 
-  subtitle, 
+const {
+  title,
+  subtitle,
   image = '/images/banner-default.jpg', // Fallback image if needed
-  size = 's', 
+  size = 'sm',
   overlay = true,
-  className = ''
+  className = '',
 } = Astro.props;
 
-// Map size prop to BEM modifier class
-const sizeClass = size ? `ez-banner--${size}` : '';
-const overlayClass = !overlay ? 'ez-banner--no-overlay' : '';
+// Map size prop to modifier class
+const sizeClass = size ? `banner-${size}` : '';
+const overlayClass = !overlay ? 'banner-no-overlay' : '';
 const bgImageStyle = image ? `background-image: url('${image}');` : '';
 ---
 
-<div class:list={['ez-banner', sizeClass, overlayClass, className]} style={bgImageStyle}>
-  <div class="ez-banner__content">
-    {title && <h1 class="ez-banner__title">{title}</h1>}
-    {subtitle && <p class="ez-banner__subtitle lead mb-0">{subtitle}</p>}
+<div class:list={['banner', sizeClass, overlayClass, className]} style={bgImageStyle}>
+  <div class="banner-content">
+    {title && <h1 class="banner-title">{title}</h1>}
+    {subtitle && <p class="banner-subtitle lead mb-0">{subtitle}</p>}
     <slot />
   </div>
 </div>

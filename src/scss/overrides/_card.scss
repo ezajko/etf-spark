@@ -12,3 +12,44 @@
         z-index: 1; // Ensure it stays on top nicely
     }
 }
+
+// --- Theme Overrides ---
+
+// High Contrast Theme
+[data-ez-theme="high-contrast"] {
+    .card {
+        border: 2px solid currentColor !important; // Force border visibility
+        box-shadow: none !important; // Remove shadows
+        background-color: white;
+        color: black;
+
+        &:hover {
+            transform: none !important; // Disable motion
+            background-color: black; // Invert on hover for clear indication
+            color: white;
+
+            .card-title,
+            .card-text,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                color: white !important;
+            }
+
+            // Ensure links inside card invert properly or stay visible
+            a {
+                color: yellow !important;
+                text-decoration: underline;
+            }
+        }
+
+        .card-footer,
+        .card-header {
+            border-color: currentColor;
+            background-color: transparent;
+        }
+    }
+}

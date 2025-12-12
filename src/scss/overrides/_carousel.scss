@@ -66,3 +66,29 @@
     height: 100%;
     width: 100%;
 }
+
+// --- Theme Overrides ---
+
+// High Contrast Theme
+[data-ez-theme="high-contrast"] {
+
+    .carousel-indicators {
+        [data-bs-target] {
+            border: 2px solid white; // Thicker border
+            background-color: black; // High contrast bg
+            opacity: 0.8;
+
+            &.active {
+                background-color: yellow; // Distinct active state
+                border-color: black;
+                opacity: 1;
+            }
+        }
+    }
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: black;
+        border: 2px solid white;
+    }
+}
