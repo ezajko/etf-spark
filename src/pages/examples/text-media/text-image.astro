@@ -187,49 +187,25 @@ const exampleFloats = `<div class="mb-5 clearfix">
       <!-- Example 1: Image Left, Text Right -->
       <section class="mb-5">
         <h2 class="mb-4">Image Left, Text Right</h2>
-        <div class="card shadow-sm">
-          <div class="card-body p-4" set:html={exampleLeftImage} />
-        </div>
-        <div class="mt-3">
-          <ExampleSnippet title="Image Left Layout" code={exampleLeftImage} />
-        </div>
+        <ExampleSnippet title="Image Left Layout" code={exampleLeftImage} />
       </section>
 
       <!-- Example 2: Text Left, Image Right -->
       <section class="mb-5">
         <h2 class="mb-4">Text Left, Image Right</h2>
-        <div class="card shadow-sm">
-          <div class="card-body p-4" set:html={exampleRightImage} />
-        </div>
-        <div class="mt-3">
-          <ExampleSnippet
-            title="Image Right Layout (with Mobile Reorder)"
-            code={exampleRightImage}
-          />
-        </div>
+        <ExampleSnippet title="Image Right Layout (with Mobile Reorder)" code={exampleRightImage} />
       </section>
 
       <!-- Example 3: Feature List with Image -->
       <section class="mb-5">
         <h2 class="mb-4">Feature List with Image</h2>
-        <div class="card shadow-sm">
-          <div class="card-body p-4" set:html={exampleFeatureList} />
-        </div>
-        <div class="mt-3">
-          <ExampleSnippet title="Feature List Layout" code={exampleFeatureList} />
-        </div>
+        <ExampleSnippet title="Feature List Layout" code={exampleFeatureList} />
       </section>
 
       <!-- Example 4: Text Wrapping (Floats) -->
       <section class="mb-5">
         <h2 class="mb-4">Text Wrapping (Floats)</h2>
-        <div class="card shadow-sm">
-          <div class="card-body p-4" set:html={exampleFloats} />
-        </div>
-
-        <div class="mt-3">
-          <ExampleSnippet title="Float Classes (Text Wrapping)" code={exampleFloats} />
-        </div>
+        <ExampleSnippet title="Float Classes (Text Wrapping)" code={exampleFloats} />
       </section>
     </div>
   </div>
