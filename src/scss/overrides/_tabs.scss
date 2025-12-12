@@ -44,10 +44,13 @@
 
     // 3. Tab Footer
     .tab-footer {
-        border-top: 0.125rem solid var(--bs-border-color);
+        background-color: var(--bs-secondary);
+        color: white;
+        border-top: none;
         padding: $ez-spacing-md;
-        background-color: var(--bs-light); // Optional: distinct background
         border-radius: 0 0 $ez-border-radius $ez-border-radius;
+        display: flex;
+        align-items: center;
     }
 
     // 3. Vertical Tabs Modifier
@@ -135,6 +138,12 @@
                     border-color: black;
                 }
             }
+        }
+
+        .tab-footer {
+            border-top: 1px solid currentColor;
+            background-color: transparent;
+            color: currentColor;
         }
 
         &.tabs-vertical {
