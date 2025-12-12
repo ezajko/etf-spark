@@ -42,6 +42,14 @@
     //    // Bootstrap `tab-pane` will be inside here.
     // }
 
+    // 3. Tab Footer
+    .tab-footer {
+        border-top: 0.125rem solid var(--bs-border-color);
+        padding: $ez-spacing-md;
+        background-color: var(--bs-light); // Optional: distinct background
+        border-radius: 0 0 $ez-border-radius $ez-border-radius;
+    }
+
     // 3. Vertical Tabs Modifier
     &.tabs-vertical {
         flex-direction: row;

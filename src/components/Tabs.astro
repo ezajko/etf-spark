@@ -54,6 +54,12 @@ const footerClass = `tab-footer`;
     <slot />
   </div>
 
-  <!-- Optional Tab Footer (hidden by default unless used via named slot in future) -->
-  <div class={footerClass} style="display: none;"></div>
+  <!-- Optional Tab Footer -->
+  {
+    Astro.slots.has('footer') && (
+      <div class={footerClass}>
+        <slot name="footer" />
+      </div>
+    )
+  }
 </div>
