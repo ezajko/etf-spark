@@ -5,10 +5,10 @@
 // Override Bootstrap CSS variables to match our design system
 :root {
     // Default Theme Color (Blue)
-    --ez-theme-color: #{$ez-theme-blue};
-    --ez-theme-color-rgb: #{red($ez-theme-blue)},
-    #{green($ez-theme-blue)},
-    #{blue($ez-theme-blue)};
+    --ez-theme-color: #{$site-theme-brand-blue};
+    --ez-theme-color-rgb: #{red($site-theme-brand-blue)},
+    #{green($site-theme-brand-blue)},
+    #{blue($site-theme-brand-blue)};
 
     // Primary Color mapped to Theme Color
     --bs-primary: var(--ez-theme-color);
@@ -34,113 +34,113 @@
     --bs-border-radius-pill: 0;
 
     // Secondary Color
-    --bs-secondary: #{$ez-secondary-color};
-    --bs-secondary-rgb: #{$ez-secondary-rgb};
+    --bs-secondary: #{$site-theme-color-secondary};
+    --bs-secondary-rgb: #{$site-theme-color-secondary-rgb};
 
     // Success Color
-    --bs-success: #{$ez-success-color};
-    --bs-success-rgb: #{red($ez-success-color)},
-    #{green($ez-success-color)},
-    #{blue($ez-success-color)};
+    --bs-success: #{$site-theme-status-success};
+    --bs-success-rgb: #{red($site-theme-status-success)},
+    #{green($site-theme-status-success)},
+    #{blue($site-theme-status-success)};
 
     // Danger Color
-    --bs-danger: #{$ez-danger-color};
-    --bs-danger-rgb: #{red($ez-danger-color)},
-    #{green($ez-danger-color)},
-    #{blue($ez-danger-color)};
+    --bs-danger: #{$site-theme-status-danger};
+    --bs-danger-rgb: #{red($site-theme-status-danger)},
+    #{green($site-theme-status-danger)},
+    #{blue($site-theme-status-danger)};
 
     // Warning Color
-    --bs-warning: #{$ez-warning-color};
-    --bs-warning-rgb: #{red($ez-warning-color)},
-    #{green($ez-warning-color)},
-    #{blue($ez-warning-color)};
+    --bs-warning: #{$site-theme-status-warning};
+    --bs-warning-rgb: #{red($site-theme-status-warning)},
+    #{green($site-theme-status-warning)},
+    #{blue($site-theme-status-warning)};
 
     // Info Color
-    --bs-info: #{$ez-info-color};
-    --bs-info-rgb: #{red($ez-info-color)},
-    #{green($ez-info-color)},
-    #{blue($ez-info-color)};
+    --bs-info: #{$site-theme-status-info};
+    --bs-info-rgb: #{red($site-theme-status-info)},
+    #{green($site-theme-status-info)},
+    #{blue($site-theme-status-info)};
 
     // Body Colors
-    --bs-body-color: #{$ez-text-color};
-    --bs-body-bg: #{$ez-bg-color};
+    --bs-body-color: #{$site-theme-text-body};
+    --bs-body-bg: #{$site-theme-bg-body};
 
     // Font Family
-    --bs-font-sans-serif: #{$ez-font-family-sans};
-    --bs-font-serif: #{$ez-font-family-serif};
-    --bs-font-monospace: #{$ez-font-family-mono};
-    --bs-body-font-family: #{$ez-font-family-base};
+    --bs-font-sans-serif: #{$site-theme-font-family-sans};
+    --bs-font-serif: #{$site-theme-font-family-serif};
+    --bs-font-monospace: #{$site-theme-font-family-mono};
+    --bs-body-font-family: #{$site-theme-font-family-base};
 }
 
 // Dynamic Theme Overrides
 [data-ez-theme="teal"] {
-    --ez-theme-color: #{$ez-theme-teal};
-    --ez-theme-color-rgb: #{red($ez-theme-teal)},
-    #{green($ez-theme-teal)},
-    #{blue($ez-theme-teal)};
-    --bs-secondary: #{$ez-theme-teal-secondary};
-    --bs-secondary-rgb: #{red($ez-theme-teal-secondary)},
-    #{green($ez-theme-teal-secondary)},
-    #{blue($ez-theme-teal-secondary)};
+    --ez-theme-color: #{$site-theme-brand-teal};
+    --ez-theme-color-rgb: #{red($site-theme-brand-teal)},
+    #{green($site-theme-brand-teal)},
+    #{blue($site-theme-brand-teal)};
+    --bs-secondary: #{$site-theme-teal-secondary};
+    --bs-secondary-rgb: #{red($site-theme-teal-secondary)},
+    #{green($site-theme-teal-secondary)},
+    #{blue($site-theme-teal-secondary)};
 }
 
 [data-ez-theme="green"] {
-    --ez-theme-color: #{$ez-theme-green};
-    --ez-theme-color-rgb: #{red($ez-theme-green)},
-    #{green($ez-theme-green)},
-    #{blue($ez-theme-green)};
-    --bs-secondary: #{$ez-theme-green-secondary};
-    --bs-secondary-rgb: #{red($ez-theme-green-secondary)},
-    #{green($ez-theme-green-secondary)},
-    #{blue($ez-theme-green-secondary)};
+    --ez-theme-color: #{$site-theme-brand-green};
+    --ez-theme-color-rgb: #{red($site-theme-brand-green)},
+    #{green($site-theme-brand-green)},
+    #{blue($site-theme-brand-green)};
+    --bs-secondary: #{$site-theme-green-secondary};
+    --bs-secondary-rgb: #{red($site-theme-green-secondary)},
+    #{green($site-theme-green-secondary)},
+    #{blue($site-theme-green-secondary)};
 }
 
 [data-ez-theme="purple"] {
-    --ez-theme-color: #{$ez-theme-purple};
-    --ez-theme-color-rgb: #{red($ez-theme-purple)},
-    #{green($ez-theme-purple)},
-    #{blue($ez-theme-purple)};
-    --bs-secondary: #{$ez-theme-purple-secondary};
-    --bs-secondary-rgb: #{red($ez-theme-purple-secondary)},
-    #{green($ez-theme-purple-secondary)},
-    #{blue($ez-theme-purple-secondary)};
+    --ez-theme-color: #{$site-theme-brand-purple};
+    --ez-theme-color-rgb: #{red($site-theme-brand-purple)},
+    #{green($site-theme-brand-purple)},
+    #{blue($site-theme-brand-purple)};
+    --bs-secondary: #{$site-theme-purple-secondary};
+    --bs-secondary-rgb: #{red($site-theme-purple-secondary)},
+    #{green($site-theme-purple-secondary)},
+    #{blue($site-theme-purple-secondary)};
 }
 
 [data-ez-theme="orange"] {
-    --ez-theme-color: #{$ez-theme-orange};
-    --ez-theme-color-rgb: #{red($ez-theme-orange)},
-    #{green($ez-theme-orange)},
-    #{blue($ez-theme-orange)};
-    --bs-secondary: #{$ez-theme-orange-secondary};
-    --bs-secondary-rgb: #{red($ez-theme-orange-secondary)},
-    #{green($ez-theme-orange-secondary)},
-    #{blue($ez-theme-orange-secondary)};
+    --ez-theme-color: #{$site-theme-brand-orange};
+    --ez-theme-color-rgb: #{red($site-theme-brand-orange)},
+    #{green($site-theme-brand-orange)},
+    #{blue($site-theme-brand-orange)};
+    --bs-secondary: #{$site-theme-orange-secondary};
+    --bs-secondary-rgb: #{red($site-theme-orange-secondary)},
+    #{green($site-theme-orange-secondary)},
+    #{blue($site-theme-orange-secondary)};
 }
 
 [data-ez-theme="red"] {
-    --ez-theme-color: #{$ez-theme-red};
-    --ez-theme-color-rgb: #{red($ez-theme-red)},
-    #{green($ez-theme-red)},
-    #{blue($ez-theme-red)};
-    --bs-secondary: #{$ez-theme-red-secondary};
-    --bs-secondary-rgb: #{red($ez-theme-red-secondary)},
-    #{green($ez-theme-red-secondary)},
-    #{blue($ez-theme-red-secondary)};
+    --ez-theme-color: #{$site-theme-brand-red};
+    --ez-theme-color-rgb: #{red($site-theme-brand-red)},
+    #{green($site-theme-brand-red)},
+    #{blue($site-theme-brand-red)};
+    --bs-secondary: #{$site-theme-red-secondary};
+    --bs-secondary-rgb: #{red($site-theme-red-secondary)},
+    #{green($site-theme-red-secondary)},
+    #{blue($site-theme-red-secondary)};
 }
 
 [data-ez-theme="blue"] {
-    --ez-theme-color: #{$ez-theme-blue};
-    --ez-theme-color-rgb: #{red($ez-theme-blue)},
-    #{green($ez-theme-blue)},
-    #{blue($ez-theme-blue)};
-    --bs-secondary: #{$ez-theme-blue-secondary};
-    --bs-secondary-rgb: #{red($ez-theme-blue-secondary)},
-    #{green($ez-theme-blue-secondary)},
-    #{blue($ez-theme-blue-secondary)};
-    --bs-secondary: #{$ez-theme-blue-secondary};
-    --bs-secondary-rgb: #{red($ez-theme-blue-secondary)},
-    #{green($ez-theme-blue-secondary)},
-    #{blue($ez-theme-blue-secondary)};
+    --ez-theme-color: #{$site-theme-brand-blue};
+    --ez-theme-color-rgb: #{red($site-theme-brand-blue)},
+    #{green($site-theme-brand-blue)},
+    #{blue($site-theme-brand-blue)};
+    --bs-secondary: #{$site-theme-blue-secondary};
+    --bs-secondary-rgb: #{red($site-theme-blue-secondary)},
+    #{green($site-theme-blue-secondary)},
+    #{blue($site-theme-blue-secondary)};
+    --bs-secondary: #{$site-theme-blue-secondary};
+    --bs-secondary-rgb: #{red($site-theme-blue-secondary)},
+    #{green($site-theme-blue-secondary)},
+    #{blue($site-theme-blue-secondary)};
 }
 
 [data-ez-theme="high-contrast"] {
@@ -208,9 +208,9 @@
 
 // Dark Mode Overrides
 [data-bs-theme="dark"] {
-    --bs-body-color: #{$ez-text-dark};
-    --bs-body-bg: #{$ez-bg-dark};
-    --bs-border-color: #{$ez-border-dark};
+    --bs-body-color: #{$site-theme-text-dark};
+    --bs-body-bg: #{$site-theme-bg-dark};
+    --bs-border-color: #{$site-theme-border-dark};
     --bs-border-color-translucent: rgba(255, 255, 255, 0.15);
 
     // Override Primary interactions for better contrast in dark mode if needed
@@ -218,12 +218,12 @@
 
     // Utilities overrides
     .text-muted {
-        color: #{$ez-text-muted-dark} !important;
+        color: #{$site-theme-text-muted-dark} !important;
     }
 
     .bg-light {
-        background-color: #{$ez-bg-dark-secondary} !important;
-        color: #{$ez-text-dark} !important;
+        background-color: #{$site-theme-bg-dark-secondary} !important;
+        color: #{$site-theme-text-dark} !important;
     }
 
     .btn-close {
@@ -235,7 +235,7 @@
     --bs-link-hover-color: #90CAF9; // Even lighter on hover
 
     // Card Footer Background in Dark Mode
-    --bs-tertiary-bg: #{$ez-bg-dark-secondary};
+    --bs-tertiary-bg: #{$site-theme-bg-dark-secondary};
 }
 
 // Override Button Colors (because Bootstrap uses hardcoded hex in compiled CSS)
@@ -285,7 +285,7 @@
 }
 
 .text-secondary {
-    color: #{$ez-secondary-color} !important;
+    color: #{$site-theme-color-secondary} !important;
 }
 
 // Override Background Colors
@@ -294,5 +294,5 @@
 }
 
 .bg-secondary {
-    background-color: #{$ez-secondary-color} !important;
+    background-color: #{$site-theme-color-secondary} !important;
 }

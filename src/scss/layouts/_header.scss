@@ -7,7 +7,7 @@
 // 1. SLIM HEADER (Top Bar) - 48px
 // ======================
 .ez-header-slim-wrapper {
-    background-color: $ez-footer-bg; // #000
+    background-color: $site-theme-footer-bg; // #000
     color: white;
     min-height: 48px;
     padding: 12px 0;
@@ -16,7 +16,7 @@
     z-index: 1030; // Above sticky header (1020)
 
     // Layout only - styles moved to _ez-nav-utility.scss
-    background-color: $ez-footer-bg; // #000
+    background-color: $site-theme-footer-bg; // #000
     color: white;
     min-height: 48px;
     padding: 12px 0;
@@ -30,7 +30,7 @@
 // ======================
 .ez-header-wrapper {
     background-color: var(--bs-body-bg);
-    box-shadow: $ez-shadow-sm;
+    box-shadow: $site-theme-shadow-sm;
 
     &.sticky-top {
         position: sticky;
@@ -45,7 +45,7 @@
 .ez-header-center-wrapper {
     background-color: var(--bs-body-bg);
     min-height: 96px;
-    padding: $ez-spacing-lg 0;
+    padding: $site-theme-spacing-lg 0;
     border-bottom: 1px solid var(--bs-border-color);
 
     .ez-header-center-content {
@@ -83,15 +83,15 @@
     .ez-brand-sup {
         font-size: 0.85rem;
         text-transform: uppercase;
-        color: $ez-text-muted;
-        font-weight: $ez-font-weight-medium;
+        color: $site-theme-text-muted;
+        font-weight: $site-theme-font-weight-medium;
 
         margin-bottom: 2px;
     }
 
     .ez-brand-main {
         font-size: 1.25rem;
-        font-weight: $ez-font-weight-bold;
+        font-weight: $site-theme-font-weight-bold;
         color: var(--bs-primary);
         text-transform: uppercase;
         margin-bottom: 2px;
@@ -100,12 +100,12 @@
     .ez-brand-sub {
         font-size: 0.9rem;
         color: var(--bs-body-color);
-        font-weight: $ez-font-weight-medium;
+        font-weight: $site-theme-font-weight-medium;
     }
 
     .navbar-toggler {
         border: none;
-        padding: $ez-spacing-sm;
+        padding: $site-theme-spacing-sm;
 
         &:focus {
             box-shadow: none;
@@ -165,7 +165,7 @@
     }
 
     .mobile-menu-header {
-        padding: $ez-spacing-md;
+        padding: $site-theme-spacing-md;
         background-color: var(--bs-primary);
         color: white;
         display: flex;
@@ -173,7 +173,7 @@
         align-items: center;
 
         h5 {
-            font-weight: $ez-font-weight-bold;
+            font-weight: $site-theme-font-weight-bold;
         }
 
         .btn-close {
@@ -218,14 +218,14 @@
 
             a {
                 display: block;
-                padding: $ez-spacing-md;
+                padding: $site-theme-spacing-md;
                 color: var(--bs-body-color);
                 text-decoration: none;
-                font-weight: $ez-font-weight-medium;
+                font-weight: $site-theme-font-weight-medium;
 
                 &:hover {
                     background-color: var(--bs-tertiary-bg);
-                    color: $ez-primary-color;
+                    color: $site-theme-color-primary;
                 }
             }
         }
@@ -239,7 +239,7 @@
             background-color: var(--bs-tertiary-bg);
 
             a {
-                color: $ez-text-muted;
+                color: $site-theme-text-muted;
                 font-size: 0.9rem;
             }
         }
@@ -253,7 +253,7 @@
     position: absolute;
     left: -9999px;
     z-index: 999;
-    padding: $ez-spacing-sm $ez-spacing-md;
+    padding: $site-theme-spacing-sm $site-theme-spacing-md;
     background-color: var(--bs-primary);
     color: white;
     text-decoration: none;
@@ -261,7 +261,7 @@
     &:focus {
         left: 50%;
         transform: translateX(-50%);
-        top: $ez-spacing-sm;
+        top: $site-theme-spacing-sm;
     }
 }
 
@@ -271,7 +271,7 @@
 @media (max-width: 991px) {
     .ez-header-center-wrapper {
         min-height: 64px; // Reduced height
-        padding: $ez-spacing-sm 0;
+        padding: $site-theme-spacing-sm 0;
 
         .ez-brand-logos {
             .ez-brand-logo-icon svg {

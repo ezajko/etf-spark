@@ -4,7 +4,8 @@
 
 // 1. Core Configuration & Fonts
 @import 'base/fonts';
-@import 'base/variables'; // Custom variables
+@import 'themes/default'; // Color Theme
+@import 'base/variables'; // Structural variables
 // 2. Vendor / Bootstrap Core
 // Imports variables, mixins, and core Bootstrap styles (via overrides file)
 @import 'base/bootstrap-overrides';
@@ -46,4 +47,4 @@
 @import 'layouts/regions';
 
 // 8. Utilities
-@import "components/ez-utilities";
+@import "overrides/avatars";

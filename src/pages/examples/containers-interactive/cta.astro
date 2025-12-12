@@ -10,33 +10,39 @@ const breadcrumbItems = [
   { label: 'Call to Action', href: '#', active: true },
 ];
 
-const simpleCtaCode = `<div class="card border-0 bg-light p-5 text-center">
-  <div class="card-body">
-    <h2 class="card-title mb-3">Ready to get started?</h2>
-    <p class="card-text lead mb-4">Join us today and experience the difference.</p>
-    <a href="#" class="btn btn-primary btn-lg">Sign Up Now</a>
-  </div>
-</div>`;
-
-const inlineCtaCode = `<div class="bg-primary text-white p-5 rounded">
-  <div class="d-flex flex-column flex-md-row justify-content-between align-items-center">
-    <div class="mb-3 mb-md-0">
-      <h2 class="h3 fw-bold mb-1">Stay updated with our newsletter</h2>
-      <p class="mb-0 text-white-50">Subscribe to get the latest news and updates.</p>
-    </div>
-    <div class="d-flex gap-2">
-      <input type="email" class="form-control" placeholder="Email address">
-      <button class="btn btn-light text-primary fw-bold">Subscribe</button>
+const simpleCtaCode = `<div class="cta cta-center">
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title">Ready to get started?</h2>
+      <p class="cta-description">Join us today and experience the difference.</p>
+      <a href="#" class="btn btn-primary btn-lg">Sign Up Now</a>
     </div>
   </div>
 </div>`;
 
-const imageCtaCode = `<div class="card text-white bg-dark border-0 overflow-hidden">
-  <img src="https://placehold.co/1200x400/333/999" class="card-img opacity-50" alt="...">
-  <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center text-center">
-    <h2 class="card-title fw-bold display-5">Explore Our Programs</h2>
-    <p class="card-text fs-4 mb-4">Discover the perfect study program for your future career.</p>
-    <a href="#" class="btn btn-light btn-lg px-5 fw-bold">View Programs</a>
+const inlineCtaCode = `<div class="cta cta-primary">
+  <div class="container">
+    <div class="cta-content d-flex flex-column flex-md-row justify-content-between align-items-center">
+      <div class="mb-3 mb-md-0">
+        <h2 class="cta-title mb-1">Stay updated with our newsletter</h2>
+        <p class="cta-description mb-0">Subscribe to get the latest news and updates.</p>
+      </div>
+      <div class="d-flex gap-2">
+        <input type="email" class="form-control" placeholder="Email address">
+        <button class="btn btn-light text-primary fw-bold">Subscribe</button>
+      </div>
+    </div>
+  </div>
+</div>`;
+
+const imageCtaCode = `<div class="cta cta-dark cta-center cta-md d-flex align-items-center">
+  <img src="https://placehold.co/1200x400/333/999" class="position-absolute top-0 start-0 w-100 h-100 object-fit-cover opacity-50" alt="...">
+  <div class="container">
+    <div class="cta-content">
+      <h2 class="cta-title display-5">Explore Our Programs</h2>
+      <p class="cta-description fs-4">Discover the perfect study program for your future career.</p>
+      <a href="#" class="btn btn-light btn-lg px-5 fw-bold">View Programs</a>
+    </div>
   </div>
 </div>`;
 ---

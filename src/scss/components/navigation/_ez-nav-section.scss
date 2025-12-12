@@ -5,10 +5,10 @@
     // Inherits InfoWidget card styles, we add specific list behaviors
 
     .ez-list-item {
-        padding: $ez-spacing-sm $ez-spacing-md;
+        padding: $site-theme-spacing-sm $site-theme-spacing-md;
         border-bottom: 1px solid var(--bs-border-color);
         transition: all 0.2s ease;
-        border-radius: $ez-border-radius;
+        border-radius: $site-theme-border-radius;
         margin-bottom: 0.125rem; // 2px
 
         &:last-child {

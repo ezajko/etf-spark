@@ -4,9 +4,9 @@
 
 // Standard overrides for Bootstrap buttons if needed
 .btn {
-    font-weight: $ez-font-weight-semibold;
-    border-radius: $ez-border-radius;
-    padding: $ez-spacing-sm $ez-spacing-md;
+    font-weight: $site-theme-font-weight-semibold;
+    border-radius: $site-theme-border-radius;
+    padding: $site-theme-spacing-sm $site-theme-spacing-md;
 
     // Fix for focus outline if desired
     &:focus {

@@ -20,9 +20,9 @@
     // Link styling
     .nav-link {
         color: var(--bs-body-color);
-        font-weight: $ez-font-weight-semibold;
+        font-weight: $site-theme-font-weight-semibold;
         font-size: 1rem;
-        padding: 0.75rem $ez-spacing-md; // 12px top/bottom -> Total height 24px(line-height) + 24px(padding) = 48px (3rem)
+        padding: 0.75rem $site-theme-spacing-md; // 12px top/bottom -> Total height 24px(line-height) + 24px(padding) = 48px (3rem)
         text-transform: uppercase;
 
         transition: color 0.2s ease;
@@ -42,8 +42,8 @@
 
     // Split dropdown styling (specific to our mega menu implementation)
     .dropdown-toggle-split {
-        padding-left: $ez-spacing-xs;
-        padding-right: $ez-spacing-xs;
+        padding-left: $site-theme-spacing-xs;
+        padding-right: $site-theme-spacing-xs;
         opacity: 0.7;
         transition: all 0.2s ease;
 
@@ -65,27 +65,27 @@
     // Dropdown menus
     .dropdown-menu {
         border: none;
-        border-top: 1px solid $ez-border-color;
+        border-top: 1px solid $site-theme-border-color;
         border-radius: 0;
-        box-shadow: $ez-shadow-lg;
+        box-shadow: $site-theme-shadow-lg;
         background-color: var(--bs-body-bg);
-        padding: $ez-spacing-lg;
+        padding: $site-theme-spacing-lg;
         margin-top: 0;
 
         h6 {
             text-transform: uppercase;
-            font-weight: $ez-font-weight-bold;
+            font-weight: $site-theme-font-weight-bold;
             color: var(--bs-primary);
-            margin-bottom: $ez-spacing-md;
+            margin-bottom: $site-theme-spacing-md;
         }
 
         a {
             color: var(--bs-body-color);
             display: block;
-            padding: $ez-spacing-sm;
+            padding: $site-theme-spacing-sm;
             text-decoration: none;
             transition: all 0.2s;
-            border-radius: $ez-border-radius;
+            border-radius: $site-theme-border-radius;
 
             &:hover {
                 color: var(--bs-primary);
@@ -114,7 +114,7 @@
         flex-direction: column;
         border-right: 1px solid var(--bs-border-color);
         padding-right: 0;
-        margin-right: $ez-spacing-lg; // Spacing to content
+        margin-right: $site-theme-spacing-lg; // Spacing to content
         height: 100%;
 
         .nav-item {
@@ -137,7 +137,7 @@
             &.active {
                 background-color: transparent;
                 color: var(--bs-primary);
-                font-weight: $ez-font-weight-bold;
+                font-weight: $site-theme-font-weight-bold;
                 border-right-color: var(--bs-primary);
 
                 i {

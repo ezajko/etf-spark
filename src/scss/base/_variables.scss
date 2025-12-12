@@ -4,133 +4,50 @@
 // Inspired by Bootstrap Italia
 
 // ======================
-// Brand Colors (HSL format)
-// ======================
-
-// Primary Blue (from legacy: #00629B)
-$ez-primary-h: 199;
-$ez-primary-s: 100%;
-$ez-primary-l: 30%;
-$ez-primary-color: hsl($ez-primary-h, $ez-primary-s, $ez-primary-l); // #00629B
-
-// Primary Dark
-$ez-primary-dark: #004e7c;
-
-// ======================
-// Primary Tonal Scale (Blue)
-// ======================
-$ez-blue-100: #E3F2FD; // Backgrounds, very light tints
-$ez-blue-200: #BBDEFB; // Secondary surfaces, hover states
-$ez-blue-300: #64B5F6; // Borders, dividers
-$ez-blue-400: #1E88E5; // Accents, active states
-$ez-blue-500: #00629B; // Primary Brand Color
-$ez-blue-600: #003B5C; // High contrast text
-
-// ======================
-// Section / Branding Palette (6 Categorical Colors)
-// ======================
-$ez-theme-blue: $ez-blue-500; // #00629B (Official)
-$ez-theme-teal: #00897B; // Research / Academy
-$ez-theme-green: #2E7D32; // Student / Sustainability
-$ez-theme-purple: #8E24AA; // Innovation / Tech
-$ez-theme-orange: #fb8c00; // Events / Highlights
-$ez-theme-red: #D32F2F; // Alerts / Urgent
-
-// Secondary Theme Colors (Tonal/Complementary)
-$ez-theme-blue-secondary: #64748B; // Slate 500 (Cool Gray)
-$ez-theme-teal-secondary: #587c7e; // Muted Teal Gray
-$ez-theme-green-secondary: #5c7c64; // Muted Green Gray
-$ez-theme-purple-secondary: #7c6a85; // Muted Purple Gray
-$ez-theme-orange-secondary: #85705e; // Muted Orange/Brown Gray
-$ez-theme-red-secondary: #856161; // Muted Red Gray
-
-// Secondary Colors (Legacy + New Mappings)
-$ez-secondary-color: $ez-theme-blue-secondary; // #64748B
-// Define RGB components explicitly for CSS variable usage
-$ez-secondary-rgb: #{red($ez-secondary-color)}, #{green($ez-secondary-color)}, #{blue($ez-secondary-color)};
-
-$ez-success-color: $ez-theme-green;
-$ez-danger-color: $ez-theme-red;
-$ez-warning-color: $ez-theme-orange;
-$ez-info-color: $ez-theme-teal;
-
-// Text Colors
-$ez-text-color: #333333;
-$ez-text-light: #555555;
-$ez-text-muted: #6c757d;
-
-// Background Colors
-$ez-bg-color: #ffffff;
-$ez-bg-light: #f8f9fa;
-
-// Border Colors
-$ez-border-color: #eaeaea;
-
-// Footer
-$ez-footer-bg: #000000;
-$ez-footer-text: #cccccc;
-
-// ======================
-// Dark Mode Palette
-// ======================
-$ez-bg-dark: #212529;
-$ez-text-dark: #f8f9fa;
-$ez-bg-dark-secondary: #343a40; // Slightly lighter for cards/surfaces
-$ez-border-dark: #495057;
-$ez-text-muted-dark: #adb5bd;
-
-// ======================
 // Spacing System (Custom)
 // Keeping specific aliases if they differ from standard BS steps often,
 // but for now relying on Bootstrap spacers (rem based) is preferred directly in code.
 // ======================
-$ez-spacing-base: 1rem;
-$ez-spacing-xs: 0.25rem;
-$ez-spacing-sm: 0.5rem;
-$ez-spacing-md: 1rem;
-$ez-spacing-lg: 1.5rem;
-$ez-spacing-xl: 2rem;
-$ez-spacing-xxl: 3rem;
+$site-theme-spacing-base: 1rem;
+$site-theme-spacing-xs: 0.25rem;
+$site-theme-spacing-sm: 0.5rem;
+$site-theme-spacing-md: 1rem;
+$site-theme-spacing-lg: 1.5rem;
+$site-theme-spacing-xl: 2rem;
+$site-theme-spacing-xxl: 3rem;
 
 // ======================
 // Typography
 // ======================
 
 // Font Families - IBM Plex with system fallbacks
-$ez-font-family-sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
-$ez-font-family-serif: 'IBM Plex Serif', 'Georgia', 'Times New Roman', serif;
-$ez-font-family-mono: 'IBM Plex Mono', 'Courier New', monospace;
+$site-theme-font-family-sans: 'IBM Plex Sans', system-ui, -apple-system, sans-serif;
+$site-theme-font-family-serif: 'IBM Plex Serif', 'Georgia', 'Times New Roman', serif;
+$site-theme-font-family-mono: 'IBM Plex Mono', 'Courier New', monospace;
 
 // Default font (sans-serif)
-$ez-font-family-base: $ez-font-family-sans;
+$site-theme-font-family-base: $site-theme-font-family-sans;
 
-$ez-font-size-base: 1rem;
-$ez-font-size-sm: 0.875rem;
-$ez-font-size-lg: 1.125rem;
-$ez-font-size-xl: 1.25rem;
+$site-theme-font-size-base: 1rem;
+$site-theme-font-size-sm: 0.875rem;
+$site-theme-font-size-lg: 1.125rem;
+$site-theme-font-size-xl: 1.25rem;
 
-$ez-font-weight-light: 300;
-$ez-font-weight-normal: 400;
-$ez-font-weight-semibold: 600;
-$ez-font-weight-bold: 700;
-$ez-font-weight-medium: 500;
+$site-theme-font-weight-light: 300;
+$site-theme-font-weight-normal: 400;
+$site-theme-font-weight-semibold: 600;
+$site-theme-font-weight-bold: 700;
+$site-theme-font-weight-medium: 500;
 
-$ez-line-height-base: 1.5;
-$ez-line-height-tight: 1.25;
-$ez-line-height-loose: 1.75;
+$site-theme-line-height-base: 1.5;
+$site-theme-line-height-tight: 1.25;
+$site-theme-line-height-loose: 1.75;
 
 
 // ======================
 // Border Radius
 // ======================
-$ez-border-radius-sm: 0;
-$ez-border-radius: 0;
-$ez-border-radius-lg: 0;
-$ez-border-radius-xl: 0;
-
-// ======================
-// Shadows
-// ======================
-$ez-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-$ez-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
-$ez-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+$site-theme-border-radius-sm: 0;
+$site-theme-border-radius: 0;
+$site-theme-border-radius-lg: 0;
+$site-theme-border-radius-xl: 0;

@@ -6,10 +6,10 @@
 // Global Body Styles
 // ======================
 body {
-    font-family: $ez-font-family-base;
-    font-size: $ez-font-size-base;
-    font-weight: $ez-font-weight-normal;
-    line-height: $ez-line-height-base;
+    font-family: $site-theme-font-family-base;
+    font-size: $site-theme-font-size-base;
+    font-weight: $site-theme-font-weight-normal;
+    line-height: $site-theme-line-height-base;
     color: var(--bs-body-color);
     background-color: var(--bs-body-bg);
 }
@@ -18,15 +18,15 @@ body {
 // Typography Utilities
 // ======================
 .font-sans {
-    font-family: $ez-font-family-sans !important;
+    font-family: $site-theme-font-family-sans !important;
 }
 
 .font-serif {
-    font-family: $ez-font-family-serif !important;
+    font-family: $site-theme-font-family-serif !important;
 }
 
 .font-mono {
-    font-family: $ez-font-family-mono !important;
+    font-family: $site-theme-font-family-mono !important;
 }
 
 // Code elements default to mono
@@ -34,5 +34,5 @@ code,
 pre,
 kbd,
 samp {
-    font-family: $ez-font-family-mono;
+    font-family: $site-theme-font-family-mono;
 }

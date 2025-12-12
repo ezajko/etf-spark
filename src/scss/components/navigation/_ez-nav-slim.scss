@@ -3,7 +3,7 @@
 
 .ez-nav-slim {
     // Shared styles for top utility bars (like .ez-header-slim-wrapper)
-    background-color: $ez-footer-bg; // #000
+    background-color: $site-theme-footer-bg; // #000
     color: white;
     min-height: 3rem; // 48px
     padding: 0.75rem 0; // 12px
@@ -42,7 +42,7 @@
     }
 
     .dropdown-menu {
-        margin-top: $ez-spacing-sm;
+        margin-top: $site-theme-spacing-sm;
         border-radius: 0;
         border: 1px solid #333;
         font-size: 0.85rem;
@@ -50,7 +50,7 @@
     }
 
     .dropdown-item {
-        padding: $ez-spacing-sm $ez-spacing-md;
+        padding: $site-theme-spacing-sm $site-theme-spacing-md;
         color: white;
 
         &:hover,
@@ -62,7 +62,7 @@
 
     // Right side items container
     &__right {
-        gap: $ez-spacing-sm;
+        gap: $site-theme-spacing-sm;
         display: flex;
         align-items: center;
         justify-content: flex-end;

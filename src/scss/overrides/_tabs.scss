@@ -11,15 +11,15 @@
         display: flex;
         flex-wrap: wrap;
         border-bottom: 0.125rem solid var(--bs-border-color); // 1. Base border
-        margin-bottom: $ez-spacing-lg;
+        margin-bottom: $site-theme-spacing-lg;
 
         // Individual Tab Buttons
         .nav-link {
             border: none;
             border-bottom: 0.125rem solid transparent;
             color: var(--bs-secondary-color);
-            font-weight: $ez-font-weight-bold;
-            padding: $ez-spacing-sm $ez-spacing-md;
+            font-weight: $site-theme-font-weight-bold;
+            padding: $site-theme-spacing-sm $site-theme-spacing-md;
             margin-bottom: -0.125rem; // overlap the border
             background: none;
             transition: all 0.2s ease;
@@ -47,8 +47,8 @@
         background-color: var(--bs-gray-200);
         color: var(--bs-secondary);
         border-top: none;
-        padding: $ez-spacing-md;
-        border-radius: 0 0 $ez-border-radius $ez-border-radius;
+        padding: $site-theme-spacing-md;
+        border-radius: 0 0 $site-theme-border-radius $site-theme-border-radius;
         display: flex;
         align-items: center;
 
@@ -67,7 +67,7 @@
     // 3. Vertical Tabs Modifier
     &.tabs-vertical {
         flex-direction: row;
-        gap: $ez-spacing-lg;
+        gap: $site-theme-spacing-lg;
 
         @include media-breakpoint-down(md) {
             flex-direction: column;
@@ -119,8 +119,8 @@
             flex: 1;
             // Optional: add border/bg for vertical content area
             // border: 1px solid var(--bs-border-color);
-            // border-radius: $ez-border-radius;
-            // padding: $ez-spacing-lg;
+            // border-radius: $site-theme-border-radius;
+            // padding: $site-theme-spacing-lg;
         }
     }
 }

@@ -16,22 +16,30 @@ const { image, value, label, subtext, subtextIcon, class: className } = Astro.pr
 ---
 
 <div class={`d-flex align-items-center ${className || ''}`}>
-  <div class="ez-avatar ez-avatar--md bg-light me-3 flex-shrink-0">
-    {image && image.startsWith('bi-') ? (
-      <i class={`bi ${image} text-secondary fs-4`}></i>
-    ) : (
-      <img src={image || '/images/avatar-placeholder.png'} alt={value} class="img-fluid rounded-circle" />
-    )}
+  <div class="avatar avatar-md bg-light me-3 flex-shrink-0">
+    {
+      image && image.startsWith('bi-') ? (
+        <i class={`bi ${image} text-secondary fs-4`} />
+      ) : (
+        <img
+          src={image || '/images/avatar-placeholder.png'}
+          alt={value}
+          class="img-fluid rounded-circle"
+        />
+      )
+    }
   </div>
   <div>
     <h6 class="mb-0">{value}</h6>
     {label && <small class="text-muted d-block">{label}</small>}
-    {subtext && (
-      <small class="text-muted d-block mt-1">
-        {subtextIcon && <i class={`bi ${subtextIcon} me-1 text-primary`}></i>}
-        {subtext}
-      </small>
-    )}
+    {
+      subtext && (
+        <small class="text-muted d-block mt-1">
+          {subtextIcon && <i class={`bi ${subtextIcon} me-1 text-primary`} />}
+          {subtext}
+        </small>
+      )
+    }
     <slot />
   </div>
 </div>

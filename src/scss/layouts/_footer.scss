@@ -3,9 +3,9 @@
 // License: GPL-2.0-or-later
 
 .ez-footer {
-    background-color: $ez-footer-bg;
-    color: $ez-footer-text;
-    margin-top: $ez-spacing-xxl;
+    background-color: $site-theme-footer-bg;
+    color: $site-theme-footer-text;
+    margin-top: $site-theme-spacing-xxl;
     font-size: 0.9rem;
 
     .ez-footer-logos {
@@ -28,14 +28,14 @@
 
     h5 {
         color: white;
-        margin-bottom: $ez-spacing-md;
-        font-weight: $ez-font-weight-bold;
+        margin-bottom: $site-theme-spacing-md;
+        font-weight: $site-theme-font-weight-bold;
         text-transform: uppercase;
         font-size: 1rem;
     }
 
     a {
-        color: $ez-footer-text;
+        color: $site-theme-footer-text;
         text-decoration: none;
         transition: color 0.2s ease;
 
@@ -54,7 +54,7 @@
             height: 36px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 0;
-            margin-right: $ez-spacing-sm;
+            margin-right: $site-theme-spacing-sm;
             color: white;
             transition: all 0.2s ease;
 
@@ -66,9 +66,9 @@
     }
 
     .ez-footer-bottom {
-        background-color: darken($ez-footer-bg, 5%);
-        padding: $ez-spacing-md 0;
-        margin-top: $ez-spacing-xl;
+        background-color: darken($site-theme-footer-bg, 5%);
+        padding: $site-theme-spacing-md 0;
+        margin-top: $site-theme-spacing-xl;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         font-size: 0.85rem;
     }

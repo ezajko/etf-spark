@@ -3,11 +3,11 @@
 // License: GPL-2.0-or-later
 
 .cta {
-    padding: $ez-spacing-xl 0;
-    border-radius: $ez-border-radius;
+    padding: $site-theme-spacing-xl 0;
+    border-radius: $site-theme-border-radius;
     position: relative;
     overflow: hidden;
-    margin-bottom: $ez-spacing-xl;
+    margin-bottom: $site-theme-spacing-xl;
 
     // Default (Light/Base)
     background-color: var(--bs-tertiary-bg);
@@ -41,14 +41,14 @@
     }
 
     .cta-title {
-        font-weight: $ez-font-weight-bold;
-        margin-bottom: $ez-spacing-md;
+        font-weight: $site-theme-font-weight-bold;
+        margin-bottom: $site-theme-spacing-md;
     }
 
     .cta-description {
-        margin-bottom: $ez-spacing-lg;
+        margin-bottom: $site-theme-spacing-lg;
         font-size: 1.1rem;
-        color: $ez-text-muted;
+        color: $site-theme-text-muted;
         max-width: 50rem; // 800px
     }
 
@@ -78,8 +78,8 @@
     }
 
     &.cta-dark {
-        background-color: $ez-footer-bg;
-        border-color: $ez-footer-bg;
+        background-color: $site-theme-footer-bg;
+        border-color: $site-theme-footer-bg;
         color: white;
 
         .cta-title {

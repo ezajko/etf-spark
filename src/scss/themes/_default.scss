@@ -1,0 +1,87 @@
+// ETF UNSA Design System - Default Theme (Blue/Gray)
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+// ======================
+// Brand Colors (HSL format)
+// ======================
+
+// Primary Blue (from legacy: #00629B)
+$site-theme-primary-h: 199;
+$site-theme-primary-s: 100%;
+$site-theme-primary-l: 30%;
+$site-theme-color-primary: hsl($site-theme-primary-h, $site-theme-primary-s, $site-theme-primary-l); // #00629B
+
+// Primary Dark
+$site-theme-color-primary-dark: #004e7c;
+
+// ======================
+// Primary Tonal Scale (Blue)
+// ======================
+$ez-blue-100: #E3F2FD; // Backgrounds, very light tints
+$ez-blue-200: #BBDEFB; // Secondary surfaces, hover states
+$ez-blue-300: #64B5F6; // Borders, dividers
+$ez-blue-400: #1E88E5; // Accents, active states
+$ez-blue-500: #00629B; // Primary Brand Color
+$ez-blue-600: #003B5C; // High contrast text
+
+// ======================
+// Section / Branding Palette (6 Categorical Colors)
+// ======================
+$site-theme-brand-blue: $ez-blue-500; // #00629B (Official)
+$site-theme-brand-teal: #00897B; // Research / Academy
+$site-theme-brand-green: #2E7D32; // Student / Sustainability
+$site-theme-brand-purple: #8E24AA; // Innovation / Tech
+$site-theme-brand-orange: #fb8c00; // Events / Highlights
+$site-theme-brand-red: #D32F2F; // Alerts / Urgent
+
+// Secondary Theme Colors (Tonal/Complementary)
+$site-theme-blue-secondary: #64748B; // Slate 500 (Cool Gray)
+$site-theme-teal-secondary: #587c7e; // Muted Teal Gray
+$site-theme-green-secondary: #5c7c64; // Muted Green Gray
+$site-theme-purple-secondary: #7c6a85; // Muted Purple Gray
+$site-theme-orange-secondary: #85705e; // Muted Orange/Brown Gray
+$site-theme-red-secondary: #856161; // Muted Red Gray
+
+// Secondary Colors (Legacy + New Mappings)
+$site-theme-color-secondary: $site-theme-blue-secondary; // #64748B
+// Define RGB components explicitly for CSS variable usage
+$site-theme-color-secondary-rgb: #{red($site-theme-color-secondary)}, #{green($site-theme-color-secondary)}, #{blue($site-theme-color-secondary)};
+
+$site-theme-status-success: $site-theme-brand-green;
+$site-theme-status-danger: $site-theme-brand-red;
+$site-theme-status-warning: $site-theme-brand-orange;
+$site-theme-status-info: $site-theme-brand-teal;
+
+// Text Colors
+$site-theme-text-body: #333333;
+$site-theme-text-light: #555555;
+$site-theme-text-muted: #6c757d;
+
+// Background Colors
+$site-theme-bg-body: #ffffff;
+$site-theme-bg-light: #f8f9fa;
+
+// Border Colors
+$site-theme-border-color: #dee2e6;
+
+// Footer
+$site-theme-footer-bg: #000000;
+$site-theme-footer-text: #cccccc;
+
+// ======================
+// Dark Mode Palette
+// ======================
+$site-theme-bg-dark: #212529;
+$site-theme-text-dark: #f8f9fa;
+$site-theme-bg-dark-secondary: #343a40; // Slightly lighter for cards/surfaces
+$site-theme-border-dark: #495057;
+$site-theme-text-muted-dark: #adb5bd;
+
+// ======================
+// Shadows
+// ======================
+// Shadows are often theme-dependent (opacity/color)
+$site-theme-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+$site-theme-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+$site-theme-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
