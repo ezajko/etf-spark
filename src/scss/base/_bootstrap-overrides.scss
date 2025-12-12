@@ -35,9 +35,7 @@
 
     // Secondary Color
     --bs-secondary: #{$ez-secondary-color};
-    --bs-secondary-rgb: #{red($ez-secondary-color)},
-    #{green($ez-secondary-color)},
-    #{blue($ez-secondary-color)};
+    --bs-secondary-rgb: #{$ez-secondary-rgb};
 
     // Success Color
     --bs-success: #{$ez-success-color};

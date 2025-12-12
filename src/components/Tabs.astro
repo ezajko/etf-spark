@@ -19,59 +19,41 @@ interface Props {
 const { id, tabs, class: className, pills = false, vertical = false } = Astro.props;
 
 // Determine which tab is active (default to first if none specified)
-const activeTabId = tabs.find(t => t.active)?.id || tabs[0]?.id;
+const activeTabId = tabs.find((t) => t.active)?.id || tabs[0]?.id;
+
+// Base classes
+const containerClass = `tabs ${vertical ? 'tabs-vertical' : 'tabs-horizontal'} ${className || ''}`;
+const headerClass = `tab-header ${pills ? 'nav-pills' : ''}`;
+const contentClass = `tab-content`;
+const footerClass = `tab-footer`;
 ---
 
-{vertical ? (
-  <div class={`d-flex align-items-start gap-4 flex-column flex-md-row ${className || ''}`}>
-    <ul 
-      class={`nav nav-tabs vertical-tabs flex-column`} 
-      id={id} 
-      role="tablist" 
-      aria-orientation="vertical"
-    >
-      {tabs.map((tab) => (
-        <button 
-          class={`nav-link ${tab.id === activeTabId ? 'active' : ''} text-start w-100`} 
-          id={`${tab.id}-tab`} 
-          data-bs-toggle={pills ? 'pill' : 'tab'} 
-          data-bs-target={`#${tab.id}`} 
-          type="button" 
-          role="tab" 
-          aria-controls={tab.id} 
+<div class={containerClass} id={id}>
+  <!-- Tab Header (Navigation) -->
+  <div class={headerClass} role="tablist" aria-orientation={vertical ? 'vertical' : 'horizontal'}>
+    {
+      tabs.map((tab) => (
+        <button
+          class={`nav-link ${tab.id === activeTabId ? 'active' : ''}`}
+          id={`${tab.id}-tab`}
+          data-bs-toggle={pills ? 'pill' : 'tab'}
+          data-bs-target={`#${tab.id}`}
+          type="button"
+          role="tab"
+          aria-controls={tab.id}
           aria-selected={tab.id === activeTabId}
         >
           {tab.label}
         </button>
-      ))}
-    </ul>
-    <div class="tab-content tab-content-vertical w-100">
-      <slot />
-    </div>
+      ))
+    }
   </div>
-) : (
-  <div class={`${className || ''}`}>
-    <!-- Tab Navigation -->
-    <ul class={`nav ${pills ? 'nav-pills' : 'nav-tabs'} mb-3`} id={id} role="tablist">
-      {tabs.map((tab) => (
-        <li class="nav-item" role="presentation">
-          <button 
-            class={`nav-link ${tab.id === activeTabId ? 'active' : ''}`} 
-            id={`${tab.id}-tab`} 
-            data-bs-toggle={pills ? 'pill' : 'tab'} 
-            data-bs-target={`#${tab.id}`} 
-            type="button" 
-            role="tab" 
-            aria-controls={tab.id} 
-            aria-selected={tab.id === activeTabId}
-          >
-            {tab.label}
-          </button>
-        </li>
-      ))}
-    </ul>
-    
-    <!-- Content should be rendered by the parent using the IDs provided -->
+
+  <!-- Tab Content -->
+  <div class={contentClass}>
     <slot />
   </div>
-)}
+
+  <!-- Optional Tab Footer (hidden by default unless used via named slot in future) -->
+  <div class={footerClass} style="display: none;"></div>
+</div>

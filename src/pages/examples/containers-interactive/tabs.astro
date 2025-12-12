@@ -2,6 +2,8 @@
 // ETF UNSA - Tabs Example
 import NoSidebar from '../../../layouts/NoSidebar.astro';
 import ExampleSnippet from '../../../components/ExampleSnippet.astro';
+import Tabs from '../../../components/Tabs.astro';
+import TabItem from '../../../components/TabItem.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
@@ -10,66 +12,23 @@ const breadcrumbItems = [
   { label: 'Tabs', href: '#', active: true },
 ];
 
-const basicTabsCode = `<div>
-  <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Profile</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
-    </li>
-  </ul>
-  <div class="tab-content" id="myTabContent">
-    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-      <p class="mb-0">This is the Home tab content. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-    </div>
-    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      <p class="mb-0">This is the Profile tab content. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-      <p class="mb-0">This is the Contact tab content. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-    </div>
-  </div>
-</div>`;
+const basicTabs = [
+  { id: 'home', label: 'Home', active: true },
+  { id: 'profile', label: 'Profile' },
+  { id: 'contact', label: 'Contact' },
+];
 
-const verticalTabsCode = `<div class="d-flex align-items-start gap-4 flex-column flex-md-row">
-  <ul class="nav nav-tabs vertical-tabs flex-column" id="verticalTab" role="tablist">
-    <button class="nav-link active text-start w-100" id="v-home-tab" data-bs-toggle="tab" data-bs-target="#v-home" type="button" role="tab" aria-controls="v-home" aria-selected="true">Home</button>
-    <button class="nav-link text-start w-100" id="v-profile-tab" data-bs-toggle="tab" data-bs-target="#v-profile" type="button" role="tab" aria-controls="v-profile" aria-selected="false">Profile</button>
-    <button class="nav-link text-start w-100" id="v-messages-tab" data-bs-toggle="tab" data-bs-target="#v-messages" type="button" role="tab" aria-controls="v-messages" aria-selected="false">Messages</button>
-  </ul>
-  <div class="tab-content tab-content-vertical w-100" id="verticalTabContent">
-    <div class="tab-pane fade show active" id="v-home" role="tabpanel" aria-labelledby="v-home-tab">
-      <p>Home content (Vertical). Lorem ipsum dolor sit amet.</p>
-    </div>
-    <div class="tab-pane fade" id="v-profile" role="tabpanel" aria-labelledby="v-profile-tab">
-      <p>Profile content (Vertical). Consectetur adipiscing elit.</p>
-    </div>
-    <div class="tab-pane fade" id="v-messages" role="tabpanel" aria-labelledby="v-messages-tab">
-      <p>Messages content (Vertical). Sed do eiusmod tempor incididunt.</p>
-    </div>
-  </div>
-</div>`;
+const verticalTabs = [
+  { id: 'v-home', label: 'Home', active: true },
+  { id: 'v-profile', label: 'Profile' },
+  { id: 'v-messages', label: 'Messages' },
+];
 
-const pillsTabsCode = `<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-  <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contact</button>
-  </li>
-</ul>
-<div class="tab-content bg-light p-3 rounded" id="pills-tabContent">
-  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">Home Content...</div>
-  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">Profile Content...</div>
-  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">Contact Content...</div>
-</div>`;
+const pillsTabs = [
+  { id: 'pills-home', label: 'Home', active: true },
+  { id: 'pills-profile', label: 'Profile' },
+  { id: 'pills-contact', label: 'Contact' },
+];
 ---
 
 <NoSidebar
@@ -78,25 +37,64 @@ const pillsTabsCode = `<ul class="nav nav-pills mb-3" id="pills-tab" role="tabli
   bannerTitle="Tabs"
   bannerSubtitle="Navigacija pomoću tabova"
 >
-  <div class="row">
+  <div class="row g-5">
     <div class="col-12">
-      <ExampleSnippet
-        title="Basic Tabs"
-        description="Standardni tabovi sa borderima i sadržajem."
-        code={basicTabsCode}
-      />
+      <h3>Basic Tabs</h3>
+      <p>Standardni tabovi sa borderima i sadržajem.</p>
 
-      <ExampleSnippet
-        title="Vertical Tabs"
-        description="Verikalni tabovi za navigaciju sa lijeve strane."
-        code={verticalTabsCode}
-      />
+      <div class="p-4 border rounded mb-4">
+        <Tabs id="basicTabs" tabs={basicTabs}>
+          <TabItem id="home" active>
+            <p class="mb-0">
+              This is the Home tab content. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+          </TabItem>
+          <TabItem id="profile">
+            <p class="mb-0">
+              This is the Profile tab content. Sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+          </TabItem>
+          <TabItem id="contact">
+            <p class="mb-0">
+              This is the Contact tab content. Ut enim ad minim veniam, quis nostrud exercitation
+              ullamco laboris nisi ut aliquip.
+            </p>
+          </TabItem>
+        </Tabs>
+      </div>
+    </div>
 
-      <ExampleSnippet
-        title="Pills"
-        description="Tabovi u stilu pilula (buttons)."
-        code={pillsTabsCode}
-      />
+    <div class="col-12">
+      <h3>Vertical Tabs</h3>
+      <p>Verikalni tabovi za navigaciju sa lijeve strane.</p>
+
+      <div class="p-4 border rounded mb-4">
+        <Tabs id="verticalTabs" tabs={verticalTabs} vertical>
+          <TabItem id="v-home" active>
+            <p>Home content (Vertical). Lorem ipsum dolor sit amet.</p>
+          </TabItem>
+          <TabItem id="v-profile">
+            <p>Profile content (Vertical). Consectetur adipiscing elit.</p>
+          </TabItem>
+          <TabItem id="v-messages">
+            <p>Messages content (Vertical). Sed do eiusmod tempor incididunt.</p>
+          </TabItem>
+        </Tabs>
+      </div>
+    </div>
+
+    <div class="col-12">
+      <h3>Pills</h3>
+      <p>Tabovi u stilu pilula (buttons).</p>
+
+      <div class="p-4 border rounded mb-4">
+        <Tabs id="pillsTabs" tabs={pillsTabs} pills>
+          <TabItem id="pills-home" active> Home Content... </TabItem>
+          <TabItem id="pills-profile"> Profile Content... </TabItem>
+          <TabItem id="pills-contact"> Contact Content... </TabItem>
+        </Tabs>
+      </div>
     </div>
   </div>
 </NoSidebar>

@@ -1,141 +1,151 @@
-// ETF UNSA - Tabs Overrides (`.nav-tabs`)
+// ETF UNSA - Tabs Overrides (`.tabs`)
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
-// 1. General Nav Tabs Styling
-.nav-tabs {
-    border-bottom: 0.125rem solid var(--bs-border-color); // 2px
-
-    .nav-link {
-        border: none;
-        border-bottom: 0.125rem solid transparent;
-        color: var(--bs-secondary-color);
-        font-weight: $ez-font-weight-bold;
-        padding: $ez-spacing-sm $ez-spacing-md;
-        margin-bottom: -0.125rem; // Overlap border
-        transition: all 0.2s ease;
-
-        &:hover {
-            border-color: transparent;
-            color: var(--bs-primary);
-            isolation: isolate; // Fix z-index stacking context if needed
-        }
-
-        &.active {
-            color: var(--bs-primary);
-            background-color: transparent;
-            border-bottom-color: var(--bs-primary);
-        }
-    }
-}
-
-// 2. Tab Content Wrapper (Optional helper class, or applied generic)
-// Bootstrap doesn't style .tab-content by default other than display logic.
-// We can enforce styling if we want, or rely on a helper class like `.tab-content-bordered`.
-.tab-content-bordered {
-    background: var(--bs-body-bg);
-    border-radius: 0 0 $ez-border-radius $ez-border-radius;
-    padding: $ez-spacing-lg;
-    border: 1px solid var(--bs-border-color);
-    border-top: none;
-}
-
-
-// 3. Vertical Tabs Variant (Custom extension of native nav)
-// Usage: <div class="d-flex align-items-start gap-4 flex-column flex-md-row"> <ul class="nav nav-tabs vertical-tabs ..."> ... </div>
-.vertical-tabs {
+.tabs {
+    display: flex;
     flex-direction: column;
-    border-bottom: none;
-    border-right: 0.125rem solid var(--bs-border-color);
-    min-width: 200px;
 
-    @include media-breakpoint-down(md) {
-        border-right: none;
-        border-bottom: 0.125rem solid var(--bs-border-color);
-        width: 100%;
-        flex-direction: row;
-        overflow-x: auto;
-    }
+    // 1. Tab Header (Navigation Container)
+    .tab-header {
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 0.125rem solid var(--bs-border-color); // 1. Base border
+        margin-bottom: $ez-spacing-lg;
 
-    .nav-link {
-        border-bottom: none;
-        border-right: 0.125rem solid transparent;
-        margin-bottom: 0;
-        margin-right: -0.125rem;
-        text-align: left;
-        justify-content: flex-start;
-        width: 100%;
-
-        @include media-breakpoint-down(md) {
-            border-right: none;
+        // Individual Tab Buttons
+        .nav-link {
+            border: none;
             border-bottom: 0.125rem solid transparent;
-            margin-right: 0;
-            margin-bottom: -0.125rem;
-            width: auto;
-        }
+            color: var(--bs-secondary-color);
+            font-weight: $ez-font-weight-bold;
+            padding: $ez-spacing-sm $ez-spacing-md;
+            margin-bottom: -0.125rem; // overlap the border
+            background: none;
+            transition: all 0.2s ease;
+            cursor: pointer;
 
-        &.active {
-            border-bottom-color: transparent;
-            border-right-color: var(--bs-primary);
+            &:hover {
+                color: var(--bs-primary);
+                isolation: isolate;
+            }
 
-            @include media-breakpoint-down(md) {
-                border-right-color: transparent;
+            &.active {
+                color: var(--bs-primary);
                 border-bottom-color: var(--bs-primary);
             }
         }
     }
-}
 
-// Helper for vertical content to have border all around
-.tab-content-vertical {
-    border: 1px solid var(--bs-border-color);
-    flex: 1;
-    border-radius: $ez-border-radius;
-    padding: $ez-spacing-lg;
+    // 2. Tab Content Container
+    // .tab-content {
+    //    // Bootstrap `tab-pane` will be inside here.
+    // }
+
+    // 3. Vertical Tabs Modifier
+    &.tabs-vertical {
+        flex-direction: row;
+        gap: $ez-spacing-lg;
+
+        @include media-breakpoint-down(md) {
+            flex-direction: column;
+        }
+
+        .tab-header {
+            flex-direction: column;
+            border-bottom: none;
+            border-right: 0.125rem solid var(--bs-border-color);
+            min-width: 200px;
+            margin-bottom: 0;
+            margin-right: 0;
+
+            .nav-link {
+                border-bottom: none;
+                border-right: 0.125rem solid transparent;
+                margin-bottom: 0;
+                margin-right: -0.125rem; // overlap right border
+                text-align: left;
+                width: 100%;
+
+                &.active {
+                    border-right-color: var(--bs-primary);
+                }
+            }
+
+            @include media-breakpoint-down(md) {
+                flex-direction: row;
+                border-right: none;
+                border-bottom: 0.125rem solid var(--bs-border-color);
+                width: 100%;
+                overflow-x: auto;
+
+                .nav-link {
+                    width: auto;
+                    border-right: none;
+                    border-bottom: 0.125rem solid transparent;
+                    margin-right: 0;
+                    margin-bottom: -0.125rem;
+
+                    &.active {
+                        border-bottom-color: var(--bs-primary);
+                    }
+                }
+            }
+        }
+
+        .tab-content {
+            flex: 1;
+            // Optional: add border/bg for vertical content area
+            // border: 1px solid var(--bs-border-color);
+            // border-radius: $ez-border-radius;
+            // padding: $ez-spacing-lg;
+        }
+    }
 }
 
 // --- Theme Overrides ---
 
 // High Contrast Theme
 [data-ez-theme="high-contrast"] {
-    .nav-tabs {
-        border-bottom-color: currentColor; // Inherit high contrast color
-        border-width: 2px; // Thicker border
+    .tabs {
+        .tab-header {
+            border-bottom-width: 2px;
 
-        .nav-link {
-            color: black;
-            background-color: white;
-            border: 2px solid transparent; // Thicker active border
-            margin-bottom: -2px;
+            .nav-link {
+                color: black;
+                border: 2px solid transparent;
+                margin-bottom: -2px;
 
-            &:hover {
-                text-decoration: underline;
-                background-color: #f0f0f0;
-            }
+                &:hover {
+                    text-decoration: underline;
+                    background-color: #f0f0f0;
+                }
 
-            &.active {
-                background-color: black;
-                color: white;
-                border-color: black;
-                border-bottom-color: black; // Override standard bottom border behavior for visibility
+                &.active {
+                    background-color: black;
+                    color: white;
+                    border-color: black;
+                }
             }
         }
-    }
 
-    // Vertical specific overrides
-    .vertical-tabs {
-        border-right-color: currentColor;
-        border-bottom: none;
+        &.tabs-vertical {
+            .tab-header {
+                border-right-color: currentColor;
+                border-right-width: 2px;
+                border-bottom: none;
 
-        .nav-link {
-            border-right: 2px solid transparent;
-            margin-right: -2px;
+                .nav-link {
+                    border-right: 2px solid transparent;
+                    margin-right: -2px;
+                    margin-bottom: 0;
 
-            &.active {
-                border-right-color: black;
-                border-bottom-color: transparent;
-                background-color: black;
-                color: white;
+                    &.active {
+                        border-right-color: black;
+                        background-color: black;
+                        color: white;
+                    }
+                }
             }
         }
     }

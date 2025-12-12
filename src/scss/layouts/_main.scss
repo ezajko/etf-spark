@@ -2,11 +2,32 @@
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
-.ez-page-main-content {
+
+// Skip Link (Accessibility)
+.skip-link {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1050; // Above bootstrap navbar
+    background: var(--bs-primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: $ez-border-radius;
+    text-decoration: none;
+    font-weight: bold;
+
+    &:focus {
+        color: white;
+        outline: 2px solid white;
+    }
+}
+
+// Main Content Wrapper
+.main-content {
     flex: 1 0 auto;
     width: 100%;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: $ez-spacing-lg;
+    padding-bottom: $ez-spacing-lg;
     display: flex;
     flex-direction: column;
 }

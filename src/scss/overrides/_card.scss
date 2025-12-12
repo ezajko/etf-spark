@@ -11,6 +11,29 @@
         box-shadow: var(--ez-shadow, 0 0.5rem 1rem rgba(0, 0, 0, 0.15));
         z-index: 1; // Ensure it stays on top nicely
     }
+
+    .card-header {
+        background-color: var(--bs-primary);
+        color: white;
+        border-bottom: none;
+
+        // Ensure headings inside inherit white
+        .card-title,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: white;
+        }
+    }
+
+    .card-footer {
+        background-color: var(--bs-secondary);
+        color: white;
+        border-top: none;
+    }
 }
 
 // --- Theme Overrides ---
@@ -48,8 +71,30 @@
 
         .card-footer,
         .card-header {
+            border-bottom: 1px solid currentColor; // Restore separator
+            border-top: 1px solid currentColor;
             border-color: currentColor;
             background-color: transparent;
+            color: currentColor;
+
+            // Fix color for titles ensuring they use currentColor instead of white
+            .card-title,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                color: currentColor !important;
+            }
+        }
+
+        .card-header {
+            border-top: none; // Only bottom needed
+        }
+
+        .card-footer {
+            border-bottom: none; // Only top needed
         }
     }
 }

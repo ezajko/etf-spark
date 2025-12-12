@@ -2,16 +2,16 @@
 const { title, icon, class: className } = Astro.props;
 ---
 
-<div class:list={['ez-sidebar-widget', className]}>
+<div class:list={['card mb-4', className]}>
   {
     title && (
-      <div class="ez-sidebar-widget__header">
+      <div class="card-header bg-primary text-white d-flex align-items-center">
         {icon && <i class:list={[icon, 'me-2']} />}
-        <h5 class="ez-sidebar-widget__title mb-0">{title}</h5>
+        <h5 class="card-title mb-0 text-white fs-6 fw-bold">{title}</h5>
       </div>
     )
   }
-  <div class="ez-sidebar-widget__body">
+  <div class="card-body">
     <slot />
   </div>
   <slot name="footer" />

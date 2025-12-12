@@ -2,7 +2,7 @@
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
-.ez-page-content-before {
+.page-content-before {
     margin-bottom: 1rem;
 
     &:empty {
@@ -10,11 +10,11 @@
     }
 }
 
-.ez-page-content {
+.page-content {
     width: 100%;
 }
 
-.ez-page-content-after {
+.page-content-after {
     margin-top: 1rem;
 
     &:empty {

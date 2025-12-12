@@ -5,14 +5,14 @@
 // 1. Core Configuration & Fonts
 @import 'base/fonts';
 @import 'base/variables'; // Custom variables
-@import 'base/mixins'; // Custom mixins
-
 // 2. Vendor / Bootstrap Core
 // Imports variables, mixins, and core Bootstrap styles (via overrides file)
 @import 'base/bootstrap-overrides';
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables"; // Standard Bootstrap variables
 @import "bootstrap/scss/mixins";
+
+@import 'base/mixins'; // Custom mixins
 
 // 3. Base Styles
 @import 'base/global';
@@ -27,7 +27,8 @@
 @import 'overrides/tabs';
 
 // 5. Custom Components ("ez-" Prefixed - Legacy/Specific)
-@import "components/ez-sidebar-widget";
+// 5. Custom Components ("ez-" Prefixed - Legacy/Specific)
+// @import "components/ez-sidebar-widget";
 
 // 6. Navigation System
 @import 'components/navigation/ez-nav-main';

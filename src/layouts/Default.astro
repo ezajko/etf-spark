@@ -23,14 +23,14 @@ const { title, description, breadcrumbItems, useGrid = true } = Astro.props;
 
 <Base title={title} description={description}>
   <!-- Banner / Hero Section -->
-  <div class="ez-page-banner">
+  <div class="page-banner">
     <slot name="banner" />
   </div>
 
   <!-- Breadcrumbs Section -->
   {
     breadcrumbItems && (
-      <div class="ez-page-breadcrumbs">
+      <div class="page-breadcrumbs">
         <div class="container">
           <Breadcrumbs items={breadcrumbItems} />
         </div>
@@ -39,10 +39,10 @@ const { title, description, breadcrumbItems, useGrid = true } = Astro.props;
   }
 
   <!-- Main Content Wrapper -->
-  <main class="ez-page-main-content">
+  <main id="main-content" class="main-content">
     <div class="container">
       <!-- Content Before Grid -->
-      <div class="ez-page-content-before">
+      <div class="page-content-before">
         <div class="row">
           <div class="col-12">
             <slot name="content-before" />
@@ -51,7 +51,7 @@ const { title, description, breadcrumbItems, useGrid = true } = Astro.props;
       </div>
 
       <!-- Main Content Grid -->
-      <div class="ez-page-content">
+      <div class="page-content">
         {
           useGrid ? (
             <div class="row">
@@ -64,7 +64,7 @@ const { title, description, breadcrumbItems, useGrid = true } = Astro.props;
       </div>
 
       <!-- Content After Grid -->
-      <div class="ez-page-content-after">
+      <div class="page-content-after">
         <div class="row">
           <div class="col-12">
             <slot name="content-after" />
