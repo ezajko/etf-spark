@@ -33,6 +33,28 @@
         background-color: var(--bs-secondary);
         color: white;
         border-top: none;
+
+        // Ensure links are white and readable
+        a {
+            color: white;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+                color: var(--bs-gray-200); // Slight dim or keep white
+            }
+        }
+    }
+
+    // Default title color for card body properties
+    .card-title,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--bs-primary);
     }
 }
 
