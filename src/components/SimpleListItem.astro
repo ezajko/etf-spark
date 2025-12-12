@@ -14,7 +14,7 @@ interface Props {
 
 const { label, link, icon, iconColor = 'text-primary', active, class: className } = Astro.props;
 
-const baseClass = `list-group-item d-flex align-items-center ez-list-item ${active ? 'ez-list-item--active' : ''} ${className || ''}`;
+const baseClass = `list-group-item d-flex align-items-center ${active ? 'active' : ''} ${className || ''}`;
 
 const Wrapper = link ? 'a' : 'div';
 const wrapperProps = link

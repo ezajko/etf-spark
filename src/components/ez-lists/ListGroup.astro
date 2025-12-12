@@ -8,7 +8,7 @@ interface Props {
 const { title, className = '' } = Astro.props;
 ---
 
-<div class={`ez-list-group mb-4 ${className}`}>
+<div class={`mb-4 ${className}`}>
   {title && <h6 class="text-uppercase text-muted fw-bold mb-3 ls-1">{title}</h6>}
   <div class="list-group">
     <slot />

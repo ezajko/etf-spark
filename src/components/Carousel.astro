@@ -5,33 +5,57 @@
 
 interface Props {
   id: string;
-  height?: 'full' | 'small' | 'medium' | 'large';
+  height?: 'xl' | 'sm' | 'md' | 'lg' | 'full' | 'small' | 'medium' | 'large'; // Support legacy and new
   class?: string;
   showControls?: boolean;
 }
 
 const { id, height = 'medium', class: className, showControls = true } = Astro.props;
 
-const heightClass = `ez-carousel--${height}`;
+// Map legacy height names to new classes
+const heightMap: Record<string, string> = {
+  small: 'carousel-sm',
+  medium: 'carousel-md',
+  large: 'carousel-lg',
+  full: 'carousel-xl',
+  sm: 'carousel-sm',
+  md: 'carousel-md',
+  lg: 'carousel-lg',
+  xl: 'carousel-xl',
+};
+
+const heightClass = heightMap[height] || 'carousel-md';
 ---
 
-<div id={id} class={`carousel slide ez-carousel ${heightClass} ${className || ''}`} data-bs-ride="carousel">
+<div id={id} class={`carousel slide ${heightClass} ${className || ''}`} data-bs-ride="carousel">
   <div class="carousel-indicators">
     <slot name="indicators" />
   </div>
   <div class="carousel-inner">
     <slot />
   </div>
-  {showControls && (
-    <>
-      <button class="carousel-control-prev" type="button" data-bs-target={`#${id}`} data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target={`#${id}`} data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </>
-  )}
+  {
+    showControls && (
+      <>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target={`#${id}`}
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true" />
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target={`#${id}`}
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true" />
+          <span class="visually-hidden">Next</span>
+        </button>
+      </>
+    )
+  }
 </div>

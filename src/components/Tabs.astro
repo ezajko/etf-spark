@@ -23,16 +23,16 @@ const activeTabId = tabs.find(t => t.active)?.id || tabs[0]?.id;
 ---
 
 {vertical ? (
-  <div class={`ez-tabs ez-tabs--vertical ${className || ''}`}>
+  <div class={`d-flex align-items-start gap-4 flex-column flex-md-row ${className || ''}`}>
     <ul 
-      class={`nav nav-tabs`} 
+      class={`nav nav-tabs nav-tabs-vertical flex-column`} 
       id={id} 
       role="tablist" 
       aria-orientation="vertical"
     >
       {tabs.map((tab) => (
         <button 
-          class={`nav-link ${tab.id === activeTabId ? 'active' : ''} text-start`} 
+          class={`nav-link ${tab.id === activeTabId ? 'active' : ''} text-start w-100`} 
           id={`${tab.id}-tab`} 
           data-bs-toggle={pills ? 'pill' : 'tab'} 
           data-bs-target={`#${tab.id}`} 
@@ -45,12 +45,12 @@ const activeTabId = tabs.find(t => t.active)?.id || tabs[0]?.id;
         </button>
       ))}
     </ul>
-    <div class="tab-content">
+    <div class="tab-content tab-content-vertical w-100">
       <slot />
     </div>
   </div>
 ) : (
-  <div class={`${!pills ? 'ez-tabs' : ''} ${className || ''}`}>
+  <div class={`${className || ''}`}>
     <!-- Tab Navigation -->
     <ul class={`nav ${pills ? 'nav-pills' : 'nav-tabs'} mb-3`} id={id} role="tablist">
       {tabs.map((tab) => (

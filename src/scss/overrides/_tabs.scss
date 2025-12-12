@@ -1,0 +1,95 @@
+// ETF UNSA - Tabs Overrides (`.nav-tabs`)
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+// 1. General Nav Tabs Styling
+.nav-tabs {
+    border-bottom: 0.125rem solid var(--bs-border-color); // 2px
+
+    .nav-link {
+        border: none;
+        border-bottom: 0.125rem solid transparent;
+        color: var(--bs-secondary-color);
+        font-weight: $ez-font-weight-bold;
+        padding: $ez-spacing-sm $ez-spacing-md;
+        margin-bottom: -0.125rem; // Overlap border
+        transition: all 0.2s ease;
+
+        &:hover {
+            border-color: transparent;
+            color: var(--bs-primary);
+            isolation: isolate; // Fix z-index stacking context if needed
+        }
+
+        &.active {
+            color: var(--bs-primary);
+            background-color: transparent;
+            border-bottom-color: var(--bs-primary);
+        }
+    }
+}
+
+// 2. Tab Content Wrapper (Optional helper class, or applied generic)
+// Bootstrap doesn't style .tab-content by default other than display logic.
+// We can enforce styling if we want, or rely on a helper class like `.tab-content-bordered`.
+.tab-content-bordered {
+    background: var(--bs-body-bg);
+    border-radius: 0 0 $ez-border-radius $ez-border-radius;
+    padding: $ez-spacing-lg;
+    border: 1px solid var(--bs-border-color);
+    border-top: none;
+}
+
+
+// 3. Vertical Tabs Variant (Custom extension of native nav)
+// Usage: <div class="d-flex align-items-start gap-4 flex-column flex-md-row"> <ul class="nav nav-tabs nav-tabs-vertical ..."> ... </div>
+.nav-tabs-vertical {
+    flex-direction: column;
+    border-bottom: none;
+    border-right: 0.125rem solid var(--bs-border-color);
+    min-width: 200px;
+
+    @include media-breakpoint-down(md) {
+        border-right: none;
+        border-bottom: 0.125rem solid var(--bs-border-color);
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .nav-link {
+        border-bottom: none;
+        border-right: 0.125rem solid transparent;
+        margin-bottom: 0;
+        margin-right: -0.125rem;
+        text-align: left;
+        justify-content: flex-start;
+        width: 100%;
+
+        @include media-breakpoint-down(md) {
+            border-right: none;
+            border-bottom: 0.125rem solid transparent;
+            margin-right: 0;
+            margin-bottom: -0.125rem;
+            width: auto;
+        }
+
+        &.active {
+            border-bottom-color: transparent;
+            border-right-color: var(--bs-primary);
+
+            @include media-breakpoint-down(md) {
+                border-right-color: transparent;
+                border-bottom-color: var(--bs-primary);
+            }
+        }
+    }
+}
+
+// Helper for vertical content to have border all around
+.tab-content-vertical {
+    border: 1px solid var(--bs-border-color);
+    flex: 1;
+    border-radius: $ez-border-radius;
+    padding: $ez-spacing-lg;
+}

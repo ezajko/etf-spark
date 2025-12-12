@@ -10,8 +10,8 @@ const breadcrumbItems = [
   { label: 'Tabs', href: '#', active: true },
 ];
 
-const basicTabsCode = `<div class="ez-tabs">
-  <ul class="nav nav-tabs" id="myTab" role="tablist">
+const basicTabsCode = `<div>
+  <ul class="nav nav-tabs mb-3" id="myTab" role="tablist">
     <li class="nav-item" role="presentation">
       <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
     </li>
@@ -35,19 +35,13 @@ const basicTabsCode = `<div class="ez-tabs">
   </div>
 </div>`;
 
-const verticalTabsCode = `<div class="ez-tabs ez-tabs--vertical">
-  <ul class="nav nav-tabs" id="verticalTab" role="tablist">
-    <li class="nav-item" role="presentation">
-      <button class="nav-link active" id="v-home-tab" data-bs-toggle="tab" data-bs-target="#v-home" type="button" role="tab" aria-controls="v-home" aria-selected="true">Home</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="v-profile-tab" data-bs-toggle="tab" data-bs-target="#v-profile" type="button" role="tab" aria-controls="v-profile" aria-selected="false">Profile</button>
-    </li>
-    <li class="nav-item" role="presentation">
-      <button class="nav-link" id="v-messages-tab" data-bs-toggle="tab" data-bs-target="#v-messages" type="button" role="tab" aria-controls="v-messages" aria-selected="false">Messages</button>
-    </li>
+const verticalTabsCode = `<div class="d-flex align-items-start gap-4 flex-column flex-md-row">
+  <ul class="nav nav-tabs nav-tabs-vertical flex-column" id="verticalTab" role="tablist">
+    <button class="nav-link active text-start w-100" id="v-home-tab" data-bs-toggle="tab" data-bs-target="#v-home" type="button" role="tab" aria-controls="v-home" aria-selected="true">Home</button>
+    <button class="nav-link text-start w-100" id="v-profile-tab" data-bs-toggle="tab" data-bs-target="#v-profile" type="button" role="tab" aria-controls="v-profile" aria-selected="false">Profile</button>
+    <button class="nav-link text-start w-100" id="v-messages-tab" data-bs-toggle="tab" data-bs-target="#v-messages" type="button" role="tab" aria-controls="v-messages" aria-selected="false">Messages</button>
   </ul>
-  <div class="tab-content" id="verticalTabContent">
+  <div class="tab-content tab-content-vertical w-100" id="verticalTabContent">
     <div class="tab-pane fade show active" id="v-home" role="tabpanel" aria-labelledby="v-home-tab">
       <p>Home content (Vertical). Lorem ipsum dolor sit amet.</p>
     </div>

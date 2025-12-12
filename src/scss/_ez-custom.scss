@@ -24,12 +24,12 @@
 @import 'components/ez-button';
 
 // @import 'components/ez-cards'; // Consolidated into ez-card
-@import 'components/ez-table';
-@import 'components/ez-lists';
+
+
 @import 'components/ez-cta';
-@import "components/ez-accordion";
-// @import "components/ez-tabs"; // Migrated to navigation/ez-nav-tabs
-@import 'components/ez-form';
+
+@import "overrides/tabs";
+
 @import 'components/ez-hero';
 @import 'components/ez-banner';
 // @import 'components/ez-navbar'; // Migrated to navigation/ez-nav-main
@@ -45,12 +45,12 @@
 @import 'components/navigation/ez-nav-tree';
 @import 'components/navigation/ez-nav-section';
 @import 'components/navigation/ez-nav-pagination';
-@import 'components/ez-tabs'; // General component
+
 
 
 
 @import "components/ez-utilities";
-@import "components/ez-carousel";
+@import "overrides/carousel";
 // @import "components/ez-sidebar"; // Migrated to navigation/ez-nav-tree
 @import "components/ez-sidebar-widget";
 
