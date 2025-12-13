@@ -11,7 +11,9 @@
 @import 'base/bootstrap-overrides';
 @import "bootstrap/scss/functions";
 @import "bootstrap/scss/variables"; // Standard Bootstrap variables
+@import "bootstrap/scss/variables"; // Standard Bootstrap variables
 @import "bootstrap/scss/mixins";
+@import "bootstrap-icons/font/bootstrap-icons.css";
 
 @import 'base/mixins'; // Custom mixins
 
@@ -28,6 +30,7 @@
 @import 'overrides/tabs';
 
 // 5. Custom Components ("ez-" Prefixed - Legacy/Specific)
+@import 'components/site-icons';
 // 5. Custom Components ("ez-" Prefixed - Legacy/Specific)
 
 // 6. Navigation System
