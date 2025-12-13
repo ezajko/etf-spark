@@ -5,14 +5,16 @@
 // 1. Core Configuration & Fonts
 @import 'base/fonts';
 @import 'themes/default'; // Color Theme
+@import "bootstrap/scss/functions"; // Required early for color manipulation
 @import 'base/variables'; // Structural variables
-// 2. Vendor / Bootstrap Core
-// Imports variables, mixins, and core Bootstrap styles (via overrides file)
-@import 'base/bootstrap-overrides';
-@import "bootstrap/scss/functions";
-@import "bootstrap/scss/variables"; // Standard Bootstrap variables
-@import "bootstrap/scss/variables"; // Standard Bootstrap variables
+
+// 2. Variable Mappings (Link Custom -> Bootstrap)
+@import 'base/bootstrap-mappings';
+
+// 3. Vendor / Bootstrap Core
+@import "bootstrap/scss/variables"; // Standard Bootstrap variables (will use our overrides)
 @import "bootstrap/scss/mixins";
+@import 'base/bootstrap-overrides'; // CSS Variables & Runtime overrides
 @import "bootstrap/scss/bootstrap"; // Import all Bootstrap styles
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
