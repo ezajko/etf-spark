@@ -8,7 +8,7 @@ The project is built using **Astro**, a static site generator optimized for cont
 
 ### Core Stack
 *   **Framework**: [Astro](https://astro.build/) (v4.0+)
-*   **Styling**: **Extension of Bootstrap 5**. We use the standard Bootstrap framework as a foundation and extend it with custom SCSS components (`ez-`) to meet specific design requirements.
+*   **Styling**: **Extension of Bootstrap 5**. We use the standard Bootstrap framework as a foundation and extend it with custom SCSS components (`site-`) to meet specific design requirements.
 *   **Icons**: Bootstrap Icons (via CDN/local integration).
 *   **Package Manager**: `pnpm` (configured), `npm` (fallback).
 
@@ -51,10 +51,10 @@ The output will be generated in the `dist/` directory.
 
 ## Design System Convention
 
-The project uses a custom component library prefix `ez-` class names to separate custom styles from generic Bootstrap utilities.
+The project uses a custom component library prefix `site-` class names to separate custom styles from generic Bootstrap utilities.
 
-*   `ez-card`: Standard content container.
-*   `ez-button`: Custom button styles.
+*   `site-card`: Standard content container.
+*   `site-button`: Custom button styles.
 ## Documentation
 
 The project documentation is organized as follows:

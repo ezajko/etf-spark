@@ -13,7 +13,7 @@ Icons can be used via the `<i>` tag with the appropriate class name.
 
 ## Integration
 
-The library is imported globally via CSS in `src/scss/_ez-custom.scss` (or via CDN in development).
+The library is imported globally via CSS in `src/scss/_site-custom.scss` (or via CDN in development).
 
 ## Components with Icon Support
 

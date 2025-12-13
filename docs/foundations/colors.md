@@ -1,6 +1,6 @@
 # Colors
 
-We define a comprehensive color system in `src/scss/base/_variables.scss`. The system is built around a primary blue tonal scale and a multi-brand palette for section differentiation.
+We define a comprehensive color system in `src/scss/themes/_default.scss`. The system is built around a primary blue tonal scale and a multi-brand palette for section differentiation.
 
 ## 1. Primary Tonal Scale (Blue)
 Base: `#00629B` (Brand Blue)

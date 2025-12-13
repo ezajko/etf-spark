@@ -6,8 +6,8 @@ The **Slim Navigation** (also known as the Utility Bar or Top Bar) is the thin d
 
 **`HeaderSlim.astro`**
 *   **Location**: `src/components/navigation/HeaderSlim.astro`
-*   **SCSS**: `src/scss/components/navigation/_ez-nav-slim.scss`
-*   **Class**: `.ez-nav-slim`
+*   **SCSS**: `src/scss/components/navigation/_site-nav-slim.scss`
+*   **Class**: `.site-nav-slim`
 
 ## Content
 
@@ -18,4 +18,4 @@ The **Slim Navigation** (also known as the Utility Bar or Top Bar) is the thin d
 
 ## Styling
 
-This component typically uses a dark background (`$ez-footer-bg`) with white text to differentiate it from the main white header.
+This component typically uses a dark background (`$site-footer-bg`) with white text to differentiate it from the main white header.

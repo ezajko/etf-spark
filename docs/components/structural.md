@@ -32,12 +32,12 @@ Generates Bootstrap navigation tabs.
 
 ## Tables
 
-### `ez-table`
-We use standard HTML `<table>` elements with the `.ez-table` class for styling.
+### `site-table`
+We use standard HTML `<table>` elements with the `.site-table` class for styling.
 
 ```html
-<div class="ez-table-responsive">
-  <table class="ez-table ez-table--hover">
+<div class="site-table-responsive">
+  <table class="site-table site-table--hover">
     ...
   </table>
 </div>

@@ -6,8 +6,8 @@ The **Main Navigation** is the primary horizontal menu located in the site heade
 
 **`HeaderNav.astro`**
 *   **Location**: `src/components/navigation/HeaderNav.astro`
-*   **SCSS**: `src/scss/components/navigation/_ez-nav-main.scss`
-*   **Class**: `.ez-nav-main`
+*   **SCSS**: `src/scss/components/navigation/_site-nav-main.scss`
+*   **Class**: `.site-nav-main`
 
 ## Features
 

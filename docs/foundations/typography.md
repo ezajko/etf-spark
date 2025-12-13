@@ -20,7 +20,7 @@ All HTML headings, `<h1>` through `<h6>`, are available.
 
 *   Default `font-size`: `1rem` (16px).
 *   Default `line-height`: 1.5.
-*   Color: `$ez-text-color` (#333).
+*   Color: `$site-text-color` (#333).
 
 ## Helpers
 

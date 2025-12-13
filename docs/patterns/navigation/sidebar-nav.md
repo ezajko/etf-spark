@@ -6,8 +6,8 @@ The **Sidebar Tree Navigation** is a vertical menu used for deep hierarchical tr
 
 **`SideMenu.astro`**
 *   **Location**: `src/components/navigation/SideMenu.astro`
-*   **SCSS**: `src/scss/components/navigation/_ez-nav-tree.scss`
-*   **Class**: `.ez-nav-tree`
+*   **SCSS**: `src/scss/components/navigation/_site-nav-tree.scss`
+*   **Class**: `.site-nav-tree`
 
 ## Features
 

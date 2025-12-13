@@ -6,7 +6,7 @@ A prominent content block designed to drive users toward a specific primary acti
 
 **`CallToAction.astro`**
 *   **Location**: `src/components/CallToAction.astro`
-*   **SCSS**: `src/scss/components/_ez-cta.scss`
+*   **SCSS**: `src/scss/overrides/_cta.scss`
 
 ## Props
 

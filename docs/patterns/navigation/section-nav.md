@@ -6,8 +6,8 @@ The **Section Navigation** is a simplified vertical list of links, often appeari
 
 **`SectionLinksMenu.astro`**
 *   **Location**: `src/components/SectionLinksMenu.astro`
-*   **SCSS**: `src/scss/components/navigation/_ez-nav-section.scss`
-*   **Class**: `.ez-nav-section`
+*   **SCSS**: `src/scss/components/navigation/_site-nav-section.scss`
+*   **Class**: `.site-nav-section`
 
 ## Structure
 

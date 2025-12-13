@@ -10,13 +10,13 @@ The generic wrapper for all widgets.
     *   `title` (string, required): Header title.
     *   `icon` (string): Bootstrap icon class name (e.g., `bi-link`).
     *   `class` (string): Extra classes.
-*   **SCSS**: `_ez-sidebar-widget.scss`.
+*   **SCSS**: `_site-sidebar-widget.scss`.
 
 ## Implementations
 
 ### `InfoWidget.astro`
 A general-purpose container for lists or text.
-*   **Usage**: Wraps content in `.ez-list-group.list-group.list-group-flush`.
+*   **Usage**: Wraps content in `.site-list-group.list-group.list-group-flush`.
 *   **Common Use Cases**: Quick Links, Categories, Metadata lists.
 
 ### `ContactWidget.astro`
