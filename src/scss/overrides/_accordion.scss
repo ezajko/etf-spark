@@ -77,3 +77,40 @@
         border-radius: 0;
     }
 }
+
+// High Contrast Support
+[data-site-theme="high-contrast"] .accordion {
+    --bs-accordion-border-width: 2px;
+    --bs-accordion-border-color: #000;
+
+    .accordion-button {
+        color: #000;
+        font-weight: 700;
+
+        &:not(.collapsed) {
+            border-left: 5px solid #000;
+            color: #000;
+            background-color: #fff;
+            text-decoration: underline;
+        }
+    }
+}
+
+[data-site-theme="high-contrast"][data-bs-theme="dark"] .accordion {
+    --bs-accordion-border-color: #ffd700;
+
+    .accordion-item {
+        background-color: #000;
+    }
+
+    .accordion-button {
+        background-color: #000;
+        color: #ffd700;
+
+        &:not(.collapsed) {
+            border-left-color: #ffd700;
+            color: #ffd700;
+            background-color: #000;
+        }
+    }
+}

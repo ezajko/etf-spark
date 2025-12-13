@@ -66,3 +66,41 @@
         color: #fff;
     }
 }
+
+// High Contrast Support
+[data-site-theme="high-contrast"] {
+    .alert {
+        border: 2px solid #000;
+        background-color: #fff !important;
+        color: #000 !important;
+
+        .alert-link {
+            color: #000 !important;
+            text-decoration: underline;
+        }
+    }
+
+    .badge {
+        border: 2px solid #000;
+        color: #000 !important;
+        background-color: #fff !important;
+    }
+}
+
+[data-site-theme="high-contrast"][data-bs-theme="dark"] {
+    .alert {
+        border-color: #ffd700;
+        background-color: #000 !important;
+        color: #ffd700 !important;
+
+        .alert-link {
+            color: #ffd700 !important;
+        }
+    }
+
+    .badge {
+        border-color: #ffd700;
+        color: #ffd700 !important;
+        background-color: #000 !important;
+    }
+}
