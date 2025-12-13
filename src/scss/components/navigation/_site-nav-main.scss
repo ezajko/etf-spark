@@ -1,8 +1,8 @@
 // ETF UNSA - Main Navigation Component
-// Extracted from _ez-header.scss in refactor
+// Extracted from _site-header.scss in refactor
 
-.ez-nav-main {
-    // Base container styles (from .ez-header-navbar-wrapper .navbar)
+.site-nav-main {
+    // Base container styles (from .site-header-navbar-wrapper .navbar)
     padding: 0;
     min-height: 3rem; // 48px
 
@@ -109,7 +109,7 @@
     }
 
     // Tabbed Menu Section (Vertical Tabs in Mega Menu)
-    .ez-nav-tabs {
+    .site-nav-tabs {
         display: flex;
         flex-direction: column;
         border-right: 1px solid var(--bs-border-color);

@@ -36,7 +36,7 @@
     }
 
     // High Contrast Overlay Override
-    [data-ez-theme="high-contrast"] &::before {
+    [data-site-theme="high-contrast"] &::before {
         background: rgba(0, 0, 0, 0.7); // Darker overlay for better contrast
     }
 

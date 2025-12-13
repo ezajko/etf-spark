@@ -6,7 +6,7 @@
 // ======================
 // 1. SLIM HEADER (Top Bar) - 48px
 // ======================
-.ez-header-slim-wrapper {
+.site-header-slim-wrapper {
     background-color: $site-theme-footer-bg; // #000
     color: white;
     min-height: 48px;
@@ -28,7 +28,7 @@
 // ======================
 // 2. MAIN HEADER WRAPPER (Sticky Container)
 // ======================
-.ez-header-wrapper {
+.site-header-wrapper {
     background-color: var(--bs-body-bg);
     box-shadow: $site-theme-shadow-sm;
 
@@ -42,17 +42,17 @@
 // ======================
 // 2A. CENTER HEADER (Brand Bar) - 96px
 // ======================
-.ez-header-center-wrapper {
+.site-header-center-wrapper {
     background-color: var(--bs-body-bg);
     min-height: 96px;
     padding: $site-theme-spacing-lg 0;
     border-bottom: 1px solid var(--bs-border-color);
 
-    .ez-header-center-content {
+    .site-header-center-content {
         min-height: 64px; // Logo height + padding
     }
 
-    .ez-brand {
+    .site-brand {
         display: flex;
         align-items: center;
         text-decoration: none;
@@ -64,8 +64,8 @@
         }
     }
 
-    .ez-brand-logos {
-        .ez-brand-logo-icon {
+    .site-brand-logos {
+        .site-brand-logo-icon {
             svg {
                 width: 48px;
                 height: 48px;
@@ -73,14 +73,14 @@
         }
     }
 
-    .ez-brand-text {
+    .site-brand-text {
         line-height: 1.2;
         display: flex;
         flex-direction: column;
         justify-content: center;
     }
 
-    .ez-brand-sup {
+    .site-brand-sup {
         font-size: 0.85rem;
         text-transform: uppercase;
         color: $site-theme-text-muted;
@@ -89,7 +89,7 @@
         margin-bottom: 2px;
     }
 
-    .ez-brand-main {
+    .site-brand-main {
         font-size: 1.25rem;
         font-weight: $site-theme-font-weight-bold;
         color: var(--bs-primary);
@@ -97,7 +97,7 @@
         margin-bottom: 2px;
     }
 
-    .ez-brand-sub {
+    .site-brand-sub {
         font-size: 0.9rem;
         color: var(--bs-body-color);
         font-weight: $site-theme-font-weight-medium;
@@ -116,11 +116,11 @@
 // ======================
 // 2B. NAVBAR HEADER (Menu Bar) - 48px
 // ======================
-.ez-header-navbar-wrapper {
+.site-header-navbar-wrapper {
     background-color: var(--bs-body-bg);
     min-height: 48px;
 
-    // Layout only - styles moved to _ez-nav-main.scss
+    // Layout only - styles moved to _site-nav-main.scss
     background-color: var(--bs-body-bg);
     min-height: 48px;
 }
@@ -269,24 +269,24 @@
 // 5. RESPONSIVE BEHAVIOR
 // ======================
 @media (max-width: 991px) {
-    .ez-header-center-wrapper {
+    .site-header-center-wrapper {
         min-height: 64px; // Reduced height
         padding: $site-theme-spacing-sm 0;
 
-        .ez-brand-logos {
-            .ez-brand-logo-icon svg {
+        .site-brand-logos {
+            .site-brand-logo-icon svg {
                 width: 32px; // Smaller logo
                 height: 32px;
             }
         }
 
-        .ez-brand-main {
+        .site-brand-main {
             font-size: 0.95rem; // Smaller text
             margin-bottom: 0;
         }
     }
 
-    .ez-header-navbar-wrapper {
+    .site-header-navbar-wrapper {
         display: none; // Hidden on mobile, use offcanvas instead
     }
 }

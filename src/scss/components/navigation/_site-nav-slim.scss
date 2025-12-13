@@ -1,8 +1,8 @@
 // ETF UNSA - Slim Navigation (Top Bar)
 // Renamed from _ez-nav-utility.scss
 
-.ez-nav-slim {
-    // Shared styles for top utility bars (like .ez-header-slim-wrapper)
+.site-nav-slim {
+    // Shared styles for top utility bars (like .site-header-slim-wrapper)
     background-color: $site-theme-footer-bg; // #000
     color: white;
     min-height: 3rem; // 48px
@@ -25,7 +25,7 @@
         // High Contrast Override:
         // Even though Global HC forces theme color (mostly black/yellow),
         // Slim Header is ALWAYS black, so links must be white/yellow.
-        [data-ez-theme="high-contrast"] & {
+        [data-site-theme="high-contrast"] & {
             color: #FFFFFF !important;
             text-decoration: underline !important;
 
@@ -36,7 +36,7 @@
             // White is safest for "Light HC on Black Header".
         }
 
-        [data-ez-theme="high-contrast"][data-bs-theme="dark"] & {
+        [data-site-theme="high-contrast"][data-bs-theme="dark"] & {
             color: #FFD700 !important; // Yellow for Dark HC
         }
     }

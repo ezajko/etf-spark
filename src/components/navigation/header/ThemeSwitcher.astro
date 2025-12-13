@@ -55,7 +55,7 @@
   const storedMode = localStorage.getItem('ez-mode') || 'light';
   const hcSwitch = document.getElementById('highContrastSwitch') as HTMLInputElement;
 
-  document.documentElement.setAttribute('data-ez-theme', storedTheme);
+  document.documentElement.setAttribute('data-site-theme', storedTheme);
   document.documentElement.setAttribute('data-bs-theme', storedMode);
 
   // Sync Switch UI
@@ -89,7 +89,7 @@
       // NOTE: We are intentionally discarding other colored themes logic for this simplified UI.
       const newTheme = isChecked ? 'high-contrast' : 'blue';
 
-      document.documentElement.setAttribute('data-ez-theme', newTheme);
+      document.documentElement.setAttribute('data-site-theme', newTheme);
       localStorage.setItem('ez-theme', newTheme);
     });
   }

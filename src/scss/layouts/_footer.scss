@@ -2,14 +2,14 @@
 // Author: Ernedin Zajko <ezajko@root.ba>
 // License: GPL-2.0-or-later
 
-.ez-footer {
+.site-footer {
     background-color: $site-theme-footer-bg;
     color: $site-theme-footer-text;
     margin-top: $site-theme-spacing-xxl;
     font-size: 0.9rem;
 
-    .ez-footer-logos {
-        .ez-footer-logo-icon {
+    .site-footer-logos {
+        .site-footer-logo-icon {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -45,7 +45,7 @@
         }
     }
 
-    .ez-footer-social {
+    .site-footer-social {
         a {
             display: inline-flex;
             align-items: center;
@@ -65,7 +65,7 @@
         }
     }
 
-    .ez-footer-bottom {
+    .site-footer-bottom {
         background-color: darken($site-theme-footer-bg, 5%);
         padding: $site-theme-spacing-md 0;
         margin-top: $site-theme-spacing-xl;

@@ -39,7 +39,7 @@ function getPageNumbers(current: number, total: number) {
 const pages = getPageNumbers(currentPage, totalPages);
 ---
 
-<nav class={`ez-pagination ${className || ''}`} aria-label="Page navigation">
+<nav class={`site-pagination ${className || ''}`} aria-label="Page navigation">
   <ul class="pagination justify-content-center">
     <!-- Previous -->
     <li class={`page-item ${!prevPage ? 'disabled' : ''}`}>

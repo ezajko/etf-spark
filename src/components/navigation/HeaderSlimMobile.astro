@@ -225,7 +225,7 @@ const base = import.meta.env.BASE_URL;
         const isChecked = target.checked;
         const newTheme = isChecked ? 'high-contrast' : 'blue';
 
-        document.documentElement.setAttribute('data-ez-theme', newTheme);
+        document.documentElement.setAttribute('data-site-theme', newTheme);
         localStorage.setItem('ez-theme', newTheme);
 
         // Sync desktop switch if exists

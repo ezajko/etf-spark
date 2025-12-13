@@ -22,6 +22,6 @@ interface Props {
 const { title = 'Brzi linkovi', icon = 'bi-link-45deg', links, class: className } = Astro.props;
 ---
 
-<InfoWidget title={title} icon={icon} class={`ez-nav-section ${className || ''}`}>
+<InfoWidget title={title} icon={icon} class={`site-nav-section ${className || ''}`}>
   {links.map((item) => <SimpleListItem label={item.label} link={item.link} active={item.active} />)}
 </InfoWidget>
