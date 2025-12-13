@@ -48,6 +48,19 @@ const alignmentCode = `<div class="p-3 border bg-light mb-2">
 const transformationCode = `<p class="text-lowercase">Lowercased text.</p>
 <p class="text-uppercase">Uppercased text.</p>
 <p class="text-capitalize mb-0">Capitalized text.</p>`;
+
+const fontCombinationsCode = `<div class="p-3 border bg-light mb-3">
+  <p class="font-sans mb-1 fw-bold">Sans Serif (IBM Plex Sans)</p>
+  <p class="font-sans mb-0">The quick brown fox jumps over the lazy dog. 1234567890</p>
+</div>
+<div class="p-3 border bg-light mb-3">
+  <p class="font-serif mb-1 fw-bold">Serif (IBM Plex Serif)</p>
+  <p class="font-serif mb-0">The quick brown fox jumps over the lazy dog. 1234567890</p>
+</div>
+<div class="p-3 border bg-light">
+  <p class="font-mono mb-1 fw-bold">Monospace (IBM Plex Mono)</p>
+  <p class="font-mono mb-0">The quick brown fox jumps over the lazy dog. 1234567890</p>
+</div>`;
 ---
 
 <NoSidebar
@@ -81,6 +94,12 @@ const transformationCode = `<p class="text-lowercase">Lowercased text.</p>
         title="Transformacija"
         description="Klase za transformaciju slova (velika, mala, prvo slovo)."
         code={transformationCode}
+      />
+
+      <ExampleSnippet
+        title="Font Combinations"
+        description="Primjeri Sans, Serif i Mono fontova definisanih u sistemu."
+        code={fontCombinationsCode}
       />
     </div>
   </div>
@@ -138,6 +157,39 @@ const transformationCode = `<p class="text-lowercase">Lowercased text.</p>
           <li class="mb-2"><code>Inline code</code> snippet.</li>
           <li class="mb-0">Pritisnite <kbd>Ctrl</kbd> + <kbd>C</kbd> za kopiranje.</li>
         </ul>
+      </div>
+    </div>
+
+    <!-- Font Combinations -->
+    <div class="col-12">
+      <div class="p-4 border rounded shadow-sm bg-white">
+        <h5 class="text-uppercase text-muted fw-bold mb-4 ls-1">Font Combinations</h5>
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="p-3 border bg-light h-100">
+              <p class="font-sans mb-2 fw-bold text-primary">Sans Serif</p>
+              <p class="font-sans mb-0 small">
+                IBM Plex Sans<br />The quick brown fox jumps over the lazy dog.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 border bg-light h-100">
+              <p class="font-serif mb-2 fw-bold text-primary">Serif</p>
+              <p class="font-serif mb-0 small">
+                IBM Plex Serif<br />The quick brown fox jumps over the lazy dog.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="p-3 border bg-light h-100">
+              <p class="font-mono mb-2 fw-bold text-primary">Monospace</p>
+              <p class="font-mono mb-0 small">
+                IBM Plex Mono<br />The quick brown fox jumps over the lazy dog.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
