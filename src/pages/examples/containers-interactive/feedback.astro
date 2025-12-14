@@ -1,0 +1,104 @@
+---
+// ETF UNSA - Feedback & Overlays Example
+import NoSidebar from '../../../layouts/NoSidebar.astro';
+import ExampleSnippet from '../../../components/ExampleSnippet.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Primjeri', href: '#' },
+  { label: 'Containers & Interactive', href: '#' },
+  { label: 'Feedback', href: '#', active: true },
+];
+
+const toastsCode = `<div class="toast show" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+    <strong class="me-auto">ETF UNSA</strong>
+    <small>Prije 11 min</small>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    Vaša prijava je uspješno poslana.
+  </div>
+</div>
+
+<div class="toast show mt-3" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="toast-header">
+    <strong class="me-auto">Sistem</strong>
+    <small class="text-muted">Upravo</small>
+    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+  <div class="toast-body">
+    Došlo je do greške prilikom učitavanja podataka.
+  </div>
+</div>`;
+
+const popoverCode = `<button type="button" class="btn btn-primary" data-bs-toggle="popover" title="Naslov Popovera" data-bs-content="Ovo je sadržaj popovera. Može biti duži tekst sa informacijama.">
+  Klikni za Popover
+</button>
+
+<button type="button" class="btn btn-secondary ms-2" data-bs-toggle="popover" data-bs-trigger="focus" title="Dismissible popover" data-bs-content="Ovaj popover se zatvara klikom bilo gdje drugo.">
+  Dismissible popover
+</button>`;
+
+const tooltipCode = `<button type="button" class="btn btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip na vrhu">
+  Tooltip gore
+</button>
+<button type="button" class="btn btn-outline-secondary ms-2" data-bs-toggle="tooltip" data-bs-placement="right" title="Tooltip desno">
+  Tooltip desno
+</button>
+<button type="button" class="btn btn-outline-secondary ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip dole">
+  Tooltip dole
+</button>
+<button type="button" class="btn btn-outline-secondary ms-2" data-bs-toggle="tooltip" data-bs-placement="left" title="Tooltip lijevo">
+  Tooltip lijevo
+</button>`;
+---
+
+<NoSidebar
+  title="Feedback & Overlays"
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle="Feedback & Overlays"
+  bannerSubtitle="Komponente za povratne informacije i kontekstualne prikaze"
+  bannerSize="xs"
+>
+  <script is:inline>
+    // Initialize Bootstrap Toasts/Popovers/Tooltips
+    document.addEventListener('DOMContentLoaded', function () {
+      var popoverTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="popover"]')
+      );
+      var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl);
+      });
+
+      var tooltipTriggerList = [].slice.call(
+        document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      );
+      var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+        return new bootstrap.Tooltip(tooltipTriggerEl);
+      });
+    });
+  </script>
+
+  <div class="row g-5">
+    <div class="col-12">
+      <ExampleSnippet
+        title="Toasts"
+        description="Notifikacije koje se pojavljuju kao 'tost' poruke."
+        code={toastsCode}
+      />
+
+      <ExampleSnippet
+        title="Popovers"
+        description="Iskočni prozori na klik sa naslovom i sadržajem."
+        code={popoverCode}
+      />
+
+      <ExampleSnippet
+        title="Tooltips"
+        description="Mali oblačići sa informacijama na hover."
+        code={tooltipCode}
+      />
+    </div>
+  </div>
+</NoSidebar>
