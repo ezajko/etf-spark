@@ -53,6 +53,14 @@
 @import 'components/navigation/site-nav-pagination';
 @import 'components/navigation/site-nav-breadcrumbs';
 
+// 6. Custom/Extended Components (New)
+@import 'components/timeline';
+
+// 7. Feedback & Utilities Overrides
+@import 'overrides/progress';
+@import 'overrides/toasts';
+@import 'overrides/popovers';
+
 // 7. Layouts
 @import 'layouts/header';
 @import 'layouts/banner';
