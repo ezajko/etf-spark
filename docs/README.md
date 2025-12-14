@@ -14,9 +14,9 @@ The project is built using **Astro**, a static site generator optimized for cont
 
 ### Directory Structure
 
-*   `src/components`: UI components (Cards, Widgets, Lists, Navigation).
-*   `src/layouts`: Page layouts (Base, Page, Section).
-*   `src/pages`: URL routes and example templates.
+*   `src/site/components`: UI components (Cards, Widgets, Lists, Navigation).
+*   `src/site/layouts`: Page layouts (Base, Page, Section).
+*   `src/site/pages`: URL routes and example templates.
 *   `src/scss`: Styling source files.
 *   `public`: Static assets (images, fonts).
 *   `legacy`: Archived files from the previous website version.

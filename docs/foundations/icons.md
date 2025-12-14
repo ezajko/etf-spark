@@ -23,7 +23,7 @@ This allows the icon to take the color of its parent text (`currentColor`).
 
 ### Adding New Icons
 1.  Place SVG in `src/assets/icons/`.
-2.  Define class in `src/scss/components/_site-icons.scss` mapping to the file URL.
+2.  Define class in `src/scss/base/_icons.scss` mapping to the file URL.
 <i class="bi bi-box-arrow-right"></i>
 
 ## Integration

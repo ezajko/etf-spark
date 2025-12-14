@@ -5,7 +5,7 @@ The **Sidebar Tree Navigation** is a vertical menu used for deep hierarchical tr
 ## Component
 
 **`SideMenu.astro`**
-*   **Location**: `src/components/navigation/SideMenu.astro`
+*   **Location**: `src/site/components/layout/SidebarWidget.astro`
 *   **SCSS**: `src/scss/components/navigation/_site-nav-tree.scss`
 *   **Class**: `.site-nav-tree`
 

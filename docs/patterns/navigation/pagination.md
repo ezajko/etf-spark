@@ -5,8 +5,8 @@ A responsive, multi-page navigation component based on Bootstrap's pagination.
 ## Component
 
 **`Pagination.astro`**
-*   **Location**: `src/components/navigation/Pagination.astro`
-*   **SCSS**: `src/scss/components/navigation/_site-nav-pagination.scss`
+*   **Location**: `src/site/components/navigation/Pagination.astro`
+*   **SCSS**: `src/scss/overrides/navigation/_pagination.scss`
 
 ## Props
 

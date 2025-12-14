@@ -1,6 +1,6 @@
 # Layouts
 
-The project uses Astro's layout system to ensure consistent page structures. Layouts are located in `src/layouts/`.
+The project uses Astro's layout system to ensure consistent page structures. Layouts are located in `src/site/layouts/`.
 
 ## Base Layouts
 

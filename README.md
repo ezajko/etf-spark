@@ -18,16 +18,22 @@ A modern, responsive Design System built on top of **Bootstrap 5**, tailored for
 
 The core design system lives in the `src/scss` directory:
 
-```
-src/scss/
-├── base/               # Bootstrap overrides & structural variables
-├── components/         # Custom components (prefixed with site-)
-├── layouts/            # Page layout styles (Header, Footer, Sidebar)
-├── overrides/          # Bootstrap component customization (Buttons, Cards)
-├── themes/             # Theming variables (Colors, Fonts, Spacing)
-├── utilities/          # Helper classes
-└── _site.scss          # Main entry point
-```
+src/
+├── scss/                 # Design System & Theming
+│   ├── base/             # Bootstrap overrides & structural variables
+│   ├── overrides/        # Bootstrap component customization (Buttons, Cards)
+│   ├── themes/           # Theming variables (Colors, Fonts, Spacing)
+│   └── _site.scss        # Main entry point
+│
+└── site/                 # The Astro Application
+    ├── pages/            # Routes & Content
+    ├── layouts/          # Page Wrappers
+    └── components/       # Reusable UI
+        ├── common/       # Generic (Accordion, Card, Tabs)
+        ├── layout/       # Nav, Footer, Hero
+        ├── widgets/      # Calendar, Contact, Info
+        ├── features/     # Curriculum, Staff, Profile
+        └── lists/        # List Item variations
 
 ## Development
 

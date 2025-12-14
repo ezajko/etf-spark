@@ -5,7 +5,7 @@ The **Main Navigation** is the primary horizontal menu located in the site heade
 ## Component
 
 **`HeaderNav.astro`**
-*   **Location**: `src/components/navigation/HeaderNav.astro`
+*   **Location**: `src/site/components/navigation/HeaderNav.astro`
 *   **SCSS**: `src/scss/components/navigation/_site-nav-main.scss`
 *   **Class**: `.site-nav-main`
 

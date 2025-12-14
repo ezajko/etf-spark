@@ -5,7 +5,7 @@ The **Slim Navigation** (also known as the Utility Bar or Top Bar) is the thin d
 ## Component
 
 **`HeaderSlim.astro`**
-*   **Location**: `src/components/navigation/HeaderSlim.astro`
+*   **Location**: `src/site/components/navigation/HeaderSlim.astro`
 *   **SCSS**: `src/scss/components/navigation/_site-nav-slim.scss`
 *   **Class**: `.site-nav-slim`
 
