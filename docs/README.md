@@ -72,3 +72,5 @@ The project documentation is organized as follows:
         - [Breadcrumbs](docs/patterns/navigation/breadcrumbs.md)
         - [Pagination](docs/patterns/navigation/pagination.md)
     - **Layouts**: [Page Templates](docs/patterns/layouts.md)
+- **[Guides](docs/guides/)**: Development and implementation guidelines:
+    - [Accessibility (a11y)](docs/guides/accessibility.md): Guidelines for accessible design and implementation
