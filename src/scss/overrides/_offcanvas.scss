@@ -8,7 +8,7 @@
 
     // Header
     .offcanvas-header {
-        border-bottom: 2px solid var(--site-theme-color);
+        border-bottom: 0.125rem solid var(--site-theme-color);
         padding: 1.25rem 1.5rem;
 
         .offcanvas-title {
@@ -47,12 +47,12 @@
 
 // High Contrast Support
 [data-site-theme="high-contrast"] .offcanvas {
-    border: 3px solid #000;
+    border: 0.1875rem solid #000;
 
     .offcanvas-header {
         background-color: #000;
         color: #fff;
-        border-bottom: 3px solid #fff;
+        border-bottom: 0.1875rem solid #fff;
 
         .offcanvas-title {
             color: #fff !important;

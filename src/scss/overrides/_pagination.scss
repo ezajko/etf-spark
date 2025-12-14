@@ -11,7 +11,7 @@
     gap: 0.25rem; // Small gap between items for modern look, unlike connected BS default
 
     .page-item {
-        margin: 0; // Reset
+        margin: 0 0.125rem; // 2px equivalentReset
 
         // Link Styling
         .page-link {
@@ -91,7 +91,7 @@
     .page-item {
 
         .page-link {
-            border: 2px solid #000;
+            border: 0.125rem solid #000;
             color: #000;
             font-weight: 700;
             background-color: #fff;

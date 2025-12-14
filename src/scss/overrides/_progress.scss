@@ -27,13 +27,13 @@
 
 // High Contrast Support
 [data-site-theme="high-contrast"] .progress {
-    border: 2px solid #000;
+    border: 0.125rem solid #000;
     background-color: #fff;
     height: 1.5rem; // Slightly taller for visibility
 
     .progress-bar {
         background-color: #000;
-        border-right: 2px solid #fff; // Separator if multiple bars
+        border-right: 0.125rem solid #fff; // Separator if multiple bars
         color: #fff;
         font-weight: 700;
     }
