@@ -30,10 +30,10 @@
         &::after {
             content: '';
             position: absolute;
-            left: 1.125rem; // Center on line (1.5rem line pos - half width)
+            left: 1rem; // Center on line (1.5rem line pos - half width)
             top: 0.25rem;
-            width: calc(0.75rem + 2px); // slightly wider than line
-            height: calc(0.75rem + 2px);
+            width: 1rem; // slightly wider than line
+            height: 1rem;
             background-color: var(--bs-body-bg);
             border: 2px solid var(--site-theme-color);
             z-index: 1;
