@@ -51,10 +51,10 @@
 @import 'components/navigation/site-nav-tree';
 @import 'components/navigation/site-nav-section';
 @import 'components/navigation/site-nav-pagination';
-@import 'components/navigation/site-nav-breadcrumbs';
+@import 'overrides/breadcrumbs';
 
 // 6. Custom/Extended Components (New)
-@import 'components/timeline';
+@import 'overrides/timeline';
 
 // 7. Feedback & Utilities Overrides
 @import 'overrides/progress';
