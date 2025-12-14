@@ -1,0 +1,109 @@
+---
+// ETF UNSA - Single Document Example
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import Document from '../../layouts/content/Document.astro';
+import InfoWidget from '../../components/widgets/InfoWidget.astro';
+import KeyValueListItem from '../../components/lists/KeyValueListItem.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Fakultet', href: '#' },
+  { label: 'Dokumenti', href: '/examples/document-list' },
+  { label: 'Odluka 01-123/24', href: '#', active: true },
+];
+---
+
+<Document title="Detalji dokumenta | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+  <!-- Main Content -->
+  <article>
+    <div class="mb-4">
+      <span class="badge bg-secondary mb-2">Rulebook</span>
+      <h1 class="fw-bold mb-3">Lorem Ipsum Document Title</h1>
+      <div class="text-muted small mb-3">
+        <i class="bi bi-calendar3 me-2"></i> Oct 20, 2023 |
+        <i class="bi bi-hash me-2 ms-3"></i> Number: 01-001/23
+      </div>
+      <p class="lead">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+        labore et dolore magna aliqua.
+      </p>
+    </div>
+
+    <div class="card bg-light border-0 mb-4">
+      <div class="card-body p-4 d-flex align-items-center justify-content-between flex-wrap gap-3">
+        <div class="d-flex align-items-center">
+          <i class="bi bi-file-earmark-pdf text-danger fs-1 me-3"></i>
+          <div>
+            <h5 class="mb-1 fw-bold">Document.pdf</h5>
+            <small class="text-muted">PDF Document, 1.2 MB</small>
+          </div>
+        </div>
+        <a href="#" class="btn btn-primary">
+          <i class="bi bi-download me-2"></i> Download
+        </a>
+      </div>
+    </div>
+
+    <div class="content mb-5">
+      <h3>Description</h3>
+      <p>
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur.
+      </p>
+      <p>
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+        anim id est laborum.
+      </p>
+    </div>
+
+    <div class="mt-5">
+      <h3>Decision Content</h3>
+      <p>
+        <strong>I</strong><br />
+        This decision adopts the Innovative Curriculum for the First Cycle of Studies at the Department
+        of Computer Science and Informatics, which is an integral part of this decision.
+      </p>
+      <p>
+        <strong>II</strong><br />The Innovative Curriculum from item I of this decision will be
+        applied starting from the academic year 2024/2025.
+      </p>
+
+      <p><strong>III</strong><br />This decision enters into force on the day of its adoption.</p>
+
+      <div class="mt-5 text-end">
+        <p class="mb-0">Predsjedavajući NNV-a</p>
+        <p class="fw-bold">Prof. Dr. Dekan Fakulteta</p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Right Sidebar -->
+  <Fragment slot="sidebar">
+    <InfoWidget title="Metapodaci" class="mb-4">
+      <KeyValueListItem label="Broj protokola" value="01-123/24" />
+      <KeyValueListItem label="Datum donošenja" value="10.01.2024." />
+      <KeyValueListItem label="Datum objave" value="15.01.2024." />
+      <KeyValueListItem label="Donosilac" value="NNV ETF-a" />
+      <KeyValueListItem
+        label="Kategorija"
+        value="Nastavni proces"
+        badgeClass="bg-light text-dark border"
+      />
+    </InfoWidget>
+
+    <div class="card border-0 shadow-sm">
+      <div class="card-header border-bottom fw-bold py-3">Povezani dokumenti</div>
+      <div class="list-group list-group-flush">
+        <a href="#" class="list-group-item list-group-item-action">
+          <i class="bi bi-link-45deg me-2 text-muted"></i> Zapisnik sa 5. sjednice NNV-a
+        </a>
+        <a href="#" class="list-group-item list-group-item-action">
+          <i class="bi bi-link-45deg me-2 text-muted"></i> Elaborat o izmjenama NPP-a
+        </a>
+      </div>
+    </div>
+  </Fragment>
+</Document>

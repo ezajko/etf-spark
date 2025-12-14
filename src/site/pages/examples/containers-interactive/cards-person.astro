@@ -1,0 +1,96 @@
+---
+// ETF UNSA - Person Cards Example
+import NoSidebar from '../../../layouts/NoSidebar.astro';
+import ExampleSnippet from '../../../components/common/ExampleSnippet.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Primjeri', href: '#' },
+  { label: 'Containers & Interactive', href: '#' },
+  { label: 'Profile Cards', href: '#', active: true },
+];
+
+const verticalPersonCardCode = `<div class="card h-100">
+  <div class="card-body text-center">
+    <div class="mb-3">
+      <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-light text-primary mx-auto" style="width: 80px; height: 80px; font-size: 2rem;">
+        <i class="bi bi-person"></i>
+      </div>
+    </div>
+    <h5 class="card-title mb-1">
+      <a href="#" class="text-decoration-none stretched-link">Dr. John Doe</a>
+    </h5>
+    <p class="text-muted small mb-2">Full Professor</p>
+    <p class="small text-primary mb-0">
+      <i class="bi bi-envelope me-1"></i> j.doe@example.com
+    </p>
+  </div>
+</div>`;
+
+const horizontalPersonCardCode = `<div class="card mb-3">
+  <div class="row g-0 align-items-center">
+    <div class="col-md-4 text-center py-3">
+      <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-light text-primary mx-auto" style="width: 80px; height: 80px; font-size: 2rem;">
+        <i class="bi bi-person"></i>
+      </div>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title mb-1">Jane Smith</h5>
+        <p class="card-text text-muted small mb-1">Associate Professor</p>
+        <p class="card-text small"><i class="bi bi-envelope me-1"></i> j.smith@example.com</p>
+      </div>
+    </div>
+  </div>
+</div>`;
+
+const profileHeaderCardCode = `<div class="card bg-light border-0">
+  <div class="card-body">
+    <div class="d-flex align-items-center">
+      <div class="flex-shrink-0">
+        <div class="d-inline-flex align-items-center justify-content-center rounded-circle bg-white shadow-sm text-primary" style="width: 48px; height: 48px; font-size: 1.25rem;">
+          <i class="bi bi-person-badge fs-3"></i>
+        </div>
+      </div>
+      <div class="flex-grow-1 ms-3">
+        <h5 class="mb-0">Dr. Michael Johnson</h5>
+        <small class="text-muted">Department of Computer Science</small>
+      </div>
+      <div class="ms-auto">
+        <a href="#" class="btn btn-sm btn-outline-primary">View Profile</a>
+      </div>
+    </div>
+  </div>
+</div>`;
+---
+
+<NoSidebar
+  title="Profile Cards"
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle="Profile Cards"
+  bannerSubtitle="Kartice za prikaz osoba i profila"
+  bannerSize="xs"
+>
+  bannerSize="xs" >
+  <div class="row">
+    <div class="col-12">
+      <ExampleSnippet
+        title="Vertical Person Card"
+        description="Standardna kartica za prikaz osoblja u gridu."
+        code={verticalPersonCardCode}
+      />
+
+      <ExampleSnippet
+        title="Horizontal Person Card"
+        description="Horizontalna verzija kartice, pogodna za liste."
+        code={horizontalPersonCardCode}
+      />
+
+      <ExampleSnippet
+        title="Profile Header Card"
+        description="Jednostavna kartica za zaglavlje ili sažetak profila."
+        code={profileHeaderCardCode}
+      />
+    </div>
+  </div>
+</NoSidebar>

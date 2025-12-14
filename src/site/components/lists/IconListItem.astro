@@ -1,0 +1,21 @@
+---
+// ETF UNSA - Icon List Item
+import ListItem from './ListItem.astro';
+
+interface Props {
+  icon: string; // Bootstrap Icon class (e.g., 'bi-star')
+  label: string;
+  href?: string;
+  active?: boolean;
+}
+
+const { icon, label, href, active } = Astro.props;
+---
+
+<ListItem href={href} active={active} className="d-flex align-items-center">
+  <i class={`bi ${icon} me-3 fs-5`}></i>
+  <div>
+    <div>{label}</div>
+    <slot />
+  </div>
+</ListItem>

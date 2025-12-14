@@ -1,0 +1,122 @@
+---
+// ETF UNSA - Event List Example
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import ListStandard from '../../layouts/list/ListStandard.astro';
+import ContentCard from '../../components/common/ContentCard.astro';
+import InfoWidget from '../../components/widgets/InfoWidget.astro';
+import Pagination from '../../components/navigation/Pagination.astro';
+import KeyValueListItem from '../../components/lists/KeyValueListItem.astro';
+import CalendarWidget from '../../components/widgets/CalendarWidget.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Aktuelnosti', href: '#' },
+  { label: 'Događaji', href: '#', active: true },
+];
+
+const events = [
+  {
+    title: 'Lorem Ipsum Event 1',
+    date: 'May 15, 2024',
+    time: '10:00 - 14:00',
+    location: 'Location 1',
+    category: 'Category 1',
+    image: '/images/etf-building.png',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  },
+  {
+    title: 'Lorem Ipsum Event 2',
+    date: 'May 22, 2024',
+    time: '12:00 - 13:30',
+    location: 'Location 2',
+    category: 'Category 2',
+    image: '/images/project-smart-city.png',
+    description:
+      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+  },
+  {
+    title: 'Lorem Ipsum Event 3',
+    date: 'Jun 05, 2024',
+    time: '09:00 - 17:00',
+    location: 'Location 3',
+    category: 'Category 3',
+    image: '/images/news-graduation.png',
+    description:
+      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+  },
+  {
+    title: 'Lorem Ipsum Event 4',
+    date: 'Jun 12, 2024',
+    time: '14:00 - 16:00',
+    location: 'Location 4',
+    category: 'Category 4',
+    image: '/images/project-smart-city.png',
+    description:
+      'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+  },
+];
+
+const base = import.meta.env.BASE_URL;
+---
+
+<ListStandard
+  title="Događaji | ETF UNSA"
+  breadcrumbItems={breadcrumbItems}
+  listTitle="Nadolazeći događaji"
+  totalPages={2}
+  currentPage={1}
+  bannerSize="xs"
+>
+  {
+    events.map((item) => (
+      <ContentCard
+        title={item.title}
+        href={base + '/examples/event-single'}
+        image={item.image}
+        category={item.category}
+        date={item.date}
+        time={item.time}
+        location={item.location}
+        excerpt={item.description}
+        isEvent={true}
+        layout="horizontal"
+      />
+    ))
+  }
+
+  <!-- Sidebar -->
+  <Fragment slot="sidebar">
+    <!-- Categories Widget -->
+    <InfoWidget title="Kategorije događaja" icon="bi-tags" class="mb-4">
+      <KeyValueListItem
+        label="Konferencije"
+        value="3"
+        badgeClass="bg-primary rounded-pill text-white"
+      />
+      <KeyValueListItem
+        label="Radionice"
+        value="5"
+        badgeClass="bg-primary rounded-pill text-white"
+      />
+      <KeyValueListItem
+        label="Gostujuća predavanja"
+        value="2"
+        badgeClass="bg-primary rounded-pill text-white"
+      />
+      <KeyValueListItem label="Sajmovi" value="1" badgeClass="bg-primary rounded-pill text-white" />
+    </InfoWidget>
+
+    <!-- Calendar Widget -->
+    <CalendarWidget
+      initialDate={new Date()}
+      events={[
+        { date: new Date(new Date().getFullYear(), new Date().getMonth(), 15), url: '#' },
+        { date: new Date(new Date().getFullYear(), new Date().getMonth(), 22), url: '#' },
+        { date: new Date(new Date().getFullYear(), new Date().getMonth(), 5), url: '#' },
+      ]}
+    />
+  </Fragment>
+</ListStandard>

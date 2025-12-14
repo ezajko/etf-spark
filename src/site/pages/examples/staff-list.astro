@@ -1,0 +1,130 @@
+---
+// ETF UNSA - Staff List Example
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import SidebarLeft from '../../layouts/SidebarLeft.astro';
+import SideMenu from '../../components/navigation/SideMenu.astro';
+import Pagination from '../../components/navigation/Pagination.astro';
+import ContentCard from '../../components/common/ContentCard.astro';
+import CardGroup from '../../components/common/CardGroup.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Odsjeci', href: '#' },
+  { label: 'Računarstvo i informatika', href: '#' },
+  { label: 'Osoblje', href: '#', active: true },
+];
+
+const staff = [
+  {
+    name: 'John Doe',
+    title: 'Full Professor',
+    department: 'Department 1',
+    email: 'j.doe@example.com',
+    phone: '+387 33 123 456',
+    image: '/images/staff/staff-1.jpg',
+    role: 'Head of Department',
+  },
+  {
+    name: 'Jane Smith',
+    title: 'Associate Professor',
+    department: 'Department 2',
+    email: 'j.smith@example.com',
+    phone: '+387 33 123 457',
+    image: '/images/staff/staff-2.jpg',
+    role: 'Vice Dean',
+  },
+  {
+    name: 'Michael Johnson',
+    title: 'Assistant Professor',
+    department: 'Department 1',
+    email: 'm.johnson@example.com',
+    phone: '+387 33 123 458',
+    image: '/images/staff/staff-3.jpg',
+    role: 'Lecturer',
+  },
+  {
+    name: 'Emily Davis',
+    title: 'Teaching Assistant',
+    department: 'Department 3',
+    email: 'e.davis@example.com',
+    phone: '+387 33 123 459',
+    image: '/images/staff/staff-4.jpg',
+    role: 'Researcher',
+  },
+  {
+    name: 'David Brown',
+    title: 'Full Professor',
+    department: 'Department 4',
+    email: 'd.brown@example.com',
+    phone: '+387 33 123 460',
+    image: '/images/staff/staff-5.jpg',
+  },
+  {
+    name: 'Sarah Wilson',
+    title: 'Senior Assistant',
+    department: 'Department 2',
+    email: 's.wilson@example.com',
+    phone: '+387 33 123 461',
+    image: '/images/staff/staff-6.jpg',
+  },
+];
+
+const base = import.meta.env.BASE_URL;
+---
+
+<SidebarLeft title="Osoblje | ETF UNSA" breadcrumbItems={breadcrumbItems} bannerSize="xs">
+  <!-- Side Menu Slot -->
+  <SideMenu slot="sidebar" />
+
+  <!-- Main Content -->
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h2 mb-0">Osoblje Odsjeka</h1>
+
+    <!-- Search/Filter -->
+    <div class="d-flex gap-2">
+      <input type="text" class="form-control form-control-sm" placeholder="Pretraži osoblje..." />
+      <select class="form-select form-select-sm" style="width: auto;">
+        <option>Sva zvanja</option>
+        <option>Profesori</option>
+        <option>Asistenti</option>
+      </select>
+    </div>
+  </div>
+
+  <CardGroup cols={3}>
+    {
+      staff.map((person) => (
+        <div class="col">
+          <ContentCard title={person.name} href="#" layout="vertical">
+            <div class="text-center">
+              <div class="mb-3">
+                <div class="avatar avatar-xl mx-auto">
+                  <i class="bi bi-person" />
+                </div>
+              </div>
+              <h5 class="card-title mb-1">
+                <a
+                  href={base + '/examples/staff-profile'}
+                  class="text-decoration-none stretched-link"
+                >
+                  {person.name}
+                </a>
+              </h5>
+              <p class="text-muted small mb-2">{person.title}</p>
+              <p class="small text-primary mb-0">
+                <i class="bi bi-envelope me-1" /> {person.email}
+              </p>
+            </div>
+          </ContentCard>
+        </div>
+      ))
+    }
+  </CardGroup>
+
+  <!-- Pagination -->
+  <div class="mt-5">
+    <Pagination currentPage={1} totalPages={3} baseUrl={base + '/examples/staff-list'} />
+  </div>
+</SidebarLeft>

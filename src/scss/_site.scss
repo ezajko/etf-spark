@@ -11,6 +11,9 @@
 // 2. Variable Mappings (Link Custom -> Bootstrap)
 @import 'base/bootstrap-mappings';
 
+// 1.5 Icons
+@import 'base/icons';
+
 // 3. Vendor / Bootstrap Core
 @import "bootstrap/scss/variables"; // Standard Bootstrap variables (will use our overrides)
 @import "bootstrap/scss/mixins";
@@ -25,41 +28,39 @@
 
 // 4. Native Bootstrap Overrides (Theming)
 // These files extend standard Bootstrap classes (.btn, .card, etc.)
-@import 'overrides/buttons';
-@import 'overrides/card';
-@import 'overrides/carousel';
-@import 'overrides/cta';
-@import 'overrides/hero';
-@import 'overrides/tabs';
-@import 'overrides/tables';
-@import 'overrides/forms';
-@import 'overrides/accordion';
-@import 'overrides/alerts';
-@import 'overrides/modals';
-@import 'overrides/dropdowns';
-@import 'overrides/pagination';
-@import 'overrides/list-group';
-@import 'overrides/offcanvas';
+@import 'overrides/components/buttons';
+@import 'overrides/components/card';
+@import 'overrides/components/carousel';
+@import 'overrides/components/cta';
+@import 'overrides/components/hero';
+@import 'overrides/components/tabs';
+@import 'overrides/components/tables';
+@import 'overrides/forms/forms';
+@import 'overrides/components/accordion';
+@import 'overrides/components/alerts';
+@import 'overrides/components/modals';
+@import 'overrides/components/dropdowns';
+@import 'overrides/navigation/pagination';
+@import 'overrides/components/list-group';
+@import 'overrides/layout/offcanvas';
 
 // 5. Custom Components ("ez-" Prefixed - Legacy/Specific)
-@import 'components/site-icons';
-// 5. Custom Components ("ez-" Prefixed - Legacy/Specific)
-
+// Moved to base
 // 6. Navigation System
 @import 'components/navigation/site-nav-main';
 @import 'components/navigation/site-nav-slim';
 @import 'components/navigation/site-nav-tree';
 @import 'components/navigation/site-nav-section';
 @import 'components/navigation/site-nav-pagination';
-@import 'overrides/breadcrumbs';
+@import 'overrides/navigation/breadcrumbs';
 
 // 6. Custom/Extended Components (New)
-@import 'overrides/timeline';
+@import 'overrides/components/timeline';
 
 // 7. Feedback & Utilities Overrides
-@import 'overrides/progress';
-@import 'overrides/toasts';
-@import 'overrides/popovers';
+@import 'overrides/components/progress';
+@import 'overrides/components/toasts';
+@import 'overrides/components/popovers';
 
 // 7. Layouts
 @import 'layouts/header';

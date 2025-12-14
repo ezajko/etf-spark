@@ -1,0 +1,52 @@
+---
+// ETF UNSA - Section Layout Example (Right Sidebar)
+// Author: Ernedin Zajko <ezajko@root.ba>
+
+import SidebarRight from '../../layouts/SidebarRight.astro';
+import SlotPlaceholder from '../../components/debug/SlotPlaceholder.astro';
+import SectionLinksMenu from '../../components/layout/SectionLinksMenu.astro';
+
+const sectionLinks = [
+  { label: 'Pregled programa', link: '#section-overview' },
+  { label: 'Nastavni plan', link: '#section-curriculum' },
+  { label: 'Upis', link: '#section-admission' },
+];
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Layouts', href: '#' },
+  { label: 'Section Right Sidebar', href: '#', active: true },
+];
+---
+
+<SidebarRight
+  title="Primjer Generičke Stranice (Desno) | ETF UNSA"
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle="Softversko inženjerstvo"
+  bannerSubtitle="Master studijski program"
+  bannerBgClass="bg-primary"
+  bannerSize="xs"
+>
+  <!-- Banner Slot -->
+  <SlotPlaceholder slot="banner" name="banner" minHeight="15rem" />
+
+  <!-- Content Before Slot -->
+  <SlotPlaceholder slot="content-before" name="content-before" minHeight="80px" color="info" />
+
+  <!-- Main Content -->
+  <SlotPlaceholder name="main content" minHeight="600px" />
+
+  <!-- Sidebar Content with Widgets -->
+  <Fragment slot="sidebar">
+    <SectionLinksMenu
+      title="Sadržaj stranice"
+      icon="bi-list-ul"
+      links={sectionLinks}
+      class="mb-4"
+    />
+    <SlotPlaceholder name="widget slots (empty)" minHeight="200px" color="warning" />
+  </Fragment>
+
+  <!-- Content After Slot -->
+  <SlotPlaceholder slot="content-after" name="content-after" minHeight="80px" color="info" />
+</SidebarRight>

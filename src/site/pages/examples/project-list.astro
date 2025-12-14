@@ -1,0 +1,92 @@
+---
+// ETF UNSA - Project List Example
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import ListGrid from '../../layouts/list/ListGrid.astro';
+import ContentCard from '../../components/common/ContentCard.astro';
+import CardGroup from '../../components/common/CardGroup.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Istraživanje', href: '#' },
+  { label: 'Projekti', href: '#', active: true },
+];
+
+const projects = [
+  {
+    title: 'Lorem Ipsum Project 1',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    category: 'International',
+    image: '/images/project-smart-city.png',
+    status: 'U toku',
+    date: '2023 - 2025',
+  },
+  {
+    title: 'Lorem Ipsum Project 2',
+    description:
+      'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
+    category: 'Research',
+    image: '/images/project-smart-city.png',
+    status: 'Završen',
+    date: '2022 - 2024',
+  },
+  {
+    title: 'Lorem Ipsum Project 3',
+    description:
+      'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
+    category: 'Development',
+    image: '/images/project-smart-city.png',
+    status: 'U toku',
+    date: '2023 - 2024',
+  },
+];
+
+const base = import.meta.env.BASE_URL;
+---
+
+<ListGrid
+  title="Projekti | ETF UNSA"
+  breadcrumbItems={breadcrumbItems}
+  listTitle="Projekti"
+  listDescription="Pregled naučno-istraživačkih i razvojnih projekata."
+>
+  <div class="d-flex gap-2" slot="actions">
+    <select class="form-select">
+      <option>Svi programi</option>
+      <option>Horizon 2020</option>
+      <option>Erasmus+</option>
+    </select>
+    <select class="form-select">
+      <option>Svi statusi</option>
+      <option>U toku</option>
+      <option>Završeni</option>
+    </select>
+  </div>
+
+  <CardGroup cols={2}>
+    {
+      projects.map((project) => (
+        <div class="col">
+          <ContentCard
+            title={project.title}
+            href={base + '/examples/project-single'}
+            image={project.image}
+            category={project.category}
+            excerpt={project.description}
+            status={project.status}
+            statusColor={
+              project.status === 'U toku'
+                ? 'success'
+                : project.status === 'Završen'
+                  ? 'secondary'
+                  : 'warning'
+            }
+            layout="horizontal"
+          />
+        </div>
+      ))
+    }
+  </CardGroup>
+</ListGrid>

@@ -1,0 +1,93 @@
+---
+// ETF UNSA - Hero Examples
+import NoSidebar from '../../../layouts/NoSidebar.astro';
+import ExampleSnippet from '../../../components/common/ExampleSnippet.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Primjeri', href: '#' },
+  { label: 'Containers & Interactive', href: '#' },
+  { label: 'Hero', href: '#', active: true },
+];
+
+const standardHeroCode = `<section class="hero hero-md" style="background-image: url('https://placehold.co/1920x1080/EEE/31343C');">
+  <div class="hero-overlay"></div>
+  <div class="hero-content container">
+    <h1 class="hero-title">Naslov Hero Sekcije</h1>
+    <p class="hero-subtitle">Podnaslov ili kratki opis koji ide ispod glavnog naslova.</p>
+    <div class="hero-cta">
+      <a href="#" class="btn btn-primary btn-lg">Akcija 1</a>
+      <a href="#" class="btn btn-outline-light btn-lg">Akcija 2</a>
+    </div>
+  </div>
+</section>`;
+
+const fullHeroCode = `<section class="hero hero-full" style="background-image: url('https://placehold.co/1920x1080/EEE/31343C');">
+  <div class="hero-overlay"></div>
+  <div class="hero-content container">
+    <h1 class="hero-title display-1">Full Screen Hero</h1>
+    <p class="hero-subtitle">Sekcija koja zauzima cijelu visinu ekrana.</p>
+  </div>
+</section>`;
+
+const carouselHeroCode = `<div id="heroCarousel" class="carousel slide carousel-fade hero-carousel" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active hero hero-md" style="background-image: url('https://placehold.co/1920x1080/EEE/31343C');">
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <h1 class="hero-title">Slajd 1</h1>
+        <p class="hero-subtitle">Opis prvog slajda.</p>
+      </div>
+    </div>
+    <div class="carousel-item hero hero-md" style="background-image: url('https://placehold.co/1920x1080/AAA/31343C');">
+      <div class="hero-overlay"></div>
+      <div class="hero-content container">
+        <h1 class="hero-title">Slajd 2</h1>
+        <p class="hero-subtitle">Opis drugog slajda.</p>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>`;
+---
+
+<NoSidebar
+  title="Hero"
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle="Hero Sections"
+  bannerSubtitle="Velike uvodne sekcije (Hero)"
+  bannerSize="xs"
+>
+  <div class="row">
+    <div class="col-12">
+      <ExampleSnippet
+        title="Standard Hero"
+        description="Standardna hero sekcija sa naslovom, podnaslovom i pozivima na akciju."
+        code={standardHeroCode}
+      />
+
+      <ExampleSnippet
+        title="Full Screen Hero"
+        description="Hero sekcija koja zauzima cijelu visinu ekrana."
+        code={fullHeroCode}
+      />
+
+      <ExampleSnippet
+        title="Carousel Hero"
+        description="Hero sekcija sa karuselom za prikaz više slajdova."
+        code={carouselHeroCode}
+      />
+    </div>
+  </div>
+</NoSidebar>

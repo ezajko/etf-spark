@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
     site: 'https://ezajko.github.io',
     base: '/etf-spark',
+    srcDir: './src/site',
     integrations: [sitemap()],
     vite: {
         css: {

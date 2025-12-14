@@ -1,0 +1,154 @@
+---
+// ETF UNSA - Forms Example
+import NoSidebar from '../../../layouts/NoSidebar.astro';
+import ExampleSnippet from '../../../components/common/ExampleSnippet.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Primjeri', href: '#' },
+  { label: 'Containers & Interactive', href: '#' },
+  { label: 'Forme', href: '#', active: true },
+];
+
+const basicFormCode = `<form>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email adresa</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">Nikada nećemo dijeliti vaš email sa drugima.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Šifra</label>
+    <input type="password" class="form-control" id="exampleInputPassword1">
+  </div>
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Zapamti me</label>
+  </div>
+  <button type="submit" class="btn btn-primary">Pošalji</button>
+</form>`;
+
+const sizingFormCode = `<div class="mb-3">
+  <input class="form-control form-control-lg" type="text" placeholder=".form-control-lg" aria-label=".form-control-lg example">
+</div>
+<div class="mb-3">
+  <input class="form-control" type="text" placeholder="Default input" aria-label="default input example">
+</div>
+<div class="mb-3">
+  <input class="form-control form-control-sm" type="text" placeholder=".form-control-sm" aria-label=".form-control-sm example">
+</div>`;
+
+const selectFormCode = `<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+  <option selected>Otvori ovaj select meni (veliki)</option>
+  <option value="1">Jedan</option>
+  <option value="2">Dva</option>
+  <option value="3">Tri</option>
+</select>
+
+<select class="form-select mb-3" aria-label="Default select example">
+  <option selected>Otvori ovaj select meni</option>
+  <option value="1">Jedan</option>
+  <option value="2">Dva</option>
+  <option value="3">Tri</option>
+</select>`;
+
+const checksRadiosCode = `<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    Default checkbox
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+  <label class="form-check-label" for="flexCheckChecked">
+    Checked checkbox
+  </label>
+</div>
+
+<div class="form-check mt-3">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+    Default radio
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+  <label class="form-check-label" for="flexRadioDefault2">
+    Default checked radio
+  </label>
+</div>`;
+
+const inlineFormCode = `<form class="row row-cols-lg-auto g-3 align-items-center">
+  <div class="col-12">
+    <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
+    <div class="input-group">
+      <div class="input-group-text">@</div>
+      <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Username">
+    </div>
+  </div>
+
+  <div class="col-12">
+    <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+    <select class="form-select" id="inlineFormSelectPref">
+      <option selected>Choose...</option>
+      <option value="1">One</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+  </div>
+
+  <div class="col-12">
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" id="inlineFormCheck">
+      <label class="form-check-label" for="inlineFormCheck">
+        Remember me
+      </label>
+    </div>
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>`;
+---
+
+<NoSidebar
+  title="Forme (Forms)"
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle="Forme"
+  bannerSubtitle="Primjeri formi, input polja, checkbox-ova i dugmadi"
+  bannerSize="xs"
+>
+  <div class="row">
+    <div class="col-12">
+      <ExampleSnippet
+        title="Osnovna Forma"
+        description="Standardna forma sa labelama i help tekstom."
+        code={basicFormCode}
+      />
+
+      <ExampleSnippet
+        title="Veličine Inputa"
+        description="Različite veličine (<code>.form-control-lg</code>, <code>.form-control-sm</code>)."
+        code={sizingFormCode}
+      />
+
+      <ExampleSnippet
+        title="Select Meniji"
+        description="Stilizirani select elementi."
+        code={selectFormCode}
+      />
+
+      <ExampleSnippet
+        title="Checkbox i Radio Dugmad"
+        description="Primjeri za odabir više opcija ili jedne opcije."
+        code={checksRadiosCode}
+      />
+
+      <ExampleSnippet
+        title="Inline Forma"
+        description="Forma u jednom redu koristeći grid klase."
+        code={inlineFormCode}
+      />
+    </div>
+  </div>
+</NoSidebar>

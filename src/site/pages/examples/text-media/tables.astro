@@ -1,0 +1,150 @@
+---
+// ETF UNSA - Tables Example
+import NoSidebar from '../../../layouts/NoSidebar.astro';
+import ExampleSnippet from '../../../components/common/ExampleSnippet.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Primjeri', href: '#' },
+  { label: 'Tekst & Mediji', href: '#' },
+  { label: 'Tabele', href: '#', active: true },
+];
+
+const stripedCode = `<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Ime</th>
+      <th scope="col">Prezime</th>
+      <th scope="col">Korisničko ime</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+  </tbody>
+</table>`;
+
+const borderedCode = `<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+  </tbody>
+</table>`;
+
+const hoverCode = `<table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+  </tbody>
+</table>`;
+
+const responsiveCode = `<div class="table-responsive">
+  <table class="table text-nowrap">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Header 1</th>
+        <th scope="col">Header 2</th>
+        <th scope="col">Header 3</th>
+        <th scope="col">Header 4</th>
+        <th scope="col">Header 5</th>
+        <th scope="col">Header 6</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Content A</td>
+        <td>Content B</td>
+        <td>Content C</td>
+        <td>Content D</td>
+        <td>Content E</td>
+        <td>Content F</td>
+      </tr>
+    </tbody>
+  </table>
+</div>`;
+---
+
+<NoSidebar
+  title="Tabele"
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle="Tabele"
+  bannerSubtitle="Primjeri stiliziranja tabela: striped, bordered, hover i responsive"
+  bannerSize="xs"
+>
+  <div class="row">
+    <div class="col-12">
+      <ExampleSnippet
+        title="Striped Rows"
+        description="Dodajte .table-striped za naizmjeničnu boju pozadine redova."
+        code={stripedCode}
+      />
+
+      <ExampleSnippet
+        title="Bordered Table"
+        description="Dodajte .table-bordered za obrube na svim stranama ćelija."
+        code={borderedCode}
+      />
+
+      <ExampleSnippet
+        title="Hoverable Rows"
+        description="Dodajte .table-hover za efekt na prelasku mišem preko redova."
+        code={hoverCode}
+      />
+
+      <ExampleSnippet
+        title="Responsive Table"
+        description="Wrapper .table-responsive omogućava horizontalni skrol na manjim ekranima."
+        code={responsiveCode}
+      />
+    </div>
+  </div>
+</NoSidebar>

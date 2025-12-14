@@ -1,0 +1,249 @@
+---
+// ETF UNSA - Department Page Example (Organizational Unit)
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import SidebarLeft from '../../layouts/SidebarLeft.astro';
+import InfoWidget from '../../components/widgets/InfoWidget.astro';
+import SectionHeader from '../../components/layout/SectionHeader.astro';
+import PageHeader from '../../components/layout/PageHeader.astro';
+import Banner from '../../components/Banner.astro';
+import ContentCard from '../../components/common/ContentCard.astro';
+import CardGroup from '../../components/common/CardGroup.astro';
+import ContactWidget from '../../components/widgets/ContactWidget.astro';
+import DocumentWidget from '../../components/widgets/DocumentWidget.astro';
+import SimpleListItem from '../../components/lists/SimpleListItem.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Odsjeci', href: '#' },
+  { label: 'Odsjek za računarstvo i informatiku', href: '#', active: true },
+];
+
+const base = import.meta.env.BASE_URL;
+---
+
+<SidebarLeft
+  title="Odsjek za računarstvo i informatiku | ETF UNSA"
+  breadcrumbItems={breadcrumbItems}
+>
+  <!-- Banner Slot -->
+  <!-- Banner Slot -->
+  <Banner
+    slot="banner"
+    title="Department Name"
+    subtitle="Organizational Unit of the Faculty"
+    size="xs"
+    image="/images/campus.jpg"
+  />
+
+  <!-- Sidebar Content -->
+  <Fragment slot="sidebar">
+    <InfoWidget title="Quick Links" icon="bi-link-45deg" class="mb-4">
+      <SimpleListItem label="Staff" link="/examples/staff-list" />
+      <SimpleListItem label="Study Programs" link="examples/study-program-list" />
+      <SimpleListItem label="Courses" link="/examples/course-list" />
+      <SimpleListItem label="Laboratories" link="/examples/lab-list" />
+      <SimpleListItem label="Research Groups" link="/examples/lab-list" />
+      <SimpleListItem label="Projects" link="/examples/project-list" />
+      <SimpleListItem label="News" link="/examples/news-list" />
+      <SimpleListItem label="Events" link="/examples/event-list" />
+    </InfoWidget>
+
+    <DocumentWidget
+      title="Dokumenti Odsjeka"
+      icon="bi-file-earmark-text"
+      documents={[
+        { title: 'Godišnji izvještaj 2023', size: '2.4 MB', format: 'PDF', link: '#' },
+        { title: 'Plan rada 2024', size: '1.1 MB', format: 'PDF', link: '#' },
+        { title: 'Pravilnik o radu', size: '500 KB', format: 'PDF', link: '#' },
+      ]}
+    />
+  </Fragment>
+
+  <!-- Main Content -->
+  <div class="mb-5">
+    <SectionHeader title="About the Department" />
+    <p class="lead">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+      labore et dolore magna aliqua.
+    </p>
+    <p>
+      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+      dolore eu fugiat nulla pariatur.
+    </p>
+    <p>
+      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
+      id est laborum.
+    </p>
+  </div>
+
+  <div class="row mb-5">
+    <div class="col-md-6">
+      <ContactWidget
+        title="Rukovodstvo Odsjeka"
+        icon="bi-person-badge"
+        class="mb-4"
+        contacts={[
+          {
+            name: 'Dr. Šef Odsjeka',
+            role: 'Šef Odsjeka',
+            email: 'sef.ri@etf.unsa.ba',
+            phone: '+387 33 123 456',
+          },
+        ]}
+      />
+    </div>
+    <div class="col-md-6">
+      <ContactWidget
+        title="Sekretarijat"
+        icon="bi-building"
+        class="mb-4"
+        contacts={[
+          {
+            name: 'Ime Prezime',
+            role: 'Sekretar Odsjeka',
+            email: 'sekretar.ri@etf.unsa.ba',
+            phone: '+387 33 123 457',
+          },
+        ]}
+      />
+    </div>
+  </div>
+
+  <div class="mb-5">
+    <SectionHeader title="Study Programs" level="h3" />
+    <CardGroup cols={3}>
+      <div class="col">
+        <ContentCard
+          title="Study Program 1"
+          href={base + '/examples/study-program'}
+          excerpt="First cycle of studies (Bachelor), 3 years, 180 ECTS."
+          layout="vertical"
+        />
+      </div>
+      <div class="col">
+        <ContentCard
+          title="Study Program 2"
+          href={base + '/examples/study-program'}
+          excerpt="Second cycle of studies (Master), 2 years, 120 ECTS."
+          layout="vertical"
+        />
+      </div>
+      <div class="col">
+        <ContentCard
+          title="Study Program 3"
+          href={base + '/examples/study-program'}
+          excerpt="Third cycle of studies (PhD), 3 years, 180 ECTS."
+          layout="vertical"
+        />
+      </div>
+    </CardGroup>
+  </div>
+
+  <div class="mb-5">
+    <SectionHeader title="Laboratories" level="h3" />
+    <CardGroup cols={2}>
+      <div class="col">
+        <ContentCard
+          title="Laboratory 1"
+          href="#"
+          excerpt="Research in machine learning, natural language processing and computer vision."
+          layout="vertical"
+        />
+      </div>
+      <div class="col">
+        <ContentCard
+          title="Laboratory 2"
+          href="#"
+          excerpt="Focus on software development methodologies, software quality and agile processes."
+          layout="vertical"
+        />
+      </div>
+      <div class="col">
+        <ContentCard
+          title="Laboratory 3"
+          href="#"
+          excerpt="Development of advanced visualization techniques and 3D modeling."
+          layout="vertical"
+        />
+      </div>
+      <div class="col">
+        <ContentCard
+          title="Laboratory 4"
+          href="#"
+          excerpt="Research of database management systems and Big Data technologies."
+          layout="vertical"
+        />
+      </div>
+    </CardGroup>
+  </div>
+
+  <div class="mb-5">
+    <SectionHeader title="Research Groups" level="h3" />
+    <CardGroup cols={3}>
+      <div class="col">
+        <ContentCard
+          title="Research Group 1"
+          href="#"
+          excerpt="Advanced data analytics and predictive modeling."
+          layout="vertical"
+        />
+      </div>
+      <div class="col">
+        <ContentCard
+          title="Research Group 2"
+          href="#"
+          excerpt="Security of network systems and cryptography."
+          layout="vertical"
+        />
+      </div>
+      <div class="col">
+        <ContentCard
+          title="Research Group 3"
+          href="#"
+          excerpt="Internet of Things, smart cities and sensor networks."
+          layout="vertical"
+        />
+      </div>
+    </CardGroup>
+  </div>
+  <div class="mb-5">
+    <SectionHeader title="Projects" level="h3" />
+    <CardGroup cols={2}>
+      <div class="col">
+        <ContentCard
+          title="Project 1"
+          href={base + '/examples/project-single'}
+          excerpt="Application of machine learning methods in diagnostics and personalized medicine."
+          layout="vertical"
+        />
+      </div>
+      <div class="col">
+        <ContentCard
+          title="Project 2"
+          href={base + '/examples/project-single'}
+          excerpt="Traffic optimization in urban areas using IoT sensors."
+          layout="vertical"
+        />
+      </div>
+      <div class="col">
+        <ContentCard
+          title="Project 3"
+          href={base + '/examples/project-single'}
+          excerpt="Management of electricity distribution from renewable sources."
+          layout="vertical"
+        />
+      </div>
+      <div class="col">
+        <ContentCard
+          title="Project 4"
+          href={base + '/examples/project-single'}
+          excerpt="Development of advanced systems for detection and prevention of cyber attacks."
+          layout="vertical"
+        />
+      </div>
+    </CardGroup>
+  </div>
+</SidebarLeft>

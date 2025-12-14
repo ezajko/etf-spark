@@ -1,0 +1,431 @@
+---
+// ETF UNSA - Study Program Example (Refined)
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import SidebarRight from '../../layouts/SidebarRight.astro';
+import InfoWidget from '../../components/widgets/InfoWidget.astro';
+import ContactWidget from '../../components/widgets/ContactWidget.astro';
+import DocumentWidget from '../../components/widgets/DocumentWidget.astro';
+import KeyValueListItem from '../../components/lists/KeyValueListItem.astro';
+import SectionHeader from '../../components/layout/SectionHeader.astro';
+import PageHeader from '../../components/layout/PageHeader.astro';
+import Curriculum from '../../components/features/Curriculum.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Studij', href: '#' },
+  { label: 'Prvi ciklus', href: '#' },
+  { label: 'Računarstvo i informatika', href: '#', active: true },
+];
+---
+
+<SidebarRight title="Računarstvo i informatika | ETF UNSA" breadcrumbItems={breadcrumbItems}>
+  <!-- Banner Slot -->
+  <PageHeader
+    slot="banner"
+    title="Study Program Name"
+    subtitle="Comprehensive education for digital future."
+    badge="Bachelor Program"
+    badgeClass="text-primary"
+    bgClass="bg-primary"
+    height="xs"
+  >
+    <div slot="actions">
+      <a href="#admission" class="btn btn-light text-primary fw-bold px-4 py-2">Apliciraj odmah</a>
+    </div>
+  </PageHeader>
+
+  <!-- Sidebar Content -->
+  <Fragment slot="sidebar">
+    <!-- Key Facts Widget -->
+    <InfoWidget title="Ukratko o programu" icon="bi-info-circle" class="mb-4">
+      <KeyValueListItem
+        label="Zvanje"
+        value="Bachelor inženjer elektrotehnike"
+        icon="bi-award"
+        class="list-group-item bg-transparent border-0"
+      />
+      <KeyValueListItem
+        label="Trajanje"
+        value="3 Godine (6 semestara)"
+        icon="bi-clock"
+        class="list-group-item bg-transparent border-0"
+      />
+      <KeyValueListItem
+        label="ECTS"
+        value="180"
+        icon="bi-journal-bookmark"
+        class="list-group-item bg-transparent border-0"
+      />
+      <KeyValueListItem
+        label="Jezik"
+        value="Bosanski / Engleski"
+        icon="bi-translate"
+        class="list-group-item bg-transparent border-0"
+      />
+      <KeyValueListItem
+        label="Početak"
+        value="Oktobar (Zimski semestar)"
+        icon="bi-calendar-event"
+        class="list-group-item bg-transparent border-0"
+      />
+    </InfoWidget>
+
+    <!-- Contact Widget -->
+    <ContactWidget
+      title="Kontakt i savjetovanje"
+      class="mb-4"
+      contacts={[
+        {
+          name: 'Studentska služba',
+          role: 'Za pitanja o upisu i administraciji',
+          email: 'studentska.sluzba@etf.unsa.ba',
+          phone: '+387 33 250 700',
+          avatarIcon: 'bi-person',
+        },
+        {
+          name: 'Dr. Šef Odsjeka',
+          role: 'Akademski savjetnik',
+          email: 'sef.ri@etf.unsa.ba',
+          avatarIcon: 'bi-person-badge',
+        },
+      ]}
+    />
+
+    <!-- Documents Widget -->
+    <DocumentWidget
+      title="Dokumenti"
+      documents={[
+        { title: 'Nastavni plan i program', size: '2.5 MB', format: 'PDF', link: '#' },
+        { title: 'Pravilnik o studiranju', size: '1.2 MB', format: 'PDF', link: '#' },
+        { title: 'Informator za brucoše', size: '5.0 MB', format: 'PDF', link: '#' },
+      ]}
+    />
+  </Fragment>
+
+  <!-- Main Content -->
+  <!-- Overview -->
+  <div class="mb-5">
+    <SectionHeader title="Pregled programa" />
+    <p class="lead">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+      labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+      laboris nisi ut aliquip ex ea commodo consequat.
+    </p>
+    <p>
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+      pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+      mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+      accusantium doloremque laudantium.
+    </p>
+  </div>
+
+  <!-- Admission Requirements -->
+  <div id="admission" class="mb-5">
+    <SectionHeader title="Upis i uslovi" level="h3" />
+    <div class="card border-0 bg-light p-4">
+      <div class="d-flex mb-3">
+        <div class="flex-shrink-0">
+          <i class="bi bi-check-circle-fill text-success fs-4"></i>
+        </div>
+        <div class="flex-grow-1 ms-3">
+          <h5 class="mb-1">High School Education</h5>
+          <p class="mb-0 small">
+            Completed four-year high school with excellent or very good success.
+          </p>
+        </div>
+      </div>
+      <div class="d-flex mb-3">
+        <div class="flex-shrink-0">
+          <i class="bi bi-check-circle-fill text-success fs-4"></i>
+        </div>
+        <div class="flex-grow-1 ms-3">
+          <h5 class="mb-1">Entrance Exam</h5>
+          <p class="mb-0 small">Passed entrance exam in mathematics (min. 20 points).</p>
+        </div>
+      </div>
+      <div class="d-flex">
+        <div class="flex-shrink-0">
+          <i class="bi bi-check-circle-fill text-success fs-4"></i>
+        </div>
+        <div class="flex-grow-1 ms-3">
+          <h5 class="mb-1">Ranking List</h5>
+          <p class="mb-0 small">
+            Placement within the approved enrollment quota (Regular / Self-financing).
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="mt-3">
+      <a href="#" class="text-decoration-none fw-bold"
+        >Pogledajte detaljan vodič za upis <i class="bi bi-arrow-right"></i></a
+      >
+    </div>
+  </div>
+
+  <!-- Curriculum -->
+  <div class="mb-5">
+    <SectionHeader title="Struktura studija" level="h3" />
+    <p class="mb-4">
+      The study lasts 3 years (6 semesters) and carries a total of 180 ECTS credits. Teaching takes
+      place through lectures, auditory exercises, and laboratory work.
+    </p>
+
+    <Curriculum
+      years={[
+        {
+          id: '1',
+          label: '1. Godina',
+          semesters: [
+            {
+              id: '1',
+              label: '1. Semestar (Winter)',
+              courses: [
+                {
+                  name: 'Course Name 1',
+                  type: 'mandatory',
+                  hours: { p: 3, a: 2, l: 0, s: 0 },
+                  individualWork: 100,
+                  ects: 7.0,
+                },
+                {
+                  name: 'Course Name 2',
+                  type: 'mandatory',
+                  hours: { p: 3, a: 1, l: 2, s: 0 },
+                  individualWork: 90,
+                  ects: 6.0,
+                },
+                {
+                  name: 'Course Name 3',
+                  type: 'mandatory',
+                  hours: { p: 3, a: 1, l: 1, s: 0 },
+                  individualWork: 90,
+                  ects: 6.0,
+                },
+                {
+                  name: 'Course Name 4',
+                  type: 'mandatory',
+                  hours: { p: 2, a: 2, l: 0, s: 0 },
+                  individualWork: 75,
+                  ects: 5.0,
+                },
+                {
+                  name: 'Course Name 5',
+                  type: 'mandatory',
+                  hours: { p: 2, a: 0, l: 3, s: 0 },
+                  individualWork: 90,
+                  ects: 6.0,
+                },
+              ],
+            },
+            {
+              id: '2',
+              label: '2. Semestar (Summer)',
+              courses: [
+                {
+                  name: 'Course Name 6',
+                  type: 'mandatory',
+                  hours: { p: 3, a: 2, l: 0, s: 0 },
+                  individualWork: 100,
+                  ects: 7.0,
+                },
+                {
+                  name: 'Course Name 7',
+                  type: 'mandatory',
+                  hours: { p: 3, a: 2, l: 1, s: 0 },
+                  individualWork: 90,
+                  ects: 6.0,
+                },
+                {
+                  name: 'Algoritmi i strukture podataka',
+                  type: 'mandatory',
+                  hours: { p: 3, a: 1, l: 2, s: 0 },
+                  individualWork: 90,
+                  ects: 6.0,
+                },
+                {
+                  name: 'Course Name 9',
+                  type: 'mandatory',
+                  hours: { p: 2, a: 0, l: 3, s: 0 },
+                  individualWork: 90,
+                  ects: 6.0,
+                },
+                {
+                  name: 'Course Name 10',
+                  type: 'mandatory',
+                  hours: { p: 2, a: 1, l: 1, s: 0 },
+                  individualWork: 75,
+                  ects: 5.0,
+                },
+              ],
+            },
+          ],
+        },
+        {
+          id: '2',
+          label: '2. Godina',
+          semesters: [
+            {
+              id: '3',
+              label: '3. Semestar',
+              courses: [
+                {
+                  name: 'Course Name 11',
+                  type: 'mandatory',
+                  hours: { p: 3, a: 2, l: 0, s: 0 },
+                  individualWork: 75,
+                  ects: 5.0,
+                },
+                {
+                  name: 'Course Name 12',
+                  type: 'mandatory',
+                  hours: { p: 3, a: 1, l: 2, s: 0 },
+                  individualWork: 90,
+                  ects: 6.0,
+                },
+                {
+                  name: 'Course Name 13',
+                  type: 'mandatory',
+                  hours: { p: 3, a: 1, l: 2, s: 0 },
+                  individualWork: 90,
+                  ects: 6.0,
+                },
+                {
+                  name: 'Course Name 14',
+                  type: 'mandatory',
+                  hours: { p: 2, a: 0, l: 2, s: 0 },
+                  individualWork: 75,
+                  ects: 5.0,
+                },
+                {
+                  name: 'Elective Course 1',
+                  type: 'elective',
+                  electiveGroup: 'Group A: Advanced Technologies',
+                  hours: { p: 2, a: 1, l: 1, s: 0 },
+                  individualWork: 75,
+                  ects: 5.0,
+                },
+                {
+                  name: 'Elective Course 2',
+                  type: 'elective',
+                  electiveGroup: 'Group B: Social Sciences',
+                  hours: { p: 2, a: 0, l: 0, s: 0 },
+                  individualWork: 45,
+                  ects: 3.0,
+                },
+              ],
+              electiveGroups: [
+                {
+                  id: 'grp-a',
+                  label: 'Group A: Advanced Technologies (Select 1)',
+                  courses: [
+                    {
+                      name: 'Advanced Course 1',
+                      type: 'elective',
+                      hours: { p: 2, a: 1, l: 1, s: 0 },
+                      individualWork: 75,
+                      ects: 5.0,
+                    },
+                    {
+                      name: 'Advanced Course 2',
+                      type: 'elective',
+                      hours: { p: 2, a: 1, l: 1, s: 0 },
+                      individualWork: 75,
+                      ects: 5.0,
+                    },
+                    {
+                      name: 'Advanced Course 3',
+                      type: 'elective',
+                      hours: { p: 2, a: 1, l: 1, s: 0 },
+                      individualWork: 75,
+                      ects: 5.0,
+                    },
+                  ],
+                },
+                {
+                  id: 'grp-b',
+                  label: 'Group B: Social Sciences (Select 1)',
+                  courses: [
+                    {
+                      name: 'Social Science Course 1',
+                      type: 'elective',
+                      hours: { p: 2, a: 0, l: 0, s: 0 },
+                      individualWork: 45,
+                      ects: 3.0,
+                    },
+                    {
+                      name: 'Social Science Course 2',
+                      type: 'elective',
+                      hours: { p: 2, a: 0, l: 0, s: 0 },
+                      individualWork: 45,
+                      ects: 3.0,
+                    },
+                  ],
+                },
+              ],
+            },
+            {
+              id: '4',
+              label: '4. Semestar',
+              courses: [],
+            },
+          ],
+        },
+        {
+          id: '3',
+          label: '3. Godina',
+          semesters: [
+            {
+              id: '5',
+              label: '5. Semestar',
+              courses: [],
+            },
+            {
+              id: '6',
+              label: '6. Semestar',
+              courses: [],
+            },
+          ],
+        },
+      ]}
+    />
+  </div>
+
+  <!-- Career Prospects -->
+  <div class="mb-5">
+    <SectionHeader title="Karijerne mogućnosti" level="h3" />
+    <p>
+      Diplomanti ovog studijskog programa su visoko traženi na tržištu rada. Moguće karijere
+      uključuju:
+    </p>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item bg-transparent">
+            <i class="bi bi-check2 text-primary me-2"></i> Software Engineer
+          </li>
+          <li class="list-group-item bg-transparent">
+            <i class="bi bi-check2 text-primary me-2"></i> Web Developer (Frontend/Backend)
+          </li>
+          <li class="list-group-item bg-transparent">
+            <i class="bi bi-check2 text-primary me-2"></i> Mobile App Developer
+          </li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item bg-transparent">
+            <i class="bi bi-check2 text-primary me-2"></i> Data Analyst / Scientist
+          </li>
+          <li class="list-group-item bg-transparent">
+            <i class="bi bi-check2 text-primary me-2"></i> System Architect
+          </li>
+          <li class="list-group-item bg-transparent">
+            <i class="bi bi-check2 text-primary me-2"></i> IT Consultant
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</SidebarRight>

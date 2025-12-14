@@ -1,0 +1,77 @@
+---
+// ETF UNSA - Study Program List Example
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import NoSidebar from '../../layouts/NoSidebar.astro';
+import ProgramCard from '../../components/features/ProgramCard.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Odsjeci', href: '#' },
+  { label: 'Računarstvo i informatika', href: '/examples/department' },
+  { label: 'Studijski programi', href: '#', active: true },
+];
+
+const programs = [
+  {
+    name: 'Study Program 1',
+    cycle: 'I Cycle',
+    title: 'Bachelor of Engineering',
+    duration: '3 Years',
+    ects: '180 ECTS',
+    type: 'Bachelor',
+    link: '#',
+  },
+  {
+    name: 'Study Program 2',
+    cycle: 'I Cycle',
+    title: 'Bachelor of Engineering',
+    duration: '3 Years',
+    ects: '180 ECTS',
+    type: 'Bachelor',
+    link: '#',
+  },
+  {
+    name: 'Study Program 3',
+    cycle: 'I Cycle',
+    title: 'Bachelor of Engineering',
+    duration: '3 Years',
+    ects: '180 ECTS',
+    type: 'Bachelor',
+    link: '#',
+  },
+  {
+    name: 'Study Program 4',
+    cycle: 'I Cycle',
+    title: 'Bachelor of Engineering',
+    duration: '3 Years',
+    ects: '180 ECTS',
+    type: 'Bachelor',
+    link: '#',
+  },
+];
+---
+
+<NoSidebar title="Studijski programi | ETF UNSA" breadcrumbItems={breadcrumbItems} bannerSize="xs">
+  <h1 class="mb-4">Studijski programi</h1>
+  <p class="lead mb-5">
+    Odsjek nudi programe na sva tri ciklusa studija, usklađene sa Bolonjskim procesom i potrebama
+    tržišta rada.
+  </p>
+
+  <div class="d-flex flex-column gap-4">
+    {
+      programs.map((prog) => (
+        <ProgramCard
+          name={prog.name}
+          cycle={prog.cycle}
+          title={prog.title}
+          duration={prog.duration}
+          ects={prog.ects}
+          link={prog.link}
+        />
+      ))
+    }
+  </div>
+</NoSidebar>

@@ -1,0 +1,123 @@
+---
+// ETF UNSA - Alerts Example
+import NoSidebar from '../../../layouts/NoSidebar.astro';
+import ExampleSnippet from '../../../components/common/ExampleSnippet.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Primjeri', href: '#' },
+  { label: 'Containers & Interactive', href: '#' },
+  { label: 'Alerts', href: '#', active: true },
+];
+
+const basicAlertsCode = `<div class="alert alert-primary" role="alert">
+  A simple primary alert—check it out!
+</div>
+<div class="alert alert-secondary" role="alert">
+  A simple secondary alert—check it out!
+</div>
+<div class="alert alert-success" role="alert">
+  A simple success alert—check it out!
+</div>
+<div class="alert alert-danger" role="alert">
+  A simple danger alert—check it out!
+</div>
+<div class="alert alert-warning" role="alert">
+  A simple warning alert—check it out!
+</div>
+<div class="alert alert-info" role="alert">
+  A simple info alert—check it out!
+</div>
+<div class="alert alert-light" role="alert">
+  A simple light alert—check it out!
+</div>
+<div class="alert alert-dark" role="alert">
+  A simple dark alert—check it out!
+</div>`;
+
+const linkAlertsCode = `<div class="alert alert-primary" role="alert">
+  A simple primary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+</div>
+<div class="alert alert-secondary" role="alert">
+  A simple secondary alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+</div>`;
+
+const additionalContentCode = `<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Uspješno obavljeno!</h4>
+  <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+  <hr>
+  <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+</div>`;
+
+const dismissingCode = `<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>`;
+
+const iconAlertsCode = `<div class="alert alert-primary d-flex align-items-center" role="alert">
+  <i class="bi bi-info-circle-fill flex-shrink-0 me-2 fs-4"></i>
+  <div>
+    An example alert with an icon
+  </div>
+</div>
+<div class="alert alert-success d-flex align-items-center" role="alert">
+  <i class="bi bi-check-circle-fill flex-shrink-0 me-2 fs-4"></i>
+  <div>
+    An example success alert with an icon
+  </div>
+</div>
+<div class="alert alert-warning d-flex align-items-center" role="alert">
+  <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2 fs-4"></i>
+  <div>
+    An example warning alert with an icon
+  </div>
+</div>
+<div class="alert alert-danger d-flex align-items-center" role="alert">
+  <i class="bi bi-exclamation-octagon-fill flex-shrink-0 me-2 fs-4"></i>
+  <div>
+    An example danger alert with an icon
+  </div>
+</div>`;
+---
+
+<NoSidebar
+  title="Upozorenja (Alerts)"
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle="Upozorenja"
+  bannerSubtitle="Komponente za prikaz povratnih informacija korisniku"
+  bannerSize="xs"
+>
+  <div class="row">
+    <div class="col-12">
+      <ExampleSnippet
+        title="Osnovna Upozorenja"
+        description="Standardna upozorenja za različite kontekste."
+        code={basicAlertsCode}
+      />
+
+      <ExampleSnippet
+        title="Linkovi u Upozorenjima"
+        description="Koristite klasu <code>.alert-link</code> za linkove unutar alerta."
+        code={linkAlertsCode}
+      />
+
+      <ExampleSnippet
+        title="Dodatni Sadržaj"
+        description="Alerti mogu sadržavati naslove, paragrafe i separatore."
+        code={additionalContentCode}
+      />
+
+      <ExampleSnippet
+        title="Upozorenja sa Ikonama"
+        description="Dodajte ikone za bolju vizualnu indikaciju."
+        code={iconAlertsCode}
+      />
+
+      <ExampleSnippet
+        title="Upozorenja koja se mogu zatvoriti"
+        description="Dodajte dugme za zatvaranje alerta."
+        code={dismissingCode}
+      />
+    </div>
+  </div>
+</NoSidebar>

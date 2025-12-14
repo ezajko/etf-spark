@@ -1,0 +1,124 @@
+---
+// ETF UNSA - Standard Lists Example
+import NoSidebar from '../../../layouts/NoSidebar.astro';
+import ExampleSnippet from '../../../components/common/ExampleSnippet.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Primjeri', href: '#' },
+  { label: 'Tekst & Mediji', href: '#' },
+  { label: 'Liste', href: '#', active: true },
+];
+
+const unorderedListCode = `<h6 class="fw-bold mb-3">Neuređena lista (ul)</h6>
+<ul>
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>
+    Integra facilisis nulla
+    <ul>
+      <li>Phasellus iaculis neque</li>
+      <li>Purus sodales ultricies</li>
+    </ul>
+  </li>
+  <li>Faucibus porta lacus fringilla vel</li>
+</ul>`;
+
+const orderedListCode = `<h6 class="fw-bold mb-3">Uređena lista (ol)</h6>
+<ol>
+  <li>Lorem ipsum dolor sit amet</li>
+  <li>Consectetur adipiscing elit</li>
+  <li>
+    Integra facilisis nulla
+    <ol>
+      <li>Phasellus iaculis neque</li>
+      <li>Purus sodales ultricies</li>
+    </ol>
+  </li>
+  <li>Faucibus porta lacus fringilla vel</li>
+</ol>`;
+
+const descriptionListsCode = `<dl class="row mb-0">
+  <dt class="col-sm-3">Description lists</dt>
+  <dd class="col-sm-9">A description list is perfect for defining terms.</dd>
+
+  <dt class="col-sm-3">Term</dt>
+  <dd class="col-sm-9">
+    <p>Definition for the term.</p>
+    <p class="mb-0">And some more placeholder definition text.</p>
+  </dd>
+
+  <dt class="col-sm-3 text-truncate">Truncated term is truncated</dt>
+  <dd class="col-sm-9">
+    Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum
+    massa justo sit amet risus.
+  </dd>
+</dl>`;
+
+const unstyledListCode = `<h6 class="fw-bold mb-3">List Unstyled (list-unstyled)</h6>
+<ul class="list-unstyled">
+  <li>Ovo je lista bez standardnih bulleta.</li>
+  <li>Ali zadržava semantičku vrijednost liste.</li>
+  <li>
+    Nulla volutpat aliquam velit
+    <ul>
+      <li>Nested liste ostaju netaknute bez dodatne klase</li>
+    </ul>
+  </li>
+</ul>`;
+
+const inlineListCode = `<h6 class="fw-bold mb-3">List Inline (list-inline)</h6>
+<ul class="list-inline">
+  <li class="list-inline-item">Lorem ipsum</li>
+  <li class="list-inline-item">Phasellus iaculis</li>
+  <li class="list-inline-item">Nulla volutpat</li>
+</ul>
+<hr />
+<ul class="list-inline mb-0">
+  <li class="list-inline-item"><a href="#">Privacy Policy</a></li>
+  <li class="list-inline-item"><a href="#">Terms of Use</a></li>
+  <li class="list-inline-item"><a href="#">Support</a></li>
+</ul>`;
+---
+
+<NoSidebar
+  title="Liste (Standardne)"
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle="Liste"
+  bannerSubtitle="Standardne HTML liste: neuređene, uređene, bez stila i inline"
+  bannerSize="xs"
+>
+  <div class="row">
+    <div class="col-12">
+      <ExampleSnippet
+        title="Neuređena Lista (ul)"
+        description="Standardna lista sa bulletima."
+        code={unorderedListCode}
+      />
+
+      <ExampleSnippet
+        title="Uređena Lista (ol)"
+        description="Numerisana lista za prikaz redoslijeda."
+        code={orderedListCode}
+      />
+
+      <ExampleSnippet
+        title="Opisne Liste"
+        description="Liste za definiranje pojmova (definition lists)."
+        code={descriptionListsCode}
+      />
+
+      <ExampleSnippet
+        title="List Unstyled"
+        description="Uklanjanje default stila liste."
+        code={unstyledListCode}
+      />
+
+      <ExampleSnippet
+        title="List Inline"
+        description="Prikazivanje elemenata liste u jednom redu."
+        code={inlineListCode}
+      />
+    </div>
+  </div>
+</NoSidebar>

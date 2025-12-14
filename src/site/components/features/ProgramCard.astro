@@ -1,0 +1,43 @@
+---
+// ETF UNSA - Program Card Component
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import ContentCard from '../common/ContentCard.astro';
+
+interface Props {
+  name: string;
+  cycle: string;
+  title: string;
+  duration: string;
+  ects: string;
+  link: string;
+}
+
+const { name, cycle, title, duration, ects, link } = Astro.props;
+---
+
+<ContentCard title={name} href={link} layout="vertical">
+  <div class="row align-items-center">
+    <div class="col-md-8">
+      <span class="badge bg-primary mb-2">{cycle}</span>
+      <h3 class="card-title mb-2">
+        <a href={link} class="text-decoration-none text-body stretched-link">{name}</a>
+      </h3>
+      <p class="text-muted mb-0">Zvanje: <span class="fw-bold">{title}</span></p>
+    </div>
+    <div class="col-md-4 text-md-end mt-3 mt-md-0 position-relative">
+      <div class="d-flex justify-content-md-end gap-3 mb-3">
+        <div class="text-center px-3 border-end">
+          <span class="d-block fw-bold fs-5">{duration.split(' ')[0]}</span>
+          <small class="text-muted">Godine</small>
+        </div>
+        <div class="text-center px-3">
+          <span class="d-block fw-bold fs-5">{ects.split(' ')[0]}</span>
+          <small class="text-muted">ECTS</small>
+        </div>
+      </div>
+      <span class="btn btn-outline-primary">Detalji programa</span>
+    </div>
+  </div>
+</ContentCard>

@@ -1,0 +1,358 @@
+---
+// ETF UNSA - Homepage
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import Front from '../layouts/Front.astro';
+import HeroCarousel from '../components/layout/HeroCarousel.astro';
+import ContentCard from '../components/common/ContentCard.astro';
+import ProgramCard from '../components/features/ProgramCard.astro';
+import SimpleListItem from '../components/lists/SimpleListItem.astro';
+import Tabs from '../components/common/Tabs.astro';
+import TabItem from '../components/common/TabItem.astro';
+
+const base = import.meta.env.BASE_URL;
+---
+
+<Front title="ETF UNSA - Početna stranica">
+  <!-- Hero Carousel -->
+  <HeroCarousel />
+
+  <!-- News Section -->
+  <section class="py-5">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Aktuelnosti</h2>
+        <a href={base + '/examples/news-list'} class="btn btn-outline-primary btn-sm"
+          >Sve vijesti <i class="bi bi-arrow-right ms-1"></i></a
+        >
+      </div>
+
+      <!-- Categorized News Lists -->
+      <div class="row g-4">
+        <!-- Column 1: Konkursi -->
+        <div class="col-lg-4">
+          <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
+            <h3 class="h4 mb-0 text-primary">Konkursi</h3>
+            <a href={base + '/examples/news-list'} class="small text-decoration-none"
+              >Svi konkursi <i class="bi bi-arrow-right"></i></a
+            >
+          </div>
+          <div class="list-group list-group-flush">
+            <SimpleListItem
+              label="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Sed ut perspiciatis unde omnis iste natus error sit voluptatem"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="At vero eos et accusamus et iusto odio dignissimos ducimus"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Et harum quidem rerum facilis est et expedita distinctio"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Nam libero tempore, cum soluta nobis est eligendi optio"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+          </div>
+        </div>
+
+        <!-- Column 2: Nastava -->
+        <div class="col-lg-4">
+          <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
+            <h3 class="h4 mb-0 text-primary">Nastava</h3>
+            <a href={base + '/examples/news-list'} class="small text-decoration-none"
+              >Sve vijesti <i class="bi bi-arrow-right"></i></a
+            >
+          </div>
+          <div class="list-group list-group-flush">
+            <SimpleListItem
+              label="Temporibus autem quibusdam et aut officiis debitis aut rerum"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Itaque earum rerum hic tenetur a sapiente delectus"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Ut enim ad minima veniam, quis nostrum exercitationem ullam"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Quis autem vel eum iure reprehenderit qui in ea voluptate"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Velit esse quam nihil molestiae consequatur, vel illum qui"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+          </div>
+        </div>
+
+        <!-- Column 3: Obavještenja -->
+        <div class="col-lg-4">
+          <div class="d-flex justify-content-between align-items-center mb-4 border-bottom pb-2">
+            <h3 class="h4 mb-0 text-primary">Obavještenja</h3>
+            <a href={base + '/examples/news-list'} class="small text-decoration-none"
+              >Sva obavještenja <i class="bi bi-arrow-right"></i></a
+            >
+          </div>
+          <div class="list-group list-group-flush">
+            <SimpleListItem
+              label="Duis aute irure dolor in reprehenderit in voluptate velit"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Excepteur sint occaecat cupidatat non proident"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Sunt in culpa qui officia deserunt mollit anim id est laborum"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+            <SimpleListItem
+              label="Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
+              link="/examples/news-single"
+              icon="bi-chevron-right"
+              class="px-0"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events Section -->
+  <section class="py-5 bg-body-tertiary">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Događaji</h2>
+        <a href={base + '/examples/event-list'} class="btn btn-outline-primary btn-sm"
+          >Svi događaji <i class="bi bi-arrow-right ms-1"></i></a
+        >
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <div class="col">
+          <ContentCard
+            title="Lorem Ipsum Event 1"
+            href={base + '/examples/event-single'}
+            date="15.05.2024"
+            isEvent={true}
+            time="10:00 - 14:00"
+            location="Kampus ETF-a"
+            layout="vertical"
+          />
+        </div>
+        <div class="col">
+          <ContentCard
+            title="Lorem Ipsum Event 2"
+            href={base + '/examples/event-single'}
+            date="22.05.2024"
+            isEvent={true}
+            time="09:00 - 17:00"
+            location="Hol fakulteta"
+            layout="vertical"
+          />
+        </div>
+        <div class="col">
+          <ContentCard
+            title="Lorem Ipsum Event 3"
+            href={base + '/examples/event-single'}
+            date="01.06.2024"
+            isEvent={true}
+            time="12:00"
+            location="Sala S1"
+            layout="vertical"
+          />
+        </div>
+        <div class="col">
+          <ContentCard
+            title="Lorem Ipsum Event 4"
+            href={base + '/examples/event-single'}
+            date="05.06.2024"
+            isEvent={true}
+            time="11:00"
+            location="Svečana sala"
+            layout="vertical"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Study Programs Section with Tabs -->
+  <section class="py-5">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Studijski programi</h2>
+        <a href={base + '/examples/study-program-list'} class="btn btn-outline-primary btn-sm"
+          >Svi programi <i class="bi bi-arrow-right ms-1"></i></a
+        >
+      </div>
+
+      <Tabs
+        id="studyProgramTabs"
+        tabs={[
+          { id: 'cycles', label: 'Po ciklusima', active: true },
+          { id: 'fields', label: 'Po oblastima' },
+        ]}
+        class="mb-4"
+      >
+        <div class="tab-content" id="studyProgramTabsContent">
+          <!-- Tab 1: By Cycles -->
+          <TabItem id="cycles" active>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+              <div class="col">
+                <ContentCard
+                  title="Study Cycle I"
+                  href={base + '/examples/study-program-list'}
+                  icon="bi-1-circle"
+                  layout="vertical"
+                  excerpt="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                  category="Bachelor"
+                />
+              </div>
+              <div class="col">
+                <ContentCard
+                  title="Study Cycle II"
+                  href={base + '/examples/study-program-list'}
+                  icon="bi-2-circle"
+                  layout="vertical"
+                  excerpt="Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                  category="Master"
+                />
+              </div>
+              <div class="col">
+                <ContentCard
+                  title="Study Cycle III"
+                  href={base + '/examples/study-program-list'}
+                  icon="bi-3-circle"
+                  layout="vertical"
+                  excerpt="Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
+                  category="PhD"
+                />
+              </div>
+            </div>
+          </TabItem>
+
+          <!-- Tab 2: By Fields -->
+          <TabItem id="fields">
+            <div class="row row-cols-1 row-cols-md-2 g-4">
+              <div class="col">
+                <ContentCard
+                  title="Računarstvo i informatika"
+                  href={base + '/examples/study-program-list'}
+                  icon="bi-laptop"
+                  layout="horizontal"
+                  imagePosition="left"
+                  excerpt="Studijski programi fokusirani na razvoj softvera, vještačku inteligenciju, nauku o podacima i informacione sisteme."
+                  category="Oblast"
+                />
+              </div>
+              <div class="col">
+                <ContentCard
+                  title="Elektrotehnika"
+                  href={base + '/examples/study-program-list'}
+                  icon="bi-lightning-charge"
+                  layout="horizontal"
+                  imagePosition="left"
+                  excerpt="Programi iz oblasti automatike, elektronike, elektroenergetike i telekomunikacija. Spoj hardvera i sistema."
+                  category="Oblast"
+                />
+              </div>
+            </div>
+          </TabItem>
+        </div>
+      </Tabs>
+    </div>
+  </section>
+
+  <!-- Departments Section -->
+  <section class="py-5 bg-body-tertiary">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Odsjeci</h2>
+        <a href={base + '/examples/department'} class="btn btn-outline-primary btn-sm"
+          >Više o odsjecima <i class="bi bi-arrow-right ms-1"></i></a
+        >
+      </div>
+
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <div class="col">
+          <ContentCard
+            title="Department 1"
+            href={base + '/examples/department'}
+            icon="bi-laptop"
+            layout="vertical"
+            excerpt="Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          />
+        </div>
+        <div class="col">
+          <ContentCard
+            title="Department 2"
+            href={base + '/examples/department'}
+            icon="bi-cpu"
+            layout="vertical"
+            excerpt="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium."
+          />
+        </div>
+        <div class="col">
+          <ContentCard
+            title="Department 3"
+            href={base + '/examples/department'}
+            icon="bi-lightning-charge"
+            layout="vertical"
+            excerpt="Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo."
+          />
+        </div>
+        <div class="col">
+          <ContentCard
+            title="Department 4"
+            href={base + '/examples/department'}
+            icon="bi-broadcast"
+            layout="vertical"
+            excerpt="Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos."
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</Front>

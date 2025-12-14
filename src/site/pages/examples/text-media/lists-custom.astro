@@ -1,0 +1,283 @@
+---
+// ETF UNSA - Custom Lists Example
+import NoSidebar from '../../../layouts/NoSidebar.astro';
+import ExampleSnippet from '../../../components/common/ExampleSnippet.astro';
+import List from '../../../components/lists/List.astro';
+import ListGroup from '../../../components/lists/ListGroup.astro';
+import SimpleListItem from '../../../components/lists/SimpleListItem.astro';
+import IconListItem from '../../../components/lists/IconListItem.astro';
+import ImageListItem from '../../../components/lists/ImageListItem.astro';
+import ContactListItem from '../../../components/lists/ContactListItem.astro';
+import FileListItem from '../../../components/lists/FileListItem.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Primjeri', href: '#' },
+  { label: 'Tekst & Mediji', href: '#' },
+  { label: 'Custom Liste', href: '#', active: true },
+];
+
+const simpleListCode = `<div>
+  <div class="mb-4">
+    <h6 class="text-uppercase text-muted fw-bold mb-3 ls-1">Jednostavna Lista</h6>
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+        Stavka liste 1
+      </a>
+      <a href="#" class="list-group-item list-group-item-action active d-flex align-items-center">
+        Stavka liste 2 (Active)
+      </a>
+      <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+        Stavka liste 3
+      </a>
+      <!-- Div element for non-link item -->
+      <div class="list-group-item list-group-item-action d-flex align-items-center">
+         Stavka liste 4
+      </div>
+    </div>
+  </div>
+</div>`;
+
+const iconListCode = `<div>
+  <div class="mb-4">
+    <h6 class="text-uppercase text-muted fw-bold mb-3 ls-1">Lista sa Ikonama</h6>
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+        <i class="bi bi-star-fill me-3 fs-5"></i>
+        <div>Istaknuto</div>
+      </a>
+      <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+        <i class="bi bi-gear me-3 fs-5"></i>
+        <div>Postavke</div>
+      </a>
+      <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+        <i class="bi bi-bell me-3 fs-5"></i>
+        <div>Obavještenja</div>
+      </a>
+      <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+        <i class="bi bi-shield-lock me-3 fs-5"></i>
+        <div>Sigurnost</div>
+      </a>
+    </div>
+  </div>
+</div>`;
+
+const imageListCode = `<div>
+  <div class="mb-4">
+    <h6 class="text-uppercase text-muted fw-bold mb-3 ls-1">Lista sa Slikama</h6>
+    <div class="list-group">
+      <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+        <div class="flex-shrink-0">
+          <img
+            src="https://placehold.co/100x100/EEE/333?text=1"
+            alt=""
+            class="rounded"
+            style="width: 48px; height: 48px; object-fit: cover;"
+          />
+        </div>
+        <div class="flex-grow-1 ms-3">
+          <div class="fw-bold">Vijest Broj Jedan</div>
+          <div class="small text-muted">Kratki opis vijesti ili članka.</div>
+        </div>
+      </a>
+      <a href="#" class="list-group-item list-group-item-action d-flex align-items-center">
+         <div class="flex-shrink-0">
+          <img
+            src="https://placehold.co/100x100/EEE/333?text=2"
+            alt=""
+            class="rounded"
+            style="width: 48px; height: 48px; object-fit: cover;"
+          />
+        </div>
+        <div class="flex-grow-1 ms-3">
+          <div class="fw-bold">Druga Vijest</div>
+          <div class="small text-muted">Još jedan opis sa datumom: 12.12.2024</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>`;
+
+const contactListCode = `<div>
+  <div class="mb-4">
+    <h6 class="text-uppercase text-muted fw-bold mb-3 ls-1">Kontakt Informacije</h6>
+    <div class="list-group">
+      <!-- Email -->
+      <a href="mailto:info@etf.unsa.ba" class="list-group-item list-group-item-action d-flex align-items-center contact-list-item">
+        <div class="flex-shrink-0 bg-light rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+          <i class="bi bi-envelope text-primary"></i>
+        </div>
+        <div class="flex-grow-1 text-break">info@etf.unsa.ba</div>
+      </a>
+      <!-- Phone -->
+      <a href="tel:+387 33 250 700" class="list-group-item list-group-item-action d-flex align-items-center contact-list-item">
+         <div class="flex-shrink-0 bg-light rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+          <i class="bi bi-telephone text-primary"></i>
+        </div>
+        <div class="flex-grow-1 text-break">Centrala: +387 33 250 700</div>
+      </a>
+      <!-- Address -->
+      <a href="https://maps.google.com/?q=..." class="list-group-item list-group-item-action d-flex align-items-center contact-list-item">
+        <div class="flex-shrink-0 bg-light rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+          <i class="bi bi-geo-alt text-primary"></i>
+        </div>
+        <div class="flex-grow-1 text-break">Zmaja od Bosne bb, Kampus Univerziteta, 71000 Sarajevo</div>
+      </a>
+      <!-- Website -->
+      <a href="https://www.etf.unsa.ba" class="list-group-item list-group-item-action d-flex align-items-center contact-list-item">
+         <div class="flex-shrink-0 bg-light rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+          <i class="bi bi-globe text-primary"></i>
+        </div>
+        <div class="flex-grow-1 text-break">www.etf.unsa.ba</div>
+      </a>
+    </div>
+  </div>
+</div>`;
+
+const fileListCode = `<div>
+  <div class="mb-4">
+    <h6 class="text-uppercase text-muted fw-bold mb-3 ls-1">Dokumenti za Preuzimanje</h6>
+    <div class="list-group">
+       <!-- PDF Example -->
+      <a href="#" class="list-group-item list-group-item-action file-list-item">
+         <div class="d-flex align-items-center">
+            <i class="bi bi-file-earmark-pdf text-danger me-3 fs-3"></i>
+            <div class="flex-grow-1">
+               <div class="fw-medium text-dark">Pravilnik o studiranju.pdf</div>
+               <small class="text-muted text-uppercase">pdf • 2.4 MB</small>
+            </div>
+            <i class="bi bi-download text-muted ms-3"></i>
+         </div>
+      </a>
+       <!-- DOC Example -->
+      <a href="#" class="list-group-item list-group-item-action file-list-item">
+         <div class="d-flex align-items-center">
+            <i class="bi bi-file-earmark-word text-primary me-3 fs-3"></i>
+            <div class="flex-grow-1">
+               <div class="fw-medium text-dark">Zahtjev za ispis.docx</div>
+               <small class="text-muted text-uppercase">doc • 45 KB</small>
+            </div>
+            <i class="bi bi-download text-muted ms-3"></i>
+         </div>
+      </a>
+    </div>
+  </div>
+</div>`;
+---
+
+<NoSidebar
+  title="Custom Liste"
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle="Custom Liste"
+  bannerSubtitle="Primjeri prilagođenih listi za widgete i specifične sadržaje"
+  bannerSize="xs"
+>
+  <div class="row">
+    <div class="col-12">
+      <ExampleSnippet
+        title="Simple List"
+        description="Osnovna lista sa labelama i linkovima."
+        code={simpleListCode}
+      >
+        <List>
+          <ListGroup title="Jednostavna Lista">
+            <SimpleListItem label="Stavka liste 1" href="#" />
+            <SimpleListItem label="Stavka liste 2 (Active)" href="#" active={true} />
+            <SimpleListItem label="Stavka liste 3" href="#" />
+            <SimpleListItem label="Stavka liste 4" />
+          </ListGroup>
+        </List>
+      </ExampleSnippet>
+
+      <ExampleSnippet
+        title="Icon List"
+        description="Lista sa vodećim Bootstrap ikonama."
+        code={iconListCode}
+      >
+        <List>
+          <ListGroup title="Lista sa Ikonama">
+            <IconListItem icon="bi-star-fill" label="Istaknuto" href="#" />
+            <IconListItem icon="bi-gear" label="Postavke" href="#" />
+            <IconListItem icon="bi-bell" label="Obavještenja" href="#" />
+            <IconListItem icon="bi-shield-lock" label="Sigurnost" href="#" />
+          </ListGroup>
+        </List>
+      </ExampleSnippet>
+
+      <ExampleSnippet
+        title="Image List"
+        description="Lista sa thumbnail slikama i opisom."
+        code={imageListCode}
+      >
+        <List>
+          <ListGroup title="Lista sa Slikama">
+            <ImageListItem
+              imageSrc="https://placehold.co/100x100/EEE/333?text=1"
+              label="Vijest Broj Jedan"
+              description="Kratki opis vijesti ili članka."
+              href="#"
+            />
+            <ImageListItem
+              imageSrc="https://placehold.co/100x100/EEE/333?text=2"
+              label="Druga Vijest"
+              description="Još jedan opis sa datumom: 12.12.2024"
+              href="#"
+            />
+          </ListGroup>
+        </List>
+      </ExampleSnippet>
+
+      <ExampleSnippet
+        title="Contact List"
+        description="Specijalizirana lista za kontakt informacije."
+        code={contactListCode}
+      >
+        <List>
+          <ListGroup title="Kontakt Informacije">
+            <ContactListItem type="email" value="info@etf.unsa.ba" />
+            <ContactListItem
+              type="phone"
+              value="+387 33 250 700"
+              label="Centrala: +387 33 250 700"
+            />
+            <ContactListItem
+              type="address"
+              value="Zmaja od Bosne bb, Kampus Univerziteta, 71000 Sarajevo"
+            />
+            <ContactListItem type="website" value="www.etf.unsa.ba" />
+          </ListGroup>
+        </List>
+      </ExampleSnippet>
+
+      <ExampleSnippet
+        title="File List"
+        description="Lista za preuzimanje datoteka sa ikonom tipa fajla."
+        code={fileListCode}
+      >
+        <List>
+          <ListGroup title="Dokumenti za Preuzimanje">
+            <FileListItem
+              fileType="pdf"
+              fileName="Pravilnik o studiranju.pdf"
+              fileSize="2.4 MB"
+              href="#"
+            />
+            <FileListItem
+              fileType="doc"
+              fileName="Zahtjev za ispis.docx"
+              fileSize="45 KB"
+              href="#"
+            />
+            <FileListItem fileType="xls" fileName="Raspored 2024.xlsx" fileSize="1.1 MB" href="#" />
+            <FileListItem
+              fileType="zip"
+              fileName="Materijali za vježbe.zip"
+              fileSize="150 MB"
+              href="#"
+            />
+          </ListGroup>
+        </List>
+      </ExampleSnippet>
+    </div>
+  </div>
+</NoSidebar>

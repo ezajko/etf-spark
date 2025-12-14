@@ -1,0 +1,63 @@
+---
+// ETF UNSA - No Sidebar Layout (Full Width)
+// Author: Ernedin Zajko <ezajko@root.ba>
+// License: GPL-2.0-or-later
+
+import Default from './Default.astro';
+import PageHeader from '../components/layout/PageHeader.astro';
+
+interface BreadcrumbItem {
+  label: string;
+  href: string;
+  active?: boolean;
+}
+
+interface Props {
+  title: string;
+  breadcrumbItems?: BreadcrumbItem[];
+  bannerTitle?: string;
+  bannerSubtitle?: string;
+  bannerBgClass?: string;
+  bannerSize?: 'full' | 'large' | 'medium' | 'small' | 'xs' | 'auto';
+}
+
+const {
+  title,
+  breadcrumbItems,
+  bannerTitle,
+  bannerSubtitle,
+  bannerBgClass = 'bg-primary',
+  bannerSize = 'small',
+} = Astro.props;
+---
+
+<Default title={title} breadcrumbItems={breadcrumbItems}>
+  <!-- Banner Slot -->
+  <slot name="banner" slot="banner">
+    {
+      bannerTitle && (
+        <PageHeader
+          title={bannerTitle}
+          subtitle={bannerSubtitle}
+          bgClass={bannerBgClass}
+          height={bannerSize}
+        />
+      )
+    }
+  </slot>
+
+  <!-- Pass content-before through -->
+  <div class="content-slot" slot="content-before">
+    <slot name="content-before" />
+  </div>
+
+  <!-- Main Content (Full Width) -->
+  <div class="col-12 content-slot">
+    <slot />
+  </div>
+
+  <!-- Pass content-after through -->
+  <div class="content-slot" slot="content-after">
+    <slot name="content-after" />
+  </div>
+</Default>
