@@ -46,9 +46,11 @@ $border-radius-pill: 0;
 $border-color: $site-theme-border-color;
 
 // 4. Links
+@use "sass:color";
+
 $link-color: $site-theme-color-primary;
 $link-decoration: none;
-$link-hover-color: darken($site-theme-color-primary, 15%);
+$link-hover-color: color.scale($site-theme-color-primary, $lightness: -15%);
 $link-hover-decoration: underline;
 
 // 5. High Contrast Support (Optional override points)

@@ -45,8 +45,10 @@ $site-theme-red-secondary: #856161; // Muted Red Gray
 
 // Secondary Colors (Legacy + New Mappings)
 $site-theme-color-secondary: $site-theme-blue-secondary; // #64748B
+@use "sass:color";
+
 // Define RGB components explicitly for CSS variable usage
-$site-theme-color-secondary-rgb: #{red($site-theme-color-secondary)}, #{green($site-theme-color-secondary)}, #{blue($site-theme-color-secondary)};
+$site-theme-color-secondary-rgb: #{color.channel($site-theme-color-secondary, "red", $space: rgb)}, #{color.channel($site-theme-color-secondary, "green", $space: rgb)}, #{color.channel($site-theme-color-secondary, "blue", $space: rgb)};
 
 $site-theme-status-success: $site-theme-brand-green;
 $site-theme-status-danger: $site-theme-brand-red;
