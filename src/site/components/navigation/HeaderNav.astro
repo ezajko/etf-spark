@@ -261,7 +261,7 @@ const base = import.meta.env.BASE_URL;
           <!-- Level 3: Content Examples -->
           <li class="nav-item dropdown position-static">
             <div class="d-flex align-items-center">
-              <a class="nav-link pe-1" href="#">Primjeri sadržaja</a>
+              <a class="nav-link pe-1" href={base + '/kitchen-sink'}>Primjeri sadržaja</a>
               <a
                 class="nav-link dropdown-toggle dropdown-toggle-split ps-1"
                 href="#"
@@ -426,6 +426,13 @@ const base = import.meta.env.BASE_URL;
                             <div class="col-md-4">
                               <h6 class="text-uppercase fw-bold mb-3 text-primary">Ostalo</h6>
                               <ul class="list-unstyled">
+                                <li>
+                                  <a
+                                    href={base + '/kitchen-sink'}
+                                    class="text-decoration-none mb-2 d-block fw-bold text-primary"
+                                    ><i class="bi bi-box-seam me-2"></i>Kitchen Sink (All)</a
+                                  >
+                                </li>
                                 <li>
                                   <a
                                     href={base + '/examples/text-media/lists-custom'}
