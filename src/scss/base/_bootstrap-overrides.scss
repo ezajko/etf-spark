@@ -293,8 +293,8 @@
 
                 &:hover,
                 &:focus {
-                    color: #FFFFFF !important;
-                    background-color: #000000 !important;
+                    color: #000000 !important;
+                    background-color: #{$ez-hc-yellow} !important;
                 }
             }
 
@@ -303,8 +303,42 @@
             }
         }
 
-        // In Light Mode (explicit override for full contrast)
+        // Explicit Button Overrides for High Contrast
+        .btn {
+            border-width: 2px !important;
+            font-weight: 700 !important;
+        }
+
         &[data-bs-theme="light"] {
+
+            // Light Mode HC Buttons (Default: Black/White)
+            .btn-primary {
+                background-color: #000000 !important;
+                border-color: #000000 !important;
+                color: #FFFFFF !important;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: #FFFFFF !important;
+                    color: #000000 !important;
+                }
+            }
+
+            .btn-secondary,
+            .btn-outline-primary {
+                color: #000000 !important;
+                border-color: #000000 !important;
+                background-color: transparent !important;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: #000000 !important;
+                    color: #FFFFFF !important;
+                }
+            }
+
             a {
                 color: #000000 !important;
                 font-weight: 700;
@@ -312,6 +346,38 @@
                 &:hover,
                 &:focus {
                     background-color: #{$yellow-400} !important; // Highlight
+                }
+            }
+        }
+
+        // Dark Mode HC Content
+        &[data-bs-theme="dark"] {
+
+            // Dark Mode HC Buttons (Yellow/Black)
+            .btn-primary {
+                background-color: #{$ez-hc-yellow} !important;
+                border-color: #{$ez-hc-yellow} !important;
+                color: #000000 !important;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: #000000 !important;
+                    color: #{$ez-hc-yellow} !important;
+                }
+            }
+
+            .btn-secondary,
+            .btn-outline-primary {
+                color: #{$ez-hc-yellow} !important;
+                border-color: #{$ez-hc-yellow} !important;
+                background-color: transparent !important;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: #{$ez-hc-yellow} !important;
+                    color: #000000 !important;
                 }
             }
         }
