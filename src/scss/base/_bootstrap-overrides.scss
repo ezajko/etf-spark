@@ -3,28 +3,22 @@
 // License: GPL-2.0-or-later
 
 // Override Bootstrap CSS variables to match our design system
+// 1. Base Variables & Logic
 :root {
-    // Default Theme Color (Blue)
+    // Default (Blue)
     --site-theme-color: #{$site-theme-brand-blue};
+    --site-theme-hover: #{$blue-800};
+    --site-theme-active: #{$blue-900};
+
     --site-theme-color-rgb: #{red($site-theme-brand-blue)},
     #{green($site-theme-brand-blue)},
     #{blue($site-theme-brand-blue)};
 
-    // Primary Color mapped to Theme Color
+    // Mappings
     --bs-primary: var(--site-theme-color);
     --bs-primary-rgb: var(--site-theme-color-rgb);
 
-    // High Contrast Enforcement (Global)
-    [data-site-theme="high-contrast"] & {
-
-        // Force links and primary text to follow theme color
-        a,
-        .text-primary,
-        .btn-link {
-            color: var(--site-theme-color) !important;
-        }
-    }
-
+    // ... (Radius, Standard Colors Unchanged) ...
     // Disable Rounded Corners
     --bs-border-radius: 0;
     --bs-border-radius-sm: 0;
@@ -34,7 +28,9 @@
     --bs-border-radius-pill: 0;
 
     // Secondary Color
-    --bs-secondary: #{$site-theme-color-secondary};
+    --bs-secondary: #{$secondary-600};
+    --bs-secondary-hover: #{$secondary-700};
+    --bs-secondary-active: #{$secondary-800};
     --bs-secondary-rgb: #{$site-theme-color-secondary-rgb};
 
     // Success Color
@@ -72,121 +68,168 @@
     --bs-body-font-family: #{$site-theme-font-family-base};
 }
 
-// Dynamic Theme Overrides
+// 2. Dynamic Theme Overrides
 [data-site-theme="teal"] {
-    --site-theme-color: #{$site-theme-brand-teal};
-    --site-theme-color-rgb: #{red($site-theme-brand-teal)},
-    #{green($site-theme-brand-teal)},
-    #{blue($site-theme-brand-teal)};
-    --bs-secondary: #{$site-theme-teal-secondary};
-    --bs-secondary-rgb: #{red($site-theme-teal-secondary)},
-    #{green($site-theme-teal-secondary)},
-    #{blue($site-theme-teal-secondary)};
+    --site-theme-color: #{$teal-700};
+    --site-theme-hover: #{$teal-800};
+    --site-theme-active: #{$teal-900};
+
+    --site-theme-color-rgb: #{red($teal-700)},
+    #{green($teal-700)},
+    #{blue($teal-700)};
+
+    --bs-secondary: #{$secondary-600};
+    --bs-secondary-rgb: #{red($secondary-600)},
+    #{green($secondary-600)},
+    #{blue($secondary-600)};
 
     &[data-bs-theme="dark"] {
-        --site-theme-color: #{$site-theme-brand-teal-text-dark};
-        --site-theme-color-rgb: #{red($site-theme-brand-teal-text-dark)},
-        #{green($site-theme-brand-teal-text-dark)},
-        #{blue($site-theme-brand-teal-text-dark)};
+        --site-theme-color: #{$teal-300};
+        --site-theme-hover: #{$teal-200}; // Lighter for glow
+        --site-theme-active: #{$teal-100};
+
+        --site-theme-color-rgb: #{red($teal-300)},
+        #{green($teal-300)},
+        #{blue($teal-300)};
     }
 }
 
 [data-site-theme="green"] {
-    --site-theme-color: #{$site-theme-brand-green};
-    --site-theme-color-rgb: #{red($site-theme-brand-green)},
-    #{green($site-theme-brand-green)},
-    #{blue($site-theme-brand-green)};
-    --bs-secondary: #{$site-theme-green-secondary};
-    --bs-secondary-rgb: #{red($site-theme-green-secondary)},
-    #{green($site-theme-green-secondary)},
-    #{blue($site-theme-green-secondary)};
+    --site-theme-color: #{$green-700};
+    --site-theme-hover: #{$green-800};
+    --site-theme-active: #{$green-900};
+
+    --site-theme-color-rgb: #{red($green-700)},
+    #{green($green-700)},
+    #{blue($green-700)};
+
+    --bs-secondary: #{$secondary-600};
+    --bs-secondary-rgb: #{red($secondary-600)},
+    #{green($secondary-600)},
+    #{blue($secondary-600)};
 
     &[data-bs-theme="dark"] {
-        --site-theme-color: #{$site-theme-brand-green-text-dark};
-        --site-theme-color-rgb: #{red($site-theme-brand-green-text-dark)},
-        #{green($site-theme-brand-green-text-dark)},
-        #{blue($site-theme-brand-green-text-dark)};
+        --site-theme-color: #{$green-300};
+        --site-theme-hover: #{$green-200};
+        --site-theme-active: #{$green-100};
+
+        --site-theme-color-rgb: #{red($green-300)},
+        #{green($green-300)},
+        #{blue($green-300)};
     }
 }
 
 [data-site-theme="purple"] {
-    --site-theme-color: #{$site-theme-brand-purple};
-    --site-theme-color-rgb: #{red($site-theme-brand-purple)},
-    #{green($site-theme-brand-purple)},
-    #{blue($site-theme-brand-purple)};
-    --bs-secondary: #{$site-theme-purple-secondary};
-    --bs-secondary-rgb: #{red($site-theme-purple-secondary)},
-    #{green($site-theme-purple-secondary)},
-    #{blue($site-theme-purple-secondary)};
+    --site-theme-color: #{$purple-700};
+    --site-theme-hover: #{$purple-800};
+    --site-theme-active: #{$purple-900};
+
+    --site-theme-color-rgb: #{red($purple-700)},
+    #{green($purple-700)},
+    #{blue($purple-700)};
+
+    --bs-secondary: #{$secondary-600};
+    --bs-secondary-rgb: #{red($secondary-600)},
+    #{green($secondary-600)},
+    #{blue($secondary-600)};
 
     &[data-bs-theme="dark"] {
-        --site-theme-color: #{$site-theme-brand-purple-text-dark};
-        --site-theme-color-rgb: #{red($site-theme-brand-purple-text-dark)},
-        #{green($site-theme-brand-purple-text-dark)},
-        #{blue($site-theme-brand-purple-text-dark)};
+        --site-theme-color: #{$purple-300};
+        --site-theme-hover: #{$purple-200};
+        --site-theme-active: #{$purple-100};
+
+        --site-theme-color-rgb: #{red($purple-300)},
+        #{green($purple-300)},
+        #{blue($purple-300)};
     }
 }
 
 [data-site-theme="orange"] {
-    --site-theme-color: #{$site-theme-brand-orange};
-    --site-theme-color-rgb: #{red($site-theme-brand-orange)},
-    #{green($site-theme-brand-orange)},
-    #{blue($site-theme-brand-orange)};
-    --bs-secondary: #{$site-theme-orange-secondary};
-    --bs-secondary-rgb: #{red($site-theme-orange-secondary)},
-    #{green($site-theme-orange-secondary)},
-    #{blue($site-theme-orange-secondary)};
+    --site-theme-color: #{$orange-600};
+    --site-theme-hover: #{$orange-700};
+    --site-theme-active: #{$orange-800};
+
+    --site-theme-color-rgb: #{red($orange-600)},
+    #{green($orange-600)},
+    #{blue($orange-600)};
+
+    --bs-secondary: #{$secondary-600};
+    --bs-secondary-rgb: #{red($secondary-600)},
+    #{green($secondary-600)},
+    #{blue($secondary-600)};
 
     &[data-bs-theme="dark"] {
-        --site-theme-color: #{$site-theme-brand-orange-text-dark};
-        --site-theme-color-rgb: #{red($site-theme-brand-orange-text-dark)},
-        #{green($site-theme-brand-orange-text-dark)},
-        #{blue($site-theme-brand-orange-text-dark)};
+        --site-theme-color: #{$orange-300};
+        --site-theme-hover: #{$orange-200};
+        --site-theme-active: #{$orange-100};
+
+        --site-theme-color-rgb: #{red($orange-300)},
+        #{green($orange-300)},
+        #{blue($orange-300)};
     }
 }
 
 [data-site-theme="red"] {
-    --site-theme-color: #{$site-theme-brand-red};
-    --site-theme-color-rgb: #{red($site-theme-brand-red)},
-    #{green($site-theme-brand-red)},
-    #{blue($site-theme-brand-red)};
-    --bs-secondary: #{$site-theme-red-secondary};
-    --bs-secondary-rgb: #{red($site-theme-red-secondary)},
-    #{green($site-theme-red-secondary)},
-    #{blue($site-theme-red-secondary)};
+    --site-theme-color: #{$red-700};
+    --site-theme-hover: #{$red-800};
+    --site-theme-active: #{$red-900};
+
+    --site-theme-color-rgb: #{red($red-700)},
+    #{green($red-700)},
+    #{blue($red-700)};
+
+    --bs-secondary: #{$secondary-600};
+    --bs-secondary-rgb: #{red($secondary-600)},
+    #{green($secondary-600)},
+    #{blue($secondary-600)};
 
     &[data-bs-theme="dark"] {
-        --site-theme-color: #{$site-theme-brand-red-text-dark};
-        --site-theme-color-rgb: #{red($site-theme-brand-red-text-dark)},
-        #{green($site-theme-brand-red-text-dark)},
-        #{blue($site-theme-brand-red-text-dark)};
+        --site-theme-color: #{$red-300};
+        --site-theme-hover: #{$red-200};
+        --site-theme-active: #{$red-100};
+
+        --site-theme-color-rgb: #{red($red-300)},
+        #{green($red-300)},
+        #{blue($red-300)};
     }
 }
 
 [data-site-theme="blue"] {
-    --site-theme-color: #{$site-theme-brand-blue};
-    --site-theme-color-rgb: #{red($site-theme-brand-blue)},
-    #{green($site-theme-brand-blue)},
-    #{blue($site-theme-brand-blue)};
-    --bs-secondary: #{$site-theme-blue-secondary};
-    --bs-secondary-rgb: #{red($site-theme-blue-secondary)},
-    #{green($site-theme-blue-secondary)},
-    #{blue($site-theme-blue-secondary)};
+    --site-theme-color: #{$blue-700};
+    --site-theme-hover: #{$blue-800};
+    --site-theme-active: #{$blue-900};
+
+    --site-theme-color-rgb: #{red($blue-700)},
+    #{green($blue-700)},
+    #{blue($blue-700)};
+
+    --bs-secondary: #{$secondary-600};
+    --bs-secondary-rgb: #{red($secondary-600)},
+    #{green($secondary-600)},
+    #{blue($secondary-600)};
 
     &[data-bs-theme="dark"] {
-        --site-theme-color: #{$site-theme-brand-blue-text-dark};
-        --site-theme-color-rgb: #{red($site-theme-brand-blue-text-dark)},
-        #{green($site-theme-brand-blue-text-dark)},
-        #{blue($site-theme-brand-blue-text-dark)};
+        --site-theme-color: #{$blue-300};
+        --site-theme-hover: #{$blue-200};
+        --site-theme-active: #{$blue-100};
+
+        --site-theme-color-rgb: #{red($blue-300)},
+        #{green($blue-300)},
+        #{blue($blue-300)};
     }
 }
 
 [data-site-theme="high-contrast"] {
     // High Contrast Yellow/Black
-    $ez-hc-yellow: #FFD700;
-    $ez-hc-black: #000000;
+    // Use the new scales
+    $ez-hc-yellow: $yellow-1000; // Gold
+    $ez-hc-black: $black-1000; // Pure Black
+    $ez-hc-white: $white-1000; // Pure White
 
+    // Theme Variables
     --site-theme-color: #{$ez-hc-black};
+    --site-theme-hover: #{$black-800};
+    --site-theme-active: #{$black-800};
     --site-theme-color-rgb: 0, 0, 0;
 
     --bs-secondary: #000000;
@@ -205,7 +248,10 @@
     // In Dark Mode, switch to Yellow on Black
     &[data-bs-theme="dark"] {
         --site-theme-color: #{$ez-hc-yellow};
+        --site-theme-hover: #{$yellow-600}; // Darker yellow on hover
+        --site-theme-active: #{$yellow-500};
         --site-theme-color-rgb: 255, 215, 0;
+
         --bs-secondary: #{$ez-hc-yellow};
 
         --bs-body-color: #{$ez-hc-yellow};
@@ -238,7 +284,7 @@
 
             &:hover,
             &:focus {
-                background-color: #FFFF00 !important; // Yellow bg highlight on hover
+                background-color: #{$yellow-400} !important; // Highlight
             }
         }
     }
@@ -246,22 +292,19 @@
 
 // Dark Mode Overrides
 [data-bs-theme="dark"] {
-    --bs-body-color: #{$site-theme-text-dark};
-    --bs-body-bg: #{$site-theme-bg-dark};
-    --bs-border-color: #{$site-theme-border-dark};
+    --bs-body-color: #{$secondary-200};
+    --bs-body-bg: #{$secondary-900};
+    --bs-border-color: #{$secondary-700};
     --bs-border-color-translucent: rgba(255, 255, 255, 0.15);
-
-    // Override Primary interactions for better contrast in dark mode if needed
-    // For now, keeping brand blue as it's accessible on dark bg
 
     // Utilities overrides
     .text-muted {
-        color: #{$site-theme-text-muted-dark} !important;
+        color: #{$secondary-500} !important;
     }
 
     .bg-light {
-        background-color: #{$site-theme-bg-dark-secondary} !important;
-        color: #{$site-theme-text-dark} !important;
+        background-color: #{$secondary-1000} !important;
+        color: #{$secondary-200} !important;
     }
 
     .btn-close {
@@ -269,27 +312,50 @@
     }
 
     // Accessible Link Color for Dark Mode (Lighter Blue)
-    --bs-link-color: #{$site-theme-brand-blue-text-dark};
-    --bs-link-hover-color: #{lighten($site-theme-brand-blue-text-dark, 10%)}; // Even lighter on hover
+    // Now dynamic based on theme if set, otherwise fallback
+    --bs-link-color: var(--site-theme-color);
+    --bs-link-hover-color: var(--site-theme-hover);
 
     // Card Footer Background in Dark Mode
-    --bs-tertiary-bg: #{$site-theme-bg-dark-secondary};
+    --bs-tertiary-bg: #{$secondary-1000};
 }
 
-// Override Button Colors (because Bootstrap uses hardcoded hex in compiled CSS)
+// Override Button Colors (Explicit Tonal Logic)
 .btn-primary {
     --bs-btn-bg: var(--site-theme-color);
     --bs-btn-border-color: var(--site-theme-color);
-    --bs-btn-hover-bg: var(--site-theme-color); // Using same color for now, relying on filter or opacity if needed, or define dark var
-    --bs-btn-hover-border-color: var(--site-theme-color);
-    --bs-btn-active-bg: var(--site-theme-color);
-    --bs-btn-active-border-color: var(--site-theme-color);
+
+    // Explicit Hover Variables instead of filter
+    --bs-btn-hover-bg: var(--site-theme-hover);
+    --bs-btn-hover-border-color: var(--site-theme-hover);
+
+    --bs-btn-active-bg: var(--site-theme-active);
+    --bs-btn-active-border-color: var(--site-theme-active);
+
     --bs-btn-disabled-bg: var(--site-theme-color);
     --bs-btn-disabled-border-color: var(--site-theme-color);
 
-    // To darken on hover without JS, we might need --site-theme-color-dark
+    // Remove filter override
     &:hover {
-        filter: brightness(90%);
+        filter: none;
+    }
+}
+
+.btn-secondary {
+    --bs-btn-bg: var(--bs-secondary);
+    --bs-btn-border-color: var(--bs-secondary);
+
+    --bs-btn-hover-bg: var(--bs-secondary-hover);
+    --bs-btn-hover-border-color: var(--bs-secondary-hover);
+
+    --bs-btn-active-bg: var(--bs-secondary-active);
+    --bs-btn-active-border-color: var(--bs-secondary-active);
+
+    --bs-btn-disabled-bg: var(--bs-secondary);
+    --bs-btn-disabled-border-color: var(--bs-secondary);
+
+    &:hover {
+        filter: none;
     }
 }
 
