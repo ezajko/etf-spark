@@ -135,6 +135,22 @@ Ensure clear and visible focus indicators:
 
 ## Contrast and Color
 
+### Color System (Tonal Scales)
+
+The ETF Spark design system uses **10-level tonal scales** (from `50` to `950`) for all brand colors to ensure accessible contrast ratios.
+
+- **Backgrounds**: Use `500`-`600` levels for primary actions/buttons.
+- **Text**: Use `800`-`900` levels for text on light backgrounds to ensure WCAG AA compliance (> 4.5:1).
+- **Dark Mode**: Use `200`-`300` levels for text on dark backgrounds.
+
+### Accessible Usage
+
+Don't use raw brand colors for text. Use the semantic helper variables which adapt to the theme and mode:
+
+- `$site-theme-color`: Adapts to the current active theme (Blue, Teal, etc.).
+- `$site-theme-text-body`: Main body text (passes AAA).
+- `$site-theme-text-muted`: Secondary text (passes AA).
+
 ### Minimum Contrast Requirements
 
 - Text and background: 4.5:1 (AA) or 7:1 (AAA) for normal fonts

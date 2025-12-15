@@ -3,87 +3,172 @@
 // License: GPL-2.0-or-later
 
 // ======================
-// Brand Colors (HSL format)
+// 1. Base Tonal Scales (10 Levels)
 // ======================
 
-// Primary Blue (from legacy: #00629B)
+// Blue Scale (Primary)
+// Base: #00629B (approx 600)
+$blue-50: #e0f0fa;
+$blue-100: #b3d9f2;
+$blue-200: #80c0e9;
+$blue-300: #4da6e0;
+$blue-400: #2693da;
+$blue-500: #0080d4; // Lighter/Brighter
+$blue-600: #00629B; // **BRAND PRIMARY**
+$blue-700: #004f7d;
+$blue-800: #003c5e;
+$blue-900: #002940;
+$blue-950: #001521; // Extremely Dark
+
+// Gray Scale (Secondary / Slate)
+// Base: #64748B
+$gray-50: #f8fafc;
+$gray-100: #f1f5f9;
+$gray-200: #e2e8f0;
+$gray-300: #cbd5e1;
+$gray-400: #94a3b8;
+$gray-500: #64748B; // **BRAND SECONDARY**
+$gray-600: #475569;
+$gray-700: #334155;
+$gray-800: #1e293b;
+$gray-900: #0f172a;
+
+// Teal Scale (Info)
+// Base: #00897B (600)
+$teal-50: #e0f2f1;
+$teal-100: #b2dfdb;
+$teal-200: #80cbc4;
+$teal-300: #4db6ac;
+$teal-400: #26a69a;
+$teal-500: #009688;
+$teal-600: #00897B; // **BRAND TEAL**
+$teal-700: #00796b;
+$teal-800: #00695c; // Text Safe
+$teal-900: #004d40;
+
+// Green Scale (Success)
+// Base: #2E7D32 (700 approx)
+$green-50: #e8f5e9;
+$green-100: #c8e6c9;
+$green-200: #a5d6a7;
+$green-300: #81c784;
+$green-400: #66bb6a;
+$green-500: #4caf50;
+$green-600: #43a047;
+$green-700: #2E7D32; // **BRAND GREEN**
+$green-800: #1b5e20; // Text Safe
+$green-900: #0d3813;
+
+// Purple Scale (Innovation)
+// Base: #8E24AA (600)
+$purple-50: #f3e5f5;
+$purple-100: #e1bee7;
+$purple-200: #ce93d8;
+$purple-300: #ba68c8;
+$purple-400: #ab47bc;
+$purple-500: #9c27b0;
+$purple-600: #8E24AA; // **BRAND PURPLE**
+$purple-700: #7b1fa2;
+$purple-800: #6a1b9a;
+$purple-900: #4a148c;
+
+// Orange Scale (Warning)
+// Base: #fb8c00 (500/600)
+$orange-50: #fff3e0;
+$orange-100: #ffe0b2;
+$orange-200: #ffcc80;
+$orange-300: #ffb74d;
+$orange-400: #ffa726;
+$orange-500: #fb8c00; // **BRAND ORANGE**
+$orange-600: #f57c00;
+$orange-700: #e65100;
+$orange-800: #bf4300; // Text Safe? Approx
+$orange-900: #8c3100; // Text Safe
+$orange-950: #541d00;
+
+// Red Scale (Danger)
+// Base: #D32F2F (600)
+$red-50: #ffebee;
+$red-100: #ffcdd2;
+$red-200: #ef9a9a;
+$red-300: #e57373;
+$red-400: #ef5350;
+$red-500: #f44336;
+$red-600: #D32F2F; // **BRAND RED**
+$red-700: #c62828;
+$red-800: #b71c1c;
+$red-900: #7f0000;
+
+// ======================
+// 2. Brand Mappings (Legacy Support)
+// ======================
 $site-theme-primary-h: 199;
 $site-theme-primary-s: 100%;
 $site-theme-primary-l: 30%;
-$site-theme-color-primary: hsl($site-theme-primary-h, $site-theme-primary-s, $site-theme-primary-l); // #00629B
 
-// Primary Dark
-$site-theme-color-primary-dark: #004e7c;
+$site-theme-color-primary: $blue-600;
+$site-theme-color-primary-dark: $blue-800;
+$site-theme-color-secondary: $gray-500;
+
+// Brand Colors
+$site-theme-brand-blue: $blue-600;
+$site-theme-brand-teal: $teal-600;
+$site-theme-brand-green: $green-700;
+$site-theme-brand-purple: $purple-600;
+$site-theme-brand-orange: $orange-500;
+$site-theme-brand-red: $red-600;
+
+// Text Colors (Semantic Accessible Mappings)
+// On Light Backgrounds
+$site-theme-brand-blue-text: $blue-800;
+$site-theme-brand-teal-text: $teal-800;
+$site-theme-brand-green-text: $green-800;
+$site-theme-brand-purple-text: $purple-800;
+$site-theme-brand-orange-text: $orange-900; // Explicitly Dark
+$site-theme-brand-red-text: $red-800;
+
+// Dark Mode / Reversal Mappings (For Referencing)
+$site-theme-brand-blue-text-dark: $blue-300;
+$site-theme-brand-teal-text-dark: $teal-200;
+$site-theme-brand-green-text-dark: $green-300;
+$site-theme-brand-purple-text-dark: $purple-200;
+$site-theme-brand-orange-text-dark: $orange-300;
+$site-theme-brand-red-text-dark: $red-200;
 
 // ======================
-// Primary Tonal Scale (Blue)
+// 3. Status Colors
 // ======================
-$ez-blue-100: #E3F2FD; // Backgrounds, very light tints
-$ez-blue-200: #BBDEFB; // Secondary surfaces, hover states
-$ez-blue-300: #64B5F6; // Borders, dividers
-$ez-blue-400: #1E88E5; // Accents, active states
-$ez-blue-500: #00629B; // Primary Brand Color
-$ez-blue-600: #003B5C; // High contrast text
+$site-theme-status-success: $green-600;
+$site-theme-status-danger: $red-600;
+$site-theme-status-warning: $orange-500;
+$site-theme-status-info: $teal-500;
 
 // ======================
-// Section / Branding Palette (6 Categorical Colors)
+// 4. UI Colors
 // ======================
-$site-theme-brand-blue: $ez-blue-500; // #00629B (Official)
-$site-theme-brand-teal: #00897B; // Research / Academy
-$site-theme-brand-green: #2E7D32; // Student / Sustainability
-$site-theme-brand-purple: #8E24AA; // Innovation / Tech
-$site-theme-brand-orange: #fb8c00; // Events / Highlights
-$site-theme-brand-red: #D32F2F; // Alerts / Urgent
+$site-theme-text-body: $gray-900; // Was #333
+$site-theme-text-light: $gray-600; // Was #555
+$site-theme-text-muted: $gray-500; // Was #6c757d
 
-// Secondary Theme Colors (Tonal/Complementary)
-$site-theme-blue-secondary: #64748B; // Slate 500 (Cool Gray)
-$site-theme-teal-secondary: #587c7e; // Muted Teal Gray
-$site-theme-green-secondary: #5c7c64; // Muted Green Gray
-$site-theme-purple-secondary: #7c6a85; // Muted Purple Gray
-$site-theme-orange-secondary: #85705e; // Muted Orange/Brown Gray
-$site-theme-red-secondary: #856161; // Muted Red Gray
-
-// Secondary Colors (Legacy + New Mappings)
-$site-theme-color-secondary: $site-theme-blue-secondary; // #64748B
-@use "sass:color";
-
-// Define RGB components explicitly for CSS variable usage
-$site-theme-color-secondary-rgb: #{color.channel($site-theme-color-secondary, "red", $space: rgb)}, #{color.channel($site-theme-color-secondary, "green", $space: rgb)}, #{color.channel($site-theme-color-secondary, "blue", $space: rgb)};
-
-$site-theme-status-success: $site-theme-brand-green;
-$site-theme-status-danger: $site-theme-brand-red;
-$site-theme-status-warning: $site-theme-brand-orange;
-$site-theme-status-info: $site-theme-brand-teal;
-
-// Text Colors
-$site-theme-text-body: #333333;
-$site-theme-text-light: #555555;
-$site-theme-text-muted: #6c757d;
-
-// Background Colors
 $site-theme-bg-body: #ffffff;
-$site-theme-bg-light: #f8f9fa;
+$site-theme-bg-light: $gray-50;
+$site-theme-border-color: $gray-200; // Was #dee2e6
 
-// Border Colors
-$site-theme-border-color: #dee2e6;
-
-// Footer
 $site-theme-footer-bg: #000000;
-$site-theme-footer-text: #cccccc;
+$site-theme-footer-text: $gray-300; // Was #cccccc
 
-// ======================
-// Dark Mode Palette
-// ======================
-$site-theme-bg-dark: #212529;
-$site-theme-text-dark: #f8f9fa;
-$site-theme-bg-dark-secondary: #343a40; // Slightly lighter for cards/surfaces
-$site-theme-border-dark: #495057;
-$site-theme-text-muted-dark: #adb5bd;
+// Dark Mode
+$site-theme-bg-dark: $gray-800; // #1e293b
+$site-theme-bg-dark-secondary: $gray-900; // #0f172a
+$site-theme-text-dark: $gray-100; // #f1f5f9
+$site-theme-border-dark: $gray-700;
+$site-theme-text-muted-dark: $gray-400;
 
-// ======================
-// Shadows
-// ======================
-// Shadows are often theme-dependent (opacity/color)
+// Shadows (Unchanged)
 $site-theme-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
 $site-theme-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
 $site-theme-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+
+// RGB Helpers
+@use "sass:color";
+$site-theme-color-secondary-rgb: #{color.channel($site-theme-color-secondary, "red", $space: rgb)}, #{color.channel($site-theme-color-secondary, "green", $space: rgb)}, #{color.channel($site-theme-color-secondary, "blue", $space: rgb)};

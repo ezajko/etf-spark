@@ -82,6 +82,13 @@
     --bs-secondary-rgb: #{red($site-theme-teal-secondary)},
     #{green($site-theme-teal-secondary)},
     #{blue($site-theme-teal-secondary)};
+
+    &[data-bs-theme="dark"] {
+        --site-theme-color: #{$site-theme-brand-teal-text-dark};
+        --site-theme-color-rgb: #{red($site-theme-brand-teal-text-dark)},
+        #{green($site-theme-brand-teal-text-dark)},
+        #{blue($site-theme-brand-teal-text-dark)};
+    }
 }
 
 [data-site-theme="green"] {
@@ -93,6 +100,13 @@
     --bs-secondary-rgb: #{red($site-theme-green-secondary)},
     #{green($site-theme-green-secondary)},
     #{blue($site-theme-green-secondary)};
+
+    &[data-bs-theme="dark"] {
+        --site-theme-color: #{$site-theme-brand-green-text-dark};
+        --site-theme-color-rgb: #{red($site-theme-brand-green-text-dark)},
+        #{green($site-theme-brand-green-text-dark)},
+        #{blue($site-theme-brand-green-text-dark)};
+    }
 }
 
 [data-site-theme="purple"] {
@@ -104,6 +118,13 @@
     --bs-secondary-rgb: #{red($site-theme-purple-secondary)},
     #{green($site-theme-purple-secondary)},
     #{blue($site-theme-purple-secondary)};
+
+    &[data-bs-theme="dark"] {
+        --site-theme-color: #{$site-theme-brand-purple-text-dark};
+        --site-theme-color-rgb: #{red($site-theme-brand-purple-text-dark)},
+        #{green($site-theme-brand-purple-text-dark)},
+        #{blue($site-theme-brand-purple-text-dark)};
+    }
 }
 
 [data-site-theme="orange"] {
@@ -115,6 +136,13 @@
     --bs-secondary-rgb: #{red($site-theme-orange-secondary)},
     #{green($site-theme-orange-secondary)},
     #{blue($site-theme-orange-secondary)};
+
+    &[data-bs-theme="dark"] {
+        --site-theme-color: #{$site-theme-brand-orange-text-dark};
+        --site-theme-color-rgb: #{red($site-theme-brand-orange-text-dark)},
+        #{green($site-theme-brand-orange-text-dark)},
+        #{blue($site-theme-brand-orange-text-dark)};
+    }
 }
 
 [data-site-theme="red"] {
@@ -126,6 +154,13 @@
     --bs-secondary-rgb: #{red($site-theme-red-secondary)},
     #{green($site-theme-red-secondary)},
     #{blue($site-theme-red-secondary)};
+
+    &[data-bs-theme="dark"] {
+        --site-theme-color: #{$site-theme-brand-red-text-dark};
+        --site-theme-color-rgb: #{red($site-theme-brand-red-text-dark)},
+        #{green($site-theme-brand-red-text-dark)},
+        #{blue($site-theme-brand-red-text-dark)};
+    }
 }
 
 [data-site-theme="blue"] {
@@ -137,10 +172,13 @@
     --bs-secondary-rgb: #{red($site-theme-blue-secondary)},
     #{green($site-theme-blue-secondary)},
     #{blue($site-theme-blue-secondary)};
-    --bs-secondary: #{$site-theme-blue-secondary};
-    --bs-secondary-rgb: #{red($site-theme-blue-secondary)},
-    #{green($site-theme-blue-secondary)},
-    #{blue($site-theme-blue-secondary)};
+
+    &[data-bs-theme="dark"] {
+        --site-theme-color: #{$site-theme-brand-blue-text-dark};
+        --site-theme-color-rgb: #{red($site-theme-brand-blue-text-dark)},
+        #{green($site-theme-brand-blue-text-dark)},
+        #{blue($site-theme-brand-blue-text-dark)};
+    }
 }
 
 [data-site-theme="high-contrast"] {
@@ -231,8 +269,8 @@
     }
 
     // Accessible Link Color for Dark Mode (Lighter Blue)
-    --bs-link-color: #64B5F6;
-    --bs-link-hover-color: #90CAF9; // Even lighter on hover
+    --bs-link-color: #{$site-theme-brand-blue-text-dark};
+    --bs-link-hover-color: #{lighten($site-theme-brand-blue-text-dark, 10%)}; // Even lighter on hover
 
     // Card Footer Background in Dark Mode
     --bs-tertiary-bg: #{$site-theme-bg-dark-secondary};
