@@ -310,42 +310,67 @@
         }
 
         &[data-bs-theme="light"] {
+            // Force ALL text to be black for maximum contrast
+            --bs-body-color: #000000;
+            --bs-heading-color: #000000;
+            color: #000000;
 
-            // Light Mode HC Buttons (Default: Black/White)
-            .btn-primary {
-                background-color: #000000 !important;
-                border-color: #000000 !important;
-                color: #FFFFFF !important;
+            p,
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6,
+            span,
+            li,
+            td,
+            th {
+                color: #000000 !important;
+            }
+
+            // Override text utilities
+            .text-primary,
+            .text-secondary,
+            .text-success,
+            .text-danger,
+            .text-warning,
+            .text-info,
+            .text-light,
+            .text-muted,
+            .text-white {
+                color: #000000 !important;
+            }
+
+            // Links: Black & Underlined -> Hover: Black BG & Yellow Text
+            a {
+                color: #000000 !important;
+                text-decoration: underline !important;
+                font-weight: 700;
 
                 &:hover,
-                &:focus,
-                &:active {
-                    background-color: #FFFFFF !important;
-                    color: #000000 !important;
+                &:focus {
+                    background-color: #000000 !important;
+                    color: #{$ez-hc-yellow} !important; // "linkovi zuto" -> Yellow text on Black
                 }
             }
 
+            // Buttons: White/Black -> Hover: Black/White
+            .btn-primary,
             .btn-secondary,
-            .btn-outline-primary {
-                color: #000000 !important;
+            .btn-outline-primary,
+            .btn-success,
+            .btn-danger {
+                background-color: #FFFFFF !important;
                 border-color: #000000 !important;
-                background-color: transparent !important;
+                color: #000000 !important;
 
                 &:hover,
                 &:focus,
                 &:active {
                     background-color: #000000 !important;
-                    color: #FFFFFF !important;
-                }
-            }
-
-            a {
-                color: #000000 !important;
-                font-weight: 700;
-
-                &:hover,
-                &:focus {
-                    background-color: #{$yellow-400} !important; // Highlight
+                    color: #FFFFFF !important; // "hover crna pozadina, bijela slova"
+                    border-color: #000000 !important;
                 }
             }
         }
