@@ -1,0 +1,55 @@
+---
+// ETF UNSA - Frame Component
+// Wraps content in a configurable frame (container, background, spacing)
+// Author: Ernedin Zajko <ezajko@root.ba>
+
+interface Props {
+  id?: string;
+  container?: 'default' | 'fluid' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl' | 'none';
+  background?: 'none' | 'primary' | 'secondary' | 'light' | 'dark' | 'grey';
+  size?: 'default' | 'small' | 'large' | 'none';
+  spaceBefore?: 'none' | 'small' | 'medium' | 'large';
+  spaceAfter?: 'none' | 'small' | 'medium' | 'large';
+  class?: string;
+}
+
+const {
+  id,
+  container = 'default',
+  background = 'none',
+  size = 'default',
+  spaceBefore = 'none',
+  spaceAfter = 'none',
+  class: className,
+} = Astro.props;
+
+const frameClasses = [
+  'frame',
+  `frame-background-${background}`,
+  `frame-size-${size}`,
+  `frame-space-before-${spaceBefore}`,
+  `frame-space-after-${spaceAfter}`,
+  className,
+]
+  .filter(Boolean)
+  .join(' ');
+
+const containerClass =
+  container === 'default' ? 'container' : container === 'none' ? '' : `container-${container}`;
+---
+
+<section id={id} class={frameClasses}>
+  {
+    containerClass ? (
+      <div class={containerClass}>
+        <div class="frame-inner">
+          <slot />
+        </div>
+      </div>
+    ) : (
+      <div class="frame-inner">
+        <slot />
+      </div>
+    )
+  }
+</section>

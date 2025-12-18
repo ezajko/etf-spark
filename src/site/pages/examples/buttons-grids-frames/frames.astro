@@ -1,56 +1,96 @@
 ---
 // ETF UNSA - Frames Example
 import NoSidebar from '../../../layouts/NoSidebar.astro';
-import ExampleSnippet from '../../../components/common/ExampleSnippet.astro';
+import Frame from '../../../components/layout/Frame.astro';
 
 const breadcrumbItems = [
   { label: 'Početna', href: '/' },
   { label: 'Primjeri', href: '#' },
-  { label: 'Buttons, Grids & Frames', href: '#' },
-  { label: 'Frames', href: '#', active: true },
+  { label: 'Sadržaj', href: '#' },
+  { label: 'Okviri (Frames)', href: '#', active: true },
 ];
-
-const responsiveIframeCode = `<div class="ratio ratio-16x9 border rounded overflow-hidden">
-  <iframe src="https://www.etf.unsa.ba" title="ETF UNSA"></iframe>
-</div>`;
-
-const browserFrameCode = `<div class="card shadow-sm">
-  <div class="card-header bg-light d-flex align-items-center p-2">
-    <div class="d-flex gap-2 me-3">
-      <span class="rounded-circle bg-danger" style="width: 10px; height: 10px;"></span>
-      <span class="rounded-circle bg-warning" style="width: 10px; height: 10px;"></span>
-      <span class="rounded-circle bg-success" style="width: 10px; height: 10px;"></span>
-    </div>
-    <div class="bg-white rounded px-3 py-1 text-muted small flex-grow-1 text-center border">
-      example.com
-    </div>
-  </div>
-  <div class="card-body p-0 ratio ratio-16x9">
-    <iframe src="https://www.example.com" title="Browser Frame Example"></iframe>
-  </div>
-</div>`;
 ---
 
 <NoSidebar
-  title="Frames"
+  title="Okviri (Frames)"
   breadcrumbItems={breadcrumbItems}
-  bannerTitle="Frames"
-  bannerSubtitle="Primjeri okvira i ugniježdenog sadržaja"
+  bannerTitle="Okviri (Frames)"
+  bannerSubtitle="Kontrola kontejnera, pozadina i razmaka za elemente sadržaja"
   bannerSize="xs"
 >
-  <div class="row">
-    <div class="col-12">
-      <ExampleSnippet
-        title="Responsive Iframe"
-        description="Bootstrap ratio helperi omogućavaju kreiranje responsivnih iframe kontejnera."
-        code={responsiveIframeCode}
-      />
+  <div class="mb-5">
+    <h3>Pozadinske varijante</h3>
+    <p class="text-muted">
+      Frame sistem omogućava lako postavljanje pozadina za čitave sekcije sadržaja.
+    </p>
 
-      <ExampleSnippet
-        title="Browser Window Frame"
-        description="Simulacija prozora preglednika koristeći Card komponentu."
-        code={browserFrameCode}
-      />
-    </div>
+    <Frame background="light" spaceAfter="small">
+      <h4>Light Background</h4>
+      <p>
+        Ovaj sadržaj je unutar <code>frame-background-light</code>. Automatski koristi standardni
+        kontejner.
+      </p>
+    </Frame>
+
+    <Frame background="primary" spaceAfter="small">
+      <h4>Primary Background</h4>
+      <p>Boja teksta se automatski prilagođava za bolji kontrast na primarnoj boji.</p>
+    </Frame>
+
+    <Frame background="dark" spaceAfter="small">
+      <h4>Dark Background</h4>
+      <p>Tamna pozadina za istaknute sekcije.</p>
+    </Frame>
+
+    <Frame background="grey" spaceAfter="large">
+      <h4>Grey Background</h4>
+      <p>Suptilna siva pozadina za razbijanje bjeline stranice.</p>
+    </Frame>
+  </div>
+
+  <div class="mb-5">
+    <h3>Širine kontejnera</h3>
+    <p class="text-muted">Kontrola širine sadržaja unutar frame-a.</p>
+
+    <Frame background="light" container="sm" spaceAfter="small">
+      <div class="text-center">
+        <h4>Small Container (sm)</h4>
+        <p>Idealno za kratke tekstove ili forme koje ne trebaju punu širinu.</p>
+      </div>
+    </Frame>
+
+    <Frame background="light" container="lg" spaceAfter="small">
+      <div class="text-center">
+        <h4>Large Container (lg)</h4>
+        <p>Širi kontejner za bogatiji sadržaj.</p>
+      </div>
+    </Frame>
+
+    <Frame background="grey" container="fluid" spaceAfter="large">
+      <div class="text-center">
+        <h4>Full Width (fluid)</h4>
+        <p>Sadržaj se proteže od ruba do ruba ekrana (uz standardni gutter).</p>
+      </div>
+    </Frame>
+  </div>
+
+  <div class="mb-5">
+    <h3>Vertikalni razmaci (Spacing)</h3>
+    <p class="text-muted">
+      Kontrola praznog prostora prije i poslije elementa bez ručnog dodavanja margina.
+    </p>
+
+    <div class="bg-info-subtle p-2 text-center small">Element iznad</div>
+    <Frame background="light" size="small" spaceBefore="large" spaceAfter="large">
+      <div class="text-center">
+        <h4>Veliki razmaci (Large Spacing)</h4>
+        <p>
+          Ovaj frame ima <code>size="small"</code> (unutrašnji padding) i <code
+            >spaceBefore/After="large"</code
+          > (vanjske margine).
+        </p>
+      </div>
+    </Frame>
+    <div class="bg-info-subtle p-2 text-center small">Element ispod</div>
   </div>
 </NoSidebar>
