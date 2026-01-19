@@ -62,28 +62,35 @@ const gridGallery4Code = `<div class="row g-2">
   title="Galerija (Gallery)"
   breadcrumbItems={breadcrumbItems}
   bannerTitle="Galerija"
-  bannerSubtitle="Primjer prikaza galerije slika koristeći Grid sistem"
+  bannerSubtitle="Primjer prikaza galerije slika koristeći Grid sistem i Lightbox"
   bannerSize="xs"
 >
   <div class="row">
     <div class="col-12">
       <ExampleSnippet
-        title="Grid Gallery (3 Columns)"
-        description="Galerija koristeći Bootstrap Grid sistem."
-        code={gridGallery3Code}
+        title="Gallery Grid (3 Columns)"
+        description="Galerija koristeći <code>.gallery.gallery-3</code> komponentu sa Lightbox integracijom."
+        code={`<div class="gallery gallery-3">
+  <div class="gallery-item">
+    <a href="..." class="glightbox" data-gallery="gallery1">
+      <img src="..." alt="Image 1" />
+    </a>
+  </div>
+  <!-- ... -->
+</div>`}
       >
-        <div class="row g-3">
+        <div class="gallery gallery-3">
           {
-            galleryImages.map((img) => (
-              <div class="col-sm-6 col-md-4">
-                <div class="card h-100 border-0 shadow-sm">
-                  <a href="#" class="d-block text-decoration-none">
-                    <img src={img.src} class="card-img-top img-fluid rounded" alt={img.title} />
-                  </a>
-                  <div class="card-body p-2 text-center">
-                    <small class="text-muted">{img.title}</small>
-                  </div>
-                </div>
+            galleryImages.map((img, index) => (
+              <div class="gallery-item">
+                <a
+                  href={img.src}
+                  class="glightbox"
+                  data-gallery="gallery1"
+                  data-description={img.title}
+                >
+                  <img src={img.src} alt={img.title} />
+                </a>
               </div>
             ))
           }
@@ -91,19 +98,34 @@ const gridGallery4Code = `<div class="row g-2">
       </ExampleSnippet>
 
       <ExampleSnippet
-        title="Grid Gallery (4 Columns)"
-        description="Kompatknija galerija sa 4 kolone."
-        code={gridGallery4Code}
+        title="Gallery Grid (4 Columns)"
+        description="Kompatknija galerija sa 4 kolone <code>.gallery.gallery-4</code>."
+        code={`<div class="gallery gallery-4">...</div>`}
       >
-        <div class="row g-2">
+        <div class="gallery gallery-4">
           {
             galleryImages.slice(0, 4).map((img) => (
-              <div class="col-6 col-md-3">
-                <a
-                  href="#"
-                  class="d-block position-relative overflow-hidden rounded group-hover-zoom"
-                >
-                  <img src={img.src} class="img-fluid w-100 shadow-sm" alt={img.title} />
+              <div class="gallery-item">
+                <a href={img.src} class="glightbox" data-gallery="gallery2">
+                  <img src={img.src} alt={img.title} />
+                </a>
+              </div>
+            ))
+          }
+        </div>
+      </ExampleSnippet>
+
+      <ExampleSnippet
+        title="Gallery Grid (6 Columns)"
+        description="Maksimalna gustina <code>.gallery.gallery-6</code>."
+        code={`<div class="gallery gallery-6">...</div>`}
+      >
+        <div class="gallery gallery-6">
+          {
+            galleryImages.map((img) => (
+              <div class="gallery-item">
+                <a href={img.src} class="glightbox" data-gallery="gallery3">
+                  <img src={img.src} alt={img.title} />
                 </a>
               </div>
             ))
@@ -113,3 +135,14 @@ const gridGallery4Code = `<div class="row g-2">
     </div>
   </div>
 </NoSidebar>
+
+<script>
+  import GLightbox from 'glightbox';
+
+  // Initialize GLightbox
+  const lightbox = GLightbox({
+    touchNavigation: true,
+    loop: true,
+    autoplayVideos: true,
+  });
+</script>

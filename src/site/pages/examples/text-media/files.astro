@@ -1,0 +1,88 @@
+---
+// ETF UNSA - File List Example
+import NoSidebar from '../../../layouts/NoSidebar.astro';
+import ExampleSnippet from '../../../components/common/ExampleSnippet.astro';
+
+const breadcrumbItems = [
+  { label: 'Početna', href: '/' },
+  { label: 'Primjeri', href: '#' },
+  { label: 'Tekst & Mediji', href: '#' },
+  { label: 'Fajlovi', href: '#', active: true },
+];
+
+const fileListCode = `<div class="list-group list-group-file">
+  <a href="#" class="list-group-item list-group-item-action">
+    <div class="file-icon">
+      <i class="bi bi-file-earmark-pdf"></i>
+    </div>
+    <div class="file-content">
+      <span class="file-title">Godišnji izvještaj 2024.pdf</span>
+      <span class="file-meta">PDF, 2.4 MB &bull; 15.01.2025.</span>
+    </div>
+    <div class="file-action">
+      <i class="bi bi-download"></i>
+    </div>
+  </a>
+  <!-- More items... -->
+</div>`;
+
+const files = [
+  {
+    title: 'Godišnji izvještaj 2024.pdf',
+    meta: 'PDF, 2.4 MB • 15.01.2025.',
+    icon: 'bi-file-earmark-pdf',
+  },
+  {
+    title: 'Odluka o imenovanju komisije.docx',
+    meta: 'Word, 156 KB • 12.01.2025.',
+    icon: 'bi-file-earmark-word',
+  },
+  {
+    title: 'Budžet projekta - Final.xlsx',
+    meta: 'Excel, 45 KB • 10.01.2025.',
+    icon: 'bi-file-earmark-excel',
+  },
+  {
+    title: 'Prezentacija za studente.pptx',
+    meta: 'PowerPoint, 5.1 MB • 05.01.2025.',
+    icon: 'bi-file-earmark-slides',
+  },
+];
+---
+
+<NoSidebar
+  title="Lista Fajlova (Files)"
+  breadcrumbItems={breadcrumbItems}
+  bannerTitle="Fajlovi i Dokumenti"
+  bannerSubtitle="Prikaz liste fajlova za preuzimanje (File Collections)"
+  bannerSize="xs"
+>
+  <div class="row">
+    <div class="col-12 col-lg-8 offset-lg-2">
+      <ExampleSnippet
+        title="File List Group"
+        description="Lista fajlova koristeći <code>.list-group-file</code> klasu. Idealno za 'File Collections'."
+        code={fileListCode}
+      >
+        <div class="list-group list-group-file shadow-sm">
+          {
+            files.map((file) => (
+              <a href="#" class="list-group-item list-group-item-action">
+                <div class="file-icon">
+                  <i class={`bi ${file.icon}`} />
+                </div>
+                <div class="file-content">
+                  <span class="file-title">{file.title}</span>
+                  <span class="file-meta">{file.meta}</span>
+                </div>
+                <div class="file-action">
+                  <i class="bi bi-download" />
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </ExampleSnippet>
+    </div>
+  </div>
+</NoSidebar>
