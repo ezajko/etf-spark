@@ -1,13 +1,22 @@
 {
-    "name": "@etf-unsa/spark",
+    "name": "@rootba/spark-design-system",
     "version": "1.0.0",
-    "description": "ETF Spark - Bootstrap Design System",
+    "description": "Spark Design System - Bootstrap-based design framework",
     "type": "module",
     "license": "GPL-2.0-or-later",
     "author": "Ernedin Zajko <ezajko@root.ba>",
+    "main": "dist-lib/js/main.js",
+    "style": "dist-lib/css/_site.css",
+    "files": [
+        "dist-lib/",
+        "src/scss/"
+    ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/etf-unsa/www-ng"
+        "url": "https://github.com/ezajko/etf-spark"
+    },
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com"
     },
     "scripts": {
         "dev": "astro dev",
