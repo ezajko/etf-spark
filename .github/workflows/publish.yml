@@ -1,28 +1,32 @@
-# Publish to GitHub Packages
+# Automatic Release and Publish to GitHub Packages
 # Author: Ernedin Zajko <ezajko@root.ba>
-# Automatically publishes the design system as an NPM package when a release is created
+# Automatically creates a release and publishes NPM package on push to main
+# Version format: 0.5.{yyyymmdd}
 
-name: Publish to GitHub Packages
+name: Release and Publish
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - 'package.json'
+      - 'vite.config.bundle.js'
   workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version to publish (leave empty to use package.json version)'
-        required: false
 
 jobs:
-  publish:
+  release-and-publish:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       packages: write
     
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -31,11 +35,36 @@ jobs:
           registry-url: 'https://npm.pkg.github.com'
           scope: '@rootba'
       
+      - name: Generate version
+        id: version
+        run: |
+          VERSION="0.5.$(date +%Y%m%d)"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Generated version: $VERSION"
+      
+      - name: Update package.json version
+        run: |
+          npm version ${{ steps.version.outputs.version }} --no-git-tag-version --allow-same-version
+      
       - name: Install dependencies
         run: npm ci
       
       - name: Build library
         run: npm run build:lib
+      
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          name: Release ${{ steps.version.outputs.version }}
+          body: |
+            Automatic release for ${{ steps.version.outputs.version }}
+            
+            Built from commit: ${{ github.sha }}
+          draft: false
+          prerelease: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Publish to GitHub Packages
         run: npm publish

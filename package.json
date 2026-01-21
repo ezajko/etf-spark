@@ -1,6 +1,6 @@
 {
     "name": "@rootba/spark-design-system",
-    "version": "1.0.0",
+    "version": "0.5.0",
     "description": "Spark Design System - Bootstrap-based design framework",
     "type": "module",
     "license": "GPL-2.0-or-later",
