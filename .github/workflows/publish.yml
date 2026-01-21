@@ -33,7 +33,7 @@ jobs:
         with:
           node-version: '20'
           registry-url: 'https://npm.pkg.github.com'
-          scope: '@rootba'
+          scope: '@ezajko'
       
       - name: Generate version
         id: version
