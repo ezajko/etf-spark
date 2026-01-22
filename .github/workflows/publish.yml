@@ -1,4 +1,4 @@
-# Automatic Release and Publish to GitHub Packages
+# Automatic Release and Publish to npmjs.com
 # Author: Ernedin Zajko <ezajko@root.ba>
 # Automatically creates a release and publishes NPM package on push to main
 # Version format: 0.5.{yyyymmdd}
@@ -32,8 +32,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
-          registry-url: 'https://npm.pkg.github.com'
-          scope: '@ezajko'
+          registry-url: 'https://registry.npmjs.org'
       
       - name: Generate version
         id: version
@@ -66,7 +65,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Publish to GitHub Packages
-        run: npm publish
+      - name: Publish to npmjs.com
+        run: npm publish --access public
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
